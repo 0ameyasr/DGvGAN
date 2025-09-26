@@ -1,3 +1,10 @@
+"""
+seq2graph.py
+
+Converting API sequences to graphs based on the Seq2Graph conversion outlined in the paper.
+Serves as input to train on for the DGCNN models.
+"""
+
 import os
 import numpy
 import pandas

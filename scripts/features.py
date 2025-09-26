@@ -1,13 +1,17 @@
+"""
+features.py
+
+A script that creates the node matrix of features (X). 
+"""
+
 import numpy as np 
 import pandas as pd
 from sklearn.preprocessing import OneHotEncoder
 import logging
-import os # <-- FIX: Import the os module
+import os
 
-# Set up logging for script clarity
 logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
 
-# --- Prerequisite Data Loading (from Part 1, Point 1) ---
 try:
     # Loads the balanced sequences from the processed directory
     data_balanced = pd.read_csv("data/processed/balanced_dataset.csv")
