@@ -1,0 +1,195 @@
+/* --- Global Styles & Variables --- */
+:root {
+    --primary-color: #007bff;
+    --background-color: #121212;
+    --surface-color: #1e1e1e;
+    --text-color: #e0e0e0;
+    --text-secondary-color: #a0a0a0;
+    --border-color: #333;
+    --success-color: #28a745;
+    --error-color: #dc3545;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+/* --- Main Layout & Header --- */
+.main-container {
+    width: 100%;
+    max-width: 600px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-icon {
+    color: var(--primary-color);
+}
+
+h1 {
+    margin: 0;
+    font-weight: 600;
+}
+
+.subtitle {
+    margin: 0;
+    font-weight: 300;
+    color: var(--text-secondary-color);
+}
+
+/* --- Card Styling --- */
+.card {
+    background-color: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.card h2 {
+    margin-top: 0;
+    font-weight: 600;
+}
+
+.card p {
+    color: var(--text-secondary-color);
+    line-height: 1.6;
+}
+
+/* --- Form & Upload Styling --- */
+#upload-form {
+    margin-top: 20px;
+}
+
+#file-input {
+    display: none; /* Hide the default input */
+}
+
+.file-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px;
+    border: 2px dashed var(--border-color);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.file-label:hover {
+    border-color: var(--primary-color);
+    background-color: rgba(0, 123, 255, 0.05);
+}
+
+#file-name {
+    font-style: italic;
+    color: var(--text-secondary-color);
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button:hover:not(:disabled) {
+    background-color: #0056b3;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+}
+
+button:disabled {
+    background-color: #555;
+    cursor: not-allowed;
+}
+
+/* --- Result Card Styling --- */
+.result-card {
+    margin-top: 30px;
+    text-align: center;
+    border-left: 5px solid; /* Color will be set by JS */
+}
+
+.result-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.result-header svg {
+    width: 32px;
+    height: 32px;
+}
+
+#prediction-text {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0;
+}
+
+#confidence-score {
+    font-size: 18px;
+    color: var(--text-secondary-color);
+}
+
+.result-card.malware {
+    border-left-color: var(--error-color);
+    color: var(--error-color);
+}
+
+.result-card.goodware {
+    border-left-color: var(--success-color);
+    color: var(--success-color);
+}
+
+/* --- Utility & Animation Classes --- */
+.hidden {
+    display: none !important;
+}
+
+.spinner {
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top: 3px solid #fff;
+    width: 20px;
+    height: 20px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
