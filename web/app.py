@@ -11,7 +11,7 @@ app = Flask(__name__)
 UPLOAD_FOLDER = 'temp_uploads'
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
-MODEL_PATH = os.path.join("model", "dgcnn_malware_detector.h5")
+SGAN_MODEL_PATH = os.path.join("web", "model", "sgan_malware_detector.h5")
 NUM_API_CALLS = 307
 SEQUENCE_LENGTH = 100
 
@@ -42,12 +42,15 @@ class GraphConvLayer(Layer):
 
 # --- 3. LOAD MODEL ---
 try:
-    print("Loading DGCNN model...")
-    model = load_model(MODEL_PATH, custom_objects={'GraphConvLayer': GraphConvLayer})
+    print("Loading SGAN model...")
+    model = load_model(SGAN_MODEL_PATH, custom_objects={'GraphConvLayer': GraphConvLayer})
     print("✅ Model loaded successfully!")
 except Exception as e:
     print(f"❌ Error loading model: {e}")
     model = None
+
+from keras.saving import load_model
+
 
 # --- 4. PREPROCESSING FUNCTIONS ---
 def sequence_to_graph(api_sequence):
@@ -115,6 +118,7 @@ def analyze_file():
     finally:
         if os.path.exists(temp_filepath):
             os.remove(temp_filepath)
+
 
 # --- 6. RUN SERVER ---
 if __name__ == '__main__':
