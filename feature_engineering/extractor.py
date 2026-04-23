@@ -4,24 +4,17 @@ def extract_features_from_report(report_path):
     with open(report_path, "r", encoding="utf-8") as f:
         data = json.load(f)
 
-    processes = data.get("behavior", {}).get("processes", [])
-    files = data.get("behavior", {}).get("summary", {}).get("files", [])
-    domains = data.get("network", {}).get("domains", [])
-    ips = data.get("network", {}).get("ips", [])
-    http = data.get("network", {}).get("http_requests", [])
+    api_calls = data.get("api", [])
 
-    # Safe filtering (IMPORTANT FIX)
-    valid_processes = [p for p in processes if isinstance(p, dict)]
+    if not isinstance(api_calls, list):
+        api_calls = []
 
-    num_processes = len(valid_processes)
-    num_files = len(files)
-    num_ips = len(ips)
+    # ✅ Basic features
+    # total_calls = len(api_calls)
+    # unique_calls = len(set(api_calls))
+    # max_call = max(api_calls) if api_calls else 0
 
-    suspicious_files = sum(1 for f in files if isinstance(f, str) and "encrypted" in f.lower())
+    # # Optional extra features (better ML performance)
+    # avg_call = sum(api_calls) / total_calls if total_calls > 0 else 0
 
-    exe_processes = sum(
-        1 for p in valid_processes
-        if "process_name" in p and isinstance(p["process_name"], str) and ".exe" in p["process_name"].lower()
-    )
-
-    return [num_processes, num_files, num_ips]
+    return api_calls
