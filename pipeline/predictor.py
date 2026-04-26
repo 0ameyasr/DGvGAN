@@ -323,8 +323,7 @@ def predict_sgan(features):
         output = sgan_model(x)
         prob = torch.softmax(output, dim=1)[0][1].item()
     end = time.time()
-    print(f"sgan (s): {end-start}")
-    return prob
+    return end-start, prob
     
 def predict_dgcnn(features):
     start = time.time()
@@ -352,8 +351,7 @@ def predict_dgcnn(features):
         prob = torch.sigmoid(logits)
         end = time.time()
         
-        print(f"dgcnn (s): {end-start}")
-        return float(prob.item())
+        return end-start, float(prob.item())
     
 def predict_hybrid(features):
     start = time.time()
@@ -383,9 +381,8 @@ def predict_hybrid(features):
         malware_prob = probs[0, 1].item()
 
     end = time.time()
-    print(f"hybrid (s): {end-start}")
 
-    return malware_prob
+    return end-start, malware_prob
 
 def predict_cnn(features):
     start = time.time()
@@ -395,5 +392,4 @@ def predict_cnn(features):
         output = cnn_model(x)
         prob = torch.softmax(output, dim=1)[0][1].item()
     end = time.time()
-    print(f"cnn (s): {end-start}")
-    return prob
+    return end-start,prob

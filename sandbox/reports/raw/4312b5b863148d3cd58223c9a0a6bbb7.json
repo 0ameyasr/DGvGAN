@@ -1,0 +1,1394 @@
+{
+    "info": {
+        "added": 1777221273.011865, 
+        "started": 1777221273.538313, 
+        "duration": 83, 
+        "ended": 1777221356.590646, 
+        "owner": null, 
+        "score": 10, 
+        "id": 7526317, 
+        "category": "file", 
+        "git": {
+            "head": "", 
+            "fetch_head": ""
+        }, 
+        "monitor": null, 
+        "package": "elf", 
+        "route": "internet", 
+        "custom": null, 
+        "machine": {
+            "status": "stopped", 
+            "name": "Ubuntu1904x643", 
+            "label": "Ubuntu1904x643", 
+            "platform": "linux", 
+            "manager": "VirtualBox", 
+            "started_on": "2026-04-26 16:34:33", 
+            "shutdown_on": "2026-04-26 16:35:56"
+        }, 
+        "platform": "linux", 
+        "version": "2.0.7", 
+        "options": "procmemdump=yes,route=internet"
+    }, 
+    "signatures": [
+        {
+            "families": [], 
+            "description": "File has been identified by 9 AntiVirus engine on IRMA as malicious", 
+            "severity": 60, 
+            "ttp": {}, 
+            "markcount": 9, 
+            "references": [], 
+            "marks": [
+                {
+                    "category": "G Data Antivirus (Windows)", 
+                    "ioc": "Virus: Gen:Variant.Trojan.Linux.Gafgyt.8 (Engine A)", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Avast Core Security (Linux)", 
+                    "ioc": "ELF:Mirai-CBI [Cryp]", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "C4S ClamAV (Linux)", 
+                    "ioc": "YARA.suspicious_packer_section.UNOFFICIAL", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "eScan Antivirus (Linux)", 
+                    "ioc": "Gen:Variant.Trojan.Linux.Gafgyt.8(DB)", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "ESET Security (Windows)", 
+                    "ioc": "a variant of Linux/Mirai.A trojan", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Sophos Anti-Virus (Linux)", 
+                    "ioc": "Linux/DDoS-CI", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "DrWeb Antivirus (Linux)", 
+                    "ioc": "Linux.Mirai.9816", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Kaspersky Standard (Windows)", 
+                    "ioc": "HEUR:Backdoor.Linux.Mirai.r", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Emsisoft Commandline Scanner (Windows)", 
+                    "ioc": "Gen:Variant.Trojan.Linux.Gafgyt.8 (B)", 
+                    "type": "ioc", 
+                    "description": null
+                }
+            ], 
+            "name": "antivirus_irma"
+        }, 
+        {
+            "families": [], 
+            "description": "File has been identified by 36 AntiVirus engines on VirusTotal as malicious", 
+            "severity": 60, 
+            "ttp": {}, 
+            "markcount": 36, 
+            "references": [], 
+            "marks": [
+                {
+                    "category": "Lionic", 
+                    "ioc": "Trojan.Linux.Mirai.K!c", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "CTX", 
+                    "ioc": "elf.trojan.mirai", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "CAT-QuickHeal", 
+                    "ioc": "Elf.Backdoor.A24867307", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Skyhigh", 
+                    "ioc": "Artemis!Trojan", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "ALYac", 
+                    "ioc": "Gen:Variant.Trojan.Linux.Gafgyt.8", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "VIPRE", 
+                    "ioc": "Gen:Variant.Trojan.Linux.Gafgyt.8", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Sangfor", 
+                    "ioc": "Backdoor.Linux.Mirai.Vei2", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Arcabit", 
+                    "ioc": "Trojan.Trojan.Linux.Gafgyt.8", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Symantec", 
+                    "ioc": "Linux.Mirai", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "ESET-NOD32", 
+                    "ioc": "Linux/Mirai.A trojan", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "TrendMicro-HouseCall", 
+                    "ioc": "TROJ_GEN.R002C0DDM26", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Avast", 
+                    "ioc": "ELF:Mirai-CBI [Cryp]", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Cynet", 
+                    "ioc": "Malicious (score: 99)", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Kaspersky", 
+                    "ioc": "HEUR:Backdoor.Linux.Mirai.r", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "BitDefender", 
+                    "ioc": "Gen:Variant.Trojan.Linux.Gafgyt.8", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "MicroWorld-eScan", 
+                    "ioc": "Gen:Variant.Trojan.Linux.Gafgyt.8", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Rising", 
+                    "ioc": "Backdoor.Gafgyt/Linux!1.12AC3 (CLOUD)", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Emsisoft", 
+                    "ioc": "Gen:Variant.Trojan.Linux.Gafgyt.8 (B)", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "DrWeb", 
+                    "ioc": "Linux.Mirai.9816", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "TrendMicro", 
+                    "ioc": "TROJ_GEN.R002C0DDM26", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Sophos", 
+                    "ioc": "Linux/DDoS-CI", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "SentinelOne", 
+                    "ioc": "Static AI - Malicious ELF", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Google", 
+                    "ioc": "Detected", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Antiy-AVL", 
+                    "ioc": "Trojan/Linux.Mirai.a", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Kingsoft", 
+                    "ioc": "Linux.Backdoor.Mirai.r", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Microsoft", 
+                    "ioc": "Backdoor:Linux/Mirai.BJ!MTB", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "ZoneAlarm", 
+                    "ioc": "Linux/DDoS-CI", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "GData", 
+                    "ioc": "Gen:Variant.Trojan.Linux.Gafgyt.8", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Varist", 
+                    "ioc": "E64/Mirai.HV.gen!Eldorado", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "AhnLab-V3", 
+                    "ioc": "Linux/Mirai.Gen15", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Ikarus", 
+                    "ioc": "Trojan.Linux.Gafgyt", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Tencent", 
+                    "ioc": "Backdoor.Linux.Mirai.ahg", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "huorong", 
+                    "ioc": "Backdoor/Linux.Mirai.dh", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Fortinet", 
+                    "ioc": "ELF/Condi.CDB!tr.botnet", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "AVG", 
+                    "ioc": "ELF:Mirai-CBI [Cryp]", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "alibabacloud", 
+                    "ioc": "DDOS:Linux/Mirai", 
+                    "type": "ioc", 
+                    "description": null
+                }
+            ], 
+            "name": "antivirus_virustotal"
+        }
+    ], 
+    "target": {
+        "category": "file", 
+        "file": {
+            "mimetype": "application/x-executable", 
+            "yara": [], 
+            "sha1": "4ea0843790f8e79cae3d9ab960364077f54c4dfe", 
+            "name": "riva sample file.elf", 
+            "type": "ELF 64-bit LSB executable, x86-64, version 1 (SYSV), statically linked, no section header", 
+            "sha256": "1d032ee58df836c1a769ec51c86a57904c1e68a86e7ee479c92c3826998353c6", 
+            "urls": [], 
+            "crc32": "59915262", 
+            "path": "/srv/cuckoo/cwd/storage/binaries/1d032ee58df836c1a769ec51c86a57904c1e68a86e7ee479c92c3826998353c6", 
+            "ssdeep": null, 
+            "size": 37044, 
+            "sha512": "d3b72f7785fce31b96bca8c5d7a0cf3c328fbf18524ade545f4a16c71cf3703b3a2dbdf1bb3a425ee3583840e06fbba3e23a3e6815103f140c06b3725cc0d48c", 
+            "md5": "4312b5b863148d3cd58223c9a0a6bbb7"
+        }, 
+        "custom": null
+    }, 
+    "irma": {
+        "status": 1, 
+        "probes_finished": 13, 
+        "scan_id": "18d082b5-154a-4890-ab26-a11bb7493781", 
+        "parent_file_sha256": null, 
+        "file_infos": {
+            "mimetype": "ELF 64-bit LSB executable, x86-64, version 1 (SYSV)", 
+            "sha1": "4ea0843790f8e79cae3d9ab960364077f54c4dfe", 
+            "tags": [], 
+            "timestamp_first_scan": 1777209798.93, 
+            "size": 37044, 
+            "timestamp_last_scan": 1777209809.5, 
+            "sha256": "1d032ee58df836c1a769ec51c86a57904c1e68a86e7ee479c92c3826998353c6", 
+            "md5": "4312b5b863148d3cd58223c9a0a6bbb7"
+        }, 
+        "scan_date": 1777209799, 
+        "other_results": [], 
+        "submitter": "cli", 
+        "probes_total": 13, 
+        "probe_results": {
+            "antivirus": {
+                "G Data Antivirus (Windows)": {
+                    "status": 1, 
+                    "duration": 0.38, 
+                    "version": "5.5.20197.1358", 
+                    "results": "Virus: Gen:Variant.Trojan.Linux.Gafgyt.8 (Engine A)", 
+                    "virus_database_version": "unavailable"
+                }, 
+                "Avast Core Security (Linux)": {
+                    "status": 1, 
+                    "duration": 0.02, 
+                    "version": "4.6.1", 
+                    "results": "ELF:Mirai-CBI [Cryp]", 
+                    "virus_database_version": "unavailable"
+                }, 
+                "C4S ClamAV (Linux)": {
+                    "status": 1, 
+                    "duration": 0.04, 
+                    "version": "1.4.3", 
+                    "results": "YARA.suspicious_packer_section.UNOFFICIAL", 
+                    "virus_database_version": "27965"
+                }, 
+                "Trellix (Linux)": {
+                    "status": 0, 
+                    "duration": 8.09, 
+                    "version": "7.0.4.835", 
+                    "results": null, 
+                    "virus_database_version": "11753"
+                }, 
+                "WithSecure (Linux)": {
+                    "status": 0, 
+                    "duration": 0.23, 
+                    "version": "1.0.44", 
+                    "results": null, 
+                    "virus_database_version": "unavailable"
+                }, 
+                "eScan Antivirus (Linux)": {
+                    "status": 1, 
+                    "duration": 3.95, 
+                    "version": "7.0.21", 
+                    "results": "Gen:Variant.Trojan.Linux.Gafgyt.8(DB)", 
+                    "virus_database_version": "7.100629 (08/04/2026)"
+                }, 
+                "ESET Security (Windows)": {
+                    "status": 1, 
+                    "duration": 0.98, 
+                    "version": "unavailable", 
+                    "results": "a variant of Linux/Mirai.A trojan", 
+                    "virus_database_version": "unavailable"
+                }, 
+                "Sophos Anti-Virus (Linux)": {
+                    "status": 1, 
+                    "duration": 0.43, 
+                    "version": "1.2.0.8 (2026-02-13)", 
+                    "results": "Linux/DDoS-CI", 
+                    "virus_database_version": "unavailable"
+                }, 
+                "DrWeb Antivirus (Linux)": {
+                    "status": 1, 
+                    "duration": 0.24, 
+                    "version": "11.1.16.2406170954", 
+                    "results": "Linux.Mirai.9816", 
+                    "virus_database_version": "unavailable"
+                }, 
+                "ClamAV (Linux)": {
+                    "status": 0, 
+                    "duration": 0.03, 
+                    "version": "1.4.3", 
+                    "results": null, 
+                    "virus_database_version": "27965"
+                }, 
+                "Bitdefender Antivirus (Linux)": {
+                    "status": 0, 
+                    "duration": 7.77, 
+                    "version": "7.90123", 
+                    "results": null, 
+                    "virus_database_version": null
+                }, 
+                "Kaspersky Standard (Windows)": {
+                    "status": 1, 
+                    "duration": 3.25, 
+                    "version": "21.21", 
+                    "results": "HEUR:Backdoor.Linux.Mirai.r", 
+                    "virus_database_version": "2026-04-25 22:48:00 (full)"
+                }, 
+                "Emsisoft Commandline Scanner (Windows)": {
+                    "status": 1, 
+                    "duration": 0.19, 
+                    "version": "2025.1.0.12641", 
+                    "results": "Gen:Variant.Trojan.Linux.Gafgyt.8 (B)", 
+                    "virus_database_version": "unavailable"
+                }
+            }
+        }, 
+        "path": "", 
+        "result_id": "42499cd6-dc06-4593-b0a4-acca76dd6ba7", 
+        "name": "tmpVLEArh"
+    }, 
+    "suricata": {
+        "tls": [], 
+        "files": [], 
+        "alerts": [], 
+        "http": []
+    }, 
+    "virustotal": {
+        "permalink": "https://www.virustotal.com/gui/file/1d032ee58df836c1a769ec51c86a57904c1e68a86e7ee479c92c3826998353c6/detection/f-1d032ee58df836c1a769ec51c86a57904c1e68a86e7ee479c92c3826998353c6-1777183529", 
+        "sha1": "4ea0843790f8e79cae3d9ab960364077f54c4dfe", 
+        "resource": "4312b5b863148d3cd58223c9a0a6bbb7", 
+        "response_code": 1, 
+        "scan_date": "2026-04-26 06:05:29", 
+        "scan_id": "1d032ee58df836c1a769ec51c86a57904c1e68a86e7ee479c92c3826998353c6-1777183529", 
+        "summary": {
+            "positives": 36, 
+            "permalink": "https://www.virustotal.com/gui/file/1d032ee58df836c1a769ec51c86a57904c1e68a86e7ee479c92c3826998353c6/detection/f-1d032ee58df836c1a769ec51c86a57904c1e68a86e7ee479c92c3826998353c6-1777183529", 
+            "scan_date": "2026-04-26 06:05:29"
+        }, 
+        "sha256": "1d032ee58df836c1a769ec51c86a57904c1e68a86e7ee479c92c3826998353c6", 
+        "normalized": [
+            "Linux", 
+            "Mirai", 
+            "Artemis", 
+            "Gafgyt", 
+            "Vei2", 
+            "A trojan", 
+            "R002C0DDM26", 
+            "Cryp", 
+            "Malicious", 
+            "score", 
+            "CLOUD", 
+            "Static AI", 
+            "Malicious ELF", 
+            "Detected", 
+            "Eldorado", 
+            "Gen15", 
+            "Condi", 
+            "botnet"
+        ], 
+        "total": 63, 
+        "positives": 36, 
+        "verbose_msg": "Scan finished, information embedded", 
+        "md5": "4312b5b863148d3cd58223c9a0a6bbb7", 
+        "scans": {
+            "Bkav": {
+                "detected": false, 
+                "version": "2.0.0.1", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260425"
+            }, 
+            "Lionic": {
+                "detected": true, 
+                "version": "8.16", 
+                "result": "Trojan.Linux.Mirai.K!c", 
+                "normalized": [
+                    "Linux", 
+                    "Mirai"
+                ], 
+                "update": "20260426"
+            }, 
+            "ClamAV": {
+                "detected": false, 
+                "version": "1.5.2.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260425"
+            }, 
+            "CTX": {
+                "detected": true, 
+                "version": "2024.8.29.1", 
+                "result": "elf.trojan.mirai", 
+                "normalized": [
+                    "mirai"
+                ], 
+                "update": "20260426"
+            }, 
+            "CAT-QuickHeal": {
+                "detected": true, 
+                "version": "22.00", 
+                "result": "Elf.Backdoor.A24867307", 
+                "normalized": [], 
+                "update": "20260425"
+            }, 
+            "Skyhigh": {
+                "detected": true, 
+                "version": "v2021.2.0+4045", 
+                "result": "Artemis!Trojan", 
+                "normalized": [
+                    "Artemis"
+                ], 
+                "update": "20260425"
+            }, 
+            "ALYac": {
+                "detected": true, 
+                "version": "2.0.0.10", 
+                "result": "Gen:Variant.Trojan.Linux.Gafgyt.8", 
+                "normalized": [
+                    "Linux", 
+                    "Gafgyt"
+                ], 
+                "update": "20260425"
+            }, 
+            "Malwarebytes": {
+                "detected": false, 
+                "version": "3.1.0.231", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260425"
+            }, 
+            "VIPRE": {
+                "detected": true, 
+                "version": "6.0.0.35", 
+                "result": "Gen:Variant.Trojan.Linux.Gafgyt.8", 
+                "normalized": [
+                    "Linux", 
+                    "Gafgyt"
+                ], 
+                "update": "20260425"
+            }, 
+            "Sangfor": {
+                "detected": true, 
+                "version": "2.22.3.0", 
+                "result": "Backdoor.Linux.Mirai.Vei2", 
+                "normalized": [
+                    "Linux", 
+                    "Mirai", 
+                    "Vei2"
+                ], 
+                "update": "20260424"
+            }, 
+            "CrowdStrike": {
+                "detected": false, 
+                "version": "1.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20251219"
+            }, 
+            "K7GW": {
+                "detected": false, 
+                "version": "14.48.59313", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260426"
+            }, 
+            "K7AntiVirus": {
+                "detected": false, 
+                "version": "14.48.59313", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260426"
+            }, 
+            "Arcabit": {
+                "detected": true, 
+                "version": "2025.0.0.23", 
+                "result": "Trojan.Trojan.Linux.Gafgyt.8", 
+                "normalized": [
+                    "Linux", 
+                    "Gafgyt"
+                ], 
+                "update": "20260426"
+            }, 
+            "VirIT": {
+                "detected": false, 
+                "version": "9.5.1194", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260424"
+            }, 
+            "Symantec": {
+                "detected": true, 
+                "version": "1.22.0.0", 
+                "result": "Linux.Mirai", 
+                "normalized": [
+                    "Linux", 
+                    "Mirai"
+                ], 
+                "update": "20260424"
+            }, 
+            "ESET-NOD32": {
+                "detected": true, 
+                "version": "18.2.18.0", 
+                "result": "Linux/Mirai.A trojan", 
+                "normalized": [
+                    "Linux", 
+                    "Mirai", 
+                    "A trojan"
+                ], 
+                "update": "20260425"
+            }, 
+            "TrendMicro-HouseCall": {
+                "detected": true, 
+                "version": "24.550.0.1002", 
+                "result": "TROJ_GEN.R002C0DDM26", 
+                "normalized": [
+                    "R002C0DDM26"
+                ], 
+                "update": "20260426"
+            }, 
+            "Avast": {
+                "detected": true, 
+                "version": "23.9.8494.0", 
+                "result": "ELF:Mirai-CBI [Cryp]", 
+                "normalized": [
+                    "Mirai", 
+                    "Cryp"
+                ], 
+                "update": "20260322"
+            }, 
+            "Cynet": {
+                "detected": true, 
+                "version": "4.0.3.4", 
+                "result": "Malicious (score: 99)", 
+                "normalized": [
+                    "Malicious", 
+                    "score"
+                ], 
+                "update": "20260426"
+            }, 
+            "Kaspersky": {
+                "detected": true, 
+                "version": "22.0.1.28", 
+                "result": "HEUR:Backdoor.Linux.Mirai.r", 
+                "normalized": [
+                    "Linux", 
+                    "Mirai"
+                ], 
+                "update": "20260426"
+            }, 
+            "BitDefender": {
+                "detected": true, 
+                "version": "7.2", 
+                "result": "Gen:Variant.Trojan.Linux.Gafgyt.8", 
+                "normalized": [
+                    "Linux", 
+                    "Gafgyt"
+                ], 
+                "update": "20260426"
+            }, 
+            "NANO-Antivirus": {
+                "detected": false, 
+                "version": "1.0.170.26895", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260426"
+            }, 
+            "SUPERAntiSpyware": {
+                "detected": false, 
+                "version": "5.6.0.1032", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260425"
+            }, 
+            "MicroWorld-eScan": {
+                "detected": true, 
+                "version": "14.0.409.0", 
+                "result": "Gen:Variant.Trojan.Linux.Gafgyt.8", 
+                "normalized": [
+                    "Linux", 
+                    "Gafgyt"
+                ], 
+                "update": "20260426"
+            }, 
+            "Rising": {
+                "detected": true, 
+                "version": "25.0.0.28", 
+                "result": "Backdoor.Gafgyt/Linux!1.12AC3 (CLOUD)", 
+                "normalized": [
+                    "Gafgyt", 
+                    "Linux", 
+                    "CLOUD"
+                ], 
+                "update": "20260426"
+            }, 
+            "Emsisoft": {
+                "detected": true, 
+                "version": "2024.8.0.61147", 
+                "result": "Gen:Variant.Trojan.Linux.Gafgyt.8 (B)", 
+                "normalized": [
+                    "Linux", 
+                    "Gafgyt"
+                ], 
+                "update": "20260426"
+            }, 
+            "F-Secure": {
+                "detected": false, 
+                "version": "18.10.1547.307", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260426"
+            }, 
+            "DrWeb": {
+                "detected": true, 
+                "version": "7.0.75.2070", 
+                "result": "Linux.Mirai.9816", 
+                "normalized": [
+                    "Linux", 
+                    "Mirai"
+                ], 
+                "update": "20260426"
+            }, 
+            "Zillya": {
+                "detected": false, 
+                "version": "2.0.0.5588", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260424"
+            }, 
+            "TrendMicro": {
+                "detected": true, 
+                "version": "24.550.0.1002", 
+                "result": "TROJ_GEN.R002C0DDM26", 
+                "normalized": [
+                    "R002C0DDM26"
+                ], 
+                "update": "20260426"
+            }, 
+            "McAfeeD": {
+                "detected": false, 
+                "version": "1.2.0.14532", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260426"
+            }, 
+            "CMC": {
+                "detected": false, 
+                "version": "2.4.2022.1", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260426"
+            }, 
+            "Sophos": {
+                "detected": true, 
+                "version": "3.4.1.0", 
+                "result": "Linux/DDoS-CI", 
+                "normalized": [
+                    "Linux"
+                ], 
+                "update": "20260425"
+            }, 
+            "SentinelOne": {
+                "detected": true, 
+                "version": "7.6.2.19", 
+                "result": "Static AI - Malicious ELF", 
+                "normalized": [
+                    "Static AI", 
+                    "Malicious ELF"
+                ], 
+                "update": "20260324"
+            }, 
+            "Avast-Mobile": {
+                "detected": false, 
+                "version": "260425-02", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260425"
+            }, 
+            "Jiangmin": {
+                "detected": false, 
+                "version": "16.0.100", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260426"
+            }, 
+            "Google": {
+                "detected": true, 
+                "version": "1777179671", 
+                "result": "Detected", 
+                "normalized": [
+                    "Detected"
+                ], 
+                "update": "20260426"
+            }, 
+            "Avira": {
+                "detected": false, 
+                "version": "8.3.3.24", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260426"
+            }, 
+            "Antiy-AVL": {
+                "detected": true, 
+                "version": "3.0", 
+                "result": "Trojan/Linux.Mirai.a", 
+                "normalized": [
+                    "Linux", 
+                    "Mirai"
+                ], 
+                "update": "20260426"
+            }, 
+            "Kingsoft": {
+                "detected": true, 
+                "version": "None", 
+                "result": "Linux.Backdoor.Mirai.r", 
+                "normalized": [
+                    "Linux", 
+                    "Mirai"
+                ], 
+                "update": "20260425"
+            }, 
+            "Gridinsoft": {
+                "detected": false, 
+                "version": "1.0.244.174", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260426"
+            }, 
+            "Xcitium": {
+                "detected": false, 
+                "version": "38596", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260425"
+            }, 
+            "Microsoft": {
+                "detected": true, 
+                "version": "1.1.26030.3008", 
+                "result": "Backdoor:Linux/Mirai.BJ!MTB", 
+                "normalized": [
+                    "Linux", 
+                    "Mirai"
+                ], 
+                "update": "20260426"
+            }, 
+            "ViRobot": {
+                "detected": false, 
+                "version": "2014.3.20.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260425"
+            }, 
+            "ZoneAlarm": {
+                "detected": true, 
+                "version": "6.24-114820515", 
+                "result": "Linux/DDoS-CI", 
+                "normalized": [
+                    "Linux"
+                ], 
+                "update": "20260425"
+            }, 
+            "GData": {
+                "detected": true, 
+                "version": "GD:27.44324AVA:64.31117", 
+                "result": "Gen:Variant.Trojan.Linux.Gafgyt.8", 
+                "normalized": [
+                    "Linux", 
+                    "Gafgyt"
+                ], 
+                "update": "20260426"
+            }, 
+            "Varist": {
+                "detected": true, 
+                "version": "6.6.1.3", 
+                "result": "E64/Mirai.HV.gen!Eldorado", 
+                "normalized": [
+                    "Mirai", 
+                    "Eldorado"
+                ], 
+                "update": "20260426"
+            }, 
+            "AhnLab-V3": {
+                "detected": true, 
+                "version": "3.30.0.10666", 
+                "result": "Linux/Mirai.Gen15", 
+                "normalized": [
+                    "Linux", 
+                    "Mirai", 
+                    "Gen15"
+                ], 
+                "update": "20260426"
+            }, 
+            "Acronis": {
+                "detected": false, 
+                "version": "1.2.0.121", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20240328"
+            }, 
+            "VBA32": {
+                "detected": false, 
+                "version": "5.6.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260425"
+            }, 
+            "TACHYON": {
+                "detected": false, 
+                "version": "2026-04-23.02", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260423"
+            }, 
+            "Ikarus": {
+                "detected": true, 
+                "version": "6.4.16.0", 
+                "result": "Trojan.Linux.Gafgyt", 
+                "normalized": [
+                    "Linux", 
+                    "Gafgyt"
+                ], 
+                "update": "20260425"
+            }, 
+            "Zoner": {
+                "detected": false, 
+                "version": "2.2.2.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260426"
+            }, 
+            "Tencent": {
+                "detected": true, 
+                "version": "1.0.0.1", 
+                "result": "Backdoor.Linux.Mirai.ahg", 
+                "normalized": [
+                    "Linux", 
+                    "Mirai"
+                ], 
+                "update": "20260426"
+            }, 
+            "Yandex": {
+                "detected": false, 
+                "version": "5.5.2.24", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260426"
+            }, 
+            "TrellixENS": {
+                "detected": false, 
+                "version": "6.0.6.653", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260425"
+            }, 
+            "huorong": {
+                "detected": true, 
+                "version": "dbb7acd:dbb7acd:a9d2355:a9d2355", 
+                "result": "Backdoor/Linux.Mirai.dh", 
+                "normalized": [
+                    "Linux", 
+                    "Mirai"
+                ], 
+                "update": "20260425"
+            }, 
+            "MaxSecure": {
+                "detected": false, 
+                "version": "1.0.0.1", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260424"
+            }, 
+            "Fortinet": {
+                "detected": true, 
+                "version": "7.0.30.0", 
+                "result": "ELF/Condi.CDB!tr.botnet", 
+                "normalized": [
+                    "Condi", 
+                    "botnet"
+                ], 
+                "update": "20260426"
+            }, 
+            "AVG": {
+                "detected": true, 
+                "version": "23.9.8494.0", 
+                "result": "ELF:Mirai-CBI [Cryp]", 
+                "normalized": [
+                    "Mirai", 
+                    "Cryp"
+                ], 
+                "update": "20260322"
+            }, 
+            "Panda": {
+                "detected": false, 
+                "version": "4.6.4.2", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260425"
+            }, 
+            "alibabacloud": {
+                "detected": true, 
+                "version": "2.2.0", 
+                "result": "DDOS:Linux/Mirai", 
+                "normalized": [
+                    "Linux", 
+                    "Mirai"
+                ], 
+                "update": "20250321"
+            }
+        }
+    }, 
+    "network": {
+        "udp": [], 
+        "dns_servers": [], 
+        "http": [], 
+        "smtp": [], 
+        "tcp": [], 
+        "geoinfo": {}, 
+        "mitm": [], 
+        "https_ex": [], 
+        "http_ex": [], 
+        "sorted_pcap_sha256": "b1766e5f4115323f3f6b4e15778a61e20710ddb1beab6b3b71e6f991433622c0", 
+        "icmp": [], 
+        "tls": [], 
+        "dead_hosts": [], 
+        "smtp_ex": [], 
+        "hosts": [], 
+        "pcap_sha256": "72d9dfd580e4fa742dc993dcd63037f4146517f9237185b334d7463fffb2343f", 
+        "dns": [], 
+        "domains": [], 
+        "irc": []
+    }, 
+    "resubmit": {
+        "resubmit_ids": []
+    }, 
+    "snort": {
+        "alerts": []
+    }, 
+    "behavior": {
+        "generic": [
+            {
+                "process_path": null, 
+                "process_name": "sh", 
+                "pid": 2088, 
+                "summary": {}, 
+                "first_seen": 1777221283.450934, 
+                "ppid": -1
+            }
+        ], 
+        "processes": [
+            {
+                "calls": [
+                    {
+                        "status": "ENOENT", 
+                        "process_name": "sh", 
+                        "pid": 2088, 
+                        "raw": "Sun Apr 26 16:34:43 2026.450934 sh@7f0fe60f7957[2088] execve(\"/tmp/riva\", [\"/tmp/riva\"], [\"SUDO_GID=0\", \"MAIL=/var/mail/root\", \"USER=root\", \"HOME=/root\", \"SUDO_UID=0\", \"LOGNAME=root\", \"SYSTEMTAP_MODULE=stap_\", \"TERM=unknown\", \"SYSTEMTAP_VERBOSE=2\", \"PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin\", \"DISPLAY=:0\", \"LANG=en_US.UTF-8\", \"XAUTHORITY=/root/.Xauthority\", \"SUDO_COMMAND=/usr/bin/staprun -vv -o stap.log /root/.cuckoo/stap_.ko -c sh -c /tmp/riva sample file.elf\", \"SHELL=/bin/bash\", \"SUDO_USER=root\", \"PWD=/tmp/tmpwek5cr\"]) = -2 (ENOENT)\n", 
+                        "api": "execve", 
+                        "return_value": "-2", 
+                        "category": "process", 
+                        "instruction_pointer": "7f0fe60f7957", 
+                        "arguments": {
+                            "p2": [
+                                "SUDO_GID=0", 
+                                "MAIL=/var/mail/root", 
+                                "USER=root", 
+                                "HOME=/root", 
+                                "SUDO_UID=0", 
+                                "LOGNAME=root", 
+                                "SYSTEMTAP_MODULE=stap_", 
+                                "TERM=unknown", 
+                                "SYSTEMTAP_VERBOSE=2", 
+                                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin", 
+                                "DISPLAY=:0", 
+                                "LANG=en_US.UTF-8", 
+                                "XAUTHORITY=/root/.Xauthority", 
+                                "SUDO_COMMAND=/usr/bin/staprun -vv -o stap.log /root/.cuckoo/stap_.ko -c sh -c /tmp/riva sample file.elf", 
+                                "SHELL=/bin/bash", 
+                                "SUDO_USER=root", 
+                                "PWD=/tmp/tmpwek5cr"
+                            ], 
+                            "p0": "/tmp/riva", 
+                            "p1": [
+                                "/tmp/riva"
+                            ]
+                        }, 
+                        "time": 1777221283.450934
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "sh", 
+                        "pid": 2088, 
+                        "raw": "Sun Apr 26 16:34:43 2026.451069 sh@7f0fe6123024[2088] write(2, \"sample: 1: sample: \", 19) = 19\n", 
+                        "api": "write", 
+                        "return_value": "19", 
+                        "category": "process", 
+                        "instruction_pointer": "7f0fe6123024", 
+                        "arguments": {
+                            "p2": "19", 
+                            "p0": "2", 
+                            "p1": "sample: 1: sample: "
+                        }, 
+                        "time": 1777221283.451069
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "sh", 
+                        "pid": 2088, 
+                        "raw": "Sun Apr 26 16:34:43 2026.451135 sh@7f0fe6123024[2088] write(2, \"/tmp/riva: not found\", 20) = 20\n", 
+                        "api": "write", 
+                        "return_value": "20", 
+                        "category": "process", 
+                        "instruction_pointer": "7f0fe6123024", 
+                        "arguments": {
+                            "p2": "20", 
+                            "p0": "2", 
+                            "p1": "/tmp/riva: not found"
+                        }, 
+                        "time": 1777221283.451135
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "sh", 
+                        "pid": 2088, 
+                        "raw": "Sun Apr 26 16:34:43 2026.451224 sh@7f0fe6123024[2088] write(2, \"\\n\", 1) = 1\n", 
+                        "api": "write", 
+                        "return_value": "1", 
+                        "category": "process", 
+                        "instruction_pointer": "7f0fe6123024", 
+                        "arguments": {
+                            "p2": "1", 
+                            "p0": "2", 
+                            "p1": "\n"
+                        }, 
+                        "time": 1777221283.451224
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "sh", 
+                        "pid": 2088, 
+                        "raw": "Sun Apr 26 16:34:43 2026.451299 sh@7f0fe60f7926[2088] exit_group(127)\n", 
+                        "api": "exit_group", 
+                        "return_value": "", 
+                        "category": "process", 
+                        "instruction_pointer": "7f0fe60f7926", 
+                        "arguments": {
+                            "p0": "127"
+                        }, 
+                        "time": 1777221283.451299
+                    }
+                ], 
+                "pid": 2088, 
+                "process_name": "sh", 
+                "command_line": "", 
+                "first_seen": 1777221283.450934, 
+                "ppid": -1, 
+                "type": "process"
+            }
+        ], 
+        "processtree": [
+            {
+                "track": true, 
+                "pid": 2088, 
+                "process_name": "sh", 
+                "command_line": "", 
+                "first_seen": 1777221283.450934, 
+                "ppid": -1, 
+                "children": []
+            }
+        ]
+    }, 
+    "debug": {
+        "action": [], 
+        "dbgview": [], 
+        "errors": [], 
+        "log": [
+            "2026-04-26 16:34:33,006 [root] DEBUG: Starting analyzer from: /tmp/tmpwek5cr\n", 
+            "2026-04-26 16:34:33,007 [root] DEBUG: Storing results at: /tmp/fvNvhyQ\n", 
+            "2026-04-26 16:34:35,044 [modules.auxiliary.filecollector] INFO: FileCollector started v0.08\n", 
+            "2026-04-26 16:34:35,047 [modules.auxiliary.human] INFO: Human started v0.02\n", 
+            "2026-04-26 16:34:35,550 [modules.auxiliary.screenshots] INFO: Screenshots started v0.03\n", 
+            "2026-04-26 16:34:43,449 [lib.core.packages] INFO: Process startup took 7.89 seconds\n", 
+            "2026-04-26 16:34:43,450 [root] INFO: Added new process to list with pid: 2076\n", 
+            "2026-04-26 16:34:52,463 [root] INFO: Process with pid 2076 has terminated\n", 
+            "2026-04-26 16:34:52,464 [root] INFO: Process list is empty, terminating analysis.\n", 
+            "2026-04-26 16:34:55,467 [lib.core.packages] INFO: Package requested stop\n", 
+            "2026-04-26 16:34:55,467 [lib.core.packages] WARNING: Exception uploading log: [Errno 3] No such process\n"
+        ], 
+        "cuckoo": [
+            "2026-04-26 16:34:33,611 [cuckoo.core.scheduler] INFO: Task #7526317: acquired machine Ubuntu1904x643 (label=Ubuntu1904x643)\n", 
+            "2026-04-26 16:34:33,612 [cuckoo.core.resultserver] DEBUG: Now tracking machine 192.168.168.103 for task #7526317\n", 
+            "2026-04-26 16:34:33,958 [cuckoo.auxiliary.sniffer] INFO: Started sniffer with PID 3600243 (interface=vboxnet0, host=192.168.168.103)\n", 
+            "2026-04-26 16:34:33,982 [cuckoo.machinery.virtualbox] DEBUG: Starting vm Ubuntu1904x643\n", 
+            "2026-04-26 16:34:34,625 [cuckoo.machinery.virtualbox] DEBUG: Restoring virtual machine Ubuntu1904x643 to Snapshot\n", 
+            "2026-04-26 16:34:41,255 [cuckoo.core.guest] INFO: Starting analysis #7526317 on guest (id=Ubuntu1904x643, ip=192.168.168.103)\n", 
+            "2026-04-26 16:34:42,262 [cuckoo.core.guest] DEBUG: Ubuntu1904x643: not ready yet\n", 
+            "2026-04-26 16:34:47,287 [cuckoo.core.guest] INFO: Guest is running Cuckoo Agent 0.10 (id=Ubuntu1904x643, ip=192.168.168.103)\n", 
+            "2026-04-26 16:34:47,337 [cuckoo.core.guest] DEBUG: Uploading analyzer to guest (id=Ubuntu1904x643, ip=192.168.168.103, monitor=latest, size=73219)\n", 
+            "2026-04-26 16:34:47,573 [cuckoo.core.resultserver] DEBUG: Task #7526317: live log analysis.log initialized.\n", 
+            "2026-04-26 16:34:52,404 [cuckoo.core.resultserver] DEBUG: Task #7526317: File upload for 'shots/0001.jpg'\n", 
+            "2026-04-26 16:34:52,411 [cuckoo.core.resultserver] DEBUG: Task #7526317 uploaded file length: 171572\n", 
+            "2026-04-26 16:35:02,548 [cuckoo.core.guest] DEBUG: Ubuntu1904x643: analysis #7526317 still processing\n", 
+            "2026-04-26 16:35:10,053 [cuckoo.core.resultserver] DEBUG: Task #7526317: File upload for 'logs/all.stap'\n", 
+            "2026-04-26 16:35:10,057 [cuckoo.core.resultserver] DEBUG: Task #7526317 uploaded file length: 912\n", 
+            "2026-04-26 16:35:17,637 [cuckoo.core.guest] DEBUG: Ubuntu1904x643: analysis #7526317 still processing\n", 
+            "2026-04-26 16:35:32,723 [cuckoo.core.guest] DEBUG: Ubuntu1904x643: analysis #7526317 still processing\n", 
+            "2026-04-26 16:35:47,797 [cuckoo.core.guest] INFO: Ubuntu1904x643: end of analysis reached!\n", 
+            "2026-04-26 16:35:47,827 [cuckoo.core.plugins] DEBUG: Stopped auxiliary module: Redsocks\n", 
+            "2026-04-26 16:35:47,852 [cuckoo.core.plugins] DEBUG: Stopped auxiliary module: Sniffer\n", 
+            "2026-04-26 16:35:48,753 [cuckoo.machinery.virtualbox] INFO: Successfully generated memory dump for virtual machine with label Ubuntu1904x643 to path /srv/cuckoo/cwd/storage/analyses/7526317/memory.dmp\n", 
+            "2026-04-26 16:35:48,755 [cuckoo.machinery.virtualbox] DEBUG: Stopping vm Ubuntu1904x643\n", 
+            "2026-04-26 16:35:56,280 [cuckoo.core.resultserver] DEBUG: Stopped tracking machine 192.168.168.103 for task #7526317\n", 
+            "2026-04-26 16:35:56,280 [cuckoo.core.resultserver] DEBUG: Cancel <Context for LOG> for task 7526317\n", 
+            "2026-04-26 16:35:56,562 [cuckoo.core.scheduler] DEBUG: Released database task #7526317\n", 
+            "2026-04-26 16:35:56,580 [cuckoo.core.scheduler] INFO: Task #7526317: analysis procedure completed\n"
+        ]
+    }, 
+    "misp": [
+        {
+            "info": "Cuckoo Sandbox analysis #7526314", 
+            "level": 4, 
+            "event_id": 5687776, 
+            "iocs": [
+                "4312b5b863148d3cd58223c9a0a6bbb7", 
+                "4ea0843790f8e79cae3d9ab960364077f54c4dfe", 
+                "1d032ee58df836c1a769ec51c86a57904c1e68a86e7ee479c92c3826998353c6"
+            ], 
+            "url": "https://misp.cert.ee/events/view/5687776", 
+            "date": "2026-04-26"
+        }, 
+        {
+            "info": "MalwareBazaar malware samples for 2026-04-21", 
+            "level": 2, 
+            "event_id": 5681049, 
+            "iocs": [
+                "4312b5b863148d3cd58223c9a0a6bbb7", 
+                "4ea0843790f8e79cae3d9ab960364077f54c4dfe", 
+                "1d032ee58df836c1a769ec51c86a57904c1e68a86e7ee479c92c3826998353c6"
+            ], 
+            "url": "https://misp.cert.ee/events/view/5681049", 
+            "date": "2026-04-21"
+        }
+    ], 
+    "strings": [
+        "4(F=s|\"", 
+        "61)y9=", 
+        ".P*\\ELW7\u001fa", 
+        ",I9[v_p/", 
+        "%=mu\\S", 
+        "!ij*KV", 
+        "+>-[ox", 
+        "\\^:V1a", 
+        "QJ<\u001fW.", 
+        ".AQx<E", 
+        "{Y~bsC2", 
+        "\\{~gQA", 
+        "Z{A}4`", 
+        "\\j[Cs~", 
+        "Sf3v=6", 
+        "QTfhZkn", 
+        "FplN>[9", 
+        "RPxUX\"", 
+        "zFID6<U", 
+        "*r5'zMF", 
+        "M}7u\\u", 
+        "nV!H\"7", 
+        "e;R 1vh", 
+        "t~Ijh[", 
+        "3>:|AtV", 
+        "rl[9_S", 
+        "j,Eb~,", 
+        "HMbBx=3", 
+        "7b=(RU", 
+        "5}lRoP", 
+        "NyV}m8C", 
+        "Y+R/T2", 
+        "uwmu*!", 
+        "(2F\u001fC,", 
+        "T~+T&.", 
+        "sIp8hl", 
+        "t\u001f2e^#c", 
+        "x8GHu%S", 
+        "tGb<S[", 
+        "D!*w%(", 
+        "N a!\u001fPz\"k`k", 
+        "V;W~@|`", 
+        "Hvw n1", 
+        "VkpW{d", 
+        "03B{4Qy", 
+        "n]qHy,J64e", 
+        "X#9b@b", 
+        "*yTUa; ", 
+        ",X[h$ _", 
+        "42d7Zv", 
+        "[.zl:xk", 
+        "[]A\\A]A^A_H", 
+        "PROT_EXEC|PROT_WRITE failed.", 
+        "$Info: This file is packed with the UPX executable packer http://upx.sf.net $", 
+        "$Id: UPX 3.94 Copyright (C) 1996-2017 the UPX Team. All Rights Reserved. $", 
+        "j2AZE)", 
+        "\"i%E\u001fH", 
+        "xnH0Na"
+    ], 
+    "intelmq": [
+        {
+            "classification_taxonomy": "malicious-code", 
+            "classification_type": "infected-system", 
+            "feed_provider": "CERT-EE", 
+            "time_source": "2026-04-26T13:28:20.136200+00:00", 
+            "feed_name": "Sandbox", 
+            "ioc": "4312b5b863148d3cd58223c9a0a6bbb7", 
+            "id": "cOz6yZ0Boml50tcGCWHK", 
+            "index": "imq-2026-04", 
+            "url": "https://kips.cert.ee/app/discover#/doc/imq/imq-2026-04/?id=cOz6yZ0Boml50tcGCWHK", 
+            "time_observation": "2026-04-26T13:28:20+00:00", 
+            "feed_accuracy": 50
+        }, 
+        {
+            "classification_taxonomy": "malicious-code", 
+            "classification_type": "infected-system", 
+            "feed_provider": "CERT-EE", 
+            "time_source": "2026-04-26T13:28:20.136423+00:00", 
+            "feed_name": "Sandbox", 
+            "ioc": "4312b5b863148d3cd58223c9a0a6bbb7", 
+            "id": "cez6yZ0Boml50tcGCWHR", 
+            "index": "imq-2026-04", 
+            "url": "https://kips.cert.ee/app/discover#/doc/imq/imq-2026-04/?id=cez6yZ0Boml50tcGCWHR", 
+            "time_observation": "2026-04-26T13:28:20+00:00", 
+            "feed_accuracy": 50
+        }, 
+        {
+            "classification_taxonomy": "malicious-code", 
+            "classification_type": "infected-system", 
+            "feed_provider": "CERT-EE", 
+            "time_source": "2026-04-26T13:23:46.476898+00:00", 
+            "feed_name": "Sandbox", 
+            "ioc": "4312b5b863148d3cd58223c9a0a6bbb7", 
+            "id": "7uz1yZ0Boml50tcG3EXR", 
+            "index": "imq-2026-04", 
+            "url": "https://kips.cert.ee/app/discover#/doc/imq/imq-2026-04/?id=7uz1yZ0Boml50tcG3EXR", 
+            "time_observation": "2026-04-26T13:23:46+00:00", 
+            "feed_accuracy": 50
+        }
+    ], 
+    "metadata": {
+        "output": {
+            "pcap": {
+                "basename": "dump.pcap", 
+                "sha256": "72d9dfd580e4fa742dc993dcd63037f4146517f9237185b334d7463fffb2343f", 
+                "dirname": ""
+            }
+        }
+    }
+}
