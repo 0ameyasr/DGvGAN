@@ -5,10 +5,9 @@ from pipeline.predictor import (
     predict_sgan,
     predict_dgcnn,
     predict_cnn,
-    predict_hybrid
+    predict_hybrid,
 )
 from models.ensemble import ensemble
-
 
 print("✅ run_pipeline.py is being executed")
 
@@ -22,7 +21,8 @@ def safe_predict(func, features, name):
 
 
 def run():
-    REPORTS_DIR = r"C:\DGvGAN\sandbox\reports\processed"
+    # REPORTS_DIR = r"C:\DGvGAN\sandbox\reports\processed"
+    REPORTS_DIR = "sandbox/reports/processed"
 
     print("\n📂 REPORTS_DIR:", REPORTS_DIR)
     print("📂 EXISTS?:", os.path.exists(REPORTS_DIR))
@@ -52,8 +52,9 @@ def run():
             # 🔥 Run ALL models safely
             p1 = safe_predict(predict_sgan, features, "SGAN")
             p2 = safe_predict(predict_dgcnn, features, "DGCNN")
-            p3 = safe_predict(predict_cnn, features, "CNN")   # ← your working one
+            p3 = safe_predict(predict_cnn, features, "CNN")
             p4 = safe_predict(predict_hybrid, features, "HYBRID")
+
 
             # keep only working ones
             preds = [p for p in [p1, p2, p3, p4] if p is not None]
