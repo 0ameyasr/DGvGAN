@@ -5,6 +5,7 @@ from pipeline.predictor import (
     predict_dgcnn,
     predict_cnn,
     predict_hybrid,
+    predict_gat
 )
 from models.ensemble import ensemble
 import extractor
@@ -46,9 +47,9 @@ def run():
             tp2, p2 = safe_predict(predict_dgcnn, features, "DGCNN")
             tp3, p3 = safe_predict(predict_cnn, features, "CNN")
             tp4, p4 = safe_predict(predict_hybrid, features, "HYBRID")
+            tp5, p5 = safe_predict(predict_gat, features, "GAT")
 
-
-            preds = [p for p in [p1, p2, p3, p4] if p is not None]
+            preds = [p for p in [p1, p2, p3, p4, p5] if p is not None]
 
             if not preds:
                 print("All models failed for:", file)
@@ -67,12 +68,14 @@ def run():
             results['sgan'] = round(p1,3)
             results['dgcnn'] = round(p2,3)
             results['hybrid'] = round(p4,3)
+            results['gat'] = round(p5,3)
             results['final'] = round(final,3)
             results['malware'] = label
-            results['t_cnn'] = round(tp3,6)
-            results['t_sgan'] = round(tp1,6)
-            results['t_dgcnn'] = round(tp2,6)
-            results['t_hybrid'] = round(tp4,6)
+            results['t_cnn'] = round(tp3,9)
+            results['t_sgan'] = round(tp1,9)
+            results['t_dgcnn'] = round(tp2,9)
+            results['t_hybrid'] = round(tp4,9)
+            results['t_gat'] = round(tp5,9)
             results_list.append(results)
             
         except Exception as e:

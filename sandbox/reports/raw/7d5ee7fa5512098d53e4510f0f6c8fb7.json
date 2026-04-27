@@ -1,0 +1,5497 @@
+{
+    "info": {
+        "added": 1777244187.201622, 
+        "started": 1777244187.972245, 
+        "duration": 36, 
+        "ended": 1777244224.102975, 
+        "owner": null, 
+        "score": 10, 
+        "id": 7526673, 
+        "category": "file", 
+        "git": {
+            "head": "", 
+            "fetch_head": ""
+        }, 
+        "monitor": null, 
+        "package": "exe", 
+        "route": "internet", 
+        "custom": null, 
+        "machine": {
+            "status": "stopped", 
+            "name": "win7x6429", 
+            "label": "win7x6429", 
+            "platform": "windows", 
+            "manager": "VirtualBox", 
+            "started_on": "2026-04-26 22:56:28", 
+            "shutdown_on": "2026-04-26 22:57:03"
+        }, 
+        "platform": "windows", 
+        "version": "2.0.7", 
+        "options": "procmemdump=yes,route=internet"
+    }, 
+    "signatures": [
+        {
+            "families": [], 
+            "description": "Yara rules detected for file", 
+            "severity": 1, 
+            "ttp": {}, 
+            "markcount": 6, 
+            "references": [], 
+            "marks": [
+                {
+                    "type": "generic", 
+                    "description": "SpyEye X.Y memory", 
+                    "rule": "spyeye"
+                }, 
+                {
+                    "type": "generic", 
+                    "description": "(no description)", 
+                    "rule": "UPX"
+                }, 
+                {
+                    "type": "generic", 
+                    "description": "The packer/protector section names/keywords", 
+                    "rule": "suspicious_packer_section"
+                }, 
+                {
+                    "type": "generic", 
+                    "description": "Checks if being debugged", 
+                    "rule": "anti_dbg"
+                }, 
+                {
+                    "type": "generic", 
+                    "description": "Create or check mutex", 
+                    "rule": "win_mutex"
+                }, 
+                {
+                    "type": "generic", 
+                    "description": "Affect private profile", 
+                    "rule": "win_files_operation"
+                }
+            ], 
+            "name": "file_yara"
+        }, 
+        {
+            "families": [], 
+            "description": "The binary likely contains encrypted or compressed data indicative of a packer", 
+            "severity": 2, 
+            "ttp": {
+                "T1045": {
+                    "short": "Software Packing", 
+                    "long": "Software packing is a method of compressing or encrypting an executable. Packing an executable changes the file signature in an attempt to avoid signature-based detection. Most decompression techniques decompress the executable code in memory."
+                }
+            }, 
+            "markcount": 2, 
+            "references": [
+                "http://www.forensickb.com/2013/03/file-entropy-explained.html", 
+                "http://virii.es/U/Using%20Entropy%20Analysis%20to%20Find%20Encrypted%20and%20Packed%20Malware.pdf"
+            ], 
+            "marks": [
+                {
+                    "entropy": 7.999528444183095, 
+                    "section": {
+                        "size_of_data": "0x0009dc00", 
+                        "virtual_address": "0x000e2000", 
+                        "entropy": 7.999528444183095, 
+                        "name": "UPX1", 
+                        "virtual_size": "0x0009e000"
+                    }, 
+                    "type": "generic", 
+                    "description": "A section with a high entropy has been found"
+                }, 
+                {
+                    "entropy": 0.984399375975039, 
+                    "type": "generic", 
+                    "description": "Overall entropy of this PE file is high"
+                }
+            ], 
+            "name": "packer_entropy"
+        }, 
+        {
+            "families": [], 
+            "description": "The executable is compressed using UPX", 
+            "severity": 2, 
+            "ttp": {
+                "T1045": {
+                    "short": "Software Packing", 
+                    "long": "Software packing is a method of compressing or encrypting an executable. Packing an executable changes the file signature in an attempt to avoid signature-based detection. Most decompression techniques decompress the executable code in memory."
+                }
+            }, 
+            "markcount": 3, 
+            "references": [], 
+            "marks": [
+                {
+                    "section": "UPX0", 
+                    "type": "generic", 
+                    "description": "Section name indicates UPX"
+                }, 
+                {
+                    "section": "UPX1", 
+                    "type": "generic", 
+                    "description": "Section name indicates UPX"
+                }, 
+                {
+                    "section": "UPX2", 
+                    "type": "generic", 
+                    "description": "Section name indicates UPX"
+                }
+            ], 
+            "name": "packer_upx"
+        }, 
+        {
+            "families": [], 
+            "description": "File has been identified by 9 AntiVirus engine on IRMA as malicious", 
+            "severity": 60, 
+            "ttp": {}, 
+            "markcount": 9, 
+            "references": [], 
+            "marks": [
+                {
+                    "category": "G Data Antivirus (Windows)", 
+                    "ioc": "Virus: Gen:Variant.Tedy.893733 (Engine A)", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Avast Core Security (Linux)", 
+                    "ioc": "Win64:Malware-gen", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "C4S ClamAV (Linux)", 
+                    "ioc": "YARA.UPX.UNOFFICIAL", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "eScan Antivirus (Linux)", 
+                    "ioc": "Gen:Variant.Tedy.893733(DB)", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "ESET Security (Windows)", 
+                    "ioc": "a variant of Win64/PSW.Agent.WY trojan", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Sophos Anti-Virus (Linux)", 
+                    "ioc": "Mal/Generic-S", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "DrWeb Antivirus (Linux)", 
+                    "ioc": "Trojan.PWS.Stealer.44965", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Bitdefender Antivirus (Linux)", 
+                    "ioc": "Gen:Variant.Tedy.893733", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Emsisoft Commandline Scanner (Windows)", 
+                    "ioc": "Gen:Variant.Tedy.893733 (B)", 
+                    "type": "ioc", 
+                    "description": null
+                }
+            ], 
+            "name": "antivirus_irma"
+        }, 
+        {
+            "families": [], 
+            "description": "File has been identified by 33 AntiVirus engines on VirusTotal as malicious", 
+            "severity": 60, 
+            "ttp": {}, 
+            "markcount": 33, 
+            "references": [], 
+            "marks": [
+                {
+                    "category": "Lionic", 
+                    "ioc": "Trojan.Win32.Stealer.12!c", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "CTX", 
+                    "ioc": "dll.trojan.stealer", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "ALYac", 
+                    "ioc": "Gen:Variant.Tedy.893733", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Cylance", 
+                    "ioc": "Unsafe", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Sangfor", 
+                    "ioc": "Infostealer.Win64.Agent.V1ix", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Alibaba", 
+                    "ioc": "TrojanPSW:Win64/Genric.32d6577d", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "K7GW", 
+                    "ioc": "Password-Stealer ( 005e97551 )", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "K7AntiVirus", 
+                    "ioc": "Password-Stealer ( 005e97551 )", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Arcabit", 
+                    "ioc": "Trojan.Tedy.DDA325", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "ESET-NOD32", 
+                    "ioc": "Win64/PSW.Agent.WY trojan", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Paloalto", 
+                    "ioc": "generic.ml", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Cynet", 
+                    "ioc": "Malicious (score: 100)", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "BitDefender", 
+                    "ioc": "Gen:Variant.Tedy.893733", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "MicroWorld-eScan", 
+                    "ioc": "Gen:Variant.Tedy.893733", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Rising", 
+                    "ioc": "Spyware.Stealer!8.3090 (LESS:bWQ1On1e5/pVEgmNU+RRDw9sj7c)", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Emsisoft", 
+                    "ioc": "Gen:Variant.Tedy.893733 (B)", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "DrWeb", 
+                    "ioc": "Trojan.PWS.Stealer.44965", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "VIPRE", 
+                    "ioc": "Gen:Variant.Tedy.893733", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "McAfeeD", 
+                    "ioc": "ti!798053876C61", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Sophos", 
+                    "ioc": "Mal/Generic-S", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Google", 
+                    "ioc": "Detected", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Antiy-AVL", 
+                    "ioc": "Trojan/Win32.Agent", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Microsoft", 
+                    "ioc": "Trojan:Win32/Wacatac.B!ml", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "GData", 
+                    "ioc": "Gen:Variant.Tedy.893733", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Varist", 
+                    "ioc": "W64/ABApplication.WBBR-8865", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "DeepInstinct", 
+                    "ioc": "MALICIOUS", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Malwarebytes", 
+                    "ioc": "Malware.AI.3960984880", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Ikarus", 
+                    "ioc": "Trojan-PSW.Agent", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "TrendMicro-HouseCall", 
+                    "ioc": "TROJ_GEN.R002H09CB26", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Tencent", 
+                    "ioc": "Win32.Trojan.Gencirc.Rqil", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "huorong", 
+                    "ioc": "HVM:TrojanSpy/W64.Stealer.ae", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Fortinet", 
+                    "ioc": "W64/Agent.WY!tr.pws", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "alibabacloud", 
+                    "ioc": "RiskWare:Win/Tedy.Gen", 
+                    "type": "ioc", 
+                    "description": null
+                }
+            ], 
+            "name": "antivirus_virustotal"
+        }
+    ], 
+    "target": {
+        "category": "file", 
+        "file": {
+            "mimetype": "application/x-dosexec", 
+            "yara": [
+                {
+                    "meta": {
+                        "version": "1.0", 
+                        "description": "SpyEye X.Y memory", 
+                        "author": "Jean-Philippe Teissier / @Jipe_", 
+                        "date": "2012-05-23", 
+                        "filetype": "memory"
+                    }, 
+                    "name": "spyeye", 
+                    "offsets": {
+                        "f": [
+                            [
+                                833478, 
+                                0
+                            ]
+                        ]
+                    }, 
+                    "strings": [
+                        "ZGF0YV9lbmQ="
+                    ]
+                }, 
+                {
+                    "meta": {
+                        "description": "(no description)", 
+                        "author": " Kevin Breen <kevin@techanarchy.net>"
+                    }, 
+                    "name": "UPX", 
+                    "offsets": {
+                        "a": [
+                            [
+                                392, 
+                                1
+                            ]
+                        ], 
+                        "c": [
+                            [
+                                517, 
+                                0
+                            ]
+                        ], 
+                        "b": [
+                            [
+                                432, 
+                                2
+                            ]
+                        ]
+                    }, 
+                    "strings": [
+                        "VVBYIQ==", 
+                        "VVBYMA==", 
+                        "VVBYMQ=="
+                    ]
+                }, 
+                {
+                    "meta": {
+                        "description": "The packer/protector section names/keywords", 
+                        "reference": "http://www.hexacorn.com/blog/2012/10/14/random-stats-from-1-2m-samples-pe-section-names/", 
+                        "author": "@j0sm1", 
+                        "date": "2016/10/21", 
+                        "filetype": "binary"
+                    }, 
+                    "name": "suspicious_packer_section", 
+                    "offsets": {
+                        "s63": [
+                            [
+                                517, 
+                                0
+                            ]
+                        ], 
+                        "s49": [
+                            [
+                                392, 
+                                1
+                            ]
+                        ], 
+                        "s51": [
+                            [
+                                472, 
+                                3
+                            ]
+                        ], 
+                        "s50": [
+                            [
+                                432, 
+                                2
+                            ]
+                        ]
+                    }, 
+                    "strings": [
+                        "VVBYIQ==", 
+                        "VVBYMA==", 
+                        "VVBYMQ==", 
+                        "VVBYMg=="
+                    ]
+                }, 
+                {
+                    "meta": {
+                        "version": "0.2", 
+                        "description": "Checks if being debugged", 
+                        "author": "x0r"
+                    }, 
+                    "name": "anti_dbg", 
+                    "offsets": {
+                        "c3": [
+                            [
+                                830722, 
+                                1
+                            ], 
+                            [
+                                832053, 
+                                1
+                            ], 
+                            [
+                                833439, 
+                                1
+                            ], 
+                            [
+                                836778, 
+                                1
+                            ]
+                        ], 
+                        "d1": [
+                            [
+                                647479, 
+                                0
+                            ]
+                        ]
+                    }, 
+                    "strings": [
+                        "S0VSTkVMMzIuRExM", 
+                        "T3V0cHV0RGVidWdTdHJpbmc="
+                    ]
+                }, 
+                {
+                    "meta": {
+                        "version": "0.1", 
+                        "description": "Create or check mutex", 
+                        "author": "x0r"
+                    }, 
+                    "name": "win_mutex", 
+                    "offsets": {
+                        "c1": [
+                            [
+                                834290, 
+                                0
+                            ], 
+                            [
+                                835880, 
+                                0
+                            ]
+                        ]
+                    }, 
+                    "strings": [
+                        "Q3JlYXRlTXV0ZXg="
+                    ]
+                }, 
+                {
+                    "meta": {
+                        "version": "0.1", 
+                        "description": "Affect private profile", 
+                        "author": "x0r"
+                    }, 
+                    "name": "win_files_operation", 
+                    "offsets": {
+                        "f1": [
+                            [
+                                647479, 
+                                3
+                            ]
+                        ], 
+                        "c9": [
+                            [
+                                831570, 
+                                2
+                            ], 
+                            [
+                                834139, 
+                                2
+                            ]
+                        ], 
+                        "c3": [
+                            [
+                                834619, 
+                                6
+                            ], 
+                            [
+                                835723, 
+                                6
+                            ]
+                        ], 
+                        "c2": [
+                            [
+                                830495, 
+                                4
+                            ], 
+                            [
+                                836859, 
+                                4
+                            ]
+                        ], 
+                        "c1": [
+                            [
+                                834619, 
+                                6
+                            ], 
+                            [
+                                835723, 
+                                6
+                            ]
+                        ], 
+                        "c6": [
+                            [
+                                837524, 
+                                0
+                            ], 
+                            [
+                                837542, 
+                                0
+                            ]
+                        ], 
+                        "c5": [
+                            [
+                                833495, 
+                                1
+                            ], 
+                            [
+                                836760, 
+                                1
+                            ]
+                        ], 
+                        "c4": [
+                            [
+                                779152, 
+                                5
+                            ], 
+                            [
+                                832476, 
+                                5
+                            ]
+                        ]
+                    }, 
+                    "strings": [
+                        "Q3JlYXRlRmlsZUE=", 
+                        "RGVsZXRlRmlsZUE=", 
+                        "RmluZENsb3Nl", 
+                        "S0VSTkVMMzIuRExM", 
+                        "U2V0RmlsZVBvaW50ZXI=", 
+                        "UmVhZEZpbGU=", 
+                        "V3JpdGVGaWxl"
+                    ]
+                }
+            ], 
+            "sha1": "6875b2f40262c8fb3ff4eda701716361c381f852", 
+            "name": "798053876c6129c9e0d16548b0266cddf49dbd06e8a949afa3e8129431e0a9ee", 
+            "type": "PE32+ executable (DLL) (console) x86-64, for MS Windows", 
+            "sha256": "798053876c6129c9e0d16548b0266cddf49dbd06e8a949afa3e8129431e0a9ee", 
+            "urls": [], 
+            "crc32": "38B68FBE", 
+            "path": "/srv/cuckoo/cwd/storage/binaries/798053876c6129c9e0d16548b0266cddf49dbd06e8a949afa3e8129431e0a9ee", 
+            "ssdeep": null, 
+            "size": 837571, 
+            "sha512": "b9f2474682685e67aabc217f3f39e3e6fed993e6a70d86baa6b13c2ba192e769f04036b1eae5c339ea2fcdfd37f9544608b126b05b28dbc1c30f1b0bb06f5f19", 
+            "md5": "7d5ee7fa5512098d53e4510f0f6c8fb7"
+        }, 
+        "custom": null
+    }, 
+    "irma": {
+        "status": 1, 
+        "probes_finished": 13, 
+        "scan_id": "97249f8a-8ba7-40ae-ac3d-79a55ac1709f", 
+        "parent_file_sha256": null, 
+        "file_infos": {
+            "mimetype": "PE32+ executable (DLL) (console) x86-64, for MS Windows", 
+            "sha1": "6875b2f40262c8fb3ff4eda701716361c381f852", 
+            "tags": [], 
+            "timestamp_first_scan": 1777233438.09, 
+            "size": 837571, 
+            "timestamp_last_scan": 1777233452.72, 
+            "sha256": "798053876c6129c9e0d16548b0266cddf49dbd06e8a949afa3e8129431e0a9ee", 
+            "md5": "7d5ee7fa5512098d53e4510f0f6c8fb7"
+        }, 
+        "scan_date": 1777233438, 
+        "other_results": [], 
+        "submitter": "cli", 
+        "probes_total": 13, 
+        "probe_results": {
+            "antivirus": {
+                "G Data Antivirus (Windows)": {
+                    "status": 1, 
+                    "duration": 3.92, 
+                    "version": "5.5.20197.1358", 
+                    "results": "Virus: Gen:Variant.Tedy.893733 (Engine A)", 
+                    "virus_database_version": "unavailable"
+                }, 
+                "Avast Core Security (Linux)": {
+                    "status": 1, 
+                    "duration": 0.03, 
+                    "version": "4.6.1", 
+                    "results": "Win64:Malware-gen", 
+                    "virus_database_version": "unavailable"
+                }, 
+                "C4S ClamAV (Linux)": {
+                    "status": 1, 
+                    "duration": 1.09, 
+                    "version": "1.4.3", 
+                    "results": "YARA.UPX.UNOFFICIAL", 
+                    "virus_database_version": "27965"
+                }, 
+                "Trellix (Linux)": {
+                    "status": 0, 
+                    "duration": 9.24, 
+                    "version": "7.0.4.835", 
+                    "results": null, 
+                    "virus_database_version": "11753"
+                }, 
+                "WithSecure (Linux)": {
+                    "status": 0, 
+                    "duration": 0.42, 
+                    "version": "1.0.44", 
+                    "results": null, 
+                    "virus_database_version": "unavailable"
+                }, 
+                "eScan Antivirus (Linux)": {
+                    "status": 1, 
+                    "duration": 7.58, 
+                    "version": "7.0.21", 
+                    "results": "Gen:Variant.Tedy.893733(DB)", 
+                    "virus_database_version": "7.100629 (08/04/2026)"
+                }, 
+                "ESET Security (Windows)": {
+                    "status": 1, 
+                    "duration": 5.05, 
+                    "version": "unavailable", 
+                    "results": "a variant of Win64/PSW.Agent.WY trojan", 
+                    "virus_database_version": "unavailable"
+                }, 
+                "Sophos Anti-Virus (Linux)": {
+                    "status": 1, 
+                    "duration": 0.6, 
+                    "version": "1.2.0.8 (2026-02-13)", 
+                    "results": "Mal/Generic-S", 
+                    "virus_database_version": "unavailable"
+                }, 
+                "DrWeb Antivirus (Linux)": {
+                    "status": 1, 
+                    "duration": 0.54, 
+                    "version": "11.1.16.2406170954", 
+                    "results": "Trojan.PWS.Stealer.44965", 
+                    "virus_database_version": "unavailable"
+                }, 
+                "ClamAV (Linux)": {
+                    "status": 0, 
+                    "duration": 1.22, 
+                    "version": "1.4.3", 
+                    "results": null, 
+                    "virus_database_version": "27965"
+                }, 
+                "Bitdefender Antivirus (Linux)": {
+                    "status": 1, 
+                    "duration": 12.5, 
+                    "version": "7.90123", 
+                    "results": "Gen:Variant.Tedy.893733", 
+                    "virus_database_version": null
+                }, 
+                "Kaspersky Standard (Windows)": {
+                    "status": 0, 
+                    "duration": 9.05, 
+                    "version": "21.21", 
+                    "results": null, 
+                    "virus_database_version": "2026-04-25 22:48:00 (full)"
+                }, 
+                "Emsisoft Commandline Scanner (Windows)": {
+                    "status": 1, 
+                    "duration": 3.59, 
+                    "version": "2025.1.0.12641", 
+                    "results": "Gen:Variant.Tedy.893733 (B)", 
+                    "virus_database_version": "unavailable"
+                }
+            }
+        }, 
+        "path": "", 
+        "result_id": "c216e271-9ec9-42e0-82ce-87d1246c00ca", 
+        "name": "798053876c6129c9e0d16548b0266cddf49dbd06e8a949afa3e8129431e0a9ee"
+    }, 
+    "suricata": {
+        "tls": [], 
+        "files": [], 
+        "alerts": [], 
+        "http": []
+    }, 
+    "virustotal": {
+        "permalink": "https://www.virustotal.com/gui/file/798053876c6129c9e0d16548b0266cddf49dbd06e8a949afa3e8129431e0a9ee/detection/f-798053876c6129c9e0d16548b0266cddf49dbd06e8a949afa3e8129431e0a9ee-1775369284", 
+        "sha1": "6875b2f40262c8fb3ff4eda701716361c381f852", 
+        "resource": "7d5ee7fa5512098d53e4510f0f6c8fb7", 
+        "response_code": 1, 
+        "scan_date": "2026-04-05 06:08:04", 
+        "scan_id": "798053876c6129c9e0d16548b0266cddf49dbd06e8a949afa3e8129431e0a9ee-1775369284", 
+        "summary": {
+            "positives": 33, 
+            "permalink": "https://www.virustotal.com/gui/file/798053876c6129c9e0d16548b0266cddf49dbd06e8a949afa3e8129431e0a9ee/detection/f-798053876c6129c9e0d16548b0266cddf49dbd06e8a949afa3e8129431e0a9ee-1775369284", 
+            "scan_date": "2026-04-05 06:08:04"
+        }, 
+        "sha256": "798053876c6129c9e0d16548b0266cddf49dbd06e8a949afa3e8129431e0a9ee", 
+        "normalized": [
+            "Tedy", 
+            "Unsafe", 
+            "V1ix", 
+            "TrojanPSW", 
+            "Genric", 
+            "WY trojan", 
+            "Malicious", 
+            "score", 
+            "LESS", 
+            "bWQ1On1e5", 
+            "pVEgmNU+RRDw9sj7c", 
+            "Detected", 
+            "Wacatac", 
+            "ABApplication", 
+            "WBBR", 
+            "R002H09CB26", 
+            "Gencirc", 
+            "Rqil"
+        ], 
+        "total": 64, 
+        "positives": 33, 
+        "verbose_msg": "Scan finished, information embedded", 
+        "md5": "7d5ee7fa5512098d53e4510f0f6c8fb7", 
+        "scans": {
+            "Bkav": {
+                "detected": false, 
+                "version": "2.0.0.1", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260404"
+            }, 
+            "Lionic": {
+                "detected": true, 
+                "version": "8.16", 
+                "result": "Trojan.Win32.Stealer.12!c", 
+                "normalized": [], 
+                "update": "20260405"
+            }, 
+            "tehtris": {
+                "detected": false, 
+                "version": "v0.1.4", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260405"
+            }, 
+            "ClamAV": {
+                "detected": false, 
+                "version": "1.5.2.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260404"
+            }, 
+            "CTX": {
+                "detected": true, 
+                "version": "2024.8.29.1", 
+                "result": "dll.trojan.stealer", 
+                "normalized": [], 
+                "update": "20260405"
+            }, 
+            "ALYac": {
+                "detected": true, 
+                "version": "2.0.0.10", 
+                "result": "Gen:Variant.Tedy.893733", 
+                "normalized": [
+                    "Tedy"
+                ], 
+                "update": "20260404"
+            }, 
+            "Cylance": {
+                "detected": true, 
+                "version": "3.0.0.0", 
+                "result": "Unsafe", 
+                "normalized": [
+                    "Unsafe"
+                ], 
+                "update": "20260402"
+            }, 
+            "Sangfor": {
+                "detected": true, 
+                "version": "2.22.3.0", 
+                "result": "Infostealer.Win64.Agent.V1ix", 
+                "normalized": [
+                    "V1ix"
+                ], 
+                "update": "20260403"
+            }, 
+            "CrowdStrike": {
+                "detected": false, 
+                "version": "1.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20251219"
+            }, 
+            "Alibaba": {
+                "detected": true, 
+                "version": "0.3.0.5", 
+                "result": "TrojanPSW:Win64/Genric.32d6577d", 
+                "normalized": [
+                    "TrojanPSW", 
+                    "Genric"
+                ], 
+                "update": "20190527"
+            }, 
+            "K7GW": {
+                "detected": true, 
+                "version": "14.44.59097", 
+                "result": "Password-Stealer ( 005e97551 )", 
+                "normalized": [], 
+                "update": "20260405"
+            }, 
+            "K7AntiVirus": {
+                "detected": true, 
+                "version": "14.44.59097", 
+                "result": "Password-Stealer ( 005e97551 )", 
+                "normalized": [], 
+                "update": "20260405"
+            }, 
+            "Arcabit": {
+                "detected": true, 
+                "version": "2025.0.0.23", 
+                "result": "Trojan.Tedy.DDA325", 
+                "normalized": [
+                    "Tedy"
+                ], 
+                "update": "20260405"
+            }, 
+            "Baidu": {
+                "detected": false, 
+                "version": "1.0.0.2", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20190318"
+            }, 
+            "VirIT": {
+                "detected": false, 
+                "version": "9.5.1180", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260403"
+            }, 
+            "Elastic": {
+                "detected": false, 
+                "version": "4.0.255", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260327"
+            }, 
+            "ESET-NOD32": {
+                "detected": true, 
+                "version": "18.2.18.0", 
+                "result": "Win64/PSW.Agent.WY trojan", 
+                "normalized": [
+                    "WY trojan"
+                ], 
+                "update": "20260405"
+            }, 
+            "APEX": {
+                "detected": false, 
+                "version": "6.766", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260404"
+            }, 
+            "Paloalto": {
+                "detected": true, 
+                "version": "0.9.0.1003", 
+                "result": "generic.ml", 
+                "normalized": [], 
+                "update": "20260405"
+            }, 
+            "Cynet": {
+                "detected": true, 
+                "version": "4.0.3.4", 
+                "result": "Malicious (score: 100)", 
+                "normalized": [
+                    "Malicious", 
+                    "score"
+                ], 
+                "update": "20260405"
+            }, 
+            "Kaspersky": {
+                "detected": false, 
+                "version": "22.0.1.28", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260405"
+            }, 
+            "BitDefender": {
+                "detected": true, 
+                "version": "7.2", 
+                "result": "Gen:Variant.Tedy.893733", 
+                "normalized": [
+                    "Tedy"
+                ], 
+                "update": "20260405"
+            }, 
+            "NANO-Antivirus": {
+                "detected": false, 
+                "version": "1.0.170.26895", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260405"
+            }, 
+            "SUPERAntiSpyware": {
+                "detected": false, 
+                "version": "5.6.0.1032", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260404"
+            }, 
+            "MicroWorld-eScan": {
+                "detected": true, 
+                "version": "14.0.409.0", 
+                "result": "Gen:Variant.Tedy.893733", 
+                "normalized": [
+                    "Tedy"
+                ], 
+                "update": "20260405"
+            }, 
+            "Rising": {
+                "detected": true, 
+                "version": "25.0.0.28", 
+                "result": "Spyware.Stealer!8.3090 (LESS:bWQ1On1e5/pVEgmNU+RRDw9sj7c)", 
+                "normalized": [
+                    "LESS", 
+                    "bWQ1On1e5", 
+                    "pVEgmNU+RRDw9sj7c"
+                ], 
+                "update": "20260405"
+            }, 
+            "Emsisoft": {
+                "detected": true, 
+                "version": "2024.8.0.61147", 
+                "result": "Gen:Variant.Tedy.893733 (B)", 
+                "normalized": [
+                    "Tedy"
+                ], 
+                "update": "20260405"
+            }, 
+            "F-Secure": {
+                "detected": false, 
+                "version": "18.10.1547.307", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260405"
+            }, 
+            "DrWeb": {
+                "detected": true, 
+                "version": "7.0.75.2070", 
+                "result": "Trojan.PWS.Stealer.44965", 
+                "normalized": [], 
+                "update": "20260405"
+            }, 
+            "VIPRE": {
+                "detected": true, 
+                "version": "6.0.0.35", 
+                "result": "Gen:Variant.Tedy.893733", 
+                "normalized": [
+                    "Tedy"
+                ], 
+                "update": "20260404"
+            }, 
+            "McAfeeD": {
+                "detected": true, 
+                "version": "1.2.0.14370", 
+                "result": "ti!798053876C61", 
+                "normalized": [], 
+                "update": "20260405"
+            }, 
+            "Trapmine": {
+                "detected": false, 
+                "version": "4.0.11.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260331"
+            }, 
+            "CMC": {
+                "detected": false, 
+                "version": "2.4.2022.1", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260405"
+            }, 
+            "Sophos": {
+                "detected": true, 
+                "version": "3.4.1.0", 
+                "result": "Mal/Generic-S", 
+                "normalized": [], 
+                "update": "20260405"
+            }, 
+            "SentinelOne": {
+                "detected": false, 
+                "version": "7.6.2.19", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260324"
+            }, 
+            "Jiangmin": {
+                "detected": false, 
+                "version": "16.0.100", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260405"
+            }, 
+            "Webroot": {
+                "detected": false, 
+                "version": "1.10.0.2", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20250227"
+            }, 
+            "Google": {
+                "detected": true, 
+                "version": "1775365250", 
+                "result": "Detected", 
+                "normalized": [
+                    "Detected"
+                ], 
+                "update": "20260405"
+            }, 
+            "Avira": {
+                "detected": false, 
+                "version": "8.3.3.24", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260405"
+            }, 
+            "Antiy-AVL": {
+                "detected": true, 
+                "version": "3.0", 
+                "result": "Trojan/Win32.Agent", 
+                "normalized": [], 
+                "update": "20260405"
+            }, 
+            "Kingsoft": {
+                "detected": false, 
+                "version": "None", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260404"
+            }, 
+            "Gridinsoft": {
+                "detected": false, 
+                "version": "1.0.242.174", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260405"
+            }, 
+            "Xcitium": {
+                "detected": false, 
+                "version": "38543", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260404"
+            }, 
+            "Microsoft": {
+                "detected": true, 
+                "version": "1.1.26020.3", 
+                "result": "Trojan:Win32/Wacatac.B!ml", 
+                "normalized": [
+                    "Wacatac"
+                ], 
+                "update": "20260405"
+            }, 
+            "ViRobot": {
+                "detected": false, 
+                "version": "2014.3.20.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260404"
+            }, 
+            "ZoneAlarm": {
+                "detected": false, 
+                "version": "6.23-113519413", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260405"
+            }, 
+            "GData": {
+                "detected": true, 
+                "version": "GD:27.44110AVA:64.30969", 
+                "result": "Gen:Variant.Tedy.893733", 
+                "normalized": [
+                    "Tedy"
+                ], 
+                "update": "20260405"
+            }, 
+            "Varist": {
+                "detected": true, 
+                "version": "6.6.1.3", 
+                "result": "W64/ABApplication.WBBR-8865", 
+                "normalized": [
+                    "ABApplication", 
+                    "WBBR"
+                ], 
+                "update": "20260405"
+            }, 
+            "AhnLab-V3": {
+                "detected": false, 
+                "version": "3.29.3.10609", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260405"
+            }, 
+            "Acronis": {
+                "detected": false, 
+                "version": "1.2.0.121", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20240328"
+            }, 
+            "VBA32": {
+                "detected": false, 
+                "version": "5.5.1", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260403"
+            }, 
+            "TACHYON": {
+                "detected": false, 
+                "version": "2026-04-05.01", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260405"
+            }, 
+            "DeepInstinct": {
+                "detected": true, 
+                "version": "5.0.0.8", 
+                "result": "MALICIOUS", 
+                "normalized": [
+                    "MALICIOUS"
+                ], 
+                "update": "20260403"
+            }, 
+            "Malwarebytes": {
+                "detected": true, 
+                "version": "3.1.0.214", 
+                "result": "Malware.AI.3960984880", 
+                "normalized": [], 
+                "update": "20260405"
+            }, 
+            "Ikarus": {
+                "detected": true, 
+                "version": "6.4.16.0", 
+                "result": "Trojan-PSW.Agent", 
+                "normalized": [], 
+                "update": "20260404"
+            }, 
+            "Zoner": {
+                "detected": false, 
+                "version": "2.2.2.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260405"
+            }, 
+            "TrendMicro-HouseCall": {
+                "detected": true, 
+                "version": "24.550.0.1002", 
+                "result": "TROJ_GEN.R002H09CB26", 
+                "normalized": [
+                    "R002H09CB26"
+                ], 
+                "update": "20260405"
+            }, 
+            "Tencent": {
+                "detected": true, 
+                "version": "1.0.0.1", 
+                "result": "Win32.Trojan.Gencirc.Rqil", 
+                "normalized": [
+                    "Gencirc", 
+                    "Rqil"
+                ], 
+                "update": "20260405"
+            }, 
+            "Yandex": {
+                "detected": false, 
+                "version": "5.5.2.24", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260405"
+            }, 
+            "huorong": {
+                "detected": true, 
+                "version": "c885928:c885928:fd748a7:fd748a7", 
+                "result": "HVM:TrojanSpy/W64.Stealer.ae", 
+                "normalized": [], 
+                "update": "20260404"
+            }, 
+            "MaxSecure": {
+                "detected": false, 
+                "version": "1.0.0.1", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260403"
+            }, 
+            "Fortinet": {
+                "detected": true, 
+                "version": "7.0.30.0", 
+                "result": "W64/Agent.WY!tr.pws", 
+                "normalized": [], 
+                "update": "20260405"
+            }, 
+            "Panda": {
+                "detected": false, 
+                "version": "4.6.4.2", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260404"
+            }, 
+            "alibabacloud": {
+                "detected": true, 
+                "version": "2.2.0", 
+                "result": "RiskWare:Win/Tedy.Gen", 
+                "normalized": [
+                    "Tedy"
+                ], 
+                "update": "20250321"
+            }
+        }
+    }, 
+    "network": {
+        "udp": [], 
+        "dns_servers": [], 
+        "http": [], 
+        "smtp": [], 
+        "tcp": [], 
+        "geoinfo": {}, 
+        "mitm": [], 
+        "https_ex": [], 
+        "http_ex": [], 
+        "sorted_pcap_sha256": "dbf46abc4cab66cb704d6ed307eeb94c1f9172dbf5986ec395b93c5fc9b43062", 
+        "icmp": [], 
+        "tls": [], 
+        "dead_hosts": [], 
+        "smtp_ex": [], 
+        "hosts": [], 
+        "pcap_sha256": "f59691025984c72f5dd3af0cebf21dcb1f0cb409a6f5c803b22f9bd0edd66345", 
+        "dns": [], 
+        "domains": [], 
+        "irc": []
+    }, 
+    "resubmit": {
+        "resubmit_ids": []
+    }, 
+    "static": {
+        "pdb_path": null, 
+        "pe_imports": [
+            {
+                "imports": [
+                    {
+                        "name": "free", 
+                        "address": "0x3b145012c"
+                    }
+                ], 
+                "dll": "api-ms-win-crt-heap-l1-1-0.dll"
+            }, 
+            {
+                "imports": [
+                    {
+                        "name": "log", 
+                        "address": "0x3b145013c"
+                    }
+                ], 
+                "dll": "api-ms-win-crt-math-l1-1-0.dll"
+            }, 
+            {
+                "imports": [
+                    {
+                        "name": "memchr", 
+                        "address": "0x3b145014c"
+                    }
+                ], 
+                "dll": "api-ms-win-crt-private-l1-1-0.dll"
+            }, 
+            {
+                "imports": [
+                    {
+                        "name": "_exit", 
+                        "address": "0x3b145015c"
+                    }
+                ], 
+                "dll": "api-ms-win-crt-runtime-l1-1-0.dll"
+            }, 
+            {
+                "imports": [
+                    {
+                        "name": "fread", 
+                        "address": "0x3b145016c"
+                    }
+                ], 
+                "dll": "api-ms-win-crt-stdio-l1-1-0.dll"
+            }, 
+            {
+                "imports": [
+                    {
+                        "name": "memset", 
+                        "address": "0x3b145017c"
+                    }
+                ], 
+                "dll": "api-ms-win-crt-string-l1-1-0.dll"
+            }, 
+            {
+                "imports": [
+                    {
+                        "name": "_localtime64", 
+                        "address": "0x3b145018c"
+                    }
+                ], 
+                "dll": "api-ms-win-crt-time-l1-1-0.dll"
+            }, 
+            {
+                "imports": [
+                    {
+                        "name": "qsort", 
+                        "address": "0x3b145019c"
+                    }
+                ], 
+                "dll": "api-ms-win-crt-utility-l1-1-0.dll"
+            }, 
+            {
+                "imports": [
+                    {
+                        "name": "BCryptDecrypt", 
+                        "address": "0x3b14501ac"
+                    }
+                ], 
+                "dll": "bcrypt.dll"
+            }, 
+            {
+                "imports": [
+                    {
+                        "name": "CryptUnprotectData", 
+                        "address": "0x3b14501bc"
+                    }
+                ], 
+                "dll": "CRYPT32.dll"
+            }, 
+            {
+                "imports": [
+                    {
+                        "name": "LoadLibraryA", 
+                        "address": "0x3b14501cc"
+                    }, 
+                    {
+                        "name": "GetProcAddress", 
+                        "address": "0x3b14501d4"
+                    }, 
+                    {
+                        "name": "VirtualProtect", 
+                        "address": "0x3b14501dc"
+                    }
+                ], 
+                "dll": "KERNEL32.DLL"
+            }, 
+            {
+                "imports": [
+                    {
+                        "name": "CoInitializeEx", 
+                        "address": "0x3b14501ec"
+                    }
+                ], 
+                "dll": "ole32.dll"
+            }, 
+            {
+                "imports": [
+                    {
+                        "name": "SysFreeString", 
+                        "address": "0x3b14501fc"
+                    }
+                ], 
+                "dll": "OLEAUT32.dll"
+            }, 
+            {
+                "imports": [
+                    {
+                        "name": "SHGetFolderPathW", 
+                        "address": "0x3b145020c"
+                    }
+                ], 
+                "dll": "SHELL32.dll"
+            }
+        ], 
+        "peid_signatures": null, 
+        "keys": [], 
+        "signature": [], 
+        "pe_timestamp": "2026-02-23 18:14:54", 
+        "pe_exports": [
+            {
+                "ordinal": 1, 
+                "name": "sqlite3_aggregate_context", 
+                "address": "0x3b13059d0"
+            }, 
+            {
+                "ordinal": 2, 
+                "name": "sqlite3_aggregate_count", 
+                "address": "0x3b12d78c0"
+            }, 
+            {
+                "ordinal": 3, 
+                "name": "sqlite3_auto_extension", 
+                "address": "0x3b1347880"
+            }, 
+            {
+                "ordinal": 4, 
+                "name": "sqlite3_autovacuum_pages", 
+                "address": "0x3b12d9a10"
+            }, 
+            {
+                "ordinal": 5, 
+                "name": "sqlite3_backup_finish", 
+                "address": "0x3b136ffd0"
+            }, 
+            {
+                "ordinal": 6, 
+                "name": "sqlite3_backup_init", 
+                "address": "0x3b1375d30"
+            }, 
+            {
+                "ordinal": 7, 
+                "name": "sqlite3_backup_pagecount", 
+                "address": "0x3b12d7400"
+            }, 
+            {
+                "ordinal": 8, 
+                "name": "sqlite3_backup_remaining", 
+                "address": "0x3b12d73f0"
+            }, 
+            {
+                "ordinal": 9, 
+                "name": "sqlite3_backup_step", 
+                "address": "0x3b136bbd0"
+            }, 
+            {
+                "ordinal": 10, 
+                "name": "sqlite3_bind_blob", 
+                "address": "0x3b132e210"
+            }, 
+            {
+                "ordinal": 11, 
+                "name": "sqlite3_bind_blob64", 
+                "address": "0x3b132e240"
+            }, 
+            {
+                "ordinal": 12, 
+                "name": "sqlite3_bind_double", 
+                "address": "0x3b132dd40"
+            }, 
+            {
+                "ordinal": 13, 
+                "name": "sqlite3_bind_int", 
+                "address": "0x3b132e300"
+            }, 
+            {
+                "ordinal": 14, 
+                "name": "sqlite3_bind_int64", 
+                "address": "0x3b132de10"
+            }, 
+            {
+                "ordinal": 15, 
+                "name": "sqlite3_bind_null", 
+                "address": "0x3b132dea0"
+            }, 
+            {
+                "ordinal": 16, 
+                "name": "sqlite3_bind_parameter_count", 
+                "address": "0x3b12d7920"
+            }, 
+            {
+                "ordinal": 17, 
+                "name": "sqlite3_bind_parameter_index", 
+                "address": "0x3b12e57a0"
+            }, 
+            {
+                "ordinal": 18, 
+                "name": "sqlite3_bind_parameter_name", 
+                "address": "0x3b12e6a40"
+            }, 
+            {
+                "ordinal": 19, 
+                "name": "sqlite3_bind_pointer", 
+                "address": "0x3b132dee0"
+            }, 
+            {
+                "ordinal": 20, 
+                "name": "sqlite3_bind_text", 
+                "address": "0x3b132e260"
+            }, 
+            {
+                "ordinal": 21, 
+                "name": "sqlite3_bind_text16", 
+                "address": "0x3b132e2d0"
+            }, 
+            {
+                "ordinal": 22, 
+                "name": "sqlite3_bind_text64", 
+                "address": "0x3b132e290"
+            }, 
+            {
+                "ordinal": 23, 
+                "name": "sqlite3_bind_value", 
+                "address": "0x3b132e390"
+            }, 
+            {
+                "ordinal": 24, 
+                "name": "sqlite3_bind_zeroblob", 
+                "address": "0x3b132dfb0"
+            }, 
+            {
+                "ordinal": 25, 
+                "name": "sqlite3_bind_zeroblob64", 
+                "address": "0x3b132e070"
+            }, 
+            {
+                "ordinal": 26, 
+                "name": "sqlite3_blob_bytes", 
+                "address": "0x3b12d7a40"
+            }, 
+            {
+                "ordinal": 27, 
+                "name": "sqlite3_blob_close", 
+                "address": "0x3b1370560"
+            }, 
+            {
+                "ordinal": 28, 
+                "name": "sqlite3_blob_open", 
+                "address": "0x3b13da0a0"
+            }, 
+            {
+                "ordinal": 29, 
+                "name": "sqlite3_blob_read", 
+                "address": "0x3b136f550"
+            }, 
+            {
+                "ordinal": 30, 
+                "name": "sqlite3_blob_reopen", 
+                "address": "0x3b13dc3b0"
+            }, 
+            {
+                "ordinal": 31, 
+                "name": "sqlite3_blob_write", 
+                "address": "0x3b136f570"
+            }, 
+            {
+                "ordinal": 32, 
+                "name": "sqlite3_busy_handler", 
+                "address": "0x3b12d9590"
+            }, 
+            {
+                "ordinal": 33, 
+                "name": "sqlite3_busy_timeout", 
+                "address": "0x3b12e9110"
+            }, 
+            {
+                "ordinal": 34, 
+                "name": "sqlite3_cancel_auto_extension", 
+                "address": "0x3b12d87f0"
+            }, 
+            {
+                "ordinal": 35, 
+                "name": "sqlite3_changes", 
+                "address": "0x3b12d94e0"
+            }, 
+            {
+                "ordinal": 36, 
+                "name": "sqlite3_changes64", 
+                "address": "0x3b12d94d0"
+            }, 
+            {
+                "ordinal": 37, 
+                "name": "sqlite3_clear_bindings", 
+                "address": "0x3b12ea610"
+            }, 
+            {
+                "ordinal": 38, 
+                "name": "sqlite3_close", 
+                "address": "0x3b1370460"
+            }, 
+            {
+                "ordinal": 39, 
+                "name": "sqlite3_close_v2", 
+                "address": "0x3b1370470"
+            }, 
+            {
+                "ordinal": 40, 
+                "name": "sqlite3_collation_needed", 
+                "address": "0x3b12d9b70"
+            }, 
+            {
+                "ordinal": 41, 
+                "name": "sqlite3_collation_needed16", 
+                "address": "0x3b12d9be0"
+            }, 
+            {
+                "ordinal": 42, 
+                "name": "sqlite3_column_blob", 
+                "address": "0x3b1307cf0"
+            }, 
+            {
+                "ordinal": 43, 
+                "name": "sqlite3_column_bytes", 
+                "address": "0x3b13071a0"
+            }, 
+            {
+                "ordinal": 44, 
+                "name": "sqlite3_column_bytes16", 
+                "address": "0x3b1307220"
+            }, 
+            {
+                "ordinal": 45, 
+                "name": "sqlite3_column_count", 
+                "address": "0x3b12d78d0"
+            }, 
+            {
+                "ordinal": 46, 
+                "name": "sqlite3_column_decltype", 
+                "address": "0x3b1308540"
+            }, 
+            {
+                "ordinal": 47, 
+                "name": "sqlite3_column_decltype16", 
+                "address": "0x3b1308550"
+            }, 
+            {
+                "ordinal": 48, 
+                "name": "sqlite3_column_double", 
+                "address": "0x3b12f2280"
+            }, 
+            {
+                "ordinal": 49, 
+                "name": "sqlite3_column_int", 
+                "address": "0x3b12f3d30"
+            }, 
+            {
+                "ordinal": 50, 
+                "name": "sqlite3_column_int64", 
+                "address": "0x3b12f3dd0"
+            }, 
+            {
+                "ordinal": 51, 
+                "name": "sqlite3_column_name", 
+                "address": "0x3b1308520"
+            }, 
+            {
+                "ordinal": 52, 
+                "name": "sqlite3_column_name16", 
+                "address": "0x3b1308530"
+            }, 
+            {
+                "ordinal": 53, 
+                "name": "sqlite3_column_text", 
+                "address": "0x3b13073f0"
+            }, 
+            {
+                "ordinal": 54, 
+                "name": "sqlite3_column_text16", 
+                "address": "0x3b1307450"
+            }, 
+            {
+                "ordinal": 55, 
+                "name": "sqlite3_column_type", 
+                "address": "0x3b12ecda0"
+            }, 
+            {
+                "ordinal": 56, 
+                "name": "sqlite3_column_value", 
+                "address": "0x3b12ecd50"
+            }, 
+            {
+                "ordinal": 57, 
+                "name": "sqlite3_commit_hook", 
+                "address": "0x3b12d9890"
+            }, 
+            {
+                "ordinal": 58, 
+                "name": "sqlite3_compileoption_get", 
+                "address": "0x3b12d9d00"
+            }, 
+            {
+                "ordinal": 59, 
+                "name": "sqlite3_compileoption_used", 
+                "address": "0x3b12f2360"
+            }, 
+            {
+                "ordinal": 60, 
+                "name": "sqlite3_complete", 
+                "address": "0x3b12f69e0"
+            }, 
+            {
+                "ordinal": 61, 
+                "name": "sqlite3_complete16", 
+                "address": "0x3b133e1e0"
+            }, 
+            {
+                "ordinal": 62, 
+                "name": "sqlite3_config", 
+                "address": "0x3b1332b70"
+            }, 
+            {
+                "ordinal": 63, 
+                "name": "sqlite3_context_db_handle", 
+                "address": "0x3b12d7840"
+            }, 
+            {
+                "ordinal": 64, 
+                "name": "sqlite3_create_collation", 
+                "address": "0x3b132ad70"
+            }, 
+            {
+                "ordinal": 65, 
+                "name": "sqlite3_create_collation16", 
+                "address": "0x3b132ada0"
+            }, 
+            {
+                "ordinal": 66, 
+                "name": "sqlite3_create_collation_v2", 
+                "address": "0x3b132ace0"
+            }, 
+            {
+                "ordinal": 67, 
+                "name": "sqlite3_create_filename", 
+                "address": "0x3b1340b60"
+            }, 
+            {
+                "ordinal": 68, 
+                "name": "sqlite3_create_function", 
+                "address": "0x3b132a530"
+            }, 
+            {
+                "ordinal": 69, 
+                "name": "sqlite3_create_function16", 
+                "address": "0x3b132a940"
+            }, 
+            {
+                "ordinal": 70, 
+                "name": "sqlite3_create_function_v2", 
+                "address": "0x3b132a860"
+            }, 
+            {
+                "ordinal": 71, 
+                "name": "sqlite3_create_module", 
+                "address": "0x3b1303980"
+            }, 
+            {
+                "ordinal": 72, 
+                "name": "sqlite3_create_module_v2", 
+                "address": "0x3b13039f0"
+            }, 
+            {
+                "ordinal": 73, 
+                "name": "sqlite3_create_window_function", 
+                "address": "0x3b132a8d0"
+            }, 
+            {
+                "ordinal": 74, 
+                "name": "sqlite3_data_count", 
+                "address": "0x3b12d78f0"
+            }, 
+            {
+                "ordinal": 75, 
+                "name": "sqlite3_data_directory", 
+                "address": "0x3b142f040"
+            }, 
+            {
+                "ordinal": 76, 
+                "name": "sqlite3_database_file_object", 
+                "address": "0x3b12d6da0"
+            }, 
+            {
+                "ordinal": 77, 
+                "name": "sqlite3_db_cacheflush", 
+                "address": "0x3b1369f10"
+            }, 
+            {
+                "ordinal": 78, 
+                "name": "sqlite3_db_config", 
+                "address": "0x3b12e4bd0"
+            }, 
+            {
+                "ordinal": 79, 
+                "name": "sqlite3_db_filename", 
+                "address": "0x3b12f01f0"
+            }, 
+            {
+                "ordinal": 80, 
+                "name": "sqlite3_db_handle", 
+                "address": "0x3b12d7930"
+            }, 
+            {
+                "ordinal": 81, 
+                "name": "sqlite3_db_mutex", 
+                "address": "0x3b12d9460"
+            }, 
+            {
+                "ordinal": 82, 
+                "name": "sqlite3_db_name", 
+                "address": "0x3b12d9ce0"
+            }, 
+            {
+                "ordinal": 83, 
+                "name": "sqlite3_db_readonly", 
+                "address": "0x3b12f0190"
+            }, 
+            {
+                "ordinal": 84, 
+                "name": "sqlite3_db_release_memory", 
+                "address": "0x3b12eb720"
+            }, 
+            {
+                "ordinal": 85, 
+                "name": "sqlite3_db_status", 
+                "address": "0x3b12f87b0"
+            }, 
+            {
+                "ordinal": 86, 
+                "name": "sqlite3_declare_vtab", 
+                "address": "0x3b13c91a0"
+            }, 
+            {
+                "ordinal": 87, 
+                "name": "sqlite3_deserialize", 
+                "address": "0x3b13ce380"
+            }, 
+            {
+                "ordinal": 88, 
+                "name": "sqlite3_drop_modules", 
+                "address": "0x3b1303a00"
+            }, 
+            {
+                "ordinal": 89, 
+                "name": "sqlite3_enable_load_extension", 
+                "address": "0x3b1332af0"
+            }, 
+            {
+                "ordinal": 90, 
+                "name": "sqlite3_enable_shared_cache", 
+                "address": "0x3b12d6fa0"
+            }, 
+            {
+                "ordinal": 91, 
+                "name": "sqlite3_errcode", 
+                "address": "0x3b132e540"
+            }, 
+            {
+                "ordinal": 92, 
+                "name": "sqlite3_errmsg", 
+                "address": "0x3b132e920"
+            }, 
+            {
+                "ordinal": 93, 
+                "name": "sqlite3_errmsg16", 
+                "address": "0x3b132e700"
+            }, 
+            {
+                "ordinal": 94, 
+                "name": "sqlite3_error_offset", 
+                "address": "0x3b132e5e0"
+            }, 
+            {
+                "ordinal": 95, 
+                "name": "sqlite3_errstr", 
+                "address": "0x3b12e94c0"
+            }, 
+            {
+                "ordinal": 96, 
+                "name": "sqlite3_exec", 
+                "address": "0x3b13a3a20"
+            }, 
+            {
+                "ordinal": 97, 
+                "name": "sqlite3_expanded_sql", 
+                "address": "0x3b1309ec0"
+            }, 
+            {
+                "ordinal": 98, 
+                "name": "sqlite3_expired", 
+                "address": "0x3b12d7790"
+            }, 
+            {
+                "ordinal": 99, 
+                "name": "sqlite3_extended_errcode", 
+                "address": "0x3b132e4a0"
+            }, 
+            {
+                "ordinal": 100, 
+                "name": "sqlite3_extended_result_codes", 
+                "address": "0x3b12d9c80"
+            }, 
+            {
+                "ordinal": 101, 
+                "name": "sqlite3_file_control", 
+                "address": "0x3b12f65b0"
+            }, 
+            {
+                "ordinal": 102, 
+                "name": "sqlite3_filename_database", 
+                "address": "0x3b12e84c0"
+            }, 
+            {
+                "ordinal": 103, 
+                "name": "sqlite3_filename_journal", 
+                "address": "0x3b12e8aa0"
+            }, 
+            {
+                "ordinal": 104, 
+                "name": "sqlite3_filename_wal", 
+                "address": "0x3b12e8b10"
+            }, 
+            {
+                "ordinal": 105, 
+                "name": "sqlite3_finalize", 
+                "address": "0x3b1370480"
+            }, 
+            {
+                "ordinal": 106, 
+                "name": "sqlite3_free", 
+                "address": "0x3b12defe0"
+            }, 
+            {
+                "ordinal": 107, 
+                "name": "sqlite3_free_filename", 
+                "address": "0x3b12e8620"
+            }, 
+            {
+                "ordinal": 108, 
+                "name": "sqlite3_free_table", 
+                "address": "0x3b12df460"
+            }, 
+            {
+                "ordinal": 109, 
+                "name": "sqlite3_get_autocommit", 
+                "address": "0x3b12d9c60"
+            }, 
+            {
+                "ordinal": 110, 
+                "name": "sqlite3_get_auxdata", 
+                "address": "0x3b12d7870"
+            }, 
+            {
+                "ordinal": 111, 
+                "name": "sqlite3_get_clientdata", 
+                "address": "0x3b12ddbe0"
+            }, 
+            {
+                "ordinal": 112, 
+                "name": "sqlite3_get_table", 
+                "address": "0x3b13cd890"
+            }, 
+            {
+                "ordinal": 113, 
+                "name": "sqlite3_global_recover", 
+                "address": "0x3b13fff60"
+            }, 
+            {
+                "ordinal": 114, 
+                "name": "sqlite3_hard_heap_limit64", 
+                "address": "0x3b133c4e0"
+            }, 
+            {
+                "ordinal": 115, 
+                "name": "sqlite3_initialize", 
+                "address": "0x3b13335d0"
+            }, 
+            {
+                "ordinal": 116, 
+                "name": "sqlite3_interrupt", 
+                "address": "0x3b12dcd00"
+            }, 
+            {
+                "ordinal": 117, 
+                "name": "sqlite3_is_interrupted", 
+                "address": "0x3b12de6f0"
+            }, 
+            {
+                "ordinal": 118, 
+                "name": "sqlite3_keyword_check", 
+                "address": "0x3b12e5050"
+            }, 
+            {
+                "ordinal": 119, 
+                "name": "sqlite3_keyword_count", 
+                "address": "0x3b12d9400"
+            }, 
+            {
+                "ordinal": 120, 
+                "name": "sqlite3_keyword_name", 
+                "address": "0x3b12e0210"
+            }, 
+            {
+                "ordinal": 121, 
+                "name": "sqlite3_last_insert_rowid", 
+                "address": "0x3b12d9470"
+            }, 
+            {
+                "ordinal": 122, 
+                "name": "sqlite3_libversion", 
+                "address": "0x3b12d9430"
+            }, 
+            {
+                "ordinal": 123, 
+                "name": "sqlite3_libversion_number", 
+                "address": "0x3b12d9440"
+            }, 
+            {
+                "ordinal": 124, 
+                "name": "sqlite3_limit", 
+                "address": "0x3b12d9b10"
+            }, 
+            {
+                "ordinal": 125, 
+                "name": "sqlite3_load_extension", 
+                "address": "0x3b13655b0"
+            }, 
+            {
+                "ordinal": 126, 
+                "name": "sqlite3_log", 
+                "address": "0x3b13289a0"
+            }, 
+            {
+                "ordinal": 127, 
+                "name": "sqlite3_malloc", 
+                "address": "0x3b133c490"
+            }, 
+            {
+                "ordinal": 128, 
+                "name": "sqlite3_malloc64", 
+                "address": "0x3b1333820"
+            }, 
+            {
+                "ordinal": 129, 
+                "name": "sqlite3_memory_alarm", 
+                "address": "0x3b13329d0"
+            }, 
+            {
+                "ordinal": 130, 
+                "name": "sqlite3_memory_highwater", 
+                "address": "0x3b12e9e70"
+            }, 
+            {
+                "ordinal": 131, 
+                "name": "sqlite3_memory_used", 
+                "address": "0x3b12e9a40"
+            }, 
+            {
+                "ordinal": 132, 
+                "name": "sqlite3_mprintf", 
+                "address": "0x3b1334ca0"
+            }, 
+            {
+                "ordinal": 133, 
+                "name": "sqlite3_msize", 
+                "address": "0x3b12d4930"
+            }, 
+            {
+                "ordinal": 134, 
+                "name": "sqlite3_mutex_alloc", 
+                "address": "0x3b133f050"
+            }, 
+            {
+                "ordinal": 135, 
+                "name": "sqlite3_mutex_enter", 
+                "address": "0x3b12d48d0"
+            }, 
+            {
+                "ordinal": 136, 
+                "name": "sqlite3_mutex_free", 
+                "address": "0x3b12d48b0"
+            }, 
+            {
+                "ordinal": 137, 
+                "name": "sqlite3_mutex_leave", 
+                "address": "0x3b12d48f0"
+            }, 
+            {
+                "ordinal": 138, 
+                "name": "sqlite3_mutex_try", 
+                "address": "0x3b12e50f0"
+            }, 
+            {
+                "ordinal": 139, 
+                "name": "sqlite3_next_stmt", 
+                "address": "0x3b12d79b0"
+            }, 
+            {
+                "ordinal": 140, 
+                "name": "sqlite3_open", 
+                "address": "0x3b1398cd0"
+            }, 
+            {
+                "ordinal": 141, 
+                "name": "sqlite3_open16", 
+                "address": "0x3b1398cf0"
+            }, 
+            {
+                "ordinal": 142, 
+                "name": "sqlite3_open_v2", 
+                "address": "0x3b1398ce0"
+            }, 
+            {
+                "ordinal": 143, 
+                "name": "sqlite3_os_end", 
+                "address": "0x3b1332ae0"
+            }, 
+            {
+                "ordinal": 144, 
+                "name": "sqlite3_os_init", 
+                "address": "0x3b13412d0"
+            }, 
+            {
+                "ordinal": 145, 
+                "name": "sqlite3_overload_function", 
+                "address": "0x3b133afe0"
+            }, 
+            {
+                "ordinal": 146, 
+                "name": "sqlite3_prepare", 
+                "address": "0x3b13baf20"
+            }, 
+            {
+                "ordinal": 147, 
+                "name": "sqlite3_prepare16", 
+                "address": "0x3b13c1820"
+            }, 
+            {
+                "ordinal": 148, 
+                "name": "sqlite3_prepare16_v2", 
+                "address": "0x3b13c1840"
+            }, 
+            {
+                "ordinal": 149, 
+                "name": "sqlite3_prepare16_v3", 
+                "address": "0x3b13c1870"
+            }, 
+            {
+                "ordinal": 150, 
+                "name": "sqlite3_prepare_v2", 
+                "address": "0x3b13baf50"
+            }, 
+            {
+                "ordinal": 151, 
+                "name": "sqlite3_prepare_v3", 
+                "address": "0x3b13bb440"
+            }, 
+            {
+                "ordinal": 152, 
+                "name": "sqlite3_profile", 
+                "address": "0x3b12d9820"
+            }, 
+            {
+                "ordinal": 153, 
+                "name": "sqlite3_progress_handler", 
+                "address": "0x3b12d9620"
+            }, 
+            {
+                "ordinal": 154, 
+                "name": "sqlite3_randomness", 
+                "address": "0x3b1341bc0"
+            }, 
+            {
+                "ordinal": 155, 
+                "name": "sqlite3_realloc", 
+                "address": "0x3b13339a0"
+            }, 
+            {
+                "ordinal": 156, 
+                "name": "sqlite3_realloc64", 
+                "address": "0x3b1333940"
+            }, 
+            {
+                "ordinal": 157, 
+                "name": "sqlite3_release_memory", 
+                "address": "0x3b12d4920"
+            }, 
+            {
+                "ordinal": 158, 
+                "name": "sqlite3_reset", 
+                "address": "0x3b136f260"
+            }, 
+            {
+                "ordinal": 159, 
+                "name": "sqlite3_reset_auto_extension", 
+                "address": "0x3b133c720"
+            }, 
+            {
+                "ordinal": 160, 
+                "name": "sqlite3_result_blob", 
+                "address": "0x3b130ae60"
+            }, 
+            {
+                "ordinal": 161, 
+                "name": "sqlite3_result_blob64", 
+                "address": "0x3b130c220"
+            }, 
+            {
+                "ordinal": 162, 
+                "name": "sqlite3_result_double", 
+                "address": "0x3b12ea510"
+            }, 
+            {
+                "ordinal": 163, 
+                "name": "sqlite3_result_error", 
+                "address": "0x3b1309220"
+            }, 
+            {
+                "ordinal": 164, 
+                "name": "sqlite3_result_error16", 
+                "address": "0x3b1309870"
+            }, 
+            {
+                "ordinal": 165, 
+                "name": "sqlite3_result_error_code", 
+                "address": "0x3b130bd20"
+            }, 
+            {
+                "ordinal": 166, 
+                "name": "sqlite3_result_error_nomem", 
+                "address": "0x3b12fd400"
+            }, 
+            {
+                "ordinal": 167, 
+                "name": "sqlite3_result_error_toobig", 
+                "address": "0x3b13098a0"
+            }, 
+            {
+                "ordinal": 168, 
+                "name": "sqlite3_result_int", 
+                "address": "0x3b12ec120"
+            }, 
+            {
+                "ordinal": 169, 
+                "name": "sqlite3_result_int64", 
+                "address": "0x3b12ec150"
+            }, 
+            {
+                "ordinal": 170, 
+                "name": "sqlite3_result_null", 
+                "address": "0x3b12ea470"
+            }, 
+            {
+                "ordinal": 171, 
+                "name": "sqlite3_result_pointer", 
+                "address": "0x3b12ea880"
+            }, 
+            {
+                "ordinal": 172, 
+                "name": "sqlite3_result_subtype", 
+                "address": "0x3b12d7820"
+            }, 
+            {
+                "ordinal": 173, 
+                "name": "sqlite3_result_text", 
+                "address": "0x3b130b290"
+            }, 
+            {
+                "ordinal": 174, 
+                "name": "sqlite3_result_text16", 
+                "address": "0x3b130bce0"
+            }, 
+            {
+                "ordinal": 175, 
+                "name": "sqlite3_result_text16be", 
+                "address": "0x3b130bd00"
+            }, 
+            {
+                "ordinal": 176, 
+                "name": "sqlite3_result_text16le", 
+                "address": "0x3b130c9d0"
+            }, 
+            {
+                "ordinal": 177, 
+                "name": "sqlite3_result_text64", 
+                "address": "0x3b130c2a0"
+            }, 
+            {
+                "ordinal": 178, 
+                "name": "sqlite3_result_value", 
+                "address": "0x3b130a640"
+            }, 
+            {
+                "ordinal": 179, 
+                "name": "sqlite3_result_zeroblob", 
+                "address": "0x3b130abd0"
+            }, 
+            {
+                "ordinal": 180, 
+                "name": "sqlite3_result_zeroblob64", 
+                "address": "0x3b130ab20"
+            }, 
+            {
+                "ordinal": 181, 
+                "name": "sqlite3_rollback_hook", 
+                "address": "0x3b12d9990"
+            }, 
+            {
+                "ordinal": 182, 
+                "name": "sqlite3_rtree_geometry_callback", 
+                "address": "0x3b13fff70"
+            }, 
+            {
+                "ordinal": 183, 
+                "name": "sqlite3_rtree_query_callback", 
+                "address": "0x3b1400050"
+            }, 
+            {
+                "ordinal": 184, 
+                "name": "sqlite3_serialize", 
+                "address": "0x3b13ce050"
+            }, 
+            {
+                "ordinal": 185, 
+                "name": "sqlite3_set_authorizer", 
+                "address": "0x3b12d7f60"
+            }, 
+            {
+                "ordinal": 186, 
+                "name": "sqlite3_set_auxdata", 
+                "address": "0x3b1301850"
+            }, 
+            {
+                "ordinal": 187, 
+                "name": "sqlite3_set_clientdata", 
+                "address": "0x3b1357df0"
+            }, 
+            {
+                "ordinal": 188, 
+                "name": "sqlite3_set_last_insert_rowid", 
+                "address": "0x3b12d9480"
+            }, 
+            {
+                "ordinal": 189, 
+                "name": "sqlite3_shutdown", 
+                "address": "0x3b133c7e0"
+            }, 
+            {
+                "ordinal": 190, 
+                "name": "sqlite3_sleep", 
+                "address": "0x3b1341550"
+            }, 
+            {
+                "ordinal": 191, 
+                "name": "sqlite3_snprintf", 
+                "address": "0x3b132eac0"
+            }, 
+            {
+                "ordinal": 192, 
+                "name": "sqlite3_soft_heap_limit", 
+                "address": "0x3b133f040"
+            }, 
+            {
+                "ordinal": 193, 
+                "name": "sqlite3_soft_heap_limit64", 
+                "address": "0x3b133ef10"
+            }, 
+            {
+                "ordinal": 194, 
+                "name": "sqlite3_sourceid", 
+                "address": "0x3b12dccf0"
+            }, 
+            {
+                "ordinal": 195, 
+                "name": "sqlite3_sql", 
+                "address": "0x3b12d7a20"
+            }, 
+            {
+                "ordinal": 196, 
+                "name": "sqlite3_status", 
+                "address": "0x3b1328ba0"
+            }, 
+            {
+                "ordinal": 197, 
+                "name": "sqlite3_status64", 
+                "address": "0x3b1328aa0"
+            }, 
+            {
+                "ordinal": 198, 
+                "name": "sqlite3_step", 
+                "address": "0x3b13a2960"
+            }, 
+            {
+                "ordinal": 199, 
+                "name": "sqlite3_stmt_busy", 
+                "address": "0x3b12d7990"
+            }, 
+            {
+                "ordinal": 200, 
+                "name": "sqlite3_stmt_explain", 
+                "address": "0x3b13badf0"
+            }, 
+            {
+                "ordinal": 201, 
+                "name": "sqlite3_stmt_isexplain", 
+                "address": "0x3b12d7970"
+            }, 
+            {
+                "ordinal": 202, 
+                "name": "sqlite3_stmt_readonly", 
+                "address": "0x3b12d7950"
+            }, 
+            {
+                "ordinal": 203, 
+                "name": "sqlite3_stmt_status", 
+                "address": "0x3b12f8d90"
+            }, 
+            {
+                "ordinal": 204, 
+                "name": "sqlite3_str_append", 
+                "address": "0x3b13041f0"
+            }, 
+            {
+                "ordinal": 205, 
+                "name": "sqlite3_str_appendall", 
+                "address": "0x3b1304230"
+            }, 
+            {
+                "ordinal": 206, 
+                "name": "sqlite3_str_appendchar", 
+                "address": "0x3b1304110"
+            }, 
+            {
+                "ordinal": 207, 
+                "name": "sqlite3_str_appendf", 
+                "address": "0x3b12fd1b0"
+            }, 
+            {
+                "ordinal": 208, 
+                "name": "sqlite3_str_errcode", 
+                "address": "0x3b12d4990"
+            }, 
+            {
+                "ordinal": 209, 
+                "name": "sqlite3_str_finish", 
+                "address": "0x3b12ff970"
+            }, 
+            {
+                "ordinal": 210, 
+                "name": "sqlite3_str_length", 
+                "address": "0x3b12d49b0"
+            }, 
+            {
+                "ordinal": 211, 
+                "name": "sqlite3_str_new", 
+                "address": "0x3b1334080"
+            }, 
+            {
+                "ordinal": 212, 
+                "name": "sqlite3_str_reset", 
+                "address": "0x3b12ea040"
+            }, 
+            {
+                "ordinal": 213, 
+                "name": "sqlite3_str_value", 
+                "address": "0x3b12d49c0"
+            }, 
+            {
+                "ordinal": 214, 
+                "name": "sqlite3_str_vappendf", 
+                "address": "0x3b12fa5e0"
+            }, 
+            {
+                "ordinal": 215, 
+                "name": "sqlite3_strglob", 
+                "address": "0x3b12e50b0"
+            }, 
+            {
+                "ordinal": 216, 
+                "name": "sqlite3_stricmp", 
+                "address": "0x3b12f3000"
+            }, 
+            {
+                "ordinal": 217, 
+                "name": "sqlite3_strlike", 
+                "address": "0x3b12e5010"
+            }, 
+            {
+                "ordinal": 218, 
+                "name": "sqlite3_strnicmp", 
+                "address": "0x3b12dfc20"
+            }, 
+            {
+                "ordinal": 219, 
+                "name": "sqlite3_system_errno", 
+                "address": "0x3b12d9b00"
+            }, 
+            {
+                "ordinal": 220, 
+                "name": "sqlite3_table_column_metadata", 
+                "address": "0x3b13ccdc0"
+            }, 
+            {
+                "ordinal": 221, 
+                "name": "sqlite3_temp_directory", 
+                "address": "0x3b142f048"
+            }, 
+            {
+                "ordinal": 222, 
+                "name": "sqlite3_test_control", 
+                "address": "0x3b1346f20"
+            }, 
+            {
+                "ordinal": 223, 
+                "name": "sqlite3_thread_cleanup", 
+                "address": "0x3b12d9c70"
+            }, 
+            {
+                "ordinal": 224, 
+                "name": "sqlite3_threadsafe", 
+                "address": "0x3b12d9450"
+            }, 
+            {
+                "ordinal": 225, 
+                "name": "sqlite3_total_changes", 
+                "address": "0x3b12d9500"
+            }, 
+            {
+                "ordinal": 226, 
+                "name": "sqlite3_total_changes64", 
+                "address": "0x3b12d94f0"
+            }, 
+            {
+                "ordinal": 227, 
+                "name": "sqlite3_trace", 
+                "address": "0x3b12d96e0"
+            }, 
+            {
+                "ordinal": 228, 
+                "name": "sqlite3_trace_v2", 
+                "address": "0x3b12d9770"
+            }, 
+            {
+                "ordinal": 229, 
+                "name": "sqlite3_transfer_bindings", 
+                "address": "0x3b12ea810"
+            }, 
+            {
+                "ordinal": 230, 
+                "name": "sqlite3_txn_state", 
+                "address": "0x3b12f00e0"
+            }, 
+            {
+                "ordinal": 231, 
+                "name": "sqlite3_update_hook", 
+                "address": "0x3b12d9910"
+            }, 
+            {
+                "ordinal": 232, 
+                "name": "sqlite3_uri_boolean", 
+                "address": "0x3b12e93e0"
+            }, 
+            {
+                "ordinal": 233, 
+                "name": "sqlite3_uri_int64", 
+                "address": "0x3b12e9420"
+            }, 
+            {
+                "ordinal": 234, 
+                "name": "sqlite3_uri_key", 
+                "address": "0x3b12e92d0"
+            }, 
+            {
+                "ordinal": 235, 
+                "name": "sqlite3_uri_parameter", 
+                "address": "0x3b12e9350"
+            }, 
+            {
+                "ordinal": 236, 
+                "name": "sqlite3_user_data", 
+                "address": "0x3b12d7830"
+            }, 
+            {
+                "ordinal": 237, 
+                "name": "sqlite3_value_blob", 
+                "address": "0x3b1307b70"
+            }, 
+            {
+                "ordinal": 238, 
+                "name": "sqlite3_value_bytes", 
+                "address": "0x3b1307120"
+            }, 
+            {
+                "ordinal": 239, 
+                "name": "sqlite3_value_bytes16", 
+                "address": "0x3b1307160"
+            }, 
+            {
+                "ordinal": 240, 
+                "name": "sqlite3_value_double", 
+                "address": "0x3b12ef080"
+            }, 
+            {
+                "ordinal": 241, 
+                "name": "sqlite3_value_dup", 
+                "address": "0x3b133e470"
+            }, 
+            {
+                "ordinal": 242, 
+                "name": "sqlite3_value_encoding", 
+                "address": "0x3b12d77e0"
+            }, 
+            {
+                "ordinal": 243, 
+                "name": "sqlite3_value_free", 
+                "address": "0x3b12f4560"
+            }, 
+            {
+                "ordinal": 244, 
+                "name": "sqlite3_value_frombind", 
+                "address": "0x3b12d7810"
+            }, 
+            {
+                "ordinal": 245, 
+                "name": "sqlite3_value_int", 
+                "address": "0x3b12f2d50"
+            }, 
+            {
+                "ordinal": 246, 
+                "name": "sqlite3_value_int64", 
+                "address": "0x3b12f2dd0"
+            }, 
+            {
+                "ordinal": 247, 
+                "name": "sqlite3_value_nochange", 
+                "address": "0x3b12d77f0"
+            }, 
+            {
+                "ordinal": 248, 
+                "name": "sqlite3_value_numeric_type", 
+                "address": "0x3b12e16e0"
+            }, 
+            {
+                "ordinal": 249, 
+                "name": "sqlite3_value_pointer", 
+                "address": "0x3b12ddad0"
+            }, 
+            {
+                "ordinal": 250, 
+                "name": "sqlite3_value_subtype", 
+                "address": "0x3b12d77b0"
+            }, 
+            {
+                "ordinal": 251, 
+                "name": "sqlite3_value_text", 
+                "address": "0x3b13072f0"
+            }, 
+            {
+                "ordinal": 252, 
+                "name": "sqlite3_value_text16", 
+                "address": "0x3b1307330"
+            }, 
+            {
+                "ordinal": 253, 
+                "name": "sqlite3_value_text16be", 
+                "address": "0x3b1307370"
+            }, 
+            {
+                "ordinal": 254, 
+                "name": "sqlite3_value_text16le", 
+                "address": "0x3b13073b0"
+            }, 
+            {
+                "ordinal": 255, 
+                "name": "sqlite3_value_type", 
+                "address": "0x3b12d77c0"
+            }, 
+            {
+                "ordinal": 256, 
+                "name": "sqlite3_version", 
+                "address": "0x3b141eab0"
+            }, 
+            {
+                "ordinal": 257, 
+                "name": "sqlite3_vfs_find", 
+                "address": "0x3b1341460"
+            }, 
+            {
+                "ordinal": 258, 
+                "name": "sqlite3_vfs_register", 
+                "address": "0x3b13411b0"
+            }, 
+            {
+                "ordinal": 259, 
+                "name": "sqlite3_vfs_unregister", 
+                "address": "0x3b133c400"
+            }, 
+            {
+                "ordinal": 260, 
+                "name": "sqlite3_vmprintf", 
+                "address": "0x3b1334680"
+            }, 
+            {
+                "ordinal": 261, 
+                "name": "sqlite3_vsnprintf", 
+                "address": "0x3b1332190"
+            }, 
+            {
+                "ordinal": 262, 
+                "name": "sqlite3_vtab_collation", 
+                "address": "0x3b131c000"
+            }, 
+            {
+                "ordinal": 263, 
+                "name": "sqlite3_vtab_config", 
+                "address": "0x3b1329d80"
+            }, 
+            {
+                "ordinal": 264, 
+                "name": "sqlite3_vtab_distinct", 
+                "address": "0x3b12d90d0"
+            }, 
+            {
+                "ordinal": 265, 
+                "name": "sqlite3_vtab_in", 
+                "address": "0x3b12d9080"
+            }, 
+            {
+                "ordinal": 266, 
+                "name": "sqlite3_vtab_in_first", 
+                "address": "0x3b13534f0"
+            }, 
+            {
+                "ordinal": 267, 
+                "name": "sqlite3_vtab_in_next", 
+                "address": "0x3b1353500"
+            }, 
+            {
+                "ordinal": 268, 
+                "name": "sqlite3_vtab_nochange", 
+                "address": "0x3b12d7850"
+            }, 
+            {
+                "ordinal": 269, 
+                "name": "sqlite3_vtab_on_conflict", 
+                "address": "0x3b12d8d50"
+            }, 
+            {
+                "ordinal": 270, 
+                "name": "sqlite3_vtab_rhs_value", 
+                "address": "0x3b132c940"
+            }, 
+            {
+                "ordinal": 271, 
+                "name": "sqlite3_wal_autocheckpoint", 
+                "address": "0x3b12e9b00"
+            }, 
+            {
+                "ordinal": 272, 
+                "name": "sqlite3_wal_checkpoint", 
+                "address": "0x3b13cd810"
+            }, 
+            {
+                "ordinal": 273, 
+                "name": "sqlite3_wal_checkpoint_v2", 
+                "address": "0x3b13cd660"
+            }, 
+            {
+                "ordinal": 274, 
+                "name": "sqlite3_wal_hook", 
+                "address": "0x3b12d9a80"
+            }, 
+            {
+                "ordinal": 275, 
+                "name": "sqlite3_win32_is_nt", 
+                "address": "0x3b1332ad0"
+            }, 
+            {
+                "ordinal": 276, 
+                "name": "sqlite3_win32_mbcs_to_utf8", 
+                "address": "0x3b1334340"
+            }, 
+            {
+                "ordinal": 277, 
+                "name": "sqlite3_win32_mbcs_to_utf8_v2", 
+                "address": "0x3b1333e60"
+            }, 
+            {
+                "ordinal": 278, 
+                "name": "sqlite3_win32_set_directory", 
+                "address": "0x3b133f250"
+            }, 
+            {
+                "ordinal": 279, 
+                "name": "sqlite3_win32_set_directory16", 
+                "address": "0x3b133f1c0"
+            }, 
+            {
+                "ordinal": 280, 
+                "name": "sqlite3_win32_set_directory8", 
+                "address": "0x3b133f0c0"
+            }, 
+            {
+                "ordinal": 281, 
+                "name": "sqlite3_win32_sleep", 
+                "address": "0x3b1332ac0"
+            }, 
+            {
+                "ordinal": 282, 
+                "name": "sqlite3_win32_unicode_to_utf8", 
+                "address": "0x3b13338e0"
+            }, 
+            {
+                "ordinal": 283, 
+                "name": "sqlite3_win32_utf8_to_mbcs", 
+                "address": "0x3b13343c0"
+            }, 
+            {
+                "ordinal": 284, 
+                "name": "sqlite3_win32_utf8_to_mbcs_v2", 
+                "address": "0x3b1333ee0"
+            }, 
+            {
+                "ordinal": 285, 
+                "name": "sqlite3_win32_utf8_to_unicode", 
+                "address": "0x3b1333880"
+            }, 
+            {
+                "ordinal": 286, 
+                "name": "sqlite3_win32_write_debug", 
+                "address": "0x3b13329e0"
+            }
+        ], 
+        "imported_dll_count": 14, 
+        "pe_imphash": "af7570de216f318e0305ac721830d4c4", 
+        "pe_resources": [], 
+        "pe_versioninfo": [], 
+        "pe_sections": [
+            {
+                "size_of_data": "0x00000000", 
+                "virtual_address": "0x00001000", 
+                "entropy": 0.0, 
+                "name": "UPX0", 
+                "virtual_size": "0x000e1000"
+            }, 
+            {
+                "size_of_data": "0x0009dc00", 
+                "virtual_address": "0x000e2000", 
+                "entropy": 7.999528444183095, 
+                "name": "UPX1", 
+                "virtual_size": "0x0009e000"
+            }, 
+            {
+                "size_of_data": "0x00002800", 
+                "virtual_address": "0x00180000", 
+                "entropy": 5.325810011153481, 
+                "name": "UPX2", 
+                "virtual_size": "0x00003000"
+            }
+        ]
+    }, 
+    "snort": {
+        "alerts": []
+    }, 
+    "behavior": {
+        "generic": [
+            {
+                "process_path": "C:\\Windows\\System32\\lsass.exe", 
+                "process_name": "lsass.exe", 
+                "pid": 512, 
+                "summary": {}, 
+                "first_seen": 1777247787.828125, 
+                "ppid": 392
+            }
+        ], 
+        "processes": [
+            {
+                "process_path": "C:\\Windows\\System32\\lsass.exe", 
+                "calls": [], 
+                "track": false, 
+                "pid": 512, 
+                "process_name": "lsass.exe", 
+                "command_line": "C:\\Windows\\system32\\lsass.exe", 
+                "modules": [
+                    {
+                        "basename": "lsass.exe", 
+                        "imgsize": 49152, 
+                        "baseaddr": "0xff160000", 
+                        "filepath": "C:\\Windows\\system32\\lsass.exe"
+                    }, 
+                    {
+                        "basename": "ntdll.dll", 
+                        "imgsize": 1740800, 
+                        "baseaddr": "0x76f20000", 
+                        "filepath": "C:\\Windows\\SYSTEM32\\ntdll.dll"
+                    }, 
+                    {
+                        "basename": "kernel32.dll", 
+                        "imgsize": 1175552, 
+                        "baseaddr": "0x76d00000", 
+                        "filepath": "C:\\Windows\\system32\\kernel32.dll"
+                    }, 
+                    {
+                        "basename": "KERNELBASE.dll", 
+                        "imgsize": 438272, 
+                        "baseaddr": "0x7fefcfd0000", 
+                        "filepath": "C:\\Windows\\system32\\KERNELBASE.dll"
+                    }, 
+                    {
+                        "basename": "msvcrt.dll", 
+                        "imgsize": 651264, 
+                        "baseaddr": "0x7fefdad0000", 
+                        "filepath": "C:\\Windows\\system32\\msvcrt.dll"
+                    }, 
+                    {
+                        "basename": "RPCRT4.dll", 
+                        "imgsize": 1232896, 
+                        "baseaddr": "0x7fefd9a0000", 
+                        "filepath": "C:\\Windows\\system32\\RPCRT4.dll"
+                    }, 
+                    {
+                        "basename": "SspiSrv.dll", 
+                        "imgsize": 45056, 
+                        "baseaddr": "0x7fefcb20000", 
+                        "filepath": "C:\\Windows\\system32\\SspiSrv.dll"
+                    }, 
+                    {
+                        "basename": "lsasrv.dll", 
+                        "imgsize": 1470464, 
+                        "baseaddr": "0x7fefc9b0000", 
+                        "filepath": "C:\\Windows\\system32\\lsasrv.dll"
+                    }, 
+                    {
+                        "basename": "sechost.dll", 
+                        "imgsize": 126976, 
+                        "baseaddr": "0x7feff1f0000", 
+                        "filepath": "C:\\Windows\\SYSTEM32\\sechost.dll"
+                    }, 
+                    {
+                        "basename": "SspiCli.dll", 
+                        "imgsize": 151552, 
+                        "baseaddr": "0x7fefcb30000", 
+                        "filepath": "C:\\Windows\\system32\\SspiCli.dll"
+                    }, 
+                    {
+                        "basename": "ADVAPI32.dll", 
+                        "imgsize": 897024, 
+                        "baseaddr": "0x7fefea00000", 
+                        "filepath": "C:\\Windows\\system32\\ADVAPI32.dll"
+                    }, 
+                    {
+                        "basename": "USER32.dll", 
+                        "imgsize": 1024000, 
+                        "baseaddr": "0x76e20000", 
+                        "filepath": "C:\\Windows\\system32\\USER32.dll"
+                    }, 
+                    {
+                        "basename": "GDI32.dll", 
+                        "imgsize": 421888, 
+                        "baseaddr": "0x7fefd100000", 
+                        "filepath": "C:\\Windows\\system32\\GDI32.dll"
+                    }, 
+                    {
+                        "basename": "LPK.dll", 
+                        "imgsize": 57344, 
+                        "baseaddr": "0x7fefd600000", 
+                        "filepath": "C:\\Windows\\system32\\LPK.dll"
+                    }, 
+                    {
+                        "basename": "USP10.dll", 
+                        "imgsize": 823296, 
+                        "baseaddr": "0x7fefdba0000", 
+                        "filepath": "C:\\Windows\\system32\\USP10.dll"
+                    }, 
+                    {
+                        "basename": "SAMSRV.dll", 
+                        "imgsize": 774144, 
+                        "baseaddr": "0x7fefc800000", 
+                        "filepath": "C:\\Windows\\system32\\SAMSRV.dll"
+                    }, 
+                    {
+                        "basename": "cryptdll.dll", 
+                        "imgsize": 81920, 
+                        "baseaddr": "0x7fefc7e0000", 
+                        "filepath": "C:\\Windows\\system32\\cryptdll.dll"
+                    }, 
+                    {
+                        "basename": "MSASN1.dll", 
+                        "imgsize": 61440, 
+                        "baseaddr": "0x7fefcd70000", 
+                        "filepath": "C:\\Windows\\system32\\MSASN1.dll"
+                    }, 
+                    {
+                        "basename": "wevtapi.dll", 
+                        "imgsize": 446464, 
+                        "baseaddr": "0x7fefc770000", 
+                        "filepath": "C:\\Windows\\system32\\wevtapi.dll"
+                    }, 
+                    {
+                        "basename": "IMM32.DLL", 
+                        "imgsize": 188416, 
+                        "baseaddr": "0x7fefdb70000", 
+                        "filepath": "C:\\Windows\\system32\\IMM32.DLL"
+                    }, 
+                    {
+                        "basename": "MSCTF.dll", 
+                        "imgsize": 1085440, 
+                        "baseaddr": "0x7fefee70000", 
+                        "filepath": "C:\\Windows\\system32\\MSCTF.dll"
+                    }, 
+                    {
+                        "basename": "cngaudit.dll", 
+                        "imgsize": 36864, 
+                        "baseaddr": "0x7fefc760000", 
+                        "filepath": "C:\\Windows\\system32\\cngaudit.dll"
+                    }, 
+                    {
+                        "basename": "AUTHZ.dll", 
+                        "imgsize": 192512, 
+                        "baseaddr": "0x7fefc730000", 
+                        "filepath": "C:\\Windows\\system32\\AUTHZ.dll"
+                    }, 
+                    {
+                        "basename": "ncrypt.dll", 
+                        "imgsize": 319488, 
+                        "baseaddr": "0x7fefc6e0000", 
+                        "filepath": "C:\\Windows\\system32\\ncrypt.dll"
+                    }, 
+                    {
+                        "basename": "bcrypt.dll", 
+                        "imgsize": 139264, 
+                        "baseaddr": "0x7fefc6b0000", 
+                        "filepath": "C:\\Windows\\system32\\bcrypt.dll"
+                    }, 
+                    {
+                        "basename": "msprivs.DLL", 
+                        "imgsize": 8192, 
+                        "baseaddr": "0x74b00000", 
+                        "filepath": "C:\\Windows\\system32\\msprivs.DLL"
+                    }, 
+                    {
+                        "basename": "netjoin.dll", 
+                        "imgsize": 204800, 
+                        "baseaddr": "0x7fefc670000", 
+                        "filepath": "C:\\Windows\\system32\\netjoin.dll"
+                    }, 
+                    {
+                        "basename": "negoexts.DLL", 
+                        "imgsize": 147456, 
+                        "baseaddr": "0x7fefc640000", 
+                        "filepath": "C:\\Windows\\system32\\negoexts.DLL"
+                    }, 
+                    {
+                        "basename": "Secur32.dll", 
+                        "imgsize": 45056, 
+                        "baseaddr": "0x7fefc970000", 
+                        "filepath": "C:\\Windows\\system32\\Secur32.dll"
+                    }, 
+                    {
+                        "basename": "cryptbase.dll", 
+                        "imgsize": 61440, 
+                        "baseaddr": "0x7fefcbc0000", 
+                        "filepath": "C:\\Windows\\system32\\cryptbase.dll"
+                    }, 
+                    {
+                        "basename": "kerberos.DLL", 
+                        "imgsize": 737280, 
+                        "baseaddr": "0x7fefc580000", 
+                        "filepath": "C:\\Windows\\system32\\kerberos.DLL"
+                    }, 
+                    {
+                        "basename": "CRYPTSP.dll", 
+                        "imgsize": 94208, 
+                        "baseaddr": "0x7fefc560000", 
+                        "filepath": "C:\\Windows\\system32\\CRYPTSP.dll"
+                    }, 
+                    {
+                        "basename": "WS2_32.dll", 
+                        "imgsize": 315392, 
+                        "baseaddr": "0x7fefeb80000", 
+                        "filepath": "C:\\Windows\\system32\\WS2_32.dll"
+                    }, 
+                    {
+                        "basename": "NSI.dll", 
+                        "imgsize": 32768, 
+                        "baseaddr": "0x7feff000000", 
+                        "filepath": "C:\\Windows\\system32\\NSI.dll"
+                    }, 
+                    {
+                        "basename": "mswsock.dll", 
+                        "imgsize": 348160, 
+                        "baseaddr": "0x7fefc500000", 
+                        "filepath": "C:\\Windows\\system32\\mswsock.dll"
+                    }, 
+                    {
+                        "basename": "wship6.dll", 
+                        "imgsize": 28672, 
+                        "baseaddr": "0x7fefc4f0000", 
+                        "filepath": "C:\\Windows\\System32\\wship6.dll"
+                    }, 
+                    {
+                        "basename": "msv1_0.DLL", 
+                        "imgsize": 331776, 
+                        "baseaddr": "0x7fefc490000", 
+                        "filepath": "C:\\Windows\\system32\\msv1_0.DLL"
+                    }, 
+                    {
+                        "basename": "netlogon.DLL", 
+                        "imgsize": 712704, 
+                        "baseaddr": "0x7fefc3e0000", 
+                        "filepath": "C:\\Windows\\system32\\netlogon.DLL"
+                    }, 
+                    {
+                        "basename": "DNSAPI.dll", 
+                        "imgsize": 372736, 
+                        "baseaddr": "0x7fefc380000", 
+                        "filepath": "C:\\Windows\\system32\\DNSAPI.dll"
+                    }, 
+                    {
+                        "basename": "logoncli.dll", 
+                        "imgsize": 196608, 
+                        "baseaddr": "0x7fefc350000", 
+                        "filepath": "C:\\Windows\\system32\\logoncli.dll"
+                    }, 
+                    {
+                        "basename": "schannel.DLL", 
+                        "imgsize": 356352, 
+                        "baseaddr": "0x7fefc2f0000", 
+                        "filepath": "C:\\Windows\\system32\\schannel.DLL"
+                    }, 
+                    {
+                        "basename": "CRYPT32.dll", 
+                        "imgsize": 1470464, 
+                        "baseaddr": "0x7fefcd90000", 
+                        "filepath": "C:\\Windows\\system32\\CRYPT32.dll"
+                    }, 
+                    {
+                        "basename": "wdigest.DLL", 
+                        "imgsize": 221184, 
+                        "baseaddr": "0x7fefc2b0000", 
+                        "filepath": "C:\\Windows\\system32\\wdigest.DLL"
+                    }, 
+                    {
+                        "basename": "rsaenh.dll", 
+                        "imgsize": 290816, 
+                        "baseaddr": "0x7fefc260000", 
+                        "filepath": "C:\\Windows\\system32\\rsaenh.dll"
+                    }, 
+                    {
+                        "basename": "tspkg.DLL", 
+                        "imgsize": 98304, 
+                        "baseaddr": "0x7fefc240000", 
+                        "filepath": "C:\\Windows\\system32\\tspkg.DLL"
+                    }, 
+                    {
+                        "basename": "pku2u.DLL", 
+                        "imgsize": 282624, 
+                        "baseaddr": "0x7fefc1f0000", 
+                        "filepath": "C:\\Windows\\system32\\pku2u.DLL"
+                    }, 
+                    {
+                        "basename": "bcryptprimitives.dll", 
+                        "imgsize": 311296, 
+                        "baseaddr": "0x7fefc1a0000", 
+                        "filepath": "C:\\Windows\\system32\\bcryptprimitives.dll"
+                    }, 
+                    {
+                        "basename": "RpcRtRemote.dll", 
+                        "imgsize": 81920, 
+                        "baseaddr": "0x7fefccb0000", 
+                        "filepath": "C:\\Windows\\system32\\RpcRtRemote.dll"
+                    }, 
+                    {
+                        "basename": "efslsaext.dll", 
+                        "imgsize": 73728, 
+                        "baseaddr": "0x7fefc180000", 
+                        "filepath": "C:\\Windows\\system32\\efslsaext.dll"
+                    }, 
+                    {
+                        "basename": "scecli.DLL", 
+                        "imgsize": 253952, 
+                        "baseaddr": "0x7fefc120000", 
+                        "filepath": "C:\\Windows\\system32\\scecli.DLL"
+                    }, 
+                    {
+                        "basename": "credssp.dll", 
+                        "imgsize": 40960, 
+                        "baseaddr": "0x7fefc160000", 
+                        "filepath": "C:\\Windows\\system32\\credssp.dll"
+                    }, 
+                    {
+                        "basename": "WINSTA.dll", 
+                        "imgsize": 249856, 
+                        "baseaddr": "0x7fefcc70000", 
+                        "filepath": "C:\\Windows\\system32\\WINSTA.dll"
+                    }, 
+                    {
+                        "basename": "IPHLPAPI.DLL", 
+                        "imgsize": 159744, 
+                        "baseaddr": "0x7fefa8d0000", 
+                        "filepath": "C:\\Windows\\system32\\IPHLPAPI.DLL"
+                    }, 
+                    {
+                        "basename": "WINNSI.DLL", 
+                        "imgsize": 45056, 
+                        "baseaddr": "0x7fefa8b0000", 
+                        "filepath": "C:\\Windows\\system32\\WINNSI.DLL"
+                    }, 
+                    {
+                        "basename": "netutils.dll", 
+                        "imgsize": 49152, 
+                        "baseaddr": "0x7fefa4c0000", 
+                        "filepath": "C:\\Windows\\system32\\netutils.dll"
+                    }, 
+                    {
+                        "basename": "USERENV.dll", 
+                        "imgsize": 122880, 
+                        "baseaddr": "0x7fefc010000", 
+                        "filepath": "C:\\Windows\\system32\\USERENV.dll"
+                    }, 
+                    {
+                        "basename": "profapi.dll", 
+                        "imgsize": 61440, 
+                        "baseaddr": "0x7fefccd0000", 
+                        "filepath": "C:\\Windows\\system32\\profapi.dll"
+                    }, 
+                    {
+                        "basename": "wshtcpip.dll", 
+                        "imgsize": 28672, 
+                        "baseaddr": "0x7fefbf00000", 
+                        "filepath": "C:\\Windows\\System32\\wshtcpip.dll"
+                    }, 
+                    {
+                        "basename": "dssenh.dll", 
+                        "imgsize": 204800, 
+                        "baseaddr": "0x7fef3a70000", 
+                        "filepath": "C:\\Windows\\system32\\dssenh.dll"
+                    }, 
+                    {
+                        "basename": "GPAPI.dll", 
+                        "imgsize": 110592, 
+                        "baseaddr": "0x7fefbff0000", 
+                        "filepath": "C:\\Windows\\system32\\GPAPI.dll"
+                    }, 
+                    {
+                        "basename": "monitor-x64.dll", 
+                        "imgsize": 2269184, 
+                        "baseaddr": "0x742d0000", 
+                        "filepath": "C:\\tmpd0os1j\\bin\\monitor-x64.dll"
+                    }
+                ], 
+                "time": 0, 
+                "tid": 1912, 
+                "first_seen": 1777247787.828125, 
+                "ppid": 392, 
+                "type": "process"
+            }
+        ], 
+        "processtree": [
+            {
+                "track": false, 
+                "pid": 512, 
+                "process_name": "lsass.exe", 
+                "command_line": "C:\\Windows\\system32\\lsass.exe", 
+                "first_seen": 1777247787.828125, 
+                "ppid": 392, 
+                "children": []
+            }
+        ]
+    }, 
+    "debug": {
+        "action": [], 
+        "dbgview": [], 
+        "errors": [], 
+        "log": [
+            "2026-04-26 22:56:27,015 [analyzer] DEBUG: Starting analyzer from: C:\\tmpd0os1j\n", 
+            "2026-04-26 22:56:27,030 [analyzer] DEBUG: Pipe server name: \\??\\PIPE\\LhkWVwaegcPERiDZbmFacEUajRLvzL\n", 
+            "2026-04-26 22:56:27,030 [analyzer] DEBUG: Log pipe server name: \\??\\PIPE\\UnTjDYJGXpPYXyCo\n", 
+            "2026-04-26 22:56:27,265 [analyzer] DEBUG: Started auxiliary module Curtain\n", 
+            "2026-04-26 22:56:27,265 [analyzer] DEBUG: Started auxiliary module DbgView\n", 
+            "2026-04-26 22:56:27,687 [analyzer] DEBUG: Started auxiliary module Disguise\n", 
+            "2026-04-26 22:56:27,890 [analyzer] DEBUG: Loaded monitor into process with pid 512\n", 
+            "2026-04-26 22:56:27,890 [analyzer] DEBUG: Started auxiliary module DumpTLSMasterSecrets\n", 
+            "2026-04-26 22:56:27,890 [analyzer] DEBUG: Started auxiliary module Human\n", 
+            "2026-04-26 22:56:27,890 [analyzer] DEBUG: Started auxiliary module InstallCertificate\n", 
+            "2026-04-26 22:56:27,890 [analyzer] DEBUG: Started auxiliary module Reboot\n", 
+            "2026-04-26 22:56:27,937 [analyzer] DEBUG: Started auxiliary module RecentFiles\n", 
+            "2026-04-26 22:56:27,937 [analyzer] DEBUG: Started auxiliary module Screenshots\n", 
+            "2026-04-26 22:56:27,937 [analyzer] DEBUG: Started auxiliary module Sysmon\n", 
+            "2026-04-26 22:56:27,937 [analyzer] DEBUG: Started auxiliary module LoadZer0m0n\n", 
+            "2026-04-26 22:56:28,000 [lib.api.process] ERROR: Failed to execute process from path u'C:\\\\Users\\\\ADMINI~1\\\\AppData\\\\Local\\\\Temp\\\\798053876c6129c9e0d16548b0266cddf49dbd06e8a949afa3e8129431e0a9ee.exe' with arguments ['bin\\\\inject-x64.exe', '--app', u'C:\\\\Users\\\\ADMINI~1\\\\AppData\\\\Local\\\\Temp\\\\798053876c6129c9e0d16548b0266cddf49dbd06e8a949afa3e8129431e0a9ee.exe', '--only-start', '--curdir', 'C:\\\\Users\\\\ADMINI~1\\\\AppData\\\\Local\\\\Temp'] (Error: Command '['bin\\\\inject-x64.exe', '--app', u'C:\\\\Users\\\\ADMINI~1\\\\AppData\\\\Local\\\\Temp\\\\798053876c6129c9e0d16548b0266cddf49dbd06e8a949afa3e8129431e0a9ee.exe', '--only-start', '--curdir', 'C:\\\\Users\\\\ADMINI~1\\\\AppData\\\\Local\\\\Temp']' returned non-zero exit status 1)\n"
+        ], 
+        "cuckoo": [
+            "2026-04-26 22:56:28,080 [cuckoo.core.scheduler] INFO: Task #7526673: acquired machine win7x6429 (label=win7x6429)\n", 
+            "2026-04-26 22:56:28,080 [cuckoo.core.resultserver] DEBUG: Now tracking machine 192.168.168.229 for task #7526673\n", 
+            "2026-04-26 22:56:28,396 [cuckoo.auxiliary.sniffer] INFO: Started sniffer with PID 4033989 (interface=vboxnet0, host=192.168.168.229)\n", 
+            "2026-04-26 22:56:28,712 [cuckoo.machinery.virtualbox] DEBUG: Starting vm win7x6429\n", 
+            "2026-04-26 22:56:29,395 [cuckoo.machinery.virtualbox] DEBUG: Restoring virtual machine win7x6429 to vmcloak\n", 
+            "2026-04-26 22:56:43,845 [cuckoo.core.guest] INFO: Starting analysis #7526673 on guest (id=win7x6429, ip=192.168.168.229)\n", 
+            "2026-04-26 22:56:44,858 [cuckoo.core.guest] DEBUG: win7x6429: not ready yet\n", 
+            "2026-04-26 22:56:49,888 [cuckoo.core.guest] INFO: Guest is running Cuckoo Agent 0.10 (id=win7x6429, ip=192.168.168.229)\n", 
+            "2026-04-26 22:56:49,963 [cuckoo.core.guest] DEBUG: Uploading analyzer to guest (id=win7x6429, ip=192.168.168.229, monitor=latest, size=6660546)\n", 
+            "2026-04-26 22:56:51,212 [cuckoo.core.resultserver] DEBUG: Task #7526673: live log analysis.log initialized.\n", 
+            "2026-04-26 22:56:52,049 [cuckoo.core.resultserver] DEBUG: Task #7526673 is sending a BSON stream\n", 
+            "2026-04-26 22:56:53,284 [cuckoo.core.resultserver] DEBUG: Task #7526673: File upload for 'shots/0001.jpg'\n", 
+            "2026-04-26 22:56:53,311 [cuckoo.core.resultserver] DEBUG: Task #7526673 uploaded file length: 133410\n", 
+            "2026-04-26 22:56:53,715 [cuckoo.core.guest] WARNING: win7x6429: analysis #7526673 caught an exception\n", 
+            "Traceback (most recent call last):\n", 
+            "  File \"C:/tmpd0os1j/analyzer.py\", line 824, in <module>\n", 
+            "    success = analyzer.run()\n", 
+            "  File \"C:/tmpd0os1j/analyzer.py\", line 673, in run\n", 
+            "    pids = self.package.start(self.target)\n", 
+            "  File \"C:\\tmpd0os1j\\modules\\packages\\exe.py\", line 34, in start\n", 
+            "    return self.execute(path, args=shlex.split(args))\n", 
+            "  File \"C:\\tmpd0os1j\\lib\\common\\abstracts.py\", line 205, in execute\n", 
+            "    \"Unable to execute the initial process, analysis aborted.\"\n", 
+            "CuckooPackageError: Unable to execute the initial process, analysis aborted.\n", 
+            "\n", 
+            "2026-04-26 22:56:53,728 [cuckoo.core.plugins] DEBUG: Stopped auxiliary module: Redsocks\n", 
+            "2026-04-26 22:56:53,758 [cuckoo.core.plugins] DEBUG: Stopped auxiliary module: Sniffer\n", 
+            "2026-04-26 22:56:54,555 [cuckoo.machinery.virtualbox] INFO: Successfully generated memory dump for virtual machine with label win7x6429 to path /srv/cuckoo/cwd/storage/analyses/7526673/memory.dmp\n", 
+            "2026-04-26 22:56:54,557 [cuckoo.machinery.virtualbox] DEBUG: Stopping vm win7x6429\n", 
+            "2026-04-26 22:57:03,749 [cuckoo.core.resultserver] DEBUG: Stopped tracking machine 192.168.168.229 for task #7526673\n", 
+            "2026-04-26 22:57:03,750 [cuckoo.core.resultserver] DEBUG: Cancel <Context for LOG> for task 7526673\n", 
+            "2026-04-26 22:57:04,074 [cuckoo.core.scheduler] DEBUG: Released database task #7526673\n", 
+            "2026-04-26 22:57:04,091 [cuckoo.core.scheduler] INFO: Task #7526673: analysis procedure completed\n"
+        ]
+    }, 
+    "strings": [
+        "!This program cannot be run in DOS mode.", 
+        "*Im %$", 
+        "oJY_&0", 
+        "MqRzDxD", 
+        "15z$Qb", 
+        "Vk)eSr", 
+        "LV|IP@", 
+        "r#.Wh_", 
+        "G(AJ(r", 
+        "QENn4$", 
+        "u3.c: O", 
+        "{}j']H", 
+        "n:\u001f0UB", 
+        "i[Pf(S", 
+        "XcGS`/~rS", 
+        "@i6o%L", 
+        "2$~v(r", 
+        "rkK]*?", 
+        "KE FO4", 
+        "?t`.l\u001ffF", 
+        "1cCe0]", 
+        "`QN_LC:", 
+        ",3F!jt'", 
+        "\"]>5y-", 
+        "1=\"T|xJ[", 
+        "i^tK7N", 
+        "Hus%_M", 
+        "7eoJI*", 
+        ";L3',g", 
+        "!tPnY-", 
+        "Xx\"oOss", 
+        "GsX=6rE", 
+        "upYvb.", 
+        "?}dki)", 
+        "8RT\"^Va", 
+        "/(vcrv", 
+        "N[!kHiVBA", 
+        "fksCT'", 
+        "k^oR\\K", 
+        "ocRR#i", 
+        "^(bKJ_O", 
+        "'K}g\\J", 
+        "rw()Jes", 
+        "FzfxKz", 
+        "ZIV\"2{Qa1", 
+        ".rtiMk", 
+        "RUi00J", 
+        "2-5]dP", 
+        "-rI`@\"", 
+        "osMLduF", 
+        "=#Os%/a", 
+        "p~CVb$l", 
+        "D3<%Z/", 
+        "~>Z~dH", 
+        "wukh,~4L", 
+        "!&_69H", 
+        "P^?K[y+", 
+        "k !%N<", 
+        "Y,BU`2", 
+        "F<&$_T;", 
+        "4\u001fFApj", 
+        "Wa#Djn", 
+        "&\\KC7Lq", 
+        ".\\\u001f=mJ", 
+        "sG\"dM&", 
+        "?,J,RM", 
+        "--4Nk3g", 
+        "P19[Oc", 
+        "59n(;D", 
+        "u_]Xe3", 
+        "(H ?ik", 
+        "ZUc);%2", 
+        "S'Hi@.", 
+        "SgmiHu", 
+        "9q`bu7H", 
+        "Q{N2^d", 
+        "G`gT}$", 
+        "*K d.0", 
+        "\\.jmcw", 
+        "G!)unh", 
+        ",!HYG[", 
+        ".-T(kPx", 
+        "8qnIG.", 
+        "\"\\.[Bh&", 
+        "b<f!dFn", 
+        ",'<fu=", 
+        "6!z+0G;", 
+        ".-3nlw", 
+        "pQI=q6]|S", 
+        "xC:X&d", 
+        "~]4t(Kf", 
+        ",}=e,9", 
+        "e(..Q;7", 
+        "\\(K`vL", 
+        "FrAhsL", 
+        "RfAKOs{", 
+        "$'M_ -6", 
+        "6yfrw8", 
+        "v6$2<\\", 
+        "L^TyV,", 
+        "@F2=aF00", 
+        "cbZ!G_o", 
+        "m%42C|", 
+        "o*+5aN", 
+        "XD5d~:!oW", 
+        "wns+ZnBMn", 
+        ";4tlBb", 
+        "Z=K}v ", 
+        "{y6V(L&", 
+        "oOK72cU", 
+        "<fZsy]", 
+        "U60sYTP", 
+        "8#T'? ", 
+        ",ge\\dx", 
+        " E@(__4", 
+        "PiB{SVUv", 
+        "V8]Xnt", 
+        "VeJ/w]", 
+        "u+!,,Y`x", 
+        "/4tPkWd", 
+        "\"'9Ye Z", 
+        "om_@+ME", 
+        "^IUFO+", 
+        "Z%6ONX", 
+        "*nlH+{", 
+        "$xJ$#Xy", 
+        "!^#}[&r(]^", 
+        "\\a2br^ep", 
+        "\\wB],t", 
+        ">&$s Y", 
+        "Y@<FUN'", 
+        ",!qMe:", 
+        "/1\u001f>1 ", 
+        "xAhPoK", 
+        ")Q~^L/>", 
+        "UL=k*3", 
+        "AmqFg6o", 
+        "-c%lJs", 
+        "mNkL+L", 
+        "#kB.\".", 
+        "tPu^Ret", 
+        "w?[AD9j", 
+        "p2B73?{", 
+        "1Rc}Do", 
+        "o&^fQf2\u001f)\u001f", 
+        "F!\"vd%", 
+        "\u001fFwkHlE n", 
+        "~B{:ud9", 
+        "9w}%d~R", 
+        ".}g)PiZYJ", 
+        "$EF;hKB", 
+        "dF:&a8", 
+        "F+z;6QQ", 
+        "gCM8uh2zk", 
+        "10|Ih^", 
+        "Ul{Tf ", 
+        "ZKVdVTx:", 
+        ")LV/@E", 
+        "?Ui6jk(MW", 
+        "'T:I~\\", 
+        "/A2_\"_", 
+        "Y$%W:8", 
+        "kK@-XgL", 
+        "^-8bY0", 
+        "Fc,Jq7", 
+        "'tPGU{", 
+        "!ge~;izk", 
+        " n`?5w", 
+        "e~|u{tm", 
+        "z@b2C&<", 
+        "rubKu\u001f", 
+        "}'Rm#D#", 
+        "c37|6*", 
+        ")Y')2w*_cn", 
+        "MR,x#$;", 
+        "s\"!fXhD", 
+        "~R24M'f", 
+        "C{Ny#B", 
+        "`]Nj9^9", 
+        "uSaw^D", 
+        "r*]UuI3{", 
+        "+>;//l4%R", 
+        "{*ABn[I", 
+        "A:d;3}", 
+        "70{s:#", 
+        "5\"H.u6", 
+        "jh+Dh)", 
+        "2@GF</", 
+        "Yh\u001fR+c", 
+        "4fMJ|<", 
+        "^+==`[", 
+        "vj+PrP", 
+        "7ZoC-@", 
+        "*|-P(I", 
+        "r!st;F", 
+        "dJ?%=\u001f", 
+        "ogk%|S", 
+        "I9>.!L", 
+        ",E?hd%", 
+        "4+pBASh", 
+        "S*fq3u", 
+        "k*;zl}", 
+        "zHwlec", 
+        "5?q2L_", 
+        "I+Z#0a", 
+        "H%FVD-", 
+        "AOPXob", 
+        "ZnvCV!", 
+        "\\.gbky", 
+        "29mho\u001f", 
+        "V&\"rD(", 
+        "D~z-\u001fn", 
+        "}JfftS/", 
+        "i2z%1`", 
+        "wV=Vzp", 
+        "F!ue%F", 
+        "C+nDe0", 
+        "Et]1Fu#", 
+        "`&7008", 
+        "?OVgnU", 
+        "h.-\\)Z", 
+        "]txH^.", 
+        "9?Zv;a?", 
+        "V<F1pC", 
+        "_~{k#C", 
+        "82'L]b", 
+        "RPc[=:>}", 
+        "TORNnG", 
+        "{y9!2a", 
+        "gjr]q;~", 
+        "UrR}{C", 
+        "8:'l#R*PG", 
+        "|q]&d?w\u001f", 
+        "LEsef}V", 
+        ">4CH,;", 
+        "fnuE\\u", 
+        "0?\u001f1m?*", 
+        "O39 DR", 
+        "t}6j\u001fF\"", 
+        "Cth~sm", 
+        "0OX{<(0", 
+        "$i<F'S", 
+        "WE,9_R", 
+        "okllZ/", 
+        "t<ozT3qW", 
+        "T6PwD`", 
+        "L]e|r8", 
+        "WrW_^U", 
+        "<?lD\u001f|j", 
+        "'EvM\\X", 
+        "bJbEpF", 
+        "aW>F[&", 
+        "1=^N )$", 
+        "{z]*_S", 
+        "h-d|_B", 
+        "ir!!_0", 
+        "'<X|/D#", 
+        "(\\IcsK", 
+        "niwV,3} ", 
+        "xDZ,O7", 
+        "+hOD*Q", 
+        "p)@}#,JBP", 
+        "n%JMXXr", 
+        "dG%Z=<", 
+        "360BMO\"", 
+        "jxl+mt", 
+        "J2LT(<", 
+        "u*'2>E", 
+        "Fk?ylW6", 
+        "Y'k=Pa", 
+        " Q[@DW", 
+        "d{)#h`", 
+        "CGpvR\u001f", 
+        ")U4a\u001f}", 
+        "]Gxqgyy", 
+        "_wK{\u001f4", 
+        "qf=F}g", 
+        "C~uX0_}|+f", 
+        "emcBG1", 
+        "dTpmw]", 
+        "[g9-e0#", 
+        "l>>\\yB", 
+        ",Zf\\ptU", 
+        "w..0G=", 
+        "n^d?xY", 
+        "Ic;clV6WO", 
+        ";\u001fbLE:", 
+        "aU8&,Wa", 
+        "L>+z3j", 
+        "k])ic?<", 
+        "+J/rW!", 
+        ",s]Lx;", 
+        "]S w `", 
+        "2Cx#2_", 
+        "*_r`yE", 
+        "/HQwS\\", 
+        "-e<SHl", 
+        "f\"r37wE", 
+        ".}qDC-", 
+        "PzO1:}L&X", 
+        "e1$SF@", 
+        "S3Faxc", 
+        ".]YfY\\", 
+        "/W\\g2lJ", 
+        "r2o=DH", 
+        "m0{xV&", 
+        "t@|j6T", 
+        ";2dKq+A", 
+        "NL[{h,", 
+        "\u001f9fa<Jq", 
+        "D!jn8b", 
+        "HZy<Fv", 
+        "H>hDG@j", 
+        "qS!8x@", 
+        "&$]s'&", 
+        "buyZ+c", 
+        "4A> ?U", 
+        "Up8&eX", 
+        "d!]j#\\", 
+        "nJ1h,Z=", 
+        "ti'&UK", 
+        "NdOl?4", 
+        "d/V\u001f*r", 
+        "H`+OM]", 
+        "G*TK65+", 
+        "u%1qj[", 
+        "cVGC7p,`h", 
+        "Sxn,a0", 
+        "Z>)_lCXeU", 
+        "a:S,~NqX$", 
+        "4zUe|!", 
+        "xJ|h2l", 
+        "`'^yC+", 
+        "aP22j,", 
+        "(B0AAv", 
+        "AG0},Y)", 
+        "b-Pl0i", 
+        ")lpabuB", 
+        "#=Iz}Z", 
+        "s</=#wmTXT", 
+        "cS3K_>", 
+        "|j~|%G", 
+        ">Jp0gf", 
+        "7-8*S$", 
+        "O3*44=", 
+        "e;:\\/(", 
+        "V\"kb41", 
+        ">@,0)H", 
+        "l})B_}", 
+        " 1o?`cV", 
+        "_pZH6h", 
+        "7%T,;Z-\"[", 
+        "KSzg?~", 
+        "FZ6tF_m", 
+        "G:H3x?", 
+        "6,p'_q", 
+        "%9I>xUP", 
+        "{_}mN[", 
+        "[td~FX", 
+        "#$-V\u001f}", 
+        "+vq7Un6bb", 
+        "?a*<1x", 
+        "wOGz6jyas", 
+        "D~/59-", 
+        "6+00.*", 
+        "Wuhv:b", 
+        "e8>m\"w", 
+        "WC<%Jn", 
+        "d,%-uP", 
+        "/D}_cd", 
+        "`@G$Non", 
+        "Oqx@]4", 
+        "lIVPNp7", 
+        "@s1Z]Vt", 
+        "yh$l!K", 
+        "'WlRhbp", 
+        "EX|h?q|", 
+        "X} f~N", 
+        "R,&`h\\", 
+        "j'Tfrwg", 
+        "nLy#/e", 
+        "WdjD^XsQ", 
+        "9RhOqa", 
+        "[FKyqtjv", 
+        "/`[f{/z", 
+        "oqlG'KP", 
+        "e@'J.9n", 
+        "OU?=F8", 
+        "By@)H44n", 
+        "9`YcooL1", 
+        "6QC/3>", 
+        "`NaxE\u001f", 
+        " &hdfd", 
+        "iCsfAw", 
+        "'5WpA&x", 
+        "Hop=3bi$t", 
+        "u1\\4!B", 
+        "-bR@1>.n", 
+        "S}g?'e", 
+        "O(y,z$", 
+        "8<=RFv", 
+        "JPm:4}&S", 
+        "vB~C\\gJ", 
+        ".,d2!Z", 
+        "({y  t", 
+        "yAj{Mh", 
+        "~4#%%r", 
+        "7~eWhT", 
+        "g22E R", 
+        "f{?dD7", 
+        "[e~\"Ii", 
+        "4 /5pB7", 
+        "osclB<C", 
+        "v%_.]t", 
+        "E03' P", 
+        "d(!+K;", 
+        "nz19/|`", 
+        "w, qR]", 
+        "XL6O|}", 
+        "V`'u\\{", 
+        "]> [0u", 
+        ";g!d6Q", 
+        "@tY0Le", 
+        "N\\NZ{P", 
+        ",1C\u001fsr\u001fbB", 
+        "|WN#_V", 
+        "FET$}g", 
+        "O|u>ZC#f", 
+        "MN,:,g", 
+        "&4!a~EXc", 
+        "F,>=e}GZ", 
+        "n>g>#Y", 
+        "x.,lT&", 
+        "<T.W[,=.", 
+        "zPqjo-", 
+        "Aqm6'P", 
+        "GbF?ZQ", 
+        " SVm,3", 
+        "JXRE<Y", 
+        "y\\<+%/", 
+        "Z'R^p+", 
+        "E{T=<U", 
+        "9[-Z=9", 
+        "q}K\\\u001fa", 
+        "ygMq#et", 
+        " {l<Vyp2L", 
+        "!;J  _o![w_", 
+        "MYf\u001f'XY", 
+        "m?g&SF\u001f", 
+        ",r\\30p;", 
+        "3:YGe`N", 
+        ": Q#k5U", 
+        "%7yzL*K", 
+        "$'|$tE", 
+        "7Q: k\\", 
+        "Pl8xV9\\", 
+        "N.e~A,1", 
+        "zP[;OR", 
+        "k`kpx1", 
+        "nXh,}%", 
+        "|WN{TZ@", 
+        "5!{n8d", 
+        "v,Oc\u001f5", 
+        "o\"}@>w", 
+        "=7L<D2", 
+        "Dokw:R", 
+        "WQ{hGs", 
+        "&Z2HdU", 
+        "~I@0Nk", 
+        "}!fz,.", 
+        ">e}*e2w", 
+        "38~X}(a\"", 
+        "~%x n9x", 
+        "3K61]<", 
+        "E[OwTh", 
+        ":~']'G", 
+        "suuZI6\"", 
+        "b!,\"l6C", 
+        "maZYww3f", 
+        "GdlE967U", 
+        "//)P/J", 
+        "\"[)\u001fj7", 
+        "z-%shD(", 
+        "#8'7/]#", 
+        "AW;Bc*q", 
+        "4 reN7", 
+        "Nk;%`C|", 
+        "'lz7\u001f*", 
+        "0Gp\\Kq5", 
+        "U>&5,^\"", 
+        "U%x?\u001fYtBI$yD|", 
+        "\\&m>)BPD~", 
+        "2)S*cSI", 
+        "Si!mZZ", 
+        " <?,Pp-", 
+        "Y0i|\\&", 
+        "e|LV$\"D", 
+        "xw\"8U3k!0", 
+        "I;6.w^-)", 
+        "\u001f!s[}D", 
+        "w2!q_?", 
+        "\u001fj)hpl", 
+        "yP@fnv\"", 
+        "IZJLf},", 
+        "xQ<(tl", 
+        "-C6I0:x", 
+        "`K~q<mc", 
+        "MB(1Wo$%", 
+        "zxra\\D%", 
+        "X*,DTr", 
+        "{-\"-t8", 
+        "%sOx;6\"", 
+        "tBM6TL", 
+        ",,0>_u", 
+        "V|Mv1Zwg", 
+        "m_I*TP", 
+        ")\u001fxPRS", 
+        "?!$hmo", 
+        "504_\\K8", 
+        "<|2Q0#S", 
+        "lTWY;{j", 
+        "\\j1d?O", 
+        "x1*@9+", 
+        "B%>NRUU", 
+        "6)Okk$", 
+        "]tNpzS`", 
+        "9yZ7E}a", 
+        "zcx'[}", 
+        "dp)!kf", 
+        "G\u001fq8A5", 
+        "xov$qQ", 
+        "olKr!$e&=d0GG", 
+        "^~gzb>?", 
+        "gZiPCk", 
+        "V~{}yp", 
+        "je0vCZ", 
+        "s8Z8)#", 
+        "\\zAY.i", 
+        "_0kdU-(", 
+        "9(/1QGx", 
+        "5{10P'", 
+        "/3=UTj", 
+        "XS\"z2+", 
+        "Q <(++", 
+        "MZ9aQ}", 
+        "#l7EcW+", 
+        "Wz~Cn0", 
+        "+s*Nm*@", 
+        "S)f38|IB", 
+        "+:.sE/", 
+        "VVnzTS", 
+        "_CVF0E", 
+        "a@tj%L", 
+        "qZQ'<_t", 
+        "N~xl|9", 
+        "r|7\"&3", 
+        "X*ebHt", 
+        "v' l.`", 
+        "g,mPCy", 
+        "8O(zoe", 
+        "L$$HuI0", 
+        "5n$9?l.", 
+        "ZKp%4J", 
+        "\\#Oa4o", 
+        "U<;Y}W", 
+        "Bjq  u", 
+        "\u001f!wT-&", 
+        "3.t1fVd", 
+        "~i6t5>", 
+        "1(&XqZn", 
+        "-C!X\u001f]", 
+        "8)vO4o", 
+        "zHONRn", 
+        "~O>=-'", 
+        ">lp:CZ", 
+        "WOO3au", 
+        "rJDz0lo", 
+        "I5</`r", 
+        "@aN'v)B", 
+        "5s&^Cv", 
+        "Q;Ac}\"y", 
+        "aR?pOW", 
+        "oqQg}uI", 
+        " I,rl-", 
+        " }:;F*%", 
+        "2kUm\u001fk", 
+        "?(h7Oi", 
+        "Hn~y8.,", 
+        "I'+_v,:", 
+        "Ma5rXmX", 
+        "D}(Se|=", 
+        "6tkQ6Q", 
+        "^?\u001fzr2", 
+        "O=/\"Nr", 
+        "!WC,b3", 
+        "s==t-p", 
+        "q>0J0u-_", 
+        "iw1Q*>", 
+        "E%5z.4k2oM", 
+        "[B0h\\p", 
+        "+z~V; A", 
+        "HcCCY-", 
+        "QWM}w# b", 
+        "9zi;`a", 
+        "(;*|{_yIX", 
+        "=my-+ch%", 
+        "HQ OWX", 
+        "P9UbQ,V.#", 
+        "kbE^>Xq", 
+        "L{.Dqh", 
+        "EsQ8dq", 
+        "O&u1(gU", 
+        "L9\"D\u001f~F", 
+        "@K9m I", 
+        "k$K`y2", 
+        "w(~ISA", 
+        "$Y`(cFs;$i/<", 
+        "=xrDOJ", 
+        "T\")Z6M", 
+        "H:m^.gv", 
+        "eGr\\+U!p", 
+        ":+KZg}", 
+        "r#gCich", 
+        "3+lY7Ua", 
+        "IQQ633W", 
+        "Oii4hg%P", 
+        "\u001f9RCFILt", 
+        "YrtrrN", 
+        "zRc(P?o", 
+        "o{k\\%P", 
+        "J%p`\"#", 
+        "LyLYy0#o{", 
+        "aEa-{m", 
+        "Z|G+',", 
+        "8nuRKr", 
+        "l^%(h2", 
+        "T|[8@i", 
+        "]UW\u001fC(", 
+        "8uCkR!", 
+        "QHKC#*", 
+        "LjFZr4t=", 
+        "{lr(jn", 
+        "gPgDKF", 
+        "\\1:Qqj", 
+        "KhqtdL?5", 
+        "8b9:SEh", 
+        "{$&A~{", 
+        "Q(yWc~", 
+        "f@TA\"K", 
+        "46#SBtA", 
+        "VQ4xa@", 
+        "\u001flf]]>\u001f", 
+        "oxk{\u001fK", 
+        "q>tDCh", 
+        "|(GKO%", 
+        "iFD9lf", 
+        "rf[-POm", 
+        "qgm4KO", 
+        "8eN6fA", 
+        "\u001fyO/}/H", 
+        "~KRQs4cN", 
+        "WdY]Km", 
+        "0xMSs3", 
+        "8@C^X|", 
+        "c%vTP9&7+~", 
+        "I<JOhS{", 
+        "T)ppj,", 
+        "jwG|^5.", 
+        "m:+P_c", 
+        "c.\\t1l", 
+        "xU^YF:", 
+        "=bFKF2", 
+        "bd6\\:@", 
+        "h.F8!r", 
+        "Z%A84QB", 
+        "EfL7$:", 
+        "PUO?Lt\u001f", 
+        "8vWDo%X", 
+        "Bbm_rjL", 
+        "9E$QMR", 
+        "D2U4VLk", 
+        "ie=Or+", 
+        "\"i@6_0\\l", 
+        "R\\/>`u\u001f", 
+        "4H]=Gx", 
+        "F81'+o", 
+        "xC%^ ppr", 
+        "wx0LS%", 
+        "\u001f5N` {f", 
+        "Pz4,})8", 
+        "jH DOg&y", 
+        "MnPUZ=", 
+        "OZ4v8|fJ", 
+        "!OnR|ZO", 
+        "5\"4N?XS", 
+        "w\u001fZQ,e", 
+        "$!o?4B", 
+        "w\\e%c\"", 
+        "c()PrX@<s", 
+        "$6zriI", 
+        "t21[iK#", 
+        "v:<8\u001f?", 
+        "Ui<fKl", 
+        "N(O/@x", 
+        "&As=unJ$", 
+        " %z{jXf", 
+        "`<B4?S", 
+        "iDPHMR", 
+        ";EM=U^", 
+        "r'aC9B", 
+        "\\SvCD|r", 
+        "%G>>X t", 
+        ">Ya33R?", 
+        "{pe#pl", 
+        "GF.[?S#/", 
+        "eCwZy)", 
+        "Hm+BWv", 
+        "8d}y,6", 
+        "F\\WY`xz", 
+        "]Kj9#E", 
+        "oZgX(6", 
+        "XZ/eE\"", 
+        "9]|CsU", 
+        "eBih2-", 
+        "@S~rX ", 
+        "0eI(w;", 
+        "L8p109)", 
+        " m/'^L#R", 
+        "JGfOz~D", 
+        "(a}_h-", 
+        "7/[rGx", 
+        "U^uLJt", 
+        "BMy/\u001f_", 
+        "lDGH%H", 
+        "l2 B:Z~f#O", 
+        "W[&>I6", 
+        "kkq&!|", 
+        "xuO7~Npk", 
+        "jAuTJ,", 
+        "w}%Y\u001fl=", 
+        "_o)&6_", 
+        "|dV_OK", 
+        "z2'S;gX", 
+        "7+fyuv", 
+        "<RZn\\K", 
+        "B#X7O_a", 
+        ",W1{X[@", 
+        "YekjR8", 
+        "-j/OZ!", 
+        "yTP$xn)", 
+        "qPXaW+", 
+        "+DiVD}", 
+        "^16J'!", 
+        "mta\u001f.'R", 
+        "dpvHt=", 
+        ".h?XJ\u001f(", 
+        "U(T&2@", 
+        "(|sxsc", 
+        "rTq4l;S", 
+        "_KiN~+", 
+        "KOZ$#/", 
+        "|_K$vGI", 
+        "Q\"/kib", 
+        "Nx<X'Y", 
+        "-My??M+", 
+        "S$;&S/", 
+        "ZBQXrdtX", 
+        "-7c*0R", 
+        ":za^@:", 
+        "aEv=9x", 
+        "P>g^B}", 
+        "tT/X&<Z/", 
+        "(L?#-4", 
+        "oa$<dx", 
+        "\u001fLVmoS", 
+        "@>7=ZhI", 
+        "8_dZ[p", 
+        "\u001f(-~*0", 
+        ",YiEk/", 
+        "@wGm3=L", 
+        "AQC\u001fAzh", 
+        "4klu{8>azZ", 
+        "%zm>Y_#", 
+        "7x8)(s", 
+        "_{#(l#'", 
+        "?u$<<.", 
+        "Y9(@S-f", 
+        "KJ],Kl", 
+        "zkfUKo", 
+        "E8mSyQ", 
+        "32:QB\\", 
+        "HC/YCl<r;,", 
+        "6(`q!\\", 
+        "Wc@LeW", 
+        "vys30M", 
+        "T_9]d?", 
+        "54\\hlO", 
+        "j9yjKL}", 
+        "|zV$j|$l", 
+        "G=6! T", 
+        "%\"0/id>f", 
+        "5x{5)/", 
+        "-fMK3j", 
+        "s|D?pil", 
+        "`>K#P<", 
+        "%w8jx-U", 
+        "NWm-aB", 
+        "Jnvi{!", 
+        "{fO/`>", 
+        ")9UmHT", 
+        "@$hD.Ac", 
+        "\u001fwPWq3", 
+        "g{E'2\\4", 
+        "<O-o6^", 
+        "uWwIms.", 
+        "%es1N3`7G.", 
+        "u}?0kX", 
+        "[$*I&8Uu;", 
+        "zx8u?F;", 
+        "0Ztu>r", 
+        "6XeW4PIq5U", 
+        "klN\u001f#+", 
+        "pg7mL]G", 
+        "lg~lgsC", 
+        "xH YGI~", 
+        "*%a$V?", 
+        "{>wDcM", 
+        ".U[Vfm", 
+        "\"UcOb2{+", 
+        "OoY_JN", 
+        "'_c%v.", 
+        "fBRez&", 
+        "Xh:{ V", 
+        "M~`/i_A", 
+        "uG 5Zu", 
+        "/Hua8=", 
+        "QDg}\\o\u001fM", 
+        "=ea%U.'r9", 
+        "&~xCCF", 
+        "YF:u)N", 
+        "6~U+;\\", 
+        "?p*.(='", 
+        "EqTF!X", 
+        "wY9F#q", 
+        ",sOv5{", 
+        "K.oxq=", 
+        "q!j5,;", 
+        "{>$hO;", 
+        "!-}D<<g", 
+        "J:^u:\"", 
+        "1qMOQL|", 
+        "DR<PH6R$", 
+        "AU6^_6", 
+        "*m~pby%", 
+        ">;WY.p", 
+        "egyoZ~66", 
+        "mOg\"a%", 
+        "'GD)&fCHI,", 
+        ";SM#YUt", 
+        "ih]=1h", 
+        "dv3x[1", 
+        ";0K$E5", 
+        "%_G|bq", 
+        "4\"9)PU/", 
+        "<XP\\ZK", 
+        "@rE\\oVH", 
+        "v7S,5C", 
+        "de1P/\u001f", 
+        "~Q>JT@", 
+        "Q9ztHW", 
+        "9Bpa'v", 
+        "O$o7-J", 
+        "P?Q+%2&\u001fk", 
+        "kBNjhOS", 
+        ".A&#a=", 
+        "O(DV~T", 
+        "uK, Yf", 
+        "_R7/zPD", 
+        "U|4\"?(uA", 
+        "!Fa> T", 
+        "U:!75u", 
+        "fNy)7N>|p ", 
+        "NDc.e}", 
+        "_KASI]", 
+        "_XA+M2", 
+        "wJLCI\"", 
+        "jVM\"jZ", 
+        "qh-1,>", 
+        "bJ2sml", 
+        ";t/nQ^", 
+        "\"W{g98[", 
+        "}e&|T/e", 
+        "E8)G-s", 
+        "huNa\u001fo", 
+        "g4{S]{", 
+        "'8+D@iC", 
+        "BS-eel", 
+        "9WI'!<2-LIKR", 
+        "ov0gMQ", 
+        "|^DaKatksW,n", 
+        "BZKJ-,k9", 
+        "BHYd~j", 
+        "e@*Ldh", 
+        "d!a<J\\", 
+        "qb\"}_u", 
+        "3uhkAmD", 
+        "=\u001ff+Az", 
+        "<<&ZES", 
+        "`)H8+x", 
+        "yW/ $9", 
+        "RqV7O,~", 
+        "lp(R=}", 
+        "mF$`}&-", 
+        "']m&fdwM?c", 
+        "JJ%Y3|Q", 
+        "*Eh Y]", 
+        "u(m\u001fx$", 
+        "Z9ELMAM", 
+        "|4Xk]l", 
+        "b>Q97b", 
+        "&8hAz\"", 
+        "&&\"De )", 
+        ",,3Yz[^", 
+        "L /qmx", 
+        "Nv]itO", 
+        "T^~@0H", 
+        ";FAh^V", 
+        "zgx3L7", 
+        "\"j*}(n", 
+        "j]Lv}t", 
+        "o|\"]z>", 
+        ">,1&e7<", 
+        "{mS2B|ts", 
+        "V9I,^l#*ys", 
+        "}ro3[L", 
+        "3a2w@C=t", 
+        "H@KL-BCub", 
+        "]l&]}bKP&", 
+        "2d;H`P", 
+        "]]<1Adi", 
+        "TG}YZz", 
+        "Ol\\\u001fRO", 
+        " ;k<b)", 
+        "e.GC@,", 
+        "n(zHXs", 
+        "M\u001fS-.=4> ", 
+        "{$t~?(E", 
+        ">>@+>k", 
+        "2ujh.A", 
+        "t<rh:D]", 
+        "3z~dmk", 
+        "a|>r\\\u001f:", 
+        "/Mu`bx", 
+        ";YU};\\J", 
+        "Q6d.tX", 
+        ">gFKP\\", 
+        "b0*JWf!", 
+        "68ZH_1Y7", 
+        "e8ry(5", 
+        "DBw~Sj&5U", 
+        ">;!)NMK", 
+        "?k^|cl", 
+        "ciV%T7", 
+        "3_^0iND", 
+        "[09O5I", 
+        "]y~WLk", 
+        " KCYOL", 
+        "#0^^9{!;B", 
+        "*wK^IB", 
+        "8ULo@x}", 
+        "m#x5x'", 
+        "iC[E9D", 
+        "v<X)!t", 
+        "V,Pg)%", 
+        "NA]\\LZ", 
+        "|cr]1B", 
+        "SaDKAW", 
+        "/ytCOa", 
+        "_>Q),HEk<B", 
+        "3J)\\e-", 
+        "h:'X3t7", 
+        "J-Ix:BE", 
+        "4h\u001fAHN", 
+        "g^K`dJ", 
+        "\"=Oso*", 
+        "!)DeZ%", 
+        ">+y8f.F", 
+        "6MM+=M", 
+        "m\"d2|I", 
+        "h!{Mg=", 
+        "M()>-G", 
+        "\\7 f-~s", 
+        "L7bVzQ", 
+        "kR\u001f-Q'f8", 
+        "q}kTKY", 
+        "AjP!:t", 
+        "ry1,hG", 
+        "1(M&V)", 
+        "|C{<?w", 
+        "Z,)=lD", 
+        "rfN]{Ke\"", 
+        "/k.i?wEI", 
+        "0$AF=v", 
+        "<XsegU", 
+        "]oV8U9", 
+        "<]K?8j\u001f%", 
+        "e!uLTc", 
+        "K8j5cI9", 
+        "a'VAut", 
+        "wJ1$r<", 
+        "ai?ph;", 
+        "|NB@.wk5'", 
+        "_@Ae)S.", 
+        "4U$A80", 
+        "albU\\H", 
+        "(~J. -", 
+        ",;$LfSm", 
+        "C*3:aa", 
+        "MHbQ`|", 
+        "k6nUu\"", 
+        ".hO[OwS", 
+        "eYm$TY)8+H", 
+        "BgL'0&(!", 
+        "{/F=E j\u001f", 
+        "lb)K6'}", 
+        "@8#|,5+", 
+        "#i;x]G", 
+        "O>D'QL", 
+        "AR4PpB", 
+        "\u001fBbJf ", 
+        "V,6C(*\\AAs", 
+        "g5]^'H", 
+        "] sX\u001fc", 
+        "tp:MFq", 
+        "ks[M9h", 
+        ".52=0L", 
+        "9%D'\"^x", 
+        "(*0z~?", 
+        "#2\"}MB", 
+        ">QoM\"}", 
+        "_yrnF@", 
+        "9!vP_RC", 
+        "$<'\\HS", 
+        "\\GXJ\"\"", 
+        "g+mMecM", 
+        "g*@lUW;", 
+        "g}8dg|^", 
+        "a%W5<b%", 
+        "H#Uju84", 
+        "\u001f=O:O4>", 
+        "(0JpTB", 
+        "W*Z};~", 
+        "cBA&Tu8\\", 
+        "zaj/io]", 
+        "d874cM]", 
+        "{7._K~[l\"", 
+        "7(Tgh0X", 
+        "Bbg;Ax", 
+        "2k\"9qp", 
+        "\u001fNh\u001fHp", 
+        "wa|4!.)", 
+        "Na&35a'", 
+        "\"$ycwR'", 
+        "!\"L)~x", 
+        "q'\\14`", 
+        "(;9Q1D.3\\", 
+        "$lJ*\u001fmW", 
+        "@^^<Os", 
+        "DjFqES", 
+        "m\\KMMO", 
+        "!q<{R/", 
+        "hCJ)SM+", 
+        "C{J]:\\", 
+        "2Q]M\\%", 
+        "nn{|ul(", 
+        "b}|%dS", 
+        "{l3ZA`", 
+        "u5>9=_", 
+        " V !G\\", 
+        "'0\"$-<", 
+        "z0]j6g", 
+        "pp+j8k4", 
+        "y%nH()", 
+        "!$.x >\u001fo~j", 
+        "Jsi_<p", 
+        "xWr%iN", 
+        ";k3#fb", 
+        "$MwMxc", 
+        "+2$0HG", 
+        "=C0=\u001f,*W", 
+        "}(\"OzNg'{", 
+        "(+Pxu+", 
+        "yx)Xy$", 
+        "O{}4ew", 
+        "0p^%W}", 
+        "}?K$2$", 
+        "51Y~0Ai", 
+        "$Y(u,*", 
+        "svx}i,0L", 
+        "g^dy u", 
+        "}PFw](", 
+        "OKoyRFol", 
+        "H%\u001fCg'@", 
+        "M3MxM}FT", 
+        "YcEd'#", 
+        "I_J%tfhi", 
+        "Vt7Q?L?d G\u001f~", 
+        "GfL7Ni", 
+        "AAQ{=b", 
+        "aaML!U", 
+        "|HltCN", 
+        "tQaTSa", 
+        "(-u%-;", 
+        "mfzY(m?d", 
+        "$Hc,$H", 
+        "H[]A\\A]A^A_", 
+        "(]_^[1", 
+        "X]_^[H", 
+        "api-ms-win-crt-heap-l1-1-0.dll", 
+        "api-ms-win-crt-math-l1-1-0.dll", 
+        "api-ms-win-crt-private-l1-1-0.dll", 
+        "api-ms-win-crt-runtime-l1-1-0.dll", 
+        "api-ms-win-crt-stdio-l1-1-0.dll", 
+        "api-ms-win-crt-string-l1-1-0.dll", 
+        "api-ms-win-crt-time-l1-1-0.dll", 
+        "api-ms-win-crt-utility-l1-1-0.dll", 
+        "bcrypt.dll", 
+        "CRYPT32.dll", 
+        "KERNEL32.DLL", 
+        "ole32.dll", 
+        "OLEAUT32.dll", 
+        "SHELL32.dll", 
+        "memchr", 
+        "memset", 
+        "_localtime64", 
+        "BCryptDecrypt", 
+        "CryptUnprotectData", 
+        "GetProcAddress", 
+        "LoadLibraryA", 
+        "VirtualProtect", 
+        "CoInitializeEx", 
+        "SysFreeString", 
+        "SHGetFolderPathW", 
+        "newabe.dll", 
+        "sqlite3_aggregate_context", 
+        "sqlite3_aggregate_count", 
+        "sqlite3_auto_extension", 
+        "sqlite3_autovacuum_pages", 
+        "sqlite3_backup_finish", 
+        "sqlite3_backup_init", 
+        "sqlite3_backup_pagecount", 
+        "sqlite3_backup_remaining", 
+        "sqlite3_backup_step", 
+        "sqlite3_bind_blob", 
+        "sqlite3_bind_blob64", 
+        "sqlite3_bind_double", 
+        "sqlite3_bind_int", 
+        "sqlite3_bind_int64", 
+        "sqlite3_bind_null", 
+        "sqlite3_bind_parameter_count", 
+        "sqlite3_bind_parameter_index", 
+        "sqlite3_bind_parameter_name", 
+        "sqlite3_bind_pointer", 
+        "sqlite3_bind_text", 
+        "sqlite3_bind_text16", 
+        "sqlite3_bind_text64", 
+        "sqlite3_bind_value", 
+        "sqlite3_bind_zeroblob", 
+        "sqlite3_bind_zeroblob64", 
+        "sqlite3_blob_bytes", 
+        "sqlite3_blob_close", 
+        "sqlite3_blob_open", 
+        "sqlite3_blob_read", 
+        "sqlite3_blob_reopen", 
+        "sqlite3_blob_write", 
+        "sqlite3_busy_handler", 
+        "sqlite3_busy_timeout", 
+        "sqlite3_cancel_auto_extension", 
+        "sqlite3_changes", 
+        "sqlite3_changes64", 
+        "sqlite3_clear_bindings", 
+        "sqlite3_close", 
+        "sqlite3_close_v2", 
+        "sqlite3_collation_needed", 
+        "sqlite3_collation_needed16", 
+        "sqlite3_column_blob", 
+        "sqlite3_column_bytes", 
+        "sqlite3_column_bytes16", 
+        "sqlite3_column_count", 
+        "sqlite3_column_decltype", 
+        "sqlite3_column_decltype16", 
+        "sqlite3_column_double", 
+        "sqlite3_column_int", 
+        "sqlite3_column_int64", 
+        "sqlite3_column_name", 
+        "sqlite3_column_name16", 
+        "sqlite3_column_text", 
+        "sqlite3_column_text16", 
+        "sqlite3_column_type", 
+        "sqlite3_column_value", 
+        "sqlite3_commit_hook", 
+        "sqlite3_compileoption_get", 
+        "sqlite3_compileoption_used", 
+        "sqlite3_complete", 
+        "sqlite3_complete16", 
+        "sqlite3_config", 
+        "sqlite3_context_db_handle", 
+        "sqlite3_create_collation", 
+        "sqlite3_create_collation16", 
+        "sqlite3_create_collation_v2", 
+        "sqlite3_create_filename", 
+        "sqlite3_create_function", 
+        "sqlite3_create_function16", 
+        "sqlite3_create_function_v2", 
+        "sqlite3_create_module", 
+        "sqlite3_create_module_v2", 
+        "sqlite3_create_window_function", 
+        "sqlite3_data_count", 
+        "sqlite3_data_directory", 
+        "sqlite3_database_file_object", 
+        "sqlite3_db_cacheflush", 
+        "sqlite3_db_config", 
+        "sqlite3_db_filename", 
+        "sqlite3_db_handle", 
+        "sqlite3_db_mutex", 
+        "sqlite3_db_name", 
+        "sqlite3_db_readonly", 
+        "sqlite3_db_release_memory", 
+        "sqlite3_db_status", 
+        "sqlite3_declare_vtab", 
+        "sqlite3_deserialize", 
+        "sqlite3_drop_modules", 
+        "sqlite3_enable_load_extension", 
+        "sqlite3_enable_shared_cache", 
+        "sqlite3_errcode", 
+        "sqlite3_errmsg", 
+        "sqlite3_errmsg16", 
+        "sqlite3_error_offset", 
+        "sqlite3_errstr", 
+        "sqlite3_exec", 
+        "sqlite3_expanded_sql", 
+        "sqlite3_expired", 
+        "sqlite3_extended_errcode", 
+        "sqlite3_extended_result_codes", 
+        "sqlite3_file_control", 
+        "sqlite3_filename_database", 
+        "sqlite3_filename_journal", 
+        "sqlite3_filename_wal", 
+        "sqlite3_finalize", 
+        "sqlite3_free", 
+        "sqlite3_free_filename", 
+        "sqlite3_free_table", 
+        "sqlite3_get_autocommit", 
+        "sqlite3_get_auxdata", 
+        "sqlite3_get_clientdata", 
+        "sqlite3_get_table", 
+        "sqlite3_global_recover", 
+        "sqlite3_hard_heap_limit64", 
+        "sqlite3_initialize", 
+        "sqlite3_interrupt", 
+        "sqlite3_is_interrupted", 
+        "sqlite3_keyword_check", 
+        "sqlite3_keyword_count", 
+        "sqlite3_keyword_name", 
+        "sqlite3_last_insert_rowid", 
+        "sqlite3_libversion", 
+        "sqlite3_libversion_number", 
+        "sqlite3_limit", 
+        "sqlite3_load_extension", 
+        "sqlite3_log", 
+        "sqlite3_malloc", 
+        "sqlite3_malloc64", 
+        "sqlite3_memory_alarm", 
+        "sqlite3_memory_highwater", 
+        "sqlite3_memory_used", 
+        "sqlite3_mprintf", 
+        "sqlite3_msize", 
+        "sqlite3_mutex_alloc", 
+        "sqlite3_mutex_enter", 
+        "sqlite3_mutex_free", 
+        "sqlite3_mutex_leave", 
+        "sqlite3_mutex_try", 
+        "sqlite3_next_stmt", 
+        "sqlite3_open", 
+        "sqlite3_open16", 
+        "sqlite3_open_v2", 
+        "sqlite3_os_end", 
+        "sqlite3_os_init", 
+        "sqlite3_overload_function", 
+        "sqlite3_prepare", 
+        "sqlite3_prepare16", 
+        "sqlite3_prepare16_v2", 
+        "sqlite3_prepare16_v3", 
+        "sqlite3_prepare_v2", 
+        "sqlite3_prepare_v3", 
+        "sqlite3_profile", 
+        "sqlite3_progress_handler", 
+        "sqlite3_randomness", 
+        "sqlite3_realloc", 
+        "sqlite3_realloc64", 
+        "sqlite3_release_memory", 
+        "sqlite3_reset", 
+        "sqlite3_reset_auto_extension", 
+        "sqlite3_result_blob", 
+        "sqlite3_result_blob64", 
+        "sqlite3_result_double", 
+        "sqlite3_result_error", 
+        "sqlite3_result_error16", 
+        "sqlite3_result_error_code", 
+        "sqlite3_result_error_nomem", 
+        "sqlite3_result_error_toobig", 
+        "sqlite3_result_int", 
+        "sqlite3_result_int64", 
+        "sqlite3_result_null", 
+        "sqlite3_result_pointer", 
+        "sqlite3_result_subtype", 
+        "sqlite3_result_text", 
+        "sqlite3_result_text16", 
+        "sqlite3_result_text16be", 
+        "sqlite3_result_text16le", 
+        "sqlite3_result_text64", 
+        "sqlite3_result_value", 
+        "sqlite3_result_zeroblob", 
+        "sqlite3_result_zeroblob64", 
+        "sqlite3_rollback_hook", 
+        "sqlite3_rtree_geometry_callback", 
+        "sqlite3_rtree_query_callback", 
+        "sqlite3_serialize", 
+        "sqlite3_set_authorizer", 
+        "sqlite3_set_auxdata", 
+        "sqlite3_set_clientdata", 
+        "sqlite3_set_last_insert_rowid", 
+        "sqlite3_shutdown", 
+        "sqlite3_sleep", 
+        "sqlite3_snprintf", 
+        "sqlite3_soft_heap_limit", 
+        "sqlite3_soft_heap_limit64", 
+        "sqlite3_sourceid", 
+        "sqlite3_sql", 
+        "sqlite3_status", 
+        "sqlite3_status64", 
+        "sqlite3_step", 
+        "sqlite3_stmt_busy", 
+        "sqlite3_stmt_explain", 
+        "sqlite3_stmt_isexplain", 
+        "sqlite3_stmt_readonly", 
+        "sqlite3_stmt_status", 
+        "sqlite3_str_append", 
+        "sqlite3_str_appendall", 
+        "sqlite3_str_appendchar", 
+        "sqlite3_str_appendf", 
+        "sqlite3_str_errcode", 
+        "sqlite3_str_finish", 
+        "sqlite3_str_length", 
+        "sqlite3_str_new", 
+        "sqlite3_str_reset", 
+        "sqlite3_str_value", 
+        "sqlite3_str_vappendf", 
+        "sqlite3_strglob", 
+        "sqlite3_stricmp", 
+        "sqlite3_strlike", 
+        "sqlite3_strnicmp", 
+        "sqlite3_system_errno", 
+        "sqlite3_table_column_metadata", 
+        "sqlite3_temp_directory", 
+        "sqlite3_test_control", 
+        "sqlite3_thread_cleanup", 
+        "sqlite3_threadsafe", 
+        "sqlite3_total_changes", 
+        "sqlite3_total_changes64", 
+        "sqlite3_trace", 
+        "sqlite3_trace_v2", 
+        "sqlite3_transfer_bindings", 
+        "sqlite3_txn_state", 
+        "sqlite3_update_hook", 
+        "sqlite3_uri_boolean", 
+        "sqlite3_uri_int64", 
+        "sqlite3_uri_key", 
+        "sqlite3_uri_parameter", 
+        "sqlite3_user_data", 
+        "sqlite3_value_blob", 
+        "sqlite3_value_bytes", 
+        "sqlite3_value_bytes16", 
+        "sqlite3_value_double", 
+        "sqlite3_value_dup", 
+        "sqlite3_value_encoding", 
+        "sqlite3_value_free", 
+        "sqlite3_value_frombind", 
+        "sqlite3_value_int", 
+        "sqlite3_value_int64", 
+        "sqlite3_value_nochange", 
+        "sqlite3_value_numeric_type", 
+        "sqlite3_value_pointer", 
+        "sqlite3_value_subtype", 
+        "sqlite3_value_text", 
+        "sqlite3_value_text16", 
+        "sqlite3_value_text16be", 
+        "sqlite3_value_text16le", 
+        "sqlite3_value_type", 
+        "sqlite3_version", 
+        "sqlite3_vfs_find", 
+        "sqlite3_vfs_register", 
+        "sqlite3_vfs_unregister", 
+        "sqlite3_vmprintf", 
+        "sqlite3_vsnprintf", 
+        "sqlite3_vtab_collation", 
+        "sqlite3_vtab_config", 
+        "sqlite3_vtab_distinct", 
+        "sqlite3_vtab_in", 
+        "sqlite3_vtab_in_first", 
+        "sqlite3_vtab_in_next", 
+        "sqlite3_vtab_nochange", 
+        "sqlite3_vtab_on_conflict", 
+        "sqlite3_vtab_rhs_value", 
+        "sqlite3_wal_autocheckpoint", 
+        "sqlite3_wal_checkpoint", 
+        "sqlite3_wal_checkpoint_v2", 
+        "sqlite3_wal_hook", 
+        "sqlite3_win32_is_nt", 
+        "sqlite3_win32_mbcs_to_utf8", 
+        "sqlite3_win32_mbcs_to_utf8_v2", 
+        "sqlite3_win32_set_directory", 
+        "sqlite3_win32_set_directory16", 
+        "sqlite3_win32_set_directory8", 
+        "sqlite3_win32_sleep", 
+        "sqlite3_win32_unicode_to_utf8", 
+        "sqlite3_win32_utf8_to_mbcs", 
+        "sqlite3_win32_utf8_to_mbcs_v2", 
+        "sqlite3_win32_utf8_to_unicode", 
+        "sqlite3_win32_write_debug", 
+        "crtdll.c", 
+        "atexit", 
+        ".xdata", 
+        ".pdata", 
+        "cygming-crtbeg", 
+        ".xdata", 
+        ".pdata", 
+        "newabe.c", 
+        "g_lastHr ", 
+        "DllMain", 
+        ".rdata", 
+        ".xdata", 
+        ".pdata", 
+        "sqlite3.c", 
+        "vfsList", 
+        "aSyscall", 
+        "winDlSym", 
+        "winSleep R", 
+        "aFlag.51", 
+        "aMap.42", 
+        "rtreeEof", 
+        "walMerge", 
+        "aVal.89", 
+        "aMx.35", 
+        "memdb_g", 
+        "zKWText", 
+        "aKWLen", 
+        "aEntry.2 ", 
+        "aAscii.3", 
+        "aiOff.13", 
+        "aKWHash", 
+        "aKWNext", 
+        "aKWCode", 
+        "aiClass", 
+        "getToken", 
+        "identPut", 
+        "globInfo", 
+        "jsonIsOk", 
+        "zText.660", 
+        "aMsg.101 ", 
+        "hasVowel", 
+        "changes", 
+        "azName.9 ", 
+        "m_gt_0", 
+        "m_eq_1", 
+        "m_gt_1", 
+        "star_oh", 
+        "signFunc", 
+        "trans.41", 
+        "freeP4", 
+        "fmtinfo", 
+        "aDigits", 
+        "zOrd.113", 
+        "aPrefix", 
+        "exprDup", 
+        "aMod.21", 
+        "sumStep", 
+        "statPush", 
+        "absFunc", 
+        "likeFunc0", 
+        "statInit", 
+        "trimFunc@", 
+        "azOne.28", 
+        "statGet", 
+        "hexFunc", 
+        "growOp3", 
+        "azEnc.64", 
+        "aOp.87", 
+        "azErr.86", 
+        "aEnc.98", 
+        "zeroPagep}", 
+        "aFunc.17", 
+        "aLen.48", 
+        "bindText", 
+        "winLock", 
+        "winSync", 
+        "winWrite0", 
+        "winRead", 
+        "winClose ", 
+        "winFetch@", 
+        "checkRef", 
+        "rankName}`", 
+        "leadName\"`", 
+        "lagName", 
+        "isDate", 
+        "timeFunc@", 
+        "dateFunc", 
+        "sFts5Api", 
+        "nodeNew", 
+        "charFunc", 
+        "aEntry.5@", 
+        "aiOff.4", 
+        "balance", 
+        "aNull.31P", 
+        "module.6", 
+        "winOpen", 
+        "loadExt", 
+        "aStep.81", 
+        "zAff.97", 
+        "ops.85", 
+        "aOp.84", 
+        "aMask.53", 
+        "aFlag.52", 
+        "aCode.956", 
+        "execSql", 
+        "execSqlF", 
+        "aCopy.47X", 
+        "azSql.18`", 
+        ".xdata", 
+        ".pdata", 
+        ".rdata", 
+        ".idata$7X", 
+        ".idata$5", 
+        ".idata$4", 
+        ".idata$6", 
+        ".idata$7T", 
+        ".idata$5", 
+        ".idata$4", 
+        ".idata$6", 
+        ".idata$7P", 
+        ".idata$5", 
+        ".idata$4", 
+        ".idata$6|", 
+        ".idata$7L", 
+        ".idata$5x", 
+        ".idata$4", 
+        ".idata$6h", 
+        "fthunk", 
+        ".idata$2", 
+        ".idata$4", 
+        ".idata$5x", 
+        ".idata$4", 
+        ".idata$5", 
+        ".idata$7\\", 
+        ".idata$7p", 
+        ".idata$5", 
+        ".idata$4", 
+        ".idata$6", 
+        ".idata$7l", 
+        ".idata$5", 
+        ".idata$4", 
+        ".idata$6", 
+        ".idata$7h", 
+        ".idata$5", 
+        ".idata$4", 
+        ".idata$6", 
+        "fthunk", 
+        ".idata$2", 
+        ".idata$4", 
+        ".idata$5", 
+        ".idata$4", 
+        ".idata$5", 
+        ".idata$7t", 
+        ".idata$7", 
+        ".idata$5(", 
+        ".idata$4X", 
+        ".idata$6P", 
+        ".idata$7", 
+        ".idata$5 ", 
+        ".idata$4P", 
+        ".idata$62", 
+        ".idata$7", 
+        ".idata$5", 
+        ".idata$4H", 
+        ".idata$6", 
+        ".idata$7", 
+        ".idata$5", 
+        ".idata$4@", 
+        ".idata$6", 
+        ".idata$7", 
+        ".idata$5", 
+        ".idata$48", 
+        ".idata$6", 
+        ".idata$7", 
+        ".idata$5", 
+        ".idata$40", 
+        ".idata$6", 
+        "fthunk", 
+        ".idata$2", 
+        ".idata$40", 
+        ".idata$5", 
+        ".idata$4`", 
+        ".idata$50", 
+        ".idata$7", 
+        ".idata$7,", 
+        ".idata$5@", 
+        ".idata$4p", 
+        ".idata$6|", 
+        ".idata$7(", 
+        ".idata$58", 
+        ".idata$4h", 
+        ".idata$6d", 
+        "fthunk", 
+        ".idata$2", 
+        ".idata$4h", 
+        ".idata$58", 
+        ".idata$4x", 
+        ".idata$5H", 
+        ".idata$70", 
+        ".idata$7", 
+        ".idata$5", 
+        ".idata$4", 
+        ".idata$6", 
+        "fthunk", 
+        ".idata$2", 
+        ".idata$4", 
+        ".idata$5", 
+        ".idata$4", 
+        ".idata$5", 
+        ".idata$7", 
+        "gccmain.c", 
+        "__main", 
+        ".xdata", 
+        ".pdata", 
+        "natstart.c", 
+        "tlssup.c", 
+        "__xd_a", 
+        "__xd_z", 
+        ".xdata", 
+        ".pdata", 
+        ".CRT$XLD", 
+        ".CRT$XLC", 
+        ".rdata", 
+        ".CRT$XDZ", 
+        ".CRT$XDA", 
+        ".CRT$XLZ", 
+        ".CRT$XLA", 
+        ".tls$ZZZ", 
+        "cinitexe.c", 
+        ".CRT$XCZp", 
+        ".CRT$XCAh", 
+        ".CRT$XIZ", 
+        ".CRT$XIAx", 
+        "mingw_helpers.", 
+        "pseudo-reloc.c", 
+        "the_secs(", 
+        ".rdata", 
+        ".xdata", 
+        ".pdata", 
+        "tlsthrd.c", 
+        ".xdata", 
+        ".pdata", 
+        "tlsmcrt.c", 
+        "CRT_fp10.c", 
+        "_fpreset", 
+        "fpreset", 
+        ".xdata", 
+        ".pdata", 
+        "pesect.c", 
+        ".xdata", 
+        ".pdata", 
+        "ucrt_vfprintf.", 
+        "vfprintf", 
+        ".xdata", 
+        ".pdata", 
+        "ucrt_swprintf.", 
+        "swprintf@", 
+        ".xdata", 
+        ".pdata", 
+        "ucrt_sprintf.c", 
+        "sprintf", 
+        ".xdata", 
+        ".pdata", 
+        "ucrt_fwprintf.", 
+        "fwprintf", 
+        ".xdata", 
+        ".pdata", 
+        "ucrt_fprintf.c", 
+        "fprintf", 
+        ".xdata", 
+        ".pdata", 
+        "options", 
+        ".xdata", 
+        ".pdata", 
+        "ucrt_amsg_exit", 
+        ".rdata", 
+        ".xdata", 
+        ".pdata", 
+        ".idata$7$", 
+        ".idata$5h", 
+        ".idata$4", 
+        ".idata$6`", 
+        "fthunk", 
+        ".idata$2", 
+        ".idata$4", 
+        ".idata$5h", 
+        ".idata$4", 
+        ".idata$5p", 
+        ".idata$7(", 
+        ".idata$7", 
+        ".idata$5X", 
+        ".idata$4", 
+        ".idata$6P", 
+        "fthunk", 
+        ".idata$2", 
+        ".idata$4", 
+        ".idata$5X", 
+        ".idata$4", 
+        ".idata$5`", 
+        ".idata$7", 
+        ".idata$7", 
+        ".idata$5", 
+        ".idata$40", 
+        ".idata$6", 
+        ".idata$7", 
+        ".idata$5", 
+        ".idata$48", 
+        ".idata$6", 
+        ".idata$7", 
+        ".idata$5", 
+        ".idata$4@", 
+        ".idata$6", 
+        ".idata$7", 
+        ".idata$5", 
+        ".idata$4H", 
+        ".idata$6", 
+        ".idata$7", 
+        ".idata$5 ", 
+        ".idata$4P", 
+        ".idata$6", 
+        ".idata$7", 
+        ".idata$5(", 
+        ".idata$4X", 
+        ".idata$6", 
+        ".idata$7", 
+        ".idata$50", 
+        ".idata$4`", 
+        ".idata$6(", 
+        ".idata$7", 
+        ".idata$58", 
+        ".idata$4h", 
+        ".idata$62", 
+        ".idata$7", 
+        ".idata$5@", 
+        ".idata$4p", 
+        ".idata$6<", 
+        ".idata$7", 
+        ".idata$5H", 
+        ".idata$4x", 
+        ".idata$6F", 
+        "fthunk", 
+        ".idata$2", 
+        ".idata$40", 
+        ".idata$5", 
+        ".idata$4", 
+        ".idata$5P", 
+        ".idata$7", 
+        ".idata$7h", 
+        ".idata$5", 
+        ".idata$4", 
+        ".idata$66", 
+        ".idata$7l", 
+        ".idata$5", 
+        ".idata$4", 
+        ".idata$6H", 
+        ".idata$7p", 
+        ".idata$5", 
+        ".idata$4", 
+        ".idata$6b", 
+        ".idata$7t", 
+        ".idata$5", 
+        ".idata$4", 
+        ".idata$6~", 
+        ".idata$7x", 
+        ".idata$5", 
+        ".idata$4", 
+        ".idata$6", 
+        ".idata$7|", 
+        ".idata$5", 
+        ".idata$4", 
+        ".idata$6", 
+        ".idata$7", 
+        ".idata$5", 
+        ".idata$4", 
+        ".idata$6", 
+        ".idata$7", 
+        ".idata$5", 
+        ".idata$4", 
+        ".idata$6", 
+        ".idata$7", 
+        ".idata$5", 
+        ".idata$4", 
+        ".idata$6", 
+        ".idata$7", 
+        ".idata$5", 
+        ".idata$4", 
+        ".idata$6", 
+        ".idata$7", 
+        ".idata$5", 
+        ".idata$4 ", 
+        ".idata$6", 
+        "fthunk", 
+        ".idata$2", 
+        ".idata$4", 
+        ".idata$5", 
+        ".idata$4(", 
+        ".idata$5", 
+        ".idata$7", 
+        ".idata$7 ", 
+        ".idata$5P", 
+        ".idata$4", 
+        ".idata$6", 
+        ".idata$7$", 
+        ".idata$5X", 
+        ".idata$4", 
+        ".idata$6", 
+        ".idata$7(", 
+        ".idata$5`", 
+        ".idata$4", 
+        ".idata$6", 
+        ".idata$7,", 
+        ".idata$5h", 
+        ".idata$4", 
+        ".idata$6", 
+        ".idata$70", 
+        ".idata$5p", 
+        ".idata$4", 
+        ".idata$6", 
+        ".idata$74", 
+        ".idata$5x", 
+        ".idata$4", 
+        ".idata$6", 
+        ".idata$78", 
+        ".idata$5", 
+        ".idata$4", 
+        ".idata$6", 
+        ".idata$7<", 
+        ".idata$5", 
+        ".idata$4", 
+        ".idata$6", 
+        ".idata$7@", 
+        ".idata$5", 
+        ".idata$4", 
+        ".idata$6.", 
+        "fthunk", 
+        ".idata$2x", 
+        ".idata$4", 
+        ".idata$5P", 
+        ".idata$4", 
+        ".idata$5", 
+        ".idata$7D", 
+        ".idata$7", 
+        ".idata$5", 
+        ".idata$40", 
+        ".idata$6@", 
+        ".idata$7", 
+        ".idata$5", 
+        ".idata$48", 
+        ".idata$6J", 
+        ".idata$7", 
+        ".idata$5", 
+        ".idata$4@", 
+        ".idata$6T", 
+        ".idata$7", 
+        ".idata$5", 
+        ".idata$4H", 
+        ".idata$6^", 
+        ".idata$7", 
+        ".idata$5 ", 
+        ".idata$4P", 
+        ".idata$6h", 
+        ".idata$7", 
+        ".idata$5(", 
+        ".idata$4X", 
+        ".idata$6r", 
+        ".idata$7", 
+        ".idata$50", 
+        ".idata$4`", 
+        ".idata$6|", 
+        ".idata$7", 
+        ".idata$58", 
+        ".idata$4h", 
+        ".idata$6", 
+        ".idata$7", 
+        ".idata$5@", 
+        ".idata$4p", 
+        ".idata$6", 
+        "fthunk", 
+        ".idata$2d", 
+        ".idata$40", 
+        ".idata$5", 
+        ".idata$4x", 
+        ".idata$5H", 
+        ".idata$7", 
+        ".idata$7", 
+        ".idata$5", 
+        ".idata$4 ", 
+        ".idata$6:", 
+        "fthunk", 
+        ".idata$2P", 
+        ".idata$4 ", 
+        ".idata$5", 
+        ".idata$4(", 
+        ".idata$5", 
+        ".idata$7", 
+        ".idata$7", 
+        ".idata$5", 
+        ".idata$4", 
+        ".idata$6", 
+        ".idata$7", 
+        ".idata$5", 
+        ".idata$4", 
+        ".idata$6", 
+        ".idata$7", 
+        ".idata$5", 
+        ".idata$4", 
+        ".idata$6&", 
+        ".idata$7", 
+        ".idata$5", 
+        ".idata$4", 
+        ".idata$60", 
+        "fthunk", 
+        ".idata$2<", 
+        ".idata$4", 
+        ".idata$5", 
+        ".idata$4", 
+        ".idata$5", 
+        ".idata$7", 
+        ".idata$7p", 
+        ".idata$5", 
+        ".idata$4", 
+        ".idata$6", 
+        ".idata$7l", 
+        ".idata$5", 
+        ".idata$4", 
+        ".idata$6", 
+        ".idata$7h", 
+        ".idata$5", 
+        ".idata$4", 
+        ".idata$6", 
+        ".idata$7d", 
+        ".idata$5", 
+        ".idata$4", 
+        ".idata$6", 
+        ".idata$7`", 
+        ".idata$5", 
+        ".idata$4", 
+        ".idata$6", 
+        ".idata$7\\", 
+        ".idata$5", 
+        ".idata$4", 
+        ".idata$6", 
+        ".idata$7X", 
+        ".idata$5", 
+        ".idata$4", 
+        ".idata$6", 
+        ".idata$7T", 
+        ".idata$5", 
+        ".idata$4", 
+        ".idata$6", 
+        ".idata$7P", 
+        ".idata$5x", 
+        ".idata$4", 
+        ".idata$6r", 
+        ".idata$7L", 
+        ".idata$5p", 
+        ".idata$4", 
+        ".idata$6X", 
+        ".idata$7H", 
+        ".idata$5h", 
+        ".idata$4", 
+        ".idata$6J", 
+        ".idata$7D", 
+        ".idata$5`", 
+        ".idata$4", 
+        ".idata$62", 
+        ".idata$7@", 
+        ".idata$5X", 
+        ".idata$4", 
+        ".idata$6*", 
+        ".idata$7<", 
+        ".idata$5P", 
+        ".idata$4", 
+        ".idata$6", 
+        ".idata$78", 
+        ".idata$5H", 
+        ".idata$4x", 
+        ".idata$6", 
+        ".idata$74", 
+        ".idata$5@", 
+        ".idata$4p", 
+        ".idata$6", 
+        ".idata$70", 
+        ".idata$58", 
+        ".idata$4h", 
+        ".idata$6", 
+        ".idata$7,", 
+        ".idata$50", 
+        ".idata$4`", 
+        ".idata$6", 
+        ".idata$7(", 
+        ".idata$5(", 
+        ".idata$4X", 
+        ".idata$6", 
+        ".idata$7$", 
+        ".idata$5 ", 
+        ".idata$4P", 
+        ".idata$6", 
+        ".idata$7 ", 
+        ".idata$5", 
+        ".idata$4H", 
+        ".idata$6", 
+        ".idata$7", 
+        ".idata$5", 
+        ".idata$4@", 
+        ".idata$6", 
+        ".idata$7", 
+        ".idata$5", 
+        ".idata$48", 
+        ".idata$6v", 
+        ".idata$7", 
+        ".idata$5", 
+        ".idata$40", 
+        ".idata$6j", 
+        ".idata$7", 
+        ".idata$5", 
+        ".idata$4(", 
+        ".idata$6Z"
+    ], 
+    "metadata": {
+        "output": {
+            "pcap": {
+                "basename": "dump.pcap", 
+                "sha256": "f59691025984c72f5dd3af0cebf21dcb1f0cb409a6f5c803b22f9bd0edd66345", 
+                "dirname": ""
+            }
+        }
+    }
+}

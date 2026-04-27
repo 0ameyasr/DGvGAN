@@ -8,7 +8,7 @@ BASE = "https://sandbox.pikker.ee/analysis"
 DOWNLOAD_DIR = "sandbox/reports/raw"
 max_downloads = 10
 
-async def get_high_score_ids(page, threshold=7.0):
+async def get_high_score_ids(page, threshold=5.0):
     await page.goto(BASE, wait_until="networkidle")
     await page.wait_for_selector("#recent tbody tr", timeout=15000)
 

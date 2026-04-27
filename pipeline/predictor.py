@@ -264,9 +264,6 @@ class GAT_Discriminator(nn.Module):
 
         return logits
 
-# -----------------
-# GNN-SGAN
-# -----------------
 
 
 # Load CNN model
@@ -293,6 +290,14 @@ hdgcnn_model.load_state_dict(
     torch.load(os.path.join(BASE_DIR, "models/saves/hybrid/dgvgan_seed_50.pt"), map_location="cpu")
 )
 hdgcnn_model.eval()
+
+gat_model = GAT_Discriminator()
+checkpoint = torch.load(
+    os.path.join(BASE_DIR, "models/saves/hybrid_sgan_gat/state_dict_seed_50.pth"),
+    map_location="cpu"
+)
+
+gat_model.load_state_dict(checkpoint["D_state_dict"])
 
 def seq_to_graph(seq_batch):
 
@@ -393,3 +398,49 @@ def predict_cnn(features):
         prob = torch.softmax(output, dim=1)[0][1].item()
     end = time.time()
     return end-start,prob
+
+def predict_gat(features):
+    start = time.time()
+    gat_model.eval()
+
+    with torch.no_grad():
+        # Convert sequence → graph
+        seq = torch.tensor(features, dtype=torch.long).unsqueeze(0)
+        adj, X = seq_to_graph(seq)
+
+        # Forward pass
+        logits = gat_model(adj, X)
+
+        # First 2 classes = real/fake (like hybrid model)
+        probs = torch.softmax(logits[:, :2], dim=1)
+        malware_prob = probs[0, 1].item()
+
+    end = time.time()
+    return end - start, malware_prob
+
+def count_parameters(model):
+    return sum(p.numel() for p in model.parameters())
+
+def count_trainable_parameters(model):
+    return sum(p.numel() for p in model.parameters() if p.requires_grad)
+
+print("\n" + "="*50)
+print("MODEL PARAMETER COUNTS")
+print("="*50)
+
+models = {
+    "CNN": cnn_model,
+    "SGAN": sgan_model,
+    "DGCNN": dgcnn_model,
+    "Hybrid DGCNN": hdgcnn_model,
+    "GAT": gat_model
+}
+
+for name, model in models.items():
+    total = count_parameters(model)
+    trainable = count_trainable_parameters(model)
+
+    print(f"{name}:")
+    print(f"  Total params     : {total:,}")
+    print(f"  Trainable params : {trainable:,}")
+    print("-"*50)
