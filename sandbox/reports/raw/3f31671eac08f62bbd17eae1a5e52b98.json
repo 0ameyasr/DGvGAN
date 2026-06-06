@@ -1,0 +1,3999 @@
+{
+    "info": {
+        "added": 1778144472.301613, 
+        "started": 1778144472.531055, 
+        "duration": 84, 
+        "ended": 1778144556.661118, 
+        "owner": "", 
+        "score": 10.0, 
+        "id": 7546134, 
+        "category": "file", 
+        "git": {
+            "head": "", 
+            "fetch_head": ""
+        }, 
+        "monitor": null, 
+        "package": "elf", 
+        "route": "internet", 
+        "custom": "", 
+        "machine": {
+            "status": "stopped", 
+            "name": "Ubuntu1904x643", 
+            "label": "Ubuntu1904x643", 
+            "platform": "linux", 
+            "manager": "VirtualBox", 
+            "started_on": "2026-05-07 09:01:12", 
+            "shutdown_on": "2026-05-07 09:02:36"
+        }, 
+        "platform": "linux", 
+        "version": "2.0.7", 
+        "options": ""
+    }, 
+    "signatures": [
+        {
+            "families": [], 
+            "description": "File has been identified by 2 AntiVirus engine on IRMA as malicious", 
+            "severity": 20, 
+            "ttp": {}, 
+            "markcount": 2, 
+            "references": [], 
+            "marks": [
+                {
+                    "category": "Avast Core Security (Linux)", 
+                    "ioc": "ELF:Mirai-BJI [Trj]", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "WithSecure (Linux)", 
+                    "ioc": "Trojan.TR/LINUX.Mirai.BJI", 
+                    "type": "ioc", 
+                    "description": null
+                }
+            ], 
+            "name": "antivirus_irma"
+        }, 
+        {
+            "families": [], 
+            "description": "File has been identified by 5 AntiVirus engines on VirusTotal as malicious", 
+            "severity": 50, 
+            "ttp": {}, 
+            "markcount": 5, 
+            "references": [], 
+            "marks": [
+                {
+                    "category": "Avast", 
+                    "ioc": "ELF:Mirai-BJI [Trj]", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Cynet", 
+                    "ioc": "Malicious (score: 99)", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "F-Secure", 
+                    "ioc": "Trojan.TR/LINUX.Mirai.BJI", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Avast-Mobile", 
+                    "ioc": "ELF:Mirai-BJI [Trj]", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "AVG", 
+                    "ioc": "ELF:Mirai-BJI [Trj]", 
+                    "type": "ioc", 
+                    "description": null
+                }
+            ], 
+            "name": "antivirus_virustotal"
+        }
+    ], 
+    "target": {
+        "category": "file", 
+        "file": {
+            "mimetype": "application/x-executable", 
+            "yara": [], 
+            "sha1": "ab84760b8ed2e5e41337cf05c5101ce2e61241a6", 
+            "name": "kbotne11", 
+            "type": "ELF 64-bit LSB executable, ARM aarch64, version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux-aarch64.so.1, stripped", 
+            "sha256": "9e6f1bc8707464908d9ecd0406838fe2910aee0843b4b0742a3a578873b195f3", 
+            "urls": [], 
+            "crc32": "A0513EE8", 
+            "path": "/srv/cuckoo/cwd/storage/binaries/9e6f1bc8707464908d9ecd0406838fe2910aee0843b4b0742a3a578873b195f3", 
+            "ssdeep": null, 
+            "size": 76224, 
+            "sha512": "4b9c51acd6e5b5c0cb012d4b990172a77b5400bda9a5503b7dabec3066ecfd2b53f21f5712597e011137f633e58504aeb6a2374c43665ac72856b227d7bae07c", 
+            "md5": "3f31671eac08f62bbd17eae1a5e52b98"
+        }, 
+        "custom": ""
+    }, 
+    "irma": {
+        "status": 1, 
+        "probes_finished": 13, 
+        "scan_id": "68844852-dcd2-470c-8daa-8a6557e1a133", 
+        "parent_file_sha256": null, 
+        "file_infos": {
+            "mimetype": "ELF 64-bit LSB executable, ARM aarch64, version 1 (SYSV)", 
+            "sha1": "ab84760b8ed2e5e41337cf05c5101ce2e61241a6", 
+            "tags": [], 
+            "timestamp_first_scan": 1778133763.45, 
+            "size": 76224, 
+            "timestamp_last_scan": 1778133773.82, 
+            "sha256": "9e6f1bc8707464908d9ecd0406838fe2910aee0843b4b0742a3a578873b195f3", 
+            "md5": "3f31671eac08f62bbd17eae1a5e52b98"
+        }, 
+        "scan_date": 1778133763, 
+        "other_results": [], 
+        "submitter": "cli", 
+        "probes_total": 13, 
+        "probe_results": {
+            "antivirus": {
+                "G Data Antivirus (Windows)": {
+                    "status": 0, 
+                    "duration": 0.17, 
+                    "version": "5.5.20197.1358", 
+                    "results": null, 
+                    "virus_database_version": "unavailable"
+                }, 
+                "Avast Core Security (Linux)": {
+                    "status": 1, 
+                    "duration": 0.01, 
+                    "version": "4.6.1", 
+                    "results": "ELF:Mirai-BJI [Trj]", 
+                    "virus_database_version": "unavailable"
+                }, 
+                "C4S ClamAV (Linux)": {
+                    "status": 0, 
+                    "duration": 0.04, 
+                    "version": "1.4.3", 
+                    "results": null, 
+                    "virus_database_version": "27965"
+                }, 
+                "Trellix (Linux)": {
+                    "status": 0, 
+                    "duration": 8.33, 
+                    "version": "7.0.4.835", 
+                    "results": null, 
+                    "virus_database_version": "11753"
+                }, 
+                "WithSecure (Linux)": {
+                    "status": 1, 
+                    "duration": 0.13, 
+                    "version": "1.0.44", 
+                    "results": "Trojan.TR/LINUX.Mirai.BJI", 
+                    "virus_database_version": "unavailable"
+                }, 
+                "eScan Antivirus (Linux)": {
+                    "status": 0, 
+                    "duration": 4.29, 
+                    "version": "7.0.21", 
+                    "results": null, 
+                    "virus_database_version": "7.100629 (08/04/2026)"
+                }, 
+                "ESET Security (Windows)": {
+                    "status": 0, 
+                    "duration": 0.62, 
+                    "version": "unavailable", 
+                    "results": null, 
+                    "virus_database_version": "unavailable"
+                }, 
+                "Sophos Anti-Virus (Linux)": {
+                    "status": 0, 
+                    "duration": 0.07, 
+                    "version": "1.2.0.8 (2026-02-13)", 
+                    "results": null, 
+                    "virus_database_version": "unavailable"
+                }, 
+                "DrWeb Antivirus (Linux)": {
+                    "status": 0, 
+                    "duration": 0.11, 
+                    "version": "11.1.16.2406170954", 
+                    "results": null, 
+                    "virus_database_version": "unavailable"
+                }, 
+                "ClamAV (Linux)": {
+                    "status": 0, 
+                    "duration": 0.05, 
+                    "version": "1.4.3", 
+                    "results": null, 
+                    "virus_database_version": "27965"
+                }, 
+                "Bitdefender Antivirus (Linux)": {
+                    "status": 0, 
+                    "duration": 7.97, 
+                    "version": "7.90123", 
+                    "results": null, 
+                    "virus_database_version": null
+                }, 
+                "Kaspersky Standard (Windows)": {
+                    "status": 0, 
+                    "duration": 2.69, 
+                    "version": "21.21", 
+                    "results": null, 
+                    "virus_database_version": "2026-05-06 22:42:00 (full)"
+                }, 
+                "Emsisoft Commandline Scanner (Windows)": {
+                    "status": 0, 
+                    "duration": 0.19, 
+                    "version": "2025.1.0.12641", 
+                    "results": null, 
+                    "virus_database_version": "unavailable"
+                }
+            }
+        }, 
+        "path": "", 
+        "result_id": "16ddfb36-1f9d-4107-ac50-faebd4f2f403", 
+        "name": "9e6f1bc8707464908d9ecd0406838fe2910aee0843b4b0742a3a578873b195f3"
+    }, 
+    "suricata": {
+        "tls": [], 
+        "files": [], 
+        "alerts": [], 
+        "http": []
+    }, 
+    "virustotal": {
+        "permalink": "https://www.virustotal.com/gui/file/9e6f1bc8707464908d9ecd0406838fe2910aee0843b4b0742a3a578873b195f3/detection/f-9e6f1bc8707464908d9ecd0406838fe2910aee0843b4b0742a3a578873b195f3-1778123572", 
+        "sha1": "ab84760b8ed2e5e41337cf05c5101ce2e61241a6", 
+        "resource": "3f31671eac08f62bbd17eae1a5e52b98", 
+        "response_code": 1, 
+        "scan_date": "2026-05-07 03:12:52", 
+        "scan_id": "9e6f1bc8707464908d9ecd0406838fe2910aee0843b4b0742a3a578873b195f3-1778123572", 
+        "summary": {
+            "positives": 5, 
+            "permalink": "https://www.virustotal.com/gui/file/9e6f1bc8707464908d9ecd0406838fe2910aee0843b4b0742a3a578873b195f3/detection/f-9e6f1bc8707464908d9ecd0406838fe2910aee0843b4b0742a3a578873b195f3-1778123572", 
+            "scan_date": "2026-05-07 03:12:52"
+        }, 
+        "sha256": "9e6f1bc8707464908d9ecd0406838fe2910aee0843b4b0742a3a578873b195f3", 
+        "normalized": [
+            "Mirai", 
+            "Malicious", 
+            "score", 
+            "LINUX"
+        ], 
+        "total": 62, 
+        "positives": 5, 
+        "verbose_msg": "Scan finished, information embedded", 
+        "md5": "3f31671eac08f62bbd17eae1a5e52b98", 
+        "scans": {
+            "Lionic": {
+                "detected": false, 
+                "version": "8.16", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260506"
+            }, 
+            "Elastic": {
+                "detected": false, 
+                "version": "4.0.260", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260506"
+            }, 
+            "ClamAV": {
+                "detected": false, 
+                "version": "1.5.2.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260506"
+            }, 
+            "CTX": {
+                "detected": false, 
+                "version": "2024.8.29.1", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260507"
+            }, 
+            "CAT-QuickHeal": {
+                "detected": false, 
+                "version": "22.00", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260506"
+            }, 
+            "Skyhigh": {
+                "detected": false, 
+                "version": "v2021.2.0+4045", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260506"
+            }, 
+            "ALYac": {
+                "detected": false, 
+                "version": "2.0.0.10", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260506"
+            }, 
+            "Malwarebytes": {
+                "detected": false, 
+                "version": "3.1.0.234", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260507"
+            }, 
+            "VIPRE": {
+                "detected": false, 
+                "version": "6.0.0.35", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260506"
+            }, 
+            "Sangfor": {
+                "detected": false, 
+                "version": "2.22.3.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260504"
+            }, 
+            "CrowdStrike": {
+                "detected": false, 
+                "version": "1.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20230417"
+            }, 
+            "K7GW": {
+                "detected": false, 
+                "version": "14.50.59423", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260506"
+            }, 
+            "K7AntiVirus": {
+                "detected": false, 
+                "version": "14.50.59424", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260507"
+            }, 
+            "Arcabit": {
+                "detected": false, 
+                "version": "2025.0.0.23", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260506"
+            }, 
+            "VirIT": {
+                "detected": false, 
+                "version": "9.5.1201", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260506"
+            }, 
+            "Symantec": {
+                "detected": false, 
+                "version": "1.22.0.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260507"
+            }, 
+            "ESET-NOD32": {
+                "detected": false, 
+                "version": "18.2.18.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260506"
+            }, 
+            "TrendMicro-HouseCall": {
+                "detected": false, 
+                "version": "24.550.0.1002", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260506"
+            }, 
+            "Avast": {
+                "detected": true, 
+                "version": "23.9.8494.0", 
+                "result": "ELF:Mirai-BJI [Trj]", 
+                "normalized": [
+                    "Mirai"
+                ], 
+                "update": "20260506"
+            }, 
+            "Cynet": {
+                "detected": true, 
+                "version": "4.0.3.4", 
+                "result": "Malicious (score: 99)", 
+                "normalized": [
+                    "Malicious", 
+                    "score"
+                ], 
+                "update": "20260506"
+            }, 
+            "Kaspersky": {
+                "detected": false, 
+                "version": "22.0.1.28", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260506"
+            }, 
+            "BitDefender": {
+                "detected": false, 
+                "version": "7.2", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260507"
+            }, 
+            "NANO-Antivirus": {
+                "detected": false, 
+                "version": "1.0.170.26895", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260506"
+            }, 
+            "SUPERAntiSpyware": {
+                "detected": false, 
+                "version": "5.6.0.1032", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260506"
+            }, 
+            "MicroWorld-eScan": {
+                "detected": false, 
+                "version": "14.0.409.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260507"
+            }, 
+            "Rising": {
+                "detected": false, 
+                "version": "25.0.0.28", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260506"
+            }, 
+            "Emsisoft": {
+                "detected": false, 
+                "version": "2024.8.0.61147", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260507"
+            }, 
+            "F-Secure": {
+                "detected": true, 
+                "version": "18.10.1547.307", 
+                "result": "Trojan.TR/LINUX.Mirai.BJI", 
+                "normalized": [
+                    "LINUX", 
+                    "Mirai"
+                ], 
+                "update": "20260506"
+            }, 
+            "DrWeb": {
+                "detected": false, 
+                "version": "7.0.75.2070", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260507"
+            }, 
+            "Zillya": {
+                "detected": false, 
+                "version": "2.0.0.5596", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260506"
+            }, 
+            "TrendMicro": {
+                "detected": false, 
+                "version": "24.550.0.1002", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260507"
+            }, 
+            "McAfeeD": {
+                "detected": false, 
+                "version": "1.2.0.14532", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260507"
+            }, 
+            "CMC": {
+                "detected": false, 
+                "version": "2.4.2022.1", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260506"
+            }, 
+            "Sophos": {
+                "detected": false, 
+                "version": "3.4.1.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260506"
+            }, 
+            "Ikarus": {
+                "detected": false, 
+                "version": "6.4.16.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260506"
+            }, 
+            "Avast-Mobile": {
+                "detected": true, 
+                "version": "260506-08", 
+                "result": "ELF:Mirai-BJI [Trj]", 
+                "normalized": [
+                    "Mirai"
+                ], 
+                "update": "20260506"
+            }, 
+            "Jiangmin": {
+                "detected": false, 
+                "version": "16.0.100", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260507"
+            }, 
+            "Google": {
+                "detected": false, 
+                "version": "1778119257", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260507"
+            }, 
+            "Avira": {
+                "detected": false, 
+                "version": "8.3.3.24", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260506"
+            }, 
+            "Antiy-AVL": {
+                "detected": false, 
+                "version": "3.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260507"
+            }, 
+            "Kingsoft": {
+                "detected": false, 
+                "version": "None", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260506"
+            }, 
+            "Gridinsoft": {
+                "detected": false, 
+                "version": "1.0.245.174", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260506"
+            }, 
+            "Xcitium": {
+                "detected": false, 
+                "version": "38627", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260506"
+            }, 
+            "Microsoft": {
+                "detected": false, 
+                "version": "1.1.26030.3008", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260506"
+            }, 
+            "ViRobot": {
+                "detected": false, 
+                "version": "2014.3.20.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260507"
+            }, 
+            "ZoneAlarm": {
+                "detected": false, 
+                "version": "6.24-114820716", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260506"
+            }, 
+            "GData": {
+                "detected": false, 
+                "version": "GD:27.44454AVA:64.31188", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260507"
+            }, 
+            "Varist": {
+                "detected": false, 
+                "version": "6.6.1.3", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260507"
+            }, 
+            "AhnLab-V3": {
+                "detected": false, 
+                "version": "3.30.0.10666", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260506"
+            }, 
+            "Acronis": {
+                "detected": false, 
+                "version": "1.2.0.121", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20240328"
+            }, 
+            "VBA32": {
+                "detected": false, 
+                "version": "5.6.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260506"
+            }, 
+            "TACHYON": {
+                "detected": false, 
+                "version": "2026-05-07.01", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260507"
+            }, 
+            "Zoner": {
+                "detected": false, 
+                "version": "2.2.2.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260507"
+            }, 
+            "Tencent": {
+                "detected": false, 
+                "version": "1.0.0.1", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260507"
+            }, 
+            "Yandex": {
+                "detected": false, 
+                "version": "5.5.2.24", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260507"
+            }, 
+            "TrellixENS": {
+                "detected": false, 
+                "version": "6.0.6.653", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260506"
+            }, 
+            "huorong": {
+                "detected": false, 
+                "version": "bac4b0b:bac4b0b:08be008:08be008", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260506"
+            }, 
+            "MaxSecure": {
+                "detected": false, 
+                "version": "1.0.0.1", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260506"
+            }, 
+            "Fortinet": {
+                "detected": false, 
+                "version": "7.0.30.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260505"
+            }, 
+            "AVG": {
+                "detected": true, 
+                "version": "23.9.8494.0", 
+                "result": "ELF:Mirai-BJI [Trj]", 
+                "normalized": [
+                    "Mirai"
+                ], 
+                "update": "20260506"
+            }, 
+            "Panda": {
+                "detected": false, 
+                "version": "4.6.4.2", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260506"
+            }, 
+            "alibabacloud": {
+                "detected": false, 
+                "version": "2.2.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20250321"
+            }
+        }
+    }, 
+    "network": {
+        "udp": [], 
+        "dns_servers": [], 
+        "http": [], 
+        "smtp": [], 
+        "tcp": [], 
+        "geoinfo": {}, 
+        "mitm": [], 
+        "https_ex": [], 
+        "http_ex": [], 
+        "sorted_pcap_sha256": "e8f90d44e5086664837001efc2b301863a80bea1415af45fcd8df7bfe0eb70dc", 
+        "icmp": [], 
+        "tls": [], 
+        "dead_hosts": [], 
+        "smtp_ex": [], 
+        "hosts": [], 
+        "pcap_sha256": "83a4d9944bfef8c5b4a345e0bd91b3a6d3e3530379d6ee6bb8c9eef22e50b948", 
+        "dns": [], 
+        "domains": [], 
+        "irc": []
+    }, 
+    "resubmit": {
+        "resubmit_ids": []
+    }, 
+    "snort": {
+        "alerts": []
+    }, 
+    "behavior": {
+        "generic": [
+            {
+                "process_path": null, 
+                "process_name": "kbotne11", 
+                "pid": 2088, 
+                "summary": {}, 
+                "first_seen": 1778144481.954976, 
+                "ppid": -1
+            }, 
+            {
+                "process_path": null, 
+                "process_name": "kbotne11", 
+                "pid": 2089, 
+                "summary": {}, 
+                "first_seen": 1778144481.984237, 
+                "ppid": 2088
+            }
+        ], 
+        "processes": [
+            {
+                "calls": [
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.954976 kbotne11@7fad825a4c27[2088] execve(\"/tmp/kbotne11\", [\"/tmp/kbotne11\"], [\"SUDO_GID=0\", \"MAIL=/var/mail/root\", \"USER=root\", \"HOME=/root\", \"SUDO_UID=0\", \"LOGNAME=root\", \"SYSTEMTAP_MODULE=stap_\", \"TERM=unknown\", \"SYSTEMTAP_VERBOSE=2\", \"PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin\", \"DISPLAY=:0\", \"LANG=en_US.UTF-8\", \"XAUTHORITY=/root/.Xauthority\", \"SUDO_COMMAND=/usr/bin/staprun -vv -o stap.log /root/.cuckoo/stap_.ko -c sh -c /tmp/kbotne11\", \"SHELL=/bin/bash\", \"SUDO_USER=root\", \"PWD=/tmp/tmpy9dzwr\"])\n", 
+                        "api": "execve", 
+                        "return_value": "", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a4c27", 
+                        "arguments": {
+                            "p2": [
+                                "SUDO_GID=0", 
+                                "MAIL=/var/mail/root", 
+                                "USER=root", 
+                                "HOME=/root", 
+                                "SUDO_UID=0", 
+                                "LOGNAME=root", 
+                                "SYSTEMTAP_MODULE=stap_", 
+                                "TERM=unknown", 
+                                "SYSTEMTAP_VERBOSE=2", 
+                                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin", 
+                                "DISPLAY=:0", 
+                                "LANG=en_US.UTF-8", 
+                                "XAUTHORITY=/root/.Xauthority", 
+                                "SUDO_COMMAND=/usr/bin/staprun -vv -o stap.log /root/.cuckoo/stap_.ko -c sh -c /tmp/kbotne11", 
+                                "SHELL=/bin/bash", 
+                                "SUDO_USER=root", 
+                                "PWD=/tmp/tmpy9dzwr"
+                            ], 
+                            "p0": "/tmp/kbotne11", 
+                            "p1": [
+                                "/tmp/kbotne11"
+                            ]
+                        }, 
+                        "time": 1778144481.954976
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.958514 kbotne11@7fad825a4c27[2088] brk(0x0) = 94700870684672\n", 
+                        "api": "brk", 
+                        "return_value": "94700870684672", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a4c27", 
+                        "arguments": {
+                            "p0": "0x0"
+                        }, 
+                        "time": 1778144481.958514
+                    }, 
+                    {
+                        "status": "ENOENT", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.958632 kbotne11@7fad825a59d7[2088] access(\"/etc/ld.so.preload\", R_OK) = -2 (ENOENT)\n", 
+                        "api": "access", 
+                        "return_value": "-2", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a59d7", 
+                        "arguments": {
+                            "p0": "/etc/ld.so.preload", 
+                            "p1": "R_OK"
+                        }, 
+                        "time": 1778144481.958632
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.960613 kbotne11@7fad825a5b0d[2088] openat(AT_FDCWD, \"/etc/ld.so.cache\", O_RDONLY|O_CLOEXEC) = 4\n", 
+                        "api": "openat", 
+                        "return_value": "4", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5b0d", 
+                        "arguments": {
+                            "p2": "O_RDONLY|O_CLOEXEC", 
+                            "p0": "AT_FDCWD", 
+                            "p1": "/etc/ld.so.cache"
+                        }, 
+                        "time": 1778144481.960613
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.960678 kbotne11@7fad825a5943[2088] fstat(4, 0x7ffd61704e80) = 0\n", 
+                        "api": "fstat", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5943", 
+                        "arguments": {
+                            "p0": "4", 
+                            "p1": "0x7ffd61704e80"
+                        }, 
+                        "time": 1778144481.960678
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.960732 kbotne11@7fad825a5d03[2088] mmap2(0x0, 88858, PROT_READ, MAP_PRIVATE, 4, 0) = 0x7fad82573000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7fad82573000", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5d03", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p3": "MAP_PRIVATE", 
+                            "p0": "0x0", 
+                            "p1": "88858", 
+                            "p4": "4", 
+                            "p5": "0"
+                        }, 
+                        "time": 1778144481.960732
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.960786 kbotne11@7fad825a59f7[2088] close(4) = 0\n", 
+                        "api": "close", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a59f7", 
+                        "arguments": {
+                            "p0": "4"
+                        }, 
+                        "time": 1778144481.960786
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.960853 kbotne11@7fad825a5b0d[2088] openat(AT_FDCWD, \"/lib/x86_64-linux-gnu/libz.so.1\", O_RDONLY|O_CLOEXEC) = 4\n", 
+                        "api": "openat", 
+                        "return_value": "4", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5b0d", 
+                        "arguments": {
+                            "p2": "O_RDONLY|O_CLOEXEC", 
+                            "p0": "AT_FDCWD", 
+                            "p1": "/lib/x86_64-linux-gnu/libz.so.1"
+                        }, 
+                        "time": 1778144481.960853
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.960921 kbotne11@7fad825a5bd4[2088] read(4, 0x7ffd61705038, 832) = 832\n", 
+                        "api": "read", 
+                        "return_value": "832", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5bd4", 
+                        "arguments": {
+                            "p2": "832", 
+                            "p0": "4", 
+                            "p1": "0x7ffd61705038"
+                        }, 
+                        "time": 1778144481.960921
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.960972 kbotne11@7fad825a5943[2088] fstat(4, 0x7ffd61704ed0) = 0\n", 
+                        "api": "fstat", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5943", 
+                        "arguments": {
+                            "p0": "4", 
+                            "p1": "0x7ffd61704ed0"
+                        }, 
+                        "time": 1778144481.960972
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.961021 kbotne11@7fad825a5d03[2088] mmap2(0x0, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fad82571000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7fad82571000", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5d03", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_WRITE", 
+                            "p3": "MAP_PRIVATE|MAP_ANONYMOUS", 
+                            "p0": "0x0", 
+                            "p1": "8192", 
+                            "p4": "-1", 
+                            "p5": "0"
+                        }, 
+                        "time": 1778144481.961021
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.961082 kbotne11@7fad825a5d03[2088] mmap2(0x0, 110768, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 4, 0) = 0x7fad82555000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7fad82555000", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5d03", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p3": "MAP_PRIVATE|MAP_DENYWRITE", 
+                            "p0": "0x0", 
+                            "p1": "110768", 
+                            "p4": "4", 
+                            "p5": "0"
+                        }, 
+                        "time": 1778144481.961082
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.961137 kbotne11@7fad825a5db7[2088] mprotect(0x7fad82557000, 98304, PROT_NONE) = 0\n", 
+                        "api": "mprotect", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5db7", 
+                        "arguments": {
+                            "p2": "PROT_NONE", 
+                            "p0": "0x7fad82557000", 
+                            "p1": "98304"
+                        }, 
+                        "time": 1778144481.961137
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.961199 kbotne11@7fad825a5d03[2088] mmap2(0x7fad82557000, 69632, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 8192) = 0x7fad82557000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7fad82557000", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5d03", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_EXEC", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE", 
+                            "p0": "0x7fad82557000", 
+                            "p1": "69632", 
+                            "p4": "4", 
+                            "p5": "8192"
+                        }, 
+                        "time": 1778144481.961199
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.961261 kbotne11@7fad825a5d03[2088] mmap2(0x7fad82568000, 24576, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 77824) = 0x7fad82568000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7fad82568000", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5d03", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE", 
+                            "p0": "0x7fad82568000", 
+                            "p1": "24576", 
+                            "p4": "4", 
+                            "p5": "77824"
+                        }, 
+                        "time": 1778144481.961261
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.961318 kbotne11@7fad825a5d03[2088] mmap2(0x7fad8256f000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 102400) = 0x7fad8256f000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7fad8256f000", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5d03", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_WRITE", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE", 
+                            "p0": "0x7fad8256f000", 
+                            "p1": "8192", 
+                            "p4": "4", 
+                            "p5": "102400"
+                        }, 
+                        "time": 1778144481.961318
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.961395 kbotne11@7fad825a59f7[2088] close(4) = 0\n", 
+                        "api": "close", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a59f7", 
+                        "arguments": {
+                            "p0": "4"
+                        }, 
+                        "time": 1778144481.961395
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.961470 kbotne11@7fad825a5b0d[2088] openat(AT_FDCWD, \"/usr/lib/x86_64-linux-gnu/libgmodule-2.0.so.0\", O_RDONLY|O_CLOEXEC) = 4\n", 
+                        "api": "openat", 
+                        "return_value": "4", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5b0d", 
+                        "arguments": {
+                            "p2": "O_RDONLY|O_CLOEXEC", 
+                            "p0": "AT_FDCWD", 
+                            "p1": "/usr/lib/x86_64-linux-gnu/libgmodule-2.0.so.0"
+                        }, 
+                        "time": 1778144481.96147
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.961527 kbotne11@7fad825a5bd4[2088] read(4, 0x7ffd61705018, 832) = 832\n", 
+                        "api": "read", 
+                        "return_value": "832", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5bd4", 
+                        "arguments": {
+                            "p2": "832", 
+                            "p0": "4", 
+                            "p1": "0x7ffd61705018"
+                        }, 
+                        "time": 1778144481.961527
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.961577 kbotne11@7fad825a5943[2088] fstat(4, 0x7ffd61704eb0) = 0\n", 
+                        "api": "fstat", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5943", 
+                        "arguments": {
+                            "p0": "4", 
+                            "p1": "0x7ffd61704eb0"
+                        }, 
+                        "time": 1778144481.961577
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.961626 kbotne11@7fad825a5d03[2088] mmap2(0x0, 20600, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 4, 0) = 0x7fad8254f000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7fad8254f000", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5d03", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p3": "MAP_PRIVATE|MAP_DENYWRITE", 
+                            "p0": "0x0", 
+                            "p1": "20600", 
+                            "p4": "4", 
+                            "p5": "0"
+                        }, 
+                        "time": 1778144481.961626
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.961683 kbotne11@7fad825a5d03[2088] mmap2(0x7fad82550000, 8192, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 4096) = 0x7fad82550000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7fad82550000", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5d03", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_EXEC", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE", 
+                            "p0": "0x7fad82550000", 
+                            "p1": "8192", 
+                            "p4": "4", 
+                            "p5": "4096"
+                        }, 
+                        "time": 1778144481.961683
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.961745 kbotne11@7fad825a5d03[2088] mmap2(0x7fad82552000, 4096, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 12288) = 0x7fad82552000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7fad82552000", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5d03", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE", 
+                            "p0": "0x7fad82552000", 
+                            "p1": "4096", 
+                            "p4": "4", 
+                            "p5": "12288"
+                        }, 
+                        "time": 1778144481.961745
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.961803 kbotne11@7fad825a5d03[2088] mmap2(0x7fad82553000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 12288) = 0x7fad82553000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7fad82553000", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5d03", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_WRITE", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE", 
+                            "p0": "0x7fad82553000", 
+                            "p1": "8192", 
+                            "p4": "4", 
+                            "p5": "12288"
+                        }, 
+                        "time": 1778144481.961803
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.961878 kbotne11@7fad825a59f7[2088] close(4) = 0\n", 
+                        "api": "close", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a59f7", 
+                        "arguments": {
+                            "p0": "4"
+                        }, 
+                        "time": 1778144481.961878
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.961966 kbotne11@7fad825a5b0d[2088] openat(AT_FDCWD, \"/usr/lib/x86_64-linux-gnu/libglib-2.0.so.0\", O_RDONLY|O_CLOEXEC) = 4\n", 
+                        "api": "openat", 
+                        "return_value": "4", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5b0d", 
+                        "arguments": {
+                            "p2": "O_RDONLY|O_CLOEXEC", 
+                            "p0": "AT_FDCWD", 
+                            "p1": "/usr/lib/x86_64-linux-gnu/libglib-2.0.so.0"
+                        }, 
+                        "time": 1778144481.961966
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.962021 kbotne11@7fad825a5bd4[2088] read(4, 0x7ffd61704ff8, 832) = 832\n", 
+                        "api": "read", 
+                        "return_value": "832", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5bd4", 
+                        "arguments": {
+                            "p2": "832", 
+                            "p0": "4", 
+                            "p1": "0x7ffd61704ff8"
+                        }, 
+                        "time": 1778144481.962021
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.962070 kbotne11@7fad825a5943[2088] fstat(4, 0x7ffd61704e90) = 0\n", 
+                        "api": "fstat", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5943", 
+                        "arguments": {
+                            "p0": "4", 
+                            "p1": "0x7ffd61704e90"
+                        }, 
+                        "time": 1778144481.96207
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.962119 kbotne11@7fad825a5d03[2088] mmap2(0x0, 1180072, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 4, 0) = 0x7fad8242e000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7fad8242e000", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5d03", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p3": "MAP_PRIVATE|MAP_DENYWRITE", 
+                            "p0": "0x0", 
+                            "p1": "1180072", 
+                            "p4": "4", 
+                            "p5": "0"
+                        }, 
+                        "time": 1778144481.962119
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.962174 kbotne11@7fad825a5db7[2088] mprotect(0x7fad82449000, 1060864, PROT_NONE) = 0\n", 
+                        "api": "mprotect", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5db7", 
+                        "arguments": {
+                            "p2": "PROT_NONE", 
+                            "p0": "0x7fad82449000", 
+                            "p1": "1060864"
+                        }, 
+                        "time": 1778144481.962174
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.962246 kbotne11@7fad825a5d03[2088] mmap2(0x7fad82449000, 524288, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 110592) = 0x7fad82449000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7fad82449000", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5d03", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_EXEC", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE", 
+                            "p0": "0x7fad82449000", 
+                            "p1": "524288", 
+                            "p4": "4", 
+                            "p5": "110592"
+                        }, 
+                        "time": 1778144481.962246
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.962304 kbotne11@7fad825a5d03[2088] mmap2(0x7fad824c9000, 532480, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 634880) = 0x7fad824c9000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7fad824c9000", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5d03", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE", 
+                            "p0": "0x7fad824c9000", 
+                            "p1": "532480", 
+                            "p4": "4", 
+                            "p5": "634880"
+                        }, 
+                        "time": 1778144481.962304
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.962361 kbotne11@7fad825a5d03[2088] mmap2(0x7fad8254c000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 1167360) = 0x7fad8254c000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7fad8254c000", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5d03", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_WRITE", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE", 
+                            "p0": "0x7fad8254c000", 
+                            "p1": "8192", 
+                            "p4": "4", 
+                            "p5": "1167360"
+                        }, 
+                        "time": 1778144481.962361
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.962425 kbotne11@7fad825a5d03[2088] mmap2(0x7fad8254e000, 424, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fad8254e000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7fad8254e000", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5d03", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_WRITE", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS", 
+                            "p0": "0x7fad8254e000", 
+                            "p1": "424", 
+                            "p4": "-1", 
+                            "p5": "0"
+                        }, 
+                        "time": 1778144481.962425
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.962493 kbotne11@7fad825a59f7[2088] close(4) = 0\n", 
+                        "api": "close", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a59f7", 
+                        "arguments": {
+                            "p0": "4"
+                        }, 
+                        "time": 1778144481.962493
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.962567 kbotne11@7fad825a5b0d[2088] openat(AT_FDCWD, \"/lib/x86_64-linux-gnu/librt.so.1\", O_RDONLY|O_CLOEXEC) = 4\n", 
+                        "api": "openat", 
+                        "return_value": "4", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5b0d", 
+                        "arguments": {
+                            "p2": "O_RDONLY|O_CLOEXEC", 
+                            "p0": "AT_FDCWD", 
+                            "p1": "/lib/x86_64-linux-gnu/librt.so.1"
+                        }, 
+                        "time": 1778144481.962567
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.962623 kbotne11@7fad825a5bd4[2088] read(4, 0x7ffd61704fd8, 832) = 832\n", 
+                        "api": "read", 
+                        "return_value": "832", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5bd4", 
+                        "arguments": {
+                            "p2": "832", 
+                            "p0": "4", 
+                            "p1": "0x7ffd61704fd8"
+                        }, 
+                        "time": 1778144481.962623
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.962673 kbotne11@7fad825a5943[2088] fstat(4, 0x7ffd61704e70) = 0\n", 
+                        "api": "fstat", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5943", 
+                        "arguments": {
+                            "p0": "4", 
+                            "p1": "0x7ffd61704e70"
+                        }, 
+                        "time": 1778144481.962673
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.962726 kbotne11@7fad825a5d03[2088] mmap2(0x0, 44000, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 4, 0) = 0x7fad82423000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7fad82423000", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5d03", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p3": "MAP_PRIVATE|MAP_DENYWRITE", 
+                            "p0": "0x0", 
+                            "p1": "44000", 
+                            "p4": "4", 
+                            "p5": "0"
+                        }, 
+                        "time": 1778144481.962726
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.962782 kbotne11@7fad825a5d03[2088] mmap2(0x7fad82426000, 16384, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 12288) = 0x7fad82426000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7fad82426000", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5d03", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_EXEC", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE", 
+                            "p0": "0x7fad82426000", 
+                            "p1": "16384", 
+                            "p4": "4", 
+                            "p5": "12288"
+                        }, 
+                        "time": 1778144481.962782
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.962843 kbotne11@7fad825a5d03[2088] mmap2(0x7fad8242a000, 8192, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 28672) = 0x7fad8242a000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7fad8242a000", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5d03", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE", 
+                            "p0": "0x7fad8242a000", 
+                            "p1": "8192", 
+                            "p4": "4", 
+                            "p5": "28672"
+                        }, 
+                        "time": 1778144481.962843
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.962911 kbotne11@7fad825a5d03[2088] mmap2(0x7fad8242c000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 32768) = 0x7fad8242c000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7fad8242c000", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5d03", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_WRITE", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE", 
+                            "p0": "0x7fad8242c000", 
+                            "p1": "8192", 
+                            "p4": "4", 
+                            "p5": "32768"
+                        }, 
+                        "time": 1778144481.962911
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.962990 kbotne11@7fad825a59f7[2088] close(4) = 0\n", 
+                        "api": "close", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a59f7", 
+                        "arguments": {
+                            "p0": "4"
+                        }, 
+                        "time": 1778144481.96299
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.963059 kbotne11@7fad825a5b0d[2088] openat(AT_FDCWD, \"/usr/lib/x86_64-linux-gnu/libstdc++.so.6\", O_RDONLY|O_CLOEXEC) = 4\n", 
+                        "api": "openat", 
+                        "return_value": "4", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5b0d", 
+                        "arguments": {
+                            "p2": "O_RDONLY|O_CLOEXEC", 
+                            "p0": "AT_FDCWD", 
+                            "p1": "/usr/lib/x86_64-linux-gnu/libstdc++.so.6"
+                        }, 
+                        "time": 1778144481.963059
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.963115 kbotne11@7fad825a5bd4[2088] read(4, 0x7ffd61704fb8, 832) = 832\n", 
+                        "api": "read", 
+                        "return_value": "832", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5bd4", 
+                        "arguments": {
+                            "p2": "832", 
+                            "p0": "4", 
+                            "p1": "0x7ffd61704fb8"
+                        }, 
+                        "time": 1778144481.963115
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.963164 kbotne11@7fad825a5943[2088] fstat(4, 0x7ffd61704e50) = 0\n", 
+                        "api": "fstat", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5943", 
+                        "arguments": {
+                            "p0": "4", 
+                            "p1": "0x7ffd61704e50"
+                        }, 
+                        "time": 1778144481.963164
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.963213 kbotne11@7fad825a5d03[2088] mmap2(0x0, 1971648, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 4, 0) = 0x7fad82241000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7fad82241000", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5d03", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p3": "MAP_PRIVATE|MAP_DENYWRITE", 
+                            "p0": "0x0", 
+                            "p1": "1971648", 
+                            "p4": "4", 
+                            "p5": "0"
+                        }, 
+                        "time": 1778144481.963213
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.963267 kbotne11@7fad825a5db7[2088] mprotect(0x7fad822d6000, 1294336, PROT_NONE) = 0\n", 
+                        "api": "mprotect", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5db7", 
+                        "arguments": {
+                            "p2": "PROT_NONE", 
+                            "p0": "0x7fad822d6000", 
+                            "p1": "1294336"
+                        }, 
+                        "time": 1778144481.963267
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.963421 kbotne11@7fad825a5d03[2088] mmap2(0x7fad822d6000, 991232, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 610304) = 0x7fad822d6000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7fad822d6000", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5d03", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_EXEC", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE", 
+                            "p0": "0x7fad822d6000", 
+                            "p1": "991232", 
+                            "p4": "4", 
+                            "p5": "610304"
+                        }, 
+                        "time": 1778144481.963421
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.963483 kbotne11@7fad825a5d03[2088] mmap2(0x7fad823c8000, 299008, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 1601536) = 0x7fad823c8000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7fad823c8000", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5d03", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE", 
+                            "p0": "0x7fad823c8000", 
+                            "p1": "299008", 
+                            "p4": "4", 
+                            "p5": "1601536"
+                        }, 
+                        "time": 1778144481.963483
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.963537 kbotne11@7fad825a5d03[2088] mmap2(0x7fad82412000, 57344, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 1900544) = 0x7fad82412000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7fad82412000", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5d03", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_WRITE", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE", 
+                            "p0": "0x7fad82412000", 
+                            "p1": "57344", 
+                            "p4": "4", 
+                            "p5": "1900544"
+                        }, 
+                        "time": 1778144481.963537
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.963603 kbotne11@7fad825a5d03[2088] mmap2(0x7fad82420000, 9664, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fad82420000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7fad82420000", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5d03", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_WRITE", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS", 
+                            "p0": "0x7fad82420000", 
+                            "p1": "9664", 
+                            "p4": "-1", 
+                            "p5": "0"
+                        }, 
+                        "time": 1778144481.963603
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.963675 kbotne11@7fad825a59f7[2088] close(4) = 0\n", 
+                        "api": "close", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a59f7", 
+                        "arguments": {
+                            "p0": "4"
+                        }, 
+                        "time": 1778144481.963675
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.963753 kbotne11@7fad825a5b0d[2088] openat(AT_FDCWD, \"/lib/x86_64-linux-gnu/libm.so.6\", O_RDONLY|O_CLOEXEC) = 4\n", 
+                        "api": "openat", 
+                        "return_value": "4", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5b0d", 
+                        "arguments": {
+                            "p2": "O_RDONLY|O_CLOEXEC", 
+                            "p0": "AT_FDCWD", 
+                            "p1": "/lib/x86_64-linux-gnu/libm.so.6"
+                        }, 
+                        "time": 1778144481.963753
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.963811 kbotne11@7fad825a5bd4[2088] read(4, 0x7ffd61704f98, 832) = 832\n", 
+                        "api": "read", 
+                        "return_value": "832", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5bd4", 
+                        "arguments": {
+                            "p2": "832", 
+                            "p0": "4", 
+                            "p1": "0x7ffd61704f98"
+                        }, 
+                        "time": 1778144481.963811
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.963861 kbotne11@7fad825a5943[2088] fstat(4, 0x7ffd61704e30) = 0\n", 
+                        "api": "fstat", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5943", 
+                        "arguments": {
+                            "p0": "4", 
+                            "p1": "0x7ffd61704e30"
+                        }, 
+                        "time": 1778144481.963861
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.963935 kbotne11@7fad825a5d03[2088] mmap2(0x0, 1364240, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 4, 0) = 0x7fad820f3000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7fad820f3000", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5d03", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p3": "MAP_PRIVATE|MAP_DENYWRITE", 
+                            "p0": "0x0", 
+                            "p1": "1364240", 
+                            "p4": "4", 
+                            "p5": "0"
+                        }, 
+                        "time": 1778144481.963935
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.963991 kbotne11@7fad825a5d03[2088] mmap2(0x7fad82102000, 679936, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 61440) = 0x7fad82102000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7fad82102000", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5d03", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_EXEC", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE", 
+                            "p0": "0x7fad82102000", 
+                            "p1": "679936", 
+                            "p4": "4", 
+                            "p5": "61440"
+                        }, 
+                        "time": 1778144481.963991
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.964052 kbotne11@7fad825a5d03[2088] mmap2(0x7fad821a8000, 618496, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 741376) = 0x7fad821a8000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7fad821a8000", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5d03", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE", 
+                            "p0": "0x7fad821a8000", 
+                            "p1": "618496", 
+                            "p4": "4", 
+                            "p5": "741376"
+                        }, 
+                        "time": 1778144481.964052
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.964110 kbotne11@7fad825a5d03[2088] mmap2(0x7fad8223f000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 1355776) = 0x7fad8223f000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7fad8223f000", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5d03", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_WRITE", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE", 
+                            "p0": "0x7fad8223f000", 
+                            "p1": "8192", 
+                            "p4": "4", 
+                            "p5": "1355776"
+                        }, 
+                        "time": 1778144481.96411
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.964186 kbotne11@7fad825a59f7[2088] close(4) = 0\n", 
+                        "api": "close", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a59f7", 
+                        "arguments": {
+                            "p0": "4"
+                        }, 
+                        "time": 1778144481.964186
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.964258 kbotne11@7fad825a5b0d[2088] openat(AT_FDCWD, \"/lib/x86_64-linux-gnu/libgcc_s.so.1\", O_RDONLY|O_CLOEXEC) = 4\n", 
+                        "api": "openat", 
+                        "return_value": "4", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5b0d", 
+                        "arguments": {
+                            "p2": "O_RDONLY|O_CLOEXEC", 
+                            "p0": "AT_FDCWD", 
+                            "p1": "/lib/x86_64-linux-gnu/libgcc_s.so.1"
+                        }, 
+                        "time": 1778144481.964258
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.964312 kbotne11@7fad825a5bd4[2088] read(4, 0x7ffd61704f78, 832) = 832\n", 
+                        "api": "read", 
+                        "return_value": "832", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5bd4", 
+                        "arguments": {
+                            "p2": "832", 
+                            "p0": "4", 
+                            "p1": "0x7ffd61704f78"
+                        }, 
+                        "time": 1778144481.964312
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.964360 kbotne11@7fad825a5943[2088] fstat(4, 0x7ffd61704e10) = 0\n", 
+                        "api": "fstat", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5943", 
+                        "arguments": {
+                            "p0": "4", 
+                            "p1": "0x7ffd61704e10"
+                        }, 
+                        "time": 1778144481.96436
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.964409 kbotne11@7fad825a5d03[2088] mmap2(0x0, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fad820f1000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7fad820f1000", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5d03", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_WRITE", 
+                            "p3": "MAP_PRIVATE|MAP_ANONYMOUS", 
+                            "p0": "0x0", 
+                            "p1": "8192", 
+                            "p4": "-1", 
+                            "p5": "0"
+                        }, 
+                        "time": 1778144481.964409
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.964467 kbotne11@7fad825a5d03[2088] mmap2(0x0, 103504, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 4, 0) = 0x7fad820d7000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7fad820d7000", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5d03", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p3": "MAP_PRIVATE|MAP_DENYWRITE", 
+                            "p0": "0x0", 
+                            "p1": "103504", 
+                            "p4": "4", 
+                            "p5": "0"
+                        }, 
+                        "time": 1778144481.964467
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.964520 kbotne11@7fad825a5d03[2088] mmap2(0x7fad820da000, 69632, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 12288) = 0x7fad820da000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7fad820da000", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5d03", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_EXEC", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE", 
+                            "p0": "0x7fad820da000", 
+                            "p1": "69632", 
+                            "p4": "4", 
+                            "p5": "12288"
+                        }, 
+                        "time": 1778144481.96452
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.964581 kbotne11@7fad825a5d03[2088] mmap2(0x7fad820eb000, 16384, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 81920) = 0x7fad820eb000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7fad820eb000", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5d03", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE", 
+                            "p0": "0x7fad820eb000", 
+                            "p1": "16384", 
+                            "p4": "4", 
+                            "p5": "81920"
+                        }, 
+                        "time": 1778144481.964581
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.964636 kbotne11@7fad825a5d03[2088] mmap2(0x7fad820ef000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 94208) = 0x7fad820ef000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7fad820ef000", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5d03", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_WRITE", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE", 
+                            "p0": "0x7fad820ef000", 
+                            "p1": "8192", 
+                            "p4": "4", 
+                            "p5": "94208"
+                        }, 
+                        "time": 1778144481.964636
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.964710 kbotne11@7fad825a59f7[2088] close(4) = 0\n", 
+                        "api": "close", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a59f7", 
+                        "arguments": {
+                            "p0": "4"
+                        }, 
+                        "time": 1778144481.96471
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.964776 kbotne11@7fad825a5b0d[2088] openat(AT_FDCWD, \"/lib/x86_64-linux-gnu/libpthread.so.0\", O_RDONLY|O_CLOEXEC) = 4\n", 
+                        "api": "openat", 
+                        "return_value": "4", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5b0d", 
+                        "arguments": {
+                            "p2": "O_RDONLY|O_CLOEXEC", 
+                            "p0": "AT_FDCWD", 
+                            "p1": "/lib/x86_64-linux-gnu/libpthread.so.0"
+                        }, 
+                        "time": 1778144481.964776
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.964831 kbotne11@7fad825a5bd4[2088] read(4, 0x7ffd61704f58, 832) = 832\n", 
+                        "api": "read", 
+                        "return_value": "832", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5bd4", 
+                        "arguments": {
+                            "p2": "832", 
+                            "p0": "4", 
+                            "p1": "0x7ffd61704f58"
+                        }, 
+                        "time": 1778144481.964831
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.964890 kbotne11@7fad825a5943[2088] fstat(4, 0x7ffd61704df0) = 0\n", 
+                        "api": "fstat", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5943", 
+                        "arguments": {
+                            "p0": "4", 
+                            "p1": "0x7ffd61704df0"
+                        }, 
+                        "time": 1778144481.96489
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.964939 kbotne11@7fad825a5d03[2088] mmap2(0x0, 132288, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 4, 0) = 0x7fad820b6000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7fad820b6000", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5d03", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p3": "MAP_PRIVATE|MAP_DENYWRITE", 
+                            "p0": "0x0", 
+                            "p1": "132288", 
+                            "p4": "4", 
+                            "p5": "0"
+                        }, 
+                        "time": 1778144481.964939
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.964994 kbotne11@7fad825a5d03[2088] mmap2(0x7fad820bd000, 61440, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 28672) = 0x7fad820bd000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7fad820bd000", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5d03", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_EXEC", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE", 
+                            "p0": "0x7fad820bd000", 
+                            "p1": "61440", 
+                            "p4": "4", 
+                            "p5": "28672"
+                        }, 
+                        "time": 1778144481.964994
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.965055 kbotne11@7fad825a5d03[2088] mmap2(0x7fad820cc000, 20480, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 90112) = 0x7fad820cc000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7fad820cc000", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5d03", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE", 
+                            "p0": "0x7fad820cc000", 
+                            "p1": "20480", 
+                            "p4": "4", 
+                            "p5": "90112"
+                        }, 
+                        "time": 1778144481.965055
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.965112 kbotne11@7fad825a5d03[2088] mmap2(0x7fad820d1000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 106496) = 0x7fad820d1000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7fad820d1000", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5d03", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_WRITE", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE", 
+                            "p0": "0x7fad820d1000", 
+                            "p1": "8192", 
+                            "p4": "4", 
+                            "p5": "106496"
+                        }, 
+                        "time": 1778144481.965112
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.965177 kbotne11@7fad825a5d03[2088] mmap2(0x7fad820d3000, 13504, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fad820d3000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7fad820d3000", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5d03", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_WRITE", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS", 
+                            "p0": "0x7fad820d3000", 
+                            "p1": "13504", 
+                            "p4": "-1", 
+                            "p5": "0"
+                        }, 
+                        "time": 1778144481.965177
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.965254 kbotne11@7fad825a59f7[2088] close(4) = 0\n", 
+                        "api": "close", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a59f7", 
+                        "arguments": {
+                            "p0": "4"
+                        }, 
+                        "time": 1778144481.965254
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.965320 kbotne11@7fad825a5b0d[2088] openat(AT_FDCWD, \"/lib/x86_64-linux-gnu/libc.so.6\", O_RDONLY|O_CLOEXEC) = 4\n", 
+                        "api": "openat", 
+                        "return_value": "4", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5b0d", 
+                        "arguments": {
+                            "p2": "O_RDONLY|O_CLOEXEC", 
+                            "p0": "AT_FDCWD", 
+                            "p1": "/lib/x86_64-linux-gnu/libc.so.6"
+                        }, 
+                        "time": 1778144481.96532
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.965374 kbotne11@7fad825a5bd4[2088] read(4, 0x7ffd61704f38, 832) = 832\n", 
+                        "api": "read", 
+                        "return_value": "832", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5bd4", 
+                        "arguments": {
+                            "p2": "832", 
+                            "p0": "4", 
+                            "p1": "0x7ffd61704f38"
+                        }, 
+                        "time": 1778144481.965374
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.965422 kbotne11@7fad825a5943[2088] fstat(4, 0x7ffd61704dd0) = 0\n", 
+                        "api": "fstat", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5943", 
+                        "arguments": {
+                            "p0": "4", 
+                            "p1": "0x7ffd61704dd0"
+                        }, 
+                        "time": 1778144481.965422
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.965470 kbotne11@7fad825a5d03[2088] mmap2(0x0, 2008696, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 4, 0) = 0x7fad81ecb000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7fad81ecb000", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5d03", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p3": "MAP_PRIVATE|MAP_DENYWRITE", 
+                            "p0": "0x0", 
+                            "p1": "2008696", 
+                            "p4": "4", 
+                            "p5": "0"
+                        }, 
+                        "time": 1778144481.96547
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.965523 kbotne11@7fad825a5d03[2088] mmap2(0x7fad81ef0000, 1519616, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 151552) = 0x7fad81ef0000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7fad81ef0000", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5d03", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_EXEC", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE", 
+                            "p0": "0x7fad81ef0000", 
+                            "p1": "1519616", 
+                            "p4": "4", 
+                            "p5": "151552"
+                        }, 
+                        "time": 1778144481.965523
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.965592 kbotne11@7fad825a5d03[2088] mmap2(0x7fad82063000, 299008, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 1671168) = 0x7fad82063000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7fad82063000", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5d03", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE", 
+                            "p0": "0x7fad82063000", 
+                            "p1": "299008", 
+                            "p4": "4", 
+                            "p5": "1671168"
+                        }, 
+                        "time": 1778144481.965592
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.965646 kbotne11@7fad825a5d03[2088] mmap2(0x7fad820ac000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 1966080) = 0x7fad820ac000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7fad820ac000", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5d03", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_WRITE", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE", 
+                            "p0": "0x7fad820ac000", 
+                            "p1": "24576", 
+                            "p4": "4", 
+                            "p5": "1966080"
+                        }, 
+                        "time": 1778144481.965646
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.965709 kbotne11@7fad825a5d03[2088] mmap2(0x7fad820b2000, 13944, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7fad820b2000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7fad820b2000", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5d03", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_WRITE", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS", 
+                            "p0": "0x7fad820b2000", 
+                            "p1": "13944", 
+                            "p4": "-1", 
+                            "p5": "0"
+                        }, 
+                        "time": 1778144481.965709
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.965776 kbotne11@7fad825a59f7[2088] close(4) = 0\n", 
+                        "api": "close", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a59f7", 
+                        "arguments": {
+                            "p0": "4"
+                        }, 
+                        "time": 1778144481.965776
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.965854 kbotne11@7fad825a5b0d[2088] openat(AT_FDCWD, \"/lib/x86_64-linux-gnu/libdl.so.2\", O_RDONLY|O_CLOEXEC) = 4\n", 
+                        "api": "openat", 
+                        "return_value": "4", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5b0d", 
+                        "arguments": {
+                            "p2": "O_RDONLY|O_CLOEXEC", 
+                            "p0": "AT_FDCWD", 
+                            "p1": "/lib/x86_64-linux-gnu/libdl.so.2"
+                        }, 
+                        "time": 1778144481.965854
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.965926 kbotne11@7fad825a5bd4[2088] read(4, 0x7ffd61704f18, 832) = 832\n", 
+                        "api": "read", 
+                        "return_value": "832", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5bd4", 
+                        "arguments": {
+                            "p2": "832", 
+                            "p0": "4", 
+                            "p1": "0x7ffd61704f18"
+                        }, 
+                        "time": 1778144481.965926
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.966384 kbotne11@7fad825a5943[2088] fstat(4, 0x7ffd61704db0) = 0\n", 
+                        "api": "fstat", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5943", 
+                        "arguments": {
+                            "p0": "4", 
+                            "p1": "0x7ffd61704db0"
+                        }, 
+                        "time": 1778144481.966384
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.966441 kbotne11@7fad825a5d03[2088] mmap2(0x0, 20752, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 4, 0) = 0x7fad81ec5000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7fad81ec5000", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5d03", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p3": "MAP_PRIVATE|MAP_DENYWRITE", 
+                            "p0": "0x0", 
+                            "p1": "20752", 
+                            "p4": "4", 
+                            "p5": "0"
+                        }, 
+                        "time": 1778144481.966441
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.966497 kbotne11@7fad825a5d03[2088] mmap2(0x7fad81ec6000, 8192, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 4096) = 0x7fad81ec6000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7fad81ec6000", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5d03", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_EXEC", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE", 
+                            "p0": "0x7fad81ec6000", 
+                            "p1": "8192", 
+                            "p4": "4", 
+                            "p5": "4096"
+                        }, 
+                        "time": 1778144481.966497
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.966558 kbotne11@7fad825a5d03[2088] mmap2(0x7fad81ec8000, 4096, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 12288) = 0x7fad81ec8000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7fad81ec8000", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5d03", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE", 
+                            "p0": "0x7fad81ec8000", 
+                            "p1": "4096", 
+                            "p4": "4", 
+                            "p5": "12288"
+                        }, 
+                        "time": 1778144481.966558
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.966614 kbotne11@7fad825a5d03[2088] mmap2(0x7fad81ec9000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 12288) = 0x7fad81ec9000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7fad81ec9000", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5d03", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_WRITE", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE", 
+                            "p0": "0x7fad81ec9000", 
+                            "p1": "8192", 
+                            "p4": "4", 
+                            "p5": "12288"
+                        }, 
+                        "time": 1778144481.966614
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.966688 kbotne11@7fad825a59f7[2088] close(4) = 0\n", 
+                        "api": "close", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a59f7", 
+                        "arguments": {
+                            "p0": "4"
+                        }, 
+                        "time": 1778144481.966688
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.966759 kbotne11@7fad825a5b0d[2088] openat(AT_FDCWD, \"/lib/x86_64-linux-gnu/libpcre.so.3\", O_RDONLY|O_CLOEXEC) = 4\n", 
+                        "api": "openat", 
+                        "return_value": "4", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5b0d", 
+                        "arguments": {
+                            "p2": "O_RDONLY|O_CLOEXEC", 
+                            "p0": "AT_FDCWD", 
+                            "p1": "/lib/x86_64-linux-gnu/libpcre.so.3"
+                        }, 
+                        "time": 1778144481.966759
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.966815 kbotne11@7fad825a5bd4[2088] read(4, 0x7ffd61704ef8, 832) = 832\n", 
+                        "api": "read", 
+                        "return_value": "832", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5bd4", 
+                        "arguments": {
+                            "p2": "832", 
+                            "p0": "4", 
+                            "p1": "0x7ffd61704ef8"
+                        }, 
+                        "time": 1778144481.966815
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.966863 kbotne11@7fad825a5943[2088] fstat(4, 0x7ffd61704d90) = 0\n", 
+                        "api": "fstat", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5943", 
+                        "arguments": {
+                            "p0": "4", 
+                            "p1": "0x7ffd61704d90"
+                        }, 
+                        "time": 1778144481.966863
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.966922 kbotne11@7fad825a5d03[2088] mmap2(0x0, 471304, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 4, 0) = 0x7fad81e51000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7fad81e51000", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5d03", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p3": "MAP_PRIVATE|MAP_DENYWRITE", 
+                            "p0": "0x0", 
+                            "p1": "471304", 
+                            "p4": "4", 
+                            "p5": "0"
+                        }, 
+                        "time": 1778144481.966922
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.966977 kbotne11@7fad825a5d03[2088] mmap2(0x7fad81e53000, 335872, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 8192) = 0x7fad81e53000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7fad81e53000", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5d03", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_EXEC", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE", 
+                            "p0": "0x7fad81e53000", 
+                            "p1": "335872", 
+                            "p4": "4", 
+                            "p5": "8192"
+                        }, 
+                        "time": 1778144481.966977
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.967037 kbotne11@7fad825a5d03[2088] mmap2(0x7fad81ea5000, 122880, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 344064) = 0x7fad81ea5000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7fad81ea5000", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5d03", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE", 
+                            "p0": "0x7fad81ea5000", 
+                            "p1": "122880", 
+                            "p4": "4", 
+                            "p5": "344064"
+                        }, 
+                        "time": 1778144481.967037
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.967094 kbotne11@7fad825a5d03[2088] mmap2(0x7fad81ec3000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 462848) = 0x7fad81ec3000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7fad81ec3000", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5d03", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_WRITE", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE", 
+                            "p0": "0x7fad81ec3000", 
+                            "p1": "8192", 
+                            "p4": "4", 
+                            "p5": "462848"
+                        }, 
+                        "time": 1778144481.967094
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.967171 kbotne11@7fad825a59f7[2088] close(4) = 0\n", 
+                        "api": "close", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a59f7", 
+                        "arguments": {
+                            "p0": "4"
+                        }, 
+                        "time": 1778144481.967171
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.969107 kbotne11@7fad825a5d03[2088] mmap2(0x0, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fad81e4f000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7fad81e4f000", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5d03", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_WRITE", 
+                            "p3": "MAP_PRIVATE|MAP_ANONYMOUS", 
+                            "p0": "0x0", 
+                            "p1": "8192", 
+                            "p4": "-1", 
+                            "p5": "0"
+                        }, 
+                        "time": 1778144481.969107
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.969232 kbotne11@7fad825a5d03[2088] mmap2(0x0, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fad81e4c000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7fad81e4c000", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5d03", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_WRITE", 
+                            "p3": "MAP_PRIVATE|MAP_ANONYMOUS", 
+                            "p0": "0x0", 
+                            "p1": "12288", 
+                            "p4": "-1", 
+                            "p5": "0"
+                        }, 
+                        "time": 1778144481.969232
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.969294 kbotne11@7fad8258af30[2088] arch_prctl(ARCH_SET_FS, 140383185323968) = 0\n", 
+                        "api": "arch_prctl", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad8258af30", 
+                        "arguments": {
+                            "p0": "ARCH_SET_FS", 
+                            "p1": "140383185323968"
+                        }, 
+                        "time": 1778144481.969294
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.970371 kbotne11@7fad825a5db7[2088] mprotect(0x7fad820ac000, 12288, PROT_READ) = 0\n", 
+                        "api": "mprotect", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5db7", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p0": "0x7fad820ac000", 
+                            "p1": "12288"
+                        }, 
+                        "time": 1778144481.970371
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.970459 kbotne11@7fad825a5db7[2088] mprotect(0x7fad820d1000, 4096, PROT_READ) = 0\n", 
+                        "api": "mprotect", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5db7", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p0": "0x7fad820d1000", 
+                            "p1": "4096"
+                        }, 
+                        "time": 1778144481.970459
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.970568 kbotne11@7fad825a5db7[2088] mprotect(0x7fad81ec3000, 4096, PROT_READ) = 0\n", 
+                        "api": "mprotect", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5db7", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p0": "0x7fad81ec3000", 
+                            "p1": "4096"
+                        }, 
+                        "time": 1778144481.970568
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.970709 kbotne11@7fad825a5db7[2088] mprotect(0x7fad81ec9000, 4096, PROT_READ) = 0\n", 
+                        "api": "mprotect", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5db7", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p0": "0x7fad81ec9000", 
+                            "p1": "4096"
+                        }, 
+                        "time": 1778144481.970709
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.970774 kbotne11@7fad825a5db7[2088] mprotect(0x7fad820ef000, 4096, PROT_READ) = 0\n", 
+                        "api": "mprotect", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5db7", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p0": "0x7fad820ef000", 
+                            "p1": "4096"
+                        }, 
+                        "time": 1778144481.970774
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.970897 kbotne11@7fad825a5db7[2088] mprotect(0x7fad8223f000, 4096, PROT_READ) = 0\n", 
+                        "api": "mprotect", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5db7", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p0": "0x7fad8223f000", 
+                            "p1": "4096"
+                        }, 
+                        "time": 1778144481.970897
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.972398 kbotne11@7fad825a5db7[2088] mprotect(0x7fad82412000, 45056, PROT_READ) = 0\n", 
+                        "api": "mprotect", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5db7", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p0": "0x7fad82412000", 
+                            "p1": "45056"
+                        }, 
+                        "time": 1778144481.972398
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.972481 kbotne11@7fad825a5db7[2088] mprotect(0x7fad8242c000, 4096, PROT_READ) = 0\n", 
+                        "api": "mprotect", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5db7", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p0": "0x7fad8242c000", 
+                            "p1": "4096"
+                        }, 
+                        "time": 1778144481.972481
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.972754 kbotne11@7fad825a5db7[2088] mprotect(0x7fad8254c000, 4096, PROT_READ) = 0\n", 
+                        "api": "mprotect", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5db7", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p0": "0x7fad8254c000", 
+                            "p1": "4096"
+                        }, 
+                        "time": 1778144481.972754
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.972855 kbotne11@7fad825a5db7[2088] mprotect(0x7fad82553000, 4096, PROT_READ) = 0\n", 
+                        "api": "mprotect", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5db7", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p0": "0x7fad82553000", 
+                            "p1": "4096"
+                        }, 
+                        "time": 1778144481.972855
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.972917 kbotne11@7fad825a5db7[2088] mprotect(0x7fad8256f000, 4096, PROT_READ) = 0\n", 
+                        "api": "mprotect", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5db7", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p0": "0x7fad8256f000", 
+                            "p1": "4096"
+                        }, 
+                        "time": 1778144481.972917
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.978920 kbotne11@7fad825a5db7[2088] mprotect(0x5621404d7000, 311296, PROT_READ) = 0\n", 
+                        "api": "mprotect", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5db7", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p0": "0x5621404d7000", 
+                            "p1": "311296"
+                        }, 
+                        "time": 1778144481.97892
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.979107 kbotne11@7fad825a5db7[2088] mprotect(0x7fad825b3000, 4096, PROT_READ) = 0\n", 
+                        "api": "mprotect", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5db7", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p0": "0x7fad825b3000", 
+                            "p1": "4096"
+                        }, 
+                        "time": 1778144481.979107
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.979252 kbotne11@7fad825a5d97[2088] munmap(0x7fad82573000, 88858) = 0\n", 
+                        "api": "munmap", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad825a5d97", 
+                        "arguments": {
+                            "p0": "0x7fad82573000", 
+                            "p1": "88858"
+                        }, 
+                        "time": 1778144481.979252
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.979444 kbotne11@7fad820bd8df[2088] set_tid_address(0x7fad81e4ca90) = 2088\n", 
+                        "api": "set_tid_address", 
+                        "return_value": "2088", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad820bd8df", 
+                        "arguments": {
+                            "p0": "0x7fad81e4ca90"
+                        }, 
+                        "time": 1778144481.979444
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.979496 kbotne11@7fad820bd94a[2088] set_robust_list(0x7fad81e4caa0, 24) = 0\n", 
+                        "api": "set_robust_list", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad820bd94a", 
+                        "arguments": {
+                            "p0": "0x7fad81e4caa0", 
+                            "p1": "24"
+                        }, 
+                        "time": 1778144481.979496
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.979559 kbotne11@7fad820ca010[2088] rt_sigaction(0x20, {0x7fad820bd6c0, SA_SIGINFO|SA_RESTORER, 0x7fad820c9f40, [EMPTY]}, 0x0, 8) = 0\n", 
+                        "api": "rt_sigaction", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad820ca010", 
+                        "arguments": {
+                            "p2": "0x0", 
+                            "p3": "8", 
+                            "p0": "0x20", 
+                            "p1": [
+                                "0x7fad820bd6c0", 
+                                "SA_SIGINFO|SA_RESTORER", 
+                                "0x7fad820c9f40", 
+                                [
+                                    "EMPTY]"
+                                ]
+                            ]
+                        }, 
+                        "time": 1778144481.979559
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.979613 kbotne11@7fad820ca010[2088] rt_sigaction(0x21, {0x7fad820bd760, SA_RESTART|SA_SIGINFO|SA_RESTORER, 0x7fad820c9f40, [EMPTY]}, 0x0, 8) = 0\n", 
+                        "api": "rt_sigaction", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad820ca010", 
+                        "arguments": {
+                            "p2": "0x0", 
+                            "p3": "8", 
+                            "p0": "0x21", 
+                            "p1": [
+                                "0x7fad820bd760", 
+                                "SA_RESTART|SA_SIGINFO|SA_RESTORER", 
+                                "0x7fad820c9f40", 
+                                [
+                                    "EMPTY]"
+                                ]
+                            ]
+                        }, 
+                        "time": 1778144481.979613
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.979663 kbotne11@7fad820bda19[2088] rt_sigprocmask(SIG_UNBLOCK, [EMPTY], 0x0, 8) = 0\n", 
+                        "api": "rt_sigprocmask", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad820bda19", 
+                        "arguments": {
+                            "p2": "0x0", 
+                            "p3": "8", 
+                            "p0": "SIG_UNBLOCK", 
+                            "p1": [
+                                "EMPTY"
+                            ]
+                        }, 
+                        "time": 1778144481.979663
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.979743 kbotne11@7fad81fdddf0[2088] prlimit64(0, RLIMIT_STACK, NULL, 0x7ffd61705c10) = 0\n", 
+                        "api": "prlimit64", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad81fdddf0", 
+                        "arguments": {
+                            "p2": "NULL", 
+                            "p3": "0x7ffd61705c10", 
+                            "p0": "0", 
+                            "p1": "RLIMIT_STACK"
+                        }, 
+                        "time": 1778144481.979743
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.980042 kbotne11@7fad81fde2f7[2088] brk(0x0) = 94700870684672\n", 
+                        "api": "brk", 
+                        "return_value": "94700870684672", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad81fde2f7", 
+                        "arguments": {
+                            "p0": "0x0"
+                        }, 
+                        "time": 1778144481.980042
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.980091 kbotne11@7fad81fde2f7[2088] brk(0x562143c3e000) = 94700870819840\n", 
+                        "api": "brk", 
+                        "return_value": "94700870819840", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad81fde2f7", 
+                        "arguments": {
+                            "p0": "0x562143c3e000"
+                        }, 
+                        "time": 1778144481.980091
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.982746 kbotne11@7fad820c6b86[2088] rt_sigprocmask(SIG_SETMASK, [SIGHUP|SIGINT|SIGQUIT|SIGILL|SIGTRAP|SIGABRT|SIGBUS|SIGFPE|SIGKILL|SIGUSR1|SIGSEGV|SIGPIPE|SIGUSR2|SIGALRM|SIGTERM|SIGCHLD|SIGCONT|SIGSTOP|SIGTSTP|SIGTTIN|SIGTTOU|SIGURG|SIGXCPU|SIGXFSZ|SIGVTALRM|SIGPROF|SIGWINCH|SIGIO/SIGPOLL|SIGPWR|SIGSYS], 0x7ffd61705b60, 8) = 0\n", 
+                        "api": "rt_sigprocmask", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad820c6b86", 
+                        "arguments": {
+                            "p2": "0x7ffd61705b60", 
+                            "p3": "8", 
+                            "p0": "SIG_SETMASK", 
+                            "p1": [
+                                "SIGHUP|SIGINT|SIGQUIT|SIGILL|SIGTRAP|SIGABRT|SIGBUS|SIGFPE|SIGKILL|SIGUSR1|SIGSEGV|SIGPIPE|SIGUSR2|SIGALRM|SIGTERM|SIGCHLD|SIGCONT|SIGSTOP|SIGTSTP|SIGTTIN|SIGTTOU|SIGURG|SIGXCPU|SIGXFSZ|SIGVTALRM|SIGPROF|SIGWINCH|SIGIO/SIGPOLL|SIGPWR|SIGSYS"
+                            ]
+                        }, 
+                        "time": 1778144481.982746
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.983842 kbotne11@7fad81fe24c3[2088] mmap2(0x0, 8392704, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_STACK, -1, 0) = 0x7fad8164b000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7fad8164b000", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad81fe24c3", 
+                        "arguments": {
+                            "p2": "PROT_NONE", 
+                            "p3": "MAP_PRIVATE|MAP_ANONYMOUS|MAP_STACK", 
+                            "p0": "0x0", 
+                            "p1": "8392704", 
+                            "p4": "-1", 
+                            "p5": "0"
+                        }, 
+                        "time": 1778144481.983842
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.983909 kbotne11@7fad81fe2597[2088] mprotect(0x7fad8164c000, 8388608, PROT_READ|PROT_WRITE) = 0\n", 
+                        "api": "mprotect", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad81fe2597", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_WRITE", 
+                            "p0": "0x7fad8164c000", 
+                            "p1": "8388608"
+                        }, 
+                        "time": 1778144481.983909
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.983995 kbotne11@7fad81fe8b11[2088] clone(CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, 0x7fad81e4af30, 0x7fad81e4b9d0, 0x7fad81e4b9d0) = 2089\n", 
+                        "api": "clone", 
+                        "return_value": "2089", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad81fe8b11", 
+                        "arguments": {
+                            "p2": "0x7fad81e4b9d0", 
+                            "p3": "0x7fad81e4b9d0", 
+                            "p0": "CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID", 
+                            "p1": "0x7fad81e4af30"
+                        }, 
+                        "time": 1778144481.983995
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.984128 kbotne11@7fad820c6b86[2088] rt_sigprocmask(SIG_SETMASK, [EMPTY], 0x0, 8) = 0\n", 
+                        "api": "rt_sigprocmask", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad820c6b86", 
+                        "arguments": {
+                            "p2": "0x0", 
+                            "p3": "8", 
+                            "p0": "SIG_SETMASK", 
+                            "p1": [
+                                "EMPTY"
+                            ]
+                        }, 
+                        "time": 1778144481.984128
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.988135 kbotne11@7fad81fdddf0[2088] prlimit64(0, RLIMIT_STACK, NULL, 0x7ffd61705600) = 0\n", 
+                        "api": "prlimit64", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad81fdddf0", 
+                        "arguments": {
+                            "p2": "NULL", 
+                            "p3": "0x7ffd61705600", 
+                            "p0": "0", 
+                            "p1": "RLIMIT_STACK"
+                        }, 
+                        "time": 1778144481.988135
+                    }, 
+                    {
+                        "status": "ENOENT", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.988232 kbotne11@7fad81fdd5c1[2088] openat(AT_FDCWD, \"/etc/qemu-binfmt/aarch64\", O_RDONLY|O_NONBLOCK|O_DIRECTORY|O_CLOEXEC) = -2 (ENOENT)\n", 
+                        "api": "openat", 
+                        "return_value": "-2", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad81fdd5c1", 
+                        "arguments": {
+                            "p2": "O_RDONLY|O_NONBLOCK|O_DIRECTORY|O_CLOEXEC", 
+                            "p0": "AT_FDCWD", 
+                            "p1": "/etc/qemu-binfmt/aarch64"
+                        }, 
+                        "time": 1778144481.988232
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.990863 kbotne11@7fad81fac247[2088] uname(0x7ffd61705270) = 0\n", 
+                        "api": "uname", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad81fac247", 
+                        "arguments": {
+                            "p0": "0x7ffd61705270"
+                        }, 
+                        "time": 1778144481.990863
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.990929 kbotne11@7fad820c9337[2088] lseek(3, 0, SEEK_SET) = 0\n", 
+                        "api": "lseek", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad820c9337", 
+                        "arguments": {
+                            "p2": "SEEK_SET", 
+                            "p0": "3", 
+                            "p1": "0"
+                        }, 
+                        "time": 1778144481.990929
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.990980 kbotne11@7fad820c8d94[2088] read(3, 0x7ffd61705550, 64) = 64\n", 
+                        "api": "read", 
+                        "return_value": "64", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad820c8d94", 
+                        "arguments": {
+                            "p2": "64", 
+                            "p0": "3", 
+                            "p1": "0x7ffd61705550"
+                        }, 
+                        "time": 1778144481.99098
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.991032 kbotne11@7fad820c9337[2088] lseek(3, 0, SEEK_SET) = 0\n", 
+                        "api": "lseek", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad820c9337", 
+                        "arguments": {
+                            "p2": "SEEK_SET", 
+                            "p0": "3", 
+                            "p1": "0"
+                        }, 
+                        "time": 1778144481.991032
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.991229 kbotne11@7fad81fde2f7[2088] brk(0x562143c5f000) = 94700870955008\n", 
+                        "api": "brk", 
+                        "return_value": "94700870955008", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad81fde2f7", 
+                        "arguments": {
+                            "p0": "0x562143c5f000"
+                        }, 
+                        "time": 1778144481.991229
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.991750 kbotne11@7fad81fe24c3[2088] mmap2(0x0, 528384, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7fad815ca000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7fad815ca000", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad81fe24c3", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_WRITE", 
+                            "p3": "MAP_PRIVATE|MAP_ANONYMOUS", 
+                            "p0": "0x0", 
+                            "p1": "528384", 
+                            "p4": "-1", 
+                            "p5": "0"
+                        }, 
+                        "time": 1778144481.99175
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.992276 kbotne11@7fad81fe2597[2088] mprotect(0x562140538000, 33550336, PROT_READ|PROT_WRITE|PROT_EXEC) = 0\n", 
+                        "api": "mprotect", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad81fe2597", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_WRITE|PROT_EXEC", 
+                            "p0": "0x562140538000", 
+                            "p1": "33550336"
+                        }, 
+                        "time": 1778144481.992276
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.992339 kbotne11@7fad81fe2667[2088] madvise(0x562140538000, 33550336, MADV_HUGEPAGE) = 0\n", 
+                        "api": "madvise", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad81fe2667", 
+                        "arguments": {
+                            "p2": "MADV_HUGEPAGE", 
+                            "p0": "0x562140538000", 
+                            "p1": "33550336"
+                        }, 
+                        "time": 1778144481.992339
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.997584 kbotne11@7fad81fde2f7[2088] brk(0x562143c80000) = 94700871090176\n", 
+                        "api": "brk", 
+                        "return_value": "94700871090176", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad81fde2f7", 
+                        "arguments": {
+                            "p0": "0x562143c80000"
+                        }, 
+                        "time": 1778144481.997584
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.998316 kbotne11@7fad81fde2f7[2088] brk(0x562143ca1000) = 94700871225344\n", 
+                        "api": "brk", 
+                        "return_value": "94700871225344", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad81fde2f7", 
+                        "arguments": {
+                            "p0": "0x562143ca1000"
+                        }, 
+                        "time": 1778144481.998316
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.999893 kbotne11@7fad81fd7d59[2088] openat(AT_FDCWD, \"/proc/sys/vm/mmap_min_addr\", O_RDONLY) = 4\n", 
+                        "api": "openat", 
+                        "return_value": "4", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad81fd7d59", 
+                        "arguments": {
+                            "p2": "O_RDONLY", 
+                            "p0": "AT_FDCWD", 
+                            "p1": "/proc/sys/vm/mmap_min_addr"
+                        }, 
+                        "time": 1778144481.999893
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:21 2026.999981 kbotne11@7fad81fd7613[2088] fstat(4, 0x7ffd61704c70) = 0\n", 
+                        "api": "fstat", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad81fd7613", 
+                        "arguments": {
+                            "p0": "4", 
+                            "p1": "0x7ffd61704c70"
+                        }, 
+                        "time": 1778144481.999981
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:22 2026.000031 kbotne11@7fad81fd7fb4[2088] read(4, 0x562143c59370, 1024) = 6\n", 
+                        "api": "read", 
+                        "return_value": "6", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad81fd7fb4", 
+                        "arguments": {
+                            "p2": "1024", 
+                            "p0": "4", 
+                            "p1": "0x562143c59370"
+                        }, 
+                        "time": 1778144482.000031
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:22 2026.000098 kbotne11@7fad81fdd3f7[2088] close(4) = 0\n", 
+                        "api": "close", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad81fdd3f7", 
+                        "arguments": {
+                            "p0": "4"
+                        }, 
+                        "time": 1778144482.000098
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:22 2026.000164 kbotne11@7fad81fe22e9[2088] gettid() = 2088\n", 
+                        "api": "gettid", 
+                        "return_value": "2088", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad81fe22e9", 
+                        "arguments": {}, 
+                        "time": 1778144482.000164
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:22 2026.000211 kbotne11@7fad81fd7613[2088] fstat(3, 0x7ffd617054e0) = 0\n", 
+                        "api": "fstat", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad81fd7613", 
+                        "arguments": {
+                            "p0": "3", 
+                            "p1": "0x7ffd617054e0"
+                        }, 
+                        "time": 1778144482.000211
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:22 2026.000257 kbotne11@7fad81fad717[2088] geteuid() = 0\n", 
+                        "api": "geteuid", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad81fad717", 
+                        "arguments": {}, 
+                        "time": 1778144482.000257
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:22 2026.000301 kbotne11@7fad81fad737[2088] getegid() = 0\n", 
+                        "api": "getegid", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad81fad737", 
+                        "arguments": {}, 
+                        "time": 1778144482.000301
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:22 2026.000346 kbotne11@7fad820c8d94[2088] read(3, 0x7ffd61705800, 1024) = 1024\n", 
+                        "api": "read", 
+                        "return_value": "1024", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad820c8d94", 
+                        "arguments": {
+                            "p2": "1024", 
+                            "p0": "3", 
+                            "p1": "0x7ffd61705800"
+                        }, 
+                        "time": 1778144482.000346
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:22 2026.000408 kbotne11@7fad81fe24c3[2088] mmap2(0x400000, 159744, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE, -1, 0) = 0x400000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x400000", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad81fe24c3", 
+                        "arguments": {
+                            "p2": "PROT_NONE", 
+                            "p3": "MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE", 
+                            "p0": "0x400000", 
+                            "p1": "159744", 
+                            "p4": "-1", 
+                            "p5": "0"
+                        }, 
+                        "time": 1778144482.000408
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:22 2026.000466 kbotne11@7fad81fe24c3[2088] mmap2(0x400000, 49152, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED, 3, 0) = 0x400000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x400000", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad81fe24c3", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_EXEC", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED", 
+                            "p0": "0x400000", 
+                            "p1": "49152", 
+                            "p4": "3", 
+                            "p5": "0"
+                        }, 
+                        "time": 1778144482.000466
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:22 2026.000600 kbotne11@7fad81fe24c3[2088] mmap2(0x41f000, 16384, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED, 3, 61440) = 0x41f000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x41f000", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad81fe24c3", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_WRITE", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED", 
+                            "p0": "0x41f000", 
+                            "p1": "16384", 
+                            "p4": "3", 
+                            "p5": "61440"
+                        }, 
+                        "time": 1778144482.0006
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:22 2026.000662 kbotne11@7fad81fe24c3[2088] mmap2(0x423000, 16384, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x423000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x423000", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad81fe24c3", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_WRITE", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS", 
+                            "p0": "0x423000", 
+                            "p1": "16384", 
+                            "p4": "-1", 
+                            "p5": "0"
+                        }, 
+                        "time": 1778144482.000662
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:22 2026.000726 kbotne11@7fad820c8e27[2088] close(3) = 0\n", 
+                        "api": "close", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad820c8e27", 
+                        "arguments": {
+                            "p0": "3"
+                        }, 
+                        "time": 1778144482.000726
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:22 2026.000774 kbotne11@7fad81fe24c3[2088] mmap2(0x4000000000, 8392704, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE, -1, 0) = 0x4000000000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x4000000000", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad81fe24c3", 
+                        "arguments": {
+                            "p2": "PROT_NONE", 
+                            "p3": "MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE", 
+                            "p0": "0x4000000000", 
+                            "p1": "8392704", 
+                            "p4": "-1", 
+                            "p5": "0"
+                        }, 
+                        "time": 1778144482.000774
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:22 2026.000826 kbotne11@7fad81fe24c3[2088] mmap2(0x4000000000, 8392704, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x4000000000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x4000000000", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad81fe24c3", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_WRITE", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS", 
+                            "p0": "0x4000000000", 
+                            "p1": "8392704", 
+                            "p4": "-1", 
+                            "p5": "0"
+                        }, 
+                        "time": 1778144482.000826
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:22 2026.001022 kbotne11@7fad81fe2597[2088] mprotect(0x4000000000, 4096, PROT_NONE) = 0\n", 
+                        "api": "mprotect", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad81fe2597", 
+                        "arguments": {
+                            "p2": "PROT_NONE", 
+                            "p0": "0x4000000000", 
+                            "p1": "4096"
+                        }, 
+                        "time": 1778144482.001022
+                    }, 
+                    {
+                        "status": "ENOENT", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:22 2026.001098 kbotne11@7fad820c955e[2088] openat(AT_FDCWD, \"/lib/ld-linux-aarch64.so.1\", O_RDONLY) = -2 (ENOENT)\n", 
+                        "api": "openat", 
+                        "return_value": "-2", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad820c955e", 
+                        "arguments": {
+                            "p2": "O_RDONLY", 
+                            "p0": "AT_FDCWD", 
+                            "p1": "/lib/ld-linux-aarch64.so.1"
+                        }, 
+                        "time": 1778144482.001098
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:22 2026.001189 kbotne11@7fad81fd8057[2088] write(2, \"/lib/ld-linux-aarch64.so.1: No such file or d\"..., 54) = 54\n", 
+                        "api": "write", 
+                        "return_value": "54", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad81fd8057", 
+                        "arguments": {
+                            "p2": "54", 
+                            "p0": "2", 
+                            "p1": "\"/lib/ld-linux-aarch64.so.1: No such file or d\"..."
+                        }, 
+                        "time": 1778144482.001189
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:22 2026.001302 kbotne11@7fad81fac926[2088] exit_group(-1)\n", 
+                        "api": "exit_group", 
+                        "return_value": "", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad81fac926", 
+                        "arguments": {
+                            "p0": "-1"
+                        }, 
+                        "time": 1778144482.001302
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2088, 
+                        "raw": "Thu May  7 09:01:22 2026.001357 kbotne11@7fad81fac926[2088] futex(0x7fad81e4ca90, FUTEX_WAKE, 1) = 0\n", 
+                        "api": "futex", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad81fac926", 
+                        "arguments": {
+                            "p2": "1", 
+                            "p0": "0x7fad81e4ca90", 
+                            "p1": "FUTEX_WAKE"
+                        }, 
+                        "time": 1778144482.001357
+                    }
+                ], 
+                "pid": 2088, 
+                "process_name": "kbotne11", 
+                "command_line": "/tmp/kbotne11", 
+                "first_seen": 1778144481.954976, 
+                "ppid": -1, 
+                "type": "process"
+            }, 
+            {
+                "calls": [
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2089, 
+                        "raw": "Thu May  7 09:01:21 2026.984237 kbotne11@7fad820bf117[2089] set_robust_list(0x7fad81e4b9e0, 24) = 0\n", 
+                        "api": "set_robust_list", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad820bf117", 
+                        "arguments": {
+                            "p0": "0x7fad81e4b9e0", 
+                            "p1": "24"
+                        }, 
+                        "time": 1778144481.984237
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2089, 
+                        "raw": "Thu May  7 09:01:21 2026.984308 kbotne11@7fad81fe24c3[2089] mmap2(0x0, 134217728, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE, -1, 0) = 0x7fad7964b000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7fad7964b000", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad81fe24c3", 
+                        "arguments": {
+                            "p2": "PROT_NONE", 
+                            "p3": "MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE", 
+                            "p0": "0x0", 
+                            "p1": "134217728", 
+                            "p4": "-1", 
+                            "p5": "0"
+                        }, 
+                        "time": 1778144481.984308
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2089, 
+                        "raw": "Thu May  7 09:01:21 2026.984367 kbotne11@7fad81fe2567[2089] munmap(0x7fad7964b000, 43732992) = 0\n", 
+                        "api": "munmap", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad81fe2567", 
+                        "arguments": {
+                            "p0": "0x7fad7964b000", 
+                            "p1": "43732992"
+                        }, 
+                        "time": 1778144481.984367
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2089, 
+                        "raw": "Thu May  7 09:01:21 2026.984425 kbotne11@7fad81fe2567[2089] munmap(0x7fad80000000, 23375872) = 0\n", 
+                        "api": "munmap", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad81fe2567", 
+                        "arguments": {
+                            "p0": "0x7fad80000000", 
+                            "p1": "23375872"
+                        }, 
+                        "time": 1778144481.984425
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2089, 
+                        "raw": "Thu May  7 09:01:21 2026.984475 kbotne11@7fad81fe2597[2089] mprotect(0x7fad7c000000, 135168, PROT_READ|PROT_WRITE) = 0\n", 
+                        "api": "mprotect", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad81fe2597", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_WRITE", 
+                            "p0": "0x7fad7c000000", 
+                            "p1": "135168"
+                        }, 
+                        "time": 1778144481.984475
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2089, 
+                        "raw": "Thu May  7 09:01:21 2026.984544 kbotne11@7fad820c9440[2089] nanosleep([0.010000000], 0x7fad81e4ad80) = 0\n", 
+                        "api": "nanosleep", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad820c9440", 
+                        "arguments": {
+                            "p0": [
+                                "0.010000000"
+                            ], 
+                            "p1": "0x7fad81e4ad80"
+                        }, 
+                        "time": 1778144481.984544
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2089, 
+                        "raw": "Thu May  7 09:01:21 2026.994811 kbotne11@7fad81fe2667[2089] madvise(0x562143c41000, 12288, MADV_DONTNEED) = 0\n", 
+                        "api": "madvise", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad81fe2667", 
+                        "arguments": {
+                            "p2": "MADV_DONTNEED", 
+                            "p0": "0x562143c41000", 
+                            "p1": "12288"
+                        }, 
+                        "time": 1778144481.994811
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kbotne11", 
+                        "pid": 2089, 
+                        "raw": "Thu May  7 09:01:21 2026.994885 kbotne11@7fad81fe22e9[2089] futex(0x56214254a488, FUTEX_WAIT, -1, NULL) = -512\n", 
+                        "api": "futex", 
+                        "return_value": "-512", 
+                        "category": "process", 
+                        "instruction_pointer": "7fad81fe22e9", 
+                        "arguments": {
+                            "p2": "-1", 
+                            "p3": "NULL", 
+                            "p0": "0x56214254a488", 
+                            "p1": "FUTEX_WAIT"
+                        }, 
+                        "time": 1778144481.994885
+                    }
+                ], 
+                "pid": 2089, 
+                "process_name": "kbotne11", 
+                "command_line": "", 
+                "first_seen": 1778144481.984237, 
+                "ppid": 2088, 
+                "type": "process"
+            }
+        ], 
+        "processtree": [
+            {
+                "track": true, 
+                "pid": 2088, 
+                "process_name": "kbotne11", 
+                "command_line": "/tmp/kbotne11", 
+                "first_seen": 1778144481.954976, 
+                "ppid": -1, 
+                "children": [
+                    {
+                        "track": true, 
+                        "pid": 2089, 
+                        "process_name": "kbotne11", 
+                        "command_line": "", 
+                        "first_seen": 1778144481.984237, 
+                        "ppid": 2088, 
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    }, 
+    "debug": {
+        "action": [], 
+        "dbgview": [], 
+        "errors": [], 
+        "log": [
+            "2026-05-07 09:01:12,003 [root] DEBUG: Starting analyzer from: /tmp/tmpy9dzwr\n", 
+            "2026-05-07 09:01:12,004 [root] DEBUG: Storing results at: /tmp/VXOtgduK\n", 
+            "2026-05-07 09:01:14,062 [modules.auxiliary.filecollector] INFO: FileCollector started v0.08\n", 
+            "2026-05-07 09:01:14,065 [modules.auxiliary.human] INFO: Human started v0.02\n", 
+            "2026-05-07 09:01:14,069 [modules.auxiliary.screenshots] INFO: Screenshots started v0.03\n", 
+            "2026-05-07 09:01:21,945 [lib.core.packages] INFO: Process startup took 7.87 seconds\n", 
+            "2026-05-07 09:01:21,946 [root] INFO: Added new process to list with pid: 2077\n", 
+            "2026-05-07 09:01:30,955 [root] INFO: Process with pid 2077 has terminated\n", 
+            "2026-05-07 09:01:30,956 [root] INFO: Process list is empty, terminating analysis.\n", 
+            "2026-05-07 09:01:33,992 [lib.core.packages] INFO: Package requested stop\n", 
+            "2026-05-07 09:01:33,993 [lib.core.packages] WARNING: Exception uploading log: [Errno 3] No such process\n"
+        ], 
+        "cuckoo": [
+            "2026-05-07 09:01:12,628 [cuckoo.core.scheduler] INFO: Task #7546134: acquired machine Ubuntu1904x643 (label=Ubuntu1904x643)\n", 
+            "2026-05-07 09:01:12,629 [cuckoo.core.resultserver] DEBUG: Now tracking machine 192.168.168.103 for task #7546134\n", 
+            "2026-05-07 09:01:12,902 [cuckoo.auxiliary.sniffer] INFO: Started sniffer with PID 6432 (interface=vboxnet0, host=192.168.168.103)\n", 
+            "2026-05-07 09:01:12,935 [cuckoo.machinery.virtualbox] DEBUG: Starting vm Ubuntu1904x643\n", 
+            "2026-05-07 09:01:13,526 [cuckoo.machinery.virtualbox] DEBUG: Restoring virtual machine Ubuntu1904x643 to Snapshot\n", 
+            "2026-05-07 09:01:21,725 [cuckoo.core.guest] INFO: Starting analysis #7546134 on guest (id=Ubuntu1904x643, ip=192.168.168.103)\n", 
+            "2026-05-07 09:01:22,731 [cuckoo.core.guest] DEBUG: Ubuntu1904x643: not ready yet\n", 
+            "2026-05-07 09:01:27,751 [cuckoo.core.guest] INFO: Guest is running Cuckoo Agent 0.10 (id=Ubuntu1904x643, ip=192.168.168.103)\n", 
+            "2026-05-07 09:01:27,775 [cuckoo.core.guest] DEBUG: Uploading analyzer to guest (id=Ubuntu1904x643, ip=192.168.168.103, monitor=latest, size=73219)\n", 
+            "2026-05-07 09:01:28,007 [cuckoo.core.resultserver] DEBUG: Task #7546134: live log analysis.log initialized.\n", 
+            "2026-05-07 09:01:32,890 [cuckoo.core.resultserver] DEBUG: Task #7546134: File upload for 'shots/0001.jpg'\n", 
+            "2026-05-07 09:01:32,896 [cuckoo.core.resultserver] DEBUG: Task #7546134 uploaded file length: 171510\n", 
+            "2026-05-07 09:01:42,977 [cuckoo.core.guest] DEBUG: Ubuntu1904x643: analysis #7546134 still processing\n", 
+            "2026-05-07 09:01:50,013 [cuckoo.core.resultserver] DEBUG: Task #7546134: File upload for 'logs/all.stap'\n", 
+            "2026-05-07 09:01:50,016 [cuckoo.core.resultserver] DEBUG: Task #7546134 uploaded file length: 22393\n", 
+            "2026-05-07 09:01:58,064 [cuckoo.core.guest] DEBUG: Ubuntu1904x643: analysis #7546134 still processing\n", 
+            "2026-05-07 09:02:13,157 [cuckoo.core.guest] DEBUG: Ubuntu1904x643: analysis #7546134 still processing\n", 
+            "2026-05-07 09:02:28,230 [cuckoo.core.guest] INFO: Ubuntu1904x643: end of analysis reached!\n", 
+            "2026-05-07 09:02:28,243 [cuckoo.core.plugins] DEBUG: Stopped auxiliary module: Redsocks\n", 
+            "2026-05-07 09:02:28,270 [cuckoo.core.plugins] DEBUG: Stopped auxiliary module: Sniffer\n", 
+            "2026-05-07 09:02:28,980 [cuckoo.machinery.virtualbox] INFO: Successfully generated memory dump for virtual machine with label Ubuntu1904x643 to path /srv/cuckoo/cwd/storage/analyses/7546134/memory.dmp\n", 
+            "2026-05-07 09:02:28,981 [cuckoo.machinery.virtualbox] DEBUG: Stopping vm Ubuntu1904x643\n", 
+            "2026-05-07 09:02:36,266 [cuckoo.core.resultserver] DEBUG: Stopped tracking machine 192.168.168.103 for task #7546134\n", 
+            "2026-05-07 09:02:36,266 [cuckoo.core.resultserver] DEBUG: Cancel <Context for LOG> for task 7546134\n", 
+            "2026-05-07 09:02:36,632 [cuckoo.core.scheduler] DEBUG: Released database task #7546134\n", 
+            "2026-05-07 09:02:36,651 [cuckoo.core.scheduler] INFO: Task #7546134: analysis procedure completed\n"
+        ]
+    }, 
+    "strings": [
+        "/lib/ld-linux-aarch64.so.1", 
+        "snprintf", 
+        "setsockopt", 
+        "strncpy", 
+        "setsid", 
+        "clock_gettime", 
+        "strdup", 
+        "closedir", 
+        "memmove", 
+        "memmem", 
+        "__isoc23_sscanf", 
+        "socket", 
+        "recvfrom", 
+        "strlen", 
+        "getppid", 
+        "__ctype_b_loc", 
+        "usleep", 
+        "strstr", 
+        "__isoc23_strtol", 
+        "getpid", 
+        "realloc", 
+        "malloc", 
+        "__libc_start_main", 
+        "remove", 
+        "sendto", 
+        "inet_ntop", 
+        "getsockname", 
+        "strchr", 
+        "umount", 
+        "readdir", 
+        "fclose", 
+        "memset", 
+        "waitpid", 
+        "signal", 
+        "connect", 
+        "opendir", 
+        "memcpy", 
+        "select", 
+        "strcmp", 
+        "inet_pton", 
+        "libc.so.6", 
+        "GLIBC_2.33", 
+        "GLIBC_2.38", 
+        "GLIBC_2.34", 
+        "GLIBC_2.17", 
+        "_ITM_deregisterTMCloneTable", 
+        "__gmon_start__", 
+        "_ITM_registerTMCloneTable", 
+        "$@9(@H", 
+        "Jc CJB,", 
+        " DJB BJnLCJo,", 
+        " EJnLCJe,", 
+        " EJCLBJB,", 
+        "JB BJeLCJ", 
+        "MNJB BJB", 
+        "JHLBJc CJ", 
+        "JdLCJB BJ", 
+        " DJqLCJs", 
+        "J0NQJ%.", 
+        "NPJ]Hs<R", 
+        "J_Hg<'", 
+        "ZHc<DNRJXHh<", 
+        " EJWHg<s", 
+        "J@Hs<YHf<$2H", 
+        "nVHe<XHd<", 
+        "n\\H~<YHf<", 
+        "n\\H~<XHe<D.", 
+        "nZHq<[He<", 
+        "nZHq<[Hp<", 
+        "XHe<FRP", 
+        "nYHq<ZHp<[Hf<\\He< ", 
+        "*c CJc", 
+        "TDHn8!", 
+        "aB@y!T", 
+        "L];!.x;", 
+        "N^;!n|{", 
+        "T!0@9`j`8", 
+        "9 K`8`", 
+        "L];!.x;", 
+        "N^;!n|{", 
+        "T!0@9`j`8", 
+        "Z_ !ka", 
+        "ehbx7ib", 
+        "ha8Hha8", 
+        "ha8dha8", 
+        "cB9`j88", 
+        "cB9 ka8", 
+        "*\u001fh68<", 
+        "%d;%63[^;];%d", 
+        "%15[^;];%d;%63s", 
+        "/proc/%s/exe", 
+        "/proc/%lu/exe", 
+        "attack_udp_plain", 
+        "attack_udp_generic", 
+        "attack_tcp_syn", 
+        "attack_tcp_ack", 
+        "ensure_single_instance", 
+        "killer_kill", 
+        "locker_create", 
+        "killer_create", 
+        "locker_init", 
+        "killer_init", 
+        "resolve_cnc_addr", 
+        "resolv_domain_to_hostname", 
+        "resolv_entries_free", 
+        "resolv_skip_name", 
+        "ilovecatgirlsowouwugaysex1111", 
+        "/sys/devices/system/cpu", 
+        "/system/bin/sh", 
+        "/data/local/tmp", 
+        "/var/local", 
+        "MESSAGE", 
+        "DOMAIN", 
+        "/connectlol", 
+        "%s;%d;%d;%d;%d", 
+        "systemd-thread", 
+        "system-updater", 
+        "bluetooth", 
+        "androidsystem", 
+        "tv-box-software", 
+        "adbservice", 
+        "screen-mirror", 
+        "netflix", 
+        "8.8.8.8", 
+        "/proc/%d", 
+        "/data/local", 
+        "/proc/self/oom_score_adj", 
+        "/proc/sys/vm/oom_dump_tasks", 
+        "unknown", 
+        "/bin/sh", 
+        "MemTotal", 
+        "MemTotal: %ld kB", 
+        "processor", 
+        "0.0.0.0", 
+        "GET %s HTTP/1.1", 
+        "Host: %s", 
+        "Connection: close", 
+        "google.com", 
+        "GET %s HTTP/1.1", 
+        "Host: %s:%d", 
+        "Upgrade: websocket", 
+        "Connection: Upgrade", 
+        "Sec-WebSocket-Key: %s", 
+        "Sec-WebSocket-Version: 13", 
+        "abcdefghijklmnopqrstuvw012345678", 
+        "http/3", 
+        "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/", 
+        "MESSAGE", 
+        "72656c656173652076657273696f6e2073746172746564", 
+        "2f70726f632f637075696e666f", 
+        "2f70726f632f6d656d696e666f", 
+        "2f7573722f6c69622f6b626f746e652e736f", 
+        "2f7573722f6c6f63616c2f6c69622f6b626f746e652e736f", 
+        "2f6c69622f6b626f746e652e736f", 
+        "LIBC_PATHS", 
+        "2f7573722f6c69622f6b626f746e652e736f5c6e2f7573722f6c6f63616c2f6c69622f6b626f746e652e736f5c6e2f6c69622f6b626f746e652e736f", 
+        "INSTALL_FULL_PATH", 
+        "2f2e6b626f746e652f6b626f746e65", 
+        "2f6574632f6d6f7464", 
+        "INFECTED", 
+        "696e666563746564206279206b626f746e65", 
+        "DOMAIN", 
+        "7265616c2e626f746e65742e7374", 
+        "MESdfhdSAGE", 
+        "MESdfhdSAGE", 
+        "MESdfhdSAGE", 
+        "MESdfhdSAGE", 
+        ".shstrtab", 
+        ".interp", 
+        ".gnu.hash", 
+        ".dynsym", 
+        ".dynstr", 
+        ".gnu.version", 
+        ".gnu.version_r", 
+        ".rela.dyn", 
+        ".rela.plt", 
+        ".rodata", 
+        ".eh_frame", 
+        ".init_array", 
+        ".fini_array", 
+        ".dynamic", 
+        ".got.plt"
+    ], 
+    "metadata": {
+        "output": {
+            "pcap": {
+                "basename": "dump.pcap", 
+                "sha256": "83a4d9944bfef8c5b4a345e0bd91b3a6d3e3530379d6ee6bb8c9eef22e50b948", 
+                "dirname": ""
+            }
+        }
+    }
+}

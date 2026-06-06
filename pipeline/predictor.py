@@ -1,11 +1,17 @@
 import os
-import joblib
 import torch
 import time
 import torch.nn as nn
 import torch.nn.functional as F
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+VOCAB_SIZE = 307
+EMB_DIM = 128
+NUM_CLASSES = 2
+NUM_API_CALLS = 307
+LATENT_DIM = 128
+SEQ_LEN = 100
+HIDDEN_DIM = 256
 
 # -----------------------------
 # CNN
@@ -42,13 +48,6 @@ class Discriminator(nn.Module):
 # -------
 # SGAN
 # -------
-VOCAB_SIZE = 307
-EMB_DIM = 128
-NUM_CLASSES = 2
-NUM_API_CALLS = 307
-LATENT_DIM = 128
-
-SEQ_LEN = 100
 
 class SGANDiscriminator(nn.Module):
   def __init__(self):
@@ -145,7 +144,11 @@ class DGCNN_Discriminator(nn.Module):
             return logits, features
         return logits
 
-class GATLayer(nn.Module):
+# -----------
+# GAT-SGAN
+# -----------
+
+class GATHybridLayer(nn.Module):
 
     def __init__(self,in_features,out_features,heads=4):
         super().__init__()
@@ -238,8 +241,8 @@ class GAT_Discriminator(nn.Module):
 
         super().__init__()
 
-        self.gat1 = GATLayer(SEQ_LEN,64,heads=4)
-        self.gat2 = GATLayer(64*4,32,heads=4)
+        self.gat1 = GATHybridLayer(SEQ_LEN,64,heads=4)
+        self.gat2 = GATHybridLayer(64*4,32,heads=4)
 
         self.dropout = nn.Dropout(0.5)
 
@@ -264,40 +267,94 @@ class GAT_Discriminator(nn.Module):
 
         return logits
 
+# ------
+# GAT
+# ------
 
+class GATLayer(nn.Module):
+    def __init__(self, in_features, out_features, heads=4):
+        super().__init__()
+        self.heads = heads
+        self.out_features = out_features
 
-# Load CNN model
-cnn_model = Discriminator()
-cnn_model.load_state_dict(
-    torch.load(os.path.join(BASE_DIR, "models/saves/cnn/cnn_seed_50.pt"), map_location="cpu")
-)
-cnn_model.eval()
+        self.W = nn.Parameter(torch.randn(heads, in_features, out_features) * 0.01)
+        self.a_src = nn.Parameter(torch.randn(heads, out_features, 1) * 0.01)
+        self.a_dst = nn.Parameter(torch.randn(heads, out_features, 1) * 0.01)
 
-sgan_model = SGANDiscriminator()
-sgan_model.load_state_dict(
-    torch.load(os.path.join(BASE_DIR, "models/saves/sgan/sgan_seed-50.pt"), map_location="cpu")
-)
-sgan_model.eval()
+    def forward(self, adj, X):
+        B, N, _ = X.size() 
+        
+        Wh = torch.matmul(X.unsqueeze(1), self.W) 
+        f1 = torch.matmul(Wh, self.a_src) 
+        f2 = torch.matmul(Wh, self.a_dst) 
+        
+        e = F.leaky_relu(f1 + f2.transpose(-2, -1))
+        mask = torch.where(adj.unsqueeze(1) > 0, e, torch.full_like(e, -9e15))
+        attention = F.softmax(mask, dim=-1)
 
-dgcnn_model = DGCNN()
-dgcnn_model.load_state_dict(
-    torch.load(os.path.join(BASE_DIR, "models/saves/dgcnn/dgcnn_seed_50.pt"), map_location="cpu")
-)
-dgcnn_model.eval()
+        h_out = torch.matmul(attention, Wh)
+        h_out = h_out.permute(0, 2, 1, 3).reshape(B, N, self.heads * self.out_features)
+        return h_out
 
-hdgcnn_model = DGCNN_Discriminator()
-hdgcnn_model.load_state_dict(
-    torch.load(os.path.join(BASE_DIR, "models/saves/hybrid/dgvgan_seed_50.pt"), map_location="cpu")
-)
-hdgcnn_model.eval()
+class GATClassifier(nn.Module):
+    def __init__(self, num_classes=2):
+        super().__init__()
+        self.gat1 = GATLayer(in_features=SEQ_LEN, out_features=64, heads=4)
+        self.gat2 = GATLayer(in_features=64 * 4, out_features=32, heads=4)
+        self.dropout = nn.Dropout(0.5)
+        self.fc = nn.Linear(NUM_API_CALLS * 32 * 4, num_classes)
 
-gat_model = GAT_Discriminator()
-checkpoint = torch.load(
-    os.path.join(BASE_DIR, "models/saves/hybrid_sgan_gat/state_dict_seed_50.pth"),
-    map_location="cpu"
-)
+    def forward(self, adj, X, return_features=False):
+        Z = F.elu(self.gat1(adj, X))
+        Z = F.elu(self.gat2(adj, Z))
+        Z = self.dropout(Z)
+        
+        features = Z.reshape(Z.size(0), -1)
+        logits = self.fc(features)
+        
+        if return_features:
+            return logits, features
+        return logits
 
-gat_model.load_state_dict(checkpoint["D_state_dict"])
+# -------
+# LSTM
+# -------
+
+class LSTMClassifier(nn.Module):
+
+    def __init__(self):
+
+        super().__init__()
+
+        self.embedding = nn.Embedding(
+            VOCAB_SIZE,
+            EMB_DIM
+        )
+
+        self.lstm = nn.LSTM(
+            input_size=EMB_DIM,
+            hidden_size=HIDDEN_DIM,
+            num_layers=2,
+            dropout=0.3,
+            batch_first=True
+        )
+
+        self.fc = nn.Sequential(
+            nn.Linear(HIDDEN_DIM, 128),
+            nn.LeakyReLU(0.2),
+            nn.Dropout(0.4),
+            nn.Linear(128, NUM_CLASSES)
+        )
+
+    def forward(self, x):
+        x = x.long()
+        x = self.embedding(x)
+        output, (hidden, cell) = self.lstm(x)
+        x = hidden[-1]
+        x = self.fc(x)
+        return x
+    
+# Seq2Graph
 
 def seq_to_graph(seq_batch):
 
@@ -320,7 +377,13 @@ def seq_to_graph(seq_batch):
 # Prediction functions
 # -----------------------------
 
-def predict_sgan(features):
+def predict_sgan(features,seed=10):
+    sgan_model = SGANDiscriminator()
+    sgan_model.load_state_dict(
+        torch.load(os.path.join(BASE_DIR, f"models/saves/sgan/sgan_seed-{seed}.pt"), map_location="cpu")
+    )
+    sgan_model.eval()
+
     start = time.time()
     x = features
     x = torch.tensor([x])
@@ -329,8 +392,32 @@ def predict_sgan(features):
         prob = torch.softmax(output, dim=1)[0][1].item()
     end = time.time()
     return end-start, prob
+
+def predict_lstm(features,seed=10):
+    lstm_model = LSTMClassifier()
+    lstm_model.load_state_dict(
+        torch.load(os.path.join(BASE_DIR, f"models/saves/lstm/lstm_seed_{seed}.pt"), map_location="cpu")
+    )
+    lstm_model.eval()
+
+    start = time.time()
+    x = features
+    x = torch.tensor([x])
+    with torch.no_grad():
+        output = lstm_model(x)
+        prob = torch.softmax(output, dim=1)[0][1].item()
+    end = time.time()
+    return end-start, prob
     
-def predict_dgcnn(features):
+def predict_dgcnn(features,seed=10):
+    dgcnn_model = DGCNN()
+    dgcnn_model.load_state_dict(
+        torch.load(os.path.join(BASE_DIR, f"models/saves/dgcnn/dgcnn_seed_{seed}.pt"), map_location="cpu")
+    )
+    dgcnn_model.eval()
+    
+    features = [int(x) for x in features]
+    
     start = time.time()
     dgcnn_model.eval()
 
@@ -358,7 +445,15 @@ def predict_dgcnn(features):
         
         return end-start, float(prob.item())
     
-def predict_hybrid(features):
+def predict_dgcnn_sgan(features,seed=10):
+    hdgcnn_model = DGCNN_Discriminator()
+    hdgcnn_model.load_state_dict(
+        torch.load(os.path.join(BASE_DIR, f"models/saves/hybrid/dgvgan_seed_{seed}.pt"), map_location="cpu")
+    )
+    hdgcnn_model.eval()
+    
+    features = [int(x) for x in features]
+    
     start = time.time()
     hdgcnn_model.eval()
 
@@ -389,7 +484,13 @@ def predict_hybrid(features):
 
     return end-start, malware_prob
 
-def predict_cnn(features):
+def predict_cnn(features,seed=10):
+    cnn_model = Discriminator()
+    cnn_model.load_state_dict(
+        torch.load(os.path.join(BASE_DIR, f"models/saves/cnn/cnn_seed_{seed}.pt"), map_location="cpu")
+    )
+    cnn_model.eval()
+
     start = time.time()
     x = features
     x = torch.tensor([x])
@@ -399,24 +500,55 @@ def predict_cnn(features):
     end = time.time()
     return end-start,prob
 
-def predict_gat(features):
+def predict_gat_sgan(features,seed=10):
+    gat_sgan_model = GAT_Discriminator()
+    checkpoint = torch.load(
+        os.path.join(BASE_DIR, f"models/saves/hybrid_sgan_gat/state_dict_seed_{seed}.pth"),
+        map_location="cpu"
+    )
+    gat_sgan_model.load_state_dict(checkpoint["D_state_dict"])
+
+    start = time.time()
+    gat_sgan_model.eval()
+    features = [int(feat) for feat in features]
+    with torch.no_grad():
+        seq = torch.tensor(features, dtype=torch.long).unsqueeze(0)
+        adj, X = seq_to_graph(seq)
+        logits = gat_sgan_model(adj, X)
+        probs = torch.softmax(logits[:, :2], dim=1)
+        malware_prob = probs[0, 1].item()
+
+    end = time.time()
+    return end - start, malware_prob
+
+def predict_gat(features,seed=10):
+    import __main__
+    __main__.GATClassifier = GATClassifier
+    __main__.GATLayer = GATLayer
+
+    gat_model = torch.load(
+        os.path.join(BASE_DIR, f"models/saves/gat/gat_seed_{seed}.pt"),
+        map_location="cpu",
+        weights_only=False
+    )
     start = time.time()
     gat_model.eval()
-
+    
+    features = [int(feat) for feat in features]
+    
     with torch.no_grad():
-        # Convert sequence → graph
         seq = torch.tensor(features, dtype=torch.long).unsqueeze(0)
         adj, X = seq_to_graph(seq)
 
         # Forward pass
         logits = gat_model(adj, X)
 
-        # First 2 classes = real/fake (like hybrid model)
         probs = torch.softmax(logits[:, :2], dim=1)
         malware_prob = probs[0, 1].item()
 
     end = time.time()
     return end - start, malware_prob
+
 
 def count_parameters(model):
     return sum(p.numel() for p in model.parameters())
@@ -424,23 +556,79 @@ def count_parameters(model):
 def count_trainable_parameters(model):
     return sum(p.numel() for p in model.parameters() if p.requires_grad)
 
-print("\n" + "="*50)
-print("MODEL PARAMETER COUNTS")
-print("="*50)
 
-models = {
-    "CNN": cnn_model,
-    "SGAN": sgan_model,
-    "DGCNN": dgcnn_model,
-    "Hybrid DGCNN": hdgcnn_model,
-    "GAT": gat_model
-}
+if __name__ == "__main__":
+    print("\n" + "="*50)
+    print("MODEL PARAMETER COUNTS")
+    print("="*50)
 
-for name, model in models.items():
-    total = count_parameters(model)
-    trainable = count_trainable_parameters(model)
+    # Load CNN model
+    cnn_model = Discriminator()
+    cnn_model.load_state_dict(
+        torch.load(os.path.join(BASE_DIR, "models/saves/cnn/cnn_seed_50.pt"), map_location="cpu")
+    )
+    cnn_model.eval()
 
-    print(f"{name}:")
-    print(f"  Total params     : {total:,}")
-    print(f"  Trainable params : {trainable:,}")
-    print("-"*50)
+    sgan_model = SGANDiscriminator()
+    sgan_model.load_state_dict(
+        torch.load(os.path.join(BASE_DIR, "models/saves/sgan/sgan_seed-50.pt"), map_location="cpu")
+    )
+    sgan_model.eval()
+
+    dgcnn_model = DGCNN()
+    dgcnn_model.load_state_dict(
+        torch.load(os.path.join(BASE_DIR, "models/saves/dgcnn/dgcnn_seed_50.pt"), map_location="cpu")
+    )
+    dgcnn_model.eval()
+
+    hdgcnn_model = DGCNN_Discriminator()
+    hdgcnn_model.load_state_dict(
+        torch.load(os.path.join(BASE_DIR, "models/saves/hybrid/dgvgan_seed_50.pt"), map_location="cpu")
+    )
+    hdgcnn_model.eval()
+
+    gat_sgan_model = GAT_Discriminator()
+    checkpoint = torch.load(
+        os.path.join(BASE_DIR, "models/saves/hybrid_sgan_gat/state_dict_seed_50.pth"),
+        map_location="cpu"
+    )
+    gat_sgan_model.load_state_dict(checkpoint["D_state_dict"])
+
+    lstm_model = LSTMClassifier()
+    lstm_model.load_state_dict(
+        torch.load(os.path.join(BASE_DIR, "models/saves/lstm/lstm_seed_50.pt"), map_location="cpu")
+    )
+    lstm_model.eval()
+
+
+    import __main__
+
+    __main__.GATClassifier = GATClassifier
+    __main__.GATLayer = GATLayer
+
+    gat_model = torch.load(
+        os.path.join(BASE_DIR, "models/saves/gat/gat_seed_50.pt"),
+        map_location="cpu",
+        weights_only=False
+    )
+
+    gat_model.eval()
+
+    models = {
+        "CNN": cnn_model,
+        "SGAN": sgan_model,
+        "DGCNN": dgcnn_model,
+        "GAT": gat_model,
+        "Hybrid DGCNN": hdgcnn_model,
+        "Hybrid GAT": gat_sgan_model,
+        "LSTM": lstm_model
+    }
+
+    for name, model in models.items():
+        total = count_parameters(model)
+        trainable = count_trainable_parameters(model)
+
+        print(f"{name}:")
+        print(f"  Total params     : {total:,}")
+        print(f"  Trainable params : {trainable:,}")
+        print("-"*50)

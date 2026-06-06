@@ -1,0 +1,3556 @@
+{
+    "info": {
+        "added": 1780591876.923736, 
+        "started": 1780591884.48907, 
+        "duration": 158, 
+        "ended": 1780592043.28282, 
+        "owner": "", 
+        "score": 10, 
+        "id": 7569809, 
+        "category": "file", 
+        "git": {
+            "head": "", 
+            "fetch_head": ""
+        }, 
+        "monitor": null, 
+        "package": "elf", 
+        "route": "internet", 
+        "custom": "", 
+        "machine": {
+            "status": "stopped", 
+            "name": "Ubuntu1904x643", 
+            "label": "Ubuntu1904x643", 
+            "platform": "linux", 
+            "manager": "VirtualBox", 
+            "started_on": "2026-06-04 16:52:37", 
+            "shutdown_on": "2026-06-04 16:54:02"
+        }, 
+        "platform": "linux", 
+        "version": "2.0.7", 
+        "options": ""
+    }, 
+    "signatures": [
+        {
+            "families": [], 
+            "description": "File has been identified by 5 AntiVirus engine on IRMA as malicious", 
+            "severity": 50, 
+            "ttp": {}, 
+            "markcount": 5, 
+            "references": [], 
+            "marks": [
+                {
+                    "category": "Avast Core Security (Linux)", 
+                    "ioc": "ELF:Mirai-DDE [Trj]", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "WithSecure (Linux)", 
+                    "ioc": "Trojan.TR/LINUX.Mirai.DDE", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "ESET Security (Windows)", 
+                    "ioc": "a variant of Linux/Mirai.EOF trojan", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "DrWeb Antivirus (Linux)", 
+                    "ioc": "Linux.DDoS.2637", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Kaspersky Standard (Windows)", 
+                    "ioc": "HEUR:Backdoor.Linux.Mirai.kl", 
+                    "type": "ioc", 
+                    "description": null
+                }
+            ], 
+            "name": "antivirus_irma"
+        }, 
+        {
+            "families": [], 
+            "description": "File has been identified by 14 AntiVirus engines on VirusTotal as malicious", 
+            "severity": 60, 
+            "ttp": {}, 
+            "markcount": 14, 
+            "references": [], 
+            "marks": [
+                {
+                    "category": "Sangfor", 
+                    "ioc": "Backdoor.Linux.Mirai.V1ly", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Symantec", 
+                    "ioc": "Linux.Mirai", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "ESET-NOD32", 
+                    "ioc": "Linux/Mirai.EOF trojan", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Cynet", 
+                    "ioc": "Malicious (score: 99)", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Rising", 
+                    "ioc": "Backdoor.Gafgyt/Linux!8.132A2 (TFE:14:hYszCmucP3U)", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "F-Secure", 
+                    "ioc": "Trojan.TR/LINUX.Mirai.DDE", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "DrWeb", 
+                    "ioc": "Linux.DDoS.2637", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "McAfeeD", 
+                    "ioc": "ti!47B7879CEF0E", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Avira", 
+                    "ioc": "TR/LINUX.Mirai.DDE", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Antiy-AVL", 
+                    "ioc": "Trojan/Linux.Mirai", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Microsoft", 
+                    "ioc": "Trojan:Win32/Egairtigado!rfn", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Tencent", 
+                    "ioc": "Trojan.Linux.Mirai.zntra", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "huorong", 
+                    "ioc": "Trojan/Linux.Mirai.hf", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Fortinet", 
+                    "ioc": "ELF/Mirai.EOB!tr", 
+                    "type": "ioc", 
+                    "description": null
+                }
+            ], 
+            "name": "antivirus_virustotal"
+        }
+    ], 
+    "target": {
+        "category": "file", 
+        "file": {
+            "mimetype": "application/x-executable", 
+            "yara": [], 
+            "sha1": "4159be334f4567138d9077c26b9095be327e25db", 
+            "name": "iran.sparc", 
+            "type": "ELF 32-bit MSB executable, SPARC, version 1 (SYSV), dynamically linked, interpreter /lib/ld-uClibc.so.0, stripped", 
+            "sha256": "47b7879cef0eab4ea2156d8f479485c3d5e8c9cc14094371a18a87a64a6fc2bc", 
+            "urls": [], 
+            "crc32": "3EC57057", 
+            "path": "/srv/cuckoo/cwd/storage/binaries/47b7879cef0eab4ea2156d8f479485c3d5e8c9cc14094371a18a87a64a6fc2bc", 
+            "ssdeep": null, 
+            "size": 11024, 
+            "sha512": "6ea744510d5130b6728724da9035706d648a25dafa841c4ea282556d642508dba4835f428f6ef93c033b84147baa4c854d2f527fa4d65231611bd3446e457c02", 
+            "md5": "46e8d34088d24e3d9bd4a2b37429d911"
+        }, 
+        "custom": ""
+    }, 
+    "irma": {
+        "status": 1, 
+        "probes_finished": 13, 
+        "scan_id": "7d73272c-aa50-47af-ac87-e388714622df", 
+        "parent_file_sha256": null, 
+        "name": "47b7879cef0eab4ea2156d8f479485c3d5e8c9cc14094371a18a87a64a6fc2bc", 
+        "probes_total": 13, 
+        "scan_date": 1780581244, 
+        "other_results": [], 
+        "probe_results": {
+            "antivirus": {
+                "G Data Antivirus (Windows)": {
+                    "status": 0, 
+                    "duration": 0.17, 
+                    "version": "5.5.20197.1358", 
+                    "results": null, 
+                    "virus_database_version": "unavailable"
+                }, 
+                "Avast Core Security (Linux)": {
+                    "status": 1, 
+                    "duration": 0.01, 
+                    "version": "4.6.1", 
+                    "results": "ELF:Mirai-DDE [Trj]", 
+                    "virus_database_version": "unavailable"
+                }, 
+                "C4S ClamAV (Linux)": {
+                    "status": 0, 
+                    "duration": 0.02, 
+                    "version": "1.4.3", 
+                    "results": null, 
+                    "virus_database_version": "28012"
+                }, 
+                "Trellix (Linux)": {
+                    "status": 0, 
+                    "duration": 8.53, 
+                    "version": "7.0.4.835", 
+                    "results": null, 
+                    "virus_database_version": "11797"
+                }, 
+                "WithSecure (Linux)": {
+                    "status": 1, 
+                    "duration": 0.14, 
+                    "version": "1.0.45", 
+                    "results": "Trojan.TR/LINUX.Mirai.DDE", 
+                    "virus_database_version": "unavailable"
+                }, 
+                "eScan Antivirus (Linux)": {
+                    "status": 0, 
+                    "duration": 4.58, 
+                    "version": "7.0.21", 
+                    "results": null, 
+                    "virus_database_version": "7.100930 (26/05/2026)"
+                }, 
+                "ESET Security (Windows)": {
+                    "status": 1, 
+                    "duration": 1.03, 
+                    "version": "unavailable", 
+                    "results": "a variant of Linux/Mirai.EOF trojan", 
+                    "virus_database_version": "unavailable"
+                }, 
+                "Sophos Anti-Virus (Linux)": {
+                    "status": 0, 
+                    "duration": 0.1, 
+                    "version": "1.2.0.8 (2026-02-13)", 
+                    "results": null, 
+                    "virus_database_version": "unavailable"
+                }, 
+                "DrWeb Antivirus (Linux)": {
+                    "status": 1, 
+                    "duration": 0.12, 
+                    "version": "11.1.16.2406170954", 
+                    "results": "Linux.DDoS.2637", 
+                    "virus_database_version": "unavailable"
+                }, 
+                "ClamAV (Linux)": {
+                    "status": 0, 
+                    "duration": 0.02, 
+                    "version": "1.4.3", 
+                    "results": null, 
+                    "virus_database_version": "28012"
+                }, 
+                "Bitdefender Antivirus (Linux)": {
+                    "status": 0, 
+                    "duration": 8.19, 
+                    "version": "7.90123", 
+                    "results": null, 
+                    "virus_database_version": null
+                }, 
+                "Kaspersky Standard (Windows)": {
+                    "status": 1, 
+                    "duration": 0.85, 
+                    "version": "21.24", 
+                    "results": "HEUR:Backdoor.Linux.Mirai.kl", 
+                    "virus_database_version": "2026-06-03 21:29:00 (unknown)"
+                }, 
+                "Emsisoft Commandline Scanner (Windows)": {
+                    "status": 0, 
+                    "duration": 0.19, 
+                    "version": "2025.1.0.12641", 
+                    "results": null, 
+                    "virus_database_version": "unavailable"
+                }
+            }
+        }, 
+        "file_infos": {
+            "mimetype": "ELF 32-bit MSB executable, SPARC, version 1 (SYSV)", 
+            "sha1": "4159be334f4567138d9077c26b9095be327e25db", 
+            "tags": [], 
+            "timestamp_first_scan": 1780581243.68, 
+            "sha256": "47b7879cef0eab4ea2156d8f479485c3d5e8c9cc14094371a18a87a64a6fc2bc", 
+            "timestamp_last_scan": 1780581254.34, 
+            "md5": "46e8d34088d24e3d9bd4a2b37429d911", 
+            "size": 11024
+        }, 
+        "submitter": "cli", 
+        "path": "", 
+        "result_id": "28830759-467c-4fd4-9541-6611601bd65b"
+    }, 
+    "suricata": {
+        "tls": [], 
+        "files": [], 
+        "alerts": [], 
+        "http": []
+    }, 
+    "virustotal": {
+        "permalink": "https://www.virustotal.com/gui/file/47b7879cef0eab4ea2156d8f479485c3d5e8c9cc14094371a18a87a64a6fc2bc/detection/f-47b7879cef0eab4ea2156d8f479485c3d5e8c9cc14094371a18a87a64a6fc2bc-1780576688", 
+        "sha1": "4159be334f4567138d9077c26b9095be327e25db", 
+        "resource": "46e8d34088d24e3d9bd4a2b37429d911", 
+        "response_code": 1, 
+        "scan_date": "2026-06-04 12:38:08", 
+        "scan_id": "47b7879cef0eab4ea2156d8f479485c3d5e8c9cc14094371a18a87a64a6fc2bc-1780576688", 
+        "summary": {
+            "positives": 14, 
+            "permalink": "https://www.virustotal.com/gui/file/47b7879cef0eab4ea2156d8f479485c3d5e8c9cc14094371a18a87a64a6fc2bc/detection/f-47b7879cef0eab4ea2156d8f479485c3d5e8c9cc14094371a18a87a64a6fc2bc-1780576688", 
+            "scan_date": "2026-06-04 12:38:08"
+        }, 
+        "sha256": "47b7879cef0eab4ea2156d8f479485c3d5e8c9cc14094371a18a87a64a6fc2bc", 
+        "normalized": [
+            "Linux", 
+            "Mirai", 
+            "V1ly", 
+            "EOF trojan", 
+            "Malicious", 
+            "score", 
+            "Gafgyt", 
+            "hYszCmucP3U", 
+            "Egairtigado", 
+            "zntra"
+        ], 
+        "total": 56, 
+        "positives": 14, 
+        "verbose_msg": "Scan finished, information embedded", 
+        "md5": "46e8d34088d24e3d9bd4a2b37429d911", 
+        "scans": {
+            "Bkav": {
+                "detected": false, 
+                "version": "8.2.40(8338)", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260604"
+            }, 
+            "Lionic": {
+                "detected": false, 
+                "version": "8.16", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260604"
+            }, 
+            "Elastic": {
+                "detected": false, 
+                "version": "4.0.264", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260603"
+            }, 
+            "ClamAV": {
+                "detected": false, 
+                "version": "1.5.2.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260604"
+            }, 
+            "CTX": {
+                "detected": false, 
+                "version": "2024.8.29.1", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260604"
+            }, 
+            "CAT-QuickHeal": {
+                "detected": false, 
+                "version": "22.00", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260603"
+            }, 
+            "Skyhigh": {
+                "detected": false, 
+                "version": "v2021.2.0+4045", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260603"
+            }, 
+            "ALYac": {
+                "detected": false, 
+                "version": "2.0.0.10", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260604"
+            }, 
+            "Malwarebytes": {
+                "detected": false, 
+                "version": "3.1.0.238", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260604"
+            }, 
+            "VIPRE": {
+                "detected": false, 
+                "version": "6.0.0.35", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260604"
+            }, 
+            "Sangfor": {
+                "detected": true, 
+                "version": "2.22.3.0", 
+                "result": "Backdoor.Linux.Mirai.V1ly", 
+                "normalized": [
+                    "Linux", 
+                    "Mirai", 
+                    "V1ly"
+                ], 
+                "update": "20260601"
+            }, 
+            "CrowdStrike": {
+                "detected": false, 
+                "version": "1.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20251219"
+            }, 
+            "K7GW": {
+                "detected": false, 
+                "version": "14.55.59714", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260604"
+            }, 
+            "K7AntiVirus": {
+                "detected": false, 
+                "version": "14.55.59713", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260604"
+            }, 
+            "Arcabit": {
+                "detected": false, 
+                "version": "2025.0.0.23", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260604"
+            }, 
+            "VirIT": {
+                "detected": false, 
+                "version": "9.5.1220", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260603"
+            }, 
+            "Symantec": {
+                "detected": true, 
+                "version": "1.22.0.0", 
+                "result": "Linux.Mirai", 
+                "normalized": [
+                    "Linux", 
+                    "Mirai"
+                ], 
+                "update": "20260604"
+            }, 
+            "ESET-NOD32": {
+                "detected": true, 
+                "version": "18.2.18.0", 
+                "result": "Linux/Mirai.EOF trojan", 
+                "normalized": [
+                    "Linux", 
+                    "Mirai", 
+                    "EOF trojan"
+                ], 
+                "update": "20260604"
+            }, 
+            "TrendMicro-HouseCall": {
+                "detected": false, 
+                "version": "24.550.0.1002", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260604"
+            }, 
+            "Cynet": {
+                "detected": true, 
+                "version": "4.0.3.4", 
+                "result": "Malicious (score: 99)", 
+                "normalized": [
+                    "Malicious", 
+                    "score"
+                ], 
+                "update": "20260604"
+            }, 
+            "BitDefender": {
+                "detected": false, 
+                "version": "7.2", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260604"
+            }, 
+            "NANO-Antivirus": {
+                "detected": false, 
+                "version": "1.0.170.26895", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260604"
+            }, 
+            "SUPERAntiSpyware": {
+                "detected": false, 
+                "version": "5.6.0.1032", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260602"
+            }, 
+            "MicroWorld-eScan": {
+                "detected": false, 
+                "version": "14.0.409.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260604"
+            }, 
+            "Rising": {
+                "detected": true, 
+                "version": "25.0.0.28", 
+                "result": "Backdoor.Gafgyt/Linux!8.132A2 (TFE:14:hYszCmucP3U)", 
+                "normalized": [
+                    "Gafgyt", 
+                    "Linux", 
+                    "hYszCmucP3U"
+                ], 
+                "update": "20260604"
+            }, 
+            "Emsisoft": {
+                "detected": false, 
+                "version": "2024.8.0.61147", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260604"
+            }, 
+            "F-Secure": {
+                "detected": true, 
+                "version": "18.10.1547.307", 
+                "result": "Trojan.TR/LINUX.Mirai.DDE", 
+                "normalized": [
+                    "LINUX", 
+                    "Mirai"
+                ], 
+                "update": "20260604"
+            }, 
+            "DrWeb": {
+                "detected": true, 
+                "version": "7.0.75.2070", 
+                "result": "Linux.DDoS.2637", 
+                "normalized": [
+                    "Linux"
+                ], 
+                "update": "20260604"
+            }, 
+            "Zillya": {
+                "detected": false, 
+                "version": "2.0.0.5614", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260603"
+            }, 
+            "McAfeeD": {
+                "detected": true, 
+                "version": "1.2.0.14833", 
+                "result": "ti!47B7879CEF0E", 
+                "normalized": [], 
+                "update": "20260604"
+            }, 
+            "CMC": {
+                "detected": false, 
+                "version": "2.4.2022.1", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260604"
+            }, 
+            "Sophos": {
+                "detected": false, 
+                "version": "3.5.1.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260604"
+            }, 
+            "Avast-Mobile": {
+                "detected": false, 
+                "version": "260604-02", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260604"
+            }, 
+            "Jiangmin": {
+                "detected": false, 
+                "version": "16.0.100", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260604"
+            }, 
+            "Google": {
+                "detected": false, 
+                "version": "1780570866", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260604"
+            }, 
+            "Avira": {
+                "detected": true, 
+                "version": "8.3.3.24", 
+                "result": "TR/LINUX.Mirai.DDE", 
+                "normalized": [
+                    "LINUX", 
+                    "Mirai"
+                ], 
+                "update": "20260604"
+            }, 
+            "Antiy-AVL": {
+                "detected": true, 
+                "version": "3.0", 
+                "result": "Trojan/Linux.Mirai", 
+                "normalized": [
+                    "Linux", 
+                    "Mirai"
+                ], 
+                "update": "20260604"
+            }, 
+            "Kingsoft": {
+                "detected": false, 
+                "version": "None", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260604"
+            }, 
+            "Gridinsoft": {
+                "detected": false, 
+                "version": "1.0.247.174", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260604"
+            }, 
+            "Xcitium": {
+                "detected": false, 
+                "version": "38701", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260604"
+            }, 
+            "Microsoft": {
+                "detected": true, 
+                "version": "1.1.26040.8", 
+                "result": "Trojan:Win32/Egairtigado!rfn", 
+                "normalized": [
+                    "Egairtigado"
+                ], 
+                "update": "20260604"
+            }, 
+            "ViRobot": {
+                "detected": false, 
+                "version": "2014.3.20.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260604"
+            }, 
+            "ZoneAlarm": {
+                "detected": false, 
+                "version": "6.25-116107283", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260604"
+            }, 
+            "GData": {
+                "detected": false, 
+                "version": "GD:27.44787AVA:64.31362", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260604"
+            }, 
+            "Varist": {
+                "detected": false, 
+                "version": "6.6.1.3", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260604"
+            }, 
+            "AhnLab-V3": {
+                "detected": false, 
+                "version": "3.30.0.10666", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260604"
+            }, 
+            "Acronis": {
+                "detected": false, 
+                "version": "1.2.0.121", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20240328"
+            }, 
+            "VBA32": {
+                "detected": false, 
+                "version": "5.6.1", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260604"
+            }, 
+            "TACHYON": {
+                "detected": false, 
+                "version": "2026-06-04.02", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260604"
+            }, 
+            "Zoner": {
+                "detected": false, 
+                "version": "2.2.2.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260604"
+            }, 
+            "Tencent": {
+                "detected": true, 
+                "version": "1.0.0.1", 
+                "result": "Trojan.Linux.Mirai.zntra", 
+                "normalized": [
+                    "Linux", 
+                    "Mirai", 
+                    "zntra"
+                ], 
+                "update": "20260604"
+            }, 
+            "Yandex": {
+                "detected": false, 
+                "version": "5.5.2.24", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260604"
+            }, 
+            "huorong": {
+                "detected": true, 
+                "version": "ca9ca35:ca9ca35:cfcc2b7:cfcc2b7", 
+                "result": "Trojan/Linux.Mirai.hf", 
+                "normalized": [
+                    "Linux", 
+                    "Mirai"
+                ], 
+                "update": "20260603"
+            }, 
+            "Fortinet": {
+                "detected": true, 
+                "version": "7.0.48.0", 
+                "result": "ELF/Mirai.EOB!tr", 
+                "normalized": [
+                    "Mirai"
+                ], 
+                "update": "20260604"
+            }, 
+            "Panda": {
+                "detected": false, 
+                "version": "4.6.4.2", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260603"
+            }, 
+            "alibabacloud": {
+                "detected": false, 
+                "version": "2.2.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20250321"
+            }
+        }
+    }, 
+    "network": {
+        "udp": [], 
+        "dns_servers": [], 
+        "http": [], 
+        "smtp": [], 
+        "tcp": [], 
+        "geoinfo": {}, 
+        "mitm": [], 
+        "https_ex": [], 
+        "http_ex": [], 
+        "sorted_pcap_sha256": "0f62542a61100a5c112d3f7b846b55f57ef29c1f2058343dcbdc819a902f265a", 
+        "icmp": [], 
+        "tls": [], 
+        "dead_hosts": [], 
+        "smtp_ex": [], 
+        "hosts": [], 
+        "pcap_sha256": "335a6bd0f25018903061af801b5600be4eadee2c37ada70f6dcb496cca90e9df", 
+        "dns": [], 
+        "domains": [], 
+        "irc": []
+    }, 
+    "resubmit": {
+        "resubmit_ids": []
+    }, 
+    "snort": {
+        "alerts": []
+    }, 
+    "behavior": {
+        "generic": [
+            {
+                "process_path": null, 
+                "process_name": "iran.sparc", 
+                "pid": 2094, 
+                "summary": {}, 
+                "first_seen": 1780591886.232803, 
+                "ppid": -1
+            }, 
+            {
+                "process_path": null, 
+                "process_name": "iran.sparc", 
+                "pid": 2095, 
+                "summary": {}, 
+                "first_seen": 1780591886.25705, 
+                "ppid": 2094
+            }
+        ], 
+        "processes": [
+            {
+                "calls": [
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.232803 iran.sparc@7f4413884c27[2094] execve(\"/tmp/iran.sparc\", [\"/tmp/iran.sparc\"], [\"SUDO_GID=0\", \"MAIL=/var/mail/root\", \"USER=root\", \"HOME=/root\", \"SUDO_UID=0\", \"LOGNAME=root\", \"SYSTEMTAP_MODULE=stap_\", \"TERM=unknown\", \"SYSTEMTAP_VERBOSE=2\", \"PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin\", \"DISPLAY=:0\", \"LANG=en_US.UTF-8\", \"XAUTHORITY=/root/.Xauthority\", \"SUDO_COMMAND=/usr/bin/staprun -vv -o stap.log /root/.cuckoo/stap_.ko -c sh -c /tmp/iran.sparc\", \"SHELL=/bin/bash\", \"SUDO_USER=root\", \"PWD=/tmp/tmpQXihCC\"])\n", 
+                        "api": "execve", 
+                        "return_value": "", 
+                        "category": "process", 
+                        "instruction_pointer": "7f4413884c27", 
+                        "arguments": {
+                            "p2": [
+                                "SUDO_GID=0", 
+                                "MAIL=/var/mail/root", 
+                                "USER=root", 
+                                "HOME=/root", 
+                                "SUDO_UID=0", 
+                                "LOGNAME=root", 
+                                "SYSTEMTAP_MODULE=stap_", 
+                                "TERM=unknown", 
+                                "SYSTEMTAP_VERBOSE=2", 
+                                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin", 
+                                "DISPLAY=:0", 
+                                "LANG=en_US.UTF-8", 
+                                "XAUTHORITY=/root/.Xauthority", 
+                                "SUDO_COMMAND=/usr/bin/staprun -vv -o stap.log /root/.cuckoo/stap_.ko -c sh -c /tmp/iran.sparc", 
+                                "SHELL=/bin/bash", 
+                                "SUDO_USER=root", 
+                                "PWD=/tmp/tmpQXihCC"
+                            ], 
+                            "p0": "/tmp/iran.sparc", 
+                            "p1": [
+                                "/tmp/iran.sparc"
+                            ]
+                        }, 
+                        "time": 1780591886.232803
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.236382 iran.sparc@7f4413884c27[2094] brk(0x0) = 94325075980288\n", 
+                        "api": "brk", 
+                        "return_value": "94325075980288", 
+                        "category": "process", 
+                        "instruction_pointer": "7f4413884c27", 
+                        "arguments": {
+                            "p0": "0x0"
+                        }, 
+                        "time": 1780591886.236382
+                    }, 
+                    {
+                        "status": "ENOENT", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.236474 iran.sparc@7f44138859d7[2094] access(\"/etc/ld.so.preload\", R_OK) = -2 (ENOENT)\n", 
+                        "api": "access", 
+                        "return_value": "-2", 
+                        "category": "process", 
+                        "instruction_pointer": "7f44138859d7", 
+                        "arguments": {
+                            "p0": "/etc/ld.so.preload", 
+                            "p1": "R_OK"
+                        }, 
+                        "time": 1780591886.236474
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.238198 iran.sparc@7f4413885b0d[2094] openat(AT_FDCWD, \"/etc/ld.so.cache\", O_RDONLY|O_CLOEXEC) = 4\n", 
+                        "api": "openat", 
+                        "return_value": "4", 
+                        "category": "process", 
+                        "instruction_pointer": "7f4413885b0d", 
+                        "arguments": {
+                            "p2": "O_RDONLY|O_CLOEXEC", 
+                            "p0": "AT_FDCWD", 
+                            "p1": "/etc/ld.so.cache"
+                        }, 
+                        "time": 1780591886.238198
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.238252 iran.sparc@7f4413885943[2094] fstat(4, 0x7ffc991444c0) = 0\n", 
+                        "api": "fstat", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f4413885943", 
+                        "arguments": {
+                            "p0": "4", 
+                            "p1": "0x7ffc991444c0"
+                        }, 
+                        "time": 1780591886.238252
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.238294 iran.sparc@7f4413885d03[2094] mmap2(0x0, 88858, PROT_READ, MAP_PRIVATE, 4, 0) = 0x7f4413853000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f4413853000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f4413885d03", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p3": "MAP_PRIVATE", 
+                            "p0": "0x0", 
+                            "p1": "88858", 
+                            "p4": "4", 
+                            "p5": "0"
+                        }, 
+                        "time": 1780591886.238294
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.238346 iran.sparc@7f44138859f7[2094] close(4) = 0\n", 
+                        "api": "close", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f44138859f7", 
+                        "arguments": {
+                            "p0": "4"
+                        }, 
+                        "time": 1780591886.238346
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.238405 iran.sparc@7f4413885b0d[2094] openat(AT_FDCWD, \"/usr/lib/x86_64-linux-gnu/libgmodule-2.0.so.0\", O_RDONLY|O_CLOEXEC) = 4\n", 
+                        "api": "openat", 
+                        "return_value": "4", 
+                        "category": "process", 
+                        "instruction_pointer": "7f4413885b0d", 
+                        "arguments": {
+                            "p2": "O_RDONLY|O_CLOEXEC", 
+                            "p0": "AT_FDCWD", 
+                            "p1": "/usr/lib/x86_64-linux-gnu/libgmodule-2.0.so.0"
+                        }, 
+                        "time": 1780591886.238405
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.238451 iran.sparc@7f4413885bd4[2094] read(4, 0x7ffc99144678, 832) = 832\n", 
+                        "api": "read", 
+                        "return_value": "832", 
+                        "category": "process", 
+                        "instruction_pointer": "7f4413885bd4", 
+                        "arguments": {
+                            "p2": "832", 
+                            "p0": "4", 
+                            "p1": "0x7ffc99144678"
+                        }, 
+                        "time": 1780591886.238451
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.238492 iran.sparc@7f4413885943[2094] fstat(4, 0x7ffc99144510) = 0\n", 
+                        "api": "fstat", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f4413885943", 
+                        "arguments": {
+                            "p0": "4", 
+                            "p1": "0x7ffc99144510"
+                        }, 
+                        "time": 1780591886.238492
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.238531 iran.sparc@7f4413885d03[2094] mmap2(0x0, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f4413851000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f4413851000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f4413885d03", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_WRITE", 
+                            "p3": "MAP_PRIVATE|MAP_ANONYMOUS", 
+                            "p0": "0x0", 
+                            "p1": "8192", 
+                            "p4": "-1", 
+                            "p5": "0"
+                        }, 
+                        "time": 1780591886.238531
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.238581 iran.sparc@7f4413885d03[2094] mmap2(0x0, 20600, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 4, 0) = 0x7f441384b000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f441384b000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f4413885d03", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p3": "MAP_PRIVATE|MAP_DENYWRITE", 
+                            "p0": "0x0", 
+                            "p1": "20600", 
+                            "p4": "4", 
+                            "p5": "0"
+                        }, 
+                        "time": 1780591886.238581
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.238626 iran.sparc@7f4413885d03[2094] mmap2(0x7f441384c000, 8192, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 4096) = 0x7f441384c000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f441384c000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f4413885d03", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_EXEC", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE", 
+                            "p0": "0x7f441384c000", 
+                            "p1": "8192", 
+                            "p4": "4", 
+                            "p5": "4096"
+                        }, 
+                        "time": 1780591886.238626
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.238680 iran.sparc@7f4413885d03[2094] mmap2(0x7f441384e000, 4096, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 12288) = 0x7f441384e000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f441384e000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f4413885d03", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE", 
+                            "p0": "0x7f441384e000", 
+                            "p1": "4096", 
+                            "p4": "4", 
+                            "p5": "12288"
+                        }, 
+                        "time": 1780591886.23868
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.238728 iran.sparc@7f4413885d03[2094] mmap2(0x7f441384f000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 12288) = 0x7f441384f000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f441384f000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f4413885d03", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_WRITE", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE", 
+                            "p0": "0x7f441384f000", 
+                            "p1": "8192", 
+                            "p4": "4", 
+                            "p5": "12288"
+                        }, 
+                        "time": 1780591886.238728
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.238785 iran.sparc@7f44138859f7[2094] close(4) = 0\n", 
+                        "api": "close", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f44138859f7", 
+                        "arguments": {
+                            "p0": "4"
+                        }, 
+                        "time": 1780591886.238785
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.238836 iran.sparc@7f4413885b0d[2094] openat(AT_FDCWD, \"/usr/lib/x86_64-linux-gnu/libglib-2.0.so.0\", O_RDONLY|O_CLOEXEC) = 4\n", 
+                        "api": "openat", 
+                        "return_value": "4", 
+                        "category": "process", 
+                        "instruction_pointer": "7f4413885b0d", 
+                        "arguments": {
+                            "p2": "O_RDONLY|O_CLOEXEC", 
+                            "p0": "AT_FDCWD", 
+                            "p1": "/usr/lib/x86_64-linux-gnu/libglib-2.0.so.0"
+                        }, 
+                        "time": 1780591886.238836
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.238893 iran.sparc@7f4413885bd4[2094] read(4, 0x7ffc99144658, 832) = 832\n", 
+                        "api": "read", 
+                        "return_value": "832", 
+                        "category": "process", 
+                        "instruction_pointer": "7f4413885bd4", 
+                        "arguments": {
+                            "p2": "832", 
+                            "p0": "4", 
+                            "p1": "0x7ffc99144658"
+                        }, 
+                        "time": 1780591886.238893
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.238934 iran.sparc@7f4413885943[2094] fstat(4, 0x7ffc991444f0) = 0\n", 
+                        "api": "fstat", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f4413885943", 
+                        "arguments": {
+                            "p0": "4", 
+                            "p1": "0x7ffc991444f0"
+                        }, 
+                        "time": 1780591886.238934
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.238973 iran.sparc@7f4413885d03[2094] mmap2(0x0, 1180072, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 4, 0) = 0x7f441372a000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f441372a000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f4413885d03", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p3": "MAP_PRIVATE|MAP_DENYWRITE", 
+                            "p0": "0x0", 
+                            "p1": "1180072", 
+                            "p4": "4", 
+                            "p5": "0"
+                        }, 
+                        "time": 1780591886.238973
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.239020 iran.sparc@7f4413885db7[2094] mprotect(0x7f4413745000, 1060864, PROT_NONE) = 0\n", 
+                        "api": "mprotect", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f4413885db7", 
+                        "arguments": {
+                            "p2": "PROT_NONE", 
+                            "p0": "0x7f4413745000", 
+                            "p1": "1060864"
+                        }, 
+                        "time": 1780591886.23902
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.239069 iran.sparc@7f4413885d03[2094] mmap2(0x7f4413745000, 524288, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 110592) = 0x7f4413745000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f4413745000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f4413885d03", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_EXEC", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE", 
+                            "p0": "0x7f4413745000", 
+                            "p1": "524288", 
+                            "p4": "4", 
+                            "p5": "110592"
+                        }, 
+                        "time": 1780591886.239069
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.239116 iran.sparc@7f4413885d03[2094] mmap2(0x7f44137c5000, 532480, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 634880) = 0x7f44137c5000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f44137c5000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f4413885d03", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE", 
+                            "p0": "0x7f44137c5000", 
+                            "p1": "532480", 
+                            "p4": "4", 
+                            "p5": "634880"
+                        }, 
+                        "time": 1780591886.239116
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.239163 iran.sparc@7f4413885d03[2094] mmap2(0x7f4413848000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 1167360) = 0x7f4413848000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f4413848000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f4413885d03", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_WRITE", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE", 
+                            "p0": "0x7f4413848000", 
+                            "p1": "8192", 
+                            "p4": "4", 
+                            "p5": "1167360"
+                        }, 
+                        "time": 1780591886.239163
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.239215 iran.sparc@7f4413885d03[2094] mmap2(0x7f441384a000, 424, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f441384a000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f441384a000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f4413885d03", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_WRITE", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS", 
+                            "p0": "0x7f441384a000", 
+                            "p1": "424", 
+                            "p4": "-1", 
+                            "p5": "0"
+                        }, 
+                        "time": 1780591886.239215
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.239265 iran.sparc@7f44138859f7[2094] close(4) = 0\n", 
+                        "api": "close", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f44138859f7", 
+                        "arguments": {
+                            "p0": "4"
+                        }, 
+                        "time": 1780591886.239265
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.239326 iran.sparc@7f4413885b0d[2094] openat(AT_FDCWD, \"/lib/x86_64-linux-gnu/librt.so.1\", O_RDONLY|O_CLOEXEC) = 4\n", 
+                        "api": "openat", 
+                        "return_value": "4", 
+                        "category": "process", 
+                        "instruction_pointer": "7f4413885b0d", 
+                        "arguments": {
+                            "p2": "O_RDONLY|O_CLOEXEC", 
+                            "p0": "AT_FDCWD", 
+                            "p1": "/lib/x86_64-linux-gnu/librt.so.1"
+                        }, 
+                        "time": 1780591886.239326
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.239463 iran.sparc@7f4413885bd4[2094] read(4, 0x7ffc99144638, 832) = 832\n", 
+                        "api": "read", 
+                        "return_value": "832", 
+                        "category": "process", 
+                        "instruction_pointer": "7f4413885bd4", 
+                        "arguments": {
+                            "p2": "832", 
+                            "p0": "4", 
+                            "p1": "0x7ffc99144638"
+                        }, 
+                        "time": 1780591886.239463
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.239507 iran.sparc@7f4413885943[2094] fstat(4, 0x7ffc991444d0) = 0\n", 
+                        "api": "fstat", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f4413885943", 
+                        "arguments": {
+                            "p0": "4", 
+                            "p1": "0x7ffc991444d0"
+                        }, 
+                        "time": 1780591886.239507
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.239547 iran.sparc@7f4413885d03[2094] mmap2(0x0, 44000, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 4, 0) = 0x7f441371f000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f441371f000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f4413885d03", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p3": "MAP_PRIVATE|MAP_DENYWRITE", 
+                            "p0": "0x0", 
+                            "p1": "44000", 
+                            "p4": "4", 
+                            "p5": "0"
+                        }, 
+                        "time": 1780591886.239547
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.239593 iran.sparc@7f4413885d03[2094] mmap2(0x7f4413722000, 16384, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 12288) = 0x7f4413722000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f4413722000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f4413885d03", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_EXEC", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE", 
+                            "p0": "0x7f4413722000", 
+                            "p1": "16384", 
+                            "p4": "4", 
+                            "p5": "12288"
+                        }, 
+                        "time": 1780591886.239593
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.239644 iran.sparc@7f4413885d03[2094] mmap2(0x7f4413726000, 8192, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 28672) = 0x7f4413726000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f4413726000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f4413885d03", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE", 
+                            "p0": "0x7f4413726000", 
+                            "p1": "8192", 
+                            "p4": "4", 
+                            "p5": "28672"
+                        }, 
+                        "time": 1780591886.239644
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.239690 iran.sparc@7f4413885d03[2094] mmap2(0x7f4413728000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 32768) = 0x7f4413728000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f4413728000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f4413885d03", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_WRITE", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE", 
+                            "p0": "0x7f4413728000", 
+                            "p1": "8192", 
+                            "p4": "4", 
+                            "p5": "32768"
+                        }, 
+                        "time": 1780591886.23969
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.239819 iran.sparc@7f44138859f7[2094] close(4) = 0\n", 
+                        "api": "close", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f44138859f7", 
+                        "arguments": {
+                            "p0": "4"
+                        }, 
+                        "time": 1780591886.239819
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.239872 iran.sparc@7f4413885b0d[2094] openat(AT_FDCWD, \"/lib/x86_64-linux-gnu/libm.so.6\", O_RDONLY|O_CLOEXEC) = 4\n", 
+                        "api": "openat", 
+                        "return_value": "4", 
+                        "category": "process", 
+                        "instruction_pointer": "7f4413885b0d", 
+                        "arguments": {
+                            "p2": "O_RDONLY|O_CLOEXEC", 
+                            "p0": "AT_FDCWD", 
+                            "p1": "/lib/x86_64-linux-gnu/libm.so.6"
+                        }, 
+                        "time": 1780591886.239872
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.239931 iran.sparc@7f4413885bd4[2094] read(4, 0x7ffc99144618, 832) = 832\n", 
+                        "api": "read", 
+                        "return_value": "832", 
+                        "category": "process", 
+                        "instruction_pointer": "7f4413885bd4", 
+                        "arguments": {
+                            "p2": "832", 
+                            "p0": "4", 
+                            "p1": "0x7ffc99144618"
+                        }, 
+                        "time": 1780591886.239931
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.239972 iran.sparc@7f4413885943[2094] fstat(4, 0x7ffc991444b0) = 0\n", 
+                        "api": "fstat", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f4413885943", 
+                        "arguments": {
+                            "p0": "4", 
+                            "p1": "0x7ffc991444b0"
+                        }, 
+                        "time": 1780591886.239972
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.240015 iran.sparc@7f4413885d03[2094] mmap2(0x0, 1364240, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 4, 0) = 0x7f44135d1000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f44135d1000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f4413885d03", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p3": "MAP_PRIVATE|MAP_DENYWRITE", 
+                            "p0": "0x0", 
+                            "p1": "1364240", 
+                            "p4": "4", 
+                            "p5": "0"
+                        }, 
+                        "time": 1780591886.240015
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.240061 iran.sparc@7f4413885d03[2094] mmap2(0x7f44135e0000, 679936, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 61440) = 0x7f44135e0000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f44135e0000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f4413885d03", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_EXEC", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE", 
+                            "p0": "0x7f44135e0000", 
+                            "p1": "679936", 
+                            "p4": "4", 
+                            "p5": "61440"
+                        }, 
+                        "time": 1780591886.240061
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.240112 iran.sparc@7f4413885d03[2094] mmap2(0x7f4413686000, 618496, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 741376) = 0x7f4413686000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f4413686000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f4413885d03", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE", 
+                            "p0": "0x7f4413686000", 
+                            "p1": "618496", 
+                            "p4": "4", 
+                            "p5": "741376"
+                        }, 
+                        "time": 1780591886.240112
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.240158 iran.sparc@7f4413885d03[2094] mmap2(0x7f441371d000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 1355776) = 0x7f441371d000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f441371d000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f4413885d03", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_WRITE", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE", 
+                            "p0": "0x7f441371d000", 
+                            "p1": "8192", 
+                            "p4": "4", 
+                            "p5": "1355776"
+                        }, 
+                        "time": 1780591886.240158
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.240214 iran.sparc@7f44138859f7[2094] close(4) = 0\n", 
+                        "api": "close", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f44138859f7", 
+                        "arguments": {
+                            "p0": "4"
+                        }, 
+                        "time": 1780591886.240214
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.240270 iran.sparc@7f4413885b0d[2094] openat(AT_FDCWD, \"/lib/x86_64-linux-gnu/libgcc_s.so.1\", O_RDONLY|O_CLOEXEC) = 4\n", 
+                        "api": "openat", 
+                        "return_value": "4", 
+                        "category": "process", 
+                        "instruction_pointer": "7f4413885b0d", 
+                        "arguments": {
+                            "p2": "O_RDONLY|O_CLOEXEC", 
+                            "p0": "AT_FDCWD", 
+                            "p1": "/lib/x86_64-linux-gnu/libgcc_s.so.1"
+                        }, 
+                        "time": 1780591886.24027
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.240312 iran.sparc@7f4413885bd4[2094] read(4, 0x7ffc991445f8, 832) = 832\n", 
+                        "api": "read", 
+                        "return_value": "832", 
+                        "category": "process", 
+                        "instruction_pointer": "7f4413885bd4", 
+                        "arguments": {
+                            "p2": "832", 
+                            "p0": "4", 
+                            "p1": "0x7ffc991445f8"
+                        }, 
+                        "time": 1780591886.240312
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.240350 iran.sparc@7f4413885943[2094] fstat(4, 0x7ffc99144490) = 0\n", 
+                        "api": "fstat", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f4413885943", 
+                        "arguments": {
+                            "p0": "4", 
+                            "p1": "0x7ffc99144490"
+                        }, 
+                        "time": 1780591886.24035
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.240388 iran.sparc@7f4413885d03[2094] mmap2(0x0, 103504, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 4, 0) = 0x7f44135b7000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f44135b7000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f4413885d03", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p3": "MAP_PRIVATE|MAP_DENYWRITE", 
+                            "p0": "0x0", 
+                            "p1": "103504", 
+                            "p4": "4", 
+                            "p5": "0"
+                        }, 
+                        "time": 1780591886.240388
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.240432 iran.sparc@7f4413885d03[2094] mmap2(0x7f44135ba000, 69632, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 12288) = 0x7f44135ba000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f44135ba000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f4413885d03", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_EXEC", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE", 
+                            "p0": "0x7f44135ba000", 
+                            "p1": "69632", 
+                            "p4": "4", 
+                            "p5": "12288"
+                        }, 
+                        "time": 1780591886.240432
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.240480 iran.sparc@7f4413885d03[2094] mmap2(0x7f44135cb000, 16384, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 81920) = 0x7f44135cb000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f44135cb000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f4413885d03", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE", 
+                            "p0": "0x7f44135cb000", 
+                            "p1": "16384", 
+                            "p4": "4", 
+                            "p5": "81920"
+                        }, 
+                        "time": 1780591886.24048
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.240525 iran.sparc@7f4413885d03[2094] mmap2(0x7f44135cf000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 94208) = 0x7f44135cf000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f44135cf000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f4413885d03", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_WRITE", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE", 
+                            "p0": "0x7f44135cf000", 
+                            "p1": "8192", 
+                            "p4": "4", 
+                            "p5": "94208"
+                        }, 
+                        "time": 1780591886.240525
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.240580 iran.sparc@7f44138859f7[2094] close(4) = 0\n", 
+                        "api": "close", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f44138859f7", 
+                        "arguments": {
+                            "p0": "4"
+                        }, 
+                        "time": 1780591886.24058
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.240629 iran.sparc@7f4413885b0d[2094] openat(AT_FDCWD, \"/lib/x86_64-linux-gnu/libpthread.so.0\", O_RDONLY|O_CLOEXEC) = 4\n", 
+                        "api": "openat", 
+                        "return_value": "4", 
+                        "category": "process", 
+                        "instruction_pointer": "7f4413885b0d", 
+                        "arguments": {
+                            "p2": "O_RDONLY|O_CLOEXEC", 
+                            "p0": "AT_FDCWD", 
+                            "p1": "/lib/x86_64-linux-gnu/libpthread.so.0"
+                        }, 
+                        "time": 1780591886.240629
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.240673 iran.sparc@7f4413885bd4[2094] read(4, 0x7ffc991445d8, 832) = 832\n", 
+                        "api": "read", 
+                        "return_value": "832", 
+                        "category": "process", 
+                        "instruction_pointer": "7f4413885bd4", 
+                        "arguments": {
+                            "p2": "832", 
+                            "p0": "4", 
+                            "p1": "0x7ffc991445d8"
+                        }, 
+                        "time": 1780591886.240673
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.240710 iran.sparc@7f4413885943[2094] fstat(4, 0x7ffc99144470) = 0\n", 
+                        "api": "fstat", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f4413885943", 
+                        "arguments": {
+                            "p0": "4", 
+                            "p1": "0x7ffc99144470"
+                        }, 
+                        "time": 1780591886.24071
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.240748 iran.sparc@7f4413885d03[2094] mmap2(0x0, 132288, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 4, 0) = 0x7f4413596000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f4413596000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f4413885d03", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p3": "MAP_PRIVATE|MAP_DENYWRITE", 
+                            "p0": "0x0", 
+                            "p1": "132288", 
+                            "p4": "4", 
+                            "p5": "0"
+                        }, 
+                        "time": 1780591886.240748
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.240793 iran.sparc@7f4413885d03[2094] mmap2(0x7f441359d000, 61440, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 28672) = 0x7f441359d000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f441359d000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f4413885d03", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_EXEC", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE", 
+                            "p0": "0x7f441359d000", 
+                            "p1": "61440", 
+                            "p4": "4", 
+                            "p5": "28672"
+                        }, 
+                        "time": 1780591886.240793
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.240843 iran.sparc@7f4413885d03[2094] mmap2(0x7f44135ac000, 20480, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 90112) = 0x7f44135ac000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f44135ac000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f4413885d03", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE", 
+                            "p0": "0x7f44135ac000", 
+                            "p1": "20480", 
+                            "p4": "4", 
+                            "p5": "90112"
+                        }, 
+                        "time": 1780591886.240843
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.240911 iran.sparc@7f4413885d03[2094] mmap2(0x7f44135b1000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 106496) = 0x7f44135b1000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f44135b1000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f4413885d03", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_WRITE", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE", 
+                            "p0": "0x7f44135b1000", 
+                            "p1": "8192", 
+                            "p4": "4", 
+                            "p5": "106496"
+                        }, 
+                        "time": 1780591886.240911
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.240966 iran.sparc@7f4413885d03[2094] mmap2(0x7f44135b3000, 13504, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f44135b3000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f44135b3000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f4413885d03", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_WRITE", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS", 
+                            "p0": "0x7f44135b3000", 
+                            "p1": "13504", 
+                            "p4": "-1", 
+                            "p5": "0"
+                        }, 
+                        "time": 1780591886.240966
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.241015 iran.sparc@7f44138859f7[2094] close(4) = 0\n", 
+                        "api": "close", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f44138859f7", 
+                        "arguments": {
+                            "p0": "4"
+                        }, 
+                        "time": 1780591886.241015
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.241065 iran.sparc@7f4413885b0d[2094] openat(AT_FDCWD, \"/lib/x86_64-linux-gnu/libc.so.6\", O_RDONLY|O_CLOEXEC) = 4\n", 
+                        "api": "openat", 
+                        "return_value": "4", 
+                        "category": "process", 
+                        "instruction_pointer": "7f4413885b0d", 
+                        "arguments": {
+                            "p2": "O_RDONLY|O_CLOEXEC", 
+                            "p0": "AT_FDCWD", 
+                            "p1": "/lib/x86_64-linux-gnu/libc.so.6"
+                        }, 
+                        "time": 1780591886.241065
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.241108 iran.sparc@7f4413885bd4[2094] read(4, 0x7ffc991445b8, 832) = 832\n", 
+                        "api": "read", 
+                        "return_value": "832", 
+                        "category": "process", 
+                        "instruction_pointer": "7f4413885bd4", 
+                        "arguments": {
+                            "p2": "832", 
+                            "p0": "4", 
+                            "p1": "0x7ffc991445b8"
+                        }, 
+                        "time": 1780591886.241108
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.241146 iran.sparc@7f4413885943[2094] fstat(4, 0x7ffc99144450) = 0\n", 
+                        "api": "fstat", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f4413885943", 
+                        "arguments": {
+                            "p0": "4", 
+                            "p1": "0x7ffc99144450"
+                        }, 
+                        "time": 1780591886.241146
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.241195 iran.sparc@7f4413885d03[2094] mmap2(0x0, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f4413594000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f4413594000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f4413885d03", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_WRITE", 
+                            "p3": "MAP_PRIVATE|MAP_ANONYMOUS", 
+                            "p0": "0x0", 
+                            "p1": "8192", 
+                            "p4": "-1", 
+                            "p5": "0"
+                        }, 
+                        "time": 1780591886.241195
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.241241 iran.sparc@7f4413885d03[2094] mmap2(0x0, 2008696, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 4, 0) = 0x7f44133a9000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f44133a9000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f4413885d03", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p3": "MAP_PRIVATE|MAP_DENYWRITE", 
+                            "p0": "0x0", 
+                            "p1": "2008696", 
+                            "p4": "4", 
+                            "p5": "0"
+                        }, 
+                        "time": 1780591886.241241
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.241281 iran.sparc@7f4413885d03[2094] mmap2(0x7f44133ce000, 1519616, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 151552) = 0x7f44133ce000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f44133ce000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f4413885d03", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_EXEC", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE", 
+                            "p0": "0x7f44133ce000", 
+                            "p1": "1519616", 
+                            "p4": "4", 
+                            "p5": "151552"
+                        }, 
+                        "time": 1780591886.241281
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.241325 iran.sparc@7f4413885d03[2094] mmap2(0x7f4413541000, 299008, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 1671168) = 0x7f4413541000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f4413541000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f4413885d03", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE", 
+                            "p0": "0x7f4413541000", 
+                            "p1": "299008", 
+                            "p4": "4", 
+                            "p5": "1671168"
+                        }, 
+                        "time": 1780591886.241325
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.241367 iran.sparc@7f4413885d03[2094] mmap2(0x7f441358a000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 1966080) = 0x7f441358a000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f441358a000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f4413885d03", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_WRITE", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE", 
+                            "p0": "0x7f441358a000", 
+                            "p1": "24576", 
+                            "p4": "4", 
+                            "p5": "1966080"
+                        }, 
+                        "time": 1780591886.241367
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.241414 iran.sparc@7f4413885d03[2094] mmap2(0x7f4413590000, 13944, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f4413590000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f4413590000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f4413885d03", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_WRITE", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS", 
+                            "p0": "0x7f4413590000", 
+                            "p1": "13944", 
+                            "p4": "-1", 
+                            "p5": "0"
+                        }, 
+                        "time": 1780591886.241414
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.241460 iran.sparc@7f44138859f7[2094] close(4) = 0\n", 
+                        "api": "close", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f44138859f7", 
+                        "arguments": {
+                            "p0": "4"
+                        }, 
+                        "time": 1780591886.24146
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.241515 iran.sparc@7f4413885b0d[2094] openat(AT_FDCWD, \"/lib/x86_64-linux-gnu/libdl.so.2\", O_RDONLY|O_CLOEXEC) = 4\n", 
+                        "api": "openat", 
+                        "return_value": "4", 
+                        "category": "process", 
+                        "instruction_pointer": "7f4413885b0d", 
+                        "arguments": {
+                            "p2": "O_RDONLY|O_CLOEXEC", 
+                            "p0": "AT_FDCWD", 
+                            "p1": "/lib/x86_64-linux-gnu/libdl.so.2"
+                        }, 
+                        "time": 1780591886.241515
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.241556 iran.sparc@7f4413885bd4[2094] read(4, 0x7ffc99144598, 832) = 832\n", 
+                        "api": "read", 
+                        "return_value": "832", 
+                        "category": "process", 
+                        "instruction_pointer": "7f4413885bd4", 
+                        "arguments": {
+                            "p2": "832", 
+                            "p0": "4", 
+                            "p1": "0x7ffc99144598"
+                        }, 
+                        "time": 1780591886.241556
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.241593 iran.sparc@7f4413885943[2094] fstat(4, 0x7ffc99144430) = 0\n", 
+                        "api": "fstat", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f4413885943", 
+                        "arguments": {
+                            "p0": "4", 
+                            "p1": "0x7ffc99144430"
+                        }, 
+                        "time": 1780591886.241593
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.241628 iran.sparc@7f4413885d03[2094] mmap2(0x0, 20752, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 4, 0) = 0x7f44133a3000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f44133a3000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f4413885d03", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p3": "MAP_PRIVATE|MAP_DENYWRITE", 
+                            "p0": "0x0", 
+                            "p1": "20752", 
+                            "p4": "4", 
+                            "p5": "0"
+                        }, 
+                        "time": 1780591886.241628
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.241670 iran.sparc@7f4413885d03[2094] mmap2(0x7f44133a4000, 8192, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 4096) = 0x7f44133a4000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f44133a4000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f4413885d03", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_EXEC", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE", 
+                            "p0": "0x7f44133a4000", 
+                            "p1": "8192", 
+                            "p4": "4", 
+                            "p5": "4096"
+                        }, 
+                        "time": 1780591886.24167
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.241717 iran.sparc@7f4413885d03[2094] mmap2(0x7f44133a6000, 4096, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 12288) = 0x7f44133a6000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f44133a6000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f4413885d03", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE", 
+                            "p0": "0x7f44133a6000", 
+                            "p1": "4096", 
+                            "p4": "4", 
+                            "p5": "12288"
+                        }, 
+                        "time": 1780591886.241717
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.241759 iran.sparc@7f4413885d03[2094] mmap2(0x7f44133a7000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 12288) = 0x7f44133a7000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f44133a7000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f4413885d03", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_WRITE", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE", 
+                            "p0": "0x7f44133a7000", 
+                            "p1": "8192", 
+                            "p4": "4", 
+                            "p5": "12288"
+                        }, 
+                        "time": 1780591886.241759
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.241810 iran.sparc@7f44138859f7[2094] close(4) = 0\n", 
+                        "api": "close", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f44138859f7", 
+                        "arguments": {
+                            "p0": "4"
+                        }, 
+                        "time": 1780591886.24181
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.241859 iran.sparc@7f4413885b0d[2094] openat(AT_FDCWD, \"/lib/x86_64-linux-gnu/libpcre.so.3\", O_RDONLY|O_CLOEXEC) = 4\n", 
+                        "api": "openat", 
+                        "return_value": "4", 
+                        "category": "process", 
+                        "instruction_pointer": "7f4413885b0d", 
+                        "arguments": {
+                            "p2": "O_RDONLY|O_CLOEXEC", 
+                            "p0": "AT_FDCWD", 
+                            "p1": "/lib/x86_64-linux-gnu/libpcre.so.3"
+                        }, 
+                        "time": 1780591886.241859
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.241908 iran.sparc@7f4413885bd4[2094] read(4, 0x7ffc99144578, 832) = 832\n", 
+                        "api": "read", 
+                        "return_value": "832", 
+                        "category": "process", 
+                        "instruction_pointer": "7f4413885bd4", 
+                        "arguments": {
+                            "p2": "832", 
+                            "p0": "4", 
+                            "p1": "0x7ffc99144578"
+                        }, 
+                        "time": 1780591886.241908
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.241945 iran.sparc@7f4413885943[2094] fstat(4, 0x7ffc99144410) = 0\n", 
+                        "api": "fstat", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f4413885943", 
+                        "arguments": {
+                            "p0": "4", 
+                            "p1": "0x7ffc99144410"
+                        }, 
+                        "time": 1780591886.241945
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.241981 iran.sparc@7f4413885d03[2094] mmap2(0x0, 471304, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 4, 0) = 0x7f441332f000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f441332f000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f4413885d03", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p3": "MAP_PRIVATE|MAP_DENYWRITE", 
+                            "p0": "0x0", 
+                            "p1": "471304", 
+                            "p4": "4", 
+                            "p5": "0"
+                        }, 
+                        "time": 1780591886.241981
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.242023 iran.sparc@7f4413885d03[2094] mmap2(0x7f4413331000, 335872, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 8192) = 0x7f4413331000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f4413331000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f4413885d03", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_EXEC", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE", 
+                            "p0": "0x7f4413331000", 
+                            "p1": "335872", 
+                            "p4": "4", 
+                            "p5": "8192"
+                        }, 
+                        "time": 1780591886.242023
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.242072 iran.sparc@7f4413885d03[2094] mmap2(0x7f4413383000, 122880, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 344064) = 0x7f4413383000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f4413383000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f4413885d03", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE", 
+                            "p0": "0x7f4413383000", 
+                            "p1": "122880", 
+                            "p4": "4", 
+                            "p5": "344064"
+                        }, 
+                        "time": 1780591886.242072
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.242115 iran.sparc@7f4413885d03[2094] mmap2(0x7f44133a1000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 462848) = 0x7f44133a1000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f44133a1000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f4413885d03", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_WRITE", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE", 
+                            "p0": "0x7f44133a1000", 
+                            "p1": "8192", 
+                            "p4": "4", 
+                            "p5": "462848"
+                        }, 
+                        "time": 1780591886.242115
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.242169 iran.sparc@7f44138859f7[2094] close(4) = 0\n", 
+                        "api": "close", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f44138859f7", 
+                        "arguments": {
+                            "p0": "4"
+                        }, 
+                        "time": 1780591886.242169
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.243596 iran.sparc@7f4413885d03[2094] mmap2(0x0, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f441332d000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f441332d000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f4413885d03", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_WRITE", 
+                            "p3": "MAP_PRIVATE|MAP_ANONYMOUS", 
+                            "p0": "0x0", 
+                            "p1": "8192", 
+                            "p4": "-1", 
+                            "p5": "0"
+                        }, 
+                        "time": 1780591886.243596
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.243661 iran.sparc@7f441386af30[2094] arch_prctl(ARCH_SET_FS, 139930356605248) = 0\n", 
+                        "api": "arch_prctl", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f441386af30", 
+                        "arguments": {
+                            "p0": "ARCH_SET_FS", 
+                            "p1": "139930356605248"
+                        }, 
+                        "time": 1780591886.243661
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.244418 iran.sparc@7f4413885db7[2094] mprotect(0x7f441358a000, 12288, PROT_READ) = 0\n", 
+                        "api": "mprotect", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f4413885db7", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p0": "0x7f441358a000", 
+                            "p1": "12288"
+                        }, 
+                        "time": 1780591886.244418
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.244484 iran.sparc@7f4413885db7[2094] mprotect(0x7f44135b1000, 4096, PROT_READ) = 0\n", 
+                        "api": "mprotect", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f4413885db7", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p0": "0x7f44135b1000", 
+                            "p1": "4096"
+                        }, 
+                        "time": 1780591886.244484
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.244552 iran.sparc@7f4413885db7[2094] mprotect(0x7f44133a1000, 4096, PROT_READ) = 0\n", 
+                        "api": "mprotect", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f4413885db7", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p0": "0x7f44133a1000", 
+                            "p1": "4096"
+                        }, 
+                        "time": 1780591886.244552
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.244601 iran.sparc@7f4413885db7[2094] mprotect(0x7f44133a7000, 4096, PROT_READ) = 0\n", 
+                        "api": "mprotect", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f4413885db7", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p0": "0x7f44133a7000", 
+                            "p1": "4096"
+                        }, 
+                        "time": 1780591886.244601
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.244645 iran.sparc@7f4413885db7[2094] mprotect(0x7f44135cf000, 4096, PROT_READ) = 0\n", 
+                        "api": "mprotect", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f4413885db7", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p0": "0x7f44135cf000", 
+                            "p1": "4096"
+                        }, 
+                        "time": 1780591886.244645
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.244718 iran.sparc@7f4413885db7[2094] mprotect(0x7f441371d000, 4096, PROT_READ) = 0\n", 
+                        "api": "mprotect", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f4413885db7", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p0": "0x7f441371d000", 
+                            "p1": "4096"
+                        }, 
+                        "time": 1780591886.244718
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.244764 iran.sparc@7f4413885db7[2094] mprotect(0x7f4413728000, 4096, PROT_READ) = 0\n", 
+                        "api": "mprotect", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f4413885db7", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p0": "0x7f4413728000", 
+                            "p1": "4096"
+                        }, 
+                        "time": 1780591886.244764
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.245064 iran.sparc@7f4413885db7[2094] mprotect(0x7f4413848000, 4096, PROT_READ) = 0\n", 
+                        "api": "mprotect", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f4413885db7", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p0": "0x7f4413848000", 
+                            "p1": "4096"
+                        }, 
+                        "time": 1780591886.245064
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.245131 iran.sparc@7f4413885db7[2094] mprotect(0x7f441384f000, 4096, PROT_READ) = 0\n", 
+                        "api": "mprotect", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f4413885db7", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p0": "0x7f441384f000", 
+                            "p1": "4096"
+                        }, 
+                        "time": 1780591886.245131
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.251755 iran.sparc@7f4413885db7[2094] mprotect(0x55c9c1956000, 303104, PROT_READ) = 0\n", 
+                        "api": "mprotect", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f4413885db7", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p0": "0x55c9c1956000", 
+                            "p1": "303104"
+                        }, 
+                        "time": 1780591886.251755
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.251824 iran.sparc@7f4413885db7[2094] mprotect(0x7f4413893000, 4096, PROT_READ) = 0\n", 
+                        "api": "mprotect", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f4413885db7", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p0": "0x7f4413893000", 
+                            "p1": "4096"
+                        }, 
+                        "time": 1780591886.251824
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.251872 iran.sparc@7f4413885d97[2094] munmap(0x7f4413853000, 88858) = 0\n", 
+                        "api": "munmap", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f4413885d97", 
+                        "arguments": {
+                            "p0": "0x7f4413853000", 
+                            "p1": "88858"
+                        }, 
+                        "time": 1780591886.251872
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.251944 iran.sparc@7f441359d8df[2094] set_tid_address(0x7f441332e410) = 2094\n", 
+                        "api": "set_tid_address", 
+                        "return_value": "2094", 
+                        "category": "process", 
+                        "instruction_pointer": "7f441359d8df", 
+                        "arguments": {
+                            "p0": "0x7f441332e410"
+                        }, 
+                        "time": 1780591886.251944
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.251985 iran.sparc@7f441359d94a[2094] set_robust_list(0x7f441332e420, 24) = 0\n", 
+                        "api": "set_robust_list", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f441359d94a", 
+                        "arguments": {
+                            "p0": "0x7f441332e420", 
+                            "p1": "24"
+                        }, 
+                        "time": 1780591886.251985
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.252035 iran.sparc@7f44135aa010[2094] rt_sigaction(0x20, {0x7f441359d6c0, SA_SIGINFO|SA_RESTORER, 0x7f44135a9f40, [EMPTY]}, 0x0, 8) = 0\n", 
+                        "api": "rt_sigaction", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f44135aa010", 
+                        "arguments": {
+                            "p2": "0x0", 
+                            "p3": "8", 
+                            "p0": "0x20", 
+                            "p1": [
+                                "0x7f441359d6c0", 
+                                "SA_SIGINFO|SA_RESTORER", 
+                                "0x7f44135a9f40", 
+                                [
+                                    "EMPTY]"
+                                ]
+                            ]
+                        }, 
+                        "time": 1780591886.252035
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.252078 iran.sparc@7f44135aa010[2094] rt_sigaction(0x21, {0x7f441359d760, SA_RESTART|SA_SIGINFO|SA_RESTORER, 0x7f44135a9f40, [EMPTY]}, 0x0, 8) = 0\n", 
+                        "api": "rt_sigaction", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f44135aa010", 
+                        "arguments": {
+                            "p2": "0x0", 
+                            "p3": "8", 
+                            "p0": "0x21", 
+                            "p1": [
+                                "0x7f441359d760", 
+                                "SA_RESTART|SA_SIGINFO|SA_RESTORER", 
+                                "0x7f44135a9f40", 
+                                [
+                                    "EMPTY]"
+                                ]
+                            ]
+                        }, 
+                        "time": 1780591886.252078
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.252118 iran.sparc@7f441359da19[2094] rt_sigprocmask(SIG_UNBLOCK, [EMPTY], 0x0, 8) = 0\n", 
+                        "api": "rt_sigprocmask", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f441359da19", 
+                        "arguments": {
+                            "p2": "0x0", 
+                            "p3": "8", 
+                            "p0": "SIG_UNBLOCK", 
+                            "p1": [
+                                "EMPTY"
+                            ]
+                        }, 
+                        "time": 1780591886.252118
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.252167 iran.sparc@7f44134bbdf0[2094] prlimit64(0, RLIMIT_STACK, NULL, 0x7ffc99145250) = 0\n", 
+                        "api": "prlimit64", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f44134bbdf0", 
+                        "arguments": {
+                            "p2": "NULL", 
+                            "p3": "0x7ffc99145250", 
+                            "p0": "0", 
+                            "p1": "RLIMIT_STACK"
+                        }, 
+                        "time": 1780591886.252167
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.252391 iran.sparc@7f44134bc2f7[2094] brk(0x0) = 94325075980288\n", 
+                        "api": "brk", 
+                        "return_value": "94325075980288", 
+                        "category": "process", 
+                        "instruction_pointer": "7f44134bc2f7", 
+                        "arguments": {
+                            "p0": "0x0"
+                        }, 
+                        "time": 1780591886.252391
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.252429 iran.sparc@7f44134bc2f7[2094] brk(0x55c9c4a7c000) = 94325076115456\n", 
+                        "api": "brk", 
+                        "return_value": "94325076115456", 
+                        "category": "process", 
+                        "instruction_pointer": "7f44134bc2f7", 
+                        "arguments": {
+                            "p0": "0x55c9c4a7c000"
+                        }, 
+                        "time": 1780591886.252429
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.255557 iran.sparc@7f44135a6b86[2094] rt_sigprocmask(SIG_SETMASK, [SIGHUP|SIGINT|SIGQUIT|SIGILL|SIGTRAP|SIGABRT|SIGBUS|SIGFPE|SIGKILL|SIGUSR1|SIGSEGV|SIGPIPE|SIGUSR2|SIGALRM|SIGTERM|SIGCHLD|SIGCONT|SIGSTOP|SIGTSTP|SIGTTIN|SIGTTOU|SIGURG|SIGXCPU|SIGXFSZ|SIGVTALRM|SIGPROF|SIGWINCH|SIGIO/SIGPOLL|SIGPWR|SIGSYS], 0x7ffc991451a0, 8) = 0\n", 
+                        "api": "rt_sigprocmask", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f44135a6b86", 
+                        "arguments": {
+                            "p2": "0x7ffc991451a0", 
+                            "p3": "8", 
+                            "p0": "SIG_SETMASK", 
+                            "p1": [
+                                "SIGHUP|SIGINT|SIGQUIT|SIGILL|SIGTRAP|SIGABRT|SIGBUS|SIGFPE|SIGKILL|SIGUSR1|SIGSEGV|SIGPIPE|SIGUSR2|SIGALRM|SIGTERM|SIGCHLD|SIGCONT|SIGSTOP|SIGTSTP|SIGTTIN|SIGTTOU|SIGURG|SIGXCPU|SIGXFSZ|SIGVTALRM|SIGPROF|SIGWINCH|SIGIO/SIGPOLL|SIGPWR|SIGSYS"
+                            ]
+                        }, 
+                        "time": 1780591886.255557
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.256658 iran.sparc@7f44134c04c3[2094] mmap2(0x0, 8392704, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_STACK, -1, 0) = 0x7f4412b2c000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f4412b2c000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f44134c04c3", 
+                        "arguments": {
+                            "p2": "PROT_NONE", 
+                            "p3": "MAP_PRIVATE|MAP_ANONYMOUS|MAP_STACK", 
+                            "p0": "0x0", 
+                            "p1": "8392704", 
+                            "p4": "-1", 
+                            "p5": "0"
+                        }, 
+                        "time": 1780591886.256658
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.256728 iran.sparc@7f44134c0597[2094] mprotect(0x7f4412b2d000, 8388608, PROT_READ|PROT_WRITE) = 0\n", 
+                        "api": "mprotect", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f44134c0597", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_WRITE", 
+                            "p0": "0x7f4412b2d000", 
+                            "p1": "8388608"
+                        }, 
+                        "time": 1780591886.256728
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.256799 iran.sparc@7f44134c6b11[2094] clone(CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, 0x7f441332bf70, 0x7f441332c9d0, 0x7f441332c9d0) = 2095\n", 
+                        "api": "clone", 
+                        "return_value": "2095", 
+                        "category": "process", 
+                        "instruction_pointer": "7f44134c6b11", 
+                        "arguments": {
+                            "p2": "0x7f441332c9d0", 
+                            "p3": "0x7f441332c9d0", 
+                            "p0": "CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID", 
+                            "p1": "0x7f441332bf70"
+                        }, 
+                        "time": 1780591886.256799
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.256906 iran.sparc@7f44135a6b86[2094] rt_sigprocmask(SIG_SETMASK, [EMPTY], 0x0, 8) = 0\n", 
+                        "api": "rt_sigprocmask", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f44135a6b86", 
+                        "arguments": {
+                            "p2": "0x0", 
+                            "p3": "8", 
+                            "p0": "SIG_SETMASK", 
+                            "p1": [
+                                "EMPTY"
+                            ]
+                        }, 
+                        "time": 1780591886.256906
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.259569 iran.sparc@7f44134bbdf0[2094] prlimit64(0, RLIMIT_STACK, NULL, 0x7ffc99144d60) = 0\n", 
+                        "api": "prlimit64", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f44134bbdf0", 
+                        "arguments": {
+                            "p2": "NULL", 
+                            "p3": "0x7ffc99144d60", 
+                            "p0": "0", 
+                            "p1": "RLIMIT_STACK"
+                        }, 
+                        "time": 1780591886.259569
+                    }, 
+                    {
+                        "status": "ENOENT", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.259661 iran.sparc@7f44134bb5c1[2094] openat(AT_FDCWD, \"/etc/qemu-binfmt/sparc\", O_RDONLY|O_NONBLOCK|O_DIRECTORY|O_CLOEXEC) = -2 (ENOENT)\n", 
+                        "api": "openat", 
+                        "return_value": "-2", 
+                        "category": "process", 
+                        "instruction_pointer": "7f44134bb5c1", 
+                        "arguments": {
+                            "p2": "O_RDONLY|O_NONBLOCK|O_DIRECTORY|O_CLOEXEC", 
+                            "p0": "AT_FDCWD", 
+                            "p1": "/etc/qemu-binfmt/sparc"
+                        }, 
+                        "time": 1780591886.259661
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.259729 iran.sparc@7f441348a247[2094] uname(0x7ffc991449d0) = 0\n", 
+                        "api": "uname", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f441348a247", 
+                        "arguments": {
+                            "p0": "0x7ffc991449d0"
+                        }, 
+                        "time": 1780591886.259729
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.259776 iran.sparc@7f44135a9337[2094] lseek(3, 0, SEEK_SET) = 0\n", 
+                        "api": "lseek", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f44135a9337", 
+                        "arguments": {
+                            "p2": "SEEK_SET", 
+                            "p0": "3", 
+                            "p1": "0"
+                        }, 
+                        "time": 1780591886.259776
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.259819 iran.sparc@7f44135a8d94[2094] read(3, 0x7ffc99144cc0, 52) = 52\n", 
+                        "api": "read", 
+                        "return_value": "52", 
+                        "category": "process", 
+                        "instruction_pointer": "7f44135a8d94", 
+                        "arguments": {
+                            "p2": "52", 
+                            "p0": "3", 
+                            "p1": "0x7ffc99144cc0"
+                        }, 
+                        "time": 1780591886.259819
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.259862 iran.sparc@7f44135a9337[2094] lseek(3, 0, SEEK_SET) = 0\n", 
+                        "api": "lseek", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f44135a9337", 
+                        "arguments": {
+                            "p2": "SEEK_SET", 
+                            "p0": "3", 
+                            "p1": "0"
+                        }, 
+                        "time": 1780591886.259862
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.261486 iran.sparc@7f44134c04c3[2094] mmap2(0x0, 528384, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f4412aab000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f4412aab000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f44134c04c3", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_WRITE", 
+                            "p3": "MAP_PRIVATE|MAP_ANONYMOUS", 
+                            "p0": "0x0", 
+                            "p1": "528384", 
+                            "p4": "-1", 
+                            "p5": "0"
+                        }, 
+                        "time": 1780591886.261486
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.262035 iran.sparc@7f44134c0597[2094] mprotect(0x55c9c19b3000, 33550336, PROT_READ|PROT_WRITE|PROT_EXEC) = 0\n", 
+                        "api": "mprotect", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f44134c0597", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_WRITE|PROT_EXEC", 
+                            "p0": "0x55c9c19b3000", 
+                            "p1": "33550336"
+                        }, 
+                        "time": 1780591886.262035
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.262093 iran.sparc@7f44134c0667[2094] madvise(0x55c9c19b3000, 33550336, MADV_HUGEPAGE) = 0\n", 
+                        "api": "madvise", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f44134c0667", 
+                        "arguments": {
+                            "p2": "MADV_HUGEPAGE", 
+                            "p0": "0x55c9c19b3000", 
+                            "p1": "33550336"
+                        }, 
+                        "time": 1780591886.262093
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.262314 iran.sparc@7f44134c04c3[2094] mmap2(0x0, 4294963200, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE, -1, 0) = 0x7f430c001000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f430c001000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f44134c04c3", 
+                        "arguments": {
+                            "p2": "PROT_NONE", 
+                            "p3": "MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE", 
+                            "p0": "0x0", 
+                            "p1": "4294963200", 
+                            "p4": "-1", 
+                            "p5": "0"
+                        }, 
+                        "time": 1780591886.262314
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.262371 iran.sparc@7f44134b5d59[2094] openat(AT_FDCWD, \"/proc/sys/vm/mmap_min_addr\", O_RDONLY) = 4\n", 
+                        "api": "openat", 
+                        "return_value": "4", 
+                        "category": "process", 
+                        "instruction_pointer": "7f44134b5d59", 
+                        "arguments": {
+                            "p2": "O_RDONLY", 
+                            "p0": "AT_FDCWD", 
+                            "p1": "/proc/sys/vm/mmap_min_addr"
+                        }, 
+                        "time": 1780591886.262371
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.262432 iran.sparc@7f44134b5613[2094] fstat(4, 0x7ffc991443d0) = 0\n", 
+                        "api": "fstat", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f44134b5613", 
+                        "arguments": {
+                            "p0": "4", 
+                            "p1": "0x7ffc991443d0"
+                        }, 
+                        "time": 1780591886.262432
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.262475 iran.sparc@7f44134b5fb4[2094] read(4, 0x55c9c4a683d0, 1024) = 6\n", 
+                        "api": "read", 
+                        "return_value": "6", 
+                        "category": "process", 
+                        "instruction_pointer": "7f44134b5fb4", 
+                        "arguments": {
+                            "p2": "1024", 
+                            "p0": "4", 
+                            "p1": "0x55c9c4a683d0"
+                        }, 
+                        "time": 1780591886.262475
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.262527 iran.sparc@7f44134bb3f7[2094] close(4) = 0\n", 
+                        "api": "close", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f44134bb3f7", 
+                        "arguments": {
+                            "p0": "4"
+                        }, 
+                        "time": 1780591886.262527
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.262583 iran.sparc@7f44134c02e9[2094] gettid() = 2094\n", 
+                        "api": "gettid", 
+                        "return_value": "2094", 
+                        "category": "process", 
+                        "instruction_pointer": "7f44134c02e9", 
+                        "arguments": {}, 
+                        "time": 1780591886.262583
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.262624 iran.sparc@7f44134b5613[2094] fstat(3, 0x7ffc99144c40) = 0\n", 
+                        "api": "fstat", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f44134b5613", 
+                        "arguments": {
+                            "p0": "3", 
+                            "p1": "0x7ffc99144c40"
+                        }, 
+                        "time": 1780591886.262624
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.262679 iran.sparc@7f441348b717[2094] geteuid() = 0\n", 
+                        "api": "geteuid", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f441348b717", 
+                        "arguments": {}, 
+                        "time": 1780591886.262679
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.262718 iran.sparc@7f441348b737[2094] getegid() = 0\n", 
+                        "api": "getegid", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f441348b737", 
+                        "arguments": {}, 
+                        "time": 1780591886.262718
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.262757 iran.sparc@7f44135a8d94[2094] read(3, 0x7ffc99144e40, 1024) = 1024\n", 
+                        "api": "read", 
+                        "return_value": "1024", 
+                        "category": "process", 
+                        "instruction_pointer": "7f44135a8d94", 
+                        "arguments": {
+                            "p2": "1024", 
+                            "p0": "3", 
+                            "p1": "0x7ffc99144e40"
+                        }, 
+                        "time": 1780591886.262757
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.262809 iran.sparc@7f44134c04c3[2094] mmap2(0x7f430c011000, 12288, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED, 3, 0) = 0x7f430c011000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f430c011000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f44134c04c3", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_EXEC", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED", 
+                            "p0": "0x7f430c011000", 
+                            "p1": "12288", 
+                            "p4": "3", 
+                            "p5": "0"
+                        }, 
+                        "time": 1780591886.262809
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.262866 iran.sparc@7f44134bc2f7[2094] brk(0x55c9c4a9d000) = 94325076250624\n", 
+                        "api": "brk", 
+                        "return_value": "94325076250624", 
+                        "category": "process", 
+                        "instruction_pointer": "7f44134bc2f7", 
+                        "arguments": {
+                            "p0": "0x55c9c4a9d000"
+                        }, 
+                        "time": 1780591886.262866
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.262931 iran.sparc@7f44134c04c3[2094] mmap2(0x7f430c023000, 4096, PROT_READ|PROT_WRITE|PROT_EXEC, MAP_PRIVATE|MAP_FIXED, 3, 8192) = 0x7f430c023000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f430c023000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f44134c04c3", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_WRITE|PROT_EXEC", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED", 
+                            "p0": "0x7f430c023000", 
+                            "p1": "4096", 
+                            "p4": "3", 
+                            "p5": "8192"
+                        }, 
+                        "time": 1780591886.262931
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.262990 iran.sparc@7f44135a8e27[2094] close(3) = 0\n", 
+                        "api": "close", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f44135a8e27", 
+                        "arguments": {
+                            "p0": "3"
+                        }, 
+                        "time": 1780591886.26299
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.263080 iran.sparc@7f44134c04c3[2094] mmap2(0x7f440b7ff000, 8392704, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f440b7ff000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f440b7ff000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f44134c04c3", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_WRITE", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS", 
+                            "p0": "0x7f440b7ff000", 
+                            "p1": "8392704", 
+                            "p4": "-1", 
+                            "p5": "0"
+                        }, 
+                        "time": 1780591886.26308
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.263249 iran.sparc@7f44134c0597[2094] mprotect(0x7f440b7ff000, 4096, PROT_NONE) = 0\n", 
+                        "api": "mprotect", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f44134c0597", 
+                        "arguments": {
+                            "p2": "PROT_NONE", 
+                            "p0": "0x7f440b7ff000", 
+                            "p1": "4096"
+                        }, 
+                        "time": 1780591886.263249
+                    }, 
+                    {
+                        "status": "ENOENT", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.263318 iran.sparc@7f44135a955e[2094] openat(AT_FDCWD, \"/lib/ld-uClibc.so.0\", O_RDONLY) = -2 (ENOENT)\n", 
+                        "api": "openat", 
+                        "return_value": "-2", 
+                        "category": "process", 
+                        "instruction_pointer": "7f44135a955e", 
+                        "arguments": {
+                            "p2": "O_RDONLY", 
+                            "p0": "AT_FDCWD", 
+                            "p1": "/lib/ld-uClibc.so.0"
+                        }, 
+                        "time": 1780591886.263318
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.263614 iran.sparc@7f44134b6057[2094] write(2, \"/lib/ld-uClibc.so.0: No such file or directory\\n\", 47) = 47\n", 
+                        "api": "write", 
+                        "return_value": "47", 
+                        "category": "process", 
+                        "instruction_pointer": "7f44134b6057", 
+                        "arguments": {
+                            "p2": "47", 
+                            "p0": "2", 
+                            "p1": "/lib/ld-uClibc.so.0: No such file or directory\n"
+                        }, 
+                        "time": 1780591886.263614
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.263694 iran.sparc@7f441348a926[2094] exit_group(-1)\n", 
+                        "api": "exit_group", 
+                        "return_value": "", 
+                        "category": "process", 
+                        "instruction_pointer": "7f441348a926", 
+                        "arguments": {
+                            "p0": "-1"
+                        }, 
+                        "time": 1780591886.263694
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2094, 
+                        "raw": "Thu Jun  4 16:51:26 2026.263741 iran.sparc@7f441348a926[2094] futex(0x7f441332e410, FUTEX_WAKE, 1) = 0\n", 
+                        "api": "futex", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f441348a926", 
+                        "arguments": {
+                            "p2": "1", 
+                            "p0": "0x7f441332e410", 
+                            "p1": "FUTEX_WAKE"
+                        }, 
+                        "time": 1780591886.263741
+                    }
+                ], 
+                "pid": 2094, 
+                "process_name": "iran.sparc", 
+                "command_line": "/tmp/iran.sparc", 
+                "first_seen": 1780591886.232803, 
+                "ppid": -1, 
+                "type": "process"
+            }, 
+            {
+                "calls": [
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2095, 
+                        "raw": "Thu Jun  4 16:51:26 2026.257050 iran.sparc@7f441359f117[2095] set_robust_list(0x7f441332c9e0, 24) = 0\n", 
+                        "api": "set_robust_list", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f441359f117", 
+                        "arguments": {
+                            "p0": "0x7f441332c9e0", 
+                            "p1": "24"
+                        }, 
+                        "time": 1780591886.25705
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2095, 
+                        "raw": "Thu Jun  4 16:51:26 2026.257116 iran.sparc@7f44134c04c3[2095] mmap2(0x0, 134217728, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE, -1, 0) = 0x7f440ab2c000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f440ab2c000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f44134c04c3", 
+                        "arguments": {
+                            "p2": "PROT_NONE", 
+                            "p3": "MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE", 
+                            "p0": "0x0", 
+                            "p1": "134217728", 
+                            "p4": "-1", 
+                            "p5": "0"
+                        }, 
+                        "time": 1780591886.257116
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2095, 
+                        "raw": "Thu Jun  4 16:51:26 2026.257174 iran.sparc@7f44134c0567[2095] munmap(0x7f440ab2c000, 21839872) = 0\n", 
+                        "api": "munmap", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f44134c0567", 
+                        "arguments": {
+                            "p0": "0x7f440ab2c000", 
+                            "p1": "21839872"
+                        }, 
+                        "time": 1780591886.257174
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2095, 
+                        "raw": "Thu Jun  4 16:51:26 2026.257233 iran.sparc@7f44134c0567[2095] munmap(0x7f4410000000, 45268992) = 0\n", 
+                        "api": "munmap", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f44134c0567", 
+                        "arguments": {
+                            "p0": "0x7f4410000000", 
+                            "p1": "45268992"
+                        }, 
+                        "time": 1780591886.257233
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2095, 
+                        "raw": "Thu Jun  4 16:51:26 2026.257283 iran.sparc@7f44134c0597[2095] mprotect(0x7f440c000000, 135168, PROT_READ|PROT_WRITE) = 0\n", 
+                        "api": "mprotect", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f44134c0597", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_WRITE", 
+                            "p0": "0x7f440c000000", 
+                            "p1": "135168"
+                        }, 
+                        "time": 1780591886.257283
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "iran.sparc", 
+                        "pid": 2095, 
+                        "raw": "Thu Jun  4 16:51:26 2026.257351 iran.sparc@7f44135a9440[2095] nanosleep([0.010000000], 0x7f441332bdc0) = -516\n", 
+                        "api": "nanosleep", 
+                        "return_value": "-516", 
+                        "category": "process", 
+                        "instruction_pointer": "7f44135a9440", 
+                        "arguments": {
+                            "p0": [
+                                "0.010000000"
+                            ], 
+                            "p1": "0x7f441332bdc0"
+                        }, 
+                        "time": 1780591886.257351
+                    }
+                ], 
+                "pid": 2095, 
+                "process_name": "iran.sparc", 
+                "command_line": "", 
+                "first_seen": 1780591886.25705, 
+                "ppid": 2094, 
+                "type": "process"
+            }
+        ], 
+        "processtree": [
+            {
+                "track": true, 
+                "pid": 2094, 
+                "process_name": "iran.sparc", 
+                "command_line": "/tmp/iran.sparc", 
+                "first_seen": 1780591886.232803, 
+                "ppid": -1, 
+                "children": [
+                    {
+                        "track": true, 
+                        "pid": 2095, 
+                        "process_name": "iran.sparc", 
+                        "command_line": "", 
+                        "first_seen": 1780591886.25705, 
+                        "ppid": 2094, 
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    }, 
+    "debug": {
+        "action": [], 
+        "dbgview": [], 
+        "errors": [], 
+        "log": [
+            "2026-06-04 16:51:16,010 [root] DEBUG: Starting analyzer from: /tmp/tmpQXihCC\n", 
+            "2026-06-04 16:51:16,010 [root] DEBUG: Storing results at: /tmp/mZNHhRp\n", 
+            "2026-06-04 16:51:18,099 [modules.auxiliary.filecollector] INFO: FileCollector started v0.08\n", 
+            "2026-06-04 16:51:18,102 [modules.auxiliary.human] INFO: Human started v0.02\n", 
+            "2026-06-04 16:51:18,105 [modules.auxiliary.screenshots] INFO: Screenshots started v0.03\n", 
+            "2026-06-04 16:51:26,227 [lib.core.packages] INFO: Process startup took 8.11 seconds\n", 
+            "2026-06-04 16:51:26,229 [root] INFO: Added new process to list with pid: 2082\n", 
+            "2026-06-04 16:51:35,243 [root] INFO: Process with pid 2082 has terminated\n", 
+            "2026-06-04 16:51:35,244 [root] INFO: Process list is empty, terminating analysis.\n", 
+            "2026-06-04 16:51:38,307 [lib.core.packages] INFO: Package requested stop\n", 
+            "2026-06-04 16:51:38,309 [lib.core.packages] WARNING: Exception uploading log: [Errno 3] No such process\n"
+        ], 
+        "cuckoo": [
+            "2026-06-04 16:51:24,580 [cuckoo.core.scheduler] DEBUG: Task #7569809: no machine available yet\n", 
+            "2026-06-04 16:51:25,628 [cuckoo.core.scheduler] DEBUG: Task #7569809: no machine available yet\n", 
+            "2026-06-04 16:51:26,704 [cuckoo.core.scheduler] DEBUG: Task #7569809: no machine available yet\n", 
+            "2026-06-04 16:51:27,779 [cuckoo.core.scheduler] DEBUG: Task #7569809: no machine available yet\n", 
+            "2026-06-04 16:51:28,857 [cuckoo.core.scheduler] DEBUG: Task #7569809: no machine available yet\n", 
+            "2026-06-04 16:51:29,953 [cuckoo.core.scheduler] DEBUG: Task #7569809: no machine available yet\n", 
+            "2026-06-04 16:51:31,015 [cuckoo.core.scheduler] DEBUG: Task #7569809: no machine available yet\n", 
+            "2026-06-04 16:51:32,065 [cuckoo.core.scheduler] DEBUG: Task #7569809: no machine available yet\n", 
+            "2026-06-04 16:51:33,133 [cuckoo.core.scheduler] DEBUG: Task #7569809: no machine available yet\n", 
+            "2026-06-04 16:51:34,162 [cuckoo.core.scheduler] DEBUG: Task #7569809: no machine available yet\n", 
+            "2026-06-04 16:51:35,187 [cuckoo.core.scheduler] DEBUG: Task #7569809: no machine available yet\n", 
+            "2026-06-04 16:51:36,212 [cuckoo.core.scheduler] DEBUG: Task #7569809: no machine available yet\n", 
+            "2026-06-04 16:51:37,230 [cuckoo.core.scheduler] DEBUG: Task #7569809: no machine available yet\n", 
+            "2026-06-04 16:51:38,324 [cuckoo.core.scheduler] DEBUG: Task #7569809: no machine available yet\n", 
+            "2026-06-04 16:51:39,376 [cuckoo.core.scheduler] DEBUG: Task #7569809: no machine available yet\n", 
+            "2026-06-04 16:51:40,442 [cuckoo.core.scheduler] DEBUG: Task #7569809: no machine available yet\n", 
+            "2026-06-04 16:51:41,497 [cuckoo.core.scheduler] DEBUG: Task #7569809: no machine available yet\n", 
+            "2026-06-04 16:51:42,553 [cuckoo.core.scheduler] DEBUG: Task #7569809: no machine available yet\n", 
+            "2026-06-04 16:51:43,624 [cuckoo.core.scheduler] DEBUG: Task #7569809: no machine available yet\n", 
+            "2026-06-04 16:51:44,844 [cuckoo.core.scheduler] DEBUG: Task #7569809: no machine available yet\n", 
+            "2026-06-04 16:51:45,924 [cuckoo.core.scheduler] DEBUG: Task #7569809: no machine available yet\n", 
+            "2026-06-04 16:51:47,004 [cuckoo.core.scheduler] DEBUG: Task #7569809: no machine available yet\n", 
+            "2026-06-04 16:51:48,075 [cuckoo.core.scheduler] DEBUG: Task #7569809: no machine available yet\n", 
+            "2026-06-04 16:51:49,203 [cuckoo.core.scheduler] DEBUG: Task #7569809: no machine available yet\n", 
+            "2026-06-04 16:51:50,285 [cuckoo.core.scheduler] DEBUG: Task #7569809: no machine available yet\n", 
+            "2026-06-04 16:51:51,357 [cuckoo.core.scheduler] DEBUG: Task #7569809: no machine available yet\n", 
+            "2026-06-04 16:51:52,437 [cuckoo.core.scheduler] DEBUG: Task #7569809: no machine available yet\n", 
+            "2026-06-04 16:51:53,491 [cuckoo.core.scheduler] DEBUG: Task #7569809: no machine available yet\n", 
+            "2026-06-04 16:51:54,516 [cuckoo.core.scheduler] DEBUG: Task #7569809: no machine available yet\n", 
+            "2026-06-04 16:51:55,534 [cuckoo.core.scheduler] DEBUG: Task #7569809: no machine available yet\n", 
+            "2026-06-04 16:51:56,580 [cuckoo.core.scheduler] DEBUG: Task #7569809: no machine available yet\n", 
+            "2026-06-04 16:51:57,623 [cuckoo.core.scheduler] DEBUG: Task #7569809: no machine available yet\n", 
+            "2026-06-04 16:51:58,669 [cuckoo.core.scheduler] DEBUG: Task #7569809: no machine available yet\n", 
+            "2026-06-04 16:51:59,709 [cuckoo.core.scheduler] DEBUG: Task #7569809: no machine available yet\n", 
+            "2026-06-04 16:52:00,751 [cuckoo.core.scheduler] DEBUG: Task #7569809: no machine available yet\n", 
+            "2026-06-04 16:52:01,790 [cuckoo.core.scheduler] DEBUG: Task #7569809: no machine available yet\n", 
+            "2026-06-04 16:52:02,830 [cuckoo.core.scheduler] DEBUG: Task #7569809: no machine available yet\n", 
+            "2026-06-04 16:52:03,866 [cuckoo.core.scheduler] DEBUG: Task #7569809: no machine available yet\n", 
+            "2026-06-04 16:52:04,908 [cuckoo.core.scheduler] DEBUG: Task #7569809: no machine available yet\n", 
+            "2026-06-04 16:52:05,941 [cuckoo.core.scheduler] DEBUG: Task #7569809: no machine available yet\n", 
+            "2026-06-04 16:52:06,980 [cuckoo.core.scheduler] DEBUG: Task #7569809: no machine available yet\n", 
+            "2026-06-04 16:52:08,013 [cuckoo.core.scheduler] DEBUG: Task #7569809: no machine available yet\n", 
+            "2026-06-04 16:52:09,050 [cuckoo.core.scheduler] DEBUG: Task #7569809: no machine available yet\n", 
+            "2026-06-04 16:52:10,101 [cuckoo.core.scheduler] DEBUG: Task #7569809: no machine available yet\n", 
+            "2026-06-04 16:52:11,156 [cuckoo.core.scheduler] DEBUG: Task #7569809: no machine available yet\n", 
+            "2026-06-04 16:52:12,324 [cuckoo.core.scheduler] DEBUG: Task #7569809: no machine available yet\n", 
+            "2026-06-04 16:52:13,366 [cuckoo.core.scheduler] DEBUG: Task #7569809: no machine available yet\n", 
+            "2026-06-04 16:52:14,401 [cuckoo.core.scheduler] DEBUG: Task #7569809: no machine available yet\n", 
+            "2026-06-04 16:52:15,434 [cuckoo.core.scheduler] DEBUG: Task #7569809: no machine available yet\n", 
+            "2026-06-04 16:52:16,471 [cuckoo.core.scheduler] DEBUG: Task #7569809: no machine available yet\n", 
+            "2026-06-04 16:52:17,506 [cuckoo.core.scheduler] DEBUG: Task #7569809: no machine available yet\n", 
+            "2026-06-04 16:52:18,543 [cuckoo.core.scheduler] DEBUG: Task #7569809: no machine available yet\n", 
+            "2026-06-04 16:52:19,594 [cuckoo.core.scheduler] DEBUG: Task #7569809: no machine available yet\n", 
+            "2026-06-04 16:52:20,638 [cuckoo.core.scheduler] DEBUG: Task #7569809: no machine available yet\n", 
+            "2026-06-04 16:52:21,676 [cuckoo.core.scheduler] DEBUG: Task #7569809: no machine available yet\n", 
+            "2026-06-04 16:52:22,706 [cuckoo.core.scheduler] DEBUG: Task #7569809: no machine available yet\n", 
+            "2026-06-04 16:52:23,766 [cuckoo.core.scheduler] DEBUG: Task #7569809: no machine available yet\n", 
+            "2026-06-04 16:52:24,784 [cuckoo.core.scheduler] DEBUG: Task #7569809: no machine available yet\n", 
+            "2026-06-04 16:52:25,806 [cuckoo.core.scheduler] DEBUG: Task #7569809: no machine available yet\n", 
+            "2026-06-04 16:52:26,831 [cuckoo.core.scheduler] DEBUG: Task #7569809: no machine available yet\n", 
+            "2026-06-04 16:52:27,884 [cuckoo.core.scheduler] DEBUG: Task #7569809: no machine available yet\n", 
+            "2026-06-04 16:52:28,943 [cuckoo.core.scheduler] DEBUG: Task #7569809: no machine available yet\n", 
+            "2026-06-04 16:52:29,982 [cuckoo.core.scheduler] DEBUG: Task #7569809: no machine available yet\n", 
+            "2026-06-04 16:52:31,029 [cuckoo.core.scheduler] DEBUG: Task #7569809: no machine available yet\n", 
+            "2026-06-04 16:52:32,070 [cuckoo.core.scheduler] DEBUG: Task #7569809: no machine available yet\n", 
+            "2026-06-04 16:52:33,130 [cuckoo.core.scheduler] DEBUG: Task #7569809: no machine available yet\n", 
+            "2026-06-04 16:52:34,240 [cuckoo.core.scheduler] DEBUG: Task #7569809: no machine available yet\n", 
+            "2026-06-04 16:52:35,299 [cuckoo.core.scheduler] DEBUG: Task #7569809: no machine available yet\n", 
+            "2026-06-04 16:52:36,355 [cuckoo.core.scheduler] DEBUG: Task #7569809: no machine available yet\n", 
+            "2026-06-04 16:52:37,401 [cuckoo.core.scheduler] INFO: Task #7569809: acquired machine Ubuntu1904x643 (label=Ubuntu1904x643)\n", 
+            "2026-06-04 16:52:37,401 [cuckoo.core.resultserver] DEBUG: Now tracking machine 192.168.168.103 for task #7569809\n", 
+            "2026-06-04 16:52:37,846 [cuckoo.auxiliary.sniffer] INFO: Started sniffer with PID 1137239 (interface=vboxnet0, host=192.168.168.103)\n", 
+            "2026-06-04 16:52:37,871 [cuckoo.machinery.virtualbox] DEBUG: Starting vm Ubuntu1904x643\n", 
+            "2026-06-04 16:52:38,581 [cuckoo.machinery.virtualbox] DEBUG: Restoring virtual machine Ubuntu1904x643 to Snapshot\n", 
+            "2026-06-04 16:52:46,643 [cuckoo.core.guest] INFO: Starting analysis #7569809 on guest (id=Ubuntu1904x643, ip=192.168.168.103)\n", 
+            "2026-06-04 16:52:47,651 [cuckoo.core.guest] DEBUG: Ubuntu1904x643: not ready yet\n", 
+            "2026-06-04 16:52:52,770 [cuckoo.core.guest] INFO: Guest is running Cuckoo Agent 0.10 (id=Ubuntu1904x643, ip=192.168.168.103)\n", 
+            "2026-06-04 16:52:52,792 [cuckoo.core.guest] DEBUG: Uploading analyzer to guest (id=Ubuntu1904x643, ip=192.168.168.103, monitor=latest, size=73219)\n", 
+            "2026-06-04 16:52:52,979 [cuckoo.core.resultserver] DEBUG: Task #7569809: live log analysis.log initialized.\n", 
+            "2026-06-04 16:52:57,980 [cuckoo.core.resultserver] DEBUG: Task #7569809: File upload for 'shots/0001.jpg'\n", 
+            "2026-06-04 16:52:58,021 [cuckoo.core.resultserver] DEBUG: Task #7569809 uploaded file length: 171458\n", 
+            "2026-06-04 16:53:07,990 [cuckoo.core.guest] DEBUG: Ubuntu1904x643: analysis #7569809 still processing\n", 
+            "2026-06-04 16:53:15,300 [cuckoo.core.resultserver] DEBUG: Task #7569809: File upload for 'logs/all.stap'\n", 
+            "2026-06-04 16:53:15,303 [cuckoo.core.resultserver] DEBUG: Task #7569809 uploaded file length: 19133\n", 
+            "2026-06-04 16:53:23,139 [cuckoo.core.guest] DEBUG: Ubuntu1904x643: analysis #7569809 still processing\n", 
+            "2026-06-04 16:53:38,283 [cuckoo.core.guest] DEBUG: Ubuntu1904x643: analysis #7569809 still processing\n", 
+            "2026-06-04 16:53:53,386 [cuckoo.core.guest] INFO: Ubuntu1904x643: end of analysis reached!\n", 
+            "2026-06-04 16:53:53,404 [cuckoo.core.plugins] DEBUG: Stopped auxiliary module: Redsocks\n", 
+            "2026-06-04 16:53:53,433 [cuckoo.core.plugins] DEBUG: Stopped auxiliary module: Sniffer\n", 
+            "2026-06-04 16:53:54,808 [cuckoo.machinery.virtualbox] INFO: Successfully generated memory dump for virtual machine with label Ubuntu1904x643 to path /srv/cuckoo/cwd/storage/analyses/7569809/memory.dmp\n", 
+            "2026-06-04 16:53:54,809 [cuckoo.machinery.virtualbox] DEBUG: Stopping vm Ubuntu1904x643\n", 
+            "2026-06-04 16:54:02,916 [cuckoo.core.resultserver] DEBUG: Stopped tracking machine 192.168.168.103 for task #7569809\n", 
+            "2026-06-04 16:54:02,917 [cuckoo.core.resultserver] DEBUG: Cancel <Context for LOG> for task 7569809\n", 
+            "2026-06-04 16:54:03,263 [cuckoo.core.scheduler] DEBUG: Released database task #7569809\n", 
+            "2026-06-04 16:54:03,274 [cuckoo.core.scheduler] INFO: Task #7569809: analysis procedure completed\n"
+        ]
+    }, 
+    "misp": [
+        {
+            "info": "Integra\u00e7\u00e3o Axur IOC feed", 
+            "level": 4, 
+            "event_id": 5749606, 
+            "iocs": [
+                "47b7879cef0eab4ea2156d8f479485c3d5e8c9cc14094371a18a87a64a6fc2bc"
+            ], 
+            "url": "https://misp.cert.ee/events/view/5749606", 
+            "date": "2026-03-31"
+        }
+    ], 
+    "strings": [
+        "/lib/ld-uClibc.so.0", 
+        "libpthread.so.0", 
+        "connect", 
+        "pthread_create", 
+        "memcpy", 
+        "__deregister_frame_info", 
+        "sendto", 
+        "memset", 
+        "_Jv_RegisterClasses", 
+        "pthread_join", 
+        "__register_frame_info", 
+        "libc.so.0", 
+        "inet_pton", 
+        "snprintf", 
+        "__ctype_b", 
+        "usleep", 
+        "readlink", 
+        "socket", 
+        "select", 
+        "readdir", 
+        "getpgrp", 
+        "inet_addr", 
+        "setsockopt", 
+        "signal", 
+        "strncmp", 
+        "strncpy", 
+        "unlink", 
+        "sscanf", 
+        "killpg", 
+        "__uClibc_main", 
+        "opendir", 
+        "strcmp", 
+        "strcspn", 
+        "stderr", 
+        "fwrite", 
+        "access", 
+        "strlen", 
+        "setsid", 
+        "closedir", 
+        "_edata", 
+        "__bss_start", 
+        "Looks like you are a honeypot, this tool was made by t.me/flylegit!", 
+        "/proc/%s/comm", 
+        "t.me/flylegit", 
+        "/proc/self/exe", 
+        "82.25.63.213", 
+        "pong %s", 
+        "%31s %31s %7s %11s", 
+        "udpplain", 
+        "default", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        ".shstrtab", 
+        ".interp", 
+        ".dynsym", 
+        ".dynstr", 
+        ".rela.dyn", 
+        ".rela.plt", 
+        ".rodata", 
+        ".eh_frame", 
+        ".ctors", 
+        ".dtors", 
+        ".dynamic", 
+        ".comment"
+    ], 
+    "metadata": {
+        "output": {
+            "pcap": {
+                "basename": "dump.pcap", 
+                "sha256": "335a6bd0f25018903061af801b5600be4eadee2c37ada70f6dcb496cca90e9df", 
+                "dirname": ""
+            }
+        }
+    }
+}

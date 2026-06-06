@@ -1,0 +1,998 @@
+{
+    "info": {
+        "added": 1780560150.968552, 
+        "started": 1780560158.079711, 
+        "duration": 40, 
+        "ended": 1780560198.135737, 
+        "owner": null, 
+        "score": 10, 
+        "id": 7569591, 
+        "category": "file", 
+        "git": {
+            "head": "", 
+            "fetch_head": ""
+        }, 
+        "monitor": null, 
+        "package": "7z", 
+        "route": "internet", 
+        "custom": null, 
+        "machine": {
+            "status": "stopped", 
+            "name": "Ubuntu1904x643", 
+            "label": "Ubuntu1904x643", 
+            "platform": "linux", 
+            "manager": "VirtualBox", 
+            "started_on": "2026-06-04 08:02:38", 
+            "shutdown_on": "2026-06-04 08:03:17"
+        }, 
+        "platform": null, 
+        "version": "2.0.7", 
+        "options": "procmemdump=yes,remotecontrol=yes,route=internet"
+    }, 
+    "signatures": [
+        {
+            "families": [], 
+            "description": "File has been identified by 9 AntiVirus engine on IRMA as malicious", 
+            "severity": 60, 
+            "ttp": {}, 
+            "markcount": 9, 
+            "references": [], 
+            "marks": [
+                {
+                    "category": "G Data Antivirus (Windows)", 
+                    "ioc": "Virus: CMD:Heur.BZC.YAX.Boxter.251.7DF3574C, CMD:Heur.BZC.YAX.Pantera.60.3FF5AA0F (Engine A)", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Avast Core Security (Linux)", 
+                    "ioc": "Other:Malware-gen [Trj]", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "C4S ClamAV (Linux)", 
+                    "ioc": "Sanesecurity.Malware.26479.PshHeur.UNOFFICIAL", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "WithSecure (Linux)", 
+                    "ioc": "Trojan-Downloader:W32/Nadwn.B", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "eScan Antivirus (Linux)", 
+                    "ioc": "CMD:Heur.BZC.YAX.Boxter.251.7DF3574C(DB)", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Sophos Anti-Virus (Linux)", 
+                    "ioc": "Mal/DownLnk-D", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "ClamAV (Linux)", 
+                    "ioc": "Sanesecurity.Malware.26479.PshHeur.UNOFFICIAL", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Kaspersky Standard (Windows)", 
+                    "ioc": "HEUR:Trojan.Multi.Agent.gen", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Emsisoft Commandline Scanner (Windows)", 
+                    "ioc": "CMD:Heur.BZC.YAX.Pantera.60.3FF5AA0F (B)", 
+                    "type": "ioc", 
+                    "description": null
+                }
+            ], 
+            "name": "antivirus_irma"
+        }, 
+        {
+            "families": [], 
+            "description": "File has been identified by 22 AntiVirus engines on VirusTotal as malicious", 
+            "severity": 60, 
+            "ttp": {}, 
+            "markcount": 22, 
+            "references": [], 
+            "marks": [
+                {
+                    "category": "Bkav", 
+                    "ioc": "LNK.ScriptQH.Trojan", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "VIPRE", 
+                    "ioc": "CMD:Heur.BZC.YAX.Pantera.60.3FF5AA0F", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Sangfor", 
+                    "ioc": "Trojan.Generic-LNK.Save.a62f118b", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "BitDefender", 
+                    "ioc": "CMD:Heur.BZC.YAX.Pantera.60.3FF5AA0F", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Arcabit", 
+                    "ioc": "CMD:Heur.BZC.YAX.Pantera.60.3FF5AA0F [many]", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Avast", 
+                    "ioc": "Other:Malware-gen [Trj]", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Cynet", 
+                    "ioc": "Malicious (score: 99)", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Kaspersky", 
+                    "ioc": "HEUR:Trojan.Multi.Agent.gen", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Alibaba", 
+                    "ioc": "Trojan:LNK/Download.gen1", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "MicroWorld-eScan", 
+                    "ioc": "CMD:Heur.BZC.YAX.Pantera.60.3FF5AA0F", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Rising", 
+                    "ioc": "Trojan.PSRunner/LNK!1.BADE (CLASSIC)", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Emsisoft", 
+                    "ioc": "CMD:Heur.BZC.YAX.Pantera.60.3FF5AA0F (B)", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "F-Secure", 
+                    "ioc": "Trojan-Downloader:W32/Nadwn.B", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "CTX", 
+                    "ioc": "zip.unknown.boxter", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Sophos", 
+                    "ioc": "Mal/DownLnk-D", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Google", 
+                    "ioc": "Detected", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Avira", 
+                    "ioc": "TR/Malware", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "ZoneAlarm", 
+                    "ioc": "Mal/DownLnk-D", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "GData", 
+                    "ioc": "CMD:Heur.BZC.YAX.Boxter.251.7DF3574C", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "huorong", 
+                    "ioc": "TrojanDownloader/LNK.Agent.c", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Fortinet", 
+                    "ioc": "LNK/Agent.HV!tr", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "AVG", 
+                    "ioc": "Other:Malware-gen [Trj]", 
+                    "type": "ioc", 
+                    "description": null
+                }
+            ], 
+            "name": "antivirus_virustotal"
+        }
+    ], 
+    "target": {
+        "category": "file", 
+        "file": {
+            "mimetype": "application/zip", 
+            "yara": [], 
+            "sha1": "2a29ea4b481c5cd42ca7e7f11b3051e15c11e59b", 
+            "name": "NT20260603483219.PPTX.zip", 
+            "type": "Zip archive data, at least v2.0 to extract, compression method=deflate", 
+            "sha256": "4099f79834f0350b7edff05b268db21b3c74fa681c98b2b83599ca569f947de4", 
+            "urls": [], 
+            "crc32": "894A6E19", 
+            "path": "/srv/cuckoo/cwd/storage/binaries/4099f79834f0350b7edff05b268db21b3c74fa681c98b2b83599ca569f947de4", 
+            "ssdeep": null, 
+            "size": 680, 
+            "sha512": "5cf0d7c8f2ff9303c0c08c24dac14793547f7e30399062db10a58daca877550f7960e113c3d572b8a384f79c5cfeced9d31f082fc6a99ebbcbebfcd37b944f2b", 
+            "md5": "d21f2122713f085253f2e94ed195a5fe"
+        }, 
+        "custom": null
+    }, 
+    "irma": {
+        "status": 1, 
+        "probes_finished": 13, 
+        "scan_id": "11a62f9e-6889-402c-b199-7b10c829c6b7", 
+        "parent_file_sha256": null, 
+        "name": "4099f79834f0350b7edff05b268db21b3c74fa681c98b2b83599ca569f947de4", 
+        "probes_total": 13, 
+        "scan_date": 1780549399, 
+        "other_results": [], 
+        "probe_results": {
+            "antivirus": {
+                "G Data Antivirus (Windows)": {
+                    "status": 1, 
+                    "duration": 0.36, 
+                    "version": "5.5.20197.1358", 
+                    "results": "Virus: CMD:Heur.BZC.YAX.Boxter.251.7DF3574C, CMD:Heur.BZC.YAX.Pantera.60.3FF5AA0F (Engine A)", 
+                    "virus_database_version": "unavailable"
+                }, 
+                "Avast Core Security (Linux)": {
+                    "status": 1, 
+                    "duration": 0.04, 
+                    "version": "4.6.1", 
+                    "results": "Other:Malware-gen [Trj]", 
+                    "virus_database_version": "unavailable"
+                }, 
+                "C4S ClamAV (Linux)": {
+                    "status": 1, 
+                    "duration": 0.02, 
+                    "version": "1.4.3", 
+                    "results": "Sanesecurity.Malware.26479.PshHeur.UNOFFICIAL", 
+                    "virus_database_version": "28012"
+                }, 
+                "Trellix (Linux)": {
+                    "status": 0, 
+                    "duration": 7.72, 
+                    "version": "7.0.4.835", 
+                    "results": null, 
+                    "virus_database_version": "11797"
+                }, 
+                "WithSecure (Linux)": {
+                    "status": 1, 
+                    "duration": 0.04, 
+                    "version": "1.0.45", 
+                    "results": "Trojan-Downloader:W32/Nadwn.B", 
+                    "virus_database_version": "unavailable"
+                }, 
+                "eScan Antivirus (Linux)": {
+                    "status": 1, 
+                    "duration": 3.94, 
+                    "version": "7.0.21", 
+                    "results": "CMD:Heur.BZC.YAX.Boxter.251.7DF3574C(DB)", 
+                    "virus_database_version": "7.100930 (26/05/2026)"
+                }, 
+                "ESET Security (Windows)": {
+                    "status": 0, 
+                    "duration": 0.62, 
+                    "version": "unavailable", 
+                    "results": null, 
+                    "virus_database_version": "unavailable"
+                }, 
+                "Sophos Anti-Virus (Linux)": {
+                    "status": 1, 
+                    "duration": 0.21, 
+                    "version": "1.2.0.8 (2026-02-13)", 
+                    "results": "Mal/DownLnk-D", 
+                    "virus_database_version": "unavailable"
+                }, 
+                "DrWeb Antivirus (Linux)": {
+                    "status": 0, 
+                    "duration": 0.11, 
+                    "version": "11.1.16.2406170954", 
+                    "results": null, 
+                    "virus_database_version": "unavailable"
+                }, 
+                "ClamAV (Linux)": {
+                    "status": 1, 
+                    "duration": 0.02, 
+                    "version": "1.4.3", 
+                    "results": "Sanesecurity.Malware.26479.PshHeur.UNOFFICIAL", 
+                    "virus_database_version": "28012"
+                }, 
+                "Bitdefender Antivirus (Linux)": {
+                    "status": 0, 
+                    "duration": 8.39, 
+                    "version": "7.90123", 
+                    "results": null, 
+                    "virus_database_version": null
+                }, 
+                "Kaspersky Standard (Windows)": {
+                    "status": 1, 
+                    "duration": 0.97, 
+                    "version": "21.24", 
+                    "results": "HEUR:Trojan.Multi.Agent.gen", 
+                    "virus_database_version": "2026-06-03 21:29:00 (unknown)"
+                }, 
+                "Emsisoft Commandline Scanner (Windows)": {
+                    "status": 1, 
+                    "duration": 0.19, 
+                    "version": "2025.1.0.12641", 
+                    "results": "CMD:Heur.BZC.YAX.Pantera.60.3FF5AA0F (B)", 
+                    "virus_database_version": "unavailable"
+                }
+            }
+        }, 
+        "file_infos": {
+            "mimetype": "Zip archive data, at least v2.0 to extract", 
+            "sha1": "2a29ea4b481c5cd42ca7e7f11b3051e15c11e59b", 
+            "tags": [], 
+            "timestamp_first_scan": 1780549398.47, 
+            "sha256": "4099f79834f0350b7edff05b268db21b3c74fa681c98b2b83599ca569f947de4", 
+            "timestamp_last_scan": 1780549409.19, 
+            "md5": "d21f2122713f085253f2e94ed195a5fe", 
+            "size": 680
+        }, 
+        "submitter": "cli", 
+        "path": "", 
+        "result_id": "b4130976-e2cc-4657-8796-a94cb844a73c"
+    }, 
+    "suricata": {
+        "tls": [], 
+        "files": [], 
+        "alerts": [], 
+        "http": []
+    }, 
+    "virustotal": {
+        "permalink": "https://www.virustotal.com/gui/file/4099f79834f0350b7edff05b268db21b3c74fa681c98b2b83599ca569f947de4/detection/f-4099f79834f0350b7edff05b268db21b3c74fa681c98b2b83599ca569f947de4-1780544109", 
+        "sha1": "2a29ea4b481c5cd42ca7e7f11b3051e15c11e59b", 
+        "resource": "d21f2122713f085253f2e94ed195a5fe", 
+        "response_code": 1, 
+        "scan_date": "2026-06-04 03:35:09", 
+        "scan_id": "4099f79834f0350b7edff05b268db21b3c74fa681c98b2b83599ca569f947de4-1780544109", 
+        "summary": {
+            "positives": 22, 
+            "permalink": "https://www.virustotal.com/gui/file/4099f79834f0350b7edff05b268db21b3c74fa681c98b2b83599ca569f947de4/detection/f-4099f79834f0350b7edff05b268db21b3c74fa681c98b2b83599ca569f947de4-1780544109", 
+            "scan_date": "2026-06-04 03:35:09"
+        }, 
+        "sha256": "4099f79834f0350b7edff05b268db21b3c74fa681c98b2b83599ca569f947de4", 
+        "normalized": [
+            "ScriptQH", 
+            "Pantera", 
+            "Save", 
+            "many", 
+            "Malicious", 
+            "score", 
+            "gen1", 
+            "PSRunner", 
+            "CLASSIC", 
+            "Nadwn", 
+            "boxter", 
+            "DownLnk", 
+            "Detected"
+        ], 
+        "total": 65, 
+        "positives": 22, 
+        "verbose_msg": "Scan finished, information embedded", 
+        "md5": "d21f2122713f085253f2e94ed195a5fe", 
+        "scans": {
+            "Bkav": {
+                "detected": true, 
+                "version": "8.2.40(8338)", 
+                "result": "LNK.ScriptQH.Trojan", 
+                "normalized": [
+                    "ScriptQH"
+                ], 
+                "update": "20260603"
+            }, 
+            "Lionic": {
+                "detected": false, 
+                "version": "8.16", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260603"
+            }, 
+            "ClamAV": {
+                "detected": false, 
+                "version": "1.5.2.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260603"
+            }, 
+            "CMC": {
+                "detected": false, 
+                "version": "2.4.2022.1", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260603"
+            }, 
+            "CAT-QuickHeal": {
+                "detected": false, 
+                "version": "22.00", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260603"
+            }, 
+            "Skyhigh": {
+                "detected": false, 
+                "version": "v2021.2.0+4045", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260603"
+            }, 
+            "ALYac": {
+                "detected": false, 
+                "version": "2.0.0.10", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260603"
+            }, 
+            "Malwarebytes": {
+                "detected": false, 
+                "version": "3.1.0.238", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260603"
+            }, 
+            "VIPRE": {
+                "detected": true, 
+                "version": "6.0.0.35", 
+                "result": "CMD:Heur.BZC.YAX.Pantera.60.3FF5AA0F", 
+                "normalized": [
+                    "Pantera"
+                ], 
+                "update": "20260603"
+            }, 
+            "Sangfor": {
+                "detected": true, 
+                "version": "2.22.3.0", 
+                "result": "Trojan.Generic-LNK.Save.a62f118b", 
+                "normalized": [
+                    "Save"
+                ], 
+                "update": "20260601"
+            }, 
+            "CrowdStrike": {
+                "detected": false, 
+                "version": "1.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20230417"
+            }, 
+            "BitDefender": {
+                "detected": true, 
+                "version": "7.2", 
+                "result": "CMD:Heur.BZC.YAX.Pantera.60.3FF5AA0F", 
+                "normalized": [
+                    "Pantera"
+                ], 
+                "update": "20260603"
+            }, 
+            "K7GW": {
+                "detected": false, 
+                "version": "14.55.59708", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260604"
+            }, 
+            "K7AntiVirus": {
+                "detected": false, 
+                "version": "14.55.59708", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260604"
+            }, 
+            "Arcabit": {
+                "detected": true, 
+                "version": "2025.0.0.23", 
+                "result": "CMD:Heur.BZC.YAX.Pantera.60.3FF5AA0F [many]", 
+                "normalized": [
+                    "Pantera", 
+                    "many"
+                ], 
+                "update": "20260603"
+            }, 
+            "VirIT": {
+                "detected": false, 
+                "version": "9.5.1220", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260603"
+            }, 
+            "Symantec": {
+                "detected": false, 
+                "version": "1.22.0.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260604"
+            }, 
+            "ESET-NOD32": {
+                "detected": false, 
+                "version": "18.2.18.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260604"
+            }, 
+            "TrendMicro-HouseCall": {
+                "detected": false, 
+                "version": "24.550.0.1002", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260604"
+            }, 
+            "Avast": {
+                "detected": true, 
+                "version": "23.9.8494.0", 
+                "result": "Other:Malware-gen [Trj]", 
+                "normalized": [], 
+                "update": "20260604"
+            }, 
+            "Cynet": {
+                "detected": true, 
+                "version": "4.0.3.4", 
+                "result": "Malicious (score: 99)", 
+                "normalized": [
+                    "Malicious", 
+                    "score"
+                ], 
+                "update": "20260604"
+            }, 
+            "Kaspersky": {
+                "detected": true, 
+                "version": "22.0.1.28", 
+                "result": "HEUR:Trojan.Multi.Agent.gen", 
+                "normalized": [], 
+                "update": "20260604"
+            }, 
+            "Alibaba": {
+                "detected": true, 
+                "version": "0.3.0.5", 
+                "result": "Trojan:LNK/Download.gen1", 
+                "normalized": [
+                    "gen1"
+                ], 
+                "update": "20190527"
+            }, 
+            "NANO-Antivirus": {
+                "detected": false, 
+                "version": "1.0.170.26895", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260603"
+            }, 
+            "SUPERAntiSpyware": {
+                "detected": false, 
+                "version": "5.6.0.1032", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260602"
+            }, 
+            "MicroWorld-eScan": {
+                "detected": true, 
+                "version": "14.0.409.0", 
+                "result": "CMD:Heur.BZC.YAX.Pantera.60.3FF5AA0F", 
+                "normalized": [
+                    "Pantera"
+                ], 
+                "update": "20260604"
+            }, 
+            "Rising": {
+                "detected": true, 
+                "version": "25.0.0.28", 
+                "result": "Trojan.PSRunner/LNK!1.BADE (CLASSIC)", 
+                "normalized": [
+                    "PSRunner", 
+                    "CLASSIC"
+                ], 
+                "update": "20260603"
+            }, 
+            "Emsisoft": {
+                "detected": true, 
+                "version": "2024.8.0.61147", 
+                "result": "CMD:Heur.BZC.YAX.Pantera.60.3FF5AA0F (B)", 
+                "normalized": [
+                    "Pantera"
+                ], 
+                "update": "20260604"
+            }, 
+            "F-Secure": {
+                "detected": true, 
+                "version": "18.10.1547.307", 
+                "result": "Trojan-Downloader:W32/Nadwn.B", 
+                "normalized": [
+                    "Nadwn"
+                ], 
+                "update": "20260604"
+            }, 
+            "DrWeb": {
+                "detected": false, 
+                "version": "7.0.75.2070", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260604"
+            }, 
+            "Zillya": {
+                "detected": false, 
+                "version": "2.0.0.5614", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260603"
+            }, 
+            "TrendMicro": {
+                "detected": false, 
+                "version": "24.550.0.1002", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260604"
+            }, 
+            "McAfeeD": {
+                "detected": false, 
+                "version": "1.2.0.14833", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260604"
+            }, 
+            "CTX": {
+                "detected": true, 
+                "version": "2024.8.29.1", 
+                "result": "zip.unknown.boxter", 
+                "normalized": [
+                    "boxter"
+                ], 
+                "update": "20260604"
+            }, 
+            "Sophos": {
+                "detected": true, 
+                "version": "3.5.1.0", 
+                "result": "Mal/DownLnk-D", 
+                "normalized": [
+                    "DownLnk"
+                ], 
+                "update": "20260603"
+            }, 
+            "SentinelOne": {
+                "detected": false, 
+                "version": "7.6.2.19", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260324"
+            }, 
+            "Avast-Mobile": {
+                "detected": false, 
+                "version": "260603-04", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260603"
+            }, 
+            "Jiangmin": {
+                "detected": false, 
+                "version": "16.0.100", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260602"
+            }, 
+            "Webroot": {
+                "detected": false, 
+                "version": "1.10.0.2", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20250227"
+            }, 
+            "Google": {
+                "detected": true, 
+                "version": "1780538462", 
+                "result": "Detected", 
+                "normalized": [
+                    "Detected"
+                ], 
+                "update": "20260604"
+            }, 
+            "Avira": {
+                "detected": true, 
+                "version": "8.3.3.24", 
+                "result": "TR/Malware", 
+                "normalized": [], 
+                "update": "20260604"
+            }, 
+            "Antiy-AVL": {
+                "detected": false, 
+                "version": "3.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260604"
+            }, 
+            "Kingsoft": {
+                "detected": false, 
+                "version": "None", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260603"
+            }, 
+            "Gridinsoft": {
+                "detected": false, 
+                "version": "1.0.247.174", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260604"
+            }, 
+            "Xcitium": {
+                "detected": false, 
+                "version": "38699", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260603"
+            }, 
+            "Microsoft": {
+                "detected": false, 
+                "version": "1.1.26040.8", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260603"
+            }, 
+            "ViRobot": {
+                "detected": false, 
+                "version": "2014.3.20.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260604"
+            }, 
+            "ZoneAlarm": {
+                "detected": true, 
+                "version": "6.25-116107259", 
+                "result": "Mal/DownLnk-D", 
+                "normalized": [
+                    "DownLnk"
+                ], 
+                "update": "20260603"
+            }, 
+            "GData": {
+                "detected": true, 
+                "version": "GD:27.44783AVA:64.31360", 
+                "result": "CMD:Heur.BZC.YAX.Boxter.251.7DF3574C", 
+                "normalized": [
+                    "Boxter"
+                ], 
+                "update": "20260604"
+            }, 
+            "Varist": {
+                "detected": false, 
+                "version": "6.6.1.3", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260603"
+            }, 
+            "AhnLab-V3": {
+                "detected": false, 
+                "version": "3.30.0.10666", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260603"
+            }, 
+            "Acronis": {
+                "detected": false, 
+                "version": "1.2.0.121", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20240328"
+            }, 
+            "VBA32": {
+                "detected": false, 
+                "version": "5.6.1", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260603"
+            }, 
+            "TACHYON": {
+                "detected": false, 
+                "version": "2026-06-04.01", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260604"
+            }, 
+            "Ikarus": {
+                "detected": false, 
+                "version": "6.5.4.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260603"
+            }, 
+            "Zoner": {
+                "detected": false, 
+                "version": "2.2.2.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260603"
+            }, 
+            "Tencent": {
+                "detected": false, 
+                "version": "1.0.0.1", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260604"
+            }, 
+            "Yandex": {
+                "detected": false, 
+                "version": "5.5.2.24", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260604"
+            }, 
+            "TrellixENS": {
+                "detected": false, 
+                "version": "6.0.6.653", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260603"
+            }, 
+            "huorong": {
+                "detected": true, 
+                "version": "ca9ca35:ca9ca35:cfcc2b7:cfcc2b7", 
+                "result": "TrojanDownloader/LNK.Agent.c", 
+                "normalized": [], 
+                "update": "20260603"
+            }, 
+            "MaxSecure": {
+                "detected": false, 
+                "version": "1.0.0.1", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260603"
+            }, 
+            "Fortinet": {
+                "detected": true, 
+                "version": "7.0.48.0", 
+                "result": "LNK/Agent.HV!tr", 
+                "normalized": [], 
+                "update": "20260604"
+            }, 
+            "AVG": {
+                "detected": true, 
+                "version": "23.9.8494.0", 
+                "result": "Other:Malware-gen [Trj]", 
+                "normalized": [], 
+                "update": "20260604"
+            }, 
+            "Panda": {
+                "detected": false, 
+                "version": "4.6.4.2", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260603"
+            }, 
+            "alibabacloud": {
+                "detected": false, 
+                "version": "2.2.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20250321"
+            }
+        }
+    }, 
+    "network": {
+        "udp": [], 
+        "dns_servers": [], 
+        "http": [], 
+        "smtp": [], 
+        "tcp": [], 
+        "geoinfo": {}, 
+        "mitm": [], 
+        "https_ex": [], 
+        "http_ex": [], 
+        "sorted_pcap_sha256": "75ffcc2248ad1fa9d133eea17be9905f7c66188d4226e393d16507b962527d98", 
+        "icmp": [], 
+        "tls": [], 
+        "dead_hosts": [], 
+        "smtp_ex": [], 
+        "hosts": [], 
+        "pcap_sha256": "2d727a1e1250ef7745c38569f0841fd5cbffac8a24ba9d518fa48bf96db41459", 
+        "dns": [], 
+        "domains": [], 
+        "irc": []
+    }, 
+    "resubmit": {
+        "resubmit_ids": []
+    }, 
+    "snort": {
+        "alerts": []
+    }, 
+    "debug": {
+        "action": [], 
+        "dbgview": [], 
+        "errors": [], 
+        "log": [
+            "2026-06-04 08:02:30,005 [root] DEBUG: Starting analyzer from: /tmp/tmpKp7n0M\n", 
+            "2026-06-04 08:02:30,006 [root] DEBUG: Storing results at: /tmp/uHdvoDG\n", 
+            "2026-06-04 08:02:30,008 [root] ERROR: Traceback (most recent call last):\n", 
+            "  File \"/tmp/tmpKp7n0M/analyzer.py\", line 340, in <module>\n", 
+            "    success = analyzer.run()\n", 
+            "  File \"/tmp/tmpKp7n0M/analyzer.py\", line 129, in run\n", 
+            "    self.config.file_name, **kwargs)\n", 
+            "  File \"/tmp/tmpKp7n0M/lib/core/packages.py\", line 42, in choose_package_class\n", 
+            "    \"exist.\".format(name))\n", 
+            "Exception: Unable to import package \"7z\": it does not exist.\n", 
+            "Traceback (most recent call last):\n", 
+            "  File \"/tmp/tmpKp7n0M/analyzer.py\", line 340, in <module>\n", 
+            "    success = analyzer.run()\n", 
+            "  File \"/tmp/tmpKp7n0M/analyzer.py\", line 129, in run\n", 
+            "    self.config.file_name, **kwargs)\n", 
+            "  File \"/tmp/tmpKp7n0M/lib/core/packages.py\", line 42, in choose_package_class\n", 
+            "    \"exist.\".format(name))\n", 
+            "Exception: Unable to import package \"7z\": it does not exist.\n"
+        ], 
+        "cuckoo": [
+            "2026-06-04 08:02:38,421 [cuckoo.core.scheduler] INFO: Task #7569591: acquired machine Ubuntu1904x643 (label=Ubuntu1904x643)\n", 
+            "2026-06-04 08:02:38,422 [cuckoo.core.resultserver] DEBUG: Now tracking machine 192.168.168.103 for task #7569591\n", 
+            "2026-06-04 08:02:38,905 [cuckoo.auxiliary.sniffer] INFO: Started sniffer with PID 148320 (interface=vboxnet0, host=192.168.168.103)\n", 
+            "2026-06-04 08:02:38,916 [androguard.apk] WARNING: Missing AndroidManifest.xml. Is this an APK file?\n", 
+            "2026-06-04 08:02:38,956 [cuckoo.machinery.virtualbox] DEBUG: Starting vm Ubuntu1904x643\n", 
+            "2026-06-04 08:02:39,775 [cuckoo.machinery.virtualbox] DEBUG: Restoring virtual machine Ubuntu1904x643 to Snapshot\n", 
+            "2026-06-04 08:02:58,904 [cuckoo.core.guest] INFO: Starting analysis #7569591 on guest (id=Ubuntu1904x643, ip=192.168.168.103)\n", 
+            "2026-06-04 08:02:59,910 [cuckoo.core.guest] DEBUG: Ubuntu1904x643: not ready yet\n", 
+            "2026-06-04 08:03:05,047 [cuckoo.core.guest] INFO: Guest is running Cuckoo Agent 0.10 (id=Ubuntu1904x643, ip=192.168.168.103)\n", 
+            "2026-06-04 08:03:05,076 [cuckoo.core.guest] DEBUG: Uploading analyzer to guest (id=Ubuntu1904x643, ip=192.168.168.103, monitor=latest, size=73219)\n", 
+            "2026-06-04 08:03:05,316 [cuckoo.core.resultserver] DEBUG: Task #7569591: live log analysis.log initialized.\n", 
+            "2026-06-04 08:03:08,207 [cuckoo.core.guest] INFO: Ubuntu1904x643: analysis completed successfully\n", 
+            "2026-06-04 08:03:08,220 [cuckoo.core.plugins] DEBUG: Stopped auxiliary module: Redsocks\n", 
+            "2026-06-04 08:03:08,244 [cuckoo.core.plugins] DEBUG: Stopped auxiliary module: Sniffer\n", 
+            "2026-06-04 08:03:09,564 [cuckoo.machinery.virtualbox] INFO: Successfully generated memory dump for virtual machine with label Ubuntu1904x643 to path /srv/cuckoo/cwd/storage/analyses/7569591/memory.dmp\n", 
+            "2026-06-04 08:03:09,565 [cuckoo.machinery.virtualbox] DEBUG: Stopping vm Ubuntu1904x643\n", 
+            "2026-06-04 08:03:17,765 [cuckoo.core.resultserver] DEBUG: Stopped tracking machine 192.168.168.103 for task #7569591\n", 
+            "2026-06-04 08:03:18,107 [cuckoo.core.scheduler] DEBUG: Released database task #7569591\n", 
+            "2026-06-04 08:03:18,123 [cuckoo.core.scheduler] INFO: Task #7569591: analysis procedure completed\n"
+        ]
+    }, 
+    "strings": [
+        "PO INV.lnk", 
+        "PPoRky~", 
+        "L-b6f'w", 
+        "PO INV.lnk"
+    ], 
+    "metadata": {
+        "output": {
+            "pcap": {
+                "basename": "dump.pcap", 
+                "sha256": "2d727a1e1250ef7745c38569f0841fd5cbffac8a24ba9d518fa48bf96db41459", 
+                "dirname": ""
+            }
+        }
+    }
+}

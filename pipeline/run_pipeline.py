@@ -1,90 +1,178 @@
 import os
+import pandas as pd
+import numpy as np
 from feature_engineering.extractor import extract_features_from_report
 from pipeline.predictor import (
     predict_sgan,
     predict_dgcnn,
     predict_cnn,
-    predict_hybrid,
-    predict_gat
+    predict_dgcnn_sgan,
+    predict_gat_sgan,
+    predict_gat,
+    predict_lstm
 )
 from models.ensemble import ensemble
-import extractor
-import pandas
 
-def safe_predict(func, features, name):
+REPORTS_DIR = "sandbox/reports/processed"
+
+MODELS_CONFIG = {
+    "sgan": {"func": predict_sgan, "name": "SGAN"},
+    "dgcnn": {"func": predict_dgcnn, "name": "DGCNN"},
+    "cnn": {"func": predict_cnn, "name": "CNN"},
+    "hybrid": {"func": predict_dgcnn_sgan, "name": "HYBRID-DGCNN"},
+    "gat": {"func": predict_gat, "name": "GAT"},
+    "hybrid_gat": {"func": predict_gat_sgan, "name": "HYBRID-GAT"},
+    "lstm": {"func": predict_lstm, "name": "LSTM"},
+}
+
+evaluated = False
+
+def safe_predict(func, features, seed=10, name="DEFAULT", silent=True):
+    """Safely executes a prediction function, returning (None, None) on failure."""
     try:
-        return func(features)
+        return func(features, seed)
     except Exception as e:
-        print(f"{name} failed:", e)
+        if not silent:
+            print(f"{name} failed: {e}")
+        return None, None
+
+
+def process_file(file, seed, silent=True):
+    """Processes a single report file through all configured models."""
+    path = os.path.join(REPORTS_DIR, file)
+    try:
+        features = extract_features_from_report(path)
+    except Exception as e:
+        print(f"\nError extracting features from {file}: {e}")
         return None
+
+    results = {"sample": file}
+    preds_to_ensemble = []
+
+    for key, cfg in MODELS_CONFIG.items():
+        tp, p = safe_predict(cfg["func"], features, seed, cfg["name"])
+        
+        results[key] = round(p, 3) if p is not None else None
+        results[f"t_{key}"] = round(tp, 9) if tp is not None else None
+        
+        if p is not None:
+            preds_to_ensemble.append(p)
+
+    if not preds_to_ensemble:
+        if not silent:
+            print(f"All models failed for: {file}")
+        return None
+
+    try:
+        final = ensemble(preds_to_ensemble)
+    except Exception:
+        final = sum(preds_to_ensemble) / len(preds_to_ensemble)
+
+    results["final"] = round(final, 3)
+    results["malware"] = "MALWARE" if final > 0.5 else "BENIGN"
+    
+    return results
+
+
+def check_integrity(rdf):
+    """Checks if any evaluated samples exist within the training dataset hashes."""
+    print("\nChecking integrity...")
+    try:
+        df = pd.read_csv("dataset.csv")
+        hashes = set(df['hash'])
+    except Exception as e:
+        print(f"Could not load dataset.csv for integrity check: {e}")
+        return
+
+    compromised = False
+    for sample in rdf['sample']:
+        if sample[:-5] in hashes:
+            print(f'Compromised: {sample}')
+            compromised = True
+            
+    if not compromised:
+        print("All samples OOD.")
 
 
 def run():
-    results_list = []
-    REPORTS_DIR = "sandbox/reports/processed"
-    
+    global evaluated
     if not os.path.exists(REPORTS_DIR):
         print("Reports directory not found!")
         return
 
     files = [
         f for f in os.listdir(REPORTS_DIR)
-        if os.path.isfile(os.path.join(REPORTS_DIR, f))
-        and f.lower().endswith(".json")
+        if os.path.isfile(os.path.join(REPORTS_DIR, f)) and f.lower().endswith(".json")
     ]
 
     if not files:
         print("No JSON files found!")
         return
 
-    for file in files:
-        path = os.path.join(REPORTS_DIR, file)
+    # Dictionary to store rates for final summary statistics
+    target_cols = list(MODELS_CONFIG.keys()) + ["final"]
+    summary_metrics = {col: {} for col in target_cols}
+    seeds = [10, 20, 30, 40, 50]
 
-        try:
-            features = extract_features_from_report(path)
+    for seed in seeds:
+        print(f"\n--- Running Seed = {seed} ---")
+        results_list = []
 
-            tp1, p1 = safe_predict(predict_sgan, features, "SGAN")
-            tp2, p2 = safe_predict(predict_dgcnn, features, "DGCNN")
-            tp3, p3 = safe_predict(predict_cnn, features, "CNN")
-            tp4, p4 = safe_predict(predict_hybrid, features, "HYBRID")
-            tp5, p5 = safe_predict(predict_gat, features, "GAT")
+        for file in files:
+            res = process_file(file, seed)
+            if res:
+                results_list.append(res)
+        
+        if not results_list:
+            print(f"No successful outputs generated for seed {seed}.")
+            continue
 
-            preds = [p for p in [p1, p2, p3, p4, p5] if p is not None]
+        rdf = pd.DataFrame(results_list)
+        
+        if not evaluated:
+            rdf['sample'].to_csv("evaluated.csv",index=False)
+            evaluated = True
+        
+        print(rdf)
+        
+        print("\nOOD generalization:")
+        for col in target_cols:
+            valid_preds = rdf[col].dropna()
+            if len(valid_preds) > 0:
+                rate = len(valid_preds[valid_preds >= 0.50]) / len(rdf)
+                print(f"{col} --> {rate:.2f}")
+                # Save to summary tracker
+                summary_metrics[col][seed] = rate
+            else:
+                print(f"{col} --> N/A (All models failed)")
+                summary_metrics[col][seed] = np.nan
 
-            if not preds:
-                print("All models failed for:", file)
-                continue
+        check_integrity(rdf)
 
-            try:
-                final = ensemble(preds)
-            except:
-                final = sum(preds) / len(preds)
-
-            label = "MALWARE" if final > 0.5 else "BENIGN"
-
-            results = {}
-            results['sample'] = file
-            results['cnn'] = round(p3,3)
-            results['sgan'] = round(p1,3)
-            results['dgcnn'] = round(p2,3)
-            results['hybrid'] = round(p4,3)
-            results['gat'] = round(p5,3)
-            results['final'] = round(final,3)
-            results['malware'] = label
-            results['t_cnn'] = round(tp3,9)
-            results['t_sgan'] = round(tp1,9)
-            results['t_dgcnn'] = round(tp2,9)
-            results['t_hybrid'] = round(tp4,9)
-            results['t_gat'] = round(tp5,9)
-            results_list.append(results)
-            
-        except Exception as e:
-            print(f"\nError processing {file}: {e}")
+    # --- FINAL SUMMARY SECTION ---
+    print("\n" + "="*50)
+    print("FINAL SUMMARY PER SEED AND MODEL")
+    print("="*50)
     
-    print(pandas.DataFrame(results_list))
+    # Create and print a clean summary table for rates per seed per model
+    summary_df = pd.DataFrame(summary_metrics).T
+    summary_df.columns = [f"Seed {s}" for s in seeds]
+    print(summary_df.to_string())
+    
+    print("\n" + "-"*50)
+    print("AGGREGATE STATISTICS (Mean ± Std)")
+    print("-"*50)
+    
+    for col in target_cols:
+        rates = [summary_metrics[col][s] for s in seeds if not np.isnan(summary_metrics[col][s])]
+        if rates:
+            mean_val = np.mean(rates)
+            std_val = np.std(rates)
+            print(f"{col:<12} --> {mean_val:.4f} ± {std_val:.4f}")
+        else:
+            print(f"{col:<12} --> N/A (No valid runs)")
+    print("="*50)
 
 
 if __name__ == "__main__":
-    extractor.extract()
-    print()
     run()

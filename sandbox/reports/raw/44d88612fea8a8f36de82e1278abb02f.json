@@ -1,0 +1,2476 @@
+{
+    "info": {
+        "added": 1780562514.036889, 
+        "started": 1780562515.683092, 
+        "duration": 84, 
+        "ended": 1780562600.080677, 
+        "owner": null, 
+        "score": 10, 
+        "id": 7569603, 
+        "category": "file", 
+        "git": {
+            "head": "", 
+            "fetch_head": ""
+        }, 
+        "monitor": null, 
+        "package": "", 
+        "route": "internet", 
+        "custom": null, 
+        "machine": {
+            "status": "stopped", 
+            "name": "Ubuntu1904x643", 
+            "label": "Ubuntu1904x643", 
+            "platform": "linux", 
+            "manager": "VirtualBox", 
+            "started_on": "2026-06-04 08:41:56", 
+            "shutdown_on": "2026-06-04 08:43:19"
+        }, 
+        "platform": null, 
+        "version": "2.0.7", 
+        "options": "procmemdump=yes,route=internet"
+    }, 
+    "signatures": [
+        {
+            "families": [], 
+            "description": "Yara rule detected for file", 
+            "severity": 1, 
+            "ttp": {}, 
+            "markcount": 1, 
+            "references": [], 
+            "marks": [
+                {
+                    "type": "generic", 
+                    "description": "Rule to detect Eicar pattern", 
+                    "rule": "eicar"
+                }
+            ], 
+            "name": "file_yara"
+        }, 
+        {
+            "families": [], 
+            "description": "File has been identified by 14 AntiVirus engine on IRMA as malicious", 
+            "severity": 60, 
+            "ttp": {}, 
+            "markcount": 14, 
+            "references": [], 
+            "marks": [
+                {
+                    "category": "G Data Antivirus (Windows)", 
+                    "ioc": "Virus: EICAR-Test-File (not a virus) (Engine A), EICAR_TEST_FILE (Engine B)", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Avast Core Security (Linux)", 
+                    "ioc": "EICAR Test-NOT virus!!!", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "C4S ClamAV (Linux)", 
+                    "ioc": "winnow.images.test.eicar.com.UNOFFICIAL", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Trend Micro SProtect (Linux)", 
+                    "ioc": "Eicar_test_file", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Trellix (Linux)", 
+                    "ioc": "EICAR test file", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "WithSecure (Linux)", 
+                    "ioc": "EICAR_Test_File", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "eScan Antivirus (Linux)", 
+                    "ioc": "EICAR-Test-File (not a virus)(DB)", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "ESET Security (Windows)", 
+                    "ioc": "Eicar test file", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Sophos Anti-Virus (Linux)", 
+                    "ioc": "EICAR-AV-Test", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "DrWeb Antivirus (Linux)", 
+                    "ioc": "EICAR Test File (NOT a Virus!)", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "ClamAV (Linux)", 
+                    "ioc": "winnow.images.test.eicar.com.UNOFFICIAL", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Bitdefender Antivirus (Linux)", 
+                    "ioc": "EICAR-Test-File (not a virus)", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Kaspersky Standard (Windows)", 
+                    "ioc": "EICAR-Test-File", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Emsisoft Commandline Scanner (Windows)", 
+                    "ioc": "EICAR-Test-File (A)", 
+                    "type": "ioc", 
+                    "description": null
+                }
+            ], 
+            "name": "antivirus_irma"
+        }, 
+        {
+            "families": [], 
+            "description": "File has been identified by 65 AntiVirus engines on VirusTotal as malicious", 
+            "severity": 60, 
+            "ttp": {}, 
+            "markcount": 65, 
+            "references": [], 
+            "marks": [
+                {
+                    "category": "Bkav", 
+                    "ioc": "W32.EicarTest.Trojan", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Lionic", 
+                    "ioc": "Test.File.EICAR.y", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Elastic", 
+                    "ioc": "eicar", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Cynet", 
+                    "ioc": "Malicious (score: 99)", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "CMC", 
+                    "ioc": "Eicar.test.file", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "CAT-QuickHeal", 
+                    "ioc": "EICAR.TestFile", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Skyhigh", 
+                    "ioc": "EICAR test file", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "ALYac", 
+                    "ioc": "Misc.Eicar-Test-File", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Malwarebytes", 
+                    "ioc": "EICAR-AV-Test", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "VIPRE", 
+                    "ioc": "EICAR-Test-File (not a virus)", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Sangfor", 
+                    "ioc": "EICAR-Test-File (not a virus)", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "BitDefender", 
+                    "ioc": "EICAR-Test-File (not a virus)", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "K7GW", 
+                    "ioc": "EICAR_Test_File", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "K7AntiVirus", 
+                    "ioc": "EICAR_Test_File", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Arcabit", 
+                    "ioc": "EICAR-Test-File (not a virus)", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "VirIT", 
+                    "ioc": "EICAR-Test-File", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "SymantecMobileInsight", 
+                    "ioc": "ALG:EICAR Test String", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Symantec", 
+                    "ioc": "EICAR Test String", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "ESET-NOD32", 
+                    "ioc": "Eicar test file", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "APEX", 
+                    "ioc": "EICAR Anti-Virus Test File", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Avast", 
+                    "ioc": "EICAR Test-NOT virus!!!", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "ClamAV", 
+                    "ioc": "Eicar-Test-Signature", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Kaspersky", 
+                    "ioc": "EICAR-Test-File", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Alibaba", 
+                    "ioc": "Virus:Win32/EICAR.A", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "NANO-Antivirus", 
+                    "ioc": "Marker.Dos.EICAR-Test-File.dyb", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "SUPERAntiSpyware", 
+                    "ioc": "NotAThreat.EICAR[TestFile]", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "MicroWorld-eScan", 
+                    "ioc": "EICAR-Test-File", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Rising", 
+                    "ioc": "Virus.EICARTestFile!1.103DB (CLASSIC)", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Emsisoft", 
+                    "ioc": "EICAR-Test-File (A)", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "F-Secure", 
+                    "ioc": "EICAR_Test_File", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "DrWeb", 
+                    "ioc": "EICAR Test File (NOT a Virus!)", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Zillya", 
+                    "ioc": "EICAR.TestFile", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "TrendMicro", 
+                    "ioc": "Eicar_test_file", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "McAfeeD", 
+                    "ioc": "WPS!EICAR", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "CTX", 
+                    "ioc": "txt.virus.eicar", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Sophos", 
+                    "ioc": "EICAR-AV-Test", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "SentinelOne", 
+                    "ioc": "Static AI - Malicious COM", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Avast-Mobile", 
+                    "ioc": "Eicar", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Jiangmin", 
+                    "ioc": "EICAR-Test-File", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Webroot", 
+                    "ioc": "W32.Eicar.Testvirus.Gen", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Google", 
+                    "ioc": "Detected", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Avira", 
+                    "ioc": "Eicar-Test-Signature", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Antiy-AVL", 
+                    "ioc": "TestFile/Win32.EICAR", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Kingsoft", 
+                    "ioc": "Test.eicar.aa", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Gridinsoft", 
+                    "ioc": "Trojan.U.EICAR_Test_File.dd", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Xcitium", 
+                    "ioc": "Malware@#2975xfk8s2pq1", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Microsoft", 
+                    "ioc": "Virus:DOS/EICAR_Test_File", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "ViRobot", 
+                    "ioc": "EICAR-test", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "ZoneAlarm", 
+                    "ioc": "EICAR-AV-Test", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "GData", 
+                    "ioc": "EICAR_TEST_FILE", 
+                    "type": "ioc", 
+                    "description": null
+                }
+            ], 
+            "name": "antivirus_virustotal"
+        }
+    ], 
+    "target": {
+        "category": "file", 
+        "file": {
+            "mimetype": "text/plain", 
+            "yara": [
+                {
+                    "meta": {
+                        "hash1": "275a021bbfb6489e54d471899f7db9d1663fc695ec2fe2a2c4538aabf651fd0f", 
+                        "description": "Rule to detect Eicar pattern", 
+                        "author": "Marc Rivero | @seifreed"
+                    }, 
+                    "name": "eicar", 
+                    "offsets": {
+                        "s1": [
+                            [
+                                0, 
+                                0
+                            ]
+                        ]
+                    }, 
+                    "strings": [
+                        "WDVPIVAlQEFQWzRcUFpYNTQoUF4pN0NDKTd9JEVJQ0FSLVNUQU5EQVJELUFOVElWSVJVUy1URVNULUZJTEUhJEgrSCo="
+                    ]
+                }
+            ], 
+            "sha1": "3395856ce81f2b7382dee72602f798b642f14140", 
+            "name": "eicar.com", 
+            "type": "EICAR virus test files", 
+            "sha256": "275a021bbfb6489e54d471899f7db9d1663fc695ec2fe2a2c4538aabf651fd0f", 
+            "urls": [], 
+            "crc32": "6851CF3C", 
+            "path": "/srv/cuckoo/cwd/storage/binaries/275a021bbfb6489e54d471899f7db9d1663fc695ec2fe2a2c4538aabf651fd0f", 
+            "ssdeep": null, 
+            "size": 68, 
+            "sha512": "cc805d5fab1fd71a4ab352a9c533e65fb2d5b885518f4e565e68847223b8e6b85cb48f3afad842726d99239c9e36505c64b0dc9a061d9e507d833277ada336ab", 
+            "md5": "44d88612fea8a8f36de82e1278abb02f"
+        }, 
+        "custom": null
+    }, 
+    "irma": {
+        "status": 1, 
+        "probes_finished": 14, 
+        "scan_id": "b04ecab2-b55e-40dc-849b-d97b77bf6a2f", 
+        "parent_file_sha256": null, 
+        "name": "275a021bbfb6489e54d471899f7db9d1663fc695ec2fe2a2c4538aabf651fd0f", 
+        "probes_total": 14, 
+        "scan_date": 1770824024, 
+        "other_results": [], 
+        "probe_results": {
+            "antivirus": {
+                "G Data Antivirus (Windows)": {
+                    "status": 1, 
+                    "duration": 0.42, 
+                    "version": "5.5.20197.1358", 
+                    "results": "Virus: EICAR-Test-File (not a virus) (Engine A), EICAR_TEST_FILE (Engine B)", 
+                    "virus_database_version": "unavailable"
+                }, 
+                "Avast Core Security (Linux)": {
+                    "status": 1, 
+                    "duration": 0.01, 
+                    "version": "4.6.1", 
+                    "results": "EICAR Test-NOT virus!!!", 
+                    "virus_database_version": "unavailable"
+                }, 
+                "C4S ClamAV (Linux)": {
+                    "status": 1, 
+                    "duration": 0.02, 
+                    "version": "1.4.3", 
+                    "results": "winnow.images.test.eicar.com.UNOFFICIAL", 
+                    "virus_database_version": "27901"
+                }, 
+                "Trend Micro SProtect (Linux)": {
+                    "status": 1, 
+                    "duration": 4.8, 
+                    "version": "3.0", 
+                    "results": "Eicar_test_file", 
+                    "virus_database_version": "0x020000400"
+                }, 
+                "Trellix (Linux)": {
+                    "status": 1, 
+                    "duration": 7.36, 
+                    "version": "7.0.4.835", 
+                    "results": "EICAR test file", 
+                    "virus_database_version": "11690"
+                }, 
+                "WithSecure (Linux)": {
+                    "status": 1, 
+                    "duration": 0.02, 
+                    "version": "1.0.44", 
+                    "results": "EICAR_Test_File", 
+                    "virus_database_version": "unavailable"
+                }, 
+                "eScan Antivirus (Linux)": {
+                    "status": 1, 
+                    "duration": 3.98, 
+                    "version": "7.0.21", 
+                    "results": "EICAR-Test-File (not a virus)(DB)", 
+                    "virus_database_version": "7.100244 (03/02/2026)"
+                }, 
+                "ESET Security (Windows)": {
+                    "status": 1, 
+                    "duration": 0.84, 
+                    "version": "unavailable", 
+                    "results": "Eicar test file", 
+                    "virus_database_version": "unavailable"
+                }, 
+                "Sophos Anti-Virus (Linux)": {
+                    "status": 1, 
+                    "duration": 0.22, 
+                    "version": "1.1.8.44 (2025-09-04)", 
+                    "results": "EICAR-AV-Test", 
+                    "virus_database_version": "unavailable"
+                }, 
+                "DrWeb Antivirus (Linux)": {
+                    "status": 1, 
+                    "duration": 7.89, 
+                    "version": "11.1.16.2406170954", 
+                    "results": "EICAR Test File (NOT a Virus!)", 
+                    "virus_database_version": "unavailable"
+                }, 
+                "ClamAV (Linux)": {
+                    "status": 1, 
+                    "duration": 0.02, 
+                    "version": "1.4.3", 
+                    "results": "winnow.images.test.eicar.com.UNOFFICIAL", 
+                    "virus_database_version": "27901"
+                }, 
+                "Bitdefender Antivirus (Linux)": {
+                    "status": 1, 
+                    "duration": 8.77, 
+                    "version": "7.90123", 
+                    "results": "EICAR-Test-File (not a virus)", 
+                    "virus_database_version": null
+                }, 
+                "Kaspersky Standard (Windows)": {
+                    "status": 1, 
+                    "duration": 3.16, 
+                    "version": "21.21", 
+                    "results": "EICAR-Test-File", 
+                    "virus_database_version": "2026-02-10 16:17:00 (full)"
+                }, 
+                "Emsisoft Commandline Scanner (Windows)": {
+                    "status": 1, 
+                    "duration": 0.42, 
+                    "version": "2025.1.0.12641", 
+                    "results": "EICAR-Test-File (A)", 
+                    "virus_database_version": "unavailable"
+                }
+            }
+        }, 
+        "file_infos": {
+            "mimetype": "EICAR virus test files", 
+            "sha1": "3395856ce81f2b7382dee72602f798b642f14140", 
+            "tags": [], 
+            "timestamp_first_scan": 1756125291.31, 
+            "sha256": "275a021bbfb6489e54d471899f7db9d1663fc695ec2fe2a2c4538aabf651fd0f", 
+            "timestamp_last_scan": 1780550721.86, 
+            "md5": "44d88612fea8a8f36de82e1278abb02f", 
+            "size": 68
+        }, 
+        "submitter": "cli", 
+        "path": "", 
+        "result_id": "fea64b91-f462-4589-b1f5-07875cec5efd"
+    }, 
+    "suricata": {
+        "tls": [], 
+        "files": [], 
+        "alerts": [], 
+        "http": []
+    }, 
+    "virustotal": {
+        "permalink": "https://www.virustotal.com/gui/file/275a021bbfb6489e54d471899f7db9d1663fc695ec2fe2a2c4538aabf651fd0f/detection/f-275a021bbfb6489e54d471899f7db9d1663fc695ec2fe2a2c4538aabf651fd0f-1780551694", 
+        "sha1": "3395856ce81f2b7382dee72602f798b642f14140", 
+        "resource": "44d88612fea8a8f36de82e1278abb02f", 
+        "response_code": 1, 
+        "scan_date": "2026-06-04 05:41:34", 
+        "scan_id": "275a021bbfb6489e54d471899f7db9d1663fc695ec2fe2a2c4538aabf651fd0f-1780551694", 
+        "summary": {
+            "positives": 65, 
+            "permalink": "https://www.virustotal.com/gui/file/275a021bbfb6489e54d471899f7db9d1663fc695ec2fe2a2c4538aabf651fd0f/detection/f-275a021bbfb6489e54d471899f7db9d1663fc695ec2fe2a2c4538aabf651fd0f-1780551694", 
+            "scan_date": "2026-06-04 05:41:34"
+        }, 
+        "sha256": "275a021bbfb6489e54d471899f7db9d1663fc695ec2fe2a2c4538aabf651fd0f", 
+        "normalized": [
+            "EicarTest", 
+            "Test", 
+            "EICAR", 
+            "Malicious", 
+            "score", 
+            "TestFile", 
+            "EICAR test file", 
+            "Misc", 
+            "EICAR Test String", 
+            "EICAR Anti", 
+            "Virus Test File", 
+            "EICAR Test", 
+            "NOT virus", 
+            "Signature", 
+            "Marker", 
+            "NotAThreat", 
+            "EICARTestFile", 
+            "CLASSIC", 
+            "Static AI", 
+            "Malicious COM", 
+            "Testvirus", 
+            "Detected", 
+            "Malware@#2975xfk8s2pq1", 
+            "NoVirus", 
+            "AVEngTestFile", 
+            "Engtest"
+        ], 
+        "total": 67, 
+        "positives": 65, 
+        "verbose_msg": "Scan finished, information embedded", 
+        "md5": "44d88612fea8a8f36de82e1278abb02f", 
+        "scans": {
+            "Bkav": {
+                "detected": true, 
+                "version": "8.2.40(8338)", 
+                "result": "W32.EicarTest.Trojan", 
+                "normalized": [
+                    "EicarTest"
+                ], 
+                "update": "20260603"
+            }, 
+            "Lionic": {
+                "detected": true, 
+                "version": "8.16", 
+                "result": "Test.File.EICAR.y", 
+                "normalized": [
+                    "Test", 
+                    "EICAR"
+                ], 
+                "update": "20260603"
+            }, 
+            "Elastic": {
+                "detected": true, 
+                "version": "4.0.264", 
+                "result": "eicar", 
+                "normalized": [
+                    "eicar"
+                ], 
+                "update": "20260603"
+            }, 
+            "Cynet": {
+                "detected": true, 
+                "version": "4.0.3.4", 
+                "result": "Malicious (score: 99)", 
+                "normalized": [
+                    "Malicious", 
+                    "score"
+                ], 
+                "update": "20260604"
+            }, 
+            "CMC": {
+                "detected": true, 
+                "version": "2.4.2022.1", 
+                "result": "Eicar.test.file", 
+                "normalized": [
+                    "Eicar", 
+                    "test"
+                ], 
+                "update": "20260604"
+            }, 
+            "CAT-QuickHeal": {
+                "detected": true, 
+                "version": "22.00", 
+                "result": "EICAR.TestFile", 
+                "normalized": [
+                    "EICAR", 
+                    "TestFile"
+                ], 
+                "update": "20260603"
+            }, 
+            "Skyhigh": {
+                "detected": true, 
+                "version": "v2021.2.0+4045", 
+                "result": "EICAR test file", 
+                "normalized": [
+                    "EICAR test file"
+                ], 
+                "update": "20260603"
+            }, 
+            "ALYac": {
+                "detected": true, 
+                "version": "2.0.0.10", 
+                "result": "Misc.Eicar-Test-File", 
+                "normalized": [
+                    "Misc", 
+                    "Eicar", 
+                    "Test"
+                ], 
+                "update": "20260604"
+            }, 
+            "Malwarebytes": {
+                "detected": true, 
+                "version": "3.1.0.238", 
+                "result": "EICAR-AV-Test", 
+                "normalized": [
+                    "EICAR", 
+                    "Test"
+                ], 
+                "update": "20260604"
+            }, 
+            "VIPRE": {
+                "detected": true, 
+                "version": "6.0.0.35", 
+                "result": "EICAR-Test-File (not a virus)", 
+                "normalized": [
+                    "EICAR", 
+                    "Test"
+                ], 
+                "update": "20260603"
+            }, 
+            "Sangfor": {
+                "detected": true, 
+                "version": "2.22.3.0", 
+                "result": "EICAR-Test-File (not a virus)", 
+                "normalized": [
+                    "EICAR", 
+                    "Test"
+                ], 
+                "update": "20260601"
+            }, 
+            "CrowdStrike": {
+                "detected": false, 
+                "version": "1.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20230417"
+            }, 
+            "BitDefender": {
+                "detected": true, 
+                "version": "7.2", 
+                "result": "EICAR-Test-File (not a virus)", 
+                "normalized": [
+                    "EICAR", 
+                    "Test"
+                ], 
+                "update": "20260604"
+            }, 
+            "K7GW": {
+                "detected": true, 
+                "version": "14.55.59708", 
+                "result": "EICAR_Test_File", 
+                "normalized": [
+                    "EICAR", 
+                    "Test"
+                ], 
+                "update": "20260604"
+            }, 
+            "K7AntiVirus": {
+                "detected": true, 
+                "version": "14.55.59708", 
+                "result": "EICAR_Test_File", 
+                "normalized": [
+                    "EICAR", 
+                    "Test"
+                ], 
+                "update": "20260604"
+            }, 
+            "Arcabit": {
+                "detected": true, 
+                "version": "2025.0.0.23", 
+                "result": "EICAR-Test-File (not a virus)", 
+                "normalized": [
+                    "EICAR", 
+                    "Test"
+                ], 
+                "update": "20260603"
+            }, 
+            "VirIT": {
+                "detected": true, 
+                "version": "9.5.1220", 
+                "result": "EICAR-Test-File", 
+                "normalized": [
+                    "EICAR", 
+                    "Test"
+                ], 
+                "update": "20260603"
+            }, 
+            "SymantecMobileInsight": {
+                "detected": true, 
+                "version": "2.0", 
+                "result": "ALG:EICAR Test String", 
+                "normalized": [
+                    "EICAR Test String"
+                ], 
+                "update": "20260123"
+            }, 
+            "Symantec": {
+                "detected": true, 
+                "version": "1.22.0.0", 
+                "result": "EICAR Test String", 
+                "normalized": [
+                    "EICAR Test String"
+                ], 
+                "update": "20260604"
+            }, 
+            "ESET-NOD32": {
+                "detected": true, 
+                "version": "18.2.18.0", 
+                "result": "Eicar test file", 
+                "normalized": [
+                    "Eicar test file"
+                ], 
+                "update": "20260604"
+            }, 
+            "APEX": {
+                "detected": true, 
+                "version": "6.783", 
+                "result": "EICAR Anti-Virus Test File", 
+                "normalized": [
+                    "EICAR Anti", 
+                    "Virus Test File"
+                ], 
+                "update": "20260528"
+            }, 
+            "Avast": {
+                "detected": true, 
+                "version": "23.9.8494.0", 
+                "result": "EICAR Test-NOT virus!!!", 
+                "normalized": [
+                    "EICAR Test", 
+                    "NOT virus"
+                ], 
+                "update": "20260604"
+            }, 
+            "ClamAV": {
+                "detected": true, 
+                "version": "1.5.2.0", 
+                "result": "Eicar-Test-Signature", 
+                "normalized": [
+                    "Eicar", 
+                    "Test", 
+                    "Signature"
+                ], 
+                "update": "20260603"
+            }, 
+            "Kaspersky": {
+                "detected": true, 
+                "version": "22.0.1.28", 
+                "result": "EICAR-Test-File", 
+                "normalized": [
+                    "EICAR", 
+                    "Test"
+                ], 
+                "update": "20260604"
+            }, 
+            "Alibaba": {
+                "detected": true, 
+                "version": "0.3.0.5", 
+                "result": "Virus:Win32/EICAR.A", 
+                "normalized": [
+                    "EICAR"
+                ], 
+                "update": "20190527"
+            }, 
+            "NANO-Antivirus": {
+                "detected": true, 
+                "version": "1.0.170.26895", 
+                "result": "Marker.Dos.EICAR-Test-File.dyb", 
+                "normalized": [
+                    "Marker", 
+                    "EICAR", 
+                    "Test"
+                ], 
+                "update": "20260604"
+            }, 
+            "SUPERAntiSpyware": {
+                "detected": true, 
+                "version": "5.6.0.1032", 
+                "result": "NotAThreat.EICAR[TestFile]", 
+                "normalized": [
+                    "NotAThreat", 
+                    "EICAR", 
+                    "TestFile"
+                ], 
+                "update": "20260602"
+            }, 
+            "MicroWorld-eScan": {
+                "detected": true, 
+                "version": "14.0.409.0", 
+                "result": "EICAR-Test-File", 
+                "normalized": [
+                    "EICAR", 
+                    "Test"
+                ], 
+                "update": "20260604"
+            }, 
+            "Rising": {
+                "detected": true, 
+                "version": "25.0.0.28", 
+                "result": "Virus.EICARTestFile!1.103DB (CLASSIC)", 
+                "normalized": [
+                    "EICARTestFile", 
+                    "CLASSIC"
+                ], 
+                "update": "20260604"
+            }, 
+            "Emsisoft": {
+                "detected": true, 
+                "version": "2024.8.0.61147", 
+                "result": "EICAR-Test-File (A)", 
+                "normalized": [
+                    "EICAR", 
+                    "Test"
+                ], 
+                "update": "20260604"
+            }, 
+            "F-Secure": {
+                "detected": true, 
+                "version": "18.10.1547.307", 
+                "result": "EICAR_Test_File", 
+                "normalized": [
+                    "EICAR", 
+                    "Test"
+                ], 
+                "update": "20260604"
+            }, 
+            "DrWeb": {
+                "detected": true, 
+                "version": "7.0.75.2070", 
+                "result": "EICAR Test File (NOT a Virus!)", 
+                "normalized": [
+                    "EICAR Test File"
+                ], 
+                "update": "20260604"
+            }, 
+            "Zillya": {
+                "detected": true, 
+                "version": "2.0.0.5614", 
+                "result": "EICAR.TestFile", 
+                "normalized": [
+                    "EICAR", 
+                    "TestFile"
+                ], 
+                "update": "20260603"
+            }, 
+            "TrendMicro": {
+                "detected": true, 
+                "version": "24.550.0.1002", 
+                "result": "Eicar_test_file", 
+                "normalized": [
+                    "Eicar", 
+                    "test"
+                ], 
+                "update": "20260604"
+            }, 
+            "McAfeeD": {
+                "detected": true, 
+                "version": "1.2.0.14833", 
+                "result": "WPS!EICAR", 
+                "normalized": [
+                    "EICAR"
+                ], 
+                "update": "20260604"
+            }, 
+            "CTX": {
+                "detected": true, 
+                "version": "2024.8.29.1", 
+                "result": "txt.virus.eicar", 
+                "normalized": [
+                    "eicar"
+                ], 
+                "update": "20260604"
+            }, 
+            "Sophos": {
+                "detected": true, 
+                "version": "3.5.1.0", 
+                "result": "EICAR-AV-Test", 
+                "normalized": [
+                    "EICAR", 
+                    "Test"
+                ], 
+                "update": "20260603"
+            }, 
+            "SentinelOne": {
+                "detected": true, 
+                "version": "7.6.2.19", 
+                "result": "Static AI - Malicious COM", 
+                "normalized": [
+                    "Static AI", 
+                    "Malicious COM"
+                ], 
+                "update": "20260324"
+            }, 
+            "Avast-Mobile": {
+                "detected": true, 
+                "version": "260603-04", 
+                "result": "Eicar", 
+                "normalized": [
+                    "Eicar"
+                ], 
+                "update": "20260603"
+            }, 
+            "Jiangmin": {
+                "detected": true, 
+                "version": "16.0.100", 
+                "result": "EICAR-Test-File", 
+                "normalized": [
+                    "EICAR", 
+                    "Test"
+                ], 
+                "update": "20260604"
+            }, 
+            "Webroot": {
+                "detected": true, 
+                "version": "1.9.0.8", 
+                "result": "W32.Eicar.Testvirus.Gen", 
+                "normalized": [
+                    "Eicar", 
+                    "Testvirus"
+                ], 
+                "update": "20250227"
+            }, 
+            "Google": {
+                "detected": true, 
+                "version": "1780545682", 
+                "result": "Detected", 
+                "normalized": [
+                    "Detected"
+                ], 
+                "update": "20260604"
+            }, 
+            "Avira": {
+                "detected": true, 
+                "version": "8.3.3.24", 
+                "result": "Eicar-Test-Signature", 
+                "normalized": [
+                    "Eicar", 
+                    "Test", 
+                    "Signature"
+                ], 
+                "update": "20260604"
+            }, 
+            "Antiy-AVL": {
+                "detected": true, 
+                "version": "3.0", 
+                "result": "TestFile/Win32.EICAR", 
+                "normalized": [
+                    "TestFile", 
+                    "EICAR"
+                ], 
+                "update": "20260604"
+            }, 
+            "Kingsoft": {
+                "detected": true, 
+                "version": "None", 
+                "result": "Test.eicar.aa", 
+                "normalized": [
+                    "Test", 
+                    "eicar"
+                ], 
+                "update": "20260603"
+            }, 
+            "Gridinsoft": {
+                "detected": true, 
+                "version": "1.0.247.174", 
+                "result": "Trojan.U.EICAR_Test_File.dd", 
+                "normalized": [
+                    "EICAR", 
+                    "Test"
+                ], 
+                "update": "20260604"
+            }, 
+            "Xcitium": {
+                "detected": true, 
+                "version": "38699", 
+                "result": "Malware@#2975xfk8s2pq1", 
+                "normalized": [
+                    "Malware@#2975xfk8s2pq1"
+                ], 
+                "update": "20260603"
+            }, 
+            "Microsoft": {
+                "detected": true, 
+                "version": "1.1.26040.8", 
+                "result": "Virus:DOS/EICAR_Test_File", 
+                "normalized": [
+                    "EICAR", 
+                    "Test"
+                ], 
+                "update": "20260604"
+            }, 
+            "ViRobot": {
+                "detected": true, 
+                "version": "2014.3.20.0", 
+                "result": "EICAR-test", 
+                "normalized": [
+                    "EICAR", 
+                    "test"
+                ], 
+                "update": "20260604"
+            }, 
+            "ZoneAlarm": {
+                "detected": true, 
+                "version": "6.25-116107259", 
+                "result": "EICAR-AV-Test", 
+                "normalized": [
+                    "EICAR", 
+                    "Test"
+                ], 
+                "update": "20260603"
+            }, 
+            "GData": {
+                "detected": true, 
+                "version": "GD:27.44785AVA:64.31361", 
+                "result": "EICAR_TEST_FILE", 
+                "normalized": [
+                    "EICAR", 
+                    "TEST"
+                ], 
+                "update": "20260604"
+            }, 
+            "Varist": {
+                "detected": true, 
+                "version": "6.6.1.3", 
+                "result": "EICAR_Test_File", 
+                "normalized": [
+                    "EICAR", 
+                    "Test"
+                ], 
+                "update": "20260604"
+            }, 
+            "AhnLab-V3": {
+                "detected": true, 
+                "version": "3.30.0.10666", 
+                "result": "Virus/EICAR_Test_File", 
+                "normalized": [
+                    "EICAR", 
+                    "Test"
+                ], 
+                "update": "20260604"
+            }, 
+            "Acronis": {
+                "detected": false, 
+                "version": "1.2.0.121", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20240328"
+            }, 
+            "VBA32": {
+                "detected": true, 
+                "version": "5.6.1", 
+                "result": "EICAR-Test-File", 
+                "normalized": [
+                    "EICAR", 
+                    "Test"
+                ], 
+                "update": "20260603"
+            }, 
+            "TACHYON": {
+                "detected": true, 
+                "version": "2026-06-04.01", 
+                "result": "EICAR-Test-File", 
+                "normalized": [
+                    "EICAR", 
+                    "Test"
+                ], 
+                "update": "20260604"
+            }, 
+            "Zoner": {
+                "detected": true, 
+                "version": "2.2.2.0", 
+                "result": "EICAR.Test.File-NoVirus.250", 
+                "normalized": [
+                    "EICAR", 
+                    "Test", 
+                    "NoVirus"
+                ], 
+                "update": "20260604"
+            }, 
+            "TrendMicro-HouseCall": {
+                "detected": true, 
+                "version": "24.550.0.1002", 
+                "result": "Eicar_test_file", 
+                "normalized": [
+                    "Eicar", 
+                    "test"
+                ], 
+                "update": "20260604"
+            }, 
+            "Tencent": {
+                "detected": true, 
+                "version": "1.0.0.1", 
+                "result": "EICAR.TEST.NOT-A-VIRUS", 
+                "normalized": [
+                    "EICAR", 
+                    "TEST"
+                ], 
+                "update": "20260604"
+            }, 
+            "Yandex": {
+                "detected": true, 
+                "version": "5.5.2.24", 
+                "result": "EICAR_test_file", 
+                "normalized": [
+                    "EICAR", 
+                    "test"
+                ], 
+                "update": "20260604"
+            }, 
+            "TrellixENS": {
+                "detected": true, 
+                "version": "6.0.6.653", 
+                "result": "EICAR test file", 
+                "normalized": [
+                    "EICAR test file"
+                ], 
+                "update": "20260603"
+            }, 
+            "huorong": {
+                "detected": true, 
+                "version": "ca9ca35:ca9ca35:cfcc2b7:cfcc2b7", 
+                "result": "TEST/AVEngTestFile!EICAR", 
+                "normalized": [
+                    "TEST", 
+                    "AVEngTestFile", 
+                    "EICAR"
+                ], 
+                "update": "20260603"
+            }, 
+            "MaxSecure": {
+                "detected": true, 
+                "version": "1.0.0.1", 
+                "result": "VIRUS.EICAR.TEST", 
+                "normalized": [
+                    "EICAR", 
+                    "TEST"
+                ], 
+                "update": "20260603"
+            }, 
+            "Fortinet": {
+                "detected": true, 
+                "version": "7.0.48.0", 
+                "result": "EICAR_TEST_FILE", 
+                "normalized": [
+                    "EICAR", 
+                    "TEST"
+                ], 
+                "update": "20260604"
+            }, 
+            "AVG": {
+                "detected": true, 
+                "version": "23.9.8494.0", 
+                "result": "EICAR Test-NOT virus!!!", 
+                "normalized": [
+                    "EICAR Test", 
+                    "NOT virus"
+                ], 
+                "update": "20260604"
+            }, 
+            "Panda": {
+                "detected": true, 
+                "version": "4.6.4.2", 
+                "result": "EICAR-AV-TEST-FILE", 
+                "normalized": [
+                    "EICAR", 
+                    "TEST"
+                ], 
+                "update": "20260603"
+            }, 
+            "alibabacloud": {
+                "detected": true, 
+                "version": "2.2.0", 
+                "result": "Engtest:Multi/Eicar", 
+                "normalized": [
+                    "Engtest", 
+                    "Eicar"
+                ], 
+                "update": "20250321"
+            }
+        }
+    }, 
+    "network": {
+        "udp": [], 
+        "dns_servers": [], 
+        "http": [], 
+        "smtp": [], 
+        "tcp": [], 
+        "geoinfo": {}, 
+        "mitm": [], 
+        "https_ex": [], 
+        "http_ex": [], 
+        "sorted_pcap_sha256": "4b7079b0a66c2831960a9b1167d6e4ca61000eadc06752ece3f3359502ec6eca", 
+        "icmp": [], 
+        "tls": [], 
+        "dead_hosts": [], 
+        "smtp_ex": [], 
+        "hosts": [], 
+        "pcap_sha256": "704ff44523a9e90715f2387eb8ea8d2b9356ae0b5e9b07cfd8e329ea8778cfe3", 
+        "dns": [], 
+        "domains": [], 
+        "irc": []
+    }, 
+    "resubmit": {
+        "resubmit_ids": []
+    }, 
+    "snort": {
+        "alerts": []
+    }, 
+    "behavior": {
+        "generic": [
+            {
+                "process_path": null, 
+                "process_name": "0x55e84aa8c44c", 
+                "pid": 2091, 
+                "summary": {}, 
+                "first_seen": 1780562524.241148, 
+                "ppid": -1
+            }
+        ], 
+        "processes": [
+            {
+                "calls": [
+                    {
+                        "status": "ENOEXEC", 
+                        "process_name": "sh", 
+                        "pid": 2091, 
+                        "raw": "Thu Jun  4 08:42:04 2026.241148 sh@7ff532a37957[2091] execve(\"/tmp/eicar.com\", [\"/tmp/eicar.com\"], [\"SUDO_GID=0\", \"MAIL=/var/mail/root\", \"USER=root\", \"HOME=/root\", \"SUDO_UID=0\", \"LOGNAME=root\", \"SYSTEMTAP_MODULE=stap_\", \"TERM=unknown\", \"SYSTEMTAP_VERBOSE=2\", \"PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin\", \"DISPLAY=:0\", \"LANG=en_US.UTF-8\", \"XAUTHORITY=/root/.Xauthority\", \"SUDO_COMMAND=/usr/bin/staprun -vv -o stap.log /root/.cuckoo/stap_.ko -c sh -c /tmp/eicar.com\", \"SHELL=/bin/bash\", \"SUDO_USER=root\", \"PWD=/tmp/tmpDiY35e\"]) = -8 (ENOEXEC)\n", 
+                        "api": "execve", 
+                        "return_value": "-8", 
+                        "category": "process", 
+                        "instruction_pointer": "7ff532a37957", 
+                        "arguments": {
+                            "p2": [
+                                "SUDO_GID=0", 
+                                "MAIL=/var/mail/root", 
+                                "USER=root", 
+                                "HOME=/root", 
+                                "SUDO_UID=0", 
+                                "LOGNAME=root", 
+                                "SYSTEMTAP_MODULE=stap_", 
+                                "TERM=unknown", 
+                                "SYSTEMTAP_VERBOSE=2", 
+                                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin", 
+                                "DISPLAY=:0", 
+                                "LANG=en_US.UTF-8", 
+                                "XAUTHORITY=/root/.Xauthority", 
+                                "SUDO_COMMAND=/usr/bin/staprun -vv -o stap.log /root/.cuckoo/stap_.ko -c sh -c /tmp/eicar.com", 
+                                "SHELL=/bin/bash", 
+                                "SUDO_USER=root", 
+                                "PWD=/tmp/tmpDiY35e"
+                            ], 
+                            "p0": "/tmp/eicar.com", 
+                            "p1": [
+                                "/tmp/eicar.com"
+                            ]
+                        }, 
+                        "time": 1780562524.241148
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "sh", 
+                        "pid": 2091, 
+                        "raw": "Thu Jun  4 08:42:04 2026.241330 sh@7ff532a62cce[2091] openat(AT_FDCWD, \"/tmp/eicar.com\", O_RDONLY|O_NOCTTY) = 3\n", 
+                        "api": "openat", 
+                        "return_value": "3", 
+                        "category": "process", 
+                        "instruction_pointer": "7ff532a62cce", 
+                        "arguments": {
+                            "p2": "O_RDONLY|O_NOCTTY", 
+                            "p0": "AT_FDCWD", 
+                            "p1": "/tmp/eicar.com"
+                        }, 
+                        "time": 1780562524.24133
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "sh", 
+                        "pid": 2091, 
+                        "raw": "Thu Jun  4 08:42:04 2026.241391 sh@7ff532a62f81[2091] read(3, 0x7ffd2609a380, 128) = 68\n", 
+                        "api": "read", 
+                        "return_value": "68", 
+                        "category": "process", 
+                        "instruction_pointer": "7ff532a62f81", 
+                        "arguments": {
+                            "p2": "128", 
+                            "p0": "3", 
+                            "p1": "0x7ffd2609a380"
+                        }, 
+                        "time": 1780562524.241391
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "sh", 
+                        "pid": 2091, 
+                        "raw": "Thu Jun  4 08:42:04 2026.241458 sh@7ff532a63674[2091] close(3) = 0\n", 
+                        "api": "close", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7ff532a63674", 
+                        "arguments": {
+                            "p0": "3"
+                        }, 
+                        "time": 1780562524.241458
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "sh", 
+                        "pid": 2091, 
+                        "raw": "Thu Jun  4 08:42:04 2026.241673 sh@7f6fc4ee4c27[2091] execve(0x55e84aa8c44c, [0x55e84aa8c44c, \"/tmp/eicar.com\"], [\"SUDO_GID=0\", \"MAIL=/var/mail/root\", \"USER=root\", \"HOME=/root\", \"SUDO_UID=0\", \"LOGNAME=root\", \"SYSTEMTAP_MODULE=stap_\", \"TERM=unknown\", \"SYSTEMTAP_VERBOSE=2\", \"PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin\", \"DISPLAY=:0\", \"LANG=en_US.UTF-8\", \"XAUTHORITY=/root/.Xauthority\", \"SUDO_COMMAND=/usr/bin/staprun -vv -o stap.log /root/.cuckoo/stap_.ko -c sh -c /tmp/eicar.com\", \"SHELL=/bin/bash\", \"SUDO_USER=root\", \"PWD=/tmp/tmpDiY35e\"])\n", 
+                        "api": "execve", 
+                        "return_value": "", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6fc4ee4c27", 
+                        "arguments": {
+                            "p2": [
+                                "SUDO_GID=0", 
+                                "MAIL=/var/mail/root", 
+                                "USER=root", 
+                                "HOME=/root", 
+                                "SUDO_UID=0", 
+                                "LOGNAME=root", 
+                                "SYSTEMTAP_MODULE=stap_", 
+                                "TERM=unknown", 
+                                "SYSTEMTAP_VERBOSE=2", 
+                                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin", 
+                                "DISPLAY=:0", 
+                                "LANG=en_US.UTF-8", 
+                                "XAUTHORITY=/root/.Xauthority", 
+                                "SUDO_COMMAND=/usr/bin/staprun -vv -o stap.log /root/.cuckoo/stap_.ko -c sh -c /tmp/eicar.com", 
+                                "SHELL=/bin/bash", 
+                                "SUDO_USER=root", 
+                                "PWD=/tmp/tmpDiY35e"
+                            ], 
+                            "p0": "0x55e84aa8c44c", 
+                            "p1": [
+                                "0x55e84aa8c44c", 
+                                "/tmp/eicar.com"
+                            ]
+                        }, 
+                        "time": 1780562524.241673
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "sh", 
+                        "pid": 2091, 
+                        "raw": "Thu Jun  4 08:42:04 2026.241984 sh@7f6fc4ee4c27[2091] brk(0x0) = 94410598862848\n", 
+                        "api": "brk", 
+                        "return_value": "94410598862848", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6fc4ee4c27", 
+                        "arguments": {
+                            "p0": "0x0"
+                        }, 
+                        "time": 1780562524.241984
+                    }, 
+                    {
+                        "status": "ENOENT", 
+                        "process_name": "sh", 
+                        "pid": 2091, 
+                        "raw": "Thu Jun  4 08:42:04 2026.242089 sh@7f6fc4ee59d7[2091] access(\"/etc/ld.so.preload\", R_OK) = -2 (ENOENT)\n", 
+                        "api": "access", 
+                        "return_value": "-2", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6fc4ee59d7", 
+                        "arguments": {
+                            "p0": "/etc/ld.so.preload", 
+                            "p1": "R_OK"
+                        }, 
+                        "time": 1780562524.242089
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "sh", 
+                        "pid": 2091, 
+                        "raw": "Thu Jun  4 08:42:04 2026.242235 sh@7f6fc4ee5b0d[2091] openat(AT_FDCWD, \"/etc/ld.so.cache\", O_RDONLY|O_CLOEXEC) = 3\n", 
+                        "api": "openat", 
+                        "return_value": "3", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6fc4ee5b0d", 
+                        "arguments": {
+                            "p2": "O_RDONLY|O_CLOEXEC", 
+                            "p0": "AT_FDCWD", 
+                            "p1": "/etc/ld.so.cache"
+                        }, 
+                        "time": 1780562524.242235
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "sh", 
+                        "pid": 2091, 
+                        "raw": "Thu Jun  4 08:42:04 2026.242297 sh@7f6fc4ee5943[2091] fstat(3, 0x7fff7c9efb50) = 0\n", 
+                        "api": "fstat", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6fc4ee5943", 
+                        "arguments": {
+                            "p0": "3", 
+                            "p1": "0x7fff7c9efb50"
+                        }, 
+                        "time": 1780562524.242297
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "sh", 
+                        "pid": 2091, 
+                        "raw": "Thu Jun  4 08:42:04 2026.242378 sh@7f6fc4ee5d03[2091] mmap2(0x0, 88858, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f6fc4eb3000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f6fc4eb3000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6fc4ee5d03", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p3": "MAP_PRIVATE", 
+                            "p0": "0x0", 
+                            "p1": "88858", 
+                            "p4": "3", 
+                            "p5": "0"
+                        }, 
+                        "time": 1780562524.242378
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "sh", 
+                        "pid": 2091, 
+                        "raw": "Thu Jun  4 08:42:04 2026.242448 sh@7f6fc4ee59f7[2091] close(3) = 0\n", 
+                        "api": "close", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6fc4ee59f7", 
+                        "arguments": {
+                            "p0": "3"
+                        }, 
+                        "time": 1780562524.242448
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "sh", 
+                        "pid": 2091, 
+                        "raw": "Thu Jun  4 08:42:04 2026.242534 sh@7f6fc4ee5b0d[2091] openat(AT_FDCWD, \"/lib/x86_64-linux-gnu/libc.so.6\", O_RDONLY|O_CLOEXEC) = 3\n", 
+                        "api": "openat", 
+                        "return_value": "3", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6fc4ee5b0d", 
+                        "arguments": {
+                            "p2": "O_RDONLY|O_CLOEXEC", 
+                            "p0": "AT_FDCWD", 
+                            "p1": "/lib/x86_64-linux-gnu/libc.so.6"
+                        }, 
+                        "time": 1780562524.242534
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "sh", 
+                        "pid": 2091, 
+                        "raw": "Thu Jun  4 08:42:04 2026.242620 sh@7f6fc4ee5bd4[2091] read(3, 0x7fff7c9efd08, 832) = 832\n", 
+                        "api": "read", 
+                        "return_value": "832", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6fc4ee5bd4", 
+                        "arguments": {
+                            "p2": "832", 
+                            "p0": "3", 
+                            "p1": "0x7fff7c9efd08"
+                        }, 
+                        "time": 1780562524.24262
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "sh", 
+                        "pid": 2091, 
+                        "raw": "Thu Jun  4 08:42:04 2026.242699 sh@7f6fc4ee5943[2091] fstat(3, 0x7fff7c9efba0) = 0\n", 
+                        "api": "fstat", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6fc4ee5943", 
+                        "arguments": {
+                            "p0": "3", 
+                            "p1": "0x7fff7c9efba0"
+                        }, 
+                        "time": 1780562524.242699
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "sh", 
+                        "pid": 2091, 
+                        "raw": "Thu Jun  4 08:42:04 2026.242755 sh@7f6fc4ee5d03[2091] mmap2(0x0, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f6fc4eb1000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f6fc4eb1000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6fc4ee5d03", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_WRITE", 
+                            "p3": "MAP_PRIVATE|MAP_ANONYMOUS", 
+                            "p0": "0x0", 
+                            "p1": "8192", 
+                            "p4": "-1", 
+                            "p5": "0"
+                        }, 
+                        "time": 1780562524.242755
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "sh", 
+                        "pid": 2091, 
+                        "raw": "Thu Jun  4 08:42:04 2026.242848 sh@7f6fc4ee5d03[2091] mmap2(0x0, 2008696, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f6fc4cc6000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f6fc4cc6000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6fc4ee5d03", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p3": "MAP_PRIVATE|MAP_DENYWRITE", 
+                            "p0": "0x0", 
+                            "p1": "2008696", 
+                            "p4": "3", 
+                            "p5": "0"
+                        }, 
+                        "time": 1780562524.242848
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "sh", 
+                        "pid": 2091, 
+                        "raw": "Thu Jun  4 08:42:04 2026.242935 sh@7f6fc4ee5d03[2091] mmap2(0x7f6fc4ceb000, 1519616, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 151552) = 0x7f6fc4ceb000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f6fc4ceb000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6fc4ee5d03", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_EXEC", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE", 
+                            "p0": "0x7f6fc4ceb000", 
+                            "p1": "1519616", 
+                            "p4": "3", 
+                            "p5": "151552"
+                        }, 
+                        "time": 1780562524.242935
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "sh", 
+                        "pid": 2091, 
+                        "raw": "Thu Jun  4 08:42:04 2026.243017 sh@7f6fc4ee5d03[2091] mmap2(0x7f6fc4e5e000, 299008, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 1671168) = 0x7f6fc4e5e000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f6fc4e5e000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6fc4ee5d03", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE", 
+                            "p0": "0x7f6fc4e5e000", 
+                            "p1": "299008", 
+                            "p4": "3", 
+                            "p5": "1671168"
+                        }, 
+                        "time": 1780562524.243017
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "sh", 
+                        "pid": 2091, 
+                        "raw": "Thu Jun  4 08:42:04 2026.243090 sh@7f6fc4ee5d03[2091] mmap2(0x7f6fc4ea7000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 1966080) = 0x7f6fc4ea7000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f6fc4ea7000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6fc4ee5d03", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_WRITE", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE", 
+                            "p0": "0x7f6fc4ea7000", 
+                            "p1": "24576", 
+                            "p4": "3", 
+                            "p5": "1966080"
+                        }, 
+                        "time": 1780562524.24309
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "sh", 
+                        "pid": 2091, 
+                        "raw": "Thu Jun  4 08:42:04 2026.243213 sh@7f6fc4ee5d03[2091] mmap2(0x7f6fc4ead000, 13944, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f6fc4ead000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f6fc4ead000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6fc4ee5d03", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_WRITE", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS", 
+                            "p0": "0x7f6fc4ead000", 
+                            "p1": "13944", 
+                            "p4": "-1", 
+                            "p5": "0"
+                        }, 
+                        "time": 1780562524.243213
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "sh", 
+                        "pid": 2091, 
+                        "raw": "Thu Jun  4 08:42:04 2026.243334 sh@7f6fc4ee59f7[2091] close(3) = 0\n", 
+                        "api": "close", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6fc4ee59f7", 
+                        "arguments": {
+                            "p0": "3"
+                        }, 
+                        "time": 1780562524.243334
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "sh", 
+                        "pid": 2091, 
+                        "raw": "Thu Jun  4 08:42:04 2026.243413 sh@7f6fc4ecaf30[2091] arch_prctl(ARCH_SET_FS, 140118021842304) = 0\n", 
+                        "api": "arch_prctl", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6fc4ecaf30", 
+                        "arguments": {
+                            "p0": "ARCH_SET_FS", 
+                            "p1": "140118021842304"
+                        }, 
+                        "time": 1780562524.243413
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "sh", 
+                        "pid": 2091, 
+                        "raw": "Thu Jun  4 08:42:04 2026.243654 sh@7f6fc4ee5db7[2091] mprotect(0x7f6fc4ea7000, 12288, PROT_READ) = 0\n", 
+                        "api": "mprotect", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6fc4ee5db7", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p0": "0x7f6fc4ea7000", 
+                            "p1": "12288"
+                        }, 
+                        "time": 1780562524.243654
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "sh", 
+                        "pid": 2091, 
+                        "raw": "Thu Jun  4 08:42:04 2026.243775 sh@7f6fc4ee5db7[2091] mprotect(0x55ddad0fd000, 8192, PROT_READ) = 0\n", 
+                        "api": "mprotect", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6fc4ee5db7", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p0": "0x55ddad0fd000", 
+                            "p1": "8192"
+                        }, 
+                        "time": 1780562524.243775
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "sh", 
+                        "pid": 2091, 
+                        "raw": "Thu Jun  4 08:42:04 2026.243881 sh@7f6fc4ee5db7[2091] mprotect(0x7f6fc4ef3000, 4096, PROT_READ) = 0\n", 
+                        "api": "mprotect", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6fc4ee5db7", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p0": "0x7f6fc4ef3000", 
+                            "p1": "4096"
+                        }, 
+                        "time": 1780562524.243881
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "sh", 
+                        "pid": 2091, 
+                        "raw": "Thu Jun  4 08:42:04 2026.243939 sh@7f6fc4ee5d97[2091] munmap(0x7f6fc4eb3000, 88858) = 0\n", 
+                        "api": "munmap", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6fc4ee5d97", 
+                        "arguments": {
+                            "p0": "0x7f6fc4eb3000", 
+                            "p1": "88858"
+                        }, 
+                        "time": 1780562524.243939
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "sh", 
+                        "pid": 2091, 
+                        "raw": "Thu Jun  4 08:42:04 2026.244139 sh@7f6fc4da8707[2091] getuid() = 0\n", 
+                        "api": "getuid", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6fc4da8707", 
+                        "arguments": {}, 
+                        "time": 1780562524.244139
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "sh", 
+                        "pid": 2091, 
+                        "raw": "Thu Jun  4 08:42:04 2026.244200 sh@7f6fc4da8727[2091] getgid() = 0\n", 
+                        "api": "getgid", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6fc4da8727", 
+                        "arguments": {}, 
+                        "time": 1780562524.2442
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "sh", 
+                        "pid": 2091, 
+                        "raw": "Thu Jun  4 08:42:04 2026.244280 sh@7f6fc4da86e7[2091] getpid() = 2091\n", 
+                        "api": "getpid", 
+                        "return_value": "2091", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6fc4da86e7", 
+                        "arguments": {}, 
+                        "time": 1780562524.24428
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "sh", 
+                        "pid": 2091, 
+                        "raw": "Thu Jun  4 08:42:04 2026.244360 sh@7f6fc4d0a030[2091] rt_sigaction(SIGCHLD, {0x55ddad0f3380, SA_RESTORER, 0x7f6fc4d09f60, [SIGHUP|SIGINT|SIGQUIT|SIGILL|SIGTRAP|SIGABRT|SIGBUS|SIGFPE|SIGKILL|SIGUSR1|SIGSEGV|SIGPIPE|SIGUSR2|SIGALRM|SIGTERM|SIGCHLD|SIGCONT|SIGSTOP|SIGTSTP|SIGTTIN|SIGTTOU|SIGURG|SIGXCPU|SIGXFSZ|SIGVTALRM|SIGPROF|SIGWINCH|SIGIO/SIGPOLL|SIGPWR|SIGSYS]}, 0x0, 8) = 0\n", 
+                        "api": "rt_sigaction", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6fc4d0a030", 
+                        "arguments": {
+                            "p2": "0x0", 
+                            "p3": "8", 
+                            "p0": "SIGCHLD", 
+                            "p1": [
+                                "0x55ddad0f3380", 
+                                "SA_RESTORER", 
+                                "0x7f6fc4d09f60", 
+                                [
+                                    "SIGHUP|SIGINT|SIGQUIT|SIGILL|SIGTRAP|SIGABRT|SIGBUS|SIGFPE|SIGKILL|SIGUSR1|SIGSEGV|SIGPIPE|SIGUSR2|SIGALRM|SIGTERM|SIGCHLD|SIGCONT|SIGSTOP|SIGTSTP|SIGTTIN|SIGTTOU|SIGURG|SIGXCPU|SIGXFSZ|SIGVTALRM|SIGPROF|SIGWINCH|SIGIO/SIGPOLL|SIGPWR|SIGSYS]"
+                                ]
+                            ]
+                        }, 
+                        "time": 1780562524.24436
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "sh", 
+                        "pid": 2091, 
+                        "raw": "Thu Jun  4 08:42:04 2026.244446 sh@7f6fc4da8717[2091] geteuid() = 0\n", 
+                        "api": "geteuid", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6fc4da8717", 
+                        "arguments": {}, 
+                        "time": 1780562524.244446
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "sh", 
+                        "pid": 2091, 
+                        "raw": "Thu Jun  4 08:42:04 2026.244580 sh@7f6fc4dd92f7[2091] brk(0x0) = 94410598862848\n", 
+                        "api": "brk", 
+                        "return_value": "94410598862848", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6fc4dd92f7", 
+                        "arguments": {
+                            "p0": "0x0"
+                        }, 
+                        "time": 1780562524.24458
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "sh", 
+                        "pid": 2091, 
+                        "raw": "Thu Jun  4 08:42:04 2026.244631 sh@7f6fc4dd92f7[2091] brk(0x55ddae376000) = 94410598998016\n", 
+                        "api": "brk", 
+                        "return_value": "94410598998016", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6fc4dd92f7", 
+                        "arguments": {
+                            "p0": "0x55ddae376000"
+                        }, 
+                        "time": 1780562524.244631
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "sh", 
+                        "pid": 2091, 
+                        "raw": "Thu Jun  4 08:42:04 2026.244710 sh@7f6fc4da86f7[2091] getppid() = 2083\n", 
+                        "api": "getppid", 
+                        "return_value": "2083", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6fc4da86f7", 
+                        "arguments": {}, 
+                        "time": 1780562524.24471
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "sh", 
+                        "pid": 2091, 
+                        "raw": "Thu Jun  4 08:42:04 2026.244782 sh@7f6fc4dd25c5[2091] stat(\"/tmp/tmpDiY35e\", 0x7fff7c9f0700) = 0\n", 
+                        "api": "stat", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6fc4dd25c5", 
+                        "arguments": {
+                            "p0": "/tmp/tmpDiY35e", 
+                            "p1": "0x7fff7c9f0700"
+                        }, 
+                        "time": 1780562524.244782
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "sh", 
+                        "pid": 2091, 
+                        "raw": "Thu Jun  4 08:42:04 2026.244838 sh@7f6fc4dd25c5[2091] stat(\".\", 0x7fff7c9f0790) = 0\n", 
+                        "api": "stat", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6fc4dd25c5", 
+                        "arguments": {
+                            "p0": ".", 
+                            "p1": "0x7fff7c9f0790"
+                        }, 
+                        "time": 1780562524.244838
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "sh", 
+                        "pid": 2091, 
+                        "raw": "Thu Jun  4 08:42:04 2026.244895 sh@7f6fc4dd2cce[2091] openat(AT_FDCWD, \"/tmp/eicar.com\", O_RDONLY) = 3\n", 
+                        "api": "openat", 
+                        "return_value": "3", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6fc4dd2cce", 
+                        "arguments": {
+                            "p2": "O_RDONLY", 
+                            "p0": "AT_FDCWD", 
+                            "p1": "/tmp/eicar.com"
+                        }, 
+                        "time": 1780562524.244895
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "sh", 
+                        "pid": 2091, 
+                        "raw": "Thu Jun  4 08:42:04 2026.244949 sh@7f6fc4dd84f0[2091] fcntl(3, F_DUPFD, 0xa) = 10\n", 
+                        "api": "fcntl", 
+                        "return_value": "10", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6fc4dd84f0", 
+                        "arguments": {
+                            "p2": "0xa", 
+                            "p0": "3", 
+                            "p1": "F_DUPFD"
+                        }, 
+                        "time": 1780562524.244949
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "sh", 
+                        "pid": 2091, 
+                        "raw": "Thu Jun  4 08:42:04 2026.245006 sh@7f6fc4dd3674[2091] close(3) = 0\n", 
+                        "api": "close", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6fc4dd3674", 
+                        "arguments": {
+                            "p0": "3"
+                        }, 
+                        "time": 1780562524.245006
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "sh", 
+                        "pid": 2091, 
+                        "raw": "Thu Jun  4 08:42:04 2026.245059 sh@7f6fc4dd84f0[2091] fcntl(10, F_SETFD, 0x1) = 0\n", 
+                        "api": "fcntl", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6fc4dd84f0", 
+                        "arguments": {
+                            "p2": "0x1", 
+                            "p0": "10", 
+                            "p1": "F_SETFD"
+                        }, 
+                        "time": 1780562524.245059
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "sh", 
+                        "pid": 2091, 
+                        "raw": "Thu Jun  4 08:42:04 2026.245104 sh@7f6fc4da8717[2091] geteuid() = 0\n", 
+                        "api": "geteuid", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6fc4da8717", 
+                        "arguments": {}, 
+                        "time": 1780562524.245104
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "sh", 
+                        "pid": 2091, 
+                        "raw": "Thu Jun  4 08:42:04 2026.245147 sh@7f6fc4da8737[2091] getegid() = 0\n", 
+                        "api": "getegid", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6fc4da8737", 
+                        "arguments": {}, 
+                        "time": 1780562524.245147
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "sh", 
+                        "pid": 2091, 
+                        "raw": "Thu Jun  4 08:42:04 2026.245194 sh@7f6fc4d0a030[2091] rt_sigaction(SIGINT, {NULL}, 0x7fff7c9f0670, 8) = 0\n", 
+                        "api": "rt_sigaction", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6fc4d0a030", 
+                        "arguments": {
+                            "p2": "0x7fff7c9f0670", 
+                            "p3": "8", 
+                            "p0": "SIGINT", 
+                            "p1": [
+                                "NULL"
+                            ]
+                        }, 
+                        "time": 1780562524.245194
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "sh", 
+                        "pid": 2091, 
+                        "raw": "Thu Jun  4 08:42:04 2026.245284 sh@7f6fc4d0a030[2091] rt_sigaction(SIGINT, {0x55ddad0f3380, SA_RESTORER, 0x7f6fc4d09f60, [SIGHUP|SIGINT|SIGQUIT|SIGILL|SIGTRAP|SIGABRT|SIGBUS|SIGFPE|SIGKILL|SIGUSR1|SIGSEGV|SIGPIPE|SIGUSR2|SIGALRM|SIGTERM|SIGCHLD|SIGCONT|SIGSTOP|SIGTSTP|SIGTTIN|SIGTTOU|SIGURG|SIGXCPU|SIGXFSZ|SIGVTALRM|SIGPROF|SIGWINCH|SIGIO/SIGPOLL|SIGPWR|SIGSYS]}, 0x0, 8) = 0\n", 
+                        "api": "rt_sigaction", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6fc4d0a030", 
+                        "arguments": {
+                            "p2": "0x0", 
+                            "p3": "8", 
+                            "p0": "SIGINT", 
+                            "p1": [
+                                "0x55ddad0f3380", 
+                                "SA_RESTORER", 
+                                "0x7f6fc4d09f60", 
+                                [
+                                    "SIGHUP|SIGINT|SIGQUIT|SIGILL|SIGTRAP|SIGABRT|SIGBUS|SIGFPE|SIGKILL|SIGUSR1|SIGSEGV|SIGPIPE|SIGUSR2|SIGALRM|SIGTERM|SIGCHLD|SIGCONT|SIGSTOP|SIGTSTP|SIGTTIN|SIGTTOU|SIGURG|SIGXCPU|SIGXFSZ|SIGVTALRM|SIGPROF|SIGWINCH|SIGIO/SIGPOLL|SIGPWR|SIGSYS]"
+                                ]
+                            ]
+                        }, 
+                        "time": 1780562524.245284
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "sh", 
+                        "pid": 2091, 
+                        "raw": "Thu Jun  4 08:42:04 2026.245339 sh@7f6fc4d0a030[2091] rt_sigaction(SIGQUIT, {NULL}, 0x7fff7c9f0670, 8) = 0\n", 
+                        "api": "rt_sigaction", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6fc4d0a030", 
+                        "arguments": {
+                            "p2": "0x7fff7c9f0670", 
+                            "p3": "8", 
+                            "p0": "SIGQUIT", 
+                            "p1": [
+                                "NULL"
+                            ]
+                        }, 
+                        "time": 1780562524.245339
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "sh", 
+                        "pid": 2091, 
+                        "raw": "Thu Jun  4 08:42:04 2026.245385 sh@7f6fc4d0a030[2091] rt_sigaction(SIGQUIT, {SIG_DFL}, 0x0, 8) = 0\n", 
+                        "api": "rt_sigaction", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6fc4d0a030", 
+                        "arguments": {
+                            "p2": "0x0", 
+                            "p3": "8", 
+                            "p0": "SIGQUIT", 
+                            "p1": [
+                                "SIG_DFL"
+                            ]
+                        }, 
+                        "time": 1780562524.245385
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "sh", 
+                        "pid": 2091, 
+                        "raw": "Thu Jun  4 08:42:04 2026.245431 sh@7f6fc4d0a030[2091] rt_sigaction(SIGTERM, {NULL}, 0x7fff7c9f0680, 8) = 0\n", 
+                        "api": "rt_sigaction", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6fc4d0a030", 
+                        "arguments": {
+                            "p2": "0x7fff7c9f0680", 
+                            "p3": "8", 
+                            "p0": "SIGTERM", 
+                            "p1": [
+                                "NULL"
+                            ]
+                        }, 
+                        "time": 1780562524.245431
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "sh", 
+                        "pid": 2091, 
+                        "raw": "Thu Jun  4 08:42:04 2026.245476 sh@7f6fc4d0a030[2091] rt_sigaction(SIGTERM, {SIG_DFL}, 0x0, 8) = 0\n", 
+                        "api": "rt_sigaction", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6fc4d0a030", 
+                        "arguments": {
+                            "p2": "0x0", 
+                            "p3": "8", 
+                            "p0": "SIGTERM", 
+                            "p1": [
+                                "SIG_DFL"
+                            ]
+                        }, 
+                        "time": 1780562524.245476
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "sh", 
+                        "pid": 2091, 
+                        "raw": "Thu Jun  4 08:42:04 2026.245523 sh@7f6fc4dd2f81[2091] read(10, 0x55ddad0ffaa0, 8192) = 68\n", 
+                        "api": "read", 
+                        "return_value": "68", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6fc4dd2f81", 
+                        "arguments": {
+                            "p2": "8192", 
+                            "p0": "10", 
+                            "p1": "0x55ddad0ffaa0"
+                        }, 
+                        "time": 1780562524.245523
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "sh", 
+                        "pid": 2091, 
+                        "raw": "Thu Jun  4 08:42:04 2026.245596 sh@7f6fc4dd3024[2091] write(2, \"/tmp/eicar.com: 1: /tmp/eicar.com: \", 35) = 35\n", 
+                        "api": "write", 
+                        "return_value": "35", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6fc4dd3024", 
+                        "arguments": {
+                            "p2": "35", 
+                            "p0": "2", 
+                            "p1": "/tmp/eicar.com: 1: /tmp/eicar.com: "
+                        }, 
+                        "time": 1780562524.245596
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "sh", 
+                        "pid": 2091, 
+                        "raw": "Thu Jun  4 08:42:04 2026.245660 sh@7f6fc4dd3024[2091] write(2, \"Syntax error: word unexpected \\x28expecting \\x22\\x29\\x22\\x29\", 45) = 45\n", 
+                        "api": "write", 
+                        "return_value": "45", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6fc4dd3024", 
+                        "arguments": {
+                            "p2": "45", 
+                            "p0": "2", 
+                            "p1": "Syntax error: word unexpected (expecting \")\")"
+                        }, 
+                        "time": 1780562524.24566
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "sh", 
+                        "pid": 2091, 
+                        "raw": "Thu Jun  4 08:42:04 2026.245712 sh@7f6fc4dd3024[2091] write(2, \"\\n\", 1) = 1\n", 
+                        "api": "write", 
+                        "return_value": "1", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6fc4dd3024", 
+                        "arguments": {
+                            "p2": "1", 
+                            "p0": "2", 
+                            "p1": "\n"
+                        }, 
+                        "time": 1780562524.245712
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "sh", 
+                        "pid": 2091, 
+                        "raw": "Thu Jun  4 08:42:04 2026.245760 sh@7f6fc4da7926[2091] exit_group(2)\n", 
+                        "api": "exit_group", 
+                        "return_value": "", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6fc4da7926", 
+                        "arguments": {
+                            "p0": "2"
+                        }, 
+                        "time": 1780562524.24576
+                    }
+                ], 
+                "pid": 2091, 
+                "process_name": "0x55e84aa8c44c", 
+                "command_line": "0x55e84aa8c44c /tmp/eicar.com", 
+                "first_seen": 1780562524.241148, 
+                "ppid": -1, 
+                "type": "process"
+            }
+        ], 
+        "processtree": [
+            {
+                "track": true, 
+                "pid": 2091, 
+                "process_name": "0x55e84aa8c44c", 
+                "command_line": "0x55e84aa8c44c /tmp/eicar.com", 
+                "first_seen": 1780562524.241148, 
+                "ppid": -1, 
+                "children": []
+            }
+        ]
+    }, 
+    "debug": {
+        "action": [], 
+        "dbgview": [], 
+        "errors": [], 
+        "log": [
+            "2026-06-04 08:41:54,000 [root] DEBUG: Starting analyzer from: /tmp/tmpDiY35e\n", 
+            "2026-06-04 08:41:54,001 [root] DEBUG: Storing results at: /tmp/bYIbkl\n", 
+            "2026-06-04 08:41:54,001 [lib.core.packages] INFO: _guess_package_name failed\n", 
+            "2026-06-04 08:41:54,002 [lib.core.packages] INFO: EICAR virus test files\n", 
+            "2026-06-04 08:41:54,002 [lib.core.packages] INFO: eicar.com\n", 
+            "2026-06-04 08:41:56,259 [modules.auxiliary.filecollector] INFO: FileCollector started v0.08\n", 
+            "2026-06-04 08:41:56,261 [modules.auxiliary.human] INFO: Human started v0.02\n", 
+            "2026-06-04 08:41:56,264 [modules.auxiliary.screenshots] INFO: Screenshots started v0.03\n", 
+            "2026-06-04 08:42:04,239 [lib.core.packages] INFO: Process startup took 7.97 seconds\n", 
+            "2026-06-04 08:42:04,241 [root] INFO: Added new process to list with pid: 2080\n", 
+            "2026-06-04 08:42:13,251 [root] INFO: Process with pid 2080 has terminated\n", 
+            "2026-06-04 08:42:13,252 [root] INFO: Process list is empty, terminating analysis.\n", 
+            "2026-06-04 08:42:16,255 [lib.core.packages] INFO: Package requested stop\n", 
+            "2026-06-04 08:42:16,256 [lib.core.packages] WARNING: Exception uploading log: [Errno 3] No such process\n"
+        ], 
+        "cuckoo": [
+            "2026-06-04 08:41:55,782 [cuckoo.core.scheduler] INFO: Task #7569603: acquired machine Ubuntu1904x643 (label=Ubuntu1904x643)\n", 
+            "2026-06-04 08:41:55,782 [cuckoo.core.resultserver] DEBUG: Now tracking machine 192.168.168.103 for task #7569603\n", 
+            "2026-06-04 08:41:56,246 [cuckoo.auxiliary.sniffer] INFO: Started sniffer with PID 256802 (interface=vboxnet0, host=192.168.168.103)\n", 
+            "2026-06-04 08:41:56,280 [cuckoo.machinery.virtualbox] DEBUG: Starting vm Ubuntu1904x643\n", 
+            "2026-06-04 08:41:57,188 [cuckoo.machinery.virtualbox] DEBUG: Restoring virtual machine Ubuntu1904x643 to Snapshot\n", 
+            "2026-06-04 08:42:04,690 [cuckoo.core.guest] INFO: Starting analysis #7569603 on guest (id=Ubuntu1904x643, ip=192.168.168.103)\n", 
+            "2026-06-04 08:42:04,745 [cuckoo.core.guest] DEBUG: Ubuntu1904x643: not ready yet\n", 
+            "2026-06-04 08:42:09,772 [cuckoo.core.guest] INFO: Guest is running Cuckoo Agent 0.10 (id=Ubuntu1904x643, ip=192.168.168.103)\n", 
+            "2026-06-04 08:42:09,799 [cuckoo.core.guest] DEBUG: Uploading analyzer to guest (id=Ubuntu1904x643, ip=192.168.168.103, monitor=latest, size=73219)\n", 
+            "2026-06-04 08:42:10,011 [cuckoo.core.resultserver] DEBUG: Task #7569603: live log analysis.log initialized.\n", 
+            "2026-06-04 08:42:15,151 [cuckoo.core.resultserver] DEBUG: Task #7569603: File upload for 'shots/0001.jpg'\n", 
+            "2026-06-04 08:42:15,182 [cuckoo.core.resultserver] DEBUG: Task #7569603 uploaded file length: 171456\n", 
+            "2026-06-04 08:42:25,006 [cuckoo.core.guest] DEBUG: Ubuntu1904x643: analysis #7569603 still processing\n", 
+            "2026-06-04 08:42:32,279 [cuckoo.core.resultserver] DEBUG: Task #7569603: File upload for 'logs/all.stap'\n", 
+            "2026-06-04 08:42:32,282 [cuckoo.core.resultserver] DEBUG: Task #7569603 uploaded file length: 6709\n", 
+            "2026-06-04 08:42:40,088 [cuckoo.core.guest] DEBUG: Ubuntu1904x643: analysis #7569603 still processing\n", 
+            "2026-06-04 08:42:55,364 [cuckoo.core.guest] DEBUG: Ubuntu1904x643: analysis #7569603 still processing\n", 
+            "2026-06-04 08:43:10,439 [cuckoo.core.guest] INFO: Ubuntu1904x643: end of analysis reached!\n", 
+            "2026-06-04 08:43:10,451 [cuckoo.core.plugins] DEBUG: Stopped auxiliary module: Redsocks\n", 
+            "2026-06-04 08:43:10,477 [cuckoo.core.plugins] DEBUG: Stopped auxiliary module: Sniffer\n", 
+            "2026-06-04 08:43:11,698 [cuckoo.machinery.virtualbox] INFO: Successfully generated memory dump for virtual machine with label Ubuntu1904x643 to path /srv/cuckoo/cwd/storage/analyses/7569603/memory.dmp\n", 
+            "2026-06-04 08:43:11,699 [cuckoo.machinery.virtualbox] DEBUG: Stopping vm Ubuntu1904x643\n", 
+            "2026-06-04 08:43:19,715 [cuckoo.core.resultserver] DEBUG: Stopped tracking machine 192.168.168.103 for task #7569603\n", 
+            "2026-06-04 08:43:19,716 [cuckoo.core.resultserver] DEBUG: Cancel <Context for LOG> for task 7569603\n", 
+            "2026-06-04 08:43:20,054 [cuckoo.core.scheduler] DEBUG: Released database task #7569603\n", 
+            "2026-06-04 08:43:20,069 [cuckoo.core.scheduler] INFO: Task #7569603: analysis procedure completed\n"
+        ]
+    }, 
+    "strings": [
+        "X5O!P%@AP[4\\PZX54(P^)7CC)7}$EICAR-STANDARD-ANTIVIRUS-TEST-FILE!$H+H*"
+    ], 
+    "intelmq": [
+        {
+            "classification_taxonomy": "malicious-code", 
+            "classification_type": "infected-system", 
+            "feed_provider": "CERT-EE", 
+            "time_source": "2026-05-10T04:40:25.657506+00:00", 
+            "feed_name": "Sandbox", 
+            "ioc": "275a021bbfb6489e54d471899f7db9d1663fc695ec2fe2a2c4538aabf651fd0f", 
+            "id": "Wh4vEJ4Boml50tcGwWRZ", 
+            "index": "imq-2026-05", 
+            "url": "https://kips.cert.ee/app/discover#/doc/imq/imq-2026-05/?id=Wh4vEJ4Boml50tcGwWRZ", 
+            "time_observation": "2026-05-10T04:40:25+00:00", 
+            "feed_accuracy": 50
+        }, 
+        {
+            "classification_taxonomy": "malicious-code", 
+            "classification_type": "infected-system", 
+            "feed_provider": "CERT-EE", 
+            "time_source": "2026-05-02T11:57:06.573963+00:00", 
+            "feed_name": "Sandbox", 
+            "ioc": "275a021bbfb6489e54d471899f7db9d1663fc695ec2fe2a2c4538aabf651fd0f", 
+            "id": "hN6M6J0Boml50tcGrJS1", 
+            "index": "imq-2026-05", 
+            "url": "https://kips.cert.ee/app/discover#/doc/imq/imq-2026-05/?id=hN6M6J0Boml50tcGrJS1", 
+            "time_observation": "2026-05-02T11:57:06+00:00", 
+            "feed_accuracy": 50
+        }, 
+        {
+            "classification_taxonomy": "malicious-code", 
+            "classification_type": "infected-system", 
+            "feed_provider": "CERT-EE", 
+            "time_source": "2026-05-02T11:56:30.159487+00:00", 
+            "feed_name": "Sandbox", 
+            "ioc": "275a021bbfb6489e54d471899f7db9d1663fc695ec2fe2a2c4538aabf651fd0f", 
+            "id": "Md6M6J0Boml50tcGHpFz", 
+            "index": "imq-2026-05", 
+            "url": "https://kips.cert.ee/app/discover#/doc/imq/imq-2026-05/?id=Md6M6J0Boml50tcGHpFz", 
+            "time_observation": "2026-05-02T11:56:30+00:00", 
+            "feed_accuracy": 50
+        }, 
+        {
+            "classification_taxonomy": "malicious-code", 
+            "classification_type": "infected-system", 
+            "feed_provider": "CERT-EE", 
+            "time_source": "2026-05-02T11:52:57.760577+00:00", 
+            "feed_name": "Sandbox", 
+            "ioc": "275a021bbfb6489e54d471899f7db9d1663fc695ec2fe2a2c4538aabf651fd0f", 
+            "id": "A96I6J0Boml50tcG4HzH", 
+            "index": "imq-2026-05", 
+            "url": "https://kips.cert.ee/app/discover#/doc/imq/imq-2026-05/?id=A96I6J0Boml50tcG4HzH", 
+            "time_observation": "2026-05-02T11:52:57+00:00", 
+            "feed_accuracy": 50
+        }, 
+        {
+            "classification_taxonomy": "malicious-code", 
+            "classification_type": "infected-system", 
+            "feed_provider": "CERT-EE", 
+            "time_source": "2026-05-02T11:51:54.719323+00:00", 
+            "feed_name": "Sandbox", 
+            "ioc": "275a021bbfb6489e54d471899f7db9d1663fc695ec2fe2a2c4538aabf651fd0f", 
+            "id": "0N6H6J0Boml50tcG6nS3", 
+            "index": "imq-2026-05", 
+            "url": "https://kips.cert.ee/app/discover#/doc/imq/imq-2026-05/?id=0N6H6J0Boml50tcG6nS3", 
+            "time_observation": "2026-05-02T11:51:54+00:00", 
+            "feed_accuracy": 50
+        }, 
+        {
+            "classification_taxonomy": "malicious-code", 
+            "classification_type": "infected-system", 
+            "feed_provider": "CERT-EE", 
+            "time_source": "2026-04-20T07:13:26.581123+00:00", 
+            "feed_name": "Sandbox", 
+            "ioc": "275a021bbfb6489e54d471899f7db9d1663fc695ec2fe2a2c4538aabf651fd0f", 
+            "id": "j_W8qZ0Boml50tcGqPhV", 
+            "index": "imq-2026-04", 
+            "url": "https://kips.cert.ee/app/discover#/doc/imq/imq-2026-04/?id=j_W8qZ0Boml50tcGqPhV", 
+            "time_observation": "2026-04-20T07:13:26+00:00", 
+            "feed_accuracy": 50
+        }, 
+        {
+            "classification_taxonomy": "malicious-code", 
+            "classification_type": "infected-system", 
+            "feed_provider": "CERT-EE", 
+            "time_source": "2026-04-20T07:13:18.316746+00:00", 
+            "feed_name": "Sandbox", 
+            "ioc": "275a021bbfb6489e54d471899f7db9d1663fc695ec2fe2a2c4538aabf651fd0f", 
+            "id": "gPW8qZ0Boml50tcGiPgL", 
+            "index": "imq-2026-04", 
+            "url": "https://kips.cert.ee/app/discover#/doc/imq/imq-2026-04/?id=gPW8qZ0Boml50tcGiPgL", 
+            "time_observation": "2026-04-20T07:13:18+00:00", 
+            "feed_accuracy": 50
+        }, 
+        {
+            "classification_taxonomy": "malicious-code", 
+            "classification_type": "infected-system", 
+            "feed_provider": "CERT-EE", 
+            "time_source": "2026-04-10T10:10:18.387020+00:00", 
+            "feed_name": "Sandbox", 
+            "ioc": "275a021bbfb6489e54d471899f7db9d1663fc695ec2fe2a2c4538aabf651fd0f", 
+            "id": "KXTedp0Boml50tcG_KKm", 
+            "index": "imq-2026-04", 
+            "url": "https://kips.cert.ee/app/discover#/doc/imq/imq-2026-04/?id=KXTedp0Boml50tcG_KKm", 
+            "time_observation": "2026-04-10T10:10:18+00:00", 
+            "feed_accuracy": 50
+        }, 
+        {
+            "classification_taxonomy": "malicious-code", 
+            "classification_type": "infected-system", 
+            "feed_provider": "CERT-EE", 
+            "time_source": "2026-04-10T10:09:30.939032+00:00", 
+            "feed_name": "Sandbox", 
+            "ioc": "275a021bbfb6489e54d471899f7db9d1663fc695ec2fe2a2c4538aabf651fd0f", 
+            "id": "q3Tedp0Boml50tcGQ51R", 
+            "index": "imq-2026-04", 
+            "url": "https://kips.cert.ee/app/discover#/doc/imq/imq-2026-04/?id=q3Tedp0Boml50tcGQ51R", 
+            "time_observation": "2026-04-10T10:09:30+00:00", 
+            "feed_accuracy": 50
+        }, 
+        {
+            "classification_taxonomy": "malicious-code", 
+            "classification_type": "infected-system", 
+            "feed_provider": "CERT-EE", 
+            "time_source": "2026-03-25T00:32:11.686041+00:00", 
+            "feed_name": "Sandbox", 
+            "ioc": "275a021bbfb6489e54d471899f7db9d1663fc695ec2fe2a2c4538aabf651fd0f", 
+            "id": "5-ZnIp0Boml50tcG9RLI", 
+            "index": "imq-2026-03", 
+            "url": "https://kips.cert.ee/app/discover#/doc/imq/imq-2026-03/?id=5-ZnIp0Boml50tcG9RLI", 
+            "time_observation": "2026-03-25T00:32:11+00:00", 
+            "feed_accuracy": 50
+        }
+    ], 
+    "metadata": {
+        "output": {
+            "pcap": {
+                "basename": "dump.pcap", 
+                "sha256": "704ff44523a9e90715f2387eb8ea8d2b9356ae0b5e9b07cfd8e329ea8778cfe3", 
+                "dirname": ""
+            }
+        }
+    }
+}

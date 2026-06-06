@@ -1,0 +1,5889 @@
+{
+    "info": {
+        "added": 1780057205.59064, 
+        "started": 1780057205.905841, 
+        "duration": 35, 
+        "ended": 1780057241.561875, 
+        "owner": "", 
+        "score": 10, 
+        "id": 7565801, 
+        "category": "file", 
+        "git": {
+            "head": "", 
+            "fetch_head": ""
+        }, 
+        "monitor": null, 
+        "package": "exe", 
+        "route": "internet", 
+        "custom": "", 
+        "machine": {
+            "status": "stopped", 
+            "name": "win7x6414", 
+            "label": "win7x6414", 
+            "platform": "windows", 
+            "manager": "VirtualBox", 
+            "started_on": "2026-05-29 12:20:07", 
+            "shutdown_on": "2026-05-29 12:20:41"
+        }, 
+        "platform": "windows", 
+        "version": "2.0.7", 
+        "options": ""
+    }, 
+    "signatures": [
+        {
+            "families": [], 
+            "description": "Yara rules detected for file", 
+            "severity": 1, 
+            "ttp": {}, 
+            "markcount": 5, 
+            "references": [], 
+            "marks": [
+                {
+                    "type": "generic", 
+                    "description": "(no description)", 
+                    "rule": "SEH__vectored"
+                }, 
+                {
+                    "type": "generic", 
+                    "description": "Listen for incoming communication", 
+                    "rule": "network_tcp_listen"
+                }, 
+                {
+                    "type": "generic", 
+                    "description": "Communications over RAW socket", 
+                    "rule": "network_tcp_socket"
+                }, 
+                {
+                    "type": "generic", 
+                    "description": "Communications use DNS", 
+                    "rule": "network_dns"
+                }, 
+                {
+                    "type": "generic", 
+                    "description": "Affect private profile", 
+                    "rule": "win_files_operation"
+                }
+            ], 
+            "name": "file_yara"
+        }, 
+        {
+            "families": [], 
+            "description": "The binary likely contains encrypted or compressed data indicative of a packer", 
+            "severity": 2, 
+            "ttp": {
+                "T1045": {
+                    "short": "Software Packing", 
+                    "long": "Software packing is a method of compressing or encrypting an executable. Packing an executable changes the file signature in an attempt to avoid signature-based detection. Most decompression techniques decompress the executable code in memory."
+                }
+            }, 
+            "markcount": 2, 
+            "references": [
+                "http://www.forensickb.com/2013/03/file-entropy-explained.html", 
+                "http://virii.es/U/Using%20Entropy%20Analysis%20to%20Find%20Encrypted%20and%20Packed%20Malware.pdf"
+            ], 
+            "marks": [
+                {
+                    "entropy": 6.9854037004205525, 
+                    "section": {
+                        "size_of_data": "0x00080200", 
+                        "virtual_address": "0x000e6000", 
+                        "entropy": 6.9854037004205525, 
+                        "name": ".rdata", 
+                        "virtual_size": "0x000800f0"
+                    }, 
+                    "type": "generic", 
+                    "description": "A section with a high entropy has been found"
+                }, 
+                {
+                    "entropy": 0.3424657534246575, 
+                    "type": "generic", 
+                    "description": "Overall entropy of this PE file is high"
+                }
+            ], 
+            "name": "packer_entropy"
+        }, 
+        {
+            "families": [], 
+            "description": "File has been identified by 3 AntiVirus engine on IRMA as malicious", 
+            "severity": 20, 
+            "ttp": {}, 
+            "markcount": 3, 
+            "references": [], 
+            "marks": [
+                {
+                    "category": "Avast Core Security (Linux)", 
+                    "ioc": "Win64:MalwareX-gen [Misc]", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "ESET Security (Windows)", 
+                    "ioc": "a variant of Win64/Agent_AGen.NZM trojan", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Sophos Anti-Virus (Linux)", 
+                    "ioc": "Mal/Generic-S", 
+                    "type": "ioc", 
+                    "description": null
+                }
+            ], 
+            "name": "antivirus_irma"
+        }, 
+        {
+            "families": [], 
+            "description": "File has been identified by 16 AntiVirus engines on VirusTotal as malicious", 
+            "severity": 60, 
+            "ttp": {}, 
+            "markcount": 16, 
+            "references": [], 
+            "marks": [
+                {
+                    "category": "Bkav", 
+                    "ioc": "W32.Malware.668A491F", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Cylance", 
+                    "ioc": "Unsafe", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "CrowdStrike", 
+                    "ioc": "win/malicious_confidence_100% (D)", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Symantec", 
+                    "ioc": "ML.Attribute.HighConfidence", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Elastic", 
+                    "ioc": "malicious (high confidence)", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "ESET-NOD32", 
+                    "ioc": "Win64/Agent_AGen.NZM trojan", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "APEX", 
+                    "ioc": "Malicious", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Rising", 
+                    "ioc": "Trojan.Agent!8.B1E (CLOUD)", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "TrendMicro", 
+                    "ioc": "TrojanSpy.Win64.RUSTYSTEALER.YXGE3Z", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Sophos", 
+                    "ioc": "Mal/Generic-S", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Google", 
+                    "ioc": "Detected", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Microsoft", 
+                    "ioc": "Trojan:Win32/Kepavll!rfn", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Varist", 
+                    "ioc": "W64/ABmRisk.WDYH-0630", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "DeepInstinct", 
+                    "ioc": "MALICIOUS", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "TrendMicro-HouseCall", 
+                    "ioc": "TrojanSpy.Win64.RUSTYSTEALER.YXGE3Z", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Paloalto", 
+                    "ioc": "generic.ml", 
+                    "type": "ioc", 
+                    "description": null
+                }
+            ], 
+            "name": "antivirus_virustotal"
+        }
+    ], 
+    "target": {
+        "category": "file", 
+        "file": {
+            "mimetype": "application/x-dosexec", 
+            "yara": [
+                {
+                    "meta": {
+                        "weight": 1, 
+                        "description": "(no description)", 
+                        "reference": "https://github.com/naxonez/yaraRules/blob/master/AntiDebugging.yara", 
+                        "Author": "naxonez"
+                    }, 
+                    "name": "SEH__vectored", 
+                    "offsets": {
+                        "": [
+                            [
+                                1523544, 
+                                0
+                            ]
+                        ]
+                    }, 
+                    "strings": [
+                        "QWRkVmVjdG9yZWRFeGNlcHRpb25IYW5kbGVy"
+                    ]
+                }, 
+                {
+                    "meta": {
+                        "version": "0.1", 
+                        "description": "Listen for incoming communication", 
+                        "author": "x0r"
+                    }, 
+                    "name": "network_tcp_listen", 
+                    "offsets": {
+                        "f1": [
+                            [
+                                1526120, 
+                                0
+                            ]
+                        ], 
+                        "c2": [
+                            [
+                                1152324, 
+                                3
+                            ], 
+                            [
+                                1152351, 
+                                3
+                            ], 
+                            [
+                                1182240, 
+                                3
+                            ], 
+                            [
+                                1254677, 
+                                3
+                            ], 
+                            [
+                                1257435, 
+                                3
+                            ], 
+                            [
+                                1525322, 
+                                3
+                            ]
+                        ], 
+                        "c1": [
+                            [
+                                1152228, 
+                                4
+                            ], 
+                            [
+                                1525332, 
+                                4
+                            ]
+                        ], 
+                        "c10": [
+                            [
+                                1525450, 
+                                5
+                            ]
+                        ], 
+                        "c7": [
+                            [
+                                1525294, 
+                                1
+                            ]
+                        ], 
+                        "c5": [
+                            [
+                                1525308, 
+                                2
+                            ]
+                        ]
+                    }, 
+                    "strings": [
+                        "V1MyXzMyLmRsbA==", 
+                        "V1NBU29ja2V0", 
+                        "V1NBU3RhcnR1cA==", 
+                        "YWNjZXB0", 
+                        "YmluZA==", 
+                        "bGlzdGVu"
+                    ]
+                }, 
+                {
+                    "meta": {
+                        "version": "0.1", 
+                        "description": "Communications over RAW socket", 
+                        "author": "x0r"
+                    }, 
+                    "name": "network_tcp_socket", 
+                    "offsets": {
+                        "f1": [
+                            [
+                                1526120, 
+                                0
+                            ]
+                        ], 
+                        "c9": [
+                            [
+                                1525220, 
+                                1
+                            ]
+                        ], 
+                        "c8": [
+                            [
+                                1525340, 
+                                6
+                            ]
+                        ], 
+                        "c3": [
+                            [
+                                1149007, 
+                                8
+                            ], 
+                            [
+                                1525478, 
+                                8
+                            ]
+                        ], 
+                        "c2": [
+                            [
+                                963485, 
+                                7
+                            ], 
+                            [
+                                1176223, 
+                                7
+                            ], 
+                            [
+                                1177280, 
+                                7
+                            ], 
+                            [
+                                1177320, 
+                                7
+                            ], 
+                            [
+                                1525345, 
+                                7
+                            ], 
+                            [
+                                1525441, 
+                                7
+                            ]
+                        ], 
+                        "c1": [
+                            [
+                                1525294, 
+                                2
+                            ]
+                        ], 
+                        "c7": [
+                            [
+                                1525308, 
+                                4
+                            ]
+                        ], 
+                        "c6": [
+                            [
+                                1148988, 
+                                5
+                            ], 
+                            [
+                                1165792, 
+                                5
+                            ], 
+                            [
+                                1166003, 
+                                5
+                            ], 
+                            [
+                                1171008, 
+                                5
+                            ], 
+                            [
+                                1171463, 
+                                5
+                            ], 
+                            [
+                                1171481, 
+                                5
+                            ], 
+                            [
+                                1171532, 
+                                5
+                            ], 
+                            [
+                                1171554, 
+                                5
+                            ], 
+                            [
+                                1176212, 
+                                5
+                            ], 
+                            [
+                                1182190, 
+                                5
+                            ], 
+                            [
+                                1254338, 
+                                5
+                            ], 
+                            [
+                                1254364, 
+                                5
+                            ], 
+                            [
+                                1256593, 
+                                5
+                            ], 
+                            [
+                                1258264, 
+                                5
+                            ], 
+                            [
+                                1260214, 
+                                5
+                            ], 
+                            [
+                                1525354, 
+                                5
+                            ]
+                        ], 
+                        "c4": [
+                            [
+                                1525284, 
+                                3
+                            ]
+                        ]
+                    }, 
+                    "strings": [
+                        "V1MyXzMyLmRsbA==", 
+                        "V1NBQ2xlYW51cA==", 
+                        "V1NBU29ja2V0", 
+                        "V1NBU2VuZA==", 
+                        "V1NBU3RhcnR1cA==", 
+                        "Y29ubmVjdA==", 
+                        "Y2xvc2Vzb2NrZXQ=", 
+                        "c29ja2V0", 
+                        "c2VuZA=="
+                    ]
+                }, 
+                {
+                    "meta": {
+                        "version": "0.1", 
+                        "description": "Communications use DNS", 
+                        "author": "x0r"
+                    }, 
+                    "name": "network_dns", 
+                    "offsets": {
+                        "c3": [
+                            [
+                                1525380, 
+                                1
+                            ]
+                        ], 
+                        "f2": [
+                            [
+                                1526120, 
+                                0
+                            ]
+                        ]
+                    }, 
+                    "strings": [
+                        "V1MyXzMyLmRsbA==", 
+                        "Z2V0YWRkcmluZm8="
+                    ]
+                }, 
+                {
+                    "meta": {
+                        "version": "0.1", 
+                        "description": "Affect private profile", 
+                        "author": "x0r"
+                    }, 
+                    "name": "win_files_operation", 
+                    "offsets": {
+                        "c3": [
+                            [
+                                1525184, 
+                                2
+                            ]
+                        ], 
+                        "f1": [
+                            [
+                                1525872, 
+                                0
+                            ]
+                        ], 
+                        "c1": [
+                            [
+                                1525184, 
+                                2
+                            ]
+                        ], 
+                        "c4": [
+                            [
+                                1525170, 
+                                1
+                            ]
+                        ]
+                    }, 
+                    "strings": [
+                        "S0VSTkVMMzIuZGxs", 
+                        "UmVhZEZpbGU=", 
+                        "V3JpdGVGaWxl"
+                    ]
+                }
+            ], 
+            "sha1": "6daa369997f5fedf4ce3cea09c3013075392f06c", 
+            "name": "file_45d1704c898d14f8.exe", 
+            "type": "PE32+ executable (GUI) x86-64 (stripped to external PDB), for MS Windows", 
+            "sha256": "4c25af5791f7cad042fbfc6dca3ae78b7344c66f9f3a35853e76565bae0890f3", 
+            "urls": [
+                "https://cloud.white-monster.xyz/cat.jpg", 
+                "https://docs.rs/rustls/latest/rustls/manual/_03_howto/index.html"
+            ], 
+            "crc32": "668A491F", 
+            "path": "/srv/cuckoo/cwd/storage/binaries/4c25af5791f7cad042fbfc6dca3ae78b7344c66f9f3a35853e76565bae0890f3", 
+            "ssdeep": null, 
+            "size": 1533440, 
+            "sha512": "e25a5f58aecd9b6809edee1bf2d6dd63b87f47e33678f19d3678e50cf64ea116aa48567c689e674e2554bd9b929801788311f0ed38482d16099041a3753b71d5", 
+            "md5": "a305a45fba24a6ce040d9d45aab2d147"
+        }, 
+        "custom": ""
+    }, 
+    "irma": {
+        "status": 1, 
+        "probes_finished": 13, 
+        "scan_id": "ea6de5c3-068e-4cc7-9c9b-e1db2f2de56f", 
+        "parent_file_sha256": null, 
+        "name": "4c25af5791f7cad042fbfc6dca3ae78b7344c66f9f3a35853e76565bae0890f3", 
+        "probes_total": 13, 
+        "scan_date": 1780046443, 
+        "other_results": [], 
+        "probe_results": {
+            "antivirus": {
+                "G Data Antivirus (Windows)": {
+                    "status": 0, 
+                    "duration": 0.33, 
+                    "version": "5.5.20197.1358", 
+                    "results": null, 
+                    "virus_database_version": "unavailable"
+                }, 
+                "Avast Core Security (Linux)": {
+                    "status": 1, 
+                    "duration": 0.03, 
+                    "version": "4.6.1", 
+                    "results": "Win64:MalwareX-gen [Misc]", 
+                    "virus_database_version": "unavailable"
+                }, 
+                "C4S ClamAV (Linux)": {
+                    "status": 0, 
+                    "duration": 1.04, 
+                    "version": "1.4.3", 
+                    "results": null, 
+                    "virus_database_version": "28012"
+                }, 
+                "Trellix (Linux)": {
+                    "status": 0, 
+                    "duration": 8.74, 
+                    "version": "7.0.4.835", 
+                    "results": null, 
+                    "virus_database_version": "11797"
+                }, 
+                "WithSecure (Linux)": {
+                    "status": 0, 
+                    "duration": 0.26, 
+                    "version": "1.0.45", 
+                    "results": null, 
+                    "virus_database_version": "unavailable"
+                }, 
+                "eScan Antivirus (Linux)": {
+                    "status": 0, 
+                    "duration": 5.08, 
+                    "version": "7.0.21", 
+                    "results": null, 
+                    "virus_database_version": "7.100930 (26/05/2026)"
+                }, 
+                "ESET Security (Windows)": {
+                    "status": 1, 
+                    "duration": 1.33, 
+                    "version": "unavailable", 
+                    "results": "a variant of Win64/Agent_AGen.NZM trojan", 
+                    "virus_database_version": "unavailable"
+                }, 
+                "Sophos Anti-Virus (Linux)": {
+                    "status": 1, 
+                    "duration": 0.41, 
+                    "version": "1.2.0.8 (2026-02-13)", 
+                    "results": "Mal/Generic-S", 
+                    "virus_database_version": "unavailable"
+                }, 
+                "DrWeb Antivirus (Linux)": {
+                    "status": 0, 
+                    "duration": 0.26, 
+                    "version": "11.1.16.2406170954", 
+                    "results": null, 
+                    "virus_database_version": "unavailable"
+                }, 
+                "ClamAV (Linux)": {
+                    "status": 0, 
+                    "duration": 1.19, 
+                    "version": "1.4.3", 
+                    "results": null, 
+                    "virus_database_version": "28012"
+                }, 
+                "Bitdefender Antivirus (Linux)": {
+                    "status": 0, 
+                    "duration": 8.97, 
+                    "version": "7.90123", 
+                    "results": null, 
+                    "virus_database_version": null
+                }, 
+                "Kaspersky Standard (Windows)": {
+                    "status": 0, 
+                    "duration": 2.86, 
+                    "version": "21.24", 
+                    "results": null, 
+                    "virus_database_version": "2026-05-28 20:19:00 (unknown)"
+                }, 
+                "Emsisoft Commandline Scanner (Windows)": {
+                    "status": 0, 
+                    "duration": 0.17, 
+                    "version": "2025.1.0.12641", 
+                    "results": null, 
+                    "virus_database_version": "unavailable"
+                }
+            }
+        }, 
+        "file_infos": {
+            "mimetype": "PE32+ executable (GUI) x86-64 (stripped to external PDB), for MS Windows", 
+            "sha1": "6daa369997f5fedf4ce3cea09c3013075392f06c", 
+            "tags": [], 
+            "timestamp_first_scan": 1780046442.71, 
+            "sha256": "4c25af5791f7cad042fbfc6dca3ae78b7344c66f9f3a35853e76565bae0890f3", 
+            "timestamp_last_scan": 1780046454.1, 
+            "md5": "a305a45fba24a6ce040d9d45aab2d147", 
+            "size": 1533440
+        }, 
+        "submitter": "cli", 
+        "path": "", 
+        "result_id": "dc6976ff-484a-46e0-ad6d-e8fe9a73affa"
+    }, 
+    "suricata": {
+        "tls": [], 
+        "files": [], 
+        "alerts": [], 
+        "http": []
+    }, 
+    "virustotal": {
+        "permalink": "https://www.virustotal.com/gui/file/4c25af5791f7cad042fbfc6dca3ae78b7344c66f9f3a35853e76565bae0890f3/detection/f-4c25af5791f7cad042fbfc6dca3ae78b7344c66f9f3a35853e76565bae0890f3-1780036677", 
+        "sha1": "6daa369997f5fedf4ce3cea09c3013075392f06c", 
+        "resource": "a305a45fba24a6ce040d9d45aab2d147", 
+        "response_code": 1, 
+        "scan_date": "2026-05-29 06:37:57", 
+        "scan_id": "4c25af5791f7cad042fbfc6dca3ae78b7344c66f9f3a35853e76565bae0890f3-1780036677", 
+        "summary": {
+            "positives": 16, 
+            "permalink": "https://www.virustotal.com/gui/file/4c25af5791f7cad042fbfc6dca3ae78b7344c66f9f3a35853e76565bae0890f3/detection/f-4c25af5791f7cad042fbfc6dca3ae78b7344c66f9f3a35853e76565bae0890f3-1780036677", 
+            "scan_date": "2026-05-29 06:37:57"
+        }, 
+        "sha256": "4c25af5791f7cad042fbfc6dca3ae78b7344c66f9f3a35853e76565bae0890f3", 
+        "normalized": [
+            "Unsafe", 
+            "malicious", 
+            "confidence", 
+            "100%", 
+            "Attribute", 
+            "HighConfidence", 
+            "high confidence", 
+            "AGen", 
+            "NZM trojan", 
+            "CLOUD", 
+            "RUSTYSTEALER", 
+            "YXGE3Z", 
+            "Detected", 
+            "Kepavll", 
+            "ABmRisk", 
+            "WDYH"
+        ], 
+        "total": 71, 
+        "positives": 16, 
+        "verbose_msg": "Scan finished, information embedded", 
+        "md5": "a305a45fba24a6ce040d9d45aab2d147", 
+        "scans": {
+            "Bkav": {
+                "detected": true, 
+                "version": "8.2.40(8338)", 
+                "result": "W32.Malware.668A491F", 
+                "normalized": [], 
+                "update": "20260528"
+            }, 
+            "Lionic": {
+                "detected": false, 
+                "version": "8.16", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260529"
+            }, 
+            "tehtris": {
+                "detected": false, 
+                "version": "v0.1.4", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260529"
+            }, 
+            "Cynet": {
+                "detected": false, 
+                "version": "4.0.3.4", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260528"
+            }, 
+            "CMC": {
+                "detected": false, 
+                "version": "2.4.2022.1", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260529"
+            }, 
+            "CAT-QuickHeal": {
+                "detected": false, 
+                "version": "22.00", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260528"
+            }, 
+            "Skyhigh": {
+                "detected": false, 
+                "version": "v2021.2.0+4045", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260528"
+            }, 
+            "ALYac": {
+                "detected": false, 
+                "version": "2.0.0.10", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260529"
+            }, 
+            "Cylance": {
+                "detected": true, 
+                "version": "3.0.0.0", 
+                "result": "Unsafe", 
+                "normalized": [
+                    "Unsafe"
+                ], 
+                "update": "20260521"
+            }, 
+            "VIPRE": {
+                "detected": false, 
+                "version": "6.0.0.35", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260527"
+            }, 
+            "Sangfor": {
+                "detected": false, 
+                "version": "2.22.3.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260525"
+            }, 
+            "CrowdStrike": {
+                "detected": true, 
+                "version": "1.0", 
+                "result": "win/malicious_confidence_100% (D)", 
+                "normalized": [
+                    "malicious", 
+                    "confidence", 
+                    "100%"
+                ], 
+                "update": "20251219"
+            }, 
+            "BitDefender": {
+                "detected": false, 
+                "version": "7.2", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260529"
+            }, 
+            "K7GW": {
+                "detected": false, 
+                "version": "14.54.59649", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260529"
+            }, 
+            "K7AntiVirus": {
+                "detected": false, 
+                "version": "14.54.59649", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260529"
+            }, 
+            "Arcabit": {
+                "detected": false, 
+                "version": "2025.0.0.23", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260529"
+            }, 
+            "VirIT": {
+                "detected": false, 
+                "version": "9.5.1217", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260528"
+            }, 
+            "Symantec": {
+                "detected": true, 
+                "version": "1.22.0.0", 
+                "result": "ML.Attribute.HighConfidence", 
+                "normalized": [
+                    "Attribute", 
+                    "HighConfidence"
+                ], 
+                "update": "20260529"
+            }, 
+            "Elastic": {
+                "detected": true, 
+                "version": "4.0.264", 
+                "result": "malicious (high confidence)", 
+                "normalized": [
+                    "malicious", 
+                    "high confidence"
+                ], 
+                "update": "20260528"
+            }, 
+            "ESET-NOD32": {
+                "detected": true, 
+                "version": "18.2.18.0", 
+                "result": "Win64/Agent_AGen.NZM trojan", 
+                "normalized": [
+                    "AGen", 
+                    "NZM trojan"
+                ], 
+                "update": "20260529"
+            }, 
+            "APEX": {
+                "detected": true, 
+                "version": "6.783", 
+                "result": "Malicious", 
+                "normalized": [
+                    "Malicious"
+                ], 
+                "update": "20260528"
+            }, 
+            "Avast": {
+                "detected": false, 
+                "version": "23.9.8494.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260529"
+            }, 
+            "ClamAV": {
+                "detected": false, 
+                "version": "1.5.2.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260528"
+            }, 
+            "Kaspersky": {
+                "detected": false, 
+                "version": "22.0.1.28", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260529"
+            }, 
+            "Alibaba": {
+                "detected": false, 
+                "version": "0.3.0.5", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20190527"
+            }, 
+            "NANO-Antivirus": {
+                "detected": false, 
+                "version": "1.0.170.26895", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260528"
+            }, 
+            "SUPERAntiSpyware": {
+                "detected": false, 
+                "version": "5.6.0.1032", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260528"
+            }, 
+            "MicroWorld-eScan": {
+                "detected": false, 
+                "version": "14.0.409.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260529"
+            }, 
+            "Rising": {
+                "detected": true, 
+                "version": "25.0.0.28", 
+                "result": "Trojan.Agent!8.B1E (CLOUD)", 
+                "normalized": [
+                    "CLOUD"
+                ], 
+                "update": "20260529"
+            }, 
+            "Emsisoft": {
+                "detected": false, 
+                "version": "2024.8.0.61147", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260529"
+            }, 
+            "F-Secure": {
+                "detected": false, 
+                "version": "18.10.1547.307", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260529"
+            }, 
+            "DrWeb": {
+                "detected": false, 
+                "version": "7.0.75.2070", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260529"
+            }, 
+            "Zillya": {
+                "detected": false, 
+                "version": "2.0.0.5610", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260528"
+            }, 
+            "TrendMicro": {
+                "detected": true, 
+                "version": "24.550.0.1002", 
+                "result": "TrojanSpy.Win64.RUSTYSTEALER.YXGE3Z", 
+                "normalized": [
+                    "RUSTYSTEALER", 
+                    "YXGE3Z"
+                ], 
+                "update": "20260529"
+            }, 
+            "McAfeeD": {
+                "detected": false, 
+                "version": "1.2.0.14833", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260529"
+            }, 
+            "Trapmine": {
+                "detected": false, 
+                "version": "4.0.12.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260504"
+            }, 
+            "CTX": {
+                "detected": false, 
+                "version": "2024.8.29.1", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260529"
+            }, 
+            "Sophos": {
+                "detected": true, 
+                "version": "3.5.1.0", 
+                "result": "Mal/Generic-S", 
+                "normalized": [], 
+                "update": "20260528"
+            }, 
+            "SentinelOne": {
+                "detected": false, 
+                "version": "7.6.2.19", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260324"
+            }, 
+            "Jiangmin": {
+                "detected": false, 
+                "version": "16.0.100", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260528"
+            }, 
+            "Webroot": {
+                "detected": false, 
+                "version": "1.9.0.8", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20250227"
+            }, 
+            "Google": {
+                "detected": true, 
+                "version": "1780030849", 
+                "result": "Detected", 
+                "normalized": [
+                    "Detected"
+                ], 
+                "update": "20260529"
+            }, 
+            "Avira": {
+                "detected": false, 
+                "version": "8.3.3.24", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260529"
+            }, 
+            "Antiy-AVL": {
+                "detected": false, 
+                "version": "3.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260529"
+            }, 
+            "Kingsoft": {
+                "detected": false, 
+                "version": "None", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260528"
+            }, 
+            "Gridinsoft": {
+                "detected": false, 
+                "version": "1.0.247.174", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260529"
+            }, 
+            "Xcitium": {
+                "detected": false, 
+                "version": "38684", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260528"
+            }, 
+            "Microsoft": {
+                "detected": true, 
+                "version": "1.1.26040.8", 
+                "result": "Trojan:Win32/Kepavll!rfn", 
+                "normalized": [
+                    "Kepavll"
+                ], 
+                "update": "20260529"
+            }, 
+            "ViRobot": {
+                "detected": false, 
+                "version": "2014.3.20.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260529"
+            }, 
+            "ZoneAlarm": {
+                "detected": false, 
+                "version": "6.25-116107130", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260528"
+            }, 
+            "GData": {
+                "detected": false, 
+                "version": "GD:27.44713AVA:64.31326", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260529"
+            }, 
+            "Varist": {
+                "detected": true, 
+                "version": "6.6.1.3", 
+                "result": "W64/ABmRisk.WDYH-0630", 
+                "normalized": [
+                    "ABmRisk", 
+                    "WDYH"
+                ], 
+                "update": "20260529"
+            }, 
+            "AhnLab-V3": {
+                "detected": false, 
+                "version": "3.30.0.10666", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260529"
+            }, 
+            "Acronis": {
+                "detected": false, 
+                "version": "1.2.0.121", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20240328"
+            }, 
+            "VBA32": {
+                "detected": false, 
+                "version": "5.6.1", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260529"
+            }, 
+            "TACHYON": {
+                "detected": false, 
+                "version": "2026-05-29.01", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260529"
+            }, 
+            "DeepInstinct": {
+                "detected": true, 
+                "version": "5.0.0.8", 
+                "result": "MALICIOUS", 
+                "normalized": [
+                    "MALICIOUS"
+                ], 
+                "update": "20260527"
+            }, 
+            "Malwarebytes": {
+                "detected": false, 
+                "version": "3.1.0.235", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260529"
+            }, 
+            "Ikarus": {
+                "detected": false, 
+                "version": "6.4.16.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260528"
+            }, 
+            "Panda": {
+                "detected": false, 
+                "version": "4.6.4.2", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260528"
+            }, 
+            "Zoner": {
+                "detected": false, 
+                "version": "2.2.2.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260529"
+            }, 
+            "TrendMicro-HouseCall": {
+                "detected": true, 
+                "version": "24.550.0.1002", 
+                "result": "TrojanSpy.Win64.RUSTYSTEALER.YXGE3Z", 
+                "normalized": [
+                    "RUSTYSTEALER", 
+                    "YXGE3Z"
+                ], 
+                "update": "20260529"
+            }, 
+            "Tencent": {
+                "detected": false, 
+                "version": "1.0.0.1", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260529"
+            }, 
+            "Yandex": {
+                "detected": false, 
+                "version": "5.5.2.24", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260529"
+            }, 
+            "TrellixENS": {
+                "detected": false, 
+                "version": "6.0.6.653", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260528"
+            }, 
+            "huorong": {
+                "detected": false, 
+                "version": "b261d98:b261d98:ad1cf65:ad1cf65", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260528"
+            }, 
+            "MaxSecure": {
+                "detected": false, 
+                "version": "1.0.0.1", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260529"
+            }, 
+            "Fortinet": {
+                "detected": false, 
+                "version": "7.0.48.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260529"
+            }, 
+            "AVG": {
+                "detected": false, 
+                "version": "23.9.8494.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260529"
+            }, 
+            "Paloalto": {
+                "detected": true, 
+                "version": "0.9.0.1003", 
+                "result": "generic.ml", 
+                "normalized": [], 
+                "update": "20260529"
+            }, 
+            "alibabacloud": {
+                "detected": false, 
+                "version": "2.2.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20250321"
+            }
+        }
+    }, 
+    "sysmon": [
+        {
+            "@xmlns": "http://schemas.microsoft.com/win/2004/08/events/event", 
+            "System": {
+                "Provider": {
+                    "@Name": "Microsoft-Windows-Sysmon", 
+                    "@Guid": "{5770385F-C22A-43E0-BF4C-06F5698FFBD9}"
+                }, 
+                "EventID": "3", 
+                "Version": "5", 
+                "Level": "4", 
+                "Task": "3", 
+                "Opcode": "0", 
+                "Keywords": "0x8000000000000000", 
+                "TimeCreated": {
+                    "@SystemTime": "2026-05-29T10:20:05.640625000Z"
+                }, 
+                "EventRecordID": "8957", 
+                "Correlation": null, 
+                "Execution": {
+                    "@ProcessID": "1244", 
+                    "@ThreadID": "1860"
+                }, 
+                "Channel": "Microsoft-Windows-Sysmon/Operational", 
+                "Computer": "LeMOpmcD", 
+                "Security": {
+                    "@UserID": "S-1-5-18"
+                }
+            }, 
+            "EventData": {
+                "Data": [
+                    {
+                        "@Name": "RuleName"
+                    }, 
+                    {
+                        "@Name": "UtcTime", 
+                        "#text": "2020-06-16 02:21:23.679"
+                    }, 
+                    {
+                        "@Name": "ProcessGuid", 
+                        "#text": "{7EA2F8B5-2A79-5EE8-0000-0010A0E60000}"
+                    }, 
+                    {
+                        "@Name": "ProcessId", 
+                        "#text": "224"
+                    }, 
+                    {
+                        "@Name": "Image", 
+                        "#text": "C:\\Windows\\System32\\svchost.exe"
+                    }, 
+                    {
+                        "@Name": "User", 
+                        "#text": "NT AUTHORITY\\NETWORK SERVICE"
+                    }, 
+                    {
+                        "@Name": "Protocol", 
+                        "#text": "udp"
+                    }, 
+                    {
+                        "@Name": "Initiated", 
+                        "#text": "false"
+                    }, 
+                    {
+                        "@Name": "SourceIsIpv6", 
+                        "#text": "true"
+                    }, 
+                    {
+                        "@Name": "SourceIp", 
+                        "#text": "ff02:0:0:0:0:0:1:3"
+                    }, 
+                    {
+                        "@Name": "SourceHostname"
+                    }, 
+                    {
+                        "@Name": "SourcePort", 
+                        "#text": "5355"
+                    }, 
+                    {
+                        "@Name": "SourcePortName", 
+                        "#text": "llmnr"
+                    }, 
+                    {
+                        "@Name": "DestinationIsIpv6", 
+                        "#text": "true"
+                    }, 
+                    {
+                        "@Name": "DestinationIp", 
+                        "#text": "fe80:0:0:0:4d79:dfb2:f0b3:c1f7"
+                    }, 
+                    {
+                        "@Name": "DestinationHostname", 
+                        "#text": "LeMOpmcD"
+                    }, 
+                    {
+                        "@Name": "DestinationPort", 
+                        "#text": "64714"
+                    }, 
+                    {
+                        "@Name": "DestinationPortName"
+                    }
+                ]
+            }
+        }, 
+        {
+            "@xmlns": "http://schemas.microsoft.com/win/2004/08/events/event", 
+            "System": {
+                "Provider": {
+                    "@Name": "Microsoft-Windows-Sysmon", 
+                    "@Guid": "{5770385F-C22A-43E0-BF4C-06F5698FFBD9}"
+                }, 
+                "EventID": "3", 
+                "Version": "5", 
+                "Level": "4", 
+                "Task": "3", 
+                "Opcode": "0", 
+                "Keywords": "0x8000000000000000", 
+                "TimeCreated": {
+                    "@SystemTime": "2026-05-29T10:20:05.640625000Z"
+                }, 
+                "EventRecordID": "8956", 
+                "Correlation": null, 
+                "Execution": {
+                    "@ProcessID": "1244", 
+                    "@ThreadID": "1860"
+                }, 
+                "Channel": "Microsoft-Windows-Sysmon/Operational", 
+                "Computer": "LeMOpmcD", 
+                "Security": {
+                    "@UserID": "S-1-5-18"
+                }
+            }, 
+            "EventData": {
+                "Data": [
+                    {
+                        "@Name": "RuleName"
+                    }, 
+                    {
+                        "@Name": "UtcTime", 
+                        "#text": "2020-06-16 02:21:23.529"
+                    }, 
+                    {
+                        "@Name": "ProcessGuid", 
+                        "#text": "{7EA2F8B5-2A7B-5EE8-0000-00106E8C0200}"
+                    }, 
+                    {
+                        "@Name": "ProcessId", 
+                        "#text": "1796"
+                    }, 
+                    {
+                        "@Name": "Image", 
+                        "#text": "C:\\Python27\\pythonw.exe"
+                    }, 
+                    {
+                        "@Name": "User", 
+                        "#text": "LEMOPMCD\\Administrator"
+                    }, 
+                    {
+                        "@Name": "Protocol", 
+                        "#text": "tcp"
+                    }, 
+                    {
+                        "@Name": "Initiated", 
+                        "#text": "false"
+                    }, 
+                    {
+                        "@Name": "SourceIsIpv6", 
+                        "#text": "false"
+                    }, 
+                    {
+                        "@Name": "SourceIp", 
+                        "#text": "192.168.168.214"
+                    }, 
+                    {
+                        "@Name": "SourceHostname", 
+                        "#text": "LeMOpmcD"
+                    }, 
+                    {
+                        "@Name": "SourcePort", 
+                        "#text": "8000"
+                    }, 
+                    {
+                        "@Name": "SourcePortName"
+                    }, 
+                    {
+                        "@Name": "DestinationIsIpv6", 
+                        "#text": "false"
+                    }, 
+                    {
+                        "@Name": "DestinationIp", 
+                        "#text": "192.168.168.1"
+                    }, 
+                    {
+                        "@Name": "DestinationHostname"
+                    }, 
+                    {
+                        "@Name": "DestinationPort", 
+                        "#text": "43214"
+                    }, 
+                    {
+                        "@Name": "DestinationPortName"
+                    }
+                ]
+            }
+        }, 
+        {
+            "@xmlns": "http://schemas.microsoft.com/win/2004/08/events/event", 
+            "System": {
+                "Provider": {
+                    "@Name": "Microsoft-Windows-Sysmon", 
+                    "@Guid": "{5770385F-C22A-43E0-BF4C-06F5698FFBD9}"
+                }, 
+                "EventID": "3", 
+                "Version": "5", 
+                "Level": "4", 
+                "Task": "3", 
+                "Opcode": "0", 
+                "Keywords": "0x8000000000000000", 
+                "TimeCreated": {
+                    "@SystemTime": "2026-05-29T10:20:05.390625000Z"
+                }, 
+                "EventRecordID": "8955", 
+                "Correlation": null, 
+                "Execution": {
+                    "@ProcessID": "1244", 
+                    "@ThreadID": "1860"
+                }, 
+                "Channel": "Microsoft-Windows-Sysmon/Operational", 
+                "Computer": "LeMOpmcD", 
+                "Security": {
+                    "@UserID": "S-1-5-18"
+                }
+            }, 
+            "EventData": {
+                "Data": [
+                    {
+                        "@Name": "RuleName"
+                    }, 
+                    {
+                        "@Name": "UtcTime", 
+                        "#text": "2020-06-16 02:21:23.450"
+                    }, 
+                    {
+                        "@Name": "ProcessGuid", 
+                        "#text": "{7EA2F8B5-2A7B-5EE8-0000-00106E8C0200}"
+                    }, 
+                    {
+                        "@Name": "ProcessId", 
+                        "#text": "1796"
+                    }, 
+                    {
+                        "@Name": "Image", 
+                        "#text": "C:\\Python27\\pythonw.exe"
+                    }, 
+                    {
+                        "@Name": "User", 
+                        "#text": "LEMOPMCD\\Administrator"
+                    }, 
+                    {
+                        "@Name": "Protocol", 
+                        "#text": "tcp"
+                    }, 
+                    {
+                        "@Name": "Initiated", 
+                        "#text": "false"
+                    }, 
+                    {
+                        "@Name": "SourceIsIpv6", 
+                        "#text": "false"
+                    }, 
+                    {
+                        "@Name": "SourceIp", 
+                        "#text": "192.168.168.214"
+                    }, 
+                    {
+                        "@Name": "SourceHostname", 
+                        "#text": "LeMOpmcD"
+                    }, 
+                    {
+                        "@Name": "SourcePort", 
+                        "#text": "8000"
+                    }, 
+                    {
+                        "@Name": "SourcePortName"
+                    }, 
+                    {
+                        "@Name": "DestinationIsIpv6", 
+                        "#text": "false"
+                    }, 
+                    {
+                        "@Name": "DestinationIp", 
+                        "#text": "192.168.168.1"
+                    }, 
+                    {
+                        "@Name": "DestinationHostname"
+                    }, 
+                    {
+                        "@Name": "DestinationPort", 
+                        "#text": "43204"
+                    }, 
+                    {
+                        "@Name": "DestinationPortName"
+                    }
+                ]
+            }
+        }, 
+        {
+            "@xmlns": "http://schemas.microsoft.com/win/2004/08/events/event", 
+            "System": {
+                "Provider": {
+                    "@Name": "Microsoft-Windows-Sysmon", 
+                    "@Guid": "{5770385F-C22A-43E0-BF4C-06F5698FFBD9}"
+                }, 
+                "EventID": "3", 
+                "Version": "5", 
+                "Level": "4", 
+                "Task": "3", 
+                "Opcode": "0", 
+                "Keywords": "0x8000000000000000", 
+                "TimeCreated": {
+                    "@SystemTime": "2026-05-29T10:20:05.390625000Z"
+                }, 
+                "EventRecordID": "8954", 
+                "Correlation": null, 
+                "Execution": {
+                    "@ProcessID": "1244", 
+                    "@ThreadID": "1860"
+                }, 
+                "Channel": "Microsoft-Windows-Sysmon/Operational", 
+                "Computer": "LeMOpmcD", 
+                "Security": {
+                    "@UserID": "S-1-5-18"
+                }
+            }, 
+            "EventData": {
+                "Data": [
+                    {
+                        "@Name": "RuleName"
+                    }, 
+                    {
+                        "@Name": "UtcTime", 
+                        "#text": "2020-06-16 02:21:23.439"
+                    }, 
+                    {
+                        "@Name": "ProcessGuid", 
+                        "#text": "{7EA2F8B5-2A7B-5EE8-0000-00106E8C0200}"
+                    }, 
+                    {
+                        "@Name": "ProcessId", 
+                        "#text": "1796"
+                    }, 
+                    {
+                        "@Name": "Image", 
+                        "#text": "C:\\Python27\\pythonw.exe"
+                    }, 
+                    {
+                        "@Name": "User", 
+                        "#text": "LEMOPMCD\\Administrator"
+                    }, 
+                    {
+                        "@Name": "Protocol", 
+                        "#text": "tcp"
+                    }, 
+                    {
+                        "@Name": "Initiated", 
+                        "#text": "false"
+                    }, 
+                    {
+                        "@Name": "SourceIsIpv6", 
+                        "#text": "false"
+                    }, 
+                    {
+                        "@Name": "SourceIp", 
+                        "#text": "192.168.168.214"
+                    }, 
+                    {
+                        "@Name": "SourceHostname", 
+                        "#text": "LeMOpmcD"
+                    }, 
+                    {
+                        "@Name": "SourcePort", 
+                        "#text": "8000"
+                    }, 
+                    {
+                        "@Name": "SourcePortName"
+                    }, 
+                    {
+                        "@Name": "DestinationIsIpv6", 
+                        "#text": "false"
+                    }, 
+                    {
+                        "@Name": "DestinationIp", 
+                        "#text": "192.168.168.1"
+                    }, 
+                    {
+                        "@Name": "DestinationHostname"
+                    }, 
+                    {
+                        "@Name": "DestinationPort", 
+                        "#text": "43194"
+                    }, 
+                    {
+                        "@Name": "DestinationPortName"
+                    }
+                ]
+            }
+        }, 
+        {
+            "@xmlns": "http://schemas.microsoft.com/win/2004/08/events/event", 
+            "System": {
+                "Provider": {
+                    "@Name": "Microsoft-Windows-Sysmon", 
+                    "@Guid": "{5770385F-C22A-43E0-BF4C-06F5698FFBD9}"
+                }, 
+                "EventID": "3", 
+                "Version": "5", 
+                "Level": "4", 
+                "Task": "3", 
+                "Opcode": "0", 
+                "Keywords": "0x8000000000000000", 
+                "TimeCreated": {
+                    "@SystemTime": "2026-05-29T10:20:05.140625000Z"
+                }, 
+                "EventRecordID": "8953", 
+                "Correlation": null, 
+                "Execution": {
+                    "@ProcessID": "1244", 
+                    "@ThreadID": "1860"
+                }, 
+                "Channel": "Microsoft-Windows-Sysmon/Operational", 
+                "Computer": "LeMOpmcD", 
+                "Security": {
+                    "@UserID": "S-1-5-18"
+                }
+            }, 
+            "EventData": {
+                "Data": [
+                    {
+                        "@Name": "RuleName"
+                    }, 
+                    {
+                        "@Name": "UtcTime", 
+                        "#text": "2020-06-16 02:21:23.253"
+                    }, 
+                    {
+                        "@Name": "ProcessGuid", 
+                        "#text": "{7EA2F8B5-2AF3-5EE8-0000-0010AF5F3400}"
+                    }, 
+                    {
+                        "@Name": "ProcessId", 
+                        "#text": "1528"
+                    }, 
+                    {
+                        "@Name": "Image", 
+                        "#text": "C:\\Windows\\System32\\svchost.exe"
+                    }, 
+                    {
+                        "@Name": "User", 
+                        "#text": "NT AUTHORITY\\LOCAL SERVICE"
+                    }, 
+                    {
+                        "@Name": "Protocol", 
+                        "#text": "udp"
+                    }, 
+                    {
+                        "@Name": "Initiated", 
+                        "#text": "false"
+                    }, 
+                    {
+                        "@Name": "SourceIsIpv6", 
+                        "#text": "false"
+                    }, 
+                    {
+                        "@Name": "SourceIp", 
+                        "#text": "239.255.255.250"
+                    }, 
+                    {
+                        "@Name": "SourceHostname"
+                    }, 
+                    {
+                        "@Name": "SourcePort", 
+                        "#text": "1900"
+                    }, 
+                    {
+                        "@Name": "SourcePortName", 
+                        "#text": "ssdp"
+                    }, 
+                    {
+                        "@Name": "DestinationIsIpv6", 
+                        "#text": "false"
+                    }, 
+                    {
+                        "@Name": "DestinationIp", 
+                        "#text": "127.0.0.1"
+                    }, 
+                    {
+                        "@Name": "DestinationHostname", 
+                        "#text": "LeMOpmcD"
+                    }, 
+                    {
+                        "@Name": "DestinationPort", 
+                        "#text": "52723"
+                    }, 
+                    {
+                        "@Name": "DestinationPortName"
+                    }
+                ]
+            }
+        }, 
+        {
+            "@xmlns": "http://schemas.microsoft.com/win/2004/08/events/event", 
+            "System": {
+                "Provider": {
+                    "@Name": "Microsoft-Windows-Sysmon", 
+                    "@Guid": "{5770385F-C22A-43E0-BF4C-06F5698FFBD9}"
+                }, 
+                "EventID": "3", 
+                "Version": "5", 
+                "Level": "4", 
+                "Task": "3", 
+                "Opcode": "0", 
+                "Keywords": "0x8000000000000000", 
+                "TimeCreated": {
+                    "@SystemTime": "2020-06-16T02:21:23.041992100Z"
+                }, 
+                "EventRecordID": "8952", 
+                "Correlation": null, 
+                "Execution": {
+                    "@ProcessID": "1244", 
+                    "@ThreadID": "1860"
+                }, 
+                "Channel": "Microsoft-Windows-Sysmon/Operational", 
+                "Computer": "LeMOpmcD", 
+                "Security": {
+                    "@UserID": "S-1-5-18"
+                }
+            }, 
+            "EventData": {
+                "Data": [
+                    {
+                        "@Name": "RuleName"
+                    }, 
+                    {
+                        "@Name": "UtcTime", 
+                        "#text": "2020-06-16 02:21:22.858"
+                    }, 
+                    {
+                        "@Name": "ProcessGuid", 
+                        "#text": "{7EA2F8B5-2A7B-5EE8-0000-00106E8C0200}"
+                    }, 
+                    {
+                        "@Name": "ProcessId", 
+                        "#text": "1796"
+                    }, 
+                    {
+                        "@Name": "Image", 
+                        "#text": "C:\\Python27\\pythonw.exe"
+                    }, 
+                    {
+                        "@Name": "User", 
+                        "#text": "LEMOPMCD\\Administrator"
+                    }, 
+                    {
+                        "@Name": "Protocol", 
+                        "#text": "tcp"
+                    }, 
+                    {
+                        "@Name": "Initiated", 
+                        "#text": "false"
+                    }, 
+                    {
+                        "@Name": "SourceIsIpv6", 
+                        "#text": "false"
+                    }, 
+                    {
+                        "@Name": "SourceIp", 
+                        "#text": "192.168.168.214"
+                    }, 
+                    {
+                        "@Name": "SourceHostname", 
+                        "#text": "LeMOpmcD"
+                    }, 
+                    {
+                        "@Name": "SourcePort", 
+                        "#text": "8000"
+                    }, 
+                    {
+                        "@Name": "SourcePortName"
+                    }, 
+                    {
+                        "@Name": "DestinationIsIpv6", 
+                        "#text": "false"
+                    }, 
+                    {
+                        "@Name": "DestinationIp", 
+                        "#text": "192.168.168.1"
+                    }, 
+                    {
+                        "@Name": "DestinationHostname"
+                    }, 
+                    {
+                        "@Name": "DestinationPort", 
+                        "#text": "43184"
+                    }, 
+                    {
+                        "@Name": "DestinationPortName"
+                    }
+                ]
+            }
+        }, 
+        {
+            "@xmlns": "http://schemas.microsoft.com/win/2004/08/events/event", 
+            "System": {
+                "Provider": {
+                    "@Name": "Microsoft-Windows-Sysmon", 
+                    "@Guid": "{5770385F-C22A-43E0-BF4C-06F5698FFBD9}"
+                }, 
+                "EventID": "3", 
+                "Version": "5", 
+                "Level": "4", 
+                "Task": "3", 
+                "Opcode": "0", 
+                "Keywords": "0x8000000000000000", 
+                "TimeCreated": {
+                    "@SystemTime": "2020-06-16T02:21:23.041992100Z"
+                }, 
+                "EventRecordID": "8951", 
+                "Correlation": null, 
+                "Execution": {
+                    "@ProcessID": "1244", 
+                    "@ThreadID": "1860"
+                }, 
+                "Channel": "Microsoft-Windows-Sysmon/Operational", 
+                "Computer": "LeMOpmcD", 
+                "Security": {
+                    "@UserID": "S-1-5-18"
+                }
+            }, 
+            "EventData": {
+                "Data": [
+                    {
+                        "@Name": "RuleName"
+                    }, 
+                    {
+                        "@Name": "UtcTime", 
+                        "#text": "2020-06-16 02:21:22.830"
+                    }, 
+                    {
+                        "@Name": "ProcessGuid", 
+                        "#text": "{7EA2F8B5-2A7B-5EE8-0000-00106E8C0200}"
+                    }, 
+                    {
+                        "@Name": "ProcessId", 
+                        "#text": "1796"
+                    }, 
+                    {
+                        "@Name": "Image", 
+                        "#text": "C:\\Python27\\pythonw.exe"
+                    }, 
+                    {
+                        "@Name": "User", 
+                        "#text": "LEMOPMCD\\Administrator"
+                    }, 
+                    {
+                        "@Name": "Protocol", 
+                        "#text": "tcp"
+                    }, 
+                    {
+                        "@Name": "Initiated", 
+                        "#text": "false"
+                    }, 
+                    {
+                        "@Name": "SourceIsIpv6", 
+                        "#text": "false"
+                    }, 
+                    {
+                        "@Name": "SourceIp", 
+                        "#text": "192.168.168.214"
+                    }, 
+                    {
+                        "@Name": "SourceHostname", 
+                        "#text": "LeMOpmcD"
+                    }, 
+                    {
+                        "@Name": "SourcePort", 
+                        "#text": "8000"
+                    }, 
+                    {
+                        "@Name": "SourcePortName"
+                    }, 
+                    {
+                        "@Name": "DestinationIsIpv6", 
+                        "#text": "false"
+                    }, 
+                    {
+                        "@Name": "DestinationIp", 
+                        "#text": "192.168.168.1"
+                    }, 
+                    {
+                        "@Name": "DestinationHostname"
+                    }, 
+                    {
+                        "@Name": "DestinationPort", 
+                        "#text": "43172"
+                    }, 
+                    {
+                        "@Name": "DestinationPortName"
+                    }
+                ]
+            }
+        }, 
+        {
+            "@xmlns": "http://schemas.microsoft.com/win/2004/08/events/event", 
+            "System": {
+                "Provider": {
+                    "@Name": "Microsoft-Windows-Sysmon", 
+                    "@Guid": "{5770385F-C22A-43E0-BF4C-06F5698FFBD9}"
+                }, 
+                "EventID": "3", 
+                "Version": "5", 
+                "Level": "4", 
+                "Task": "3", 
+                "Opcode": "0", 
+                "Keywords": "0x8000000000000000", 
+                "TimeCreated": {
+                    "@SystemTime": "2020-06-16T02:21:22.791992100Z"
+                }, 
+                "EventRecordID": "8950", 
+                "Correlation": null, 
+                "Execution": {
+                    "@ProcessID": "1244", 
+                    "@ThreadID": "1860"
+                }, 
+                "Channel": "Microsoft-Windows-Sysmon/Operational", 
+                "Computer": "LeMOpmcD", 
+                "Security": {
+                    "@UserID": "S-1-5-18"
+                }
+            }, 
+            "EventData": {
+                "Data": [
+                    {
+                        "@Name": "RuleName"
+                    }, 
+                    {
+                        "@Name": "UtcTime", 
+                        "#text": "2020-06-16 02:21:22.733"
+                    }, 
+                    {
+                        "@Name": "ProcessGuid", 
+                        "#text": "{7EA2F8B5-2A7B-5EE8-0000-00106E8C0200}"
+                    }, 
+                    {
+                        "@Name": "ProcessId", 
+                        "#text": "1796"
+                    }, 
+                    {
+                        "@Name": "Image", 
+                        "#text": "C:\\Python27\\pythonw.exe"
+                    }, 
+                    {
+                        "@Name": "User", 
+                        "#text": "LEMOPMCD\\Administrator"
+                    }, 
+                    {
+                        "@Name": "Protocol", 
+                        "#text": "tcp"
+                    }, 
+                    {
+                        "@Name": "Initiated", 
+                        "#text": "false"
+                    }, 
+                    {
+                        "@Name": "SourceIsIpv6", 
+                        "#text": "false"
+                    }, 
+                    {
+                        "@Name": "SourceIp", 
+                        "#text": "192.168.168.214"
+                    }, 
+                    {
+                        "@Name": "SourceHostname", 
+                        "#text": "LeMOpmcD"
+                    }, 
+                    {
+                        "@Name": "SourcePort", 
+                        "#text": "8000"
+                    }, 
+                    {
+                        "@Name": "SourcePortName"
+                    }, 
+                    {
+                        "@Name": "DestinationIsIpv6", 
+                        "#text": "false"
+                    }, 
+                    {
+                        "@Name": "DestinationIp", 
+                        "#text": "192.168.168.1"
+                    }, 
+                    {
+                        "@Name": "DestinationHostname"
+                    }, 
+                    {
+                        "@Name": "DestinationPort", 
+                        "#text": "43160"
+                    }, 
+                    {
+                        "@Name": "DestinationPortName"
+                    }
+                ]
+            }
+        }, 
+        {
+            "@xmlns": "http://schemas.microsoft.com/win/2004/08/events/event", 
+            "System": {
+                "Provider": {
+                    "@Name": "Microsoft-Windows-Sysmon", 
+                    "@Guid": "{5770385F-C22A-43E0-BF4C-06F5698FFBD9}"
+                }, 
+                "EventID": "3", 
+                "Version": "5", 
+                "Level": "4", 
+                "Task": "3", 
+                "Opcode": "0", 
+                "Keywords": "0x8000000000000000", 
+                "TimeCreated": {
+                    "@SystemTime": "2020-06-16T02:21:22.791992100Z"
+                }, 
+                "EventRecordID": "8949", 
+                "Correlation": null, 
+                "Execution": {
+                    "@ProcessID": "1244", 
+                    "@ThreadID": "1860"
+                }, 
+                "Channel": "Microsoft-Windows-Sysmon/Operational", 
+                "Computer": "LeMOpmcD", 
+                "Security": {
+                    "@UserID": "S-1-5-18"
+                }
+            }, 
+            "EventData": {
+                "Data": [
+                    {
+                        "@Name": "RuleName"
+                    }, 
+                    {
+                        "@Name": "UtcTime", 
+                        "#text": "2020-06-16 02:21:22.724"
+                    }, 
+                    {
+                        "@Name": "ProcessGuid", 
+                        "#text": "{7EA2F8B5-2A7B-5EE8-0000-00106E8C0200}"
+                    }, 
+                    {
+                        "@Name": "ProcessId", 
+                        "#text": "1796"
+                    }, 
+                    {
+                        "@Name": "Image", 
+                        "#text": "C:\\Python27\\pythonw.exe"
+                    }, 
+                    {
+                        "@Name": "User", 
+                        "#text": "LEMOPMCD\\Administrator"
+                    }, 
+                    {
+                        "@Name": "Protocol", 
+                        "#text": "tcp"
+                    }, 
+                    {
+                        "@Name": "Initiated", 
+                        "#text": "false"
+                    }, 
+                    {
+                        "@Name": "SourceIsIpv6", 
+                        "#text": "false"
+                    }, 
+                    {
+                        "@Name": "SourceIp", 
+                        "#text": "192.168.168.214"
+                    }, 
+                    {
+                        "@Name": "SourceHostname", 
+                        "#text": "LeMOpmcD"
+                    }, 
+                    {
+                        "@Name": "SourcePort", 
+                        "#text": "8000"
+                    }, 
+                    {
+                        "@Name": "SourcePortName"
+                    }, 
+                    {
+                        "@Name": "DestinationIsIpv6", 
+                        "#text": "false"
+                    }, 
+                    {
+                        "@Name": "DestinationIp", 
+                        "#text": "192.168.168.1"
+                    }, 
+                    {
+                        "@Name": "DestinationHostname"
+                    }, 
+                    {
+                        "@Name": "DestinationPort", 
+                        "#text": "43150"
+                    }, 
+                    {
+                        "@Name": "DestinationPortName"
+                    }
+                ]
+            }
+        }, 
+        {
+            "@xmlns": "http://schemas.microsoft.com/win/2004/08/events/event", 
+            "System": {
+                "Provider": {
+                    "@Name": "Microsoft-Windows-Sysmon", 
+                    "@Guid": "{5770385F-C22A-43E0-BF4C-06F5698FFBD9}"
+                }, 
+                "EventID": "3", 
+                "Version": "5", 
+                "Level": "4", 
+                "Task": "3", 
+                "Opcode": "0", 
+                "Keywords": "0x8000000000000000", 
+                "TimeCreated": {
+                    "@SystemTime": "2020-06-16T02:21:22.791992100Z"
+                }, 
+                "EventRecordID": "8948", 
+                "Correlation": null, 
+                "Execution": {
+                    "@ProcessID": "1244", 
+                    "@ThreadID": "1860"
+                }, 
+                "Channel": "Microsoft-Windows-Sysmon/Operational", 
+                "Computer": "LeMOpmcD", 
+                "Security": {
+                    "@UserID": "S-1-5-18"
+                }
+            }, 
+            "EventData": {
+                "Data": [
+                    {
+                        "@Name": "RuleName"
+                    }, 
+                    {
+                        "@Name": "UtcTime", 
+                        "#text": "2020-06-16 02:21:22.713"
+                    }, 
+                    {
+                        "@Name": "ProcessGuid", 
+                        "#text": "{7EA2F8B5-2A7B-5EE8-0000-00106E8C0200}"
+                    }, 
+                    {
+                        "@Name": "ProcessId", 
+                        "#text": "1796"
+                    }, 
+                    {
+                        "@Name": "Image", 
+                        "#text": "C:\\Python27\\pythonw.exe"
+                    }, 
+                    {
+                        "@Name": "User", 
+                        "#text": "LEMOPMCD\\Administrator"
+                    }, 
+                    {
+                        "@Name": "Protocol", 
+                        "#text": "tcp"
+                    }, 
+                    {
+                        "@Name": "Initiated", 
+                        "#text": "false"
+                    }, 
+                    {
+                        "@Name": "SourceIsIpv6", 
+                        "#text": "false"
+                    }, 
+                    {
+                        "@Name": "SourceIp", 
+                        "#text": "192.168.168.214"
+                    }, 
+                    {
+                        "@Name": "SourceHostname", 
+                        "#text": "LeMOpmcD"
+                    }, 
+                    {
+                        "@Name": "SourcePort", 
+                        "#text": "8000"
+                    }, 
+                    {
+                        "@Name": "SourcePortName"
+                    }, 
+                    {
+                        "@Name": "DestinationIsIpv6", 
+                        "#text": "false"
+                    }, 
+                    {
+                        "@Name": "DestinationIp", 
+                        "#text": "192.168.168.1"
+                    }, 
+                    {
+                        "@Name": "DestinationHostname"
+                    }, 
+                    {
+                        "@Name": "DestinationPort", 
+                        "#text": "43140"
+                    }, 
+                    {
+                        "@Name": "DestinationPortName"
+                    }
+                ]
+            }
+        }, 
+        {
+            "@xmlns": "http://schemas.microsoft.com/win/2004/08/events/event", 
+            "System": {
+                "Provider": {
+                    "@Name": "Microsoft-Windows-Sysmon", 
+                    "@Guid": "{5770385F-C22A-43E0-BF4C-06F5698FFBD9}"
+                }, 
+                "EventID": "3", 
+                "Version": "5", 
+                "Level": "4", 
+                "Task": "3", 
+                "Opcode": "0", 
+                "Keywords": "0x8000000000000000", 
+                "TimeCreated": {
+                    "@SystemTime": "2020-06-16T02:21:22.791992100Z"
+                }, 
+                "EventRecordID": "8947", 
+                "Correlation": null, 
+                "Execution": {
+                    "@ProcessID": "1244", 
+                    "@ThreadID": "1860"
+                }, 
+                "Channel": "Microsoft-Windows-Sysmon/Operational", 
+                "Computer": "LeMOpmcD", 
+                "Security": {
+                    "@UserID": "S-1-5-18"
+                }
+            }, 
+            "EventData": {
+                "Data": [
+                    {
+                        "@Name": "RuleName"
+                    }, 
+                    {
+                        "@Name": "UtcTime", 
+                        "#text": "2020-06-16 02:21:22.697"
+                    }, 
+                    {
+                        "@Name": "ProcessGuid", 
+                        "#text": "{7EA2F8B5-2A7B-5EE8-0000-00106E8C0200}"
+                    }, 
+                    {
+                        "@Name": "ProcessId", 
+                        "#text": "1796"
+                    }, 
+                    {
+                        "@Name": "Image", 
+                        "#text": "C:\\Python27\\pythonw.exe"
+                    }, 
+                    {
+                        "@Name": "User", 
+                        "#text": "LEMOPMCD\\Administrator"
+                    }, 
+                    {
+                        "@Name": "Protocol", 
+                        "#text": "tcp"
+                    }, 
+                    {
+                        "@Name": "Initiated", 
+                        "#text": "false"
+                    }, 
+                    {
+                        "@Name": "SourceIsIpv6", 
+                        "#text": "false"
+                    }, 
+                    {
+                        "@Name": "SourceIp", 
+                        "#text": "192.168.168.214"
+                    }, 
+                    {
+                        "@Name": "SourceHostname", 
+                        "#text": "LeMOpmcD"
+                    }, 
+                    {
+                        "@Name": "SourcePort", 
+                        "#text": "8000"
+                    }, 
+                    {
+                        "@Name": "SourcePortName"
+                    }, 
+                    {
+                        "@Name": "DestinationIsIpv6", 
+                        "#text": "false"
+                    }, 
+                    {
+                        "@Name": "DestinationIp", 
+                        "#text": "192.168.168.1"
+                    }, 
+                    {
+                        "@Name": "DestinationHostname"
+                    }, 
+                    {
+                        "@Name": "DestinationPort", 
+                        "#text": "43128"
+                    }, 
+                    {
+                        "@Name": "DestinationPortName"
+                    }
+                ]
+            }
+        }, 
+        {
+            "@xmlns": "http://schemas.microsoft.com/win/2004/08/events/event", 
+            "System": {
+                "Provider": {
+                    "@Name": "Microsoft-Windows-Sysmon", 
+                    "@Guid": "{5770385F-C22A-43E0-BF4C-06F5698FFBD9}"
+                }, 
+                "EventID": "3", 
+                "Version": "5", 
+                "Level": "4", 
+                "Task": "3", 
+                "Opcode": "0", 
+                "Keywords": "0x8000000000000000", 
+                "TimeCreated": {
+                    "@SystemTime": "2020-06-16T02:21:22.791992100Z"
+                }, 
+                "EventRecordID": "8946", 
+                "Correlation": null, 
+                "Execution": {
+                    "@ProcessID": "1244", 
+                    "@ThreadID": "1860"
+                }, 
+                "Channel": "Microsoft-Windows-Sysmon/Operational", 
+                "Computer": "LeMOpmcD", 
+                "Security": {
+                    "@UserID": "S-1-5-18"
+                }
+            }, 
+            "EventData": {
+                "Data": [
+                    {
+                        "@Name": "RuleName"
+                    }, 
+                    {
+                        "@Name": "UtcTime", 
+                        "#text": "2020-06-16 02:21:22.336"
+                    }, 
+                    {
+                        "@Name": "ProcessGuid", 
+                        "#text": "{7EA2F8B5-2A79-5EE8-0000-0010A0E60000}"
+                    }, 
+                    {
+                        "@Name": "ProcessId", 
+                        "#text": "224"
+                    }, 
+                    {
+                        "@Name": "Image", 
+                        "#text": "C:\\Windows\\System32\\svchost.exe"
+                    }, 
+                    {
+                        "@Name": "User", 
+                        "#text": "NT AUTHORITY\\NETWORK SERVICE"
+                    }, 
+                    {
+                        "@Name": "Protocol", 
+                        "#text": "udp"
+                    }, 
+                    {
+                        "@Name": "Initiated", 
+                        "#text": "false"
+                    }, 
+                    {
+                        "@Name": "SourceIsIpv6", 
+                        "#text": "true"
+                    }, 
+                    {
+                        "@Name": "SourceIp", 
+                        "#text": "ff02:0:0:0:0:0:1:3"
+                    }, 
+                    {
+                        "@Name": "SourceHostname"
+                    }, 
+                    {
+                        "@Name": "SourcePort", 
+                        "#text": "5355"
+                    }, 
+                    {
+                        "@Name": "SourcePortName", 
+                        "#text": "llmnr"
+                    }, 
+                    {
+                        "@Name": "DestinationIsIpv6", 
+                        "#text": "true"
+                    }, 
+                    {
+                        "@Name": "DestinationIp", 
+                        "#text": "fe80:0:0:0:4d79:dfb2:f0b3:c1f7"
+                    }, 
+                    {
+                        "@Name": "DestinationHostname", 
+                        "#text": "LeMOpmcD"
+                    }, 
+                    {
+                        "@Name": "DestinationPort", 
+                        "#text": "49488"
+                    }, 
+                    {
+                        "@Name": "DestinationPortName"
+                    }
+                ]
+            }
+        }, 
+        {
+            "@xmlns": "http://schemas.microsoft.com/win/2004/08/events/event", 
+            "System": {
+                "Provider": {
+                    "@Name": "Microsoft-Windows-Sysmon", 
+                    "@Guid": "{5770385F-C22A-43E0-BF4C-06F5698FFBD9}"
+                }, 
+                "EventID": "3", 
+                "Version": "5", 
+                "Level": "4", 
+                "Task": "3", 
+                "Opcode": "0", 
+                "Keywords": "0x8000000000000000", 
+                "TimeCreated": {
+                    "@SystemTime": "2020-06-16T02:21:22.791992100Z"
+                }, 
+                "EventRecordID": "8945", 
+                "Correlation": null, 
+                "Execution": {
+                    "@ProcessID": "1244", 
+                    "@ThreadID": "1860"
+                }, 
+                "Channel": "Microsoft-Windows-Sysmon/Operational", 
+                "Computer": "LeMOpmcD", 
+                "Security": {
+                    "@UserID": "S-1-5-18"
+                }
+            }, 
+            "EventData": {
+                "Data": [
+                    {
+                        "@Name": "RuleName"
+                    }, 
+                    {
+                        "@Name": "UtcTime", 
+                        "#text": "2020-06-16 02:21:21.688"
+                    }, 
+                    {
+                        "@Name": "ProcessGuid", 
+                        "#text": "{7EA2F8B5-2AF3-5EE8-0000-0010AF5F3400}"
+                    }, 
+                    {
+                        "@Name": "ProcessId", 
+                        "#text": "1528"
+                    }, 
+                    {
+                        "@Name": "Image", 
+                        "#text": "C:\\Windows\\System32\\svchost.exe"
+                    }, 
+                    {
+                        "@Name": "User", 
+                        "#text": "NT AUTHORITY\\LOCAL SERVICE"
+                    }, 
+                    {
+                        "@Name": "Protocol", 
+                        "#text": "udp"
+                    }, 
+                    {
+                        "@Name": "Initiated", 
+                        "#text": "false"
+                    }, 
+                    {
+                        "@Name": "SourceIsIpv6", 
+                        "#text": "true"
+                    }, 
+                    {
+                        "@Name": "SourceIp", 
+                        "#text": "0:0:0:0:0:0:0:1"
+                    }, 
+                    {
+                        "@Name": "SourceHostname", 
+                        "#text": "LeMOpmcD"
+                    }, 
+                    {
+                        "@Name": "SourcePort", 
+                        "#text": "52721"
+                    }, 
+                    {
+                        "@Name": "SourcePortName"
+                    }, 
+                    {
+                        "@Name": "DestinationIsIpv6", 
+                        "#text": "true"
+                    }, 
+                    {
+                        "@Name": "DestinationIp", 
+                        "#text": "0:0:0:0:0:0:0:1"
+                    }, 
+                    {
+                        "@Name": "DestinationHostname", 
+                        "#text": "LeMOpmcD"
+                    }, 
+                    {
+                        "@Name": "DestinationPort", 
+                        "#text": "52721"
+                    }, 
+                    {
+                        "@Name": "DestinationPortName"
+                    }
+                ]
+            }
+        }, 
+        {
+            "@xmlns": "http://schemas.microsoft.com/win/2004/08/events/event", 
+            "System": {
+                "Provider": {
+                    "@Name": "Microsoft-Windows-Sysmon", 
+                    "@Guid": "{5770385F-C22A-43E0-BF4C-06F5698FFBD9}"
+                }, 
+                "EventID": "3", 
+                "Version": "5", 
+                "Level": "4", 
+                "Task": "3", 
+                "Opcode": "0", 
+                "Keywords": "0x8000000000000000", 
+                "TimeCreated": {
+                    "@SystemTime": "2020-06-16T02:21:22.791992100Z"
+                }, 
+                "EventRecordID": "8944", 
+                "Correlation": null, 
+                "Execution": {
+                    "@ProcessID": "1244", 
+                    "@ThreadID": "1860"
+                }, 
+                "Channel": "Microsoft-Windows-Sysmon/Operational", 
+                "Computer": "LeMOpmcD", 
+                "Security": {
+                    "@UserID": "S-1-5-18"
+                }
+            }, 
+            "EventData": {
+                "Data": [
+                    {
+                        "@Name": "RuleName"
+                    }, 
+                    {
+                        "@Name": "UtcTime", 
+                        "#text": "2020-06-16 02:21:21.668"
+                    }, 
+                    {
+                        "@Name": "ProcessGuid", 
+                        "#text": "{7EA2F8B5-2A79-5EE8-0000-0010A0E60000}"
+                    }, 
+                    {
+                        "@Name": "ProcessId", 
+                        "#text": "224"
+                    }, 
+                    {
+                        "@Name": "Image", 
+                        "#text": "C:\\Windows\\System32\\svchost.exe"
+                    }, 
+                    {
+                        "@Name": "User", 
+                        "#text": "NT AUTHORITY\\NETWORK SERVICE"
+                    }, 
+                    {
+                        "@Name": "Protocol", 
+                        "#text": "udp"
+                    }, 
+                    {
+                        "@Name": "Initiated", 
+                        "#text": "false"
+                    }, 
+                    {
+                        "@Name": "SourceIsIpv6", 
+                        "#text": "true"
+                    }, 
+                    {
+                        "@Name": "SourceIp", 
+                        "#text": "ff02:0:0:0:0:0:1:3"
+                    }, 
+                    {
+                        "@Name": "SourceHostname"
+                    }, 
+                    {
+                        "@Name": "SourcePort", 
+                        "#text": "5355"
+                    }, 
+                    {
+                        "@Name": "SourcePortName", 
+                        "#text": "llmnr"
+                    }, 
+                    {
+                        "@Name": "DestinationIsIpv6", 
+                        "#text": "true"
+                    }, 
+                    {
+                        "@Name": "DestinationIp", 
+                        "#text": "fe80:0:0:0:4d79:dfb2:f0b3:c1f7"
+                    }, 
+                    {
+                        "@Name": "DestinationHostname", 
+                        "#text": "LeMOpmcD"
+                    }, 
+                    {
+                        "@Name": "DestinationPort", 
+                        "#text": "61491"
+                    }, 
+                    {
+                        "@Name": "DestinationPortName"
+                    }
+                ]
+            }
+        }
+    ], 
+    "resubmit": {
+        "resubmit_ids": []
+    }, 
+    "static": {
+        "pdb_path": null, 
+        "pe_imports": [
+            {
+                "imports": [
+                    {
+                        "name": "WaitOnAddress", 
+                        "address": "0x1401784d0"
+                    }, 
+                    {
+                        "name": "WakeByAddressAll", 
+                        "address": "0x1401784d8"
+                    }, 
+                    {
+                        "name": "WakeByAddressSingle", 
+                        "address": "0x1401784e0"
+                    }
+                ], 
+                "dll": "api-ms-win-core-synch-l1-2-0.dll"
+            }, 
+            {
+                "imports": [
+                    {
+                        "name": "ProcessPrng", 
+                        "address": "0x1401784f0"
+                    }
+                ], 
+                "dll": "bcryptprimitives.dll"
+            }, 
+            {
+                "imports": [
+                    {
+                        "name": "SystemFunction036", 
+                        "address": "0x140178500"
+                    }
+                ], 
+                "dll": "ADVAPI32.dll"
+            }, 
+            {
+                "imports": [
+                    {
+                        "name": "BCryptGenRandom", 
+                        "address": "0x140178510"
+                    }
+                ], 
+                "dll": "bcrypt.dll"
+            }, 
+            {
+                "imports": [
+                    {
+                        "name": "AddVectoredExceptionHandler", 
+                        "address": "0x140178520"
+                    }, 
+                    {
+                        "name": "CloseHandle", 
+                        "address": "0x140178528"
+                    }, 
+                    {
+                        "name": "CreateFileMappingA", 
+                        "address": "0x140178530"
+                    }, 
+                    {
+                        "name": "CreateFileW", 
+                        "address": "0x140178538"
+                    }, 
+                    {
+                        "name": "CreateThread", 
+                        "address": "0x140178540"
+                    }, 
+                    {
+                        "name": "CreateToolhelp32Snapshot", 
+                        "address": "0x140178548"
+                    }, 
+                    {
+                        "name": "CreateWaitableTimerExW", 
+                        "address": "0x140178550"
+                    }, 
+                    {
+                        "name": "DeleteCriticalSection", 
+                        "address": "0x140178558"
+                    }, 
+                    {
+                        "name": "DuplicateHandle", 
+                        "address": "0x140178560"
+                    }, 
+                    {
+                        "name": "EnterCriticalSection", 
+                        "address": "0x140178568"
+                    }, 
+                    {
+                        "name": "FormatMessageW", 
+                        "address": "0x140178570"
+                    }, 
+                    {
+                        "name": "GetConsoleMode", 
+                        "address": "0x140178578"
+                    }, 
+                    {
+                        "name": "GetConsoleOutputCP", 
+                        "address": "0x140178580"
+                    }, 
+                    {
+                        "name": "GetCurrentDirectoryW", 
+                        "address": "0x140178588"
+                    }, 
+                    {
+                        "name": "GetCurrentProcess", 
+                        "address": "0x140178590"
+                    }, 
+                    {
+                        "name": "GetCurrentProcessId", 
+                        "address": "0x140178598"
+                    }, 
+                    {
+                        "name": "GetCurrentThread", 
+                        "address": "0x1401785a0"
+                    }, 
+                    {
+                        "name": "GetCurrentThreadId", 
+                        "address": "0x1401785a8"
+                    }, 
+                    {
+                        "name": "GetEnvironmentVariableW", 
+                        "address": "0x1401785b0"
+                    }, 
+                    {
+                        "name": "GetFileInformationByHandle", 
+                        "address": "0x1401785b8"
+                    }, 
+                    {
+                        "name": "GetFileInformationByHandleEx", 
+                        "address": "0x1401785c0"
+                    }, 
+                    {
+                        "name": "GetFullPathNameW", 
+                        "address": "0x1401785c8"
+                    }, 
+                    {
+                        "name": "GetLastError", 
+                        "address": "0x1401785d0"
+                    }, 
+                    {
+                        "name": "GetModuleHandleA", 
+                        "address": "0x1401785d8"
+                    }, 
+                    {
+                        "name": "GetModuleHandleW", 
+                        "address": "0x1401785e0"
+                    }, 
+                    {
+                        "name": "GetProcAddress", 
+                        "address": "0x1401785e8"
+                    }, 
+                    {
+                        "name": "GetProcessHeap", 
+                        "address": "0x1401785f0"
+                    }, 
+                    {
+                        "name": "GetStdHandle", 
+                        "address": "0x1401785f8"
+                    }, 
+                    {
+                        "name": "GetSystemTimePreciseAsFileTime", 
+                        "address": "0x140178600"
+                    }, 
+                    {
+                        "name": "HeapAlloc", 
+                        "address": "0x140178608"
+                    }, 
+                    {
+                        "name": "HeapFree", 
+                        "address": "0x140178610"
+                    }, 
+                    {
+                        "name": "HeapReAlloc", 
+                        "address": "0x140178618"
+                    }, 
+                    {
+                        "name": "InitOnceBeginInitialize", 
+                        "address": "0x140178620"
+                    }, 
+                    {
+                        "name": "InitOnceComplete", 
+                        "address": "0x140178628"
+                    }, 
+                    {
+                        "name": "InitializeCriticalSection", 
+                        "address": "0x140178630"
+                    }, 
+                    {
+                        "name": "LeaveCriticalSection", 
+                        "address": "0x140178638"
+                    }, 
+                    {
+                        "name": "MapViewOfFile", 
+                        "address": "0x140178640"
+                    }, 
+                    {
+                        "name": "Module32FirstW", 
+                        "address": "0x140178648"
+                    }, 
+                    {
+                        "name": "Module32NextW", 
+                        "address": "0x140178650"
+                    }, 
+                    {
+                        "name": "MultiByteToWideChar", 
+                        "address": "0x140178658"
+                    }, 
+                    {
+                        "name": "QueryPerformanceCounter", 
+                        "address": "0x140178660"
+                    }, 
+                    {
+                        "name": "QueryPerformanceFrequency", 
+                        "address": "0x140178668"
+                    }, 
+                    {
+                        "name": "RaiseException", 
+                        "address": "0x140178670"
+                    }, 
+                    {
+                        "name": "ReadConsoleW", 
+                        "address": "0x140178678"
+                    }, 
+                    {
+                        "name": "RtlCaptureContext", 
+                        "address": "0x140178680"
+                    }, 
+                    {
+                        "name": "RtlLookupFunctionEntry", 
+                        "address": "0x140178688"
+                    }, 
+                    {
+                        "name": "RtlUnwindEx", 
+                        "address": "0x140178690"
+                    }, 
+                    {
+                        "name": "RtlVirtualUnwind", 
+                        "address": "0x140178698"
+                    }, 
+                    {
+                        "name": "SetHandleInformation", 
+                        "address": "0x1401786a0"
+                    }, 
+                    {
+                        "name": "SetLastError", 
+                        "address": "0x1401786a8"
+                    }, 
+                    {
+                        "name": "SetThreadStackGuarantee", 
+                        "address": "0x1401786b0"
+                    }, 
+                    {
+                        "name": "SetUnhandledExceptionFilter", 
+                        "address": "0x1401786b8"
+                    }, 
+                    {
+                        "name": "SetWaitableTimer", 
+                        "address": "0x1401786c0"
+                    }, 
+                    {
+                        "name": "Sleep", 
+                        "address": "0x1401786c8"
+                    }, 
+                    {
+                        "name": "TlsAlloc", 
+                        "address": "0x1401786d0"
+                    }, 
+                    {
+                        "name": "TlsFree", 
+                        "address": "0x1401786d8"
+                    }, 
+                    {
+                        "name": "TlsGetValue", 
+                        "address": "0x1401786e0"
+                    }, 
+                    {
+                        "name": "TlsSetValue", 
+                        "address": "0x1401786e8"
+                    }, 
+                    {
+                        "name": "UnmapViewOfFile", 
+                        "address": "0x1401786f0"
+                    }, 
+                    {
+                        "name": "VirtualProtect", 
+                        "address": "0x1401786f8"
+                    }, 
+                    {
+                        "name": "VirtualQuery", 
+                        "address": "0x140178700"
+                    }, 
+                    {
+                        "name": "WaitForSingleObject", 
+                        "address": "0x140178708"
+                    }, 
+                    {
+                        "name": "WideCharToMultiByte", 
+                        "address": "0x140178710"
+                    }, 
+                    {
+                        "name": "WriteConsoleW", 
+                        "address": "0x140178718"
+                    }, 
+                    {
+                        "name": "__C_specific_handler", 
+                        "address": "0x140178720"
+                    }
+                ], 
+                "dll": "KERNEL32.dll"
+            }, 
+            {
+                "imports": [
+                    {
+                        "name": "__getmainargs", 
+                        "address": "0x140178730"
+                    }, 
+                    {
+                        "name": "__initenv", 
+                        "address": "0x140178738"
+                    }, 
+                    {
+                        "name": "__iob_func", 
+                        "address": "0x140178740"
+                    }, 
+                    {
+                        "name": "__set_app_type", 
+                        "address": "0x140178748"
+                    }, 
+                    {
+                        "name": "__setusermatherr", 
+                        "address": "0x140178750"
+                    }, 
+                    {
+                        "name": "_amsg_exit", 
+                        "address": "0x140178758"
+                    }, 
+                    {
+                        "name": "_cexit", 
+                        "address": "0x140178760"
+                    }, 
+                    {
+                        "name": "_commode", 
+                        "address": "0x140178768"
+                    }, 
+                    {
+                        "name": "_fmode", 
+                        "address": "0x140178770"
+                    }, 
+                    {
+                        "name": "_fpreset", 
+                        "address": "0x140178778"
+                    }, 
+                    {
+                        "name": "_initterm", 
+                        "address": "0x140178780"
+                    }, 
+                    {
+                        "name": "_onexit", 
+                        "address": "0x140178788"
+                    }, 
+                    {
+                        "name": "abort", 
+                        "address": "0x140178790"
+                    }, 
+                    {
+                        "name": "calloc", 
+                        "address": "0x140178798"
+                    }, 
+                    {
+                        "name": "exit", 
+                        "address": "0x1401787a0"
+                    }, 
+                    {
+                        "name": "fprintf", 
+                        "address": "0x1401787a8"
+                    }, 
+                    {
+                        "name": "free", 
+                        "address": "0x1401787b0"
+                    }, 
+                    {
+                        "name": "fwrite", 
+                        "address": "0x1401787b8"
+                    }, 
+                    {
+                        "name": "malloc", 
+                        "address": "0x1401787c0"
+                    }, 
+                    {
+                        "name": "memcmp", 
+                        "address": "0x1401787c8"
+                    }, 
+                    {
+                        "name": "memcpy", 
+                        "address": "0x1401787d0"
+                    }, 
+                    {
+                        "name": "memmove", 
+                        "address": "0x1401787d8"
+                    }, 
+                    {
+                        "name": "memset", 
+                        "address": "0x1401787e0"
+                    }, 
+                    {
+                        "name": "signal", 
+                        "address": "0x1401787e8"
+                    }, 
+                    {
+                        "name": "strlen", 
+                        "address": "0x1401787f0"
+                    }, 
+                    {
+                        "name": "strncmp", 
+                        "address": "0x1401787f8"
+                    }, 
+                    {
+                        "name": "vfprintf", 
+                        "address": "0x140178800"
+                    }
+                ], 
+                "dll": "msvcrt.dll"
+            }, 
+            {
+                "imports": [
+                    {
+                        "name": "NtReadFile", 
+                        "address": "0x140178810"
+                    }, 
+                    {
+                        "name": "NtWriteFile", 
+                        "address": "0x140178818"
+                    }, 
+                    {
+                        "name": "RtlNtStatusToDosError", 
+                        "address": "0x140178820"
+                    }
+                ], 
+                "dll": "ntdll.dll"
+            }, 
+            {
+                "imports": [
+                    {
+                        "name": "WSACleanup", 
+                        "address": "0x140178830"
+                    }, 
+                    {
+                        "name": "WSADuplicateSocketW", 
+                        "address": "0x140178838"
+                    }, 
+                    {
+                        "name": "WSAGetLastError", 
+                        "address": "0x140178840"
+                    }, 
+                    {
+                        "name": "WSARecv", 
+                        "address": "0x140178848"
+                    }, 
+                    {
+                        "name": "WSASend", 
+                        "address": "0x140178850"
+                    }, 
+                    {
+                        "name": "WSASocketW", 
+                        "address": "0x140178858"
+                    }, 
+                    {
+                        "name": "WSAStartup", 
+                        "address": "0x140178860"
+                    }, 
+                    {
+                        "name": "accept", 
+                        "address": "0x140178868"
+                    }, 
+                    {
+                        "name": "bind", 
+                        "address": "0x140178870"
+                    }, 
+                    {
+                        "name": "closesocket", 
+                        "address": "0x140178878"
+                    }, 
+                    {
+                        "name": "connect", 
+                        "address": "0x140178880"
+                    }, 
+                    {
+                        "name": "freeaddrinfo", 
+                        "address": "0x140178888"
+                    }, 
+                    {
+                        "name": "getaddrinfo", 
+                        "address": "0x140178890"
+                    }, 
+                    {
+                        "name": "getpeername", 
+                        "address": "0x140178898"
+                    }, 
+                    {
+                        "name": "getsockname", 
+                        "address": "0x1401788a0"
+                    }, 
+                    {
+                        "name": "getsockopt", 
+                        "address": "0x1401788a8"
+                    }, 
+                    {
+                        "name": "ioctlsocket", 
+                        "address": "0x1401788b0"
+                    }, 
+                    {
+                        "name": "listen", 
+                        "address": "0x1401788b8"
+                    }, 
+                    {
+                        "name": "recv", 
+                        "address": "0x1401788c0"
+                    }, 
+                    {
+                        "name": "select", 
+                        "address": "0x1401788c8"
+                    }, 
+                    {
+                        "name": "send", 
+                        "address": "0x1401788d0"
+                    }, 
+                    {
+                        "name": "setsockopt", 
+                        "address": "0x1401788d8"
+                    }
+                ], 
+                "dll": "WS2_32.dll"
+            }
+        ], 
+        "peid_signatures": null, 
+        "keys": [], 
+        "signature": [], 
+        "pe_timestamp": "2026-05-26 18:42:48", 
+        "pe_exports": [], 
+        "imported_dll_count": 8, 
+        "pe_imphash": "c315611fcbcf6f6b48e39537f48d7d53", 
+        "pe_resources": [
+            {
+                "name": "RT_MANIFEST", 
+                "language": "LANG_ENGLISH", 
+                "filetype": "ASCII text", 
+                "sublanguage": "SUBLANG_ENGLISH_US", 
+                "offset": "0x0017b058", 
+                "size": "0x00000265"
+            }
+        ], 
+        "pe_versioninfo": [], 
+        "pe_sections": [
+            {
+                "size_of_data": "0x000e3200", 
+                "virtual_address": "0x00001000", 
+                "entropy": 6.41723718174045, 
+                "name": ".text", 
+                "virtual_size": "0x000e3130"
+            }, 
+            {
+                "size_of_data": "0x00000c00", 
+                "virtual_address": "0x000e5000", 
+                "entropy": 0.18309047379545593, 
+                "name": ".data", 
+                "virtual_size": "0x00000a70"
+            }, 
+            {
+                "size_of_data": "0x00080200", 
+                "virtual_address": "0x000e6000", 
+                "entropy": 6.9854037004205525, 
+                "name": ".rdata", 
+                "virtual_size": "0x000800f0"
+            }, 
+            {
+                "size_of_data": "0x00006400", 
+                "virtual_address": "0x00167000", 
+                "entropy": 6.063558429966399, 
+                "name": ".pdata", 
+                "virtual_size": "0x00006354"
+            }, 
+            {
+                "size_of_data": "0x00008e00", 
+                "virtual_address": "0x0016e000", 
+                "entropy": 5.113896861352595, 
+                "name": ".xdata", 
+                "virtual_size": "0x00008df4"
+            }, 
+            {
+                "size_of_data": "0x00000000", 
+                "virtual_address": "0x00177000", 
+                "entropy": 0.0, 
+                "name": ".bss", 
+                "virtual_size": "0x00000240"
+            }, 
+            {
+                "size_of_data": "0x00001400", 
+                "virtual_address": "0x00178000", 
+                "entropy": 4.513431189228818, 
+                "name": ".idata", 
+                "virtual_size": "0x00001374"
+            }, 
+            {
+                "size_of_data": "0x00000200", 
+                "virtual_address": "0x0017a000", 
+                "entropy": 0.0, 
+                "name": ".tls", 
+                "virtual_size": "0x00000010"
+            }, 
+            {
+                "size_of_data": "0x00000400", 
+                "virtual_address": "0x0017b000", 
+                "entropy": 3.794373675113751, 
+                "name": ".rsrc", 
+                "virtual_size": "0x000002c0"
+            }, 
+            {
+                "size_of_data": "0x00001600", 
+                "virtual_address": "0x0017c000", 
+                "entropy": 5.386852571160964, 
+                "name": ".reloc", 
+                "virtual_size": "0x00001554"
+            }
+        ]
+    }, 
+    "snort": {
+        "alerts": []
+    }, 
+    "behavior": {
+        "generic": [
+            {
+                "process_path": "C:\\Windows\\System32\\lsass.exe", 
+                "process_name": "lsass.exe", 
+                "pid": 508, 
+                "summary": {}, 
+                "first_seen": 1780060805.8125, 
+                "ppid": 400
+            }
+        ], 
+        "processes": [
+            {
+                "process_path": "C:\\Windows\\System32\\lsass.exe", 
+                "calls": [], 
+                "track": false, 
+                "pid": 508, 
+                "process_name": "lsass.exe", 
+                "command_line": "C:\\Windows\\system32\\lsass.exe", 
+                "modules": [
+                    {
+                        "basename": "lsass.exe", 
+                        "imgsize": 49152, 
+                        "baseaddr": "0xff720000", 
+                        "filepath": "C:\\Windows\\system32\\lsass.exe"
+                    }, 
+                    {
+                        "basename": "ntdll.dll", 
+                        "imgsize": 1740800, 
+                        "baseaddr": "0x76db0000", 
+                        "filepath": "C:\\Windows\\SYSTEM32\\ntdll.dll"
+                    }, 
+                    {
+                        "basename": "kernel32.dll", 
+                        "imgsize": 1175552, 
+                        "baseaddr": "0x76c90000", 
+                        "filepath": "C:\\Windows\\system32\\kernel32.dll"
+                    }, 
+                    {
+                        "basename": "KERNELBASE.dll", 
+                        "imgsize": 438272, 
+                        "baseaddr": "0x7fefcf10000", 
+                        "filepath": "C:\\Windows\\system32\\KERNELBASE.dll"
+                    }, 
+                    {
+                        "basename": "msvcrt.dll", 
+                        "imgsize": 651264, 
+                        "baseaddr": "0x7fefd750000", 
+                        "filepath": "C:\\Windows\\system32\\msvcrt.dll"
+                    }, 
+                    {
+                        "basename": "RPCRT4.dll", 
+                        "imgsize": 1232896, 
+                        "baseaddr": "0x7fefed40000", 
+                        "filepath": "C:\\Windows\\system32\\RPCRT4.dll"
+                    }, 
+                    {
+                        "basename": "SspiSrv.dll", 
+                        "imgsize": 45056, 
+                        "baseaddr": "0x7fefc9b0000", 
+                        "filepath": "C:\\Windows\\system32\\SspiSrv.dll"
+                    }, 
+                    {
+                        "basename": "lsasrv.dll", 
+                        "imgsize": 1470464, 
+                        "baseaddr": "0x7fefc840000", 
+                        "filepath": "C:\\Windows\\system32\\lsasrv.dll"
+                    }, 
+                    {
+                        "basename": "sechost.dll", 
+                        "imgsize": 126976, 
+                        "baseaddr": "0x7fefd630000", 
+                        "filepath": "C:\\Windows\\SYSTEM32\\sechost.dll"
+                    }, 
+                    {
+                        "basename": "SspiCli.dll", 
+                        "imgsize": 151552, 
+                        "baseaddr": "0x7fefc9c0000", 
+                        "filepath": "C:\\Windows\\system32\\SspiCli.dll"
+                    }, 
+                    {
+                        "basename": "ADVAPI32.dll", 
+                        "imgsize": 897024, 
+                        "baseaddr": "0x7fefe6a0000", 
+                        "filepath": "C:\\Windows\\system32\\ADVAPI32.dll"
+                    }, 
+                    {
+                        "basename": "USER32.dll", 
+                        "imgsize": 1024000, 
+                        "baseaddr": "0x76b90000", 
+                        "filepath": "C:\\Windows\\system32\\USER32.dll"
+                    }, 
+                    {
+                        "basename": "GDI32.dll", 
+                        "imgsize": 421888, 
+                        "baseaddr": "0x7fefd5c0000", 
+                        "filepath": "C:\\Windows\\system32\\GDI32.dll"
+                    }, 
+                    {
+                        "basename": "LPK.dll", 
+                        "imgsize": 57344, 
+                        "baseaddr": "0x7fefef90000", 
+                        "filepath": "C:\\Windows\\system32\\LPK.dll"
+                    }, 
+                    {
+                        "basename": "USP10.dll", 
+                        "imgsize": 823296, 
+                        "baseaddr": "0x7fefee70000", 
+                        "filepath": "C:\\Windows\\system32\\USP10.dll"
+                    }, 
+                    {
+                        "basename": "SAMSRV.dll", 
+                        "imgsize": 774144, 
+                        "baseaddr": "0x7fefc690000", 
+                        "filepath": "C:\\Windows\\system32\\SAMSRV.dll"
+                    }, 
+                    {
+                        "basename": "cryptdll.dll", 
+                        "imgsize": 81920, 
+                        "baseaddr": "0x7fefc670000", 
+                        "filepath": "C:\\Windows\\system32\\cryptdll.dll"
+                    }, 
+                    {
+                        "basename": "MSASN1.dll", 
+                        "imgsize": 61440, 
+                        "baseaddr": "0x7fefcc00000", 
+                        "filepath": "C:\\Windows\\system32\\MSASN1.dll"
+                    }, 
+                    {
+                        "basename": "wevtapi.dll", 
+                        "imgsize": 446464, 
+                        "baseaddr": "0x7fefc600000", 
+                        "filepath": "C:\\Windows\\system32\\wevtapi.dll"
+                    }, 
+                    {
+                        "basename": "IMM32.DLL", 
+                        "imgsize": 188416, 
+                        "baseaddr": "0x7fefed10000", 
+                        "filepath": "C:\\Windows\\system32\\IMM32.DLL"
+                    }, 
+                    {
+                        "basename": "MSCTF.dll", 
+                        "imgsize": 1085440, 
+                        "baseaddr": "0x7fefefa0000", 
+                        "filepath": "C:\\Windows\\system32\\MSCTF.dll"
+                    }, 
+                    {
+                        "basename": "cngaudit.dll", 
+                        "imgsize": 36864, 
+                        "baseaddr": "0x7fefc5f0000", 
+                        "filepath": "C:\\Windows\\system32\\cngaudit.dll"
+                    }, 
+                    {
+                        "basename": "AUTHZ.dll", 
+                        "imgsize": 192512, 
+                        "baseaddr": "0x7fefc5c0000", 
+                        "filepath": "C:\\Windows\\system32\\AUTHZ.dll"
+                    }, 
+                    {
+                        "basename": "ncrypt.dll", 
+                        "imgsize": 319488, 
+                        "baseaddr": "0x7fefc570000", 
+                        "filepath": "C:\\Windows\\system32\\ncrypt.dll"
+                    }, 
+                    {
+                        "basename": "bcrypt.dll", 
+                        "imgsize": 139264, 
+                        "baseaddr": "0x7fefc540000", 
+                        "filepath": "C:\\Windows\\system32\\bcrypt.dll"
+                    }, 
+                    {
+                        "basename": "msprivs.DLL", 
+                        "imgsize": 8192, 
+                        "baseaddr": "0x74990000", 
+                        "filepath": "C:\\Windows\\system32\\msprivs.DLL"
+                    }, 
+                    {
+                        "basename": "netjoin.dll", 
+                        "imgsize": 204800, 
+                        "baseaddr": "0x7fefc500000", 
+                        "filepath": "C:\\Windows\\system32\\netjoin.dll"
+                    }, 
+                    {
+                        "basename": "negoexts.DLL", 
+                        "imgsize": 147456, 
+                        "baseaddr": "0x7fefc4d0000", 
+                        "filepath": "C:\\Windows\\system32\\negoexts.DLL"
+                    }, 
+                    {
+                        "basename": "Secur32.dll", 
+                        "imgsize": 45056, 
+                        "baseaddr": "0x7fefc800000", 
+                        "filepath": "C:\\Windows\\system32\\Secur32.dll"
+                    }, 
+                    {
+                        "basename": "cryptbase.dll", 
+                        "imgsize": 61440, 
+                        "baseaddr": "0x7fefca50000", 
+                        "filepath": "C:\\Windows\\system32\\cryptbase.dll"
+                    }, 
+                    {
+                        "basename": "kerberos.DLL", 
+                        "imgsize": 737280, 
+                        "baseaddr": "0x7fefc410000", 
+                        "filepath": "C:\\Windows\\system32\\kerberos.DLL"
+                    }, 
+                    {
+                        "basename": "CRYPTSP.dll", 
+                        "imgsize": 94208, 
+                        "baseaddr": "0x7fefc3f0000", 
+                        "filepath": "C:\\Windows\\system32\\CRYPTSP.dll"
+                    }, 
+                    {
+                        "basename": "WS2_32.dll", 
+                        "imgsize": 315392, 
+                        "baseaddr": "0x7fefef40000", 
+                        "filepath": "C:\\Windows\\system32\\WS2_32.dll"
+                    }, 
+                    {
+                        "basename": "NSI.dll", 
+                        "imgsize": 32768, 
+                        "baseaddr": "0x7feff0b0000", 
+                        "filepath": "C:\\Windows\\system32\\NSI.dll"
+                    }, 
+                    {
+                        "basename": "mswsock.dll", 
+                        "imgsize": 348160, 
+                        "baseaddr": "0x7fefc390000", 
+                        "filepath": "C:\\Windows\\system32\\mswsock.dll"
+                    }, 
+                    {
+                        "basename": "wship6.dll", 
+                        "imgsize": 28672, 
+                        "baseaddr": "0x7fefc380000", 
+                        "filepath": "C:\\Windows\\System32\\wship6.dll"
+                    }, 
+                    {
+                        "basename": "msv1_0.DLL", 
+                        "imgsize": 331776, 
+                        "baseaddr": "0x7fefc320000", 
+                        "filepath": "C:\\Windows\\system32\\msv1_0.DLL"
+                    }, 
+                    {
+                        "basename": "netlogon.DLL", 
+                        "imgsize": 712704, 
+                        "baseaddr": "0x7fefc270000", 
+                        "filepath": "C:\\Windows\\system32\\netlogon.DLL"
+                    }, 
+                    {
+                        "basename": "DNSAPI.dll", 
+                        "imgsize": 372736, 
+                        "baseaddr": "0x7fefc210000", 
+                        "filepath": "C:\\Windows\\system32\\DNSAPI.dll"
+                    }, 
+                    {
+                        "basename": "logoncli.dll", 
+                        "imgsize": 196608, 
+                        "baseaddr": "0x7fefc1e0000", 
+                        "filepath": "C:\\Windows\\system32\\logoncli.dll"
+                    }, 
+                    {
+                        "basename": "schannel.DLL", 
+                        "imgsize": 356352, 
+                        "baseaddr": "0x7fefc180000", 
+                        "filepath": "C:\\Windows\\system32\\schannel.DLL"
+                    }, 
+                    {
+                        "basename": "CRYPT32.dll", 
+                        "imgsize": 1470464, 
+                        "baseaddr": "0x7fefcd80000", 
+                        "filepath": "C:\\Windows\\system32\\CRYPT32.dll"
+                    }, 
+                    {
+                        "basename": "wdigest.DLL", 
+                        "imgsize": 221184, 
+                        "baseaddr": "0x7fefc140000", 
+                        "filepath": "C:\\Windows\\system32\\wdigest.DLL"
+                    }, 
+                    {
+                        "basename": "rsaenh.dll", 
+                        "imgsize": 290816, 
+                        "baseaddr": "0x7fefc0f0000", 
+                        "filepath": "C:\\Windows\\system32\\rsaenh.dll"
+                    }, 
+                    {
+                        "basename": "tspkg.DLL", 
+                        "imgsize": 98304, 
+                        "baseaddr": "0x7fefc0d0000", 
+                        "filepath": "C:\\Windows\\system32\\tspkg.DLL"
+                    }, 
+                    {
+                        "basename": "pku2u.DLL", 
+                        "imgsize": 282624, 
+                        "baseaddr": "0x7fefc080000", 
+                        "filepath": "C:\\Windows\\system32\\pku2u.DLL"
+                    }, 
+                    {
+                        "basename": "bcryptprimitives.dll", 
+                        "imgsize": 311296, 
+                        "baseaddr": "0x7fefc030000", 
+                        "filepath": "C:\\Windows\\system32\\bcryptprimitives.dll"
+                    }, 
+                    {
+                        "basename": "RpcRtRemote.dll", 
+                        "imgsize": 81920, 
+                        "baseaddr": "0x7fefcb40000", 
+                        "filepath": "C:\\Windows\\system32\\RpcRtRemote.dll"
+                    }, 
+                    {
+                        "basename": "efslsaext.dll", 
+                        "imgsize": 73728, 
+                        "baseaddr": "0x7fefc010000", 
+                        "filepath": "C:\\Windows\\system32\\efslsaext.dll"
+                    }, 
+                    {
+                        "basename": "scecli.DLL", 
+                        "imgsize": 253952, 
+                        "baseaddr": "0x7fefbfd0000", 
+                        "filepath": "C:\\Windows\\system32\\scecli.DLL"
+                    }, 
+                    {
+                        "basename": "credssp.dll", 
+                        "imgsize": 40960, 
+                        "baseaddr": "0x7fefbfc0000", 
+                        "filepath": "C:\\Windows\\system32\\credssp.dll"
+                    }, 
+                    {
+                        "basename": "WINSTA.dll", 
+                        "imgsize": 249856, 
+                        "baseaddr": "0x7fefcb00000", 
+                        "filepath": "C:\\Windows\\system32\\WINSTA.dll"
+                    }, 
+                    {
+                        "basename": "IPHLPAPI.DLL", 
+                        "imgsize": 159744, 
+                        "baseaddr": "0x7fefa720000", 
+                        "filepath": "C:\\Windows\\system32\\IPHLPAPI.DLL"
+                    }, 
+                    {
+                        "basename": "WINNSI.DLL", 
+                        "imgsize": 45056, 
+                        "baseaddr": "0x7fefa6d0000", 
+                        "filepath": "C:\\Windows\\system32\\WINNSI.DLL"
+                    }, 
+                    {
+                        "basename": "netutils.dll", 
+                        "imgsize": 49152, 
+                        "baseaddr": "0x7fefa4b0000", 
+                        "filepath": "C:\\Windows\\system32\\netutils.dll"
+                    }, 
+                    {
+                        "basename": "USERENV.dll", 
+                        "imgsize": 122880, 
+                        "baseaddr": "0x7fefbeb0000", 
+                        "filepath": "C:\\Windows\\system32\\USERENV.dll"
+                    }, 
+                    {
+                        "basename": "profapi.dll", 
+                        "imgsize": 61440, 
+                        "baseaddr": "0x7fefcb60000", 
+                        "filepath": "C:\\Windows\\system32\\profapi.dll"
+                    }, 
+                    {
+                        "basename": "wshtcpip.dll", 
+                        "imgsize": 28672, 
+                        "baseaddr": "0x7fefbd90000", 
+                        "filepath": "C:\\Windows\\System32\\wshtcpip.dll"
+                    }, 
+                    {
+                        "basename": "dssenh.dll", 
+                        "imgsize": 204800, 
+                        "baseaddr": "0x7fef4e00000", 
+                        "filepath": "C:\\Windows\\system32\\dssenh.dll"
+                    }, 
+                    {
+                        "basename": "GPAPI.dll", 
+                        "imgsize": 110592, 
+                        "baseaddr": "0x7fefbe90000", 
+                        "filepath": "C:\\Windows\\system32\\GPAPI.dll"
+                    }, 
+                    {
+                        "basename": "monitor-x64.dll", 
+                        "imgsize": 2269184, 
+                        "baseaddr": "0x73e90000", 
+                        "filepath": "C:\\tmp1xmcit\\bin\\monitor-x64.dll"
+                    }
+                ], 
+                "time": 0, 
+                "tid": 1924, 
+                "first_seen": 1780060805.8125, 
+                "ppid": 400, 
+                "type": "process"
+            }
+        ], 
+        "processtree": [
+            {
+                "track": false, 
+                "pid": 508, 
+                "process_name": "lsass.exe", 
+                "command_line": "C:\\Windows\\system32\\lsass.exe", 
+                "first_seen": 1780060805.8125, 
+                "ppid": 400, 
+                "children": []
+            }
+        ]
+    }, 
+    "debug": {
+        "action": [], 
+        "dbgview": [], 
+        "errors": [], 
+        "log": [
+            "2026-05-29 12:20:05,000 [analyzer] DEBUG: Starting analyzer from: C:\\tmp1xmcit\n", 
+            "2026-05-29 12:20:05,000 [analyzer] DEBUG: Pipe server name: \\??\\PIPE\\mzyYVkkzpCFyPVaLRiHZxZQnVq\n", 
+            "2026-05-29 12:20:05,000 [analyzer] DEBUG: Log pipe server name: \\??\\PIPE\\pbWlvdyGDLxuYXMPtZGebkKMdnIZsfW\n", 
+            "2026-05-29 12:20:05,217 [analyzer] DEBUG: Started auxiliary module Curtain\n", 
+            "2026-05-29 12:20:05,233 [analyzer] DEBUG: Started auxiliary module DbgView\n", 
+            "2026-05-29 12:20:05,671 [analyzer] DEBUG: Started auxiliary module Disguise\n", 
+            "2026-05-29 12:20:05,875 [analyzer] DEBUG: Loaded monitor into process with pid 508\n", 
+            "2026-05-29 12:20:05,875 [analyzer] DEBUG: Started auxiliary module DumpTLSMasterSecrets\n", 
+            "2026-05-29 12:20:05,875 [analyzer] DEBUG: Started auxiliary module Human\n", 
+            "2026-05-29 12:20:05,875 [analyzer] DEBUG: Started auxiliary module InstallCertificate\n", 
+            "2026-05-29 12:20:05,875 [analyzer] DEBUG: Started auxiliary module Reboot\n", 
+            "2026-05-29 12:20:06,015 [analyzer] DEBUG: Started auxiliary module RecentFiles\n", 
+            "2026-05-29 12:20:06,015 [analyzer] DEBUG: Started auxiliary module Screenshots\n", 
+            "2026-05-29 12:20:06,015 [analyzer] DEBUG: Started auxiliary module Sysmon\n", 
+            "2026-05-29 12:20:06,015 [analyzer] DEBUG: Started auxiliary module LoadZer0m0n\n", 
+            "2026-05-29 12:20:06,140 [lib.api.process] INFO: Successfully executed process from path u'C:\\\\Users\\\\ADMINI~1\\\\AppData\\\\Local\\\\Temp\\\\file_45d1704c898d14f8.exe' with arguments '' and pid 1096\n", 
+            "2026-05-29 12:20:07,155 [analyzer] INFO: Process with pid 1096 has terminated\n", 
+            "2026-05-29 12:20:07,155 [analyzer] INFO: Process list is empty, terminating analysis.\n", 
+            "2026-05-29 12:20:08,358 [analyzer] INFO: Terminating remaining processes before shutdown.\n", 
+            "2026-05-29 12:20:08,358 [analyzer] INFO: Analysis completed.\n"
+        ], 
+        "cuckoo": [
+            "2026-05-29 12:20:06,035 [cuckoo.core.scheduler] INFO: Task #7565801: acquired machine win7x6414 (label=win7x6414)\n", 
+            "2026-05-29 12:20:06,036 [cuckoo.core.resultserver] DEBUG: Now tracking machine 192.168.168.214 for task #7565801\n", 
+            "2026-05-29 12:20:06,616 [cuckoo.auxiliary.sniffer] INFO: Started sniffer with PID 1301688 (interface=vboxnet0, host=192.168.168.214)\n", 
+            "2026-05-29 12:20:07,334 [cuckoo.machinery.virtualbox] DEBUG: Starting vm win7x6414\n", 
+            "2026-05-29 12:20:08,297 [cuckoo.machinery.virtualbox] DEBUG: Restoring virtual machine win7x6414 to vmcloak\n", 
+            "2026-05-29 12:20:18,528 [cuckoo.core.guest] INFO: Starting analysis #7565801 on guest (id=win7x6414, ip=192.168.168.214)\n", 
+            "2026-05-29 12:20:19,535 [cuckoo.core.guest] DEBUG: win7x6414: not ready yet\n", 
+            "2026-05-29 12:20:24,568 [cuckoo.core.guest] INFO: Guest is running Cuckoo Agent 0.10 (id=win7x6414, ip=192.168.168.214)\n", 
+            "2026-05-29 12:20:24,677 [cuckoo.core.guest] DEBUG: Uploading analyzer to guest (id=win7x6414, ip=192.168.168.214, monitor=latest, size=6660546)\n", 
+            "2026-05-29 12:20:25,963 [cuckoo.core.resultserver] DEBUG: Task #7565801: live log analysis.log initialized.\n", 
+            "2026-05-29 12:20:26,794 [cuckoo.core.resultserver] DEBUG: Task #7565801 is sending a BSON stream\n", 
+            "2026-05-29 12:20:28,144 [cuckoo.core.resultserver] DEBUG: Task #7565801: File upload for 'shots/0001.jpg'\n", 
+            "2026-05-29 12:20:28,158 [cuckoo.core.resultserver] DEBUG: Task #7565801 uploaded file length: 133505\n", 
+            "2026-05-29 12:20:29,234 [cuckoo.core.resultserver] DEBUG: Task #7565801: File upload for 'curtain/1780050008.25.curtain.log'\n", 
+            "2026-05-29 12:20:29,237 [cuckoo.core.resultserver] DEBUG: Task #7565801 uploaded file length: 36\n", 
+            "2026-05-29 12:20:29,344 [cuckoo.core.resultserver] DEBUG: Task #7565801: File upload for 'sysmon/1780050008.36.sysmon.xml'\n", 
+            "2026-05-29 12:20:29,350 [cuckoo.core.resultserver] DEBUG: Task #7565801 uploaded file length: 38202\n", 
+            "2026-05-29 12:20:30,240 [cuckoo.core.resultserver] DEBUG: Task #7565801 had connection reset for <Context for LOG>\n", 
+            "2026-05-29 12:20:31,478 [cuckoo.core.guest] INFO: win7x6414: analysis completed successfully\n", 
+            "2026-05-29 12:20:31,495 [cuckoo.core.plugins] DEBUG: Stopped auxiliary module: Redsocks\n", 
+            "2026-05-29 12:20:31,529 [cuckoo.core.plugins] DEBUG: Stopped auxiliary module: Sniffer\n", 
+            "2026-05-29 12:20:32,931 [cuckoo.machinery.virtualbox] INFO: Successfully generated memory dump for virtual machine with label win7x6414 to path /srv/cuckoo/cwd/storage/analyses/7565801/memory.dmp\n", 
+            "2026-05-29 12:20:32,932 [cuckoo.machinery.virtualbox] DEBUG: Stopping vm win7x6414\n", 
+            "2026-05-29 12:20:41,262 [cuckoo.core.resultserver] DEBUG: Stopped tracking machine 192.168.168.214 for task #7565801\n", 
+            "2026-05-29 12:20:41,530 [cuckoo.core.scheduler] DEBUG: Released database task #7565801\n", 
+            "2026-05-29 12:20:41,550 [cuckoo.core.scheduler] INFO: Task #7565801: analysis procedure completed\n"
+        ]
+    }, 
+    "misp": [
+        {
+            "info": "MalwareBazaar malware samples for 2026-05-28", 
+            "level": 2, 
+            "event_id": 5746583, 
+            "iocs": [
+                "4c25af5791f7cad042fbfc6dca3ae78b7344c66f9f3a35853e76565bae0890f3", 
+                "6daa369997f5fedf4ce3cea09c3013075392f06c", 
+                "a305a45fba24a6ce040d9d45aab2d147"
+            ], 
+            "url": "https://misp.cert.ee/events/view/5746583", 
+            "date": "2026-05-28"
+        }
+    ], 
+    "strings": [
+        "!This program cannot be run in DOS mode.", 
+        "`.data", 
+        ".rdata", 
+        "@.pdata", 
+        "@.xdata", 
+        ".idata", 
+        "@.reloc", 
+        "ATUWVSH", 
+        " [^_]A\\", 
+        " [^_]A\\", 
+        "AWAVAUATVWUSH", 
+        "tGH9|$@u@H", 
+        "H[]_^A\\A]A^A_", 
+        "AWAVAUATVWUS", 
+        "[]_^A\\A]A^A_", 
+        "D$Xu\"1", 
+        "AVVWSH", 
+        "AVVWSH", 
+        "H[_^A^", 
+        "AWAVAUATVWUSH", 
+        "X[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "t$0L9l$8", 
+        "L9d$8tXO", 
+        "AVVWSH", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "AWAVVWSH", 
+        "0[_^A^A_", 
+        "AWAVAUATVWSH", 
+        "[_^A\\A]A^A_", 
+        "AWAVATVWSH", 
+        "X[_^A\\A^A_", 
+        "UAWAVATVWSH", 
+        "L97toE", 
+        "@[_^A\\A^A_]", 
+        "AWAVAUATVWUSH", 
+        "UUUUUUUUM!", 
+        "L3d$(M!", 
+        "33333333L!", 
+        "L3l$8L1", 
+        "L3d$(I1", 
+        "33333333M!", 
+        "H[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "L3a(M1", 
+        "H#\\$8M1", 
+        "H#|$8M!", 
+        "H!l$@H", 
+        "L#l$xL", 
+        "H#D$0H3D$ I1", 
+        "H3D$(L", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "UUUUUUUUH!", 
+        "33333333I!", 
+        "[]_^A\\A]A^A_", 
+        "AVVWSH", 
+        "([_^A^", 
+        "UAWAVAUATVWSH", 
+        "[_^A\\A]A^A_]", 
+        "UAWAVAUATVWSH", 
+        "X[_^A\\A]A^A_]", 
+        "UAVVWSH", 
+        "P[_^A^]", 
+        "UAVVWSH", 
+        " [_^A^]", 
+        "UAVVWSH", 
+        " [_^A^]", 
+        "fffff.", 
+        "UAVVWSH", 
+        " [_^A^]", 
+        "AWAVATVWSH", 
+        "([_^A\\A^A_", 
+        "([_^A\\A^A_", 
+        "fffff.", 
+        "ffffff.", 
+        "UAWAVAUATVWSH", 
+        "ffffff.", 
+        "H[_^A\\A]A^A_]H", 
+        "H[_^A\\A]A^A_]", 
+        "UAWAVAUATVWSH", 
+        "$ffffff.", 
+        "8[_^A\\A]A^A_]I", 
+        "8[_^A\\A]A^A_]", 
+        "AWAVAUATVWSL", 
+        "ffffff.", 
+        "Affffff.", 
+        "[_^A\\A]A^A_", 
+        "UAWAVAUATVWSH", 
+        "X[_^A\\A]A^A_]H", 
+        "ffffff.", 
+        "X[_^A\\A]A^A_]", 
+        "UAVVWSH", 
+        " [_^A^]H", 
+        " [_^A^]", 
+        "UAWAVAUATVWSH", 
+        "ffffff.", 
+        "'ffff.", 
+        "X[_^A\\A]A^A_]", 
+        "UAVVWSH", 
+        " [_^A^]", 
+        " [_^A^]H", 
+        "AWAVVWSE1", 
+        "[_^A^A_", 
+        "UAWAVAUATVWSH", 
+        "X[_^A\\A]A^A_]", 
+        "ffffff.", 
+        "AWAVAUATVWSH", 
+        "[_^A\\A]A^A_", 
+        "UAWAVVWSH", 
+        "X[_^A^A_]", 
+        "UAWAVAUATVWSH", 
+        "H[_^A\\A]A^A_]", 
+        ")ffffff.", 
+        "UAWAVVWSH", 
+        "vOffffff.", 
+        "([_^A^A_]", 
+        "UAVVWSH", 
+        "`[_^A^]", 
+        "UAWAVAUATVWSH", 
+        "X[_^A\\A]A^A_]", 
+        "fffff.", 
+        "UAWAVATVWSH", 
+        "`[_^A\\A^A_]", 
+        "UAWAVVWSH", 
+        "8[_^A^A_]", 
+        "UAWAVAUATVWSH", 
+        "8[_^A\\A]A^A_]", 
+        "UAWAVAUATVWSH", 
+        "8[_^A\\A]A^A_]", 
+        "UAWAVAUATVWSH", 
+        "8[_^A\\A]A^A_]", 
+        "UAWAVAUATVWSH", 
+        "8[_^A\\A]A^A_]", 
+        "ffffff.", 
+        "UAWAVVWSH", 
+        "8[_^A^A_]", 
+        "ffffff.", 
+        "UAWAVAUATVWSH", 
+        "8[_^A\\A]A^A_]", 
+        "ffffff.", 
+        "UAVVWSH", 
+        "0[_^A^]", 
+        "ffffff.", 
+        "AVVWSL", 
+        "ffffff.", 
+        "UAWAVVWSH", 
+        "([_^A^A_]", 
+        "fffff.", 
+        "AVVWSL", 
+        "fffff.", 
+        "ffffff.", 
+        "UAWAVAUATVWSH", 
+        "[_^A\\A]A^A_]", 
+        "fffff.", 
+        "fffff.", 
+        "fffff.", 
+        "UAWAVAUATVWSH", 
+        "h[_^A\\A]A^A_]", 
+        "fffff.", 
+        "fffff.", 
+        "UAWAVAUATVWSH", 
+        "00000000H", 
+        "fffff.", 
+        "[_^A\\A]A^A_]", 
+        "UAVVWSH", 
+        "P[_^A^]", 
+        "UAWAVAUATVWSH", 
+        "x[_^A\\A]A^A_]", 
+        "fffff.", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "[]_^A\\A]A^A_", 
+        "AVVWUSH", 
+        " []_^A^", 
+        "AWAVVWSH", 
+        "[_^A^A_", 
+        "AWAVAUATVWUSH", 
+        "H[]_^A\\A]A^A_", 
+        "AuthentiH1", 
+        "HygonGenH1", 
+        "H5uineH", 
+        "GenuineIH1", 
+        "H5ntelH", 
+        "UAWAVAUATVWSH", 
+        "[_^A\\A]A^A_]", 
+        "UAWAVAUATVWSH", 
+        "[_^A\\A]A^A_]", 
+        "UAVVWSH", 
+        "0[_^A^]", 
+        "UAWAVAUATVWSH", 
+        "[_^A\\A]A^A_]", 
+        "AWAVATVWSH", 
+        "[_^A\\A^A_", 
+        "AWAVAUATVWUSH", 
+        "X[]_^A\\A]A^A_", 
+        "AWAVATVWSH", 
+        "H[_^A\\A^A_", 
+        "AWAVAUATVWUSH", 
+        "H;t$Hs_", 
+        "[]_^A\\A]A^A_", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "T$PtZH", 
+        "[]_^A\\A]A^A_", 
+        "AWAVATVWSH", 
+        "([_^A\\A^A_", 
+        "AWAVAUATVWUSD", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "([]_^A\\A]A^A_", 
+        "AVVWSH", 
+        "([_^A^", 
+        "AVVWSH", 
+        "([_^A^", 
+        "AWAVVWSH", 
+        "@[_^A^A_", 
+        "AWAVAUATVWUSH", 
+        "8[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "H[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "([]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "([]_^A\\A]A^A_", 
+        "AVVWUSH", 
+        "[]_^A^", 
+        "AWAVAUATVWUSH", 
+        "H[]_^A\\A]A^A_", 
+        "AWAVVWUSH", 
+        "8[]_^A^A_", 
+        "AWAVAUATVWUSH", 
+        "([]_^A\\A]A^A_", 
+        "AVVWUSH", 
+        "[]_^A^", 
+        "AWAVVWUSH", 
+        "8[]_^A^A_", 
+        "AWAVATVWSH", 
+        "([_^A\\A^A_", 
+        "AVVWSH", 
+        "B0[_^A^", 
+        "AWAVAUATVWUSH", 
+        "8[]_^A\\A]A^A_", 
+        "AWAVATVWSH", 
+        "H[_^A\\A^A_", 
+        "AWAVVWS", 
+        "[_^A^A_", 
+        "[_^A^A_", 
+        "AWAVAUATVWUSH", 
+        "H;T$PrwH", 
+        "H;\\$PsT", 
+        "L9d$Xv", 
+        "[]_^A\\A]A^A_", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "|$8tUH", 
+        "[]_^A\\A]A^A_", 
+        "AWAVVWS", 
+        "[_^A^A_", 
+        "[_^A^A_", 
+        "AWAVAUATVWUSH", 
+        "H;T$PrwH", 
+        "H;\\$PsT", 
+        "L9d$Xv", 
+        "[]_^A\\A]A^A_", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "|$8tUH", 
+        "[]_^A\\A]A^A_", 
+        "AVVWSH", 
+        "([_^A^", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "AVVWSH", 
+        "([_^A^", 
+        "AWAVAUATVWUSH", 
+        "H[]_^A\\A]A^A_", 
+        "VUUUUUU", 
+        "AWAVAUATVWUSH", 
+        "h[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "h[]_^A\\A]A^A_", 
+        "ffffff.", 
+        "w(ffffff.", 
+        "fffff.", 
+        "w(ffffff.", 
+        "AWAVAUATVWUSH", 
+        "|$Wr>A", 
+        "H#D$0A", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "AWAVATVWSH", 
+        "X[_^A\\A^A_", 
+        "X[_^A\\A^A_", 
+        "AWAVVWUSH", 
+        "([]_^A^A_", 
+        "AWAVAUATVWSH", 
+        "0[_^A\\A]A^A_", 
+        "ffffff.", 
+        "AWAVAUATVWUSH", 
+        "L$(t5M", 
+        "X[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "([]_^A\\A]A^A_", 
+        "AVVWSH", 
+        "8[_^A^", 
+        "AVVWSH", 
+        "([_^A^", 
+        "AWAVVWSH", 
+        " [_^A^A_", 
+        "AWAVVWSH", 
+        "P[_^A^A_", 
+        "AWAVVWSH", 
+        "P[_^A^A_", 
+        "AVVWSH", 
+        "h[_^A^", 
+        "AWAVATVWSH", 
+        "[_^A\\A^A_", 
+        "AWAVATVWSH", 
+        "[_^A\\A^A_", 
+        "AWAVATVWSH", 
+        "[_^A\\A^A_", 
+        "AVVWSH", 
+        "X[_^A^", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "AWAVATVWSH", 
+        "[_^A\\A^A_", 
+        "AWAVATVWSH", 
+        "[_^A\\A^A_", 
+        "AWAVATVWSH", 
+        "[_^A\\A^A_", 
+        "AVVWSH", 
+        "X[_^A^", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "AWAVATVWUSH", 
+        "D$8H;D$0", 
+        "[]_^A\\A^A_", 
+        "AVVWSH", 
+        "h[_^A^", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "AWAVATVWSH", 
+        "h[_^A\\A^A_", 
+        "AWAVATVWSH", 
+        "h[_^A\\A^A_", 
+        "AWAVATVWSH", 
+        "h[_^A\\A^A_", 
+        "AWAVATVWSH", 
+        "[_^A\\A^A_", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "AWAVVWSH", 
+        "p[_^A^A_", 
+        "AVVWSH", 
+        "([_^A^", 
+        "AWAVAUATVWUSH", 
+        "([]_^A\\A]A^A_", 
+        "AWAVATVWUSH", 
+        "[]_^A\\A^A_", 
+        "AWAVATVWUSH", 
+        "[]_^A\\A^A_", 
+        "AWAVATVWUSH", 
+        " []_^A\\A^A_", 
+        "L$8H;L$0u", 
+        "AWAVVWSH", 
+        " [_^A^A_", 
+        "AWAVATVWSH", 
+        "h[_^A\\A^A_", 
+        "AWAVAUATVWUSH", 
+        "L9t$HL", 
+        "D /L9T$0", 
+        "H+L$XL", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "AWAVVWSH", 
+        "[_^A^A_", 
+        "AWAVAUATVWSH", 
+        "P[_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "t$8s#H", 
+        "[]_^A\\A]A^A_", 
+        "AWAVVWSH", 
+        "[_^A^A_", 
+        "AWAVVWSH", 
+        "P[_^A^A_", 
+        "AWAVVWSH", 
+        "@[_^A^A_", 
+        "AWAVVWSH", 
+        "0[_^A^A_", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "AVVWSH", 
+        "X[_^A^", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWSH", 
+        "H1L$ H1D$(L", 
+        "0[_^A\\A]A^A_", 
+        "AVVWSH", 
+        "H33L3s", 
+        "H[_^A^", 
+        "AVVWSH", 
+        "H[_^A^", 
+        "AWAVAUATVWUSH", 
+        "([]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "\"\"\"\"\"\"\"\"H", 
+        "DDDDDDDDL", 
+        "\"\"\"\"\"\"\"\"H!", 
+        "H3l$(L", 
+        "\"\"\"\"\"\"\"\"L!", 
+        "DDDDDDDDI!", 
+        "H[]_^A\\A]A^A_", 
+        "AVVWSH", 
+        "H[_^A^", 
+        "AVVWSH", 
+        "X[_^A^", 
+        "AVVWSH", 
+        "X[_^A^", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "AWAVVWUSH", 
+        "[]_^A^A_", 
+        "AVVWSH", 
+        "AVVWSH", 
+        "AVVWSH", 
+        "AVVWSH", 
+        "UAWAVAUATVWSH", 
+        "[_^A\\A]A^A_]", 
+        "UAWAVAUATVWSH", 
+        "[_^A\\A]A^A_]", 
+        "AVVWUSH", 
+        "p[]_^A^", 
+        "AVVWSH", 
+        "h[_^A^", 
+        "eX[_^]", 
+        "AWAVVWSH", 
+        "0[_^A^A_", 
+        "AVVWSH", 
+        "([_^A^", 
+        "AVVWSH", 
+        "AVVWSH", 
+        "AWAVAUATVWSH", 
+        "[_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "h[]_^A\\A]A^A_", 
+        "AWAVVWSH", 
+        "@[_^A^A_", 
+        "AWAVAUATVWUSH", 
+        "<6E:<3H", 
+        "8[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "AWAVATVWSH", 
+        "[_^A\\A^A_", 
+        "AWAVATVWSH", 
+        "[_^A\\A^A_", 
+        "AWAVAUATVWUSH", 
+        "D$PH;D$H", 
+        "[]_^A\\A]A^A_", 
+        "AWAVVWSH", 
+        "[_^A^A_", 
+        "AWAVAUATVWSH", 
+        "`[_^A\\A]A^A_", 
+        "AWAVVWSH", 
+        "p[_^A^A_", 
+        "AVVWSH", 
+        "AWAVAUATVWUSH", 
+        "H[]_^A\\A]A^A_", 
+        "AVVWSH", 
+        "AVVWSH", 
+        "8[_^A^", 
+        "AWAVAUATVWUSH", 
+        "X[]_^A\\A]A^A_", 
+        "L$PH;L$Hu", 
+        "L;D$(H", 
+        "L;D$(H", 
+        "AWAVAUATVWUSH", 
+        "D$xH;D$p", 
+        "D$xH;D$p", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "AWAVATVWUSH", 
+        "@[]_^A\\A^A_", 
+        "AWAVAUATVWUSH", 
+        "X[]_^A\\A]A^A_", 
+        "AWAVVWSH", 
+        "0[_^A^A_", 
+        "AWAVAUATVWUSH", 
+        "X[]_^A\\A]A^A_", 
+        "t$0uHH", 
+        "AVVWSH", 
+        "([_^A^", 
+        "AWAVATVWSH", 
+        "h[_^A\\A^A_", 
+        "AWAVATVWSH", 
+        "([_^A\\A^A_", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "AWAVATVWSH", 
+        "h[_^A\\A^A_", 
+        "AWAVVWSH", 
+        "P[_^A^A_", 
+        "AVVWSH", 
+        "([_^A^", 
+        "AVVWSH", 
+        "([_^A^", 
+        "AWAVATVWUSH", 
+        " []_^A\\A^A_", 
+        " []_^A\\A^A_H", 
+        "AWAVAUATVWUSH", 
+        "t$xrWL", 
+        "L!l$HH", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "L9t$HtWH", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "8[]_^A\\A]A^A_", 
+        "AVVWSH", 
+        "x[_^A^", 
+        "AWAVAUATVWSH", 
+        "[_^A\\A]A^A_", 
+        "AWAVVWSH", 
+        "[_^A^A_", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "UAWAVAUATVWSH", 
+        "X[_^A\\A]A^A_]", 
+        "UAWAVAUATVWSH", 
+        "[_^A\\A]A^A_]", 
+        "UAWAVVWSH", 
+        "[_^A^A_]", 
+        "[_^A^A_]", 
+        "UAWAVAUATVWSH", 
+        "[_^A\\A]A^A_]H", 
+        "[_^A\\A]A^A_]", 
+        "UAWAVATVWSH", 
+        "0[_^A\\A^A_]", 
+        "0[_^A\\A^A_]", 
+        "UAWAVVWSH", 
+        "8[_^A^A_]", 
+        "UAVVWSH", 
+        "0[_^A^]", 
+        "0[_^A^]", 
+        "UAWAVVWSH", 
+        "8[_^A^A_]", 
+        "8[_^A^A_]", 
+        "UAWAVVWSH", 
+        "8[_^A^A_]", 
+        "8[_^A^A_]", 
+        "UAVVWSH", 
+        "[_^A^]", 
+        "UAWAVATVWSH", 
+        "@[_^A\\A^A_]", 
+        "@[_^A\\A^A_]H", 
+        "UAWAVAUATVWSH", 
+        "x[_^A\\A]A^A_]", 
+        "x[_^A\\A]A^A_]", 
+        "UAVVWSH", 
+        " [_^A^]", 
+        "UAVVWSH", 
+        " [_^A^]", 
+        "UAWAVAUATVWSH", 
+        "h[_^A\\A]A^A_]", 
+        "UAVVWSH", 
+        "[_^A^]", 
+        "UAWAVVWSH", 
+        "8[_^A^A_]", 
+        "UAVVWSH", 
+        "0[_^A^]", 
+        "UAWAVVWSH", 
+        "8[_^A^A_]", 
+        "8[_^A^A_]", 
+        "8[_^A^A_]", 
+        "UAVVWSH", 
+        " [_^A^]", 
+        "UAWAVVWSH", 
+        "8[_^A^A_]", 
+        "8[_^A^A_]", 
+        "UAWAVAUATVWSH", 
+        "h[_^A\\A]A^A_]", 
+        "UAWAVAUATVWSH", 
+        "[_^A\\A]A^A_]", 
+        "[_^A\\A]A^A_]", 
+        "UAWAVAUATVWSH", 
+        "([_^A\\A]A^A_]", 
+        "UAWAVAUATVWSH", 
+        "[_^A\\A]A^A_]", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWSH", 
+        "I(:H(um", 
+        "[_^A\\A]A^A_", 
+        "AVVWSH", 
+        "AWAVATVWUSH", 
+        " []_^A\\A^A_", 
+        "AVVWSH", 
+        "AVVWSH", 
+        "x[_^A^", 
+        "AVVWSH", 
+        "AWAVATVWSH", 
+        "[_^A\\A^A_", 
+        "AWAVATVWSH", 
+        "[_^A\\A^A_", 
+        "AWAVVWSH", 
+        "[_^A^A_", 
+        "AWAVAUATVWUSH", 
+        "X[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "8[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWSH", 
+        " [_^A\\A]A^A_", 
+        " [_^A\\A]A^A_", 
+        "AWAVVWSH", 
+        "P[_^A^A_", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "AVVWSH", 
+        "x[_^A^", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "AVVWSH", 
+        "x[_^A^", 
+        "AWAVATVWSH", 
+        "[_^A\\A^A_", 
+        "AWAVATVWSH", 
+        "[_^A\\A^A_", 
+        "AWAVVWSH", 
+        "@[_^A^A_", 
+        "AWAVAUATVWUSH", 
+        "h[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "AWAVVWSH", 
+        "[_^A^A_", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "AWAVVWSH", 
+        "[_^A^A_", 
+        "AWAVAUATVWUSH", 
+        "x[]_^A\\A]A^A_", 
+        "AVVWSH", 
+        "AWAVVWSH", 
+        "[_^A^A_", 
+        "AWAVVWUSH", 
+        "[]_^A^A_", 
+        "AWAVVWSH", 
+        "[_^A^A_", 
+        "AWAVATVWSH", 
+        "[_^A\\A^A_", 
+        "AWAVAUATVWUSH", 
+        "D$Xw>H", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWSH", 
+        "[_^A\\A]A^A_", 
+        "AWAVATVWUSH", 
+        "[]_^A\\A^A_", 
+        "AWAVVWSH", 
+        "p[_^A^A_", 
+        "AWAVVWSH", 
+        "p[_^A^A_", 
+        "AWAVAUATVWSH", 
+        "@[_^A\\A]A^A_", 
+        "AWAVAUATVWSH", 
+        "@[_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "x[]_^A\\A]A^A_", 
+        "AWAVVWSH", 
+        " [_^A^A_H", 
+        "AVVWSH", 
+        "X[_^A^", 
+        "AWAVAUATVWUSH", 
+        "H[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "AVVWSH", 
+        "([_^A^", 
+        "D$,H9G", 
+        "AVVWUSH", 
+        "@[]_^A^", 
+        "AVVWUSH", 
+        "`[]_^A^", 
+        "AWAVAUATVWUSH", 
+        "L;d$(u", 
+        "x[]_^A\\A]A^A_", 
+        "x[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "L;d$(u", 
+        "x[]_^A\\A]A^A_", 
+        "x[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "H;l$Hu", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "t%fG;tl", 
+        "[]_^A\\A]A^A_", 
+        "H9T$Pu,", 
+        "AWAVATVWUSH", 
+        " []_^A\\A^A_", 
+        "AWAVATVWSH", 
+        "([_^A\\A^A_", 
+        "AVVWSH", 
+        "([_^A^", 
+        "AVVWSH", 
+        "X[_^A^", 
+        "AVVWSH", 
+        "X[_^A^", 
+        "AVVWSH", 
+        "X[_^A^", 
+        "AVVWSH", 
+        "([_^A^", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        ")D$`H;L$XuRL", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "i@LkAHHI", 
+        "xPLkpX", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "tAH;\\$Xu", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "\\$Pu}H", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "AVVWSH", 
+        "8[_^A^", 
+        "AWAVVWSH", 
+        " [_^A^A_", 
+        "AWAVAUATVWSH", 
+        " [_^A\\A]A^A_", 
+        "AWAVVWSH", 
+        " [_^A^A_", 
+        "AVVWUSH", 
+        "@[]_^A^", 
+        "@[]_^A^", 
+        "AVVWSH", 
+        "([_^A^", 
+        "AVVWSH", 
+        "([_^A^", 
+        "AVVWSH", 
+        "([_^A^", 
+        "AWAVAUATVWSH", 
+        "D$hH;D$`", 
+        "p[_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "h[]_^A\\A]A^A_", 
+        "AVVWSH", 
+        "([_^A^", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "L$8L9pH", 
+        "H9D$(u", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "AVVWUSH", 
+        "`[]_^A^", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "L;l$pu", 
+        "[]_^A\\A]A^A_", 
+        "AVVWSH", 
+        "X[_^A^", 
+        "AVVWSH", 
+        "([_^A^", 
+        "AWAVAUATVWUSH", 
+        "h[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "L;t$0u", 
+        "[]_^A\\A]A^A_", 
+        "AWAVVWSH", 
+        " [_^A^A_", 
+        "AWAVAUATVWUSH", 
+        "8[]_^A\\A]A^A_", 
+        "AVVWSH", 
+        "([_^A^", 
+        "AWAVAUATVWUSH", 
+        "H;F uAL", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "x[]_^A\\A]A^A_", 
+        "AWAVAUATVWSH", 
+        " [_^A\\A]A^A_", 
+        "AWAVATVWSH", 
+        "[_^A\\A^A_", 
+        "AVVWSH", 
+        "([_^A^", 
+        "AVVWSH", 
+        "uespemosI1", 
+        "modnarodI1", 
+        "arenegylI1", 
+        "setybdetI1", 
+        "AWAVAUATVWSH", 
+        "P[_^A\\A]A^A_", 
+        "AWAVVWUSH", 
+        "H[]_^A^A_", 
+        "AWAVAUATVWSH", 
+        " [_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "L$xH+N", 
+        "[]_^A\\A]A^A_", 
+        "AWAVVWSH", 
+        "@[_^A^A_", 
+        "AWAVAUATVWSH", 
+        "@[_^A\\A]A^A_", 
+        "AWAVATVWUSH", 
+        "`[]_^A\\A^A_", 
+        "AWAVAUATVWUSH", 
+        "I;F u@H", 
+        "[]_^A\\A]A^A_", 
+        "AVVWUSH", 
+        " []_^A^", 
+        "AWAVAUATVWUSH", 
+        "H;G uAL", 
+        "[]_^A\\A]A^A_", 
+        "AWAVATVWSH", 
+        "[_^A\\A^A_", 
+        "AVVWUSH", 
+        "[]_^A^", 
+        "AVVWSH", 
+        "h[_^A^", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "AVVWUSH", 
+        " []_^A^", 
+        " []_^A^", 
+        "AWAVAUATVWUSH", 
+        "([]_^A\\A]A^A_", 
+        "AWAVAUATVWSH", 
+        "@[_^A\\A]A^A_", 
+        "AWAVVWSH", 
+        "[_^A^A_", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        ")D$PfD", 
+        "[]_^A\\A]A^A_", 
+        "AVVWSH", 
+        "x[_^A^", 
+        "AWAVAUATVWUSH", 
+        "8[]_^A\\A]A^A_", 
+        "AVVWSH", 
+        "([_^A^", 
+        "L;J0u?I", 
+        "AWAVVWSH", 
+        "@[_^A^A_", 
+        "AWAVVWSH", 
+        "@[_^A^A_", 
+        "AWAVVWSH", 
+        "@[_^A^A_", 
+        "AWAVVWSH", 
+        "@[_^A^A_", 
+        "AWAVAUATVWUSH", 
+        "8[]_^A\\A]A^A_", 
+        "AWAVVWSH", 
+        "@[_^A^A_", 
+        "AWAVVWSH", 
+        "@[_^A^A_", 
+        "AWAVVWSH", 
+        "@[_^A^A_", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "?L9l$xt@f", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "g Hk_(0H", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "HkC`pH", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "D$HH9D$Pt>f", 
+        "[]_^A\\A]A^A_", 
+        "AWAVVWUSH", 
+        "([]_^A^A_", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "\\$hu?I", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "H[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "h[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "H[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "8[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "h[]_^A\\A]A^A_", 
+        "AVVWSH", 
+        "X[_^A^", 
+        "AVVWSH", 
+        "X[_^A^", 
+        "AVVWSH", 
+        "8[_^A^", 
+        "AWAVATVWSH", 
+        "H[_^A\\A^A_", 
+        "H[_^A\\A^A_", 
+        "AWAVVWSH", 
+        "P[_^A^A_", 
+        "P[_^A^A_", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "AWAVVWSH", 
+        " [_^A^A_", 
+        "AWAVATVWSH", 
+        "([_^A\\A^A_", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "AWAVVWSH", 
+        "0[_^A^A_", 
+        "AWAVATVWSH", 
+        "([_^A\\A^A_", 
+        "A D9A0u", 
+        "A8L;A(A", 
+        "AWAVATVWUSH", 
+        " []_^A\\A^A_", 
+        "AWAVAUATVWUSH", 
+        "h[]_^A\\A]A^A_", 
+        "AWAVAUATVWSH", 
+        "`[_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "AWAVVWSH", 
+        "[_^A^A_", 
+        "AVVWSH", 
+        "X[_^A^", 
+        "AVVWSH", 
+        "([_^A^", 
+        "AVVWSH", 
+        "x[_^A^", 
+        "AVVWSH", 
+        "AWAVAUATVWUSH", 
+        "H[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "AVVWSH", 
+        "([_^A^", 
+        "AVVWSH", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWSH", 
+        "[_^A\\A]A^A_", 
+        "AWAVATVWUSH", 
+        "[]_^A\\A^A_", 
+        "AVVWSH", 
+        "H[_^A^", 
+        "AWAVAUATVWUSH", 
+        "h[]_^A\\A]A^A_", 
+        "AVVWSH", 
+        "([_^A^", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "AWAVVWSH", 
+        "[_^A^A_", 
+        "AWAVAUATVWUSH", 
+        "d$Pt<H", 
+        "H;Hpp$H", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWSH", 
+        "`[_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "t$huhI", 
+        "T$XtVH", 
+        "[]_^A\\A]A^A_", 
+        "HHfA;IHu", 
+        "IJf9HJ", 
+        "DOWNGRD", 
+        "RJf9QJ", 
+        "f;JHu!f", 
+        "IJf9HJ", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWSH", 
+        "`[_^A\\A]A^A_", 
+        "`[_^A\\A]A^A_", 
+        "fE9BHu", 
+        "fE9JJt", 
+        "AWAVAUATVWSH", 
+        " [_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "([]_^A\\A]A^A_", 
+        "AWAVVWSH", 
+        " [_^A^A_", 
+        "A H;B u!E1", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "t$Ht.H9", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "D$XH;D$P", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "d$`t%H", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "H[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "AVVWUSH", 
+        "`[]_^A^", 
+        "AWAVAUATVWUSH", 
+        "H[]_^A\\A]A^A_", 
+        "H[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "1H9D$0u3", 
+        "H9D$ u", 
+        "H9\\$(u", 
+        "8[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "I9\u001fu-A", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "|$<tnH", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "KpM9~HH", 
+        "n@M9~0t", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "AWAVATVWSH", 
+        "[_^A\\A^A_", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "f9xHu=f", 
+        "L$Vf9HJu,H", 
+        "I9\\$ I", 
+        "AWAVAUATVWSH", 
+        "[_^A\\A]A^A_", 
+        "AVVWSH", 
+        "([_^A^", 
+        "AWAVATVWSH", 
+        "[_^A\\A^A_", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "AWAVVWSH", 
+        "[_^A^A_", 
+        "AWAVAUATVWSH", 
+        "[_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "([]_^A\\A]A^A_", 
+        "([]_^A\\A]A^A_", 
+        "AWAVVWSH", 
+        "[_^A^A_", 
+        "AWAVATVWSH", 
+        "8[_^A\\A^A_", 
+        "AWAVAUATVWUSH", 
+        "h[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "M9!sQL", 
+        "[]_^A\\A]A^A_", 
+        "R8f9T$h", 
+        "f9T$ht", 
+        "AVVWSH", 
+        "AWAVAUATVWUSH", 
+        "tII9,$tCI", 
+        "C8H;D$Xt`1", 
+        "zH;D$XuaH", 
+        "l$`tDH", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "L;|$Hu", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "([]_^A\\A]A^A_H", 
+        "AVVWSH", 
+        "([_^A^", 
+        "AVVWSH", 
+        "8[_^A^", 
+        "AWAVAUATVWUSH", 
+        "h[]_^A\\A]A^A_", 
+        "AWAVAUATVWSH", 
+        "@[_^A\\A]A^A_", 
+        "AWAVVWSH", 
+        "@[_^A^A_", 
+        "AWAVAUATVWUSH", 
+        "8[]_^A\\A]A^A_H", 
+        "8[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "AVVWSH", 
+        "([_^A^", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "[]_^A\\A]A^A_H", 
+        "AWAVAUATVWUSH", 
+        "x[]_^A\\A]A^A_", 
+        "AWAVATVWSH", 
+        "H[_^A\\A^A_", 
+        "AVVWSH", 
+        "([_^A^", 
+        "([_^A^", 
+        "AWAVVWSH", 
+        "@[_^A^A_", 
+        "AVVWSH", 
+        "8[_^A^", 
+        "AVVWSH", 
+        "x[_^A^", 
+        "T$8H+T$0", 
+        "x[_^A^", 
+        "AWAVAUATVWUSH", 
+        "H[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "AVVWSH", 
+        "8[_^A^", 
+        "AWAVAUATVWUSH", 
+        "8[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "AWAVATVWUSH", 
+        "[]_^A\\A^A_", 
+        "AVVWSH", 
+        "X[_^A^", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "([]_^A\\A]A^A_", 
+        "AWAVVWSH", 
+        "P[_^A^A_", 
+        "UAWAVAUATVWS", 
+        "[_^A\\A]A^A_]", 
+        "A^j@^I", 
+        "L;|$`L", 
+        "AWAVVWUS", 
+        "[]_^A^A_", 
+        "AVVWSH", 
+        "h[_^A^", 
+        "AWAVAUATVWUSH", 
+        "L;t$0s-M", 
+        "X[]_^A\\A]A^A_", 
+        "AVVWSH", 
+        "([_^A^", 
+        "AWAVAUATVWUSH", 
+        "H[]_^A\\A]A^A_", 
+        "AVVWSH", 
+        "8[_^A^", 
+        "AVVWSH", 
+        "([_^A^", 
+        "AWAVAUATVWUSH", 
+        "8[]_^A\\A]A^A_", 
+        "UAWAVAUATVWSH", 
+        "fffff.", 
+        "ffffff.", 
+        "UAVVWSH", 
+        "fffff.", 
+        "fffff.", 
+        "fffff.", 
+        " [_^A^]", 
+        " [_^A^]", 
+        "fffff.", 
+        "9fulltB", 
+        "UAVVWSH", 
+        " [_^A^]", 
+        " [_^A^]", 
+        "UAVVWSH", 
+        " [_^A^]", 
+        "ffffff.", 
+        "UAWAVAUATVWSH", 
+        "[_^A\\A]A^A_]", 
+        "ffffff.", 
+        "UAWAVAUATVWS", 
+        "-ffff.", 
+        "8MZuyA", 
+        "[_^A\\A]A^A_]", 
+        "UAWAVVWSH", 
+        "[_^A^A_]", 
+        "ffffff.", 
+        "fffff.", 
+        "fffff.", 
+        "UAWAVAUATVWSH", 
+        "h[_^A\\A]A^A_]", 
+        "UAWAVAUATVWSH", 
+        "[_^A\\A]A^A_]", 
+        "[_^A\\A]A^A_]", 
+        "ffffff.", 
+        "UAWAVVWSH", 
+        "([_^A^A_]", 
+        "([_^A^A_]", 
+        "UAWAVAUATVWSH", 
+        "H[_^A\\A]A^A_]", 
+        "ffffff.", 
+        "AWAVVWSL", 
+        "[_^A^A_", 
+        "UAWAVVWS", 
+        "[_^A^A_]", 
+        "AWAVAUATVWSH", 
+        " [_^A\\A]A^A_", 
+        "UAWAVVWS", 
+        "[_^A^A_]", 
+        "UAWAVAUATVWSH", 
+        "q~`=0!", 
+        "fffff.", 
+        "[_^A\\A]A^A_]", 
+        "UAWAVAUATVWSH", 
+        "H[_^A\\A]A^A_]", 
+        "AWAVAUATVWSH", 
+        "L$hH;L$`", 
+        "D$XH;D$0", 
+        "fffff.", 
+        "H#L$PH", 
+        "L$XH;L$0D", 
+        "L$XH;L$0D", 
+        "H#L$PH", 
+        "D$@ffffff.", 
+        "H;\\$`s", 
+        "[_^A\\A]A^A_", 
+        "fffff.", 
+        "UAWAVAUATVWSH", 
+        "u8ffff.", 
+        "fffff.", 
+        "+ffffff.", 
+        "u0ffff.", 
+        "]8fff.", 
+        "/ffffff.", 
+        "=ffff.", 
+        "[_^A\\A]A^A_]", 
+        "UAVVWSH", 
+        " [_^A^]", 
+        " [_^A^]", 
+        "ffffff.", 
+        "UAWAVATVWSH", 
+        " [_^A\\A^A_]", 
+        " [_^A\\A^A_]", 
+        "UAWAVATVWSH", 
+        " [_^A\\A^A_]", 
+        " [_^A\\A^A_]", 
+        "UAWAVVWSH", 
+        "([_^A^A_]", 
+        "([_^A^A_]", 
+        "UAWAVAUATVWSH", 
+        "]0ffff.", 
+        "[_^A\\A]A^A_]", 
+        "UAWAVAUATVWSH", 
+        "[_^A\\A]A^A_]", 
+        "ffffff.", 
+        "UAWAVAUATVWSH", 
+        "x[_^A\\A]A^A_]", 
+        "UAWAVAUATVWSH", 
+        "EPH;EHL", 
+        "EPH;EH", 
+        "[_^A\\A]A^A_]", 
+        "UAWAVAUATVWSH", 
+        "[_^A\\A]A^A_]", 
+        "UAWAVAUATVWSH", 
+        "GPH;EXM", 
+        "[_^A\\A]A^A_]", 
+        "ffffff.", 
+        "UAWAVVWSH", 
+        "t7ffffff.", 
+        "8[_^A^A_]", 
+        "UAWAVVWS", 
+        "[_^A^A_]", 
+        "AVVWSH", 
+        "UAWAVAUATVWSH", 
+        "ffffff.", 
+        "I w|L;", 
+        "[_^A\\A]A^A_]", 
+        "UAWAVAUATVWSH", 
+        "mffff.", 
+        "ffffff.", 
+        "_ffffff.", 
+        "x[_^A\\A]A^A_]", 
+        "UAWAVATVWSH", 
+        "r<wWM9", 
+        " [_^A\\A^A_]", 
+        "UAWAVAUATVWSH", 
+        "[_^A\\A]A^A_]", 
+        "AWAVAUATVWSH", 
+        "8[_^A\\A]A^A_", 
+        "ffffff.", 
+        "UAWAVVWS", 
+        "VUUUUUU", 
+        "[_^A^A_]", 
+        "UAVVWSH", 
+        " [_^A^]", 
+        " [_^A^]", 
+        "ffffff.", 
+        "UAVVWSH", 
+        " [_^A^]", 
+        " [_^A^]", 
+        "UAWAVAUATVWSH", 
+        "fffff.", 
+        "[_^A\\A]A^A_]", 
+        "UAWAVAUATVWSH", 
+        "G0H;O0O", 
+        "ffffff.", 
+        "h[_^A\\A]A^A_]", 
+        "UAWAVATVWSH", 
+        " [_^A\\A^A_]", 
+        "UAWAVAUATVWSH", 
+        "x[_^A\\A]A^A_]", 
+        "UAWAVVWSH", 
+        "([_^A^A_]", 
+        "([_^A^A_]", 
+        "fffff.", 
+        "AWAVAUATVWSH", 
+        "[_^A\\A]A^A_", 
+        "UAVVWSH", 
+        " [_^A^]", 
+        " [_^A^]", 
+        "ffffff.", 
+        "UAWAVATVWS", 
+        "[_^A\\A^A_]", 
+        "ffffff.", 
+        "UAVVWSH", 
+        " [_^A^]", 
+        " [_^A^]", 
+        "UAWAVAUATVWSH", 
+        "[_^A\\A]A^A_]", 
+        "[_^A\\A]A^A_]", 
+        "UAWAVAUATVWSH", 
+        "ffffff.", 
+        "[_^A\\A]A^A_]", 
+        "UAWAVAUATVWSH", 
+        ".fffff.", 
+        "[_^A\\A]A^A_]", 
+        "UAWAVATVWSH", 
+        " [_^A\\A^A_]", 
+        "UAWAVVWSH", 
+        "ffffff.", 
+        "([_^A^A_]", 
+        "([_^A^A_]", 
+        "UAWAVAUATVWSH", 
+        "x[_^A\\A]A^A_]", 
+        "fffff.", 
+        "UAWAVAUATVWSH", 
+        "ffffff.", 
+        "x[_^A\\A]A^A_]", 
+        "UAWAVAUATVWSH", 
+        "[_^A\\A]A^A_]", 
+        "AWAVAUATVWSH", 
+        "[_^A\\A]A^A_", 
+        "(ffff.", 
+        "UAWAVAUATVWSH", 
+        "ffffff.", 
+        "[_^A\\A]A^A_]", 
+        "UAWAVAUATVWSH", 
+        "/fffff.", 
+        "[_^A\\A]A^A_]", 
+        "UAWAVATVWSH", 
+        " [_^A\\A^A_]", 
+        "UAWAVAUATVWSH", 
+        "[_^A\\A]A^A_]", 
+        "UAWAVAUATVWSH", 
+        "ffffff.", 
+        "s;ffff.", 
+        "[_^A\\A]A^A_]", 
+        "UAWAVAUATVWSH", 
+        "H;\\1@L", 
+        "([_^A\\A]A^A_]", 
+        "UAWAVATVWSH", 
+        " [_^A\\A^A_]", 
+        "fffff.", 
+        "UAWAVVWSH", 
+        "([_^A^A_]", 
+        "fffff.", 
+        "UAWAVAUATVWSH", 
+        "Mfffff.", 
+        "ffffff.", 
+        "[_^A\\A]A^A_]", 
+        "|; K;<", 
+        "#ffff.", 
+        "[_^A\\A]A^A_]", 
+        "ffffff.", 
+        "ffffff.", 
+        "UAWAVAUATVWSH", 
+        "fffff.", 
+        "H[_^A\\A]A^A_]", 
+        "H[_^A\\A]A^A_]", 
+        "UAVVWSH", 
+        " [_^A^]", 
+        "UAWAVVWSH", 
+        "[_^A^A_]", 
+        "UAWAVAUATVWSH", 
+        "fffff.", 
+        "ffffff.", 
+        "[_^A\\A]A^A_]", 
+        "UAWAVAUATVWSH", 
+        "[_^A\\A]A^A_]", 
+        "AWAVVWSM", 
+        "[_^A^A_", 
+        "t)ffff.", 
+        "UNC\\I9", 
+        "UAWAVAUATVWSH", 
+        "8[_^A\\A]A^A_]", 
+        "fffff.", 
+        "s.fffff.", 
+        "(ffffff.", 
+        "Fffff.", 
+        "fffff.", 
+        "ffffff.", 
+        "UAWAVATVWSH", 
+        " [_^A\\A^A_]", 
+        "UAWAVATVWSH", 
+        "0[_^A\\A^A_]", 
+        "fffff.", 
+        "UAWAVAUATVWSH", 
+        "ffffff.", 
+        "8[_^A\\A]A^A_]", 
+        "UAWAVAUATVWSH", 
+        "8[_^A\\A]A^A_]", 
+        "UAWAVVWSH", 
+        "[_^A^A_]", 
+        "UAWAVVWS", 
+        "[_^A^A_]", 
+        "fffff.", 
+        "UAWAVAUATVWSH", 
+        "[_^A\\A]A^A_]", 
+        "UAWAVAUATVWSH", 
+        "8[_^A\\A]A^A_]", 
+        "fffff.", 
+        "UAWAVAUATVWSH", 
+        "fffff.", 
+        "ffffff.", 
+        "fffff.", 
+        "x[_^A\\A]A^A_]", 
+        "ffffff.", 
+        "UAVVWSH", 
+        "0[_^A^]", 
+        "UAVVWSH", 
+        " [_^A^]", 
+        " [_^A^]", 
+        "UAVVWSH", 
+        "P[_^A^]", 
+        "UAVVWSH", 
+        "0[_^A^]", 
+        "UAVVWSH", 
+        "0[_^A^]", 
+        "fffff.", 
+        "UAWAVAUATVWSH", 
+        "H[_^A\\A]A^A_]", 
+        "UAWAVVWSH", 
+        "fffff.", 
+        "([_^A^A_]", 
+        "ffffff.", 
+        "UAWAVAUATVWS", 
+        "$ffff.", 
+        "[_^A\\A]A^A_]", 
+        "ffffff.", 
+        "ffffff.", 
+        "fffff.", 
+        "ffffff.", 
+        "UAVVWSH", 
+        "P[_^A^]", 
+        "UAVVWSH", 
+        " [_^A^]", 
+        "h[_^]H", 
+        "UAVVWSH", 
+        "P[_^A^]", 
+        "fffff.", 
+        "UAWAVVWSH", 
+        "8[_^A^A_]", 
+        "ffffff.", 
+        "UAWAVATVWSH", 
+        "0[_^A\\A^A_]", 
+        "UAWAVAUATVWSH", 
+        "H[_^A\\A]A^A_]", 
+        "ffffff.", 
+        "fffff.", 
+        "UAWAVAUATVWSH", 
+        "H[_^A\\A]A^A_]", 
+        "fffff.", 
+        "UAWAVATVWSH", 
+        "0[_^A\\A^A_]", 
+        "UAWAVAUATVWSH", 
+        "'fffff.", 
+        "X[_^A\\A]A^A_]", 
+        "UAWAVVWSH", 
+        "([_^A^A_]", 
+        "([_^A^A_]", 
+        "UAWAVATVWSH", 
+        "0[_^A\\A^A_]", 
+        "ffffff.", 
+        "fffff.", 
+        "UAWAVATVWSH", 
+        " [_^A\\A^A_]", 
+        "fffff.", 
+        "fffff.", 
+        "UAVVWSH", 
+        "`[_^A^]", 
+        "ffffff.", 
+        "UAWAVATVWSH", 
+        "`[_^A\\A^A_]", 
+        "`[_^A\\A^A_]", 
+        "UAWAVVWSH", 
+        "X[_^A^A_]", 
+        "UAWAVAUATVWSH", 
+        "[_^A\\A]A^A_]", 
+        "fffff.", 
+        "AWAVATVWSH", 
+        "H[_^A\\A^A_", 
+        "AWAVATVWSH", 
+        "([_^A\\A^A_", 
+        "Gx;FxuFH", 
+        "AWAVAUATVWUSH", 
+        "8[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "([]_^A\\A]A^A_", 
+        "AWAVATVWSH", 
+        "([_^A\\A^A_", 
+        "AWAVAUATVWUSH", 
+        "H[]_^A\\A]A^A_", 
+        "AVVWSH", 
+        "([_^A^", 
+        "AWAVATVWUSH", 
+        "P[]_^A\\A^A_", 
+        "AWAVAUATVWUSH", 
+        "u*H;T$`u#H", 
+        "l$<u*A", 
+        "D$Q<#u", 
+        "H+l$@1", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWSH", 
+        "D$ IcD", 
+        "D$!<#u", 
+        "`[_^A\\A]A^A_", 
+        "AWAVVWSH", 
+        " [_^A^A_", 
+        "AVVWSH", 
+        "AWAVVWSH", 
+        "@[_^A^A_", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "x[]_^A\\A]A^A_", 
+        "AWAVVWSH", 
+        "[_^A^A_", 
+        "AVVWSH", 
+        "([_^A^", 
+        "AWAVAUATVWUSH", 
+        "H[]_^A\\A]A^A_", 
+        "H[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "([]_^A\\A]A^A_", 
+        "([]_^A\\A]A^A_", 
+        "uespemosH1", 
+        "modnarodI1", 
+        "arenegylI1", 
+        "setybdetI1", 
+        "AWAVAUATVWUSH", 
+        "L$XH+N", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWSH", 
+        " [_^A\\A]A^A_", 
+        "AVVWSH", 
+        "([_^A^", 
+        "([_^A^", 
+        "AVVWUSH", 
+        "p[]_^A^", 
+        "AWAVVWSH", 
+        "P[_^A^A_", 
+        "AWAVAUATVWUSH", 
+        "u*H;T$`u#H", 
+        "l$<u*A", 
+        "D$Q<#u", 
+        "H+l$@1", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWSH", 
+        "D$ IcD", 
+        "D$!<#u", 
+        "`[_^A\\A]A^A_", 
+        "AWAVVWSH", 
+        " [_^A^A_", 
+        "AWAVAUATVWUSH", 
+        "H#D$P1", 
+        "T$\\t8H", 
+        "H#D$P1", 
+        "H#D$P1", 
+        "G`A;Gl", 
+        "GxA9Gd", 
+        "H#D$P1", 
+        "H#D$P1", 
+        "H#D$P1", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "8[]_^A\\A]A^A_", 
+        "G`< s~", 
+        "8[]_^A\\A]A^A_", 
+        "8[]_^A\\A]A^A_", 
+        "AVVWSH", 
+        "A H;A(u#H;~", 
+        "H[_^A^H", 
+        "H[_^A^", 
+        "AWAVAUATVWSH", 
+        "D$0IcD", 
+        "D$1<#u:L", 
+        "P[_^A\\A]A^A_", 
+        "P[_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "u*H;T$`u#H", 
+        "l$<u*A", 
+        "D$Q<#u", 
+        "H+l$@1", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWSH", 
+        "D$ IcD", 
+        "D$!<#u", 
+        "`[_^A\\A]A^A_", 
+        "AWAVVWSH", 
+        " [_^A^A_", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "D$huNH", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWSH", 
+        "D$ IcD", 
+        "D$!<#u", 
+        "P[_^A\\A]A^A_", 
+        "AWAVVWSH", 
+        "D$!<#u", 
+        "@[_^A^A_", 
+        "AVVWSH", 
+        "([_^A^", 
+        "AWAVAUATVWUSH", 
+        "u*H;T$`u#H", 
+        "l$<u*A", 
+        "D$Q<#u", 
+        "H+l$@1", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWSH", 
+        "D$ IcD", 
+        "D$!<#u", 
+        "`[_^A\\A]A^A_", 
+        "AWAVVWSH", 
+        " [_^A^A_", 
+        "AWAVAUATVWUSH", 
+        "h[]_^A\\A]A^A_", 
+        "AWAVAUATVWSH", 
+        "D$0IcD", 
+        "D$1<#u", 
+        "P[_^A\\A]A^A_", 
+        "AWAVAUATVWSH", 
+        " [_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "u*H;T$`u#H", 
+        "l$<u*A", 
+        "D$Q<#u", 
+        "H+l$@1", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWSH", 
+        "D$ IcD", 
+        "D$!<#u", 
+        "`[_^A\\A]A^A_", 
+        "AWAVVWSH", 
+        " [_^A^A_", 
+        "AWAVAUATVWUSH", 
+        "u*H;T$`u#H", 
+        "l$<u*A", 
+        "D$Q<#u", 
+        "H+l$@1", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWSH", 
+        "D$ IcD", 
+        "D$!<#u", 
+        "`[_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "D$(HcD", 
+        "D$)<#u", 
+        "H[]_^A\\A]A^A_", 
+        "AWAVATVWSH", 
+        "8[_^A\\A^A_", 
+        "AWAVAUATVWUSH", 
+        "D$(HcD", 
+        "D$)<#u", 
+        "H[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "D$(HcD", 
+        "D$)<#u", 
+        "H[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "D$!<#u", 
+        "x[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "D$(HcD", 
+        "D$)<#u", 
+        "H[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "D$(HcD", 
+        "D$)<#u", 
+        "H[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "D$(HcD", 
+        "D$)<#u", 
+        "H[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "D$(HcD", 
+        "D$)<#u", 
+        "H[]_^A\\A]A^A_", 
+        "AWAVVWSH", 
+        "D$!<#u", 
+        "@[_^A^A_", 
+        "AWAVAUATVWUSH", 
+        "D$(HcD", 
+        "D$)<#u", 
+        "H[]_^A\\A]A^A_", 
+        "AWAVAUATVWSH", 
+        "D$!<#u", 
+        "0[_^A\\A]A^A_", 
+        "AWAVAUATVWSH", 
+        "D$!<#u", 
+        "0[_^A\\A]A^A_", 
+        "AWAVVWSH", 
+        "D$!<#u", 
+        "0[_^A^A_", 
+        "AWAVAUATVWSH", 
+        "D$!<#u", 
+        "0[_^A\\A]A^A_", 
+        "AWAVAUATVWSH", 
+        "D$!<#u", 
+        "0[_^A\\A]A^A_", 
+        "AWAVAUATVWSH", 
+        "D$!<#u", 
+        "0[_^A\\A]A^A_", 
+        "AWAVAUATVWSH", 
+        "D$!<#u", 
+        "0[_^A\\A]A^A_", 
+        "AWAVATVWSH", 
+        "8[_^A\\A^A_", 
+        "AWAVATVWSH", 
+        "8[_^A\\A^A_", 
+        "AWAVATVWSH", 
+        "8[_^A\\A^A_", 
+        "AWAVATVWSH", 
+        "8[_^A\\A^A_", 
+        "AWAVATVWSH", 
+        "8[_^A\\A^A_", 
+        "AWAVATVWSH", 
+        "8[_^A\\A^A_", 
+        "AWAVATVWSH", 
+        "8[_^A\\A^A_", 
+        "AWAVAUATVWUSH", 
+        "D$(HcD", 
+        "D$)<#u", 
+        "H[]_^A\\A]A^A_", 
+        "AWAVAUATVWUS", 
+        "D$)<#uJL", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWSH", 
+        "D$ IcD", 
+        "D$!<#u", 
+        "P[_^A\\A]A^A_", 
+        "AWAVAUATVWSH", 
+        "D$ IcD", 
+        "D$!<#u", 
+        "P[_^A\\A]A^A_", 
+        "AVVWSH", 
+        "X[_^A^", 
+        "AVVWSH", 
+        "8[_^A^", 
+        "AVVWSH", 
+        "h[_^A^", 
+        "AWAVVWSH", 
+        "[_^A^A_", 
+        "AVVWSH", 
+        "8[_^A^", 
+        "AWAVAUATVWUSH", 
+        "X[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "d$0tYH", 
+        "[]_^A\\A]A^A_", 
+        "AVVWSH", 
+        "([_^A^", 
+        "([_^A^", 
+        "AWAVVWSH", 
+        " [_^A^A_", 
+        "AVVWSH", 
+        "AWAVVWSH", 
+        "H9>u-H", 
+        "H9>u-H", 
+        "H9>u-H", 
+        "H9>u-H", 
+        "H9>u)H", 
+        "H9>tRH", 
+        "H9>uVH", 
+        "H9>uHH", 
+        "[_^A^A_", 
+        "AWAVAUATVWUSH", 
+        "H;\\$hu", 
+        "L;d$hu", 
+        "[]_^A\\A]A^A_", 
+        "AWAVVWSH", 
+        "0[_^A^A_", 
+        "AWAVAUATVWUSH", 
+        "L;l$ u", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "u H;|$@u", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWUS", 
+        "L96u H", 
+        "[]_^A\\A]A^A_", 
+        "FPHk~X", 
+        "|$`M9whv", 
+        "AWAVAUATVWSH", 
+        "0[_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "t$8t<M", 
+        "h[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "Hk|$hXH", 
+        "[]_^A\\A]A^A_", 
+        "[]_^A\\A]A^A_", 
+        "AWAVVWSH", 
+        " [_^A^A_", 
+        " [_^A^A_", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "AWAVATVWUSH", 
+        " []_^A\\A^A_", 
+        "AWAVVWSH", 
+        " [_^A^A_", 
+        "AWAVVWSH", 
+        " [_^A^A_", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "L;d$XH", 
+        "L;d$Xt", 
+        "[]_^A\\A]A^A_", 
+        "AVVWSH", 
+        "([_^A^", 
+        "([_^A^", 
+        "([_^A^", 
+        "([_^A^H", 
+        "AWAVAUATVWUSH", 
+        "x[]_^A\\A]A^A_", 
+        "AWAVAUATVWUS", 
+        "[]_^A\\A]A^A_", 
+        "[]_^A\\A]A^A_", 
+        "l$0u+L", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "t$ rMH", 
+        "AWAVVWSH", 
+        " [_^A^A_", 
+        "AVVWSH", 
+        "H[_^A^", 
+        "AVVWSH", 
+        "X[_^A^", 
+        "AWAVVWSH", 
+        "P[_^A^A_", 
+        "AWAVVWSH", 
+        "P[_^A^A_", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "L97u H", 
+        "AVVWSH", 
+        "AWAVAUATVWUSH", 
+        "|$(L+|$@L", 
+        "[]_^A\\A]A^A_", 
+        "AWAVVWSH", 
+        " [_^A^A_", 
+        "AVVWSH", 
+        "H[_^A^", 
+        "AVVWSH", 
+        "X[_^A^", 
+        "AVVWSH", 
+        "8[_^A^", 
+        "8[_^A^I", 
+        "AVVWSH", 
+        "([_^A^", 
+        "AWAVAUATVWUSH", 
+        "H;t$(t", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "([]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "[]_^A\\A]A^A_", 
+        "AVVWSH", 
+        "([_^A^", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWSH", 
+        "0[_^A\\A]A^A_", 
+        "0[_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "h[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "AVVWUSH", 
+        " []_^A^", 
+        " []_^A^", 
+        "AWAVVWSH", 
+        "0[_^A^A_", 
+        "AWAVAUATVWUSH", 
+        "H[]_^A\\A]A^A_", 
+        "AWAVVWSH", 
+        " [_^A^A_", 
+        "AWAVVWSH", 
+        "0[_^A^A_", 
+        "AWAVVWUSH", 
+        "([]_^A^A_", 
+        "D$$:D7", 
+        "AVVWSH", 
+        "([_^A^", 
+        "([_^A^", 
+        "([_^A^", 
+        "([_^A^H", 
+        "AWAVAUATVWUSH", 
+        "X[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "H[]_^A\\A]A^A_", 
+        "AVVWSH", 
+        "8[_^A^", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "D$`H;D$X", 
+        "D$`L;D$X", 
+        "L$`H;L$XL", 
+        "D$`L;D$XL", 
+        "D$`L;D$XL", 
+        "AVVWUSH", 
+        " []_^A^", 
+        "AWAVAUATVWUSH", 
+        "H[]_^A\\A]A^A_", 
+        "<&:txM", 
+        "AWAVVWSH", 
+        " [_^A^A_H", 
+        "AWAVAUATVWUSH", 
+        "[]_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "([]_^A\\A]A^A_", 
+        "AWAVATVWUSH", 
+        "`[]_^A\\A^A_", 
+        "AWAVATVWUSH", 
+        "[]_^A\\A^A_", 
+        "AWAVAUATVWSH", 
+        "`[_^A\\A]A^A_", 
+        "AWAVAUATVWUSH", 
+        "H9t$ptfL", 
+        "[]_^A\\A]A^A_", 
+        "AVVWSH", 
+        "X[_^A^", 
+        "AWAVAUATVWUSH", 
+        "8[]_^A\\A]A^A_", 
+        "AWAVVWUSH", 
+        "([]_^A^A_", 
+        "AWAVATVWSH", 
+        "L;d$(u", 
+        "h[_^A\\A^A_", 
+        "AVVWSH", 
+        "([_^A^", 
+        "AWAVAUATVWUSH", 
+        "|$Xt\"H", 
+        "[]_^A\\A]A^A_", 
+        "D$@H;D$8uRL", 
+        "AWAVAUATVWUSH"
+    ], 
+    "network": {
+        "udp": [], 
+        "dns_servers": [], 
+        "http": [], 
+        "smtp": [], 
+        "tcp": [], 
+        "geoinfo": {}, 
+        "mitm": [], 
+        "https_ex": [], 
+        "http_ex": [], 
+        "sorted_pcap_sha256": "5f8afe19b2dafebb943e7f9c9e02cf057e21807513b4d34bd2ca8ab64738b112", 
+        "icmp": [], 
+        "tls": [], 
+        "dead_hosts": [], 
+        "smtp_ex": [], 
+        "hosts": [], 
+        "pcap_sha256": "f1ea6d7d7de19c4ad69e89fc6a65d5e4ac8c597a388f6073145cfcac6372394f", 
+        "dns": [], 
+        "domains": [], 
+        "irc": []
+    }, 
+    "metadata": {
+        "output": {
+            "pcap": {
+                "basename": "dump.pcap", 
+                "sha256": "f1ea6d7d7de19c4ad69e89fc6a65d5e4ac8c597a388f6073145cfcac6372394f", 
+                "dirname": ""
+            }
+        }
+    }
+}

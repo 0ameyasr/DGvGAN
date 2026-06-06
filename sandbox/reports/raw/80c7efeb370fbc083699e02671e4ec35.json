@@ -1,0 +1,1614 @@
+{
+    "info": {
+        "added": 1778156255.613609, 
+        "started": 1778156255.930318, 
+        "duration": 82, 
+        "ended": 1778156338.857683, 
+        "owner": null, 
+        "score": 10, 
+        "id": 7546161, 
+        "category": "file", 
+        "git": {
+            "head": "", 
+            "fetch_head": ""
+        }, 
+        "monitor": null, 
+        "package": "", 
+        "route": "internet", 
+        "custom": null, 
+        "machine": {
+            "status": "stopped", 
+            "name": "Ubuntu1904x643", 
+            "label": "Ubuntu1904x643", 
+            "platform": "linux", 
+            "manager": "VirtualBox", 
+            "started_on": "2026-05-07 12:17:36", 
+            "shutdown_on": "2026-05-07 12:18:58"
+        }, 
+        "platform": null, 
+        "version": "2.0.7", 
+        "options": "procmemdump=yes,route=internet"
+    }, 
+    "signatures": [
+        {
+            "families": [], 
+            "description": "Yara rules detected for file", 
+            "severity": 1, 
+            "ttp": {}, 
+            "markcount": 4, 
+            "references": [], 
+            "marks": [
+                {
+                    "type": "generic", 
+                    "description": "Communications over HTTP", 
+                    "rule": "network_http"
+                }, 
+                {
+                    "type": "generic", 
+                    "description": "Take screenshot", 
+                    "rule": "screenshot"
+                }, 
+                {
+                    "type": "generic", 
+                    "description": "Affect system token", 
+                    "rule": "win_token"
+                }, 
+                {
+                    "type": "generic", 
+                    "description": "Affect private profile", 
+                    "rule": "win_files_operation"
+                }
+            ], 
+            "name": "file_yara"
+        }, 
+        {
+            "families": [], 
+            "description": "File has been identified by 6 AntiVirus engine on IRMA as malicious", 
+            "severity": 55, 
+            "ttp": {}, 
+            "markcount": 6, 
+            "references": [], 
+            "marks": [
+                {
+                    "category": "G Data Antivirus (Windows)", 
+                    "ioc": "Virus: Trojan.Dropper.YER (Engine A)", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "C4S ClamAV (Linux)", 
+                    "ioc": "C4S.MALWARE.SHA256.AUTOGEN.71114025.UNOFFICIAL", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "eScan Antivirus (Linux)", 
+                    "ioc": "Trojan.Dropper.YER(DB)", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "DrWeb Antivirus (Linux)", 
+                    "ioc": "BackDoor.Spy.2465", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "ClamAV (Linux)", 
+                    "ioc": "Win.Trojan.Agent-1309051", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Emsisoft Commandline Scanner (Windows)", 
+                    "ioc": "Trojan.Dropper.YER (B)", 
+                    "type": "ioc", 
+                    "description": null
+                }
+            ], 
+            "name": "antivirus_irma"
+        }, 
+        {
+            "families": [], 
+            "description": "File has been identified by 10 AntiVirus engines on VirusTotal as malicious", 
+            "severity": 60, 
+            "ttp": {}, 
+            "markcount": 10, 
+            "references": [], 
+            "marks": [
+                {
+                    "category": "MicroWorld-eScan", 
+                    "ioc": "Trojan.Dropper.YER", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Arcabit", 
+                    "ioc": "Trojan.Dropper.YER", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "ClamAV", 
+                    "ioc": "Win.Trojan.Agent-1309051", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "BitDefender", 
+                    "ioc": "Trojan.Dropper.YER", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "NANO-Antivirus", 
+                    "ioc": "Trojan.Win32.Kryptik.fmveqo", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Emsisoft", 
+                    "ioc": "Trojan.Dropper.YER (B)", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "DrWeb", 
+                    "ioc": "BackDoor.Spy.2465", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "FireEye", 
+                    "ioc": "Trojan.Dropper.YER", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "GData", 
+                    "ioc": "Trojan.Dropper.YER", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "MAX", 
+                    "ioc": "malware (ai score=82)", 
+                    "type": "ioc", 
+                    "description": null
+                }
+            ], 
+            "name": "antivirus_virustotal"
+        }
+    ], 
+    "target": {
+        "category": "file", 
+        "file": {
+            "mimetype": "application/octet-stream", 
+            "yara": [
+                {
+                    "meta": {
+                        "version": "0.1", 
+                        "description": "Communications over HTTP", 
+                        "author": "x0r"
+                    }, 
+                    "name": "network_http", 
+                    "offsets": {
+                        "f1": [
+                            [
+                                25384, 
+                                5
+                            ]
+                        ], 
+                        "c2": [
+                            [
+                                2013, 
+                                3
+                            ]
+                        ], 
+                        "c1": [
+                            [
+                                57303, 
+                                2
+                            ]
+                        ], 
+                        "c7": [
+                            [
+                                55757, 
+                                1
+                            ]
+                        ], 
+                        "c6": [
+                            [
+                                21932, 
+                                0
+                            ]
+                        ], 
+                        "c4": [
+                            [
+                                3193, 
+                                4
+                            ]
+                        ]
+                    }, 
+                    "strings": [
+                        "SHR0cE9wZW5SZXF1ZXN0", 
+                        "SHR0cFNlbmRSZXF1ZXN0", 
+                        "SW50ZXJuZXRDb25uZWN0", 
+                        "SW50ZXJuZXRPcGVu", 
+                        "SW50ZXJuZXRSZWFkRmlsZQ==", 
+                        "V0lOSU5FVC5kbGw="
+                    ]
+                }, 
+                {
+                    "meta": {
+                        "version": "0.1", 
+                        "description": "Take screenshot", 
+                        "author": "x0r"
+                    }, 
+                    "name": "screenshot", 
+                    "offsets": {
+                        "c1": [
+                            [
+                                36565, 
+                                0
+                            ]
+                        ], 
+                        "d2": [
+                            [
+                                22626, 
+                                2
+                            ], 
+                            [
+                                60330, 
+                                3
+                            ]
+                        ], 
+                        "d1": [
+                            [
+                                37231, 
+                                1
+                            ]
+                        ]
+                    }, 
+                    "strings": [
+                        "Qml0Qmx0", 
+                        "R0RJMzIuZGxs", 
+                        "VVNFUjMyLmRsbA==", 
+                        "dXNlcjMyLmRsbA=="
+                    ]
+                }, 
+                {
+                    "meta": {
+                        "version": "0.1", 
+                        "description": "Affect system token", 
+                        "author": "x0r"
+                    }, 
+                    "name": "win_token", 
+                    "offsets": {
+                        "c3": [
+                            [
+                                2747, 
+                                1
+                            ]
+                        ], 
+                        "f1": [
+                            [
+                                63676, 
+                                0
+                            ]
+                        ]
+                    }, 
+                    "strings": [
+                        "QURWQVBJMzIuZGxs", 
+                        "T3BlblByb2Nlc3NUb2tlbg=="
+                    ]
+                }, 
+                {
+                    "meta": {
+                        "version": "0.1", 
+                        "description": "Affect private profile", 
+                        "author": "x0r"
+                    }, 
+                    "name": "win_files_operation", 
+                    "offsets": {
+                        "f1": [
+                            [
+                                69677, 
+                                3
+                            ]
+                        ], 
+                        "c9": [
+                            [
+                                32618, 
+                                2
+                            ]
+                        ], 
+                        "c6": [
+                            [
+                                22015, 
+                                0
+                            ]
+                        ], 
+                        "c5": [
+                            [
+                                28536, 
+                                1
+                            ]
+                        ], 
+                        "c4": [
+                            [
+                                3201, 
+                                4
+                            ], 
+                            [
+                                20502, 
+                                4
+                            ]
+                        ]
+                    }, 
+                    "strings": [
+                        "Q3JlYXRlRmlsZUE=", 
+                        "RGVsZXRlRmlsZUE=", 
+                        "RmluZENsb3Nl", 
+                        "S0VSTkVMMzIuZGxs", 
+                        "UmVhZEZpbGU="
+                    ]
+                }
+            ], 
+            "sha1": "5b3b0ed88d029b0af2c80e021442a0e8a332ecff", 
+            "name": "ab9d30b34b79ea84c01cd9ba6df9957212e40a7014e7b6c4c68df883d30c86d7", 
+            "type": "data", 
+            "sha256": "b05f8d6a4a12ba6d52ae1fc9a3e8c9ea560ccc98af7e57c9b4742bdb9af9c5e6", 
+            "urls": [], 
+            "crc32": "4E4ED5D0", 
+            "path": "/srv/cuckoo/cwd/storage/binaries/b05f8d6a4a12ba6d52ae1fc9a3e8c9ea560ccc98af7e57c9b4742bdb9af9c5e6", 
+            "ssdeep": null, 
+            "size": 85251, 
+            "sha512": "2bbd2e31735ba57319faf68c87710e9da65f8db812be44d7f847cd1865be91792442d80cf02e8bfad9cdcdea92a13dc993bda95725de8fd4726ba710d3e55e64", 
+            "md5": "80c7efeb370fbc083699e02671e4ec35"
+        }, 
+        "custom": null
+    }, 
+    "irma": {
+        "status": 1, 
+        "probes_finished": 13, 
+        "scan_id": "1645a1ef-a218-4886-ad3c-8873f0918808", 
+        "parent_file_sha256": null, 
+        "file_infos": {
+            "mimetype": "data", 
+            "sha1": "5b3b0ed88d029b0af2c80e021442a0e8a332ecff", 
+            "tags": [], 
+            "timestamp_first_scan": 1758532991.25, 
+            "size": 85251, 
+            "timestamp_last_scan": 1778145550.23, 
+            "sha256": "b05f8d6a4a12ba6d52ae1fc9a3e8c9ea560ccc98af7e57c9b4742bdb9af9c5e6", 
+            "md5": "80c7efeb370fbc083699e02671e4ec35"
+        }, 
+        "scan_date": 1778145540, 
+        "other_results": [], 
+        "submitter": "cli", 
+        "probes_total": 13, 
+        "probe_results": {
+            "antivirus": {
+                "G Data Antivirus (Windows)": {
+                    "status": 1, 
+                    "duration": 0.31, 
+                    "version": "5.5.20197.1358", 
+                    "results": "Virus: Trojan.Dropper.YER (Engine A)", 
+                    "virus_database_version": "unavailable"
+                }, 
+                "Avast Core Security (Linux)": {
+                    "status": 0, 
+                    "duration": 0.02, 
+                    "version": "4.6.1", 
+                    "results": null, 
+                    "virus_database_version": "unavailable"
+                }, 
+                "C4S ClamAV (Linux)": {
+                    "status": 1, 
+                    "duration": 0.74, 
+                    "version": "1.4.3", 
+                    "results": "C4S.MALWARE.SHA256.AUTOGEN.71114025.UNOFFICIAL", 
+                    "virus_database_version": "27965"
+                }, 
+                "Trellix (Linux)": {
+                    "status": 0, 
+                    "duration": 8.14, 
+                    "version": "7.0.4.835", 
+                    "results": null, 
+                    "virus_database_version": "11753"
+                }, 
+                "WithSecure (Linux)": {
+                    "status": 0, 
+                    "duration": 0.04, 
+                    "version": "1.0.44", 
+                    "results": null, 
+                    "virus_database_version": "unavailable"
+                }, 
+                "eScan Antivirus (Linux)": {
+                    "status": 1, 
+                    "duration": 4.53, 
+                    "version": "7.0.21", 
+                    "results": "Trojan.Dropper.YER(DB)", 
+                    "virus_database_version": "7.100629 (08/04/2026)"
+                }, 
+                "ESET Security (Windows)": {
+                    "status": 0, 
+                    "duration": 0.58, 
+                    "version": "unavailable", 
+                    "results": null, 
+                    "virus_database_version": "unavailable"
+                }, 
+                "Sophos Anti-Virus (Linux)": {
+                    "status": 0, 
+                    "duration": 0.1, 
+                    "version": "1.2.0.8 (2026-02-13)", 
+                    "results": null, 
+                    "virus_database_version": "unavailable"
+                }, 
+                "DrWeb Antivirus (Linux)": {
+                    "status": 1, 
+                    "duration": 0.22, 
+                    "version": "11.1.16.2406170954", 
+                    "results": "BackDoor.Spy.2465", 
+                    "virus_database_version": "unavailable"
+                }, 
+                "ClamAV (Linux)": {
+                    "status": 1, 
+                    "duration": 1.47, 
+                    "version": "1.4.3", 
+                    "results": "Win.Trojan.Agent-1309051", 
+                    "virus_database_version": "27965"
+                }, 
+                "Bitdefender Antivirus (Linux)": {
+                    "status": 0, 
+                    "duration": 8.57, 
+                    "version": "7.90123", 
+                    "results": null, 
+                    "virus_database_version": null
+                }, 
+                "Kaspersky Standard (Windows)": {
+                    "status": 0, 
+                    "duration": 3.39, 
+                    "version": "21.21", 
+                    "results": null, 
+                    "virus_database_version": "2026-05-06 22:42:00 (full)"
+                }, 
+                "Emsisoft Commandline Scanner (Windows)": {
+                    "status": 1, 
+                    "duration": 0.2, 
+                    "version": "2025.1.0.12641", 
+                    "results": "Trojan.Dropper.YER (B)", 
+                    "virus_database_version": "unavailable"
+                }
+            }
+        }, 
+        "path": "", 
+        "result_id": "71b2674d-39e2-4b1b-82d5-a79120ca5e23", 
+        "name": "b05f8d6a4a12ba6d52ae1fc9a3e8c9ea560ccc98af7e57c9b4742bdb9af9c5e6"
+    }, 
+    "suricata": {
+        "tls": [], 
+        "files": [], 
+        "alerts": [], 
+        "http": []
+    }, 
+    "virustotal": {
+        "permalink": "https://www.virustotal.com/gui/file/b05f8d6a4a12ba6d52ae1fc9a3e8c9ea560ccc98af7e57c9b4742bdb9af9c5e6/detection/f-b05f8d6a4a12ba6d52ae1fc9a3e8c9ea560ccc98af7e57c9b4742bdb9af9c5e6-1571752192", 
+        "sha1": "5b3b0ed88d029b0af2c80e021442a0e8a332ecff", 
+        "resource": "80c7efeb370fbc083699e02671e4ec35", 
+        "response_code": 1, 
+        "scan_date": "2019-10-22 13:49:52", 
+        "scan_id": "b05f8d6a4a12ba6d52ae1fc9a3e8c9ea560ccc98af7e57c9b4742bdb9af9c5e6-1571752192", 
+        "summary": {
+            "positives": 10, 
+            "permalink": "https://www.virustotal.com/gui/file/b05f8d6a4a12ba6d52ae1fc9a3e8c9ea560ccc98af7e57c9b4742bdb9af9c5e6/detection/f-b05f8d6a4a12ba6d52ae1fc9a3e8c9ea560ccc98af7e57c9b4742bdb9af9c5e6-1571752192", 
+            "scan_date": "2019-10-22 13:49:52"
+        }, 
+        "sha256": "b05f8d6a4a12ba6d52ae1fc9a3e8c9ea560ccc98af7e57c9b4742bdb9af9c5e6", 
+        "normalized": [
+            "Kryptik", 
+            "fmveqo", 
+            "ai score=82"
+        ], 
+        "total": 57, 
+        "positives": 10, 
+        "verbose_msg": "Scan finished, information embedded", 
+        "md5": "80c7efeb370fbc083699e02671e4ec35", 
+        "scans": {
+            "Bkav": {
+                "detected": false, 
+                "version": "1.3.0.10239", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20191022"
+            }, 
+            "Lionic": {
+                "detected": false, 
+                "version": "4.2", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20191022"
+            }, 
+            "MicroWorld-eScan": {
+                "detected": true, 
+                "version": "14.0.297.0", 
+                "result": "Trojan.Dropper.YER", 
+                "normalized": [], 
+                "update": "20191022"
+            }, 
+            "CMC": {
+                "detected": false, 
+                "version": "1.1.0.977", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20190321"
+            }, 
+            "CAT-QuickHeal": {
+                "detected": false, 
+                "version": "14.00", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20191021"
+            }, 
+            "ALYac": {
+                "detected": false, 
+                "version": "1.1.1.5", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20191022"
+            }, 
+            "Malwarebytes": {
+                "detected": false, 
+                "version": "2.1.1.1115", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20191022"
+            }, 
+            "VIPRE": {
+                "detected": false, 
+                "version": "78762", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20191022"
+            }, 
+            "K7AntiVirus": {
+                "detected": false, 
+                "version": "11.74.32332", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20191022"
+            }, 
+            "K7GW": {
+                "detected": false, 
+                "version": "11.74.32334", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20191022"
+            }, 
+            "Arcabit": {
+                "detected": true, 
+                "version": "1.0.0.861", 
+                "result": "Trojan.Dropper.YER", 
+                "normalized": [], 
+                "update": "20191022"
+            }, 
+            "Baidu": {
+                "detected": false, 
+                "version": "1.0.0.2", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20190318"
+            }, 
+            "Cyren": {
+                "detected": false, 
+                "version": "6.2.2.2", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20191022"
+            }, 
+            "Symantec": {
+                "detected": false, 
+                "version": "1.11.0.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20191022"
+            }, 
+            "ESET-NOD32": {
+                "detected": false, 
+                "version": "20221", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20191022"
+            }, 
+            "TrendMicro-HouseCall": {
+                "detected": false, 
+                "version": "10.0.0.1040", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20191022"
+            }, 
+            "Avast": {
+                "detected": false, 
+                "version": "18.4.3895.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20191022"
+            }, 
+            "ClamAV": {
+                "detected": true, 
+                "version": "0.102.0.0", 
+                "result": "Win.Trojan.Agent-1309051", 
+                "normalized": [], 
+                "update": "20191022"
+            }, 
+            "Kaspersky": {
+                "detected": false, 
+                "version": "15.0.1.13", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20191022"
+            }, 
+            "BitDefender": {
+                "detected": true, 
+                "version": "7.2", 
+                "result": "Trojan.Dropper.YER", 
+                "normalized": [], 
+                "update": "20191022"
+            }, 
+            "NANO-Antivirus": {
+                "detected": true, 
+                "version": "1.0.134.24859", 
+                "result": "Trojan.Win32.Kryptik.fmveqo", 
+                "normalized": [
+                    "Kryptik", 
+                    "fmveqo"
+                ], 
+                "update": "20191022"
+            }, 
+            "SUPERAntiSpyware": {
+                "detected": false, 
+                "version": "5.6.0.1032", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20191018"
+            }, 
+            "Rising": {
+                "detected": false, 
+                "version": "25.0.0.24", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20191022"
+            }, 
+            "Ad-Aware": {
+                "detected": false, 
+                "version": "3.0.5.370", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20191022"
+            }, 
+            "Emsisoft": {
+                "detected": true, 
+                "version": "2018.12.0.1641", 
+                "result": "Trojan.Dropper.YER (B)", 
+                "normalized": [], 
+                "update": "20191022"
+            }, 
+            "Comodo": {
+                "detected": false, 
+                "version": "31631", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20191021"
+            }, 
+            "F-Secure": {
+                "detected": false, 
+                "version": "12.0.86.52", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20191022"
+            }, 
+            "DrWeb": {
+                "detected": true, 
+                "version": "7.0.41.7240", 
+                "result": "BackDoor.Spy.2465", 
+                "normalized": [], 
+                "update": "20191022"
+            }, 
+            "Zillya": {
+                "detected": false, 
+                "version": "2.0.0.3930", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20191021"
+            }, 
+            "TrendMicro": {
+                "detected": false, 
+                "version": "11.0.0.1006", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20191022"
+            }, 
+            "McAfee-GW-Edition": {
+                "detected": false, 
+                "version": "v2017.3010", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20191022"
+            }, 
+            "FireEye": {
+                "detected": true, 
+                "version": "29.7.0.0", 
+                "result": "Trojan.Dropper.YER", 
+                "normalized": [], 
+                "update": "20191022"
+            }, 
+            "Sophos": {
+                "detected": false, 
+                "version": "4.98.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20191022"
+            }, 
+            "Ikarus": {
+                "detected": false, 
+                "version": "0.1.5.2", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20191022"
+            }, 
+            "F-Prot": {
+                "detected": false, 
+                "version": "4.7.1.166", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20191022"
+            }, 
+            "Jiangmin": {
+                "detected": false, 
+                "version": "16.0.100", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20191022"
+            }, 
+            "Avira": {
+                "detected": false, 
+                "version": "8.3.3.8", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20191022"
+            }, 
+            "Antiy-AVL": {
+                "detected": false, 
+                "version": "3.0.0.1", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20191022"
+            }, 
+            "Kingsoft": {
+                "detected": false, 
+                "version": "2013.8.14.323", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20191022"
+            }, 
+            "Microsoft": {
+                "detected": false, 
+                "version": "1.1.16500.1", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20191022"
+            }, 
+            "ViRobot": {
+                "detected": false, 
+                "version": "2014.3.20.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20191022"
+            }, 
+            "ZoneAlarm": {
+                "detected": false, 
+                "version": "1.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20191022"
+            }, 
+            "Avast-Mobile": {
+                "detected": false, 
+                "version": "191012-04", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20191012"
+            }, 
+            "GData": {
+                "detected": true, 
+                "version": "A:25.23741B:26.16382", 
+                "result": "Trojan.Dropper.YER", 
+                "normalized": [], 
+                "update": "20191022"
+            }, 
+            "AhnLab-V3": {
+                "detected": false, 
+                "version": "3.16.3.25410", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20191022"
+            }, 
+            "McAfee": {
+                "detected": false, 
+                "version": "6.0.6.653", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20191022"
+            }, 
+            "TACHYON": {
+                "detected": false, 
+                "version": "2019-10-22.02", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20191022"
+            }, 
+            "VBA32": {
+                "detected": false, 
+                "version": "4.2.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20191022"
+            }, 
+            "Zoner": {
+                "detected": false, 
+                "version": "1.0.0.1", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20191021"
+            }, 
+            "Tencent": {
+                "detected": false, 
+                "version": "1.0.0.1", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20191022"
+            }, 
+            "Yandex": {
+                "detected": false, 
+                "version": "5.5.2.24", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20191022"
+            }, 
+            "MAX": {
+                "detected": true, 
+                "version": "2019.9.16.1", 
+                "result": "malware (ai score=82)", 
+                "normalized": [
+                    "ai score=82"
+                ], 
+                "update": "20191022"
+            }, 
+            "MaxSecure": {
+                "detected": false, 
+                "version": "1.0.0.1", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20191021"
+            }, 
+            "Fortinet": {
+                "detected": false, 
+                "version": "5.4.247.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20191022"
+            }, 
+            "AVG": {
+                "detected": false, 
+                "version": "18.4.3895.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20191022"
+            }, 
+            "Panda": {
+                "detected": false, 
+                "version": "4.6.4.2", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20191022"
+            }, 
+            "Qihoo-360": {
+                "detected": false, 
+                "version": "1.0.0.1120", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20191022"
+            }
+        }
+    }, 
+    "network": {
+        "udp": [], 
+        "dns_servers": [], 
+        "http": [], 
+        "smtp": [], 
+        "tcp": [], 
+        "geoinfo": {}, 
+        "mitm": [], 
+        "https_ex": [], 
+        "http_ex": [], 
+        "sorted_pcap_sha256": "3ea65f25eb803beb97159d507569fe55ecc00541d2d697bc34b50a5412b3ea20", 
+        "icmp": [], 
+        "tls": [], 
+        "dead_hosts": [], 
+        "smtp_ex": [], 
+        "hosts": [], 
+        "pcap_sha256": "3a11dab85951eafec9b013f3822e645960b8d26e7e6a403398e978c2eaf25920", 
+        "dns": [], 
+        "domains": [], 
+        "irc": []
+    }, 
+    "resubmit": {
+        "resubmit_ids": []
+    }, 
+    "snort": {
+        "alerts": []
+    }, 
+    "behavior": {
+        "generic": [
+            {
+                "process_path": null, 
+                "process_name": "sh", 
+                "pid": 2096, 
+                "summary": {}, 
+                "first_seen": 1778156265.58266, 
+                "ppid": -1
+            }
+        ], 
+        "processes": [
+            {
+                "calls": [
+                    {
+                        "status": "ENOEXEC", 
+                        "process_name": "sh", 
+                        "pid": 2096, 
+                        "raw": "Thu May  7 12:17:45 2026.582660 sh@7fc8038aa957[2096] execve(\"/tmp/ab9d30b34b79ea84c01cd9ba6df9957212e40a7014e7b6c4c68df883d30c86d7\", [\"/tmp/ab9d30b34b79ea84c01cd9ba6df9957212e40a7014e7b6c4c68df883d30c86d7\"], [\"SUDO_GID=0\", \"MAIL=/var/mail/root\", \"USER=root\", \"HOME=/root\", \"SUDO_UID=0\", \"LOGNAME=root\", \"SYSTEMTAP_MODULE=stap_\", \"TERM=unknown\", \"SYSTEMTAP_VERBOSE=2\", \"PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin\", \"DISPLAY=:0\", \"LANG=en_US.UTF-8\", \"XAUTHORITY=/root/.Xauthority\", \"SUDO_COMMAND=/usr/bin/staprun -vv -o stap.log /root/.cuck) = -8 (ENOEXEC)\n", 
+                        "api": "execve", 
+                        "return_value": "-8", 
+                        "category": "process", 
+                        "instruction_pointer": "7fc8038aa957", 
+                        "arguments": {
+                            "p2": [
+                                "SUDO_GID=0", 
+                                "MAIL=/var/mail/root", 
+                                "USER=root", 
+                                "HOME=/root", 
+                                "SUDO_UID=0", 
+                                "LOGNAME=root", 
+                                "SYSTEMTAP_MODULE=stap_", 
+                                "TERM=unknown", 
+                                "SYSTEMTAP_VERBOSE=2", 
+                                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin", 
+                                "DISPLAY=:0", 
+                                "LANG=en_US.UTF-8", 
+                                "XAUTHORITY=/root/.Xauthority", 
+                                "\"SUDO_COMMAND=/usr/bin/staprun -vv -o stap.log /root/.cuck"
+                            ], 
+                            "p0": "/tmp/ab9d30b34b79ea84c01cd9ba6df9957212e40a7014e7b6c4c68df883d30c86d7", 
+                            "p1": [
+                                "/tmp/ab9d30b34b79ea84c01cd9ba6df9957212e40a7014e7b6c4c68df883d30c86d7"
+                            ]
+                        }, 
+                        "time": 1778156265.58266
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "sh", 
+                        "pid": 2096, 
+                        "raw": "Thu May  7 12:17:45 2026.582854 sh@7fc8038d5cce[2096] openat(AT_FDCWD, \"/tmp/ab9d30b34b79ea84c01cd9ba6df9957212e40a7014e7b6c4c68df883d30c86d7\", O_RDONLY|O_NOCTTY) = 3\n", 
+                        "api": "openat", 
+                        "return_value": "3", 
+                        "category": "process", 
+                        "instruction_pointer": "7fc8038d5cce", 
+                        "arguments": {
+                            "p2": "O_RDONLY|O_NOCTTY", 
+                            "p0": "AT_FDCWD", 
+                            "p1": "/tmp/ab9d30b34b79ea84c01cd9ba6df9957212e40a7014e7b6c4c68df883d30c86d7"
+                        }, 
+                        "time": 1778156265.582854
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "sh", 
+                        "pid": 2096, 
+                        "raw": "Thu May  7 12:17:45 2026.582906 sh@7fc8038d5f81[2096] read(3, 0x7ffc179ca2d0, 128) = 128\n", 
+                        "api": "read", 
+                        "return_value": "128", 
+                        "category": "process", 
+                        "instruction_pointer": "7fc8038d5f81", 
+                        "arguments": {
+                            "p2": "128", 
+                            "p0": "3", 
+                            "p1": "0x7ffc179ca2d0"
+                        }, 
+                        "time": 1778156265.582906
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "sh", 
+                        "pid": 2096, 
+                        "raw": "Thu May  7 12:17:45 2026.582953 sh@7fc8038d6674[2096] close(3) = 0\n", 
+                        "api": "close", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7fc8038d6674", 
+                        "arguments": {
+                            "p0": "3"
+                        }, 
+                        "time": 1778156265.582953
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "sh", 
+                        "pid": 2096, 
+                        "raw": "Thu May  7 12:17:45 2026.583077 sh@7fc8038d6024[2096] write(2, \"sh: 1: \", 7) = 7\n", 
+                        "api": "write", 
+                        "return_value": "7", 
+                        "category": "process", 
+                        "instruction_pointer": "7fc8038d6024", 
+                        "arguments": {
+                            "p2": "7", 
+                            "p0": "2", 
+                            "p1": "sh: 1: "
+                        }, 
+                        "time": 1778156265.583077
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "sh", 
+                        "pid": 2096, 
+                        "raw": "Thu May  7 12:17:45 2026.583135 sh@7fc8038d6024[2096] write(2, \"/tmp/ab9d30b34b79ea84c01cd9ba6df9957212e40a70\"..., 88) = 88\n", 
+                        "api": "write", 
+                        "return_value": "88", 
+                        "category": "process", 
+                        "instruction_pointer": "7fc8038d6024", 
+                        "arguments": {
+                            "p2": "88", 
+                            "p0": "2", 
+                            "p1": "\"/tmp/ab9d30b34b79ea84c01cd9ba6df9957212e40a70\"..."
+                        }, 
+                        "time": 1778156265.583135
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "sh", 
+                        "pid": 2096, 
+                        "raw": "Thu May  7 12:17:45 2026.583195 sh@7fc8038d6024[2096] write(2, \"\\n\", 1) = 1\n", 
+                        "api": "write", 
+                        "return_value": "1", 
+                        "category": "process", 
+                        "instruction_pointer": "7fc8038d6024", 
+                        "arguments": {
+                            "p2": "1", 
+                            "p0": "2", 
+                            "p1": "\n"
+                        }, 
+                        "time": 1778156265.583195
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "sh", 
+                        "pid": 2096, 
+                        "raw": "Thu May  7 12:17:45 2026.583257 sh@7fc8038aa926[2096] exit_group(2)\n", 
+                        "api": "exit_group", 
+                        "return_value": "", 
+                        "category": "process", 
+                        "instruction_pointer": "7fc8038aa926", 
+                        "arguments": {
+                            "p0": "2"
+                        }, 
+                        "time": 1778156265.583257
+                    }
+                ], 
+                "pid": 2096, 
+                "process_name": "sh", 
+                "command_line": "", 
+                "first_seen": 1778156265.58266, 
+                "ppid": -1, 
+                "type": "process"
+            }
+        ], 
+        "processtree": [
+            {
+                "track": true, 
+                "pid": 2096, 
+                "process_name": "sh", 
+                "command_line": "", 
+                "first_seen": 1778156265.58266, 
+                "ppid": -1, 
+                "children": []
+            }
+        ]
+    }, 
+    "debug": {
+        "action": [], 
+        "dbgview": [], 
+        "errors": [], 
+        "log": [
+            "2026-05-07 12:17:35,001 [root] DEBUG: Starting analyzer from: /tmp/tmpTaXc_J\n", 
+            "2026-05-07 12:17:35,002 [root] DEBUG: Storing results at: /tmp/hcMVdvyJ\n", 
+            "2026-05-07 12:17:35,002 [lib.core.packages] INFO: _guess_package_name failed\n", 
+            "2026-05-07 12:17:35,002 [lib.core.packages] INFO: data\n", 
+            "2026-05-07 12:17:35,003 [lib.core.packages] INFO: ab9d30b34b79ea84c01cd9ba6df9957212e40a7014e7b6c4c68df883d30c86d7\n", 
+            "2026-05-07 12:17:37,098 [modules.auxiliary.filecollector] INFO: FileCollector started v0.08\n", 
+            "2026-05-07 12:17:37,101 [modules.auxiliary.human] INFO: Human started v0.02\n", 
+            "2026-05-07 12:17:37,606 [modules.auxiliary.screenshots] INFO: Screenshots started v0.03\n", 
+            "2026-05-07 12:17:45,578 [lib.core.packages] INFO: Process startup took 7.97 seconds\n", 
+            "2026-05-07 12:17:45,579 [root] INFO: Added new process to list with pid: 2075\n", 
+            "2026-05-07 12:17:54,592 [root] INFO: Process with pid 2075 has terminated\n", 
+            "2026-05-07 12:17:54,594 [root] INFO: Process list is empty, terminating analysis.\n", 
+            "2026-05-07 12:17:57,597 [lib.core.packages] INFO: Package requested stop\n", 
+            "2026-05-07 12:17:57,599 [lib.core.packages] WARNING: Exception uploading log: [Errno 3] No such process\n"
+        ], 
+        "cuckoo": [
+            "2026-05-07 12:17:36,061 [cuckoo.core.scheduler] INFO: Task #7546161: acquired machine Ubuntu1904x643 (label=Ubuntu1904x643)\n", 
+            "2026-05-07 12:17:36,062 [cuckoo.core.resultserver] DEBUG: Now tracking machine 192.168.168.103 for task #7546161\n", 
+            "2026-05-07 12:17:36,343 [cuckoo.auxiliary.sniffer] INFO: Started sniffer with PID 258050 (interface=vboxnet0, host=192.168.168.103)\n", 
+            "2026-05-07 12:17:36,375 [cuckoo.machinery.virtualbox] DEBUG: Starting vm Ubuntu1904x643\n", 
+            "2026-05-07 12:17:36,893 [cuckoo.machinery.virtualbox] DEBUG: Restoring virtual machine Ubuntu1904x643 to Snapshot\n", 
+            "2026-05-07 12:17:43,936 [cuckoo.core.guest] INFO: Starting analysis #7546161 on guest (id=Ubuntu1904x643, ip=192.168.168.103)\n", 
+            "2026-05-07 12:17:44,941 [cuckoo.core.guest] DEBUG: Ubuntu1904x643: not ready yet\n", 
+            "2026-05-07 12:17:49,967 [cuckoo.core.guest] INFO: Guest is running Cuckoo Agent 0.10 (id=Ubuntu1904x643, ip=192.168.168.103)\n", 
+            "2026-05-07 12:17:49,991 [cuckoo.core.guest] DEBUG: Uploading analyzer to guest (id=Ubuntu1904x643, ip=192.168.168.103, monitor=latest, size=73219)\n", 
+            "2026-05-07 12:17:50,222 [cuckoo.core.resultserver] DEBUG: Task #7546161: live log analysis.log initialized.\n", 
+            "2026-05-07 12:17:55,347 [cuckoo.core.resultserver] DEBUG: Task #7546161: File upload for 'shots/0001.jpg'\n", 
+            "2026-05-07 12:17:55,382 [cuckoo.core.resultserver] DEBUG: Task #7546161 uploaded file length: 171503\n", 
+            "2026-05-07 12:18:05,192 [cuckoo.core.guest] DEBUG: Ubuntu1904x643: analysis #7546161 still processing\n", 
+            "2026-05-07 12:18:12,835 [cuckoo.core.resultserver] DEBUG: Task #7546161: File upload for 'logs/all.stap'\n", 
+            "2026-05-07 12:18:12,839 [cuckoo.core.resultserver] DEBUG: Task #7546161 uploaded file length: 1261\n", 
+            "2026-05-07 12:18:20,280 [cuckoo.core.guest] DEBUG: Ubuntu1904x643: analysis #7546161 still processing\n", 
+            "2026-05-07 12:18:35,374 [cuckoo.core.guest] DEBUG: Ubuntu1904x643: analysis #7546161 still processing\n", 
+            "2026-05-07 12:18:50,446 [cuckoo.core.guest] INFO: Ubuntu1904x643: end of analysis reached!\n", 
+            "2026-05-07 12:18:50,459 [cuckoo.core.plugins] DEBUG: Stopped auxiliary module: Redsocks\n", 
+            "2026-05-07 12:18:50,494 [cuckoo.core.plugins] DEBUG: Stopped auxiliary module: Sniffer\n", 
+            "2026-05-07 12:18:51,173 [cuckoo.machinery.virtualbox] INFO: Successfully generated memory dump for virtual machine with label Ubuntu1904x643 to path /srv/cuckoo/cwd/storage/analyses/7546161/memory.dmp\n", 
+            "2026-05-07 12:18:51,174 [cuckoo.machinery.virtualbox] DEBUG: Stopping vm Ubuntu1904x643\n", 
+            "2026-05-07 12:18:58,507 [cuckoo.core.resultserver] DEBUG: Stopped tracking machine 192.168.168.103 for task #7546161\n", 
+            "2026-05-07 12:18:58,508 [cuckoo.core.resultserver] DEBUG: Cancel <Context for LOG> for task 7546161\n", 
+            "2026-05-07 12:18:58,832 [cuckoo.core.scheduler] DEBUG: Released database task #7546161\n", 
+            "2026-05-07 12:18:58,848 [cuckoo.core.scheduler] INFO: Task #7546161: analysis procedure completed\n"
+        ]
+    }, 
+    "strings": [
+        "THIS TEXT ADDED TO PREVENT ACCIDENTAL EXECUTIONMZ", 
+        "!This program cannot be run in DOS mode.", 
+        "GetModuleHandleW", 
+        "ntdll.dll", 
+        "GetFileAttributesW", 
+        "DeleteObject", 
+        "D$$}1A", 
+        "InternetOpenA", 
+        "Process32First", 
+        "GetSystemInfo", 
+        "ole32.dll", 
+        "GetCurrentDirectoryW", 
+        "GdipDisposeImage", 
+        "GetWindowRect", 
+        "ExitProcess", 
+        "OpenProcessToken", 
+        "CreateProcessA", 
+        "InternetReadFile", 
+        "WNetOpenEnumW", 
+        "GetVersionExA", 
+        "LocalFree", 
+        "YvE}xG", 
+        "GdipSaveImageToStream", 
+        "GetTickCount", 
+        "0'040t0", 
+        "0/1<1w1", 
+        "2 2,2S2u2", 
+        "2A3H3R3Y3", 
+        "494@4e4", 
+        "5V5]5y5", 
+        "7=7C7N7", 
+        "8B8I8c8x8", 
+        "8/969n9", 
+        "9C:I:s:}:", 
+        "<%<a<k<}<", 
+        "=H=O=`=", 
+        "?M?S?a?", 
+        "4\u001f4w4~4", 
+        "6!6W6^6", 
+        "9D9]9o9", 
+        "9(:::Q:", 
+        ";&;-;@;", 
+        "<#<-<6<]<d<n<u<", 
+        "<\u001f=&=0=7={=", 
+        "=D>M>[>k>", 
+        ">.?I?V?o?", 
+        "0%0A0[0", 
+        "1(1C1.2I2V2o2", 
+        "3%3A3[3", 
+        "6H6L6P6T6X6\\6", 
+        "8F8M8p8w8", 
+        "9;9L9S9", 
+        ";a;k;v;", 
+        ";%</<:<", 
+        "=?>F>P>W>", 
+        "?a?k?s?~?", 
+        "3 4'404N4Y4s4z4", 
+        "6-6s6z6", 
+        "5!6,6Q6g6", 
+        "=^>m>[?", 
+        "4A4#525C6X6i7", 
+        "DuplicateToken", 
+        "~AUwv]8,", 
+        "y\"(`4Lk", 
+        "Ykj-BK<3M", 
+        "l\u001f@G6p", 
+        "-P:8h,A{.", 
+        "mN/o' %,", 
+        "^?z CS", 
+        "2Elpf``", 
+        "q*nVy&", 
+        "*#AM;C", 
+        "yqUGnP!", 
+        " Y9n}7", 
+        "WL}f8`Wof", 
+        "5%E9-^>\u001f7", 
+        "w\\N6EoJ", 
+        "/JLHGmC", 
+        "ISUk8TC(7n", 
+        "Z3'B):", 
+        "0L`!;1", 
+        "R5)i&*", 
+        "V\\rk4!UK*", 
+        "K#9{mz", 
+        "AQUoNP", 
+        "~WpMk5", 
+        "':/Tg)", 
+        "vM2U+j", 
+        "yH!&Fsl)", 
+        "dprx)5", 
+        "KX_\"{T", 
+        "jp][|o", 
+        "g4Ey9u", 
+        "nR.2e7+", 
+        "ViPSp@", 
+        "(U/3yhJk", 
+        "H:Nt0o", 
+        "W i\")U", 
+        " 27R[m", 
+        "\\!iJV\"q", 
+        "X\\D4y>$", 
+        "em>X~x8", 
+        "miW$Jq", 
+        ";lknAe4_", 
+        "YGe4mwV", 
+        "S~Qbg|n", 
+        "IM'Wq`wz", 
+        "DqX5rj", 
+        "]),hgm", 
+        "+9{?=h", 
+        "]189mQ", 
+        "ReadFile", 
+        "_wcsicmp", 
+        "MPR.dll", 
+        "HeapFree", 
+        "GetFileSize", 
+        "GetModuleHandleA", 
+        "GetModuleFileNameA", 
+        "X)51dNE\u001f2", 
+        "HttpOpenRequestA", 
+        "GetDiskFreeSpaceA", 
+        "CreateFileA", 
+        "eI>=$Y", 
+        "-mh?Co", 
+        "USER32.dll", 
+        "GdipGetImageEncodersSize", 
+        "CheckTokenMembership", 
+        "AqahLZ", 
+        "rWwU~_=", 
+        "GetDriveTypeW", 
+        "nsak#*", 
+        "GetStartupInfoA", 
+        "WININET.dll", 
+        "GetCurrentProcess", 
+        ",@y#}I", 
+        "?f]e#^x", 
+        "WNetEnumResourceW", 
+        "$&pz1:", 
+        "\\>#s(+", 
+        "W{db#7", 
+        "CreateWellKnownSid", 
+        "D$@hS\u001fLt", 
+        "DeleteFileA", 
+        "@HuJME", 
+        "!mr24I", 
+        "H\\1bhC", 
+        "N~Au<d", 
+        "WNetCloseEnum", 
+        "GetModuleFileNameExA", 
+        "ueun}s", 
+        "}^sz(9", 
+        "d9q/kji s_", 
+        "$*et_lT", 
+        "GetLastError", 
+        "CreateThread", 
+        "PSAPI.DLL", 
+        "FindClose", 
+        "memset", 
+        "SHGetFolderPathW", 
+        "CreateFileW", 
+        "GetTempFileNameA", 
+        "GdipGetImageEncoders", 
+        ">nHsea", 
+        "7o{dkF", 
+        ".%*)\u001fX", 
+        "memcpy", 
+        "GetSystemDirectoryA", 
+        "r7D]mI", 
+        ":#&\"<z", 
+        "BitBlt", 
+        "GlobalFree", 
+        "GetDriveTypeA", 
+        "!:frkrG", 
+        "GDI32.dll", 
+        "r[om/GQp", 
+        "1/[}4Q{&", 
+        "CS/K,+", 
+        "~=c+40e", 
+        ",9 C$1.", 
+        "xKF'E{", 
+        "[Q,sIK", 
+        "IN= \u001fZ", 
+        "EF8XNt", 
+        "cFLX9G", 
+        "%eOxICda", 
+        "uIG=M-", 
+        ")B$db%Cf", 
+        "dE3BHP", 
+        ".]cWau", 
+        "$NrIFr", 
+        "f1A(c m", 
+        "}eV[xA", 
+        "(H.!8m)", 
+        "_wg7fNi", 
+        "]\"_4$B", 
+        "Y&^4yUX(a", 
+        "n84Kd!", 
+        "$NF[GI", 
+        "y4,r{!-", 
+        "/O@umQlk", 
+        "LZ;HS/", 
+        "ov^yp.>k", 
+        "8(0$u4N", 
+        "!O=f408", 
+        ")Ju1,0", 
+        "UJ,xT!", 
+        "71hA,Ju", 
+        "Ym=)[_", 
+        "InternetCloseHandle", 
+        "IPHLPAPI.DLL", 
+        "SelectObject", 
+        "GetProcAddress", 
+        "702?L-}xi", 
+        "GetAdaptersInfo", 
+        "(yJ(f7", 
+        ":s}gsls:", 
+        "GetVolumeInformationA", 
+        "AuAI'k~Z", 
+        "GetDesktopWindow", 
+        "CloseHandle", 
+        "ReleaseDC", 
+        "HttpQueryInfoA", 
+        "GetTempPathA", 
+        "HeapReAlloc", 
+        "6sP}xU(", 
+        ",_#gFBtU", 
+        "F@0ksyW", 
+        "K|)l?#", 
+        "`I~=-[", 
+        "8P8Haz ", 
+        "sV/A&E", 
+        "D$$5`A", 
+        "WaitForSingleObject", 
+        "CreateDIBSection", 
+        "InternetSetOptionA", 
+        "CreateStreamOnHGlobal", 
+        "CreateCompatibleDC", 
+        "Process32Next", 
+        "FindFirstFileW", 
+        "HttpSendRequestA", 
+        "6nTfgl", 
+        "GetUserNameA", 
+        "0Z*3qp'>5", 
+        "GetWindowsDirectoryW", 
+        "Y}ZivN*", 
+        "InternetConnectA", 
+        "GdipCreateBitmapFromHBITMAP", 
+        "CreateToolhelp32Snapshot", 
+        "_snwprintf", 
+        "GetLogicalDrives", 
+        "GetModuleFileNameW", 
+        "p[`Dhu", 
+        "GdiplusStartup", 
+        "GetTokenInformation", 
+        "user32.dll", 
+        "gdiplus.dll", 
+        "n#x<mv<", 
+        "Wlt,1&#", 
+        "sprintf", 
+        "HeapAlloc", 
+        "GetWindowDC", 
+        "GlobalAlloc", 
+        "DeleteDC", 
+        "ADVAPI32.dll", 
+        "LoadLibraryA", 
+        "qr{\"c8", 
+        "])Q[Nq", 
+        "Qg4~qU", 
+        "%4n}gqH", 
+        "&]q2 caXf", 
+        "OpenProcess", 
+        "SHELL32.dll", 
+        "LocalAlloc", 
+        "M.<y^-", 
+        "M|@imI", 
+        "^_LoNM", 
+        "k?t| loT$6sPP", 
+        "9(m_q\u001f", 
+        "+ny}q!", 
+        ":2T5&4fea", 
+        ";ik'M9", 
+        "E]L>\"n", 
+        "yms}f>", 
+        "KERNEL32.dll", 
+        "p&*7~O", 
+        "FindNextFileW", 
+        "GetComputerNameA", 
+        "GetProcessHeap", 
+        "D$ EEf", 
+        "h9\\B]f", 
+        "`h|$+N", 
+        "t$X]`N", 
+        "$]m$?`", 
+        "Q0Z0\\:f:C;"
+    ], 
+    "intelmq": [
+        {
+            "classification_taxonomy": "malicious-code", 
+            "classification_type": "infected-system", 
+            "feed_provider": "CERT-EE", 
+            "time_source": "2025-10-06T02:46:08.917501+00:00", 
+            "feed_name": "Sandbox", 
+            "ioc": "5b3b0ed88d029b0af2c80e021442a0e8a332ecff", 
+            "id": "3OZpt5kBsGULcKojgYs6", 
+            "index": "imq-2025-10", 
+            "url": "https://kips.cert.ee/app/discover#/doc/imq/imq-2025-10/?id=3OZpt5kBsGULcKojgYs6", 
+            "time_observation": "2025-10-06T02:46:08+00:00", 
+            "feed_accuracy": 50
+        }, 
+        {
+            "classification_taxonomy": "malicious-code", 
+            "classification_type": "infected-system", 
+            "feed_provider": "CERT-EE", 
+            "time_source": "2025-10-06T02:46:08.917601+00:00", 
+            "feed_name": "Sandbox", 
+            "ioc": "5b3b0ed88d029b0af2c80e021442a0e8a332ecff", 
+            "id": "3eZpt5kBsGULcKojgYtG", 
+            "index": "imq-2025-10", 
+            "url": "https://kips.cert.ee/app/discover#/doc/imq/imq-2025-10/?id=3eZpt5kBsGULcKojgYtG", 
+            "time_observation": "2025-10-06T02:46:08+00:00", 
+            "feed_accuracy": 50
+        }, 
+        {
+            "classification_taxonomy": "malicious-code", 
+            "classification_type": "infected-system", 
+            "feed_provider": "CERT-EE", 
+            "time_source": "2025-09-22T09:23:36.544062+00:00", 
+            "feed_name": "Sandbox", 
+            "ioc": "5b3b0ed88d029b0af2c80e021442a0e8a332ecff", 
+            "id": "hNi8cJkBsGULcKojXAIL", 
+            "index": "imq-2025-09", 
+            "url": "https://kips.cert.ee/app/discover#/doc/imq/imq-2025-09/?id=hNi8cJkBsGULcKojXAIL", 
+            "time_observation": "2025-09-22T09:23:36+00:00", 
+            "feed_accuracy": 50
+        }, 
+        {
+            "classification_taxonomy": "malicious-code", 
+            "classification_type": "infected-system", 
+            "feed_provider": "CERT-EE", 
+            "time_source": "2025-09-22T09:23:36.543977+00:00", 
+            "feed_name": "Sandbox", 
+            "ioc": "5b3b0ed88d029b0af2c80e021442a0e8a332ecff", 
+            "id": "g9i8cJkBsGULcKojXAIC", 
+            "index": "imq-2025-09", 
+            "url": "https://kips.cert.ee/app/discover#/doc/imq/imq-2025-09/?id=g9i8cJkBsGULcKojXAIC", 
+            "time_observation": "2025-09-22T09:23:36+00:00", 
+            "feed_accuracy": 50
+        }, 
+        {
+            "classification_taxonomy": "malicious-code", 
+            "classification_type": "infected-system", 
+            "feed_provider": "CERT-EE", 
+            "time_source": "2025-08-24T20:41:24.207507+00:00", 
+            "feed_name": "Sandbox", 
+            "ioc": "5b3b0ed88d029b0af2c80e021442a0e8a332ecff", 
+            "id": "h67Q3ZgBsGULcKojelMP", 
+            "index": "imq-2025-08", 
+            "url": "https://kips.cert.ee/app/discover#/doc/imq/imq-2025-08/?id=h67Q3ZgBsGULcKojelMP", 
+            "time_observation": "2025-08-24T20:41:24+00:00", 
+            "feed_accuracy": 50
+        }, 
+        {
+            "classification_taxonomy": "malicious-code", 
+            "classification_type": "infected-system", 
+            "feed_provider": "CERT-EE", 
+            "time_source": "2025-08-24T20:41:24.207600+00:00", 
+            "feed_name": "Sandbox", 
+            "ioc": "5b3b0ed88d029b0af2c80e021442a0e8a332ecff", 
+            "id": "iK7Q3ZgBsGULcKojelMb", 
+            "index": "imq-2025-08", 
+            "url": "https://kips.cert.ee/app/discover#/doc/imq/imq-2025-08/?id=iK7Q3ZgBsGULcKojelMb", 
+            "time_observation": "2025-08-24T20:41:24+00:00", 
+            "feed_accuracy": 50
+        }, 
+        {
+            "classification_taxonomy": "malicious-code", 
+            "classification_type": "infected-system", 
+            "feed_provider": "CERT-EE", 
+            "time_source": "2025-08-24T20:32:32.480529+00:00", 
+            "feed_name": "Sandbox", 
+            "ioc": "5b3b0ed88d029b0af2c80e021442a0e8a332ecff", 
+            "id": "RK7I3ZgBsGULcKojXSQB", 
+            "index": "imq-2025-08", 
+            "url": "https://kips.cert.ee/app/discover#/doc/imq/imq-2025-08/?id=RK7I3ZgBsGULcKojXSQB", 
+            "time_observation": "2025-08-24T20:32:32+00:00", 
+            "feed_accuracy": 50
+        }, 
+        {
+            "classification_taxonomy": "malicious-code", 
+            "classification_type": "infected-system", 
+            "feed_provider": "CERT-EE", 
+            "time_source": "2025-08-24T20:32:32.480637+00:00", 
+            "feed_name": "Sandbox", 
+            "ioc": "5b3b0ed88d029b0af2c80e021442a0e8a332ecff", 
+            "id": "Ra7I3ZgBsGULcKojXSQI", 
+            "index": "imq-2025-08", 
+            "url": "https://kips.cert.ee/app/discover#/doc/imq/imq-2025-08/?id=Ra7I3ZgBsGULcKojXSQI", 
+            "time_observation": "2025-08-24T20:32:32+00:00", 
+            "feed_accuracy": 50
+        }, 
+        {
+            "classification_taxonomy": "malicious-code", 
+            "classification_type": "infected-system", 
+            "feed_provider": "CERT-EE", 
+            "time_source": "2025-08-24T14:35:44.621758+00:00", 
+            "feed_name": "Sandbox", 
+            "ioc": "5b3b0ed88d029b0af2c80e021442a0e8a332ecff", 
+            "id": "pKaB3JgBsGULcKojtFqC", 
+            "index": "imq-2025-08", 
+            "url": "https://kips.cert.ee/app/discover#/doc/imq/imq-2025-08/?id=pKaB3JgBsGULcKojtFqC", 
+            "time_observation": "2025-08-24T14:35:44+00:00", 
+            "feed_accuracy": 50
+        }, 
+        {
+            "classification_taxonomy": "malicious-code", 
+            "classification_type": "infected-system", 
+            "feed_provider": "CERT-EE", 
+            "time_source": "2025-08-24T14:35:44.621829+00:00", 
+            "feed_name": "Sandbox", 
+            "ioc": "5b3b0ed88d029b0af2c80e021442a0e8a332ecff", 
+            "id": "paaB3JgBsGULcKojtFqJ", 
+            "index": "imq-2025-08", 
+            "url": "https://kips.cert.ee/app/discover#/doc/imq/imq-2025-08/?id=paaB3JgBsGULcKojtFqJ", 
+            "time_observation": "2025-08-24T14:35:44+00:00", 
+            "feed_accuracy": 50
+        }
+    ], 
+    "metadata": {
+        "output": {
+            "pcap": {
+                "basename": "dump.pcap", 
+                "sha256": "3a11dab85951eafec9b013f3822e645960b8d26e7e6a403398e978c2eaf25920", 
+                "dirname": ""
+            }
+        }
+    }
+}
