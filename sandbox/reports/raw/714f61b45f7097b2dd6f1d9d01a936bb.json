@@ -1,0 +1,2774 @@
+{
+    "info": {
+        "added": 1782036525.576166, 
+        "started": 1782036526.029528, 
+        "duration": 85, 
+        "ended": 1782036611.219335, 
+        "owner": "", 
+        "score": 7.1, 
+        "id": 7603152, 
+        "category": "file", 
+        "git": {
+            "head": "", 
+            "fetch_head": ""
+        }, 
+        "monitor": null, 
+        "package": "elf", 
+        "route": "internet", 
+        "custom": "", 
+        "machine": {
+            "status": "stopped", 
+            "name": "Ubuntu1904x644", 
+            "label": "Ubuntu1904x644", 
+            "platform": "linux", 
+            "manager": "VirtualBox", 
+            "started_on": "2026-06-21 10:08:46", 
+            "shutdown_on": "2026-06-21 10:10:10"
+        }, 
+        "platform": "linux", 
+        "version": "2.0.7", 
+        "options": ""
+    }, 
+    "signatures": [
+        {
+            "families": [], 
+            "description": "File has been identified by 5 AntiVirus engine on IRMA as malicious", 
+            "severity": 50, 
+            "ttp": {}, 
+            "markcount": 5, 
+            "references": [], 
+            "marks": [
+                {
+                    "category": "G Data Antivirus (Windows)", 
+                    "ioc": "Virus: Trojan.Generic.40134622 (Engine A)", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "eScan Antivirus (Linux)", 
+                    "ioc": "Trojan.Generic.40134622(DB)", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Bitdefender Antivirus (Linux)", 
+                    "ioc": "Trojan.Generic.40134622", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Kaspersky Standard (Windows)", 
+                    "ioc": "HEUR:Backdoor.Linux.Mirai.b", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Emsisoft Commandline Scanner (Windows)", 
+                    "ioc": "Trojan.Generic.40134622 (B)", 
+                    "type": "ioc", 
+                    "description": null
+                }
+            ], 
+            "name": "antivirus_irma"
+        }
+    ], 
+    "target": {
+        "category": "file", 
+        "file": {
+            "mimetype": "application/x-executable", 
+            "yara": [], 
+            "sha1": "61eb75b2e71cc4ccb132db7bc03a6e96b739279a", 
+            "name": "lqtucsxvn", 
+            "type": "ELF 32-bit MSB executable, SPARC, version 1 (SYSV), statically linked, missing section headers at 86004", 
+            "sha256": "6111db595eadbb8b5dec929927b21432575e7a8021dddf7e56566f61e8c937c4", 
+            "urls": [], 
+            "crc32": "AE802943", 
+            "path": "/srv/cuckoo/cwd/storage/binaries/6111db595eadbb8b5dec929927b21432575e7a8021dddf7e56566f61e8c937c4", 
+            "ssdeep": null, 
+            "size": 46072, 
+            "sha512": "4bec04e6f9f5a9d5e9598a5eed9fa6ca5f15c534c51735823e31c05237fad71aef41a2b515df67f279cf643d0801fa298d9e54d0729060fc9f278a33acf1d9e4", 
+            "md5": "714f61b45f7097b2dd6f1d9d01a936bb"
+        }, 
+        "custom": ""
+    }, 
+    "irma": {
+        "status": 1, 
+        "probes_finished": 13, 
+        "scan_id": "7697df7c-fa94-4036-8f6b-d348352ae1dc", 
+        "parent_file_sha256": null, 
+        "name": "6111db595eadbb8b5dec929927b21432575e7a8021dddf7e56566f61e8c937c4", 
+        "probes_total": 13, 
+        "scan_date": 1782025842, 
+        "other_results": [], 
+        "probe_results": {
+            "antivirus": {
+                "G Data Antivirus (Windows)": {
+                    "status": 1, 
+                    "duration": 0.23, 
+                    "version": "5.5.20197.1358", 
+                    "results": "Virus: Trojan.Generic.40134622 (Engine A)", 
+                    "virus_database_version": "unavailable"
+                }, 
+                "Avast Core Security (Linux)": {
+                    "status": 0, 
+                    "duration": 0.01, 
+                    "version": "4.6.1", 
+                    "results": null, 
+                    "virus_database_version": "unavailable"
+                }, 
+                "C4S ClamAV (Linux)": {
+                    "status": 0, 
+                    "duration": 0.03, 
+                    "version": "1.4.3", 
+                    "results": null, 
+                    "virus_database_version": "28012"
+                }, 
+                "Trellix (Linux)": {
+                    "status": 0, 
+                    "duration": 7.81, 
+                    "version": "7.0.4.835", 
+                    "results": null, 
+                    "virus_database_version": "11797"
+                }, 
+                "WithSecure (Linux)": {
+                    "status": 0, 
+                    "duration": 0.15, 
+                    "version": "1.0.45", 
+                    "results": null, 
+                    "virus_database_version": "unavailable"
+                }, 
+                "eScan Antivirus (Linux)": {
+                    "status": 1, 
+                    "duration": 4.58, 
+                    "version": "7.0.21", 
+                    "results": "Trojan.Generic.40134622(DB)", 
+                    "virus_database_version": "7.100930 (26/05/2026)"
+                }, 
+                "ESET Security (Windows)": {
+                    "status": 0, 
+                    "duration": 0.66, 
+                    "version": "unavailable", 
+                    "results": null, 
+                    "virus_database_version": "unavailable"
+                }, 
+                "Sophos Anti-Virus (Linux)": {
+                    "status": 0, 
+                    "duration": 0.31, 
+                    "version": "1.2.0.8 (2026-02-13)", 
+                    "results": null, 
+                    "virus_database_version": "unavailable"
+                }, 
+                "DrWeb Antivirus (Linux)": {
+                    "status": 0, 
+                    "duration": 0.25, 
+                    "version": "11.1.16.2406170954", 
+                    "results": null, 
+                    "virus_database_version": "unavailable"
+                }, 
+                "ClamAV (Linux)": {
+                    "status": 0, 
+                    "duration": 0.03, 
+                    "version": "1.4.3", 
+                    "results": null, 
+                    "virus_database_version": "28012"
+                }, 
+                "Bitdefender Antivirus (Linux)": {
+                    "status": 1, 
+                    "duration": 7.9, 
+                    "version": "7.90123", 
+                    "results": "Trojan.Generic.40134622", 
+                    "virus_database_version": null
+                }, 
+                "Kaspersky Standard (Windows)": {
+                    "status": 1, 
+                    "duration": 0.78, 
+                    "version": "21.24", 
+                    "results": "HEUR:Backdoor.Linux.Mirai.b", 
+                    "virus_database_version": "2026-06-20 18:02:00 (unknown)"
+                }, 
+                "Emsisoft Commandline Scanner (Windows)": {
+                    "status": 1, 
+                    "duration": 0.42, 
+                    "version": "2025.1.0.12641", 
+                    "results": "Trojan.Generic.40134622 (B)", 
+                    "virus_database_version": "unavailable"
+                }
+            }
+        }, 
+        "file_infos": {
+            "mimetype": "ELF 32-bit MSB executable, SPARC, version 1 (SYSV)", 
+            "sha1": "61eb75b2e71cc4ccb132db7bc03a6e96b739279a", 
+            "tags": [], 
+            "timestamp_first_scan": 1782025841.59, 
+            "sha256": "6111db595eadbb8b5dec929927b21432575e7a8021dddf7e56566f61e8c937c4", 
+            "timestamp_last_scan": 1782025851.52, 
+            "md5": "714f61b45f7097b2dd6f1d9d01a936bb", 
+            "size": 46072
+        }, 
+        "submitter": "cli", 
+        "path": "", 
+        "result_id": "abaa9947-49aa-4b09-b3c8-b24514c46710"
+    }, 
+    "suricata": {
+        "tls": [], 
+        "files": [], 
+        "alerts": [], 
+        "http": []
+    }, 
+    "virustotal": {
+        "summary": {
+            "error": "resource has not been scanned yet"
+        }
+    }, 
+    "network": {
+        "udp": [], 
+        "dns_servers": [], 
+        "http": [], 
+        "smtp": [], 
+        "tcp": [], 
+        "geoinfo": {}, 
+        "mitm": [], 
+        "https_ex": [], 
+        "http_ex": [], 
+        "sorted_pcap_sha256": "898ef43109934d31c627f237468d9b6fa52fdd0d5ad838ec026559538d55c2fd", 
+        "icmp": [], 
+        "tls": [], 
+        "dead_hosts": [], 
+        "smtp_ex": [], 
+        "hosts": [], 
+        "pcap_sha256": "f2576607d1b754104031eb68c4c1c346249659a8a3d9bf1fd2647b4727d95b3f", 
+        "dns": [], 
+        "domains": [], 
+        "irc": []
+    }, 
+    "resubmit": {
+        "resubmit_ids": []
+    }, 
+    "snort": {
+        "alerts": []
+    }, 
+    "behavior": {
+        "generic": [
+            {
+                "process_path": null, 
+                "process_name": "lqtucsxvn", 
+                "pid": 3848, 
+                "summary": {}, 
+                "first_seen": 1782036532.16055, 
+                "ppid": 3847
+            }, 
+            {
+                "process_path": null, 
+                "process_name": "lqtucsxvn", 
+                "pid": 3847, 
+                "summary": {}, 
+                "first_seen": 1782036532.142638, 
+                "ppid": -1
+            }
+        ], 
+        "processes": [
+            {
+                "calls": [
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.142638 lqtucsxvn@7f6394ebbc27[3847] execve(\"/tmp/lqtucsxvn\", [\"/tmp/lqtucsxvn\"], [\"SUDO_GID=0\", \"MAIL=/var/mail/root\", \"USER=root\", \"HOME=/root\", \"SUDO_UID=0\", \"LOGNAME=root\", \"SYSTEMTAP_MODULE=stap_\", \"TERM=unknown\", \"SYSTEMTAP_VERBOSE=2\", \"PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin\", \"DISPLAY=:0\", \"LANG=en_US.UTF-8\", \"XAUTHORITY=/root/.Xauthority\", \"SUDO_COMMAND=/usr/bin/staprun -vv -o stap.log /root/.cuckoo/stap_.ko -c sh -c /tmp/lqtucsxvn\", \"SHELL=/bin/bash\", \"SUDO_USER=root\", \"PWD=/tmp/tmprUTqBE\"])\n", 
+                        "api": "execve", 
+                        "return_value": "", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebbc27", 
+                        "arguments": {
+                            "p2": [
+                                "SUDO_GID=0", 
+                                "MAIL=/var/mail/root", 
+                                "USER=root", 
+                                "HOME=/root", 
+                                "SUDO_UID=0", 
+                                "LOGNAME=root", 
+                                "SYSTEMTAP_MODULE=stap_", 
+                                "TERM=unknown", 
+                                "SYSTEMTAP_VERBOSE=2", 
+                                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin", 
+                                "DISPLAY=:0", 
+                                "LANG=en_US.UTF-8", 
+                                "XAUTHORITY=/root/.Xauthority", 
+                                "SUDO_COMMAND=/usr/bin/staprun -vv -o stap.log /root/.cuckoo/stap_.ko -c sh -c /tmp/lqtucsxvn", 
+                                "SHELL=/bin/bash", 
+                                "SUDO_USER=root", 
+                                "PWD=/tmp/tmprUTqBE"
+                            ], 
+                            "p0": "/tmp/lqtucsxvn", 
+                            "p1": [
+                                "/tmp/lqtucsxvn"
+                            ]
+                        }, 
+                        "time": 1782036532.142638
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.145830 lqtucsxvn@7f6394ebbc27[3847] brk(0x0) = 94010406883328\n", 
+                        "api": "brk", 
+                        "return_value": "94010406883328", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebbc27", 
+                        "arguments": {
+                            "p0": "0x0"
+                        }, 
+                        "time": 1782036532.14583
+                    }, 
+                    {
+                        "status": "ENOENT", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.145888 lqtucsxvn@7f6394ebc9d7[3847] access(\"/etc/ld.so.preload\", R_OK) = -2 (ENOENT)\n", 
+                        "api": "access", 
+                        "return_value": "-2", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebc9d7", 
+                        "arguments": {
+                            "p0": "/etc/ld.so.preload", 
+                            "p1": "R_OK"
+                        }, 
+                        "time": 1782036532.145888
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.147145 lqtucsxvn@7f6394ebcb0d[3847] openat(AT_FDCWD, \"/etc/ld.so.cache\", O_RDONLY|O_CLOEXEC) = 4\n", 
+                        "api": "openat", 
+                        "return_value": "4", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebcb0d", 
+                        "arguments": {
+                            "p2": "O_RDONLY|O_CLOEXEC", 
+                            "p0": "AT_FDCWD", 
+                            "p1": "/etc/ld.so.cache"
+                        }, 
+                        "time": 1782036532.147145
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.147185 lqtucsxvn@7f6394ebc943[3847] fstat(4, 0x7ffd06fdca80) = 0\n", 
+                        "api": "fstat", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebc943", 
+                        "arguments": {
+                            "p0": "4", 
+                            "p1": "0x7ffd06fdca80"
+                        }, 
+                        "time": 1782036532.147185
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.147225 lqtucsxvn@7f6394ebcd03[3847] mmap2(0x0, 88858, PROT_READ, MAP_PRIVATE, 4, 0) = 0x7f6394e8a000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f6394e8a000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebcd03", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p3": "MAP_PRIVATE", 
+                            "p0": "0x0", 
+                            "p1": "88858", 
+                            "p4": "4", 
+                            "p5": "0"
+                        }, 
+                        "time": 1782036532.147225
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.147256 lqtucsxvn@7f6394ebc9f7[3847] close(4) = 0\n", 
+                        "api": "close", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebc9f7", 
+                        "arguments": {
+                            "p0": "4"
+                        }, 
+                        "time": 1782036532.147256
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.147318 lqtucsxvn@7f6394ebcb0d[3847] openat(AT_FDCWD, \"/usr/lib/x86_64-linux-gnu/libgmodule-2.0.so.0\", O_RDONLY|O_CLOEXEC) = 4\n", 
+                        "api": "openat", 
+                        "return_value": "4", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebcb0d", 
+                        "arguments": {
+                            "p2": "O_RDONLY|O_CLOEXEC", 
+                            "p0": "AT_FDCWD", 
+                            "p1": "/usr/lib/x86_64-linux-gnu/libgmodule-2.0.so.0"
+                        }, 
+                        "time": 1782036532.147318
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.147353 lqtucsxvn@7f6394ebcbd4[3847] read(4, 0x7ffd06fdcc38, 832) = 832\n", 
+                        "api": "read", 
+                        "return_value": "832", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebcbd4", 
+                        "arguments": {
+                            "p2": "832", 
+                            "p0": "4", 
+                            "p1": "0x7ffd06fdcc38"
+                        }, 
+                        "time": 1782036532.147353
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.147432 lqtucsxvn@7f6394ebc943[3847] fstat(4, 0x7ffd06fdcad0) = 0\n", 
+                        "api": "fstat", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebc943", 
+                        "arguments": {
+                            "p0": "4", 
+                            "p1": "0x7ffd06fdcad0"
+                        }, 
+                        "time": 1782036532.147432
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.147454 lqtucsxvn@7f6394ebcd03[3847] mmap2(0x0, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f6394e88000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f6394e88000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebcd03", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_WRITE", 
+                            "p3": "MAP_PRIVATE|MAP_ANONYMOUS", 
+                            "p0": "0x0", 
+                            "p1": "8192", 
+                            "p4": "-1", 
+                            "p5": "0"
+                        }, 
+                        "time": 1782036532.147454
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.147498 lqtucsxvn@7f6394ebcd03[3847] mmap2(0x0, 20600, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 4, 0) = 0x7f6394e82000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f6394e82000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebcd03", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p3": "MAP_PRIVATE|MAP_DENYWRITE", 
+                            "p0": "0x0", 
+                            "p1": "20600", 
+                            "p4": "4", 
+                            "p5": "0"
+                        }, 
+                        "time": 1782036532.147498
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.147528 lqtucsxvn@7f6394ebcd03[3847] mmap2(0x7f6394e83000, 8192, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 4096) = 0x7f6394e83000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f6394e83000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebcd03", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_EXEC", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE", 
+                            "p0": "0x7f6394e83000", 
+                            "p1": "8192", 
+                            "p4": "4", 
+                            "p5": "4096"
+                        }, 
+                        "time": 1782036532.147528
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.147587 lqtucsxvn@7f6394ebcd03[3847] mmap2(0x7f6394e85000, 4096, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 12288) = 0x7f6394e85000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f6394e85000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebcd03", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE", 
+                            "p0": "0x7f6394e85000", 
+                            "p1": "4096", 
+                            "p4": "4", 
+                            "p5": "12288"
+                        }, 
+                        "time": 1782036532.147587
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.147621 lqtucsxvn@7f6394ebcd03[3847] mmap2(0x7f6394e86000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 12288) = 0x7f6394e86000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f6394e86000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebcd03", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_WRITE", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE", 
+                            "p0": "0x7f6394e86000", 
+                            "p1": "8192", 
+                            "p4": "4", 
+                            "p5": "12288"
+                        }, 
+                        "time": 1782036532.147621
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.147661 lqtucsxvn@7f6394ebc9f7[3847] close(4) = 0\n", 
+                        "api": "close", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebc9f7", 
+                        "arguments": {
+                            "p0": "4"
+                        }, 
+                        "time": 1782036532.147661
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.147721 lqtucsxvn@7f6394ebcb0d[3847] openat(AT_FDCWD, \"/usr/lib/x86_64-linux-gnu/libglib-2.0.so.0\", O_RDONLY|O_CLOEXEC) = 4\n", 
+                        "api": "openat", 
+                        "return_value": "4", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebcb0d", 
+                        "arguments": {
+                            "p2": "O_RDONLY|O_CLOEXEC", 
+                            "p0": "AT_FDCWD", 
+                            "p1": "/usr/lib/x86_64-linux-gnu/libglib-2.0.so.0"
+                        }, 
+                        "time": 1782036532.147721
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.147751 lqtucsxvn@7f6394ebcbd4[3847] read(4, 0x7ffd06fdcc18, 832) = 832\n", 
+                        "api": "read", 
+                        "return_value": "832", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebcbd4", 
+                        "arguments": {
+                            "p2": "832", 
+                            "p0": "4", 
+                            "p1": "0x7ffd06fdcc18"
+                        }, 
+                        "time": 1782036532.147751
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.147812 lqtucsxvn@7f6394ebc943[3847] fstat(4, 0x7ffd06fdcab0) = 0\n", 
+                        "api": "fstat", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebc943", 
+                        "arguments": {
+                            "p0": "4", 
+                            "p1": "0x7ffd06fdcab0"
+                        }, 
+                        "time": 1782036532.147812
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.147848 lqtucsxvn@7f6394ebcd03[3847] mmap2(0x0, 1180072, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 4, 0) = 0x7f6394d61000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f6394d61000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebcd03", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p3": "MAP_PRIVATE|MAP_DENYWRITE", 
+                            "p0": "0x0", 
+                            "p1": "1180072", 
+                            "p4": "4", 
+                            "p5": "0"
+                        }, 
+                        "time": 1782036532.147848
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.147886 lqtucsxvn@7f6394ebcdb7[3847] mprotect(0x7f6394d7c000, 1060864, PROT_NONE) = 0\n", 
+                        "api": "mprotect", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebcdb7", 
+                        "arguments": {
+                            "p2": "PROT_NONE", 
+                            "p0": "0x7f6394d7c000", 
+                            "p1": "1060864"
+                        }, 
+                        "time": 1782036532.147886
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.147928 lqtucsxvn@7f6394ebcd03[3847] mmap2(0x7f6394d7c000, 524288, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 110592) = 0x7f6394d7c000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f6394d7c000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebcd03", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_EXEC", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE", 
+                            "p0": "0x7f6394d7c000", 
+                            "p1": "524288", 
+                            "p4": "4", 
+                            "p5": "110592"
+                        }, 
+                        "time": 1782036532.147928
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.147962 lqtucsxvn@7f6394ebcd03[3847] mmap2(0x7f6394dfc000, 532480, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 634880) = 0x7f6394dfc000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f6394dfc000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebcd03", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE", 
+                            "p0": "0x7f6394dfc000", 
+                            "p1": "532480", 
+                            "p4": "4", 
+                            "p5": "634880"
+                        }, 
+                        "time": 1782036532.147962
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.147986 lqtucsxvn@7f6394ebcd03[3847] mmap2(0x7f6394e7f000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 1167360) = 0x7f6394e7f000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f6394e7f000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebcd03", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_WRITE", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE", 
+                            "p0": "0x7f6394e7f000", 
+                            "p1": "8192", 
+                            "p4": "4", 
+                            "p5": "1167360"
+                        }, 
+                        "time": 1782036532.147986
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.148032 lqtucsxvn@7f6394ebcd03[3847] mmap2(0x7f6394e81000, 424, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f6394e81000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f6394e81000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebcd03", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_WRITE", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS", 
+                            "p0": "0x7f6394e81000", 
+                            "p1": "424", 
+                            "p4": "-1", 
+                            "p5": "0"
+                        }, 
+                        "time": 1782036532.148032
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.148064 lqtucsxvn@7f6394ebc9f7[3847] close(4) = 0\n", 
+                        "api": "close", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebc9f7", 
+                        "arguments": {
+                            "p0": "4"
+                        }, 
+                        "time": 1782036532.148064
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.148113 lqtucsxvn@7f6394ebcb0d[3847] openat(AT_FDCWD, \"/lib/x86_64-linux-gnu/librt.so.1\", O_RDONLY|O_CLOEXEC) = 4\n", 
+                        "api": "openat", 
+                        "return_value": "4", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebcb0d", 
+                        "arguments": {
+                            "p2": "O_RDONLY|O_CLOEXEC", 
+                            "p0": "AT_FDCWD", 
+                            "p1": "/lib/x86_64-linux-gnu/librt.so.1"
+                        }, 
+                        "time": 1782036532.148113
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.148139 lqtucsxvn@7f6394ebcbd4[3847] read(4, 0x7ffd06fdcbf8, 832) = 832\n", 
+                        "api": "read", 
+                        "return_value": "832", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebcbd4", 
+                        "arguments": {
+                            "p2": "832", 
+                            "p0": "4", 
+                            "p1": "0x7ffd06fdcbf8"
+                        }, 
+                        "time": 1782036532.148139
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.148179 lqtucsxvn@7f6394ebc943[3847] fstat(4, 0x7ffd06fdca90) = 0\n", 
+                        "api": "fstat", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebc943", 
+                        "arguments": {
+                            "p0": "4", 
+                            "p1": "0x7ffd06fdca90"
+                        }, 
+                        "time": 1782036532.148179
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.148205 lqtucsxvn@7f6394ebcd03[3847] mmap2(0x0, 44000, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 4, 0) = 0x7f6394d56000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f6394d56000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebcd03", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p3": "MAP_PRIVATE|MAP_DENYWRITE", 
+                            "p0": "0x0", 
+                            "p1": "44000", 
+                            "p4": "4", 
+                            "p5": "0"
+                        }, 
+                        "time": 1782036532.148205
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.148235 lqtucsxvn@7f6394ebcd03[3847] mmap2(0x7f6394d59000, 16384, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 12288) = 0x7f6394d59000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f6394d59000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebcd03", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_EXEC", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE", 
+                            "p0": "0x7f6394d59000", 
+                            "p1": "16384", 
+                            "p4": "4", 
+                            "p5": "12288"
+                        }, 
+                        "time": 1782036532.148235
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.148355 lqtucsxvn@7f6394ebcd03[3847] mmap2(0x7f6394d5d000, 8192, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 28672) = 0x7f6394d5d000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f6394d5d000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebcd03", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE", 
+                            "p0": "0x7f6394d5d000", 
+                            "p1": "8192", 
+                            "p4": "4", 
+                            "p5": "28672"
+                        }, 
+                        "time": 1782036532.148355
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.148388 lqtucsxvn@7f6394ebcd03[3847] mmap2(0x7f6394d5f000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 32768) = 0x7f6394d5f000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f6394d5f000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebcd03", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_WRITE", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE", 
+                            "p0": "0x7f6394d5f000", 
+                            "p1": "8192", 
+                            "p4": "4", 
+                            "p5": "32768"
+                        }, 
+                        "time": 1782036532.148388
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.148438 lqtucsxvn@7f6394ebc9f7[3847] close(4) = 0\n", 
+                        "api": "close", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebc9f7", 
+                        "arguments": {
+                            "p0": "4"
+                        }, 
+                        "time": 1782036532.148438
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.148498 lqtucsxvn@7f6394ebcb0d[3847] openat(AT_FDCWD, \"/lib/x86_64-linux-gnu/libm.so.6\", O_RDONLY|O_CLOEXEC) = 4\n", 
+                        "api": "openat", 
+                        "return_value": "4", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebcb0d", 
+                        "arguments": {
+                            "p2": "O_RDONLY|O_CLOEXEC", 
+                            "p0": "AT_FDCWD", 
+                            "p1": "/lib/x86_64-linux-gnu/libm.so.6"
+                        }, 
+                        "time": 1782036532.148498
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.148529 lqtucsxvn@7f6394ebcbd4[3847] read(4, 0x7ffd06fdcbd8, 832) = 832\n", 
+                        "api": "read", 
+                        "return_value": "832", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebcbd4", 
+                        "arguments": {
+                            "p2": "832", 
+                            "p0": "4", 
+                            "p1": "0x7ffd06fdcbd8"
+                        }, 
+                        "time": 1782036532.148529
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.148613 lqtucsxvn@7f6394ebc943[3847] fstat(4, 0x7ffd06fdca70) = 0\n", 
+                        "api": "fstat", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebc943", 
+                        "arguments": {
+                            "p0": "4", 
+                            "p1": "0x7ffd06fdca70"
+                        }, 
+                        "time": 1782036532.148613
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.148644 lqtucsxvn@7f6394ebcd03[3847] mmap2(0x0, 1364240, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 4, 0) = 0x7f6394c08000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f6394c08000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebcd03", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p3": "MAP_PRIVATE|MAP_DENYWRITE", 
+                            "p0": "0x0", 
+                            "p1": "1364240", 
+                            "p4": "4", 
+                            "p5": "0"
+                        }, 
+                        "time": 1782036532.148644
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.148686 lqtucsxvn@7f6394ebcd03[3847] mmap2(0x7f6394c17000, 679936, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 61440) = 0x7f6394c17000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f6394c17000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebcd03", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_EXEC", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE", 
+                            "p0": "0x7f6394c17000", 
+                            "p1": "679936", 
+                            "p4": "4", 
+                            "p5": "61440"
+                        }, 
+                        "time": 1782036532.148686
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.148731 lqtucsxvn@7f6394ebcd03[3847] mmap2(0x7f6394cbd000, 618496, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 741376) = 0x7f6394cbd000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f6394cbd000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebcd03", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE", 
+                            "p0": "0x7f6394cbd000", 
+                            "p1": "618496", 
+                            "p4": "4", 
+                            "p5": "741376"
+                        }, 
+                        "time": 1782036532.148731
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.148771 lqtucsxvn@7f6394ebcd03[3847] mmap2(0x7f6394d54000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 1355776) = 0x7f6394d54000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f6394d54000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebcd03", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_WRITE", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE", 
+                            "p0": "0x7f6394d54000", 
+                            "p1": "8192", 
+                            "p4": "4", 
+                            "p5": "1355776"
+                        }, 
+                        "time": 1782036532.148771
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.148832 lqtucsxvn@7f6394ebc9f7[3847] close(4) = 0\n", 
+                        "api": "close", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebc9f7", 
+                        "arguments": {
+                            "p0": "4"
+                        }, 
+                        "time": 1782036532.148832
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.148869 lqtucsxvn@7f6394ebcb0d[3847] openat(AT_FDCWD, \"/lib/x86_64-linux-gnu/libgcc_s.so.1\", O_RDONLY|O_CLOEXEC) = 4\n", 
+                        "api": "openat", 
+                        "return_value": "4", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebcb0d", 
+                        "arguments": {
+                            "p2": "O_RDONLY|O_CLOEXEC", 
+                            "p0": "AT_FDCWD", 
+                            "p1": "/lib/x86_64-linux-gnu/libgcc_s.so.1"
+                        }, 
+                        "time": 1782036532.148869
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.148903 lqtucsxvn@7f6394ebcbd4[3847] read(4, 0x7ffd06fdcbb8, 832) = 832\n", 
+                        "api": "read", 
+                        "return_value": "832", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebcbd4", 
+                        "arguments": {
+                            "p2": "832", 
+                            "p0": "4", 
+                            "p1": "0x7ffd06fdcbb8"
+                        }, 
+                        "time": 1782036532.148903
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.148968 lqtucsxvn@7f6394ebc943[3847] fstat(4, 0x7ffd06fdca50) = 0\n", 
+                        "api": "fstat", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebc943", 
+                        "arguments": {
+                            "p0": "4", 
+                            "p1": "0x7ffd06fdca50"
+                        }, 
+                        "time": 1782036532.148968
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.149008 lqtucsxvn@7f6394ebcd03[3847] mmap2(0x0, 103504, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 4, 0) = 0x7f6394bee000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f6394bee000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebcd03", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p3": "MAP_PRIVATE|MAP_DENYWRITE", 
+                            "p0": "0x0", 
+                            "p1": "103504", 
+                            "p4": "4", 
+                            "p5": "0"
+                        }, 
+                        "time": 1782036532.149008
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.149057 lqtucsxvn@7f6394ebcd03[3847] mmap2(0x7f6394bf1000, 69632, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 12288) = 0x7f6394bf1000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f6394bf1000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebcd03", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_EXEC", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE", 
+                            "p0": "0x7f6394bf1000", 
+                            "p1": "69632", 
+                            "p4": "4", 
+                            "p5": "12288"
+                        }, 
+                        "time": 1782036532.149057
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.149130 lqtucsxvn@7f6394ebcd03[3847] mmap2(0x7f6394c02000, 16384, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 81920) = 0x7f6394c02000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f6394c02000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebcd03", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE", 
+                            "p0": "0x7f6394c02000", 
+                            "p1": "16384", 
+                            "p4": "4", 
+                            "p5": "81920"
+                        }, 
+                        "time": 1782036532.14913
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.149168 lqtucsxvn@7f6394ebcd03[3847] mmap2(0x7f6394c06000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 94208) = 0x7f6394c06000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f6394c06000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebcd03", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_WRITE", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE", 
+                            "p0": "0x7f6394c06000", 
+                            "p1": "8192", 
+                            "p4": "4", 
+                            "p5": "94208"
+                        }, 
+                        "time": 1782036532.149168
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.149232 lqtucsxvn@7f6394ebc9f7[3847] close(4) = 0\n", 
+                        "api": "close", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebc9f7", 
+                        "arguments": {
+                            "p0": "4"
+                        }, 
+                        "time": 1782036532.149232
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.149278 lqtucsxvn@7f6394ebcb0d[3847] openat(AT_FDCWD, \"/lib/x86_64-linux-gnu/libpthread.so.0\", O_RDONLY|O_CLOEXEC) = 4\n", 
+                        "api": "openat", 
+                        "return_value": "4", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebcb0d", 
+                        "arguments": {
+                            "p2": "O_RDONLY|O_CLOEXEC", 
+                            "p0": "AT_FDCWD", 
+                            "p1": "/lib/x86_64-linux-gnu/libpthread.so.0"
+                        }, 
+                        "time": 1782036532.149278
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.149305 lqtucsxvn@7f6394ebcbd4[3847] read(4, 0x7ffd06fdcb98, 832) = 832\n", 
+                        "api": "read", 
+                        "return_value": "832", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebcbd4", 
+                        "arguments": {
+                            "p2": "832", 
+                            "p0": "4", 
+                            "p1": "0x7ffd06fdcb98"
+                        }, 
+                        "time": 1782036532.149305
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.149337 lqtucsxvn@7f6394ebc943[3847] fstat(4, 0x7ffd06fdca30) = 0\n", 
+                        "api": "fstat", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebc943", 
+                        "arguments": {
+                            "p0": "4", 
+                            "p1": "0x7ffd06fdca30"
+                        }, 
+                        "time": 1782036532.149337
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.149358 lqtucsxvn@7f6394ebcd03[3847] mmap2(0x0, 132288, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 4, 0) = 0x7f6394bcd000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f6394bcd000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebcd03", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p3": "MAP_PRIVATE|MAP_DENYWRITE", 
+                            "p0": "0x0", 
+                            "p1": "132288", 
+                            "p4": "4", 
+                            "p5": "0"
+                        }, 
+                        "time": 1782036532.149358
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.149383 lqtucsxvn@7f6394ebcd03[3847] mmap2(0x7f6394bd4000, 61440, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 28672) = 0x7f6394bd4000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f6394bd4000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebcd03", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_EXEC", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE", 
+                            "p0": "0x7f6394bd4000", 
+                            "p1": "61440", 
+                            "p4": "4", 
+                            "p5": "28672"
+                        }, 
+                        "time": 1782036532.149383
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.149415 lqtucsxvn@7f6394ebcd03[3847] mmap2(0x7f6394be3000, 20480, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 90112) = 0x7f6394be3000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f6394be3000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebcd03", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE", 
+                            "p0": "0x7f6394be3000", 
+                            "p1": "20480", 
+                            "p4": "4", 
+                            "p5": "90112"
+                        }, 
+                        "time": 1782036532.149415
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.149442 lqtucsxvn@7f6394ebcd03[3847] mmap2(0x7f6394be8000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 106496) = 0x7f6394be8000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f6394be8000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebcd03", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_WRITE", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE", 
+                            "p0": "0x7f6394be8000", 
+                            "p1": "8192", 
+                            "p4": "4", 
+                            "p5": "106496"
+                        }, 
+                        "time": 1782036532.149442
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.149509 lqtucsxvn@7f6394ebcd03[3847] mmap2(0x7f6394bea000, 13504, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f6394bea000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f6394bea000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebcd03", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_WRITE", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS", 
+                            "p0": "0x7f6394bea000", 
+                            "p1": "13504", 
+                            "p4": "-1", 
+                            "p5": "0"
+                        }, 
+                        "time": 1782036532.149509
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.149592 lqtucsxvn@7f6394ebc9f7[3847] close(4) = 0\n", 
+                        "api": "close", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebc9f7", 
+                        "arguments": {
+                            "p0": "4"
+                        }, 
+                        "time": 1782036532.149592
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.149623 lqtucsxvn@7f6394ebcb0d[3847] openat(AT_FDCWD, \"/lib/x86_64-linux-gnu/libc.so.6\", O_RDONLY|O_CLOEXEC) = 4\n", 
+                        "api": "openat", 
+                        "return_value": "4", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebcb0d", 
+                        "arguments": {
+                            "p2": "O_RDONLY|O_CLOEXEC", 
+                            "p0": "AT_FDCWD", 
+                            "p1": "/lib/x86_64-linux-gnu/libc.so.6"
+                        }, 
+                        "time": 1782036532.149623
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.149653 lqtucsxvn@7f6394ebcbd4[3847] read(4, 0x7ffd06fdcb78, 832) = 832\n", 
+                        "api": "read", 
+                        "return_value": "832", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebcbd4", 
+                        "arguments": {
+                            "p2": "832", 
+                            "p0": "4", 
+                            "p1": "0x7ffd06fdcb78"
+                        }, 
+                        "time": 1782036532.149653
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.149704 lqtucsxvn@7f6394ebc943[3847] fstat(4, 0x7ffd06fdca10) = 0\n", 
+                        "api": "fstat", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebc943", 
+                        "arguments": {
+                            "p0": "4", 
+                            "p1": "0x7ffd06fdca10"
+                        }, 
+                        "time": 1782036532.149704
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.149744 lqtucsxvn@7f6394ebcd03[3847] mmap2(0x0, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f6394bcb000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f6394bcb000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebcd03", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_WRITE", 
+                            "p3": "MAP_PRIVATE|MAP_ANONYMOUS", 
+                            "p0": "0x0", 
+                            "p1": "8192", 
+                            "p4": "-1", 
+                            "p5": "0"
+                        }, 
+                        "time": 1782036532.149744
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.149801 lqtucsxvn@7f6394ebcd03[3847] mmap2(0x0, 2008696, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 4, 0) = 0x7f63949e0000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f63949e0000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebcd03", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p3": "MAP_PRIVATE|MAP_DENYWRITE", 
+                            "p0": "0x0", 
+                            "p1": "2008696", 
+                            "p4": "4", 
+                            "p5": "0"
+                        }, 
+                        "time": 1782036532.149801
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.149866 lqtucsxvn@7f6394ebcd03[3847] mmap2(0x7f6394a05000, 1519616, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 151552) = 0x7f6394a05000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f6394a05000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebcd03", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_EXEC", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE", 
+                            "p0": "0x7f6394a05000", 
+                            "p1": "1519616", 
+                            "p4": "4", 
+                            "p5": "151552"
+                        }, 
+                        "time": 1782036532.149866
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.149893 lqtucsxvn@7f6394ebcd03[3847] mmap2(0x7f6394b78000, 299008, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 1671168) = 0x7f6394b78000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f6394b78000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebcd03", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE", 
+                            "p0": "0x7f6394b78000", 
+                            "p1": "299008", 
+                            "p4": "4", 
+                            "p5": "1671168"
+                        }, 
+                        "time": 1782036532.149893
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.149956 lqtucsxvn@7f6394ebcd03[3847] mmap2(0x7f6394bc1000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 1966080) = 0x7f6394bc1000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f6394bc1000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebcd03", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_WRITE", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE", 
+                            "p0": "0x7f6394bc1000", 
+                            "p1": "24576", 
+                            "p4": "4", 
+                            "p5": "1966080"
+                        }, 
+                        "time": 1782036532.149956
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.149991 lqtucsxvn@7f6394ebcd03[3847] mmap2(0x7f6394bc7000, 13944, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f6394bc7000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f6394bc7000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebcd03", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_WRITE", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS", 
+                            "p0": "0x7f6394bc7000", 
+                            "p1": "13944", 
+                            "p4": "-1", 
+                            "p5": "0"
+                        }, 
+                        "time": 1782036532.149991
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.150036 lqtucsxvn@7f6394ebc9f7[3847] close(4) = 0\n", 
+                        "api": "close", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebc9f7", 
+                        "arguments": {
+                            "p0": "4"
+                        }, 
+                        "time": 1782036532.150036
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.150071 lqtucsxvn@7f6394ebcb0d[3847] openat(AT_FDCWD, \"/lib/x86_64-linux-gnu/libdl.so.2\", O_RDONLY|O_CLOEXEC) = 4\n", 
+                        "api": "openat", 
+                        "return_value": "4", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebcb0d", 
+                        "arguments": {
+                            "p2": "O_RDONLY|O_CLOEXEC", 
+                            "p0": "AT_FDCWD", 
+                            "p1": "/lib/x86_64-linux-gnu/libdl.so.2"
+                        }, 
+                        "time": 1782036532.150071
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.150094 lqtucsxvn@7f6394ebcbd4[3847] read(4, 0x7ffd06fdcb58, 832) = 832\n", 
+                        "api": "read", 
+                        "return_value": "832", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebcbd4", 
+                        "arguments": {
+                            "p2": "832", 
+                            "p0": "4", 
+                            "p1": "0x7ffd06fdcb58"
+                        }, 
+                        "time": 1782036532.150094
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.150114 lqtucsxvn@7f6394ebc943[3847] fstat(4, 0x7ffd06fdc9f0) = 0\n", 
+                        "api": "fstat", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebc943", 
+                        "arguments": {
+                            "p0": "4", 
+                            "p1": "0x7ffd06fdc9f0"
+                        }, 
+                        "time": 1782036532.150114
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.150134 lqtucsxvn@7f6394ebcd03[3847] mmap2(0x0, 20752, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 4, 0) = 0x7f63949da000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f63949da000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebcd03", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p3": "MAP_PRIVATE|MAP_DENYWRITE", 
+                            "p0": "0x0", 
+                            "p1": "20752", 
+                            "p4": "4", 
+                            "p5": "0"
+                        }, 
+                        "time": 1782036532.150134
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.150156 lqtucsxvn@7f6394ebcd03[3847] mmap2(0x7f63949db000, 8192, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 4096) = 0x7f63949db000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f63949db000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebcd03", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_EXEC", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE", 
+                            "p0": "0x7f63949db000", 
+                            "p1": "8192", 
+                            "p4": "4", 
+                            "p5": "4096"
+                        }, 
+                        "time": 1782036532.150156
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.150182 lqtucsxvn@7f6394ebcd03[3847] mmap2(0x7f63949dd000, 4096, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 12288) = 0x7f63949dd000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f63949dd000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebcd03", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE", 
+                            "p0": "0x7f63949dd000", 
+                            "p1": "4096", 
+                            "p4": "4", 
+                            "p5": "12288"
+                        }, 
+                        "time": 1782036532.150182
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.150205 lqtucsxvn@7f6394ebcd03[3847] mmap2(0x7f63949de000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 12288) = 0x7f63949de000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f63949de000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebcd03", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_WRITE", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE", 
+                            "p0": "0x7f63949de000", 
+                            "p1": "8192", 
+                            "p4": "4", 
+                            "p5": "12288"
+                        }, 
+                        "time": 1782036532.150205
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.150234 lqtucsxvn@7f6394ebc9f7[3847] close(4) = 0\n", 
+                        "api": "close", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebc9f7", 
+                        "arguments": {
+                            "p0": "4"
+                        }, 
+                        "time": 1782036532.150234
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.150261 lqtucsxvn@7f6394ebcb0d[3847] openat(AT_FDCWD, \"/lib/x86_64-linux-gnu/libpcre.so.3\", O_RDONLY|O_CLOEXEC) = 4\n", 
+                        "api": "openat", 
+                        "return_value": "4", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebcb0d", 
+                        "arguments": {
+                            "p2": "O_RDONLY|O_CLOEXEC", 
+                            "p0": "AT_FDCWD", 
+                            "p1": "/lib/x86_64-linux-gnu/libpcre.so.3"
+                        }, 
+                        "time": 1782036532.150261
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.150283 lqtucsxvn@7f6394ebcbd4[3847] read(4, 0x7ffd06fdcb38, 832) = 832\n", 
+                        "api": "read", 
+                        "return_value": "832", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebcbd4", 
+                        "arguments": {
+                            "p2": "832", 
+                            "p0": "4", 
+                            "p1": "0x7ffd06fdcb38"
+                        }, 
+                        "time": 1782036532.150283
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.150302 lqtucsxvn@7f6394ebc943[3847] fstat(4, 0x7ffd06fdc9d0) = 0\n", 
+                        "api": "fstat", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebc943", 
+                        "arguments": {
+                            "p0": "4", 
+                            "p1": "0x7ffd06fdc9d0"
+                        }, 
+                        "time": 1782036532.150302
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.150322 lqtucsxvn@7f6394ebcd03[3847] mmap2(0x0, 471304, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 4, 0) = 0x7f6394966000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f6394966000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebcd03", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p3": "MAP_PRIVATE|MAP_DENYWRITE", 
+                            "p0": "0x0", 
+                            "p1": "471304", 
+                            "p4": "4", 
+                            "p5": "0"
+                        }, 
+                        "time": 1782036532.150322
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.150345 lqtucsxvn@7f6394ebcd03[3847] mmap2(0x7f6394968000, 335872, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 8192) = 0x7f6394968000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f6394968000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebcd03", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_EXEC", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE", 
+                            "p0": "0x7f6394968000", 
+                            "p1": "335872", 
+                            "p4": "4", 
+                            "p5": "8192"
+                        }, 
+                        "time": 1782036532.150345
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.150371 lqtucsxvn@7f6394ebcd03[3847] mmap2(0x7f63949ba000, 122880, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 344064) = 0x7f63949ba000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f63949ba000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebcd03", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE", 
+                            "p0": "0x7f63949ba000", 
+                            "p1": "122880", 
+                            "p4": "4", 
+                            "p5": "344064"
+                        }, 
+                        "time": 1782036532.150371
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.150400 lqtucsxvn@7f6394ebcd03[3847] mmap2(0x7f63949d8000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 4, 462848) = 0x7f63949d8000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f63949d8000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebcd03", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_WRITE", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE", 
+                            "p0": "0x7f63949d8000", 
+                            "p1": "8192", 
+                            "p4": "4", 
+                            "p5": "462848"
+                        }, 
+                        "time": 1782036532.1504
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.150432 lqtucsxvn@7f6394ebc9f7[3847] close(4) = 0\n", 
+                        "api": "close", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebc9f7", 
+                        "arguments": {
+                            "p0": "4"
+                        }, 
+                        "time": 1782036532.150432
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.151433 lqtucsxvn@7f6394ebcd03[3847] mmap2(0x0, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f6394964000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f6394964000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebcd03", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_WRITE", 
+                            "p3": "MAP_PRIVATE|MAP_ANONYMOUS", 
+                            "p0": "0x0", 
+                            "p1": "8192", 
+                            "p4": "-1", 
+                            "p5": "0"
+                        }, 
+                        "time": 1782036532.151433
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.151472 lqtucsxvn@7f6394ea1f30[3847] arch_prctl(ARCH_SET_FS, 140065671369024) = 0\n", 
+                        "api": "arch_prctl", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ea1f30", 
+                        "arguments": {
+                            "p0": "ARCH_SET_FS", 
+                            "p1": "140065671369024"
+                        }, 
+                        "time": 1782036532.151472
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.152780 lqtucsxvn@7f6394ebcdb7[3847] mprotect(0x7f6394bc1000, 12288, PROT_READ) = 0\n", 
+                        "api": "mprotect", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebcdb7", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p0": "0x7f6394bc1000", 
+                            "p1": "12288"
+                        }, 
+                        "time": 1782036532.15278
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.152817 lqtucsxvn@7f6394ebcdb7[3847] mprotect(0x7f6394be8000, 4096, PROT_READ) = 0\n", 
+                        "api": "mprotect", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebcdb7", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p0": "0x7f6394be8000", 
+                            "p1": "4096"
+                        }, 
+                        "time": 1782036532.152817
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.152854 lqtucsxvn@7f6394ebcdb7[3847] mprotect(0x7f63949d8000, 4096, PROT_READ) = 0\n", 
+                        "api": "mprotect", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebcdb7", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p0": "0x7f63949d8000", 
+                            "p1": "4096"
+                        }, 
+                        "time": 1782036532.152854
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.152881 lqtucsxvn@7f6394ebcdb7[3847] mprotect(0x7f63949de000, 4096, PROT_READ) = 0\n", 
+                        "api": "mprotect", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebcdb7", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p0": "0x7f63949de000", 
+                            "p1": "4096"
+                        }, 
+                        "time": 1782036532.152881
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.152905 lqtucsxvn@7f6394ebcdb7[3847] mprotect(0x7f6394c06000, 4096, PROT_READ) = 0\n", 
+                        "api": "mprotect", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebcdb7", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p0": "0x7f6394c06000", 
+                            "p1": "4096"
+                        }, 
+                        "time": 1782036532.152905
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.152944 lqtucsxvn@7f6394ebcdb7[3847] mprotect(0x7f6394d54000, 4096, PROT_READ) = 0\n", 
+                        "api": "mprotect", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebcdb7", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p0": "0x7f6394d54000", 
+                            "p1": "4096"
+                        }, 
+                        "time": 1782036532.152944
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.152971 lqtucsxvn@7f6394ebcdb7[3847] mprotect(0x7f6394d5f000, 4096, PROT_READ) = 0\n", 
+                        "api": "mprotect", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebcdb7", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p0": "0x7f6394d5f000", 
+                            "p1": "4096"
+                        }, 
+                        "time": 1782036532.152971
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.153147 lqtucsxvn@7f6394ebcdb7[3847] mprotect(0x7f6394e7f000, 4096, PROT_READ) = 0\n", 
+                        "api": "mprotect", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebcdb7", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p0": "0x7f6394e7f000", 
+                            "p1": "4096"
+                        }, 
+                        "time": 1782036532.153147
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.153186 lqtucsxvn@7f6394ebcdb7[3847] mprotect(0x7f6394e86000, 4096, PROT_READ) = 0\n", 
+                        "api": "mprotect", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebcdb7", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p0": "0x7f6394e86000", 
+                            "p1": "4096"
+                        }, 
+                        "time": 1782036532.153186
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.156899 lqtucsxvn@7f6394ebcdb7[3847] mprotect(0x55807d03f000, 303104, PROT_READ) = 0\n", 
+                        "api": "mprotect", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebcdb7", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p0": "0x55807d03f000", 
+                            "p1": "303104"
+                        }, 
+                        "time": 1782036532.156899
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.156936 lqtucsxvn@7f6394ebcdb7[3847] mprotect(0x7f6394eca000, 4096, PROT_READ) = 0\n", 
+                        "api": "mprotect", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebcdb7", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p0": "0x7f6394eca000", 
+                            "p1": "4096"
+                        }, 
+                        "time": 1782036532.156936
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.156963 lqtucsxvn@7f6394ebcd97[3847] munmap(0x7f6394e8a000, 88858) = 0\n", 
+                        "api": "munmap", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ebcd97", 
+                        "arguments": {
+                            "p0": "0x7f6394e8a000", 
+                            "p1": "88858"
+                        }, 
+                        "time": 1782036532.156963
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.157003 lqtucsxvn@7f6394bd48df[3847] set_tid_address(0x7f6394965410) = 3847\n", 
+                        "api": "set_tid_address", 
+                        "return_value": "3847", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394bd48df", 
+                        "arguments": {
+                            "p0": "0x7f6394965410"
+                        }, 
+                        "time": 1782036532.157003
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.157025 lqtucsxvn@7f6394bd494a[3847] set_robust_list(0x7f6394965420, 24) = 0\n", 
+                        "api": "set_robust_list", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394bd494a", 
+                        "arguments": {
+                            "p0": "0x7f6394965420", 
+                            "p1": "24"
+                        }, 
+                        "time": 1782036532.157025
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.157052 lqtucsxvn@7f6394be1010[3847] rt_sigaction(0x20, {0x7f6394bd46c0, SA_SIGINFO|SA_RESTORER, 0x7f6394be0f40, [EMPTY]}, 0x0, 8) = 0\n", 
+                        "api": "rt_sigaction", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394be1010", 
+                        "arguments": {
+                            "p2": "0x0", 
+                            "p3": "8", 
+                            "p0": "0x20", 
+                            "p1": [
+                                "0x7f6394bd46c0", 
+                                "SA_SIGINFO|SA_RESTORER", 
+                                "0x7f6394be0f40", 
+                                [
+                                    "EMPTY]"
+                                ]
+                            ]
+                        }, 
+                        "time": 1782036532.157052
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.157075 lqtucsxvn@7f6394be1010[3847] rt_sigaction(0x21, {0x7f6394bd4760, SA_RESTART|SA_SIGINFO|SA_RESTORER, 0x7f6394be0f40, [EMPTY]}, 0x0, 8) = 0\n", 
+                        "api": "rt_sigaction", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394be1010", 
+                        "arguments": {
+                            "p2": "0x0", 
+                            "p3": "8", 
+                            "p0": "0x21", 
+                            "p1": [
+                                "0x7f6394bd4760", 
+                                "SA_RESTART|SA_SIGINFO|SA_RESTORER", 
+                                "0x7f6394be0f40", 
+                                [
+                                    "EMPTY]"
+                                ]
+                            ]
+                        }, 
+                        "time": 1782036532.157075
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.157096 lqtucsxvn@7f6394bd4a19[3847] rt_sigprocmask(SIG_UNBLOCK, [EMPTY], 0x0, 8) = 0\n", 
+                        "api": "rt_sigprocmask", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394bd4a19", 
+                        "arguments": {
+                            "p2": "0x0", 
+                            "p3": "8", 
+                            "p0": "SIG_UNBLOCK", 
+                            "p1": [
+                                "EMPTY"
+                            ]
+                        }, 
+                        "time": 1782036532.157096
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.157124 lqtucsxvn@7f6394af2df0[3847] prlimit64(0, RLIMIT_STACK, NULL, 0x7ffd06fdd810) = 0\n", 
+                        "api": "prlimit64", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394af2df0", 
+                        "arguments": {
+                            "p2": "NULL", 
+                            "p3": "0x7ffd06fdd810", 
+                            "p0": "0", 
+                            "p1": "RLIMIT_STACK"
+                        }, 
+                        "time": 1782036532.157124
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.157257 lqtucsxvn@7f6394af32f7[3847] brk(0x0) = 94010406883328\n", 
+                        "api": "brk", 
+                        "return_value": "94010406883328", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394af32f7", 
+                        "arguments": {
+                            "p0": "0x0"
+                        }, 
+                        "time": 1782036532.157257
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.157277 lqtucsxvn@7f6394af32f7[3847] brk(0x558080ea6000) = 94010407018496\n", 
+                        "api": "brk", 
+                        "return_value": "94010407018496", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394af32f7", 
+                        "arguments": {
+                            "p0": "0x558080ea6000"
+                        }, 
+                        "time": 1782036532.157277
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.159298 lqtucsxvn@7f6394bddb86[3847] rt_sigprocmask(SIG_SETMASK, [SIGHUP|SIGINT|SIGQUIT|SIGILL|SIGTRAP|SIGABRT|SIGBUS|SIGFPE|SIGKILL|SIGUSR1|SIGSEGV|SIGPIPE|SIGUSR2|SIGALRM|SIGTERM|SIGCHLD|SIGCONT|SIGSTOP|SIGTSTP|SIGTTIN|SIGTTOU|SIGURG|SIGXCPU|SIGXFSZ|SIGVTALRM|SIGPROF|SIGWINCH|SIGIO/SIGPOLL|SIGPWR|SIGSYS], 0x7ffd06fdd760, 8) = 0\n", 
+                        "api": "rt_sigprocmask", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394bddb86", 
+                        "arguments": {
+                            "p2": "0x7ffd06fdd760", 
+                            "p3": "8", 
+                            "p0": "SIG_SETMASK", 
+                            "p1": [
+                                "SIGHUP|SIGINT|SIGQUIT|SIGILL|SIGTRAP|SIGABRT|SIGBUS|SIGFPE|SIGKILL|SIGUSR1|SIGSEGV|SIGPIPE|SIGUSR2|SIGALRM|SIGTERM|SIGCHLD|SIGCONT|SIGSTOP|SIGTSTP|SIGTTIN|SIGTTOU|SIGURG|SIGXCPU|SIGXFSZ|SIGVTALRM|SIGPROF|SIGWINCH|SIGIO/SIGPOLL|SIGPWR|SIGSYS"
+                            ]
+                        }, 
+                        "time": 1782036532.159298
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.160242 lqtucsxvn@7f6394af74c3[3847] mmap2(0x0, 8392704, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_STACK, -1, 0) = 0x7f6394163000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f6394163000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394af74c3", 
+                        "arguments": {
+                            "p2": "PROT_NONE", 
+                            "p3": "MAP_PRIVATE|MAP_ANONYMOUS|MAP_STACK", 
+                            "p0": "0x0", 
+                            "p1": "8392704", 
+                            "p4": "-1", 
+                            "p5": "0"
+                        }, 
+                        "time": 1782036532.160242
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.160351 lqtucsxvn@7f6394af7597[3847] mprotect(0x7f6394164000, 8388608, PROT_READ|PROT_WRITE) = 0\n", 
+                        "api": "mprotect", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394af7597", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_WRITE", 
+                            "p0": "0x7f6394164000", 
+                            "p1": "8388608"
+                        }, 
+                        "time": 1782036532.160351
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.160393 lqtucsxvn@7f6394afdb11[3847] clone(CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, 0x7f6394962f70, 0x7f63949639d0, 0x7f63949639d0) = 3848\n", 
+                        "api": "clone", 
+                        "return_value": "3848", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394afdb11", 
+                        "arguments": {
+                            "p2": "0x7f63949639d0", 
+                            "p3": "0x7f63949639d0", 
+                            "p0": "CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID", 
+                            "p1": "0x7f6394962f70"
+                        }, 
+                        "time": 1782036532.160393
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.160469 lqtucsxvn@7f6394bddb86[3847] rt_sigprocmask(SIG_SETMASK, [EMPTY], 0x0, 8) = 0\n", 
+                        "api": "rt_sigprocmask", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394bddb86", 
+                        "arguments": {
+                            "p2": "0x0", 
+                            "p3": "8", 
+                            "p0": "SIG_SETMASK", 
+                            "p1": [
+                                "EMPTY"
+                            ]
+                        }, 
+                        "time": 1782036532.160469
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.163061 lqtucsxvn@7f6394af2df0[3847] prlimit64(0, RLIMIT_STACK, NULL, 0x7ffd06fdd320) = 0\n", 
+                        "api": "prlimit64", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394af2df0", 
+                        "arguments": {
+                            "p2": "NULL", 
+                            "p3": "0x7ffd06fdd320", 
+                            "p0": "0", 
+                            "p1": "RLIMIT_STACK"
+                        }, 
+                        "time": 1782036532.163061
+                    }, 
+                    {
+                        "status": "ENOENT", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.163101 lqtucsxvn@7f6394af25c1[3847] openat(AT_FDCWD, \"/etc/qemu-binfmt/sparc\", O_RDONLY|O_NONBLOCK|O_DIRECTORY|O_CLOEXEC) = -2 (ENOENT)\n", 
+                        "api": "openat", 
+                        "return_value": "-2", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394af25c1", 
+                        "arguments": {
+                            "p2": "O_RDONLY|O_NONBLOCK|O_DIRECTORY|O_CLOEXEC", 
+                            "p0": "AT_FDCWD", 
+                            "p1": "/etc/qemu-binfmt/sparc"
+                        }, 
+                        "time": 1782036532.163101
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.163145 lqtucsxvn@7f6394ac1247[3847] uname(0x7ffd06fdcf90) = 0\n", 
+                        "api": "uname", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ac1247", 
+                        "arguments": {
+                            "p0": "0x7ffd06fdcf90"
+                        }, 
+                        "time": 1782036532.163145
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.163170 lqtucsxvn@7f6394be0337[3847] lseek(3, 0, SEEK_SET) = 0\n", 
+                        "api": "lseek", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394be0337", 
+                        "arguments": {
+                            "p2": "SEEK_SET", 
+                            "p0": "3", 
+                            "p1": "0"
+                        }, 
+                        "time": 1782036532.16317
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.163192 lqtucsxvn@7f6394bdfd94[3847] read(3, 0x7ffd06fdd280, 52) = 52\n", 
+                        "api": "read", 
+                        "return_value": "52", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394bdfd94", 
+                        "arguments": {
+                            "p2": "52", 
+                            "p0": "3", 
+                            "p1": "0x7ffd06fdd280"
+                        }, 
+                        "time": 1782036532.163192
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.163213 lqtucsxvn@7f6394be0337[3847] lseek(3, 0, SEEK_SET) = 0\n", 
+                        "api": "lseek", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394be0337", 
+                        "arguments": {
+                            "p2": "SEEK_SET", 
+                            "p0": "3", 
+                            "p1": "0"
+                        }, 
+                        "time": 1782036532.163213
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.164435 lqtucsxvn@7f6394af74c3[3847] mmap2(0x0, 528384, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f63940e2000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f63940e2000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394af74c3", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_WRITE", 
+                            "p3": "MAP_PRIVATE|MAP_ANONYMOUS", 
+                            "p0": "0x0", 
+                            "p1": "528384", 
+                            "p4": "-1", 
+                            "p5": "0"
+                        }, 
+                        "time": 1782036532.164435
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.164764 lqtucsxvn@7f6394af7597[3847] mprotect(0x55807d09c000, 33550336, PROT_READ|PROT_WRITE|PROT_EXEC) = 0\n", 
+                        "api": "mprotect", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394af7597", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_WRITE|PROT_EXEC", 
+                            "p0": "0x55807d09c000", 
+                            "p1": "33550336"
+                        }, 
+                        "time": 1782036532.164764
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.164792 lqtucsxvn@7f6394af7667[3847] madvise(0x55807d09c000, 33550336, MADV_HUGEPAGE) = 0\n", 
+                        "api": "madvise", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394af7667", 
+                        "arguments": {
+                            "p2": "MADV_HUGEPAGE", 
+                            "p0": "0x55807d09c000", 
+                            "p1": "33550336"
+                        }, 
+                        "time": 1782036532.164792
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.164927 lqtucsxvn@7f6394af74c3[3847] mmap2(0x0, 4294963200, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE, -1, 0) = 0x7f6290001000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f6290001000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394af74c3", 
+                        "arguments": {
+                            "p2": "PROT_NONE", 
+                            "p3": "MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE", 
+                            "p0": "0x0", 
+                            "p1": "4294963200", 
+                            "p4": "-1", 
+                            "p5": "0"
+                        }, 
+                        "time": 1782036532.164927
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.164973 lqtucsxvn@7f6394aecd59[3847] openat(AT_FDCWD, \"/proc/sys/vm/mmap_min_addr\", O_RDONLY) = 4\n", 
+                        "api": "openat", 
+                        "return_value": "4", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394aecd59", 
+                        "arguments": {
+                            "p2": "O_RDONLY", 
+                            "p0": "AT_FDCWD", 
+                            "p1": "/proc/sys/vm/mmap_min_addr"
+                        }, 
+                        "time": 1782036532.164973
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.165008 lqtucsxvn@7f6394aec613[3847] fstat(4, 0x7ffd06fdc990) = 0\n", 
+                        "api": "fstat", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394aec613", 
+                        "arguments": {
+                            "p0": "4", 
+                            "p1": "0x7ffd06fdc990"
+                        }, 
+                        "time": 1782036532.165008
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.165030 lqtucsxvn@7f6394aecfb4[3847] read(4, 0x558080e923d0, 1024) = 6\n", 
+                        "api": "read", 
+                        "return_value": "6", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394aecfb4", 
+                        "arguments": {
+                            "p2": "1024", 
+                            "p0": "4", 
+                            "p1": "0x558080e923d0"
+                        }, 
+                        "time": 1782036532.16503
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.165057 lqtucsxvn@7f6394af23f7[3847] close(4) = 0\n", 
+                        "api": "close", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394af23f7", 
+                        "arguments": {
+                            "p0": "4"
+                        }, 
+                        "time": 1782036532.165057
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.165088 lqtucsxvn@7f6394af72e9[3847] gettid() = 3847\n", 
+                        "api": "gettid", 
+                        "return_value": "3847", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394af72e9", 
+                        "arguments": {}, 
+                        "time": 1782036532.165088
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.165108 lqtucsxvn@7f6394aec613[3847] fstat(3, 0x7ffd06fdd200) = 0\n", 
+                        "api": "fstat", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394aec613", 
+                        "arguments": {
+                            "p0": "3", 
+                            "p1": "0x7ffd06fdd200"
+                        }, 
+                        "time": 1782036532.165108
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.165128 lqtucsxvn@7f6394ac2717[3847] geteuid() = 0\n", 
+                        "api": "geteuid", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ac2717", 
+                        "arguments": {}, 
+                        "time": 1782036532.165128
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.165147 lqtucsxvn@7f6394ac2737[3847] getegid() = 0\n", 
+                        "api": "getegid", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394ac2737", 
+                        "arguments": {}, 
+                        "time": 1782036532.165147
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.165167 lqtucsxvn@7f6394bdfd94[3847] read(3, 0x7ffd06fdd400, 1024) = 1024\n", 
+                        "api": "read", 
+                        "return_value": "1024", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394bdfd94", 
+                        "arguments": {
+                            "p2": "1024", 
+                            "p0": "3", 
+                            "p1": "0x7ffd06fdd400"
+                        }, 
+                        "time": 1782036532.165167
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.165191 lqtucsxvn@7f6394af74c3[3847] mmap2(0x7f6290011000, 86016, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED, 3, 0) = 0x7f6290011000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f6290011000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394af74c3", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_EXEC", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED", 
+                            "p0": "0x7f6290011000", 
+                            "p1": "86016", 
+                            "p4": "3", 
+                            "p5": "0"
+                        }, 
+                        "time": 1782036532.165191
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.165220 lqtucsxvn@7f6394af32f7[3847] brk(0x558080ec7000) = 94010407153664\n", 
+                        "api": "brk", 
+                        "return_value": "94010407153664", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394af32f7", 
+                        "arguments": {
+                            "p0": "0x558080ec7000"
+                        }, 
+                        "time": 1782036532.16522
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.165255 lqtucsxvn@7f6394af74c3[3847] mmap2(0x7f6290035000, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED, 3, 81920) = 0x7f6290035000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f6290035000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394af74c3", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_WRITE", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED", 
+                            "p0": "0x7f6290035000", 
+                            "p1": "4096", 
+                            "p4": "3", 
+                            "p5": "81920"
+                        }, 
+                        "time": 1782036532.165255
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.165279 lqtucsxvn@7f6394af74c3[3847] mmap2(0x7f6290036000, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f6290036000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f6290036000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394af74c3", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_WRITE", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS", 
+                            "p0": "0x7f6290036000", 
+                            "p1": "12288", 
+                            "p4": "-1", 
+                            "p5": "0"
+                        }, 
+                        "time": 1782036532.165279
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3847, 
+                        "raw": "Sun Jun 21 10:08:52 2026.818563 lqtucsxvn@7f6394b6955c[3847] futex(0x7f6394965410, FUTEX_WAKE, 1) = 0\n", 
+                        "api": "futex", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394b6955c", 
+                        "arguments": {
+                            "p2": "1", 
+                            "p0": "0x7f6394965410", 
+                            "p1": "FUTEX_WAKE"
+                        }, 
+                        "time": 1782036532.818563
+                    }
+                ], 
+                "pid": 3847, 
+                "process_name": "lqtucsxvn", 
+                "command_line": "/tmp/lqtucsxvn", 
+                "first_seen": 1782036532.142638, 
+                "ppid": -1, 
+                "type": "process"
+            }, 
+            {
+                "calls": [
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3848, 
+                        "raw": "Sun Jun 21 10:08:52 2026.160550 lqtucsxvn@7f6394bd6117[3848] set_robust_list(0x7f63949639e0, 24) = 0\n", 
+                        "api": "set_robust_list", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394bd6117", 
+                        "arguments": {
+                            "p0": "0x7f63949639e0", 
+                            "p1": "24"
+                        }, 
+                        "time": 1782036532.16055
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3848, 
+                        "raw": "Sun Jun 21 10:08:52 2026.160614 lqtucsxvn@7f6394af74c3[3848] mmap2(0x0, 134217728, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE, -1, 0) = 0x7f638c163000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x7f638c163000", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394af74c3", 
+                        "arguments": {
+                            "p2": "PROT_NONE", 
+                            "p3": "MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE", 
+                            "p0": "0x0", 
+                            "p1": "134217728", 
+                            "p4": "-1", 
+                            "p5": "0"
+                        }, 
+                        "time": 1782036532.160614
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3848, 
+                        "raw": "Sun Jun 21 10:08:52 2026.160672 lqtucsxvn@7f6394af7567[3848] munmap(0x7f638c163000, 65654784) = 0\n", 
+                        "api": "munmap", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394af7567", 
+                        "arguments": {
+                            "p0": "0x7f638c163000", 
+                            "p1": "65654784"
+                        }, 
+                        "time": 1782036532.160672
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3848, 
+                        "raw": "Sun Jun 21 10:08:52 2026.160727 lqtucsxvn@7f6394af7567[3848] munmap(0x7f6394000000, 1454080) = 0\n", 
+                        "api": "munmap", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394af7567", 
+                        "arguments": {
+                            "p0": "0x7f6394000000", 
+                            "p1": "1454080"
+                        }, 
+                        "time": 1782036532.160727
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3848, 
+                        "raw": "Sun Jun 21 10:08:52 2026.160776 lqtucsxvn@7f6394af7597[3848] mprotect(0x7f6390000000, 135168, PROT_READ|PROT_WRITE) = 0\n", 
+                        "api": "mprotect", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394af7597", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_WRITE", 
+                            "p0": "0x7f6390000000", 
+                            "p1": "135168"
+                        }, 
+                        "time": 1782036532.160776
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "lqtucsxvn", 
+                        "pid": 3848, 
+                        "raw": "Sun Jun 21 10:08:52 2026.160846 lqtucsxvn@7f6394be0440[3848] nanosleep([0.010000000], 0x7f6394962dc0) = -516\n", 
+                        "api": "nanosleep", 
+                        "return_value": "-516", 
+                        "category": "process", 
+                        "instruction_pointer": "7f6394be0440", 
+                        "arguments": {
+                            "p0": [
+                                "0.010000000"
+                            ], 
+                            "p1": "0x7f6394962dc0"
+                        }, 
+                        "time": 1782036532.160846
+                    }
+                ], 
+                "pid": 3848, 
+                "process_name": "lqtucsxvn", 
+                "command_line": "", 
+                "first_seen": 1782036532.16055, 
+                "ppid": 3847, 
+                "type": "process"
+            }
+        ], 
+        "processtree": [
+            {
+                "track": true, 
+                "pid": 3847, 
+                "process_name": "lqtucsxvn", 
+                "command_line": "/tmp/lqtucsxvn", 
+                "first_seen": 1782036532.142638, 
+                "ppid": -1, 
+                "children": [
+                    {
+                        "track": true, 
+                        "pid": 3848, 
+                        "process_name": "lqtucsxvn", 
+                        "command_line": "", 
+                        "first_seen": 1782036532.16055, 
+                        "ppid": 3847, 
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    }, 
+    "debug": {
+        "action": [], 
+        "dbgview": [], 
+        "errors": [], 
+        "log": [
+            "2026-06-21 10:08:45,004 [root] DEBUG: Starting analyzer from: /tmp/tmprUTqBE\n", 
+            "2026-06-21 10:08:45,005 [root] DEBUG: Storing results at: /tmp/eqaNHR\n", 
+            "2026-06-21 10:08:47,069 [modules.auxiliary.filecollector] INFO: FileCollector started v0.08\n", 
+            "2026-06-21 10:08:47,072 [modules.auxiliary.human] INFO: Human started v0.02\n", 
+            "2026-06-21 10:08:47,075 [modules.auxiliary.screenshots] INFO: Screenshots started v0.03\n", 
+            "2026-06-21 10:08:52,143 [lib.core.packages] INFO: Process startup took 5.06 seconds\n", 
+            "2026-06-21 10:08:52,144 [root] INFO: Added new process to list with pid: 3839\n", 
+            "2026-06-21 10:08:58,253 [root] INFO: Process with pid 3839 has terminated\n", 
+            "2026-06-21 10:08:58,254 [root] INFO: Process list is empty, terminating analysis.\n", 
+            "2026-06-21 10:09:01,257 [lib.core.packages] INFO: Package requested stop\n", 
+            "2026-06-21 10:09:01,258 [lib.core.packages] WARNING: Exception uploading log: [Errno 3] No such process\n"
+        ], 
+        "cuckoo": [
+            "2026-06-21 10:08:46,145 [cuckoo.core.scheduler] INFO: Task #7603152: acquired machine Ubuntu1904x644 (label=Ubuntu1904x644)\n", 
+            "2026-06-21 10:08:46,145 [cuckoo.core.resultserver] DEBUG: Now tracking machine 192.168.168.104 for task #7603152\n", 
+            "2026-06-21 10:08:46,446 [cuckoo.auxiliary.sniffer] INFO: Started sniffer with PID 271242 (interface=vboxnet0, host=192.168.168.104)\n", 
+            "2026-06-21 10:08:46,473 [cuckoo.machinery.virtualbox] DEBUG: Starting vm Ubuntu1904x644\n", 
+            "2026-06-21 10:08:47,123 [cuckoo.machinery.virtualbox] DEBUG: Restoring virtual machine Ubuntu1904x644 to Snapshot\n", 
+            "2026-06-21 10:08:55,865 [cuckoo.core.guest] INFO: Starting analysis #7603152 on guest (id=Ubuntu1904x644, ip=192.168.168.104)\n", 
+            "2026-06-21 10:08:56,872 [cuckoo.core.guest] DEBUG: Ubuntu1904x644: not ready yet\n", 
+            "2026-06-21 10:09:01,899 [cuckoo.core.guest] INFO: Guest is running Cuckoo Agent 0.10 (id=Ubuntu1904x644, ip=192.168.168.104)\n", 
+            "2026-06-21 10:09:01,922 [cuckoo.core.guest] DEBUG: Uploading analyzer to guest (id=Ubuntu1904x644, ip=192.168.168.104, monitor=latest, size=73219)\n", 
+            "2026-06-21 10:09:02,142 [cuckoo.core.resultserver] DEBUG: Task #7603152: live log analysis.log initialized.\n", 
+            "2026-06-21 10:09:10,117 [cuckoo.core.resultserver] DEBUG: Task #7603152: File upload for 'shots/0001.jpg'\n", 
+            "2026-06-21 10:09:10,130 [cuckoo.core.resultserver] DEBUG: Task #7603152 uploaded file length: 171764\n", 
+            "2026-06-21 10:09:17,124 [cuckoo.core.guest] DEBUG: Ubuntu1904x644: analysis #7603152 still processing\n", 
+            "2026-06-21 10:09:18,414 [cuckoo.core.resultserver] DEBUG: Task #7603152: File upload for 'logs/all.stap'\n", 
+            "2026-06-21 10:09:18,417 [cuckoo.core.resultserver] DEBUG: Task #7603152 uploaded file length: 18458\n", 
+            "2026-06-21 10:09:32,218 [cuckoo.core.guest] DEBUG: Ubuntu1904x644: analysis #7603152 still processing\n", 
+            "2026-06-21 10:09:47,307 [cuckoo.core.guest] DEBUG: Ubuntu1904x644: analysis #7603152 still processing\n", 
+            "2026-06-21 10:10:02,383 [cuckoo.core.guest] INFO: Ubuntu1904x644: end of analysis reached!\n", 
+            "2026-06-21 10:10:02,394 [cuckoo.core.plugins] DEBUG: Stopped auxiliary module: Redsocks\n", 
+            "2026-06-21 10:10:02,415 [cuckoo.core.plugins] DEBUG: Stopped auxiliary module: Sniffer\n", 
+            "2026-06-21 10:10:03,273 [cuckoo.machinery.virtualbox] INFO: Successfully generated memory dump for virtual machine with label Ubuntu1904x644 to path /srv/cuckoo/cwd/storage/analyses/7603152/memory.dmp\n", 
+            "2026-06-21 10:10:03,274 [cuckoo.machinery.virtualbox] DEBUG: Stopping vm Ubuntu1904x644\n", 
+            "2026-06-21 10:10:10,836 [cuckoo.core.resultserver] DEBUG: Stopped tracking machine 192.168.168.104 for task #7603152\n", 
+            "2026-06-21 10:10:10,836 [cuckoo.core.resultserver] DEBUG: Cancel <Context for LOG> for task 7603152\n", 
+            "2026-06-21 10:10:11,189 [cuckoo.core.scheduler] DEBUG: Released database task #7603152\n", 
+            "2026-06-21 10:10:11,207 [cuckoo.core.scheduler] INFO: Task #7603152: analysis procedure completed\n"
+        ]
+    }, 
+    "metadata": {
+        "output": {
+            "pcap": {
+                "basename": "dump.pcap", 
+                "sha256": "f2576607d1b754104031eb68c4c1c346249659a8a3d9bf1fd2647b4727d95b3f", 
+                "dirname": ""
+            }
+        }
+    }
+}

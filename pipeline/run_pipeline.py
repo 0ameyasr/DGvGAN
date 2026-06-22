@@ -28,7 +28,6 @@ MODELS_CONFIG = {
 evaluated = False
 
 def safe_predict(func, features, seed=10, name="DEFAULT", silent=True):
-    """Safely executes a prediction function, returning (None, None) on failure."""
     try:
         return func(features, seed)
     except Exception as e:
@@ -38,10 +37,10 @@ def safe_predict(func, features, seed=10, name="DEFAULT", silent=True):
 
 
 def process_file(file, seed, silent=True):
-    """Processes a single report file through all configured models."""
     path = os.path.join(REPORTS_DIR, file)
     try:
         features = extract_features_from_report(path)
+        # print(features)
     except Exception as e:
         print(f"\nError extracting features from {file}: {e}")
         return None
@@ -55,7 +54,7 @@ def process_file(file, seed, silent=True):
         results[key] = round(p, 3) if p is not None else None
         results[f"t_{key}"] = round(tp, 9) if tp is not None else None
         
-        if p is not None:
+        if p is not None and not np.isnan(p):
             preds_to_ensemble.append(p)
 
     if not preds_to_ensemble:
@@ -74,24 +73,14 @@ def process_file(file, seed, silent=True):
     return results
 
 
-def check_integrity(rdf):
-    """Checks if any evaluated samples exist within the training dataset hashes."""
-    print("\nChecking integrity...")
+def load_training_hashes():
+    """Loads and returns training dataset hashes to identify leaked data upfront."""
     try:
         df = pd.read_csv("dataset.csv")
-        hashes = set(df['hash'])
+        return set(df['hash'].astype(str))
     except Exception as e:
-        print(f"Could not load dataset.csv for integrity check: {e}")
-        return
-
-    compromised = False
-    for sample in rdf['sample']:
-        if sample[:-5] in hashes:
-            print(f'Compromised: {sample}')
-            compromised = True
-            
-    if not compromised:
-        print("All samples OOD.")
+        print(f"Warning: Could not load dataset.csv for data leakage checks: {e}")
+        return set()
 
 
 def run():
@@ -100,16 +89,31 @@ def run():
         print("Reports directory not found!")
         return
 
-    files = [
+    all_files = [
         f for f in os.listdir(REPORTS_DIR)
         if os.path.isfile(os.path.join(REPORTS_DIR, f)) and f.lower().endswith(".json")
     ]
 
-    if not files:
+    if not all_files:
         print("No JSON files found!")
         return
 
-    # Dictionary to store rates for final summary statistics
+    # Load compromised hashes
+    training_hashes = load_training_hashes()
+    
+    # FIXED: Upfront tracking filtering to completely drop compromised validation instances
+    files = []
+    for f in all_files:
+        md5_hash = f[:-5] # Drops '.json'
+        if md5_hash in training_hashes:
+            print(f"Skipping Leakage/Compromised Sample: {f}")
+        else:
+            files.append(f)
+
+    if not files:
+        print("All target files were marked compromised/filtered out!")
+        return
+
     target_cols = list(MODELS_CONFIG.keys()) + ["final"]
     summary_metrics = {col: {} for col in target_cols}
     seeds = [10, 20, 30, 40, 50]
@@ -130,31 +134,27 @@ def run():
         rdf = pd.DataFrame(results_list)
         
         if not evaluated:
-            rdf['sample'].to_csv("evaluated.csv",index=False)
+            rdf['sample'].to_csv("evaluated.csv", index=False)
             evaluated = True
         
         print(rdf)
         
-        print("\nOOD generalization:")
+        print("\nOOD generalization summary:")
         for col in target_cols:
             valid_preds = rdf[col].dropna()
             if len(valid_preds) > 0:
                 rate = len(valid_preds[valid_preds >= 0.50]) / len(rdf)
                 print(f"{col} --> {rate:.2f}")
-                # Save to summary tracker
                 summary_metrics[col][seed] = rate
             else:
                 print(f"{col} --> N/A (All models failed)")
                 summary_metrics[col][seed] = np.nan
-
-        check_integrity(rdf)
 
     # --- FINAL SUMMARY SECTION ---
     print("\n" + "="*50)
     print("FINAL SUMMARY PER SEED AND MODEL")
     print("="*50)
     
-    # Create and print a clean summary table for rates per seed per model
     summary_df = pd.DataFrame(summary_metrics).T
     summary_df.columns = [f"Seed {s}" for s in seeds]
     print(summary_df.to_string())

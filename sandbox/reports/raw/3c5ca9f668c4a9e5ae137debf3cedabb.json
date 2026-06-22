@@ -1,0 +1,535 @@
+{
+    "info": {
+        "added": 1782036506.473196, 
+        "started": 1782036507.010932, 
+        "duration": 83, 
+        "ended": 1782036590.564003, 
+        "owner": "", 
+        "score": 7.1, 
+        "id": 7603151, 
+        "category": "file", 
+        "git": {
+            "head": "", 
+            "fetch_head": ""
+        }, 
+        "monitor": null, 
+        "package": "elf", 
+        "route": "internet", 
+        "custom": "", 
+        "machine": {
+            "status": "stopped", 
+            "name": "Ubuntu1904x643", 
+            "label": "Ubuntu1904x643", 
+            "platform": "linux", 
+            "manager": "VirtualBox", 
+            "started_on": "2026-06-21 10:08:27", 
+            "shutdown_on": "2026-06-21 10:09:50"
+        }, 
+        "platform": "linux", 
+        "version": "2.0.7", 
+        "options": ""
+    }, 
+    "signatures": [
+        {
+            "families": [], 
+            "description": "File has been identified by 5 AntiVirus engine on IRMA as malicious", 
+            "severity": 50, 
+            "ttp": {}, 
+            "markcount": 5, 
+            "references": [], 
+            "marks": [
+                {
+                    "category": "G Data Antivirus (Windows)", 
+                    "ioc": "Virus: Trojan.Generic.40134736 (Engine A)", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "eScan Antivirus (Linux)", 
+                    "ioc": "Trojan.Generic.40134736(DB)", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Bitdefender Antivirus (Linux)", 
+                    "ioc": "Trojan.Generic.40134736", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Kaspersky Standard (Windows)", 
+                    "ioc": "HEUR:Backdoor.Linux.Mirai.b", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Emsisoft Commandline Scanner (Windows)", 
+                    "ioc": "Trojan.Generic.40134736 (B)", 
+                    "type": "ioc", 
+                    "description": null
+                }
+            ], 
+            "name": "antivirus_irma"
+        }
+    ], 
+    "target": {
+        "category": "file", 
+        "file": {
+            "mimetype": "application/x-executable", 
+            "yara": [], 
+            "sha1": "6a165045b12e88fa5e01c27859ed1025cc8bc17c", 
+            "name": "dtjogcysu", 
+            "type": "ELF 32-bit LSB executable, Synopsys ARCompact ARC700 cores, version 1 (SYSV), statically linked, missing section headers at 124016", 
+            "sha256": "f18c9aa6918bbba382393802e91c28f6b75b56e5b7766e06ded04f2f8d9917e7", 
+            "urls": [], 
+            "crc32": "D038B15E", 
+            "path": "/srv/cuckoo/cwd/storage/binaries/f18c9aa6918bbba382393802e91c28f6b75b56e5b7766e06ded04f2f8d9917e7", 
+            "ssdeep": null, 
+            "size": 48967, 
+            "sha512": "a8e7dd97ddad6a09dde0f7368986dec4aa37a94c8c8bd379cb1e40be9952064d78c71100a3039f346140e5e4a2ee6cc268effde71bc3be072576cd05e94cfb96", 
+            "md5": "3c5ca9f668c4a9e5ae137debf3cedabb"
+        }, 
+        "custom": ""
+    }, 
+    "irma": {
+        "status": 1, 
+        "probes_finished": 13, 
+        "scan_id": "4ad34f98-6654-4c55-933f-1365bc7d95bf", 
+        "parent_file_sha256": null, 
+        "name": "f18c9aa6918bbba382393802e91c28f6b75b56e5b7766e06ded04f2f8d9917e7", 
+        "probes_total": 13, 
+        "scan_date": 1782025808, 
+        "other_results": [], 
+        "probe_results": {
+            "antivirus": {
+                "G Data Antivirus (Windows)": {
+                    "status": 1, 
+                    "duration": 0.31, 
+                    "version": "5.5.20197.1358", 
+                    "results": "Virus: Trojan.Generic.40134736 (Engine A)", 
+                    "virus_database_version": "unavailable"
+                }, 
+                "Avast Core Security (Linux)": {
+                    "status": 0, 
+                    "duration": 0.01, 
+                    "version": "4.6.1", 
+                    "results": null, 
+                    "virus_database_version": "unavailable"
+                }, 
+                "C4S ClamAV (Linux)": {
+                    "status": 0, 
+                    "duration": 0.03, 
+                    "version": "1.4.3", 
+                    "results": null, 
+                    "virus_database_version": "28012"
+                }, 
+                "Trellix (Linux)": {
+                    "status": 0, 
+                    "duration": 7.96, 
+                    "version": "7.0.4.835", 
+                    "results": null, 
+                    "virus_database_version": "11797"
+                }, 
+                "WithSecure (Linux)": {
+                    "status": 0, 
+                    "duration": 0.17, 
+                    "version": "1.0.45", 
+                    "results": null, 
+                    "virus_database_version": "unavailable"
+                }, 
+                "eScan Antivirus (Linux)": {
+                    "status": 1, 
+                    "duration": 4.29, 
+                    "version": "7.0.21", 
+                    "results": "Trojan.Generic.40134736(DB)", 
+                    "virus_database_version": "7.100930 (26/05/2026)"
+                }, 
+                "ESET Security (Windows)": {
+                    "status": 0, 
+                    "duration": 0.73, 
+                    "version": "unavailable", 
+                    "results": null, 
+                    "virus_database_version": "unavailable"
+                }, 
+                "Sophos Anti-Virus (Linux)": {
+                    "status": 0, 
+                    "duration": 0.29, 
+                    "version": "1.2.0.8 (2026-02-13)", 
+                    "results": null, 
+                    "virus_database_version": "unavailable"
+                }, 
+                "DrWeb Antivirus (Linux)": {
+                    "status": 0, 
+                    "duration": 0.37, 
+                    "version": "11.1.16.2406170954", 
+                    "results": null, 
+                    "virus_database_version": "unavailable"
+                }, 
+                "ClamAV (Linux)": {
+                    "status": 0, 
+                    "duration": 0.05, 
+                    "version": "1.4.3", 
+                    "results": null, 
+                    "virus_database_version": "28012"
+                }, 
+                "Bitdefender Antivirus (Linux)": {
+                    "status": 1, 
+                    "duration": 8.8, 
+                    "version": "7.90123", 
+                    "results": "Trojan.Generic.40134736", 
+                    "virus_database_version": null
+                }, 
+                "Kaspersky Standard (Windows)": {
+                    "status": 1, 
+                    "duration": 1.23, 
+                    "version": "21.24", 
+                    "results": "HEUR:Backdoor.Linux.Mirai.b", 
+                    "virus_database_version": "2026-06-20 18:02:00 (unknown)"
+                }, 
+                "Emsisoft Commandline Scanner (Windows)": {
+                    "status": 1, 
+                    "duration": 0.42, 
+                    "version": "2025.1.0.12641", 
+                    "results": "Trojan.Generic.40134736 (B)", 
+                    "virus_database_version": "unavailable"
+                }
+            }
+        }, 
+        "file_infos": {
+            "mimetype": "ELF 32-bit LSB executable, ARC Cores Tangent-A5, version 1 (SYSV)", 
+            "sha1": "6a165045b12e88fa5e01c27859ed1025cc8bc17c", 
+            "tags": [], 
+            "timestamp_first_scan": 1782025807.69, 
+            "sha256": "f18c9aa6918bbba382393802e91c28f6b75b56e5b7766e06ded04f2f8d9917e7", 
+            "timestamp_last_scan": 1782025818.73, 
+            "md5": "3c5ca9f668c4a9e5ae137debf3cedabb", 
+            "size": 48967
+        }, 
+        "submitter": "cli", 
+        "path": "", 
+        "result_id": "b48afb6d-bda5-479e-a1d0-685293f52f62"
+    }, 
+    "suricata": {
+        "tls": [], 
+        "files": [], 
+        "alerts": [], 
+        "http": []
+    }, 
+    "virustotal": {
+        "summary": {
+            "error": "resource has not been scanned yet"
+        }
+    }, 
+    "network": {
+        "udp": [], 
+        "dns_servers": [], 
+        "http": [], 
+        "smtp": [], 
+        "tcp": [], 
+        "geoinfo": {}, 
+        "mitm": [], 
+        "https_ex": [], 
+        "http_ex": [], 
+        "sorted_pcap_sha256": "341c92b474232cd4b920151e84a987132ca671e9d6bc53447e087f6708c06b66", 
+        "icmp": [], 
+        "tls": [], 
+        "dead_hosts": [], 
+        "smtp_ex": [], 
+        "hosts": [], 
+        "pcap_sha256": "e52d3fa2ef55aa383f8d78b17c26a3da4def77065c93998938ba613eb0defd9c", 
+        "dns": [], 
+        "domains": [], 
+        "irc": []
+    }, 
+    "resubmit": {
+        "resubmit_ids": []
+    }, 
+    "snort": {
+        "alerts": []
+    }, 
+    "behavior": {
+        "generic": [
+            {
+                "process_path": null, 
+                "process_name": "sh", 
+                "pid": 2090, 
+                "summary": {}, 
+                "first_seen": 1782036516.919987, 
+                "ppid": -1
+            }
+        ], 
+        "processes": [
+            {
+                "calls": [
+                    {
+                        "status": "ENOEXEC", 
+                        "process_name": "sh", 
+                        "pid": 2090, 
+                        "raw": "Sun Jun 21 10:08:36 2026.919987 sh@7f04be419957[2090] execve(\"/tmp/dtjogcysu\", [\"/tmp/dtjogcysu\"], [\"SUDO_GID=0\", \"MAIL=/var/mail/root\", \"USER=root\", \"HOME=/root\", \"SUDO_UID=0\", \"LOGNAME=root\", \"SYSTEMTAP_MODULE=stap_\", \"TERM=unknown\", \"SYSTEMTAP_VERBOSE=2\", \"PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin\", \"DISPLAY=:0\", \"LANG=en_US.UTF-8\", \"XAUTHORITY=/root/.Xauthority\", \"SUDO_COMMAND=/usr/bin/staprun -vv -o stap.log /root/.cuckoo/stap_.ko -c sh -c /tmp/dtjogcysu\", \"SHELL=/bin/bash\", \"SUDO_USER=root\", \"PWD=/tmp/tmp4xvMMD\"]) = -8 (ENOEXEC)\n", 
+                        "api": "execve", 
+                        "return_value": "-8", 
+                        "category": "process", 
+                        "instruction_pointer": "7f04be419957", 
+                        "arguments": {
+                            "p2": [
+                                "SUDO_GID=0", 
+                                "MAIL=/var/mail/root", 
+                                "USER=root", 
+                                "HOME=/root", 
+                                "SUDO_UID=0", 
+                                "LOGNAME=root", 
+                                "SYSTEMTAP_MODULE=stap_", 
+                                "TERM=unknown", 
+                                "SYSTEMTAP_VERBOSE=2", 
+                                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin", 
+                                "DISPLAY=:0", 
+                                "LANG=en_US.UTF-8", 
+                                "XAUTHORITY=/root/.Xauthority", 
+                                "SUDO_COMMAND=/usr/bin/staprun -vv -o stap.log /root/.cuckoo/stap_.ko -c sh -c /tmp/dtjogcysu", 
+                                "SHELL=/bin/bash", 
+                                "SUDO_USER=root", 
+                                "PWD=/tmp/tmp4xvMMD"
+                            ], 
+                            "p0": "/tmp/dtjogcysu", 
+                            "p1": [
+                                "/tmp/dtjogcysu"
+                            ]
+                        }, 
+                        "time": 1782036516.919987
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "sh", 
+                        "pid": 2090, 
+                        "raw": "Sun Jun 21 10:08:36 2026.925536 sh@7f04be444cce[2090] openat(AT_FDCWD, \"/tmp/dtjogcysu\", O_RDONLY|O_NOCTTY) = 3\n", 
+                        "api": "openat", 
+                        "return_value": "3", 
+                        "category": "process", 
+                        "instruction_pointer": "7f04be444cce", 
+                        "arguments": {
+                            "p2": "O_RDONLY|O_NOCTTY", 
+                            "p0": "AT_FDCWD", 
+                            "p1": "/tmp/dtjogcysu"
+                        }, 
+                        "time": 1782036516.925536
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "sh", 
+                        "pid": 2090, 
+                        "raw": "Sun Jun 21 10:08:36 2026.925659 sh@7f04be444f81[2090] read(3, 0x7ffc344e0b30, 128) = 128\n", 
+                        "api": "read", 
+                        "return_value": "128", 
+                        "category": "process", 
+                        "instruction_pointer": "7f04be444f81", 
+                        "arguments": {
+                            "p2": "128", 
+                            "p0": "3", 
+                            "p1": "0x7ffc344e0b30"
+                        }, 
+                        "time": 1782036516.925659
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "sh", 
+                        "pid": 2090, 
+                        "raw": "Sun Jun 21 10:08:36 2026.925713 sh@7f04be445674[2090] close(3) = 0\n", 
+                        "api": "close", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "7f04be445674", 
+                        "arguments": {
+                            "p0": "3"
+                        }, 
+                        "time": 1782036516.925713
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "sh", 
+                        "pid": 2090, 
+                        "raw": "Sun Jun 21 10:08:36 2026.925839 sh@7f04be445024[2090] write(2, \"sh: 1: \", 7) = 7\n", 
+                        "api": "write", 
+                        "return_value": "7", 
+                        "category": "process", 
+                        "instruction_pointer": "7f04be445024", 
+                        "arguments": {
+                            "p2": "7", 
+                            "p0": "2", 
+                            "p1": "sh: 1: "
+                        }, 
+                        "time": 1782036516.925839
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "sh", 
+                        "pid": 2090, 
+                        "raw": "Sun Jun 21 10:08:36 2026.925901 sh@7f04be445024[2090] write(2, \"/tmp/dtjogcysu: Exec format error\", 33) = 33\n", 
+                        "api": "write", 
+                        "return_value": "33", 
+                        "category": "process", 
+                        "instruction_pointer": "7f04be445024", 
+                        "arguments": {
+                            "p2": "33", 
+                            "p0": "2", 
+                            "p1": "/tmp/dtjogcysu: Exec format error"
+                        }, 
+                        "time": 1782036516.925901
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "sh", 
+                        "pid": 2090, 
+                        "raw": "Sun Jun 21 10:08:36 2026.925967 sh@7f04be445024[2090] write(2, \"\\n\", 1) = 1\n", 
+                        "api": "write", 
+                        "return_value": "1", 
+                        "category": "process", 
+                        "instruction_pointer": "7f04be445024", 
+                        "arguments": {
+                            "p2": "1", 
+                            "p0": "2", 
+                            "p1": "\n"
+                        }, 
+                        "time": 1782036516.925967
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "sh", 
+                        "pid": 2090, 
+                        "raw": "Sun Jun 21 10:08:36 2026.926021 sh@7f04be419926[2090] exit_group(2)\n", 
+                        "api": "exit_group", 
+                        "return_value": "", 
+                        "category": "process", 
+                        "instruction_pointer": "7f04be419926", 
+                        "arguments": {
+                            "p0": "2"
+                        }, 
+                        "time": 1782036516.926021
+                    }
+                ], 
+                "pid": 2090, 
+                "process_name": "sh", 
+                "command_line": "", 
+                "first_seen": 1782036516.919987, 
+                "ppid": -1, 
+                "type": "process"
+            }
+        ], 
+        "processtree": [
+            {
+                "track": true, 
+                "pid": 2090, 
+                "process_name": "sh", 
+                "command_line": "", 
+                "first_seen": 1782036516.919987, 
+                "ppid": -1, 
+                "children": []
+            }
+        ]
+    }, 
+    "debug": {
+        "action": [], 
+        "dbgview": [], 
+        "errors": [], 
+        "log": [
+            "2026-06-21 10:08:26,013 [root] DEBUG: Starting analyzer from: /tmp/tmp4xvMMD\n", 
+            "2026-06-21 10:08:26,034 [root] DEBUG: Storing results at: /tmp/kjDmuAEnU\n", 
+            "2026-06-21 10:08:27,982 [modules.auxiliary.filecollector] INFO: FileCollector started v0.08\n", 
+            "2026-06-21 10:08:27,985 [modules.auxiliary.human] INFO: Human started v0.02\n", 
+            "2026-06-21 10:08:28,491 [modules.auxiliary.screenshots] INFO: Screenshots started v0.03\n", 
+            "2026-06-21 10:08:36,913 [lib.core.packages] INFO: Process startup took 8.42 seconds\n", 
+            "2026-06-21 10:08:36,913 [root] INFO: Added new process to list with pid: 2078\n", 
+            "2026-06-21 10:08:45,938 [root] INFO: Process with pid 2078 has terminated\n", 
+            "2026-06-21 10:08:45,938 [root] INFO: Process list is empty, terminating analysis.\n", 
+            "2026-06-21 10:08:48,953 [lib.core.packages] INFO: Package requested stop\n", 
+            "2026-06-21 10:08:48,954 [lib.core.packages] WARNING: Exception uploading log: [Errno 3] No such process\n"
+        ], 
+        "cuckoo": [
+            "2026-06-21 10:08:27,117 [cuckoo.core.scheduler] INFO: Task #7603151: acquired machine Ubuntu1904x643 (label=Ubuntu1904x643)\n", 
+            "2026-06-21 10:08:27,117 [cuckoo.core.resultserver] DEBUG: Now tracking machine 192.168.168.103 for task #7603151\n", 
+            "2026-06-21 10:08:27,476 [cuckoo.auxiliary.sniffer] INFO: Started sniffer with PID 271083 (interface=vboxnet0, host=192.168.168.103)\n", 
+            "2026-06-21 10:08:27,508 [cuckoo.machinery.virtualbox] DEBUG: Starting vm Ubuntu1904x643\n", 
+            "2026-06-21 10:08:28,174 [cuckoo.machinery.virtualbox] DEBUG: Restoring virtual machine Ubuntu1904x643 to Snapshot\n", 
+            "2026-06-21 10:08:35,250 [cuckoo.core.guest] INFO: Starting analysis #7603151 on guest (id=Ubuntu1904x643, ip=192.168.168.103)\n", 
+            "2026-06-21 10:08:36,256 [cuckoo.core.guest] DEBUG: Ubuntu1904x643: not ready yet\n", 
+            "2026-06-21 10:08:41,280 [cuckoo.core.guest] INFO: Guest is running Cuckoo Agent 0.10 (id=Ubuntu1904x643, ip=192.168.168.103)\n", 
+            "2026-06-21 10:08:41,304 [cuckoo.core.guest] DEBUG: Uploading analyzer to guest (id=Ubuntu1904x643, ip=192.168.168.103, monitor=latest, size=73219)\n", 
+            "2026-06-21 10:08:41,533 [cuckoo.core.resultserver] DEBUG: Task #7603151: live log analysis.log initialized.\n", 
+            "2026-06-21 10:08:46,594 [cuckoo.core.resultserver] DEBUG: Task #7603151: File upload for 'shots/0001.jpg'\n", 
+            "2026-06-21 10:08:46,601 [cuckoo.core.resultserver] DEBUG: Task #7603151 uploaded file length: 171623\n", 
+            "2026-06-21 10:08:56,523 [cuckoo.core.guest] DEBUG: Ubuntu1904x643: analysis #7603151 still processing\n", 
+            "2026-06-21 10:09:04,499 [cuckoo.core.resultserver] DEBUG: Task #7603151: File upload for 'logs/all.stap'\n", 
+            "2026-06-21 10:09:04,504 [cuckoo.core.resultserver] DEBUG: Task #7603151 uploaded file length: 1177\n", 
+            "2026-06-21 10:09:11,622 [cuckoo.core.guest] DEBUG: Ubuntu1904x643: analysis #7603151 still processing\n", 
+            "2026-06-21 10:09:26,711 [cuckoo.core.guest] DEBUG: Ubuntu1904x643: analysis #7603151 still processing\n", 
+            "2026-06-21 10:09:41,790 [cuckoo.core.guest] INFO: Ubuntu1904x643: end of analysis reached!\n", 
+            "2026-06-21 10:09:41,815 [cuckoo.core.plugins] DEBUG: Stopped auxiliary module: Redsocks\n", 
+            "2026-06-21 10:09:41,850 [cuckoo.core.plugins] DEBUG: Stopped auxiliary module: Sniffer\n", 
+            "2026-06-21 10:09:42,742 [cuckoo.machinery.virtualbox] INFO: Successfully generated memory dump for virtual machine with label Ubuntu1904x643 to path /srv/cuckoo/cwd/storage/analyses/7603151/memory.dmp\n", 
+            "2026-06-21 10:09:42,744 [cuckoo.machinery.virtualbox] DEBUG: Stopping vm Ubuntu1904x643\n", 
+            "2026-06-21 10:09:50,187 [cuckoo.core.resultserver] DEBUG: Stopped tracking machine 192.168.168.103 for task #7603151\n", 
+            "2026-06-21 10:09:50,188 [cuckoo.core.resultserver] DEBUG: Cancel <Context for LOG> for task 7603151\n", 
+            "2026-06-21 10:09:50,536 [cuckoo.core.scheduler] DEBUG: Released database task #7603151\n", 
+            "2026-06-21 10:09:50,553 [cuckoo.core.scheduler] INFO: Task #7603151: analysis procedure completed\n"
+        ]
+    }, 
+    "strings": [
+        "J%@ jp", 
+        "jp@ P \u001f", 
+        "uJ @0J$", 
+        "@5hw/\"", 
+        "'U%J&@ J#", 
+        " @ M(B", 
+        "qhvhq/'", 
+        "Y#U4X#W8:rzbD", 
+        "4X#R9d", 
+        "@ P J%@", 
+        "@ P J%@", 
+        "r \u001fgJ ", 
+        "@ P J%@", 
+        "0 J&@ ", 
+        "x@ P Y", 
+        "2ezPz@", 
+        "@ P Jr", 
+        "u@'E #", 
+        "@%U B%", 
+        "J&@ kr", 
+        "x@\"R Y", 
+        "wB T S$", 
+        "wB T S$", 
+        "8Zp:qhp", 
+        " @ C xe@", 
+        " @ C xe@", 
+        " @ C xe@", 
+        "gaoxe@", 
+        " @ C xe5", 
+        " @ C xe", 
+        "8_gAo@", 
+        " @ C xe@", 
+        " @ C xe@", 
+        " @ C xe@", 
+        " @!C xe@", 
+        " @ B @", 
+        " @ C xe@", 
+        "dhpq@!", 
+        "x`yapr", 
+        "o!C J @ ", 
+        "@ B \"q^", 
+        "\u001f0:pHvE", 
+        "@0@ P ", 
+        "qkyiD#C", 
+        "Ii&z/)", 
+        "? D Q ", 
+        "l2J&@ N", 
+        "@#@ A(L", 
+        "&T bq:f"
+    ], 
+    "metadata": {
+        "output": {
+            "pcap": {
+                "basename": "dump.pcap", 
+                "sha256": "e52d3fa2ef55aa383f8d78b17c26a3da4def77065c93998938ba613eb0defd9c", 
+                "dirname": ""
+            }
+        }
+    }
+}
