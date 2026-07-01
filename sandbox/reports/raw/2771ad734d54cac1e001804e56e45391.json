@@ -1,0 +1,891 @@
+{
+    "info": {
+        "added": 1782224376.99605, 
+        "started": 1782224377.162213, 
+        "duration": 359, 
+        "ended": 1782224736.662277, 
+        "owner": null, 
+        "score": 10, 
+        "id": 7603907, 
+        "category": "file", 
+        "git": {
+            "head": "", 
+            "fetch_head": ""
+        }, 
+        "monitor": null, 
+        "package": "hta", 
+        "route": "inetsim", 
+        "custom": null, 
+        "machine": {
+            "status": "stopped", 
+            "name": "win7x644", 
+            "label": "win7x644", 
+            "platform": "windows", 
+            "manager": "VirtualBox", 
+            "started_on": "2026-06-23 14:19:37", 
+            "shutdown_on": "2026-06-23 14:25:36"
+        }, 
+        "platform": null, 
+        "version": "2.0.7", 
+        "options": "procmemdump=yes,route=inetsim"
+    }, 
+    "signatures": [
+        {
+            "families": [], 
+            "description": "File has been identified by 5 AntiVirus engine on IRMA as malicious", 
+            "severity": 50, 
+            "ttp": {}, 
+            "markcount": 5, 
+            "references": [], 
+            "marks": [
+                {
+                    "category": "Avast Core Security (Linux)", 
+                    "ioc": "Script:SNH-gen [Trj]", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "C4S ClamAV (Linux)", 
+                    "ioc": "Sanesecurity.Malware.26557.JsHeur.UNOFFICIAL", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "WithSecure (Linux)", 
+                    "ioc": "Trojan.TR/SNH", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "ESET Security (Windows)", 
+                    "ioc": "Win32/Filecoder.OJN trojan", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "ClamAV (Linux)", 
+                    "ioc": "Sanesecurity.Malware.26557.JsHeur.UNOFFICIAL", 
+                    "type": "ioc", 
+                    "description": null
+                }
+            ], 
+            "name": "antivirus_irma"
+        }, 
+        {
+            "families": [], 
+            "description": "File has been identified by 11 AntiVirus engines on VirusTotal as malicious", 
+            "severity": 60, 
+            "ttp": {}, 
+            "markcount": 11, 
+            "references": [], 
+            "marks": [
+                {
+                    "category": "ESET-NOD32", 
+                    "ioc": "Win32/Filecoder.OJN trojan", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "TrendMicro-HouseCall", 
+                    "ioc": "Ransom.Win32.LOKILOCKER.SMALRA.note", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Avast", 
+                    "ioc": "Script:SNH-gen [Trj]", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Cynet", 
+                    "ioc": "Malicious (score: 99)", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Rising", 
+                    "ioc": "Trojan.Filecoder!8.68 (TOPIS:E0:0SW04QpAg5H)", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "F-Secure", 
+                    "ioc": "Trojan.TR/SNH", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "TrendMicro", 
+                    "ioc": "Ransom.Win32.LOKILOCKER.SMALRA.note", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Avira", 
+                    "ioc": "TR/SNH", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "huorong", 
+                    "ioc": "Trojan/HTML.Ransom.c", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Fortinet", 
+                    "ioc": "HTML/FilecoderPhobos.NT!tr.ransom", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "AVG", 
+                    "ioc": "Script:SNH-gen [Trj]", 
+                    "type": "ioc", 
+                    "description": null
+                }
+            ], 
+            "name": "antivirus_virustotal"
+        }
+    ], 
+    "target": {
+        "category": "file", 
+        "file": {
+            "mimetype": "text/html", 
+            "yara": [], 
+            "sha1": "808222021300d7862010a2b6f43275604d44a458", 
+            "name": "info.hta", 
+            "type": "HTML document, ASCII text, with very long lines (6577), with no line terminators", 
+            "sha256": "3f935d164b91eac5338110e346aefa362dffa2df514845bf025007d38d206fd7", 
+            "urls": [], 
+            "crc32": "5DB43755", 
+            "path": "/srv/cuckoo/cwd/storage/binaries/3f935d164b91eac5338110e346aefa362dffa2df514845bf025007d38d206fd7", 
+            "ssdeep": null, 
+            "size": 6577, 
+            "sha512": "dc22160978d397c68e69dd19c2c8f7688e41e407913f422918325775f6e3626b71943ae23177717433ee4365d99f23e96611965cf4e5cba72ddd8584e0c7b276", 
+            "md5": "2771ad734d54cac1e001804e56e45391"
+        }, 
+        "custom": null
+    }, 
+    "irma": {
+        "status": 1, 
+        "probes_finished": 13, 
+        "scan_id": "ddb58160-f00c-41eb-a4f3-01eccc58e99f", 
+        "parent_file_sha256": null, 
+        "probes_total": 13, 
+        "scan_date": 1782213089, 
+        "other_results": [], 
+        "submitter": "cli", 
+        "file_infos": {
+            "mimetype": "HTML document, ASCII text, with very long lines, with no line terminators", 
+            "sha1": "808222021300d7862010a2b6f43275604d44a458", 
+            "tags": [], 
+            "timestamp_first_scan": 1782213088.74, 
+            "size": 6577, 
+            "timestamp_last_scan": 1782213100.51, 
+            "sha256": "3f935d164b91eac5338110e346aefa362dffa2df514845bf025007d38d206fd7", 
+            "md5": "2771ad734d54cac1e001804e56e45391"
+        }, 
+        "probe_results": {
+            "antivirus": {
+                "G Data Antivirus (Windows)": {
+                    "status": 0, 
+                    "duration": 0.2, 
+                    "version": "5.5.20197.1358", 
+                    "results": null, 
+                    "virus_database_version": "unavailable"
+                }, 
+                "Avast Core Security (Linux)": {
+                    "status": 1, 
+                    "duration": 0.01, 
+                    "version": "4.6.1", 
+                    "results": "Script:SNH-gen [Trj]", 
+                    "virus_database_version": "unavailable"
+                }, 
+                "C4S ClamAV (Linux)": {
+                    "status": 1, 
+                    "duration": 0.04, 
+                    "version": "1.4.3", 
+                    "results": "Sanesecurity.Malware.26557.JsHeur.UNOFFICIAL", 
+                    "virus_database_version": "28038"
+                }, 
+                "Trellix (Linux)": {
+                    "status": 0, 
+                    "duration": 9.29, 
+                    "version": "7.0.4.835", 
+                    "results": null, 
+                    "virus_database_version": "11824"
+                }, 
+                "WithSecure (Linux)": {
+                    "status": 1, 
+                    "duration": 0.03, 
+                    "version": "1.0.45", 
+                    "results": "Trojan.TR/SNH", 
+                    "virus_database_version": "unavailable"
+                }, 
+                "eScan Antivirus (Linux)": {
+                    "status": 0, 
+                    "duration": 4.2, 
+                    "version": "7.0.21", 
+                    "results": null, 
+                    "virus_database_version": "7.101078 (22/06/2026)"
+                }, 
+                "ESET Security (Windows)": {
+                    "status": 1, 
+                    "duration": 0.67, 
+                    "version": "unavailable", 
+                    "results": "Win32/Filecoder.OJN trojan", 
+                    "virus_database_version": "unavailable"
+                }, 
+                "Sophos Anti-Virus (Linux)": {
+                    "status": 0, 
+                    "duration": 0.11, 
+                    "version": "1.2.1.1 (2026-04-20)", 
+                    "results": null, 
+                    "virus_database_version": "unavailable"
+                }, 
+                "DrWeb Antivirus (Linux)": {
+                    "status": 0, 
+                    "duration": 0.23, 
+                    "version": "11.1.17.2605081640", 
+                    "results": null, 
+                    "virus_database_version": "unavailable"
+                }, 
+                "ClamAV (Linux)": {
+                    "status": 1, 
+                    "duration": 0.05, 
+                    "version": "1.4.3", 
+                    "results": "Sanesecurity.Malware.26557.JsHeur.UNOFFICIAL", 
+                    "virus_database_version": "28038"
+                }, 
+                "Bitdefender Antivirus (Linux)": {
+                    "status": 0, 
+                    "duration": 8.9, 
+                    "version": "7.90123", 
+                    "results": null, 
+                    "virus_database_version": null
+                }, 
+                "Kaspersky Standard (Windows)": {
+                    "status": 0, 
+                    "duration": 0.69, 
+                    "version": "21.24", 
+                    "results": null, 
+                    "virus_database_version": "2026-06-22 19:00:00 (unknown)"
+                }, 
+                "Emsisoft Commandline Scanner (Windows)": {
+                    "status": 0, 
+                    "duration": 0.17, 
+                    "version": "2025.1.0.12641", 
+                    "results": null, 
+                    "virus_database_version": "unavailable"
+                }
+            }
+        }, 
+        "path": "", 
+        "result_id": "2f7b848d-51d3-4c9e-a727-2fe71c9a4a10", 
+        "name": "3f935d164b91eac5338110e346aefa362dffa2df514845bf025007d38d206fd7"
+    }, 
+    "suricata": {
+        "tls": [], 
+        "files": [], 
+        "alerts": [], 
+        "http": []
+    }, 
+    "virustotal": {
+        "permalink": "https://www.virustotal.com/gui/file/3f935d164b91eac5338110e346aefa362dffa2df514845bf025007d38d206fd7/detection/f-3f935d164b91eac5338110e346aefa362dffa2df514845bf025007d38d206fd7-1782212606", 
+        "sha1": "808222021300d7862010a2b6f43275604d44a458", 
+        "resource": "2771ad734d54cac1e001804e56e45391", 
+        "response_code": 1, 
+        "scan_date": "2026-06-23 11:03:26", 
+        "scan_id": "3f935d164b91eac5338110e346aefa362dffa2df514845bf025007d38d206fd7-1782212606", 
+        "summary": {
+            "positives": 11, 
+            "permalink": "https://www.virustotal.com/gui/file/3f935d164b91eac5338110e346aefa362dffa2df514845bf025007d38d206fd7/detection/f-3f935d164b91eac5338110e346aefa362dffa2df514845bf025007d38d206fd7-1782212606", 
+            "scan_date": "2026-06-23 11:03:26"
+        }, 
+        "sha256": "3f935d164b91eac5338110e346aefa362dffa2df514845bf025007d38d206fd7", 
+        "normalized": [
+            "Filecoder", 
+            "OJN trojan", 
+            "LOKILOCKER", 
+            "SMALRA", 
+            "note", 
+            "Malicious", 
+            "score", 
+            "TOPIS", 
+            "0SW04QpAg5H", 
+            "FilecoderPhobos"
+        ], 
+        "total": 59, 
+        "positives": 11, 
+        "verbose_msg": "Scan finished, information embedded", 
+        "md5": "2771ad734d54cac1e001804e56e45391", 
+        "scans": {
+            "Bkav": {
+                "detected": false, 
+                "version": "8.2.40(8338)", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260623"
+            }, 
+            "Lionic": {
+                "detected": false, 
+                "version": "8.16", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260623"
+            }, 
+            "ClamAV": {
+                "detected": false, 
+                "version": "1.5.2.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260623"
+            }, 
+            "CTX": {
+                "detected": false, 
+                "version": "2024.8.29.1", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260623"
+            }, 
+            "CAT-QuickHeal": {
+                "detected": false, 
+                "version": "22.00", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260622"
+            }, 
+            "Skyhigh": {
+                "detected": false, 
+                "version": "v2021.2.0+4045", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260622"
+            }, 
+            "ALYac": {
+                "detected": false, 
+                "version": "2.0.0.10", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260623"
+            }, 
+            "Malwarebytes": {
+                "detected": false, 
+                "version": "3.1.0.239", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260623"
+            }, 
+            "VIPRE": {
+                "detected": false, 
+                "version": "6.0.0.35", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260623"
+            }, 
+            "Sangfor": {
+                "detected": false, 
+                "version": "2.22.3.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260622"
+            }, 
+            "CrowdStrike": {
+                "detected": false, 
+                "version": "1.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20251219"
+            }, 
+            "K7GW": {
+                "detected": false, 
+                "version": "14.59.59910", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260623"
+            }, 
+            "K7AntiVirus": {
+                "detected": false, 
+                "version": "14.59.59911", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260623"
+            }, 
+            "Arcabit": {
+                "detected": false, 
+                "version": "2025.0.0.23", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260623"
+            }, 
+            "VirIT": {
+                "detected": false, 
+                "version": "9.5.1233", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260622"
+            }, 
+            "Symantec": {
+                "detected": false, 
+                "version": "1.22.0.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260623"
+            }, 
+            "ESET-NOD32": {
+                "detected": true, 
+                "version": "18.2.18.0", 
+                "result": "Win32/Filecoder.OJN trojan", 
+                "normalized": [
+                    "Filecoder", 
+                    "OJN trojan"
+                ], 
+                "update": "20260623"
+            }, 
+            "TrendMicro-HouseCall": {
+                "detected": true, 
+                "version": "24.550.0.1002", 
+                "result": "Ransom.Win32.LOKILOCKER.SMALRA.note", 
+                "normalized": [
+                    "LOKILOCKER", 
+                    "SMALRA", 
+                    "note"
+                ], 
+                "update": "20260623"
+            }, 
+            "Avast": {
+                "detected": true, 
+                "version": "23.9.8494.0", 
+                "result": "Script:SNH-gen [Trj]", 
+                "normalized": [], 
+                "update": "20260623"
+            }, 
+            "Cynet": {
+                "detected": true, 
+                "version": "4.0.3.4", 
+                "result": "Malicious (score: 99)", 
+                "normalized": [
+                    "Malicious", 
+                    "score"
+                ], 
+                "update": "20260623"
+            }, 
+            "Kaspersky": {
+                "detected": false, 
+                "version": "22.0.1.28", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260623"
+            }, 
+            "BitDefender": {
+                "detected": false, 
+                "version": "7.2", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260623"
+            }, 
+            "NANO-Antivirus": {
+                "detected": false, 
+                "version": "1.0.170.26895", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260623"
+            }, 
+            "SUPERAntiSpyware": {
+                "detected": false, 
+                "version": "5.6.0.1032", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260622"
+            }, 
+            "MicroWorld-eScan": {
+                "detected": false, 
+                "version": "14.0.409.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260623"
+            }, 
+            "Rising": {
+                "detected": true, 
+                "version": "25.0.0.28", 
+                "result": "Trojan.Filecoder!8.68 (TOPIS:E0:0SW04QpAg5H)", 
+                "normalized": [
+                    "Filecoder", 
+                    "TOPIS", 
+                    "0SW04QpAg5H"
+                ], 
+                "update": "20260623"
+            }, 
+            "Emsisoft": {
+                "detected": false, 
+                "version": "2024.8.0.61147", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260623"
+            }, 
+            "F-Secure": {
+                "detected": true, 
+                "version": "18.10.1547.307", 
+                "result": "Trojan.TR/SNH", 
+                "normalized": [], 
+                "update": "20260623"
+            }, 
+            "DrWeb": {
+                "detected": false, 
+                "version": "7.0.75.2070", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260623"
+            }, 
+            "Zillya": {
+                "detected": false, 
+                "version": "2.0.0.5627", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260622"
+            }, 
+            "TrendMicro": {
+                "detected": true, 
+                "version": "24.550.0.1002", 
+                "result": "Ransom.Win32.LOKILOCKER.SMALRA.note", 
+                "normalized": [
+                    "LOKILOCKER", 
+                    "SMALRA", 
+                    "note"
+                ], 
+                "update": "20260623"
+            }, 
+            "McAfeeD": {
+                "detected": false, 
+                "version": "1.2.0.15146", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260623"
+            }, 
+            "CMC": {
+                "detected": false, 
+                "version": "2.4.2022.1", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260623"
+            }, 
+            "Sophos": {
+                "detected": false, 
+                "version": "3.5.1.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260623"
+            }, 
+            "Jiangmin": {
+                "detected": false, 
+                "version": "16.0.100", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260622"
+            }, 
+            "Google": {
+                "detected": false, 
+                "version": "1782208864", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260623"
+            }, 
+            "Avira": {
+                "detected": true, 
+                "version": "8.3.3.24", 
+                "result": "TR/SNH", 
+                "normalized": [], 
+                "update": "20260623"
+            }, 
+            "Antiy-AVL": {
+                "detected": false, 
+                "version": "3.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260623"
+            }, 
+            "Kingsoft": {
+                "detected": false, 
+                "version": "None", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260618"
+            }, 
+            "Xcitium": {
+                "detected": false, 
+                "version": "38751", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260623"
+            }, 
+            "Microsoft": {
+                "detected": false, 
+                "version": "1.1.26050.11", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260623"
+            }, 
+            "ViRobot": {
+                "detected": false, 
+                "version": "2014.3.20.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260623"
+            }, 
+            "ZoneAlarm": {
+                "detected": false, 
+                "version": "6.25-116107718", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260623"
+            }, 
+            "GData": {
+                "detected": false, 
+                "version": "GD:27.45012AVA:64.31464", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260623"
+            }, 
+            "Varist": {
+                "detected": false, 
+                "version": "6.6.1.3", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260623"
+            }, 
+            "AhnLab-V3": {
+                "detected": false, 
+                "version": "3.30.1.10706", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260623"
+            }, 
+            "Acronis": {
+                "detected": false, 
+                "version": "1.2.0.121", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20240328"
+            }, 
+            "VBA32": {
+                "detected": false, 
+                "version": "5.6.1", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260623"
+            }, 
+            "TACHYON": {
+                "detected": false, 
+                "version": "2026-06-23.02", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260623"
+            }, 
+            "Zoner": {
+                "detected": false, 
+                "version": "2.2.2.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260623"
+            }, 
+            "Tencent": {
+                "detected": false, 
+                "version": "1.0.0.1", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260623"
+            }, 
+            "Yandex": {
+                "detected": false, 
+                "version": "5.5.2.24", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260623"
+            }, 
+            "TrellixENS": {
+                "detected": false, 
+                "version": "6.0.6.653", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260622"
+            }, 
+            "huorong": {
+                "detected": true, 
+                "version": "9ebf280:9ebf280:7301059:7301059", 
+                "result": "Trojan/HTML.Ransom.c", 
+                "normalized": [], 
+                "update": "20260622"
+            }, 
+            "MaxSecure": {
+                "detected": false, 
+                "version": "1.0.0.1", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260622"
+            }, 
+            "Fortinet": {
+                "detected": true, 
+                "version": "7.0.48.0", 
+                "result": "HTML/FilecoderPhobos.NT!tr.ransom", 
+                "normalized": [
+                    "FilecoderPhobos"
+                ], 
+                "update": "20260623"
+            }, 
+            "AVG": {
+                "detected": true, 
+                "version": "23.9.8494.0", 
+                "result": "Script:SNH-gen [Trj]", 
+                "normalized": [], 
+                "update": "20260623"
+            }, 
+            "Panda": {
+                "detected": false, 
+                "version": "4.6.4.2", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260622"
+            }, 
+            "alibabacloud": {
+                "detected": false, 
+                "version": "2.2.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20250321"
+            }
+        }
+    }, 
+    "network": {
+        "udp": [], 
+        "dns_servers": [], 
+        "http": [], 
+        "smtp": [], 
+        "tcp": [], 
+        "geoinfo": {}, 
+        "mitm": [], 
+        "https_ex": [], 
+        "http_ex": [], 
+        "sorted_pcap_sha256": "4c509b420da4995dbe6df3c208f045699aed7d79ef61324162430b1ce33109e0", 
+        "icmp": [], 
+        "tls": [], 
+        "dead_hosts": [], 
+        "smtp_ex": [], 
+        "hosts": [], 
+        "pcap_sha256": "b93a42e21fce8b4191d5efe54b334d9aeb669c5a3f767b72ec645cc55a9ebd13", 
+        "dns": [], 
+        "domains": [], 
+        "irc": []
+    }, 
+    "resubmit": {
+        "resubmit_ids": []
+    }, 
+    "snort": {
+        "alerts": []
+    }, 
+    "debug": {
+        "action": [
+            "vmrouting"
+        ], 
+        "dbgview": [], 
+        "errors": [
+            "Error processing task #7603907: it appears that the Virtual Machine hasn't been able to contact back to the Cuckoo Host. There could be a few reasons for this, please refer to our documentation on the matter: https://cuckoo.sh/docs/faq/index.html#troubleshooting-vm-network-configuration"
+        ], 
+        "log": [], 
+        "cuckoo": [
+            "2026-06-23 14:19:37,256 [cuckoo.core.scheduler] INFO: Task #7603907: acquired machine win7x644 (label=win7x644)\n", 
+            "2026-06-23 14:19:37,257 [cuckoo.core.resultserver] DEBUG: Now tracking machine 192.168.168.204 for task #7603907\n", 
+            "2026-06-23 14:19:37,694 [cuckoo.auxiliary.sniffer] INFO: Started sniffer with PID 3093376 (interface=vboxnet0, host=192.168.168.204)\n", 
+            "2026-06-23 14:19:37,729 [cuckoo.machinery.virtualbox] DEBUG: Starting vm win7x644\n", 
+            "2026-06-23 14:19:38,413 [cuckoo.machinery.virtualbox] DEBUG: Restoring virtual machine win7x644 to vmcloak\n", 
+            "2026-06-23 14:19:48,471 [cuckoo.core.guest] INFO: Starting analysis #7603907 on guest (id=win7x644, ip=192.168.168.204)\n", 
+            "2026-06-23 14:19:49,480 [cuckoo.core.guest] DEBUG: win7x644: not ready yet\n", 
+            "2026-06-23 14:19:54,512 [cuckoo.core.guest] INFO: Guest is running Cuckoo Agent 0.10 (id=win7x644, ip=192.168.168.204)\n", 
+            "2026-06-23 14:19:54,599 [cuckoo.core.guest] DEBUG: Uploading analyzer to guest (id=win7x644, ip=192.168.168.204, monitor=latest, size=6660546)\n", 
+            "2026-06-23 14:20:10,546 [cuckoo.core.guest] DEBUG: win7x644: analysis #7603907 still processing\n", 
+            "2026-06-23 14:20:25,635 [cuckoo.core.guest] DEBUG: win7x644: analysis #7603907 still processing\n", 
+            "2026-06-23 14:20:40,726 [cuckoo.core.guest] DEBUG: win7x644: analysis #7603907 still processing\n", 
+            "2026-06-23 14:20:55,828 [cuckoo.core.guest] DEBUG: win7x644: analysis #7603907 still processing\n", 
+            "2026-06-23 14:21:10,920 [cuckoo.core.guest] DEBUG: win7x644: analysis #7603907 still processing\n", 
+            "2026-06-23 14:21:26,010 [cuckoo.core.guest] DEBUG: win7x644: analysis #7603907 still processing\n", 
+            "2026-06-23 14:21:41,105 [cuckoo.core.guest] DEBUG: win7x644: analysis #7603907 still processing\n", 
+            "2026-06-23 14:21:56,210 [cuckoo.core.guest] DEBUG: win7x644: analysis #7603907 still processing\n", 
+            "2026-06-23 14:22:11,299 [cuckoo.core.guest] DEBUG: win7x644: analysis #7603907 still processing\n", 
+            "2026-06-23 14:22:26,400 [cuckoo.core.guest] DEBUG: win7x644: analysis #7603907 still processing\n", 
+            "2026-06-23 14:22:41,495 [cuckoo.core.guest] DEBUG: win7x644: analysis #7603907 still processing\n", 
+            "2026-06-23 14:22:56,582 [cuckoo.core.guest] DEBUG: win7x644: analysis #7603907 still processing\n", 
+            "2026-06-23 14:23:11,680 [cuckoo.core.guest] DEBUG: win7x644: analysis #7603907 still processing\n", 
+            "2026-06-23 14:23:26,768 [cuckoo.core.guest] DEBUG: win7x644: analysis #7603907 still processing\n", 
+            "2026-06-23 14:23:41,855 [cuckoo.core.guest] DEBUG: win7x644: analysis #7603907 still processing\n", 
+            "2026-06-23 14:23:56,943 [cuckoo.core.guest] DEBUG: win7x644: analysis #7603907 still processing\n", 
+            "2026-06-23 14:24:12,053 [cuckoo.core.guest] DEBUG: win7x644: analysis #7603907 still processing\n", 
+            "2026-06-23 14:24:27,153 [cuckoo.core.guest] DEBUG: win7x644: analysis #7603907 still processing\n", 
+            "2026-06-23 14:24:42,242 [cuckoo.core.guest] DEBUG: win7x644: analysis #7603907 still processing\n", 
+            "2026-06-23 14:24:57,322 [cuckoo.core.guest] DEBUG: win7x644: analysis #7603907 still processing\n", 
+            "2026-06-23 14:25:12,402 [cuckoo.core.guest] DEBUG: win7x644: analysis #7603907 still processing\n", 
+            "2026-06-23 14:25:27,479 [cuckoo.core.guest] INFO: win7x644: end of analysis reached!\n", 
+            "2026-06-23 14:25:27,492 [cuckoo.core.plugins] DEBUG: Stopped auxiliary module: Redsocks\n", 
+            "2026-06-23 14:25:27,524 [cuckoo.core.plugins] DEBUG: Stopped auxiliary module: Sniffer\n", 
+            "2026-06-23 14:25:28,570 [cuckoo.machinery.virtualbox] INFO: Successfully generated memory dump for virtual machine with label win7x644 to path /srv/cuckoo/cwd/storage/analyses/7603907/memory.dmp\n", 
+            "2026-06-23 14:25:28,571 [cuckoo.machinery.virtualbox] DEBUG: Stopping vm win7x644\n", 
+            "2026-06-23 14:25:36,314 [cuckoo.core.resultserver] DEBUG: Stopped tracking machine 192.168.168.204 for task #7603907\n", 
+            "2026-06-23 14:25:36,628 [cuckoo.core.scheduler] DEBUG: Released database task #7603907\n", 
+            "2026-06-23 14:25:36,648 [cuckoo.core.scheduler] INFO: Task #7603907: analysis procedure completed\n"
+        ]
+    }, 
+    "misp": [
+        {
+            "info": "Cuckoo Sandbox analysis #7603903", 
+            "level": 4, 
+            "event_id": 5796774, 
+            "iocs": [
+                "2771ad734d54cac1e001804e56e45391", 
+                "808222021300d7862010a2b6f43275604d44a458", 
+                "3f935d164b91eac5338110e346aefa362dffa2df514845bf025007d38d206fd7"
+            ], 
+            "url": "https://misp.cert.ee/events/view/5796774", 
+            "date": "2026-06-23"
+        }
+    ], 
+    "strings": [
+        "<html><head> <title>Loki locker</title> <HTA:APPLICATION ICON='msiexec.exe' WINDOWSTATE=\"maximize\" SINGLEINSTANCE='yes' SysMenu=\"no\" contextmenu=\"no\" scroll=\"yes\"/> <meta http-equiv=\"x-ua-compatible\" content=\"IE=9\"/> </head><style type=\"text/css\"> body{background-color: #000000; font-family: Arial, Helvetica, sans-serif;}.header{text-align: center;}#t{color: #FF0000; font-weight: bold; font-size: 1.51vw; margin-bottom: 0;}p{font-size: 1vw; color: white; margin-bottom: 0;}.t{text-align: left; margin-left: 2px;}.pt{color: white; font-weight: bold; text-indent: 10px; height: 30px; line-height: 30px; padding-top: 10px; font-size: 1.1vw;}.b{padding: 2px; outline: none;}ul{font-size: 1vw;}.m{background: rgb(189, 54, 54); padding: 1px 5px; font-weight: bold;}#tm{color: red; border-bottom: 0; font-size: 2vw;}</style><script>var countDownDate = new Date(2026,6,17,12,50,49).getTime(); var x = setInterval(function () { var now = new Date().getTime(); var distance = countDownDate - now; var days = Math.floor(distance / ("
+    ], 
+    "intelmq": [
+        {
+            "classification_taxonomy": "malicious-code", 
+            "classification_type": "infected-system", 
+            "feed_provider": "CERT-EE", 
+            "time_source": "2026-06-23T11:12:06.457645+00:00", 
+            "feed_name": "Sandbox", 
+            "ioc": "2771ad734d54cac1e001804e56e45391", 
+            "id": "brgu9J4BWX3nnMPSKZRi", 
+            "index": "imq-2026-06", 
+            "url": "https://kips.cert.ee/app/discover#/doc/imq/imq-2026-06/?id=brgu9J4BWX3nnMPSKZRi", 
+            "time_observation": "2026-06-23T11:12:06+00:00", 
+            "feed_accuracy": 50
+        }, 
+        {
+            "classification_taxonomy": "malicious-code", 
+            "classification_type": "infected-system", 
+            "feed_provider": "CERT-EE", 
+            "time_source": "2026-06-23T11:12:06.457825+00:00", 
+            "feed_name": "Sandbox", 
+            "ioc": "2771ad734d54cac1e001804e56e45391", 
+            "id": "b7gu9J4BWX3nnMPSKZRq", 
+            "index": "imq-2026-06", 
+            "url": "https://kips.cert.ee/app/discover#/doc/imq/imq-2026-06/?id=b7gu9J4BWX3nnMPSKZRq", 
+            "time_observation": "2026-06-23T11:12:06+00:00", 
+            "feed_accuracy": 50
+        }
+    ], 
+    "metadata": {
+        "output": {
+            "pcap": {
+                "basename": "dump.pcap", 
+                "sha256": "b93a42e21fce8b4191d5efe54b334d9aeb669c5a3f767b72ec645cc55a9ebd13", 
+                "dirname": ""
+            }
+        }
+    }
+}

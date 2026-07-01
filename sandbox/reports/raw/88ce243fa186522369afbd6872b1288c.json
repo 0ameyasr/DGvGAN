@@ -1,0 +1,3763 @@
+{
+    "info": {
+        "added": 1782602308.854103, 
+        "started": 1782602309.201617, 
+        "duration": 83, 
+        "ended": 1782602393.062547, 
+        "owner": "", 
+        "score": 10.0, 
+        "id": 7605574, 
+        "category": "file", 
+        "git": {
+            "head": "", 
+            "fetch_head": ""
+        }, 
+        "monitor": null, 
+        "package": "elf", 
+        "route": "internet", 
+        "custom": "", 
+        "machine": {
+            "status": "stopped", 
+            "name": "Ubuntu1904x641", 
+            "label": "Ubuntu1904x641", 
+            "platform": "linux", 
+            "manager": "VirtualBox", 
+            "started_on": "2026-06-27 23:18:29", 
+            "shutdown_on": "2026-06-27 23:19:52"
+        }, 
+        "platform": "linux", 
+        "version": "2.0.7", 
+        "options": ""
+    }, 
+    "signatures": [
+        {
+            "families": [], 
+            "description": "File has been identified by 3 AntiVirus engine on IRMA as malicious", 
+            "severity": 20, 
+            "ttp": {}, 
+            "markcount": 3, 
+            "references": [], 
+            "marks": [
+                {
+                    "category": "Sophos Anti-Virus (Linux)", 
+                    "ioc": "Mal/Generic-S", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "DrWeb Antivirus (Linux)", 
+                    "ioc": "Linux.Siggen.13223", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Kaspersky Standard (Windows)", 
+                    "ioc": "UDS:Backdoor.Linux.Mirai.gen", 
+                    "type": "ioc", 
+                    "description": null
+                }
+            ], 
+            "name": "antivirus_irma"
+        }, 
+        {
+            "families": [], 
+            "description": "File has been identified by 5 AntiVirus engines on VirusTotal as malicious", 
+            "severity": 50, 
+            "ttp": {}, 
+            "markcount": 5, 
+            "references": [], 
+            "marks": [
+                {
+                    "category": "Kaspersky", 
+                    "ioc": "UDS:Backdoor.Linux.Mirai.gen", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "SentinelOne", 
+                    "ioc": "Static AI - Suspicious ELF", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Jiangmin", 
+                    "ioc": "LINUX.Mirai.fm", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Antiy-AVL", 
+                    "ioc": "Trojan[Backdoor]/Linux.Mirai", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Microsoft", 
+                    "ioc": "Backdoor:Linux/Mirai.DN!MTB", 
+                    "type": "ioc", 
+                    "description": null
+                }
+            ], 
+            "name": "antivirus_virustotal"
+        }
+    ], 
+    "target": {
+        "category": "file", 
+        "file": {
+            "mimetype": "application/x-executable", 
+            "yara": [], 
+            "sha1": "ea9a350f639f5336b0aa6b826c14a5d44387ba49", 
+            "name": "kworkerd-events", 
+            "type": "ELF 32-bit LSB executable, Intel 80386, version 1 (GNU/Linux), statically linked, no section header", 
+            "sha256": "cb573c8f6aaddb1c9ca8c77e996c01128b452ecc66518c5e24a01046925fb3ad", 
+            "urls": [], 
+            "crc32": "8FFECCE6", 
+            "path": "/srv/cuckoo/cwd/storage/binaries/cb573c8f6aaddb1c9ca8c77e996c01128b452ecc66518c5e24a01046925fb3ad", 
+            "ssdeep": null, 
+            "size": 97248, 
+            "sha512": "02fbed3946949265388987cd98ee74746a16cf600e0f457322e25727fd200533269ee423cf7f257447347ef41fb9456b9f3de669e79dfbf29640e1ee487f456c", 
+            "md5": "88ce243fa186522369afbd6872b1288c"
+        }, 
+        "custom": ""
+    }, 
+    "irma": {
+        "status": 1, 
+        "probes_finished": 13, 
+        "scan_id": "cf146074-1f6b-44d1-bcc2-1223ceb256be", 
+        "parent_file_sha256": null, 
+        "probes_total": 13, 
+        "scan_date": 1782591623, 
+        "other_results": [], 
+        "submitter": "cli", 
+        "file_infos": {
+            "mimetype": "ELF 32-bit LSB executable, Intel 80386, version 1 (GNU/Linux)", 
+            "sha1": "ea9a350f639f5336b0aa6b826c14a5d44387ba49", 
+            "tags": [], 
+            "timestamp_first_scan": 1782591623.36, 
+            "size": 97248, 
+            "timestamp_last_scan": 1782591635.68, 
+            "sha256": "cb573c8f6aaddb1c9ca8c77e996c01128b452ecc66518c5e24a01046925fb3ad", 
+            "md5": "88ce243fa186522369afbd6872b1288c"
+        }, 
+        "probe_results": {
+            "antivirus": {
+                "G Data Antivirus (Windows)": {
+                    "status": 0, 
+                    "duration": 0.21, 
+                    "version": "5.5.20197.1358", 
+                    "results": null, 
+                    "virus_database_version": "unavailable"
+                }, 
+                "Avast Core Security (Linux)": {
+                    "status": 0, 
+                    "duration": 0.01, 
+                    "version": "4.6.1", 
+                    "results": null, 
+                    "virus_database_version": "unavailable"
+                }, 
+                "C4S ClamAV (Linux)": {
+                    "status": 0, 
+                    "duration": 0.04, 
+                    "version": "1.4.3", 
+                    "results": null, 
+                    "virus_database_version": "28038"
+                }, 
+                "Trellix (Linux)": {
+                    "status": 0, 
+                    "duration": 9.99, 
+                    "version": "7.0.4.835", 
+                    "results": null, 
+                    "virus_database_version": "11824"
+                }, 
+                "WithSecure (Linux)": {
+                    "status": 0, 
+                    "duration": 0.3, 
+                    "version": "1.0.45", 
+                    "results": null, 
+                    "virus_database_version": "unavailable"
+                }, 
+                "eScan Antivirus (Linux)": {
+                    "status": 0, 
+                    "duration": 4.99, 
+                    "version": "7.0.21", 
+                    "results": null, 
+                    "virus_database_version": "7.101078 (22/06/2026)"
+                }, 
+                "ESET Security (Windows)": {
+                    "status": 0, 
+                    "duration": 1.02, 
+                    "version": "unavailable", 
+                    "results": null, 
+                    "virus_database_version": "unavailable"
+                }, 
+                "Sophos Anti-Virus (Linux)": {
+                    "status": 1, 
+                    "duration": 0.3, 
+                    "version": "1.2.1.1 (2026-04-20)", 
+                    "results": "Mal/Generic-S", 
+                    "virus_database_version": "unavailable"
+                }, 
+                "DrWeb Antivirus (Linux)": {
+                    "status": 1, 
+                    "duration": 8.11, 
+                    "version": "11.1.17.2605081640", 
+                    "results": "Linux.Siggen.13223", 
+                    "virus_database_version": "unavailable"
+                }, 
+                "ClamAV (Linux)": {
+                    "status": 0, 
+                    "duration": 0.06, 
+                    "version": "1.4.3", 
+                    "results": null, 
+                    "virus_database_version": "28038"
+                }, 
+                "Bitdefender Antivirus (Linux)": {
+                    "status": 0, 
+                    "duration": 8.88, 
+                    "version": "7.90123", 
+                    "results": null, 
+                    "virus_database_version": null
+                }, 
+                "Kaspersky Standard (Windows)": {
+                    "status": 1, 
+                    "duration": 5.78, 
+                    "version": "21.24", 
+                    "results": "UDS:Backdoor.Linux.Mirai.gen", 
+                    "virus_database_version": "2026-06-26 22:25:00 (unknown)"
+                }, 
+                "Emsisoft Commandline Scanner (Windows)": {
+                    "status": 0, 
+                    "duration": 0.19, 
+                    "version": "2025.1.0.12641", 
+                    "results": null, 
+                    "virus_database_version": "unavailable"
+                }
+            }
+        }, 
+        "path": "", 
+        "result_id": "138a39a8-d26d-40a7-9366-18f0c10607e3", 
+        "name": "cb573c8f6aaddb1c9ca8c77e996c01128b452ecc66518c5e24a01046925fb3ad"
+    }, 
+    "suricata": {
+        "tls": [
+            {
+                "src_ip": "192.168.168.101", 
+                "version": "TLS 1.2", 
+                "src_port": 32906, 
+                "dst_port": 443, 
+                "timestamp": "2026-06-27T23:19:00.675596+0300", 
+                "dst_ip": "185.125.188.59", 
+                "fingerprint": "95:02:c4:f4:6e:fd:91:d6:31:5a:ea:3c:d0:5e:47:c5:1c:68:52:0f", 
+                "subject": "C=GB, L=London, O=CANONICAL GROUP LIMITED, CN=api.snapcraft.io", 
+                "issuer": "C=US, O=DigiCert Inc, CN=DigiCert Global G2 TLS RSA SHA256 2020 CA1"
+            }
+        ], 
+        "files": [], 
+        "alerts": [], 
+        "http": []
+    }, 
+    "virustotal": {
+        "permalink": "https://www.virustotal.com/gui/file/cb573c8f6aaddb1c9ca8c77e996c01128b452ecc66518c5e24a01046925fb3ad/detection/f-cb573c8f6aaddb1c9ca8c77e996c01128b452ecc66518c5e24a01046925fb3ad-1782584119", 
+        "sha1": "ea9a350f639f5336b0aa6b826c14a5d44387ba49", 
+        "resource": "88ce243fa186522369afbd6872b1288c", 
+        "response_code": 1, 
+        "scan_date": "2026-06-27 18:15:19", 
+        "scan_id": "cb573c8f6aaddb1c9ca8c77e996c01128b452ecc66518c5e24a01046925fb3ad-1782584119", 
+        "summary": {
+            "positives": 5, 
+            "permalink": "https://www.virustotal.com/gui/file/cb573c8f6aaddb1c9ca8c77e996c01128b452ecc66518c5e24a01046925fb3ad/detection/f-cb573c8f6aaddb1c9ca8c77e996c01128b452ecc66518c5e24a01046925fb3ad-1782584119", 
+            "scan_date": "2026-06-27 18:15:19"
+        }, 
+        "sha256": "cb573c8f6aaddb1c9ca8c77e996c01128b452ecc66518c5e24a01046925fb3ad", 
+        "normalized": [
+            "Linux", 
+            "Mirai", 
+            "Static AI", 
+            "Suspicious ELF"
+        ], 
+        "total": 63, 
+        "positives": 5, 
+        "verbose_msg": "Scan finished, information embedded", 
+        "md5": "88ce243fa186522369afbd6872b1288c", 
+        "scans": {
+            "Bkav": {
+                "detected": false, 
+                "version": "8.2.40(8338)", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260627"
+            }, 
+            "Lionic": {
+                "detected": false, 
+                "version": "8.16", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260627"
+            }, 
+            "Elastic": {
+                "detected": false, 
+                "version": "4.0.268", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260626"
+            }, 
+            "ClamAV": {
+                "detected": false, 
+                "version": "1.5.2.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260627"
+            }, 
+            "CTX": {
+                "detected": false, 
+                "version": "2024.8.29.1", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260627"
+            }, 
+            "CAT-QuickHeal": {
+                "detected": false, 
+                "version": "22.00", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260626"
+            }, 
+            "Skyhigh": {
+                "detected": false, 
+                "version": "v2021.2.0+4045", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260627"
+            }, 
+            "ALYac": {
+                "detected": false, 
+                "version": "2.0.0.10", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260627"
+            }, 
+            "Malwarebytes": {
+                "detected": false, 
+                "version": "3.1.0.239", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260627"
+            }, 
+            "VIPRE": {
+                "detected": false, 
+                "version": "6.0.0.35", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260627"
+            }, 
+            "Sangfor": {
+                "detected": false, 
+                "version": "2.22.3.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260626"
+            }, 
+            "CrowdStrike": {
+                "detected": false, 
+                "version": "1.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20230417"
+            }, 
+            "K7GW": {
+                "detected": false, 
+                "version": "14.59.59959", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260627"
+            }, 
+            "K7AntiVirus": {
+                "detected": false, 
+                "version": "14.59.59958", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260627"
+            }, 
+            "Arcabit": {
+                "detected": false, 
+                "version": "2025.0.0.23", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260627"
+            }, 
+            "VirIT": {
+                "detected": false, 
+                "version": "9.5.1237", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260626"
+            }, 
+            "Symantec": {
+                "detected": false, 
+                "version": "1.22.0.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260627"
+            }, 
+            "ESET-NOD32": {
+                "detected": false, 
+                "version": "18.2.18.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260627"
+            }, 
+            "TrendMicro-HouseCall": {
+                "detected": false, 
+                "version": "24.550.0.1002", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260627"
+            }, 
+            "Avast": {
+                "detected": false, 
+                "version": "23.9.8494.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260627"
+            }, 
+            "Cynet": {
+                "detected": false, 
+                "version": "4.0.3.4", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260627"
+            }, 
+            "Kaspersky": {
+                "detected": true, 
+                "version": "22.0.1.28", 
+                "result": "UDS:Backdoor.Linux.Mirai.gen", 
+                "normalized": [
+                    "Linux", 
+                    "Mirai"
+                ], 
+                "update": "20260627"
+            }, 
+            "BitDefender": {
+                "detected": false, 
+                "version": "7.2", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260627"
+            }, 
+            "NANO-Antivirus": {
+                "detected": false, 
+                "version": "1.0.170.26895", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260627"
+            }, 
+            "SUPERAntiSpyware": {
+                "detected": false, 
+                "version": "5.6.0.1032", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260626"
+            }, 
+            "MicroWorld-eScan": {
+                "detected": false, 
+                "version": "14.0.409.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260627"
+            }, 
+            "Rising": {
+                "detected": false, 
+                "version": "25.0.0.28", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260627"
+            }, 
+            "Emsisoft": {
+                "detected": false, 
+                "version": "2024.8.0.61147", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260627"
+            }, 
+            "F-Secure": {
+                "detected": false, 
+                "version": "18.10.1547.307", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260627"
+            }, 
+            "DrWeb": {
+                "detected": false, 
+                "version": "7.0.75.2070", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260627"
+            }, 
+            "Zillya": {
+                "detected": false, 
+                "version": "2.0.0.5630", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260626"
+            }, 
+            "TrendMicro": {
+                "detected": false, 
+                "version": "24.550.0.1002", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260627"
+            }, 
+            "McAfeeD": {
+                "detected": false, 
+                "version": "1.2.0.15146", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260627"
+            }, 
+            "CMC": {
+                "detected": false, 
+                "version": "2.4.2022.1", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260627"
+            }, 
+            "Sophos": {
+                "detected": false, 
+                "version": "3.5.1.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260627"
+            }, 
+            "SentinelOne": {
+                "detected": true, 
+                "version": "7.7.0.1", 
+                "result": "Static AI - Suspicious ELF", 
+                "normalized": [
+                    "Static AI", 
+                    "Suspicious ELF"
+                ], 
+                "update": "20260623"
+            }, 
+            "Avast-Mobile": {
+                "detected": false, 
+                "version": "260626-00", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260627"
+            }, 
+            "Jiangmin": {
+                "detected": true, 
+                "version": "16.0.100", 
+                "result": "LINUX.Mirai.fm", 
+                "normalized": [
+                    "LINUX", 
+                    "Mirai"
+                ], 
+                "update": "20260627"
+            }, 
+            "Google": {
+                "detected": false, 
+                "version": "1782579651", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260627"
+            }, 
+            "Avira": {
+                "detected": false, 
+                "version": "8.3.3.24", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260627"
+            }, 
+            "Antiy-AVL": {
+                "detected": true, 
+                "version": "3.0", 
+                "result": "Trojan[Backdoor]/Linux.Mirai", 
+                "normalized": [
+                    "Linux", 
+                    "Mirai"
+                ], 
+                "update": "20260627"
+            }, 
+            "Kingsoft": {
+                "detected": false, 
+                "version": "None", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260627"
+            }, 
+            "Gridinsoft": {
+                "detected": false, 
+                "version": "1.0.249.174", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260627"
+            }, 
+            "Xcitium": {
+                "detected": false, 
+                "version": "38761", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260627"
+            }, 
+            "Microsoft": {
+                "detected": true, 
+                "version": "1.1.26050.11", 
+                "result": "Backdoor:Linux/Mirai.DN!MTB", 
+                "normalized": [
+                    "Linux", 
+                    "Mirai"
+                ], 
+                "update": "20260627"
+            }, 
+            "ViRobot": {
+                "detected": false, 
+                "version": "2014.3.20.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260627"
+            }, 
+            "ZoneAlarm": {
+                "detected": false, 
+                "version": "6.25-116107887", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260627"
+            }, 
+            "GData": {
+                "detected": false, 
+                "version": "GD:27.45062AVA:64.31484", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260627"
+            }, 
+            "Varist": {
+                "detected": false, 
+                "version": "6.6.1.3", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260627"
+            }, 
+            "AhnLab-V3": {
+                "detected": false, 
+                "version": "3.30.1.10706", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260627"
+            }, 
+            "Acronis": {
+                "detected": false, 
+                "version": "1.2.0.121", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20240328"
+            }, 
+            "VBA32": {
+                "detected": false, 
+                "version": "5.6.1", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260627"
+            }, 
+            "TACHYON": {
+                "detected": false, 
+                "version": "2026-06-27.02", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260627"
+            }, 
+            "Zoner": {
+                "detected": false, 
+                "version": "2.2.2.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260627"
+            }, 
+            "Tencent": {
+                "detected": false, 
+                "version": "1.0.0.1", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260627"
+            }, 
+            "Yandex": {
+                "detected": false, 
+                "version": "5.5.2.24", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260627"
+            }, 
+            "TrellixENS": {
+                "detected": false, 
+                "version": "6.0.6.653", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260627"
+            }, 
+            "huorong": {
+                "detected": false, 
+                "version": "70ca644:70ca644:6990e76:6990e76", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260627"
+            }, 
+            "MaxSecure": {
+                "detected": false, 
+                "version": "1.0.0.1", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260626"
+            }, 
+            "Fortinet": {
+                "detected": false, 
+                "version": "7.0.48.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260627"
+            }, 
+            "AVG": {
+                "detected": false, 
+                "version": "23.9.8494.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260627"
+            }, 
+            "Panda": {
+                "detected": false, 
+                "version": "4.6.4.2", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20260627"
+            }, 
+            "alibabacloud": {
+                "detected": false, 
+                "version": "2.2.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20250321"
+            }
+        }
+    }, 
+    "network": {
+        "udp": [], 
+        "dns_servers": [], 
+        "http": [], 
+        "smtp": [], 
+        "tcp": [], 
+        "geoinfo": {}, 
+        "mitm": [], 
+        "sorted_pcap_sha256": "d283c66ee2d7b26ece569496dd9db67b301afeeed8ce5225e3bb72d1d11bcdf6", 
+        "icmp": [], 
+        "tls": [], 
+        "dead_hosts": [], 
+        "hosts": [], 
+        "pcap_sha256": "220468cc5e913a761224139fcd986049272eeb47aeae47e8b19d59c372deb7cf", 
+        "dns": [], 
+        "domains": [], 
+        "irc": []
+    }, 
+    "resubmit": {
+        "resubmit_ids": []
+    }, 
+    "snort": {
+        "alerts": []
+    }, 
+    "behavior": {
+        "generic": [
+            {
+                "process_path": null, 
+                "process_name": "kworkerd-events", 
+                "pid": 2068, 
+                "summary": {}, 
+                "first_seen": 1782602315.537833, 
+                "ppid": -1
+            }
+        ], 
+        "processes": [
+            {
+                "calls": [
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.537833 kworkerd-events@80ad8b4[2068] execve(\"/tmp/kworkerd-events\", [\"/tmp/kworkerd-events\"], [\"SUDO_GID=0\", \"MAIL=/var/mail/root\", \"USER=root\", \"HOME=/root\", \"SUDO_UID=0\", \"LOGNAME=root\", \"SYSTEMTAP_MODULE=stap_\", \"TERM=unknown\", \"SYSTEMTAP_VERBOSE=2\", \"PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin\", \"DISPLAY=:0\", \"LANG=en_US.UTF-8\", \"XAUTHORITY=/root/.Xauthority\", \"SUDO_COMMAND=/usr/bin/staprun -vv -o stap.log /root/.cuckoo/stap_.ko -c sh -c /tmp/kworkerd-events\", \"SHELL=/bin/bash\", \"SUDO_USER=root\", \"PWD=/tmp/tmpoTiI)\n", 
+                        "api": "execve", 
+                        "return_value": "", 
+                        "category": "process", 
+                        "instruction_pointer": "80ad8b4", 
+                        "arguments": {
+                            "p2": [
+                                "SUDO_GID=0", 
+                                "MAIL=/var/mail/root", 
+                                "USER=root", 
+                                "HOME=/root", 
+                                "SUDO_UID=0", 
+                                "LOGNAME=root", 
+                                "SYSTEMTAP_MODULE=stap_", 
+                                "TERM=unknown", 
+                                "SYSTEMTAP_VERBOSE=2", 
+                                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin", 
+                                "DISPLAY=:0", 
+                                "LANG=en_US.UTF-8", 
+                                "XAUTHORITY=/root/.Xauthority", 
+                                "SUDO_COMMAND=/usr/bin/staprun -vv -o stap.log /root/.cuckoo/stap_.ko -c sh -c /tmp/kworkerd-events", 
+                                "SHELL=/bin/bash", 
+                                "SUDO_USER=root", 
+                                "\"PWD=/tmp/tmpoTiI"
+                            ], 
+                            "p0": "/tmp/kworkerd-events", 
+                            "p1": [
+                                "/tmp/kworkerd-events"
+                            ]
+                        }, 
+                        "time": 1782602315.537833
+                    }, 
+                    {
+                        "status": "EINVAL", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.538159 kworkerd-events@80ad8b4[2068] memfd_create(\"upx\", 0x10) = -22 (EINVAL)\n", 
+                        "api": "memfd_create", 
+                        "return_value": "-22", 
+                        "category": "process", 
+                        "instruction_pointer": "80ad8b4", 
+                        "arguments": {
+                            "p0": "upx", 
+                            "p1": "0x10"
+                        }, 
+                        "time": 1782602315.538159
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.538214 kworkerd-events@80ad8c9[2068] memfd_create(\"upx\", 0x0) = 3\n", 
+                        "api": "memfd_create", 
+                        "return_value": "3", 
+                        "category": "process", 
+                        "instruction_pointer": "80ad8c9", 
+                        "arguments": {
+                            "p0": "upx", 
+                            "p1": "0x0"
+                        }, 
+                        "time": 1782602315.538214
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.538274 kworkerd-events@80ad970[2068] ftruncate(3, 6685) = 0\n", 
+                        "api": "ftruncate", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "80ad970", 
+                        "arguments": {
+                            "p0": "3", 
+                            "p1": "6685"
+                        }, 
+                        "time": 1782602315.538274
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.538332 kworkerd-events@80ad7fa[2068] mmap2(0x0, 6685, PROT_READ|PROT_WRITE, MAP_SHARED, 3, 0) = 0xf7f4d000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0xf7f4d000", 
+                        "category": "process", 
+                        "instruction_pointer": "80ad7fa", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_WRITE", 
+                            "p3": "MAP_SHARED", 
+                            "p0": "0x0", 
+                            "p1": "6685", 
+                            "p4": "3", 
+                            "p5": "0"
+                        }, 
+                        "time": 1782602315.538332
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.538553 kworkerd-events@80ad7fa[2068] write(3, \"\\0\\360\\377\\377\\004\\031\\0\\0\\x22\\0\\0\\0\\363\\017\"..., 6685) = 6685\n", 
+                        "api": "write", 
+                        "return_value": "6685", 
+                        "category": "process", 
+                        "instruction_pointer": "80ad7fa", 
+                        "arguments": {
+                            "p2": "6685", 
+                            "p0": "3", 
+                            "p1": "\"\\0\\360\\377\\377\\004\\031\\0\\0\\x22\\0\\0\\0\\363\\017\"..."
+                        }, 
+                        "time": 1782602315.538553
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.538622 kworkerd-events@80ad7fa[2068] mmap2(0xf7f4d000, 6685, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED, 3, 0) = 0xf7f4d000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0xf7f4d000", 
+                        "category": "process", 
+                        "instruction_pointer": "80ad7fa", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_EXEC", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED", 
+                            "p0": "0xf7f4d000", 
+                            "p1": "6685", 
+                            "p4": "3", 
+                            "p5": "0"
+                        }, 
+                        "time": 1782602315.538622
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.538680 kworkerd-events@80ad7fa[2068] close(3) = 0\n", 
+                        "api": "close", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "80ad7fa", 
+                        "arguments": {
+                            "p0": "3"
+                        }, 
+                        "time": 1782602315.53868
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.538743 kworkerd-events@f7f4d0ac[2068] open(\"/proc/self/exe\", O_RDONLY) = 3\n", 
+                        "api": "open", 
+                        "return_value": "3", 
+                        "category": "process", 
+                        "instruction_pointer": "f7f4d0ac", 
+                        "arguments": {
+                            "p0": "/proc/self/exe", 
+                            "p1": "O_RDONLY"
+                        }, 
+                        "time": 1782602315.538743
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.538827 kworkerd-events@f7f4d0bc[2068] readlink(\"/proc/self/exe\", 0xffc49558, 4055) = 20\n", 
+                        "api": "readlink", 
+                        "return_value": "20", 
+                        "category": "process", 
+                        "instruction_pointer": "f7f4d0bc", 
+                        "arguments": {
+                            "p2": "4055", 
+                            "p0": "/proc/self/exe", 
+                            "p1": "0xffc49558"
+                        }, 
+                        "time": 1782602315.538827
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.538967 kworkerd-events@f7f4d3aa[2068] munmap(0x8048000, 322928) = 0\n", 
+                        "api": "munmap", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "f7f4d3aa", 
+                        "arguments": {
+                            "p0": "0x8048000", 
+                            "p1": "322928"
+                        }, 
+                        "time": 1782602315.538967
+                    }, 
+                    {
+                        "status": "EINVAL", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.539036 kworkerd-events@f7f4e700[2068] memfd_create(\"upx\", 0x10) = -22 (EINVAL)\n", 
+                        "api": "memfd_create", 
+                        "return_value": "-22", 
+                        "category": "process", 
+                        "instruction_pointer": "f7f4e700", 
+                        "arguments": {
+                            "p0": "upx", 
+                            "p1": "0x10"
+                        }, 
+                        "time": 1782602315.539036
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.539084 kworkerd-events@f7f4e715[2068] memfd_create(\"upx\", 0x0) = 4\n", 
+                        "api": "memfd_create", 
+                        "return_value": "4", 
+                        "category": "process", 
+                        "instruction_pointer": "f7f4e715", 
+                        "arguments": {
+                            "p0": "upx", 
+                            "p1": "0x0"
+                        }, 
+                        "time": 1782602315.539084
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.539134 kworkerd-events@f7f4e7bc[2068] ftruncate(4, 203700) = 0\n", 
+                        "api": "ftruncate", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "f7f4e7bc", 
+                        "arguments": {
+                            "p0": "4", 
+                            "p1": "203700"
+                        }, 
+                        "time": 1782602315.539134
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.539186 kworkerd-events@f7f4e877[2068] mmap2(0x8048000, 203700, PROT_READ|PROT_WRITE, MAP_SHARED|MAP_FIXED, 4, 0) = 0x8048000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x8048000", 
+                        "category": "process", 
+                        "instruction_pointer": "f7f4e877", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_WRITE", 
+                            "p3": "MAP_SHARED|MAP_FIXED", 
+                            "p0": "0x8048000", 
+                            "p1": "203700", 
+                            "p4": "4", 
+                            "p5": "0"
+                        }, 
+                        "time": 1782602315.539186
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.563991 kworkerd-events@f7f4e877[2068] msync(0x8048000, 203700, MS_SYNC) = 0\n", 
+                        "api": "msync", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "f7f4e877", 
+                        "arguments": {
+                            "p2": "MS_SYNC", 
+                            "p0": "0x8048000", 
+                            "p1": "203700"
+                        }, 
+                        "time": 1782602315.563991
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.564048 kworkerd-events@f7f4d50e[2068] munmap(0x8048000, 203700) = 0\n", 
+                        "api": "munmap", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "f7f4d50e", 
+                        "arguments": {
+                            "p0": "0x8048000", 
+                            "p1": "203700"
+                        }, 
+                        "time": 1782602315.564048
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.564127 kworkerd-events@f7f4e877[2068] mmap2(0x8048000, 203700, PROT_READ|PROT_EXEC, MAP_SHARED|MAP_FIXED, 4, 0) = 0x8048000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x8048000", 
+                        "category": "process", 
+                        "instruction_pointer": "f7f4e877", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_EXEC", 
+                            "p3": "MAP_SHARED|MAP_FIXED", 
+                            "p0": "0x8048000", 
+                            "p1": "203700", 
+                            "p4": "4", 
+                            "p5": "0"
+                        }, 
+                        "time": 1782602315.564127
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.564184 kworkerd-events@f7f4d53d[2068] close(4) = 0\n", 
+                        "api": "close", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "f7f4d53d", 
+                        "arguments": {
+                            "p0": "4"
+                        }, 
+                        "time": 1782602315.564184
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.564233 kworkerd-events@f7f4e877[2068] mmap2(0x807a000, 18384, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x807a000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x807a000", 
+                        "category": "process", 
+                        "instruction_pointer": "f7f4e877", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_WRITE", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS", 
+                            "p0": "0x807a000", 
+                            "p1": "18384", 
+                            "p4": "-1", 
+                            "p5": "0"
+                        }, 
+                        "time": 1782602315.564233
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.564587 kworkerd-events@f7f4e877[2068] mmap2(0x807f000, 97648, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x807f000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0x807f000", 
+                        "category": "process", 
+                        "instruction_pointer": "f7f4e877", 
+                        "arguments": {
+                            "p2": "PROT_READ|PROT_WRITE", 
+                            "p3": "MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS", 
+                            "p0": "0x807f000", 
+                            "p1": "97648", 
+                            "p4": "-1", 
+                            "p5": "0"
+                        }, 
+                        "time": 1782602315.564587
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.564640 kworkerd-events@f7f4e877[2068] brk(0x8097000) = 148353024\n", 
+                        "api": "brk", 
+                        "return_value": "148353024", 
+                        "category": "process", 
+                        "instruction_pointer": "f7f4e877", 
+                        "arguments": {
+                            "p0": "0x8097000"
+                        }, 
+                        "time": 1782602315.56464
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.564687 kworkerd-events@f7f4e877[2068] munmap(0x8097000, 96879) = 0\n", 
+                        "api": "munmap", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "f7f4e877", 
+                        "arguments": {
+                            "p0": "0x8097000", 
+                            "p1": "96879"
+                        }, 
+                        "time": 1782602315.564687
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.564758 kworkerd-events@f7f4e877[2068] mmap2(0x0, 4096, PROT_READ, MAP_PRIVATE, 3, 0) = 0xf7f4c000\n", 
+                        "api": "mmap2", 
+                        "return_value": "0xf7f4c000", 
+                        "category": "process", 
+                        "instruction_pointer": "f7f4e877", 
+                        "arguments": {
+                            "p2": "PROT_READ", 
+                            "p3": "MAP_PRIVATE", 
+                            "p0": "0x0", 
+                            "p1": "4096", 
+                            "p4": "3", 
+                            "p5": "0"
+                        }, 
+                        "time": 1782602315.564758
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.564808 kworkerd-events@f7f4e877[2068] close(3) = 0\n", 
+                        "api": "close", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "f7f4e877", 
+                        "arguments": {
+                            "p0": "3"
+                        }, 
+                        "time": 1782602315.564808
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.564858 kworkerd-events@8079bb6[2068] munmap(0xf7f4d000, 6685) = 0\n", 
+                        "api": "munmap", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "8079bb6", 
+                        "arguments": {
+                            "p0": "0xf7f4d000", 
+                            "p1": "6685"
+                        }, 
+                        "time": 1782602315.564858
+                    }, 
+                    {
+                        "status": "ENOTTY", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.564951 kworkerd-events@806682e[2068] ioctl(0, 21505, 0xffc4a260) = -25 (ENOTTY)\n", 
+                        "api": "ioctl", 
+                        "return_value": "-25", 
+                        "category": "process", 
+                        "instruction_pointer": "806682e", 
+                        "arguments": {
+                            "p2": "0xffc4a260", 
+                            "p0": "0", 
+                            "p1": "21505"
+                        }, 
+                        "time": 1782602315.564951
+                    }, 
+                    {
+                        "status": "ENOTTY", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.565001 kworkerd-events@806682e[2068] ioctl(1, 21505, 0xffc4a260) = -25 (ENOTTY)\n", 
+                        "api": "ioctl", 
+                        "return_value": "-25", 
+                        "category": "process", 
+                        "instruction_pointer": "806682e", 
+                        "arguments": {
+                            "p2": "0xffc4a260", 
+                            "p0": "1", 
+                            "p1": "21505"
+                        }, 
+                        "time": 1782602315.565001
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.565050 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.56505
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.565098 kworkerd-events@8066797[2068] getrlimit(RLIMIT_STACK, 0xffc4a2f0) = 0\n", 
+                        "api": "getrlimit", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "8066797", 
+                        "arguments": {
+                            "p0": "RLIMIT_STACK", 
+                            "p1": "0xffc4a2f0"
+                        }, 
+                        "time": 1782602315.565098
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.565151 kworkerd-events@8066c3e[2068] setrlimit(RLIMIT_STACK, [-4292878336,134717440]) = 0\n", 
+                        "api": "setrlimit", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "8066c3e", 
+                        "arguments": {
+                            "p0": "RLIMIT_STACK", 
+                            "p1": [
+                                "-4292878336,134717440"
+                            ]
+                        }, 
+                        "time": 1782602315.565151
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.565208 kworkerd-events@806650c[2068] rt_sigaction(0x20, {0x8065d3d, SA_RESTORER, 0x80662ef, [EMPTY]}, 0x0, 8) = 0\n", 
+                        "api": "rt_sigaction", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "806650c", 
+                        "arguments": {
+                            "p2": "0x0", 
+                            "p3": "8", 
+                            "p0": "0x20", 
+                            "p1": [
+                                "0x8065d3d", 
+                                "SA_RESTORER", 
+                                "0x80662ef", 
+                                [
+                                    "EMPTY]"
+                                ]
+                            ]
+                        }, 
+                        "time": 1782602315.565208
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.565260 kworkerd-events@806650c[2068] rt_sigaction(0x21, {0x8065cac, SA_RESTORER, 0x80662ef, [EMPTY]}, 0x0, 8) = 0\n", 
+                        "api": "rt_sigaction", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "806650c", 
+                        "arguments": {
+                            "p2": "0x0", 
+                            "p3": "8", 
+                            "p0": "0x21", 
+                            "p1": [
+                                "0x8065cac", 
+                                "SA_RESTORER", 
+                                "0x80662ef", 
+                                [
+                                    "EMPTY]"
+                                ]
+                            ]
+                        }, 
+                        "time": 1782602315.56526
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.565402 kworkerd-events@806650c[2068] rt_sigaction(0x22, {0x8065650, SA_RESTORER, 0x80662ef, [EMPTY]}, 0x0, 8) = 0\n", 
+                        "api": "rt_sigaction", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "806650c", 
+                        "arguments": {
+                            "p2": "0x0", 
+                            "p3": "8", 
+                            "p0": "0x22", 
+                            "p1": [
+                                "0x8065650", 
+                                "SA_RESTORER", 
+                                "0x80662ef", 
+                                [
+                                    "EMPTY]"
+                                ]
+                            ]
+                        }, 
+                        "time": 1782602315.565402
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.565455 kworkerd-events@8066cba[2068] rt_sigprocmask(SIG_BLOCK, [EMPTY], 0x0, 8) = 0\n", 
+                        "api": "rt_sigprocmask", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "8066cba", 
+                        "arguments": {
+                            "p2": "0x0", 
+                            "p3": "8", 
+                            "p0": "SIG_BLOCK", 
+                            "p1": [
+                                "EMPTY"
+                            ]
+                        }, 
+                        "time": 1782602315.565455
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.565506 kworkerd-events@8066cba[2068] rt_sigprocmask(SIG_UNBLOCK, [EMPTY], 0x0, 8) = 0\n", 
+                        "api": "rt_sigprocmask", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "8066cba", 
+                        "arguments": {
+                            "p2": "0x0", 
+                            "p3": "8", 
+                            "p0": "SIG_UNBLOCK", 
+                            "p1": [
+                                "EMPTY"
+                            ]
+                        }, 
+                        "time": 1782602315.565506
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.565571 kworkerd-events@8072165[2068] brk(0x0) = 148353024\n", 
+                        "api": "brk", 
+                        "return_value": "148353024", 
+                        "category": "process", 
+                        "instruction_pointer": "8072165", 
+                        "arguments": {
+                            "p0": "0x0"
+                        }, 
+                        "time": 1782602315.565571
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.565616 kworkerd-events@8072165[2068] brk(0x8d7c000) = 148357120\n", 
+                        "api": "brk", 
+                        "return_value": "148357120", 
+                        "category": "process", 
+                        "instruction_pointer": "8072165", 
+                        "arguments": {
+                            "p0": "0x8d7c000"
+                        }, 
+                        "time": 1782602315.565616
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.565685 kworkerd-events@806650c[2068] rt_sigaction(SIGPIPE, {SIG_IGN}, 0xffc4874c, 8) = 0\n", 
+                        "api": "rt_sigaction", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "806650c", 
+                        "arguments": {
+                            "p2": "0xffc4874c", 
+                            "p3": "8", 
+                            "p0": "SIGPIPE", 
+                            "p1": [
+                                "SIG_IGN"
+                            ]
+                        }, 
+                        "time": 1782602315.565685
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.565742 kworkerd-events@806650c[2068] rt_sigaction(SIGCHLD, {SIG_IGN}, 0xffc4874c, 8) = 0\n", 
+                        "api": "rt_sigaction", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "806650c", 
+                        "arguments": {
+                            "p2": "0xffc4874c", 
+                            "p3": "8", 
+                            "p0": "SIGCHLD", 
+                            "p1": [
+                                "SIG_IGN"
+                            ]
+                        }, 
+                        "time": 1782602315.565742
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.565789 kworkerd-events@80665f8[2068] clock_gettime(CLOCK_MONOTONIC, 0xffc48a4c) = 0\n", 
+                        "api": "clock_gettime", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "80665f8", 
+                        "arguments": {
+                            "p0": "CLOCK_MONOTONIC", 
+                            "p1": "0xffc48a4c"
+                        }, 
+                        "time": 1782602315.565789
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.565842 kworkerd-events@8066989[2068] nanosleep([0.000000050], 0x0) = 0\n", 
+                        "api": "nanosleep", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "8066989", 
+                        "arguments": {
+                            "p0": [
+                                "0.000000050"
+                            ], 
+                            "p1": "0x0"
+                        }, 
+                        "time": 1782602315.565842
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.570229 kworkerd-events@80665f8[2068] clock_gettime(CLOCK_MONOTONIC, 0xffc48a3c) = 0\n", 
+                        "api": "clock_gettime", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "80665f8", 
+                        "arguments": {
+                            "p0": "CLOCK_MONOTONIC", 
+                            "p1": "0xffc48a3c"
+                        }, 
+                        "time": 1782602315.570229
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.570305 kworkerd-events@80665f8[2068] clock_gettime(CLOCK_MONOTONIC, 0xffc48a4c) = 0\n", 
+                        "api": "clock_gettime", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "80665f8", 
+                        "arguments": {
+                            "p0": "CLOCK_MONOTONIC", 
+                            "p1": "0xffc48a4c"
+                        }, 
+                        "time": 1782602315.570305
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.570358 kworkerd-events@8066989[2068] nanosleep([0.000000050], 0x0) = 0\n", 
+                        "api": "nanosleep", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "8066989", 
+                        "arguments": {
+                            "p0": [
+                                "0.000000050"
+                            ], 
+                            "p1": "0x0"
+                        }, 
+                        "time": 1782602315.570358
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.576581 kworkerd-events@80665f8[2068] clock_gettime(CLOCK_MONOTONIC, 0xffc48a3c) = 0\n", 
+                        "api": "clock_gettime", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "80665f8", 
+                        "arguments": {
+                            "p0": "CLOCK_MONOTONIC", 
+                            "p1": "0xffc48a3c"
+                        }, 
+                        "time": 1782602315.576581
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.576662 kworkerd-events@80665f8[2068] clock_gettime(CLOCK_MONOTONIC, 0xffc48a4c) = 0\n", 
+                        "api": "clock_gettime", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "80665f8", 
+                        "arguments": {
+                            "p0": "CLOCK_MONOTONIC", 
+                            "p1": "0xffc48a4c"
+                        }, 
+                        "time": 1782602315.576662
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.576713 kworkerd-events@8066989[2068] nanosleep([0.000000050], 0x0) = 0\n", 
+                        "api": "nanosleep", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "8066989", 
+                        "arguments": {
+                            "p0": [
+                                "0.000000050"
+                            ], 
+                            "p1": "0x0"
+                        }, 
+                        "time": 1782602315.576713
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.576889 kworkerd-events@80665f8[2068] clock_gettime(CLOCK_MONOTONIC, 0xffc48a3c) = 0\n", 
+                        "api": "clock_gettime", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "80665f8", 
+                        "arguments": {
+                            "p0": "CLOCK_MONOTONIC", 
+                            "p1": "0xffc48a3c"
+                        }, 
+                        "time": 1782602315.576889
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.576948 kworkerd-events@80665f8[2068] clock_gettime(CLOCK_MONOTONIC, 0xffc48a4c) = 0\n", 
+                        "api": "clock_gettime", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "80665f8", 
+                        "arguments": {
+                            "p0": "CLOCK_MONOTONIC", 
+                            "p1": "0xffc48a4c"
+                        }, 
+                        "time": 1782602315.576948
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.576997 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.576997
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.577058 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.577058
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.577104 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.577104
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.577149 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.577149
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.577191 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.577191
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.577233 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.577233
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.577338 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.577338
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.577383 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.577383
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.577433 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.577433
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.577476 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.577476
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.577518 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.577518
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.577561 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.577561
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.577604 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.577604
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.577647 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.577647
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.577703 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.577703
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.577762 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.577762
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.577804 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.577804
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.577861 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.577861
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.577916 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.577916
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.577973 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.577973
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.578016 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.578016
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.578058 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.578058
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.578100 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.5781
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.578142 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.578142
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.578184 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.578184
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.578226 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.578226
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.578268 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.578268
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.578310 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.57831
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.578352 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.578352
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.578394 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.578394
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.578437 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.578437
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.578479 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.578479
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.578521 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.578521
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.578563 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.578563
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.578605 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.578605
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.578647 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.578647
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.578689 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.578689
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.578731 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.578731
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.578773 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.578773
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.578815 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.578815
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.578857 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.578857
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.578908 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.578908
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.578950 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.57895
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.578992 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.578992
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.579034 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.579034
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.579075 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.579075
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.579117 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.579117
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.579159 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.579159
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.579201 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.579201
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.579244 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.579244
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.579288 kworkerd-events@80665f8[2068] clock_gettime(CLOCK_MONOTONIC, 0xffc48a3c) = 0\n", 
+                        "api": "clock_gettime", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "80665f8", 
+                        "arguments": {
+                            "p0": "CLOCK_MONOTONIC", 
+                            "p1": "0xffc48a3c"
+                        }, 
+                        "time": 1782602315.579288
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.579335 kworkerd-events@80665f8[2068] clock_gettime(CLOCK_MONOTONIC, 0xffc48a4c) = 0\n", 
+                        "api": "clock_gettime", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "80665f8", 
+                        "arguments": {
+                            "p0": "CLOCK_MONOTONIC", 
+                            "p1": "0xffc48a4c"
+                        }, 
+                        "time": 1782602315.579335
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.579380 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.57938
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.579422 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.579422
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.579464 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.579464
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.579506 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.579506
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.579548 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.579548
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.579590 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.57959
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.579632 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.579632
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.579674 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.579674
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.579716 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.579716
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.579758 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.579758
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.579799 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.579799
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.579841 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.579841
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.579891 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.579891
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.579939 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.579939
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.579981 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.579981
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.580023 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.580023
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.580065 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.580065
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.580107 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.580107
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.580149 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.580149
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.580191 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.580191
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.580232 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.580232
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.580274 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.580274
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.580316 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.580316
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.580358 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.580358
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.580400 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.5804
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.580442 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.580442
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.580484 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.580484
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.580526 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.580526
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.580568 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.580568
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.580610 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.58061
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.580652 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.580652
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.580694 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.580694
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.580736 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.580736
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.580778 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.580778
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.580820 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.58082
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.580862 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.580862
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.580912 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.580912
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.580954 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.580954
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.580996 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.580996
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.581038 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.581038
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.581080 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.58108
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.581122 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.581122
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.581164 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.581164
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.581206 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.581206
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.581248 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.581248
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.581352 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.581352
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.581396 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.581396
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.581440 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.58144
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.581482 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.581482
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.581524 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.581524
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.581567 kworkerd-events@80665f8[2068] clock_gettime(CLOCK_MONOTONIC, 0xffc48a3c) = 0\n", 
+                        "api": "clock_gettime", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "80665f8", 
+                        "arguments": {
+                            "p0": "CLOCK_MONOTONIC", 
+                            "p1": "0xffc48a3c"
+                        }, 
+                        "time": 1782602315.581567
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.581614 kworkerd-events@80665f8[2068] clock_gettime(CLOCK_MONOTONIC, 0xffc48a4c) = 0\n", 
+                        "api": "clock_gettime", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "80665f8", 
+                        "arguments": {
+                            "p0": "CLOCK_MONOTONIC", 
+                            "p1": "0xffc48a4c"
+                        }, 
+                        "time": 1782602315.581614
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.581659 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.581659
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.581701 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.581701
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.581743 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.581743
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.581788 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.581788
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.581830 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.58183
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.581872 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.581872
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.581930 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.58193
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.581973 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.581973
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.582015 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.582015
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.582057 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.582057
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.582099 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.582099
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.582140 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.58214
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.582183 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.582183
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.582225 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.582225
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.582267 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.582267
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.582309 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.582309
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.582350 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.58235
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.582392 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.582392
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.582434 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.582434
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.582477 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.582477
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.582518 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.582518
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.582560 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.58256
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.582602 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.582602
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.582645 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.582645
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.582686 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.582686
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.582728 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.582728
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.582770 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.58277
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.582812 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.582812
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.582854 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.582854
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.582903 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.582903
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.582947 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.582947
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.582989 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.582989
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.583031 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.583031
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.583073 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.583073
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.583115 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.583115
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.583157 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.583157
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.583199 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.583199
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.583241 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.583241
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.583283 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.583283
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.583325 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.583325
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.583367 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.583367
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.583409 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.583409
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.583451 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.583451
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.583493 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.583493
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.583535 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.583535
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.583577 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.583577
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.583618 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.583618
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.583660 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.58366
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.583702 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.583702
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.583744 kworkerd-events@8066741[2068] getpid() = 2068\n", 
+                        "api": "getpid", 
+                        "return_value": "2068", 
+                        "category": "process", 
+                        "instruction_pointer": "8066741", 
+                        "arguments": {}, 
+                        "time": 1782602315.583744
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.583787 kworkerd-events@80665f8[2068] clock_gettime(CLOCK_MONOTONIC, 0xffc48a3c) = 0\n", 
+                        "api": "clock_gettime", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "80665f8", 
+                        "arguments": {
+                            "p0": "CLOCK_MONOTONIC", 
+                            "p1": "0xffc48a3c"
+                        }, 
+                        "time": 1782602315.583787
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "kworkerd-events", 
+                        "pid": 2068, 
+                        "raw": "Sat Jun 27 23:18:35 2026.583839 kworkerd-events@806653b[2068] exit(0)\n", 
+                        "api": "exit", 
+                        "return_value": "", 
+                        "category": "process", 
+                        "instruction_pointer": "806653b", 
+                        "arguments": {
+                            "p0": "0"
+                        }, 
+                        "time": 1782602315.583839
+                    }
+                ], 
+                "pid": 2068, 
+                "process_name": "kworkerd-events", 
+                "command_line": "/tmp/kworkerd-events", 
+                "first_seen": 1782602315.537833, 
+                "ppid": -1, 
+                "type": "process"
+            }
+        ], 
+        "processtree": [
+            {
+                "track": true, 
+                "pid": 2068, 
+                "process_name": "kworkerd-events", 
+                "command_line": "/tmp/kworkerd-events", 
+                "first_seen": 1782602315.537833, 
+                "ppid": -1, 
+                "children": []
+            }
+        ]
+    }, 
+    "debug": {
+        "action": [], 
+        "dbgview": [], 
+        "errors": [], 
+        "log": [
+            "2026-06-27 23:18:28,005 [root] DEBUG: Starting analyzer from: /tmp/tmpoTiIF2\n", 
+            "2026-06-27 23:18:28,006 [root] DEBUG: Storing results at: /tmp/SuMzkqC\n", 
+            "2026-06-27 23:18:30,137 [modules.auxiliary.filecollector] INFO: FileCollector started v0.08\n", 
+            "2026-06-27 23:18:30,640 [modules.auxiliary.human] INFO: Human started v0.02\n", 
+            "2026-06-27 23:18:30,641 [modules.auxiliary.screenshots] INFO: Screenshots started v0.03\n", 
+            "2026-06-27 23:18:35,530 [lib.core.packages] INFO: Process startup took 4.88 seconds\n", 
+            "2026-06-27 23:18:35,531 [root] INFO: Added new process to list with pid: 2059\n", 
+            "2026-06-27 23:18:41,576 [root] INFO: Process with pid 2059 has terminated\n", 
+            "2026-06-27 23:18:41,577 [root] INFO: Process list is empty, terminating analysis.\n", 
+            "2026-06-27 23:18:44,580 [lib.core.packages] INFO: Package requested stop\n", 
+            "2026-06-27 23:18:44,582 [lib.core.packages] WARNING: Exception uploading log: [Errno 3] No such process\n"
+        ], 
+        "cuckoo": [
+            "2026-06-27 23:18:29,277 [cuckoo.core.scheduler] INFO: Task #7605574: acquired machine Ubuntu1904x641 (label=Ubuntu1904x641)\n", 
+            "2026-06-27 23:18:29,278 [cuckoo.core.resultserver] DEBUG: Now tracking machine 192.168.168.101 for task #7605574\n", 
+            "2026-06-27 23:18:29,688 [cuckoo.auxiliary.sniffer] INFO: Started sniffer with PID 1403911 (interface=vboxnet0, host=192.168.168.101)\n", 
+            "2026-06-27 23:18:29,714 [cuckoo.machinery.virtualbox] DEBUG: Starting vm Ubuntu1904x641\n", 
+            "2026-06-27 23:18:30,294 [cuckoo.machinery.virtualbox] DEBUG: Restoring virtual machine Ubuntu1904x641 to Snapshot\n", 
+            "2026-06-27 23:18:37,556 [cuckoo.core.guest] INFO: Starting analysis #7605574 on guest (id=Ubuntu1904x641, ip=192.168.168.101)\n", 
+            "2026-06-27 23:18:38,560 [cuckoo.core.guest] DEBUG: Ubuntu1904x641: not ready yet\n", 
+            "2026-06-27 23:18:43,586 [cuckoo.core.guest] INFO: Guest is running Cuckoo Agent 0.10 (id=Ubuntu1904x641, ip=192.168.168.101)\n", 
+            "2026-06-27 23:18:43,608 [cuckoo.core.guest] DEBUG: Uploading analyzer to guest (id=Ubuntu1904x641, ip=192.168.168.101, monitor=latest, size=73219)\n", 
+            "2026-06-27 23:18:43,827 [cuckoo.core.resultserver] DEBUG: Task #7605574: live log analysis.log initialized.\n", 
+            "2026-06-27 23:18:49,435 [cuckoo.core.resultserver] DEBUG: Task #7605574: File upload for 'shots/0001.jpg'\n", 
+            "2026-06-27 23:18:49,440 [cuckoo.core.resultserver] DEBUG: Task #7605574 uploaded file length: 172184\n", 
+            "2026-06-27 23:18:58,777 [cuckoo.core.guest] DEBUG: Ubuntu1904x641: analysis #7605574 still processing\n", 
+            "2026-06-27 23:19:00,421 [cuckoo.core.resultserver] DEBUG: Task #7605574: File upload for 'logs/all.stap'\n", 
+            "2026-06-27 23:19:00,424 [cuckoo.core.resultserver] DEBUG: Task #7605574 uploaded file length: 18221\n", 
+            "2026-06-27 23:19:13,857 [cuckoo.core.guest] DEBUG: Ubuntu1904x641: analysis #7605574 still processing\n", 
+            "2026-06-27 23:19:28,939 [cuckoo.core.guest] DEBUG: Ubuntu1904x641: analysis #7605574 still processing\n", 
+            "2026-06-27 23:19:44,010 [cuckoo.core.guest] INFO: Ubuntu1904x641: end of analysis reached!\n", 
+            "2026-06-27 23:19:44,025 [cuckoo.core.plugins] DEBUG: Stopped auxiliary module: Redsocks\n", 
+            "2026-06-27 23:19:44,046 [cuckoo.core.plugins] DEBUG: Stopped auxiliary module: Sniffer\n", 
+            "2026-06-27 23:19:44,931 [cuckoo.machinery.virtualbox] INFO: Successfully generated memory dump for virtual machine with label Ubuntu1904x641 to path /srv/cuckoo/cwd/storage/analyses/7605574/memory.dmp\n", 
+            "2026-06-27 23:19:44,933 [cuckoo.machinery.virtualbox] DEBUG: Stopping vm Ubuntu1904x641\n", 
+            "2026-06-27 23:19:52,697 [cuckoo.core.resultserver] DEBUG: Stopped tracking machine 192.168.168.101 for task #7605574\n", 
+            "2026-06-27 23:19:52,698 [cuckoo.core.resultserver] DEBUG: Cancel <Context for LOG> for task 7605574\n", 
+            "2026-06-27 23:19:53,037 [cuckoo.core.scheduler] DEBUG: Released database task #7605574\n", 
+            "2026-06-27 23:19:53,053 [cuckoo.core.scheduler] INFO: Task #7605574: analysis procedure completed\n"
+        ]
+    }, 
+    "strings": [
+        "L&ouHd", 
+        "@LPSa4", 
+        "+s3S\"x", 
+        "JfMFe[F", 
+        "vnv#k&A", 
+        "MCN$|>", 
+        "_6sW5-5", 
+        "4kB:WN", 
+        "F2pLxv", 
+        "nKswGE^", 
+        "'Jp.pT", 
+        "SV+m&I", 
+        "7W~#O]B", 
+        "Qf)\\3I;", 
+        "|i2K{,", 
+        "55Qk33g", 
+        "P5\u001fhL[", 
+        "WTHa6}\\", 
+        "h^lLw+", 
+        "hU\\f^c", 
+        "'_;6Tl", 
+        "rK:y\"7D/", 
+        "Q)IW+p", 
+        "{[Z]>%", 
+        "#/&+hE", 
+        "%5\u001fG[I", 
+        "+bG3x{", 
+        "cER>p,5z", 
+        "5;ln9L{MM\u001fx", 
+        "'jI/$_5[Px", 
+        "U=|\\T`", 
+        "}<[7hP", 
+        "u4w\"I\u001f", 
+        "x?3.zM", 
+        "+yXc:8", 
+        "\u001f<(,id", 
+        "[k2$@xk", 
+        "n2Y:g\"P2", 
+        "r*|*[L)", 
+        "e\u001f0`*F\"", 
+        "jhGk>j", 
+        "8nT~~B", 
+        "G:xP'=@", 
+        "]/SoHv", 
+        "%u&VC+", 
+        "=+U)vf", 
+        "%Ic;vZ", 
+        "Q9Ic_.", 
+        "DiL-=@M", 
+        "qL_3sz", 
+        " 0Fs/G", 
+        "(!=o'zI", 
+        "H5\"?]3\u001f:", 
+        "OWH)-c", 
+        "Pl?l,O", 
+        "1i4mFD", 
+        "cs5;HP", 
+        "?aC)MB9", 
+        "'n]7B5", 
+        ":/w*um", 
+        "q/srQ:", 
+        "03X3 -(", 
+        "7e\"5fhVz", 
+        "?hwg)t", 
+        "xK/_/H", 
+        "k5[BT~;S_", 
+        ":#nx](vF?", 
+        "&ox]ao", 
+        "@\u001fu]e-", 
+        "-[ES^[", 
+        "#\\,bTh", 
+        "ZUS9{!=", 
+        "a/hFr9W", 
+        "C<SM'u", 
+        "+|dU!`", 
+        "(_qo^>", 
+        "^ij\u001f\">", 
+        "lFD;pa", 
+        "^FN!<I", 
+        "ud~34mj", 
+        ":6qcxue", 
+        "oawMVP>", 
+        "\\I[2?G", 
+        "+*C6.|", 
+        "%iIIgY6", 
+        ">*x/s<b0", 
+        "y\u001f~`}{", 
+        "t\\NVV\\\"E", 
+        "dz5{QaP", 
+        "\u001fq+=9)", 
+        "G<hg@^", 
+        "Lkm2|NR", 
+        "6|Q-| ", 
+        "'-|tL%", 
+        "*8 $/S", 
+        "jmOHxF", 
+        "_J'6~OCg<", 
+        "UV5Fd;", 
+        "w)@bU\\", 
+        "Cqrm4s", 
+        "i$qBIz", 
+        "xKA&nQp9", 
+        "@Ob70s", 
+        "4h3`6 ?", 
+        "&)Cc/%w", 
+        "%W=qRC\u001f", 
+        "D3`'qi", 
+        "]8g0K\u001f", 
+        "df/F\u001f}", 
+        "}JGVA=", 
+        "fZd<#FU", 
+        "Fl_y{I", 
+        "#_;dv$!", 
+        "lBU*|sJ-", 
+        "_c/Y&~", 
+        "pge_\u001fVxG.", 
+        "'HyfU+", 
+        ".ENEd}", 
+        ")~OB2E", 
+        "Sd^aG<[", 
+        "F[\\:#u", 
+        "lJE2:$r", 
+        "mDmKv*", 
+        "50Ecol", 
+        "-2,`<F", 
+        "HN<!9+#s", 
+        "N|S4FZ", 
+        "w2P *%", 
+        "& 4\u001fZgX", 
+        "LgKT%?S", 
+        "h3\u001fD}U", 
+        "NgKlBg;~", 
+        "L[@T|C", 
+        "<%aw'X", 
+        "!\u001fn$OU", 
+        "9_lM;u", 
+        "M%?J X", 
+        "K?O_f-", 
+        "!_l,<;", 
+        "z{?bWP", 
+        "47whp}3", 
+        "/)8@-{(", 
+        "/A7?6UK", 
+        "d&uY:m", 
+        "|[v>04M", 
+        "\u001fU\u001fVNO", 
+        "a$`d>(", 
+        ")j8a;z", 
+        "R_;rC1", 
+        "%i3WSH_9", 
+        "UW*Ne8", 
+        "Yhvt\u001ft", 
+        "y8\u001f@\u001f!", 
+        "gVgIp;", 
+        "KGTRe/", 
+        "/dev/shm", 
+        "UPX-5.0 wants memfd_create(), or needs /dev/shm(,O_TMPFILE,)", 
+        "/proc/self/exe", 
+        "X]X%1]", 
+        "DXY_[VQPRW[", 
+        "8(PXDu", 
+        "ZM`M\u001fU", 
+        "Fmc{^{J", 
+        "699j\\s", 
+        "\\$8;%8o", 
+        "!%63Nlx", 
+        "/dev/shm", 
+        "UPX-5.0", 
+        " wants memfd_create(), or need", 
+        "\\(,O_TMPFILE,)", 
+        "_3{=)]"
+    ], 
+    "metadata": {
+        "output": {
+            "pcap": {
+                "basename": "dump.pcap", 
+                "sha256": "220468cc5e913a761224139fcd986049272eeb47aeae47e8b19d59c372deb7cf", 
+                "dirname": ""
+            }
+        }
+    }
+}

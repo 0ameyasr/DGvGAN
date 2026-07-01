@@ -1,0 +1,2102 @@
+{
+    "info": {
+        "added": 1782808041.026178, 
+        "started": 1782808075.924293, 
+        "duration": 79, 
+        "ended": 1782808155.343232, 
+        "owner": null, 
+        "score": 8.7, 
+        "id": 7606383, 
+        "category": "file", 
+        "git": {
+            "head": "", 
+            "fetch_head": ""
+        }, 
+        "monitor": null, 
+        "package": "exe", 
+        "route": "internet", 
+        "custom": null, 
+        "machine": {
+            "status": "stopped", 
+            "name": "Ubuntu1904x643", 
+            "label": "Ubuntu1904x643", 
+            "platform": "linux", 
+            "manager": "VirtualBox", 
+            "started_on": "2026-06-30 08:28:19", 
+            "shutdown_on": "2026-06-30 08:29:14"
+        }, 
+        "platform": "linux", 
+        "version": "2.0.7", 
+        "options": "procmemdump=yes,route=internet"
+    }, 
+    "signatures": [
+        {
+            "families": [], 
+            "description": "Yara rules detected for file", 
+            "severity": 1, 
+            "ttp": {}, 
+            "markcount": 10, 
+            "references": [], 
+            "marks": [
+                {
+                    "type": "generic", 
+                    "description": "Glasses code features", 
+                    "rule": "GlassesCode"
+                }, 
+                {
+                    "type": "generic", 
+                    "description": "Glasses family", 
+                    "rule": "Glasses"
+                }, 
+                {
+                    "type": "generic", 
+                    "description": "(no description)", 
+                    "rule": "thequickbrow_APT1"
+                }, 
+                {
+                    "type": "generic", 
+                    "description": "(no description)", 
+                    "rule": "APT1_aspnetreport"
+                }, 
+                {
+                    "type": "generic", 
+                    "description": "Looks for encoding string used in COMMENT PANDA RAT", 
+                    "rule": "CrowdStrike_CSIR_12012_01"
+                }, 
+                {
+                    "type": "generic", 
+                    "description": "HAVEX RAT - Common strings found in implant", 
+                    "rule": "CrowdStrike_CSIR_13025_03"
+                }, 
+                {
+                    "type": "generic", 
+                    "description": "HAVEX RAT - encoded RSA public key", 
+                    "rule": "CrowdStrike_CSIR_13025_07"
+                }, 
+                {
+                    "type": "generic", 
+                    "description": "Checks if being debugged", 
+                    "rule": "anti_dbg"
+                }, 
+                {
+                    "type": "generic", 
+                    "description": "Code injection with CreateRemoteThread in a remote process", 
+                    "rule": "inject_thread"
+                }, 
+                {
+                    "type": "generic", 
+                    "description": "Communications over HTTP", 
+                    "rule": "network_http"
+                }
+            ], 
+            "name": "file_yara"
+        }, 
+        {
+            "families": [], 
+            "description": "File has been identified by 10 AntiVirus engine on IRMA as malicious", 
+            "severity": 60, 
+            "ttp": {}, 
+            "markcount": 10, 
+            "references": [], 
+            "marks": [
+                {
+                    "category": "G Data Antivirus (Windows)", 
+                    "ioc": "Virus: Trojan.Downloader.JTKQ (Engine A)", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "C4S ClamAV (Linux)", 
+                    "ioc": "Win.Downloader.Jtkq-9802766-0", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Trellix (Linux)", 
+                    "ioc": "Downloader-CTQ trojan", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "eScan Antivirus (Linux)", 
+                    "ioc": "Trojan.Downloader.JTKQ(DB)", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "ESET Security (Windows)", 
+                    "ioc": "a variant of Win32/TrojanDownloader.Agent.QVC trojan", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Sophos Anti-Virus (Linux)", 
+                    "ioc": "Troj/Govdi-A", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "ClamAV (Linux)", 
+                    "ioc": "Win.Downloader.Jtkq-9802766-0", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Bitdefender Antivirus (Linux)", 
+                    "ioc": "Trojan.Downloader.JTKQ", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Kaspersky Standard (Windows)", 
+                    "ioc": "Trojan.Win32.Havex.p", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Emsisoft Commandline Scanner (Windows)", 
+                    "ioc": "Trojan.Downloader.JTKQ (B)", 
+                    "type": "ioc", 
+                    "description": null
+                }
+            ], 
+            "name": "antivirus_irma"
+        }
+    ], 
+    "target": {
+        "category": "file", 
+        "file": {
+            "mimetype": "application/x-dosexec", 
+            "yara": [
+                {
+                    "meta": {
+                        "last_modified": "2014-07-22", 
+                        "description": "Glasses code features", 
+                        "author": "Seth Hardy"
+                    }, 
+                    "name": "GlassesCode", 
+                    "offsets": {
+                        "": [
+                            [
+                                314776, 
+                                1
+                            ], 
+                            [
+                                314680, 
+                                0
+                            ]
+                        ]
+                    }, 
+                    "strings": [
+                        "uFZVVVX36YtMJByLwsHoHwPQSTvK", 
+                        "uKuqqqr34dHqjQRSK8g="
+                    ]
+                }, 
+                {
+                    "meta": {
+                        "last_modified": "2014-07-22", 
+                        "description": "Glasses family", 
+                        "author": "Seth Hardy"
+                    }, 
+                    "name": "Glasses", 
+                    "offsets": {}, 
+                    "strings": []
+                }, 
+                {
+                    "meta": {
+                        "info": "CommentCrew-threat-apt1", 
+                        "description": "(no description)", 
+                        "author": "AlienVault Labs"
+                    }, 
+                    "name": "thequickbrow_APT1", 
+                    "offsets": {
+                        "s1": [
+                            [
+                                331708, 
+                                0
+                            ]
+                        ]
+                    }, 
+                    "strings": [
+                        "dGhlcXVpY2ticm93bmZ4am1wc3ZhbHp5ZGc="
+                    ]
+                }, 
+                {
+                    "meta": {
+                        "info": "CommentCrew-threat-apt1", 
+                        "description": "(no description)", 
+                        "author": "AlienVault Labs"
+                    }, 
+                    "name": "APT1_aspnetreport", 
+                    "offsets": {
+                        "url": [
+                            [
+                                331272, 
+                                1
+                            ]
+                        ], 
+                        "pay6": [
+                            [
+                                331263, 
+                                2
+                            ], 
+                            [
+                                331591, 
+                                2
+                            ]
+                        ], 
+                        "param": [
+                            [
+                                331452, 
+                                4
+                            ]
+                        ], 
+                        "pay2": [
+                            [
+                                331261, 
+                                0
+                            ], 
+                            [
+                                331589, 
+                                0
+                            ]
+                        ], 
+                        "pay10": [
+                            [
+                                331262, 
+                                3
+                            ], 
+                            [
+                                331590, 
+                                3
+                            ]
+                        ], 
+                        "pay15": [
+                            [
+                                332470, 
+                                5
+                            ]
+                        ]
+                    }, 
+                    "strings": [
+                        "Y21kLmV4ZQ==", 
+                        "YXNwbmV0X2NsaWVudC9yZXBvcnQuYXNw", 
+                        "ZC5leGU=", 
+                        "bWQuZXhl", 
+                        "bmFtZT0lcyZHZW5kZXI9JWMmUmFuZG9tPSUwNGQmU2Vzc2lvbktleT0lcw==", 
+                        "cAAuAGUAeABlAA=="
+                    ]
+                }, 
+                {
+                    "meta": {
+                        "version": "202012141556", 
+                        "description": "Looks for encoding string used in COMMENT PANDA RAT", 
+                        "copyright": "(c) 2020 CrowdStrike Inc.", 
+                        "actor": "COMMENT PANDA", 
+                        "last_modified": "2020-12-14", 
+                        "reports": "CSIR-12012"
+                    }, 
+                    "name": "CrowdStrike_CSIR_12012_01", 
+                    "offsets": {
+                        "foxy": [
+                            [
+                                331708, 
+                                0
+                            ]
+                        ]
+                    }, 
+                    "strings": [
+                        "dGhlcXVpY2ticm93bmZ4am1wc3ZhbHp5ZGcA"
+                    ]
+                }, 
+                {
+                    "meta": {
+                        "description": "HAVEX RAT - Common strings found in implant", 
+                        "copyright": "(c) 2020 CrowdStrike Inc.", 
+                        "reports": "CSIR-13025", 
+                        "version": "201312200000", 
+                        "actor": "ENERGETIC BEAR", 
+                        "last_modified": "2013-12-20", 
+                        "malware_family": "HAVEX"
+                    }, 
+                    "name": "CrowdStrike_CSIR_13025_03", 
+                    "offsets": {
+                        "name": [
+                            [
+                                347984, 
+                                3
+                            ]
+                        ], 
+                        "ext1": [
+                            [
+                                349228, 
+                                1
+                            ]
+                        ], 
+                        "ext0": [
+                            [
+                                348832, 
+                                0
+                            ]
+                        ], 
+                        "_str1": [
+                            [
+                                348284, 
+                                5
+                            ]
+                        ], 
+                        "_str0": [
+                            [
+                                350424, 
+                                7
+                            ]
+                        ], 
+                        "_pipe1": [
+                            [
+                                347912, 
+                                4
+                            ]
+                        ], 
+                        "c2_key1": [
+                            [
+                                347356, 
+                                2
+                            ]
+                        ], 
+                        "c2_delim": [
+                            [
+                                347348, 
+                                6
+                            ]
+                        ]
+                    }, 
+                    "strings": [
+                        "LgB4AG0AZAA=", 
+                        "LgB5AGwAcwA=", 
+                        "MTMxMjMxMg==", 
+                        "VABNAFAAcAByAG8AdgBpAGQAZQByADAAMQBGAA==", 
+                        "XABcAC4AXABwAGkAcABlAFwAbQB5AHAAeQBwAGUALQA=", 
+                        "ZgBlAHIAdABnAGUAcgA=", 
+                        "aGF2ZXg=", 
+                        "bHBwZSA9PSBOVUxM"
+                    ]
+                }, 
+                {
+                    "meta": {
+                        "description": "HAVEX RAT - encoded RSA public key", 
+                        "copyright": "(c) 2020 CrowdStrike Inc.", 
+                        "reports": "CSIR-13025", 
+                        "version": "201312200000", 
+                        "actor": "ENERGETIC BEAR", 
+                        "last_modified": "2013-12-20", 
+                        "malware_family": "HAVEX"
+                    }, 
+                    "name": "CrowdStrike_CSIR_13025_07", 
+                    "offsets": {
+                        "enc": [
+                            [
+                                346736, 
+                                0
+                            ]
+                        ]
+                    }, 
+                    "strings": [
+                        "QUFUWG4rTWl3THUreENvTUc3U3FZMXVReEFrMXFMZHlvRUQ5THhJVlFyMlovZ3NySElzZ1R2SzlBdXNkRm8rOQ=="
+                    ]
+                }, 
+                {
+                    "meta": {
+                        "version": "0.2", 
+                        "description": "Checks if being debugged", 
+                        "author": "x0r"
+                    }, 
+                    "name": "anti_dbg", 
+                    "offsets": {
+                        "c2": [
+                            [
+                                393770, 
+                                1
+                            ]
+                        ], 
+                        "d1": [
+                            [
+                                327040, 
+                                0
+                            ], 
+                            [
+                                334716, 
+                                2
+                            ], 
+                            [
+                                392456, 
+                                0
+                            ]
+                        ]
+                    }, 
+                    "strings": [
+                        "S0VSTkVMMzIuZGxs", 
+                        "SXNEZWJ1Z2dlclByZXNlbnQ=", 
+                        "a2VybmVsMzIuZGxs"
+                    ]
+                }, 
+                {
+                    "meta": {
+                        "version": "0.1", 
+                        "description": "Code injection with CreateRemoteThread in a remote process", 
+                        "author": "x0r"
+                    }, 
+                    "name": "inject_thread", 
+                    "offsets": {
+                        "c2": [
+                            [
+                                393262, 
+                                4
+                            ]
+                        ], 
+                        "c1": [
+                            [
+                                395062, 
+                                2
+                            ]
+                        ], 
+                        "c7": [
+                            [
+                                395062, 
+                                2
+                            ]
+                        ], 
+                        "c6": [
+                            [
+                                326558, 
+                                1
+                            ], 
+                            [
+                                392442, 
+                                1
+                            ]
+                        ], 
+                        "c5": [
+                            [
+                                395040, 
+                                0
+                            ]
+                        ], 
+                        "c4": [
+                            [
+                                393280, 
+                                3
+                            ]
+                        ]
+                    }, 
+                    "strings": [
+                        "Q3JlYXRlUmVtb3RlVGhyZWFk", 
+                        "Q3JlYXRlVGhyZWFk", 
+                        "T3BlblByb2Nlc3M=", 
+                        "V3JpdGVQcm9jZXNzTWVtb3J5", 
+                        "VmlydHVhbEFsbG9jRXg="
+                    ]
+                }, 
+                {
+                    "meta": {
+                        "version": "0.1", 
+                        "description": "Communications over HTTP", 
+                        "author": "x0r"
+                    }, 
+                    "name": "network_http", 
+                    "offsets": {
+                        "f1": [
+                            [
+                                327246, 
+                                6
+                            ], 
+                            [
+                                392672, 
+                                6
+                            ]
+                        ], 
+                        "c3": [
+                            [
+                                327228, 
+                                4
+                            ]
+                        ], 
+                        "c2": [
+                            [
+                                327212, 
+                                3
+                            ], 
+                            [
+                                327228, 
+                                3
+                            ], 
+                            [
+                                392472, 
+                                3
+                            ]
+                        ], 
+                        "c1": [
+                            [
+                                327192, 
+                                2
+                            ], 
+                            [
+                                392488, 
+                                2
+                            ]
+                        ], 
+                        "c7": [
+                            [
+                                327130, 
+                                1
+                            ], 
+                            [
+                                392528, 
+                                1
+                            ]
+                        ], 
+                        "c6": [
+                            [
+                                327150, 
+                                0
+                            ], 
+                            [
+                                392508, 
+                                0
+                            ]
+                        ], 
+                        "c4": [
+                            [
+                                331308, 
+                                5
+                            ], 
+                            [
+                                392548, 
+                                5
+                            ]
+                        ]
+                    }, 
+                    "strings": [
+                        "SHR0cE9wZW5SZXF1ZXN0", 
+                        "SHR0cFNlbmRSZXF1ZXN0", 
+                        "SW50ZXJuZXRDb25uZWN0", 
+                        "SW50ZXJuZXRPcGVu", 
+                        "SW50ZXJuZXRPcGVuVXJs", 
+                        "SW50ZXJuZXRSZWFkRmlsZQ==", 
+                        "V0lOSU5FVC5kbGw="
+                    ]
+                }
+            ], 
+            "sha1": "8fd045363d4a65b8e4eefffe46e5b2ed6514b85e", 
+            "name": "4c858a80df0d6de5d69824c9502b65cf.OA.SH", 
+            "type": "PE32 executable (GUI) Intel 80386, for MS Windows", 
+            "sha256": "a8e63552218844677bd908ee6b1554d430ee30290a798ce726cd9840462c8fe7", 
+            "urls": [], 
+            "crc32": "46807A9E", 
+            "path": "/srv/cuckoo/cwd/storage/binaries/a8e63552218844677bd908ee6b1554d430ee30290a798ce726cd9840462c8fe7", 
+            "ssdeep": null, 
+            "size": 395264, 
+            "sha512": "67bd1f60bd37a51a411731e62bb7e02811344910a3b49fd74b975a1f2785cc08ed3ae22caf5fa06fc0d885098c4c06d0dfa894260fcc112d4176df9b34f11ddc", 
+            "md5": "d068538cd6870fd5f22d4f94f03f3e24"
+        }, 
+        "custom": null
+    }, 
+    "irma": {
+        "status": 1, 
+        "probes_finished": 13, 
+        "scan_id": "6625fc4e-7315-4aed-a81c-e101d4f1b365", 
+        "parent_file_sha256": null, 
+        "name": "a8e63552218844677bd908ee6b1554d430ee30290a798ce726cd9840462c8fe7", 
+        "scan_date": 1782797361, 
+        "other_results": [], 
+        "submitter": "cli", 
+        "probes_total": 13, 
+        "file_infos": {
+            "mimetype": "PE32 executable (GUI) Intel 80386, for MS Windows", 
+            "sha1": "8fd045363d4a65b8e4eefffe46e5b2ed6514b85e", 
+            "tags": [], 
+            "timestamp_first_scan": 1782797360.59, 
+            "size": 395264, 
+            "timestamp_last_scan": 1782797372.1, 
+            "sha256": "a8e63552218844677bd908ee6b1554d430ee30290a798ce726cd9840462c8fe7", 
+            "md5": "d068538cd6870fd5f22d4f94f03f3e24"
+        }, 
+        "probe_results": {
+            "antivirus": {
+                "G Data Antivirus (Windows)": {
+                    "status": 1, 
+                    "duration": 0.27, 
+                    "version": "5.5.20197.1358", 
+                    "results": "Virus: Trojan.Downloader.JTKQ (Engine A)", 
+                    "virus_database_version": "unavailable"
+                }, 
+                "Avast Core Security (Linux)": {
+                    "status": 0, 
+                    "duration": 0.01, 
+                    "version": "4.6.1", 
+                    "results": null, 
+                    "virus_database_version": "unavailable"
+                }, 
+                "C4S ClamAV (Linux)": {
+                    "status": 1, 
+                    "duration": 0.87, 
+                    "version": "1.4.3", 
+                    "results": "Win.Downloader.Jtkq-9802766-0", 
+                    "virus_database_version": "28046"
+                }, 
+                "Trellix (Linux)": {
+                    "status": 1, 
+                    "duration": 8.79, 
+                    "version": "7.0.4.835", 
+                    "results": "Downloader-CTQ trojan", 
+                    "virus_database_version": "11831"
+                }, 
+                "WithSecure (Linux)": {
+                    "status": 0, 
+                    "duration": 0.14, 
+                    "version": "1.0.45", 
+                    "results": null, 
+                    "virus_database_version": "unavailable"
+                }, 
+                "eScan Antivirus (Linux)": {
+                    "status": 1, 
+                    "duration": 3.67, 
+                    "version": "7.0.21", 
+                    "results": "Trojan.Downloader.JTKQ(DB)", 
+                    "virus_database_version": "7.101116 (29/06/2026)"
+                }, 
+                "ESET Security (Windows)": {
+                    "status": 1, 
+                    "duration": 0.67, 
+                    "version": "unavailable", 
+                    "results": "a variant of Win32/TrojanDownloader.Agent.QVC trojan", 
+                    "virus_database_version": "unavailable"
+                }, 
+                "Sophos Anti-Virus (Linux)": {
+                    "status": 1, 
+                    "duration": 0.39, 
+                    "version": "1.2.1.1 (2026-04-20)", 
+                    "results": "Troj/Govdi-A", 
+                    "virus_database_version": "unavailable"
+                }, 
+                "DrWeb Antivirus (Linux)": {
+                    "status": 0, 
+                    "duration": 0.11, 
+                    "version": "11.1.17.2605081640", 
+                    "results": null, 
+                    "virus_database_version": "unavailable"
+                }, 
+                "ClamAV (Linux)": {
+                    "status": 1, 
+                    "duration": 1.13, 
+                    "version": "1.4.3", 
+                    "results": "Win.Downloader.Jtkq-9802766-0", 
+                    "virus_database_version": "28046"
+                }, 
+                "Bitdefender Antivirus (Linux)": {
+                    "status": 1, 
+                    "duration": 8.7, 
+                    "version": "7.90123", 
+                    "results": "Trojan.Downloader.JTKQ", 
+                    "virus_database_version": null
+                }, 
+                "Kaspersky Standard (Windows)": {
+                    "status": 1, 
+                    "duration": 4.76, 
+                    "version": "21.24", 
+                    "results": "Trojan.Win32.Havex.p", 
+                    "virus_database_version": "2026-06-29 19:02:00 (unknown)"
+                }, 
+                "Emsisoft Commandline Scanner (Windows)": {
+                    "status": 1, 
+                    "duration": 0.44, 
+                    "version": "2025.1.0.12641", 
+                    "results": "Trojan.Downloader.JTKQ (B)", 
+                    "virus_database_version": "unavailable"
+                }
+            }
+        }, 
+        "path": "", 
+        "result_id": "72ef9fc1-6659-4446-ac23-2126c0898d0b"
+    }, 
+    "suricata": {
+        "tls": [], 
+        "files": [], 
+        "alerts": [], 
+        "http": []
+    }, 
+    "virustotal": {
+        "summary": {
+            "error": "resource has not been scanned yet"
+        }
+    }, 
+    "network": {
+        "udp": [], 
+        "dns_servers": [], 
+        "http": [], 
+        "smtp": [], 
+        "tcp": [], 
+        "geoinfo": {}, 
+        "mitm": [], 
+        "https_ex": [], 
+        "http_ex": [], 
+        "sorted_pcap_sha256": "94fc1440504a6235a4d490ab1f4f14391ceb7b0348873e16285dba04c4a5406c", 
+        "icmp": [], 
+        "tls": [], 
+        "dead_hosts": [], 
+        "smtp_ex": [], 
+        "hosts": [], 
+        "pcap_sha256": "6576d5e6ac7c28d55962da37051432c2fd5c50a79da7cb7289486d19b471c750", 
+        "dns": [], 
+        "domains": [], 
+        "irc": []
+    }, 
+    "resubmit": {
+        "resubmit_ids": []
+    }, 
+    "static": {
+        "pdb_path": null, 
+        "pe_imports": [
+            {
+                "imports": [
+                    {
+                        "name": "_except_handler3", 
+                        "address": "0x40408c"
+                    }, 
+                    {
+                        "name": "__set_app_type", 
+                        "address": "0x404090"
+                    }, 
+                    {
+                        "name": "__p__fmode", 
+                        "address": "0x404094"
+                    }, 
+                    {
+                        "name": "__p__commode", 
+                        "address": "0x404098"
+                    }, 
+                    {
+                        "name": "_adjust_fdiv", 
+                        "address": "0x40409c"
+                    }, 
+                    {
+                        "name": "??3@YAXPAX@Z", 
+                        "address": "0x4040a0"
+                    }, 
+                    {
+                        "name": "__setusermatherr", 
+                        "address": "0x4040a4"
+                    }, 
+                    {
+                        "name": "_initterm", 
+                        "address": "0x4040a8"
+                    }, 
+                    {
+                        "name": "__getmainargs", 
+                        "address": "0x4040ac"
+                    }, 
+                    {
+                        "name": "_acmdln", 
+                        "address": "0x4040b0"
+                    }, 
+                    {
+                        "name": "exit", 
+                        "address": "0x4040b4"
+                    }, 
+                    {
+                        "name": "_XcptFilter", 
+                        "address": "0x4040b8"
+                    }, 
+                    {
+                        "name": "_exit", 
+                        "address": "0x4040bc"
+                    }, 
+                    {
+                        "name": "strncat", 
+                        "address": "0x4040c0"
+                    }, 
+                    {
+                        "name": "rand", 
+                        "address": "0x4040c4"
+                    }, 
+                    {
+                        "name": "sprintf", 
+                        "address": "0x4040c8"
+                    }, 
+                    {
+                        "name": "fseek", 
+                        "address": "0x4040cc"
+                    }, 
+                    {
+                        "name": "fread", 
+                        "address": "0x4040d0"
+                    }, 
+                    {
+                        "name": "ftell", 
+                        "address": "0x4040d4"
+                    }, 
+                    {
+                        "name": "fopen", 
+                        "address": "0x4040d8"
+                    }, 
+                    {
+                        "name": "fwrite", 
+                        "address": "0x4040dc"
+                    }, 
+                    {
+                        "name": "fflush", 
+                        "address": "0x4040e0"
+                    }, 
+                    {
+                        "name": "fclose", 
+                        "address": "0x4040e4"
+                    }, 
+                    {
+                        "name": "__CxxFrameHandler", 
+                        "address": "0x4040e8"
+                    }, 
+                    {
+                        "name": "sscanf", 
+                        "address": "0x4040ec"
+                    }, 
+                    {
+                        "name": "_strnicmp", 
+                        "address": "0x4040f0"
+                    }, 
+                    {
+                        "name": "strrchr", 
+                        "address": "0x4040f4"
+                    }, 
+                    {
+                        "name": "time", 
+                        "address": "0x4040f8"
+                    }, 
+                    {
+                        "name": "srand", 
+                        "address": "0x4040fc"
+                    }, 
+                    {
+                        "name": "_snprintf", 
+                        "address": "0x404100"
+                    }, 
+                    {
+                        "name": "strncmp", 
+                        "address": "0x404104"
+                    }, 
+                    {
+                        "name": "malloc", 
+                        "address": "0x404108"
+                    }, 
+                    {
+                        "name": "free", 
+                        "address": "0x40410c"
+                    }, 
+                    {
+                        "name": "strstr", 
+                        "address": "0x404110"
+                    }, 
+                    {
+                        "name": "strchr", 
+                        "address": "0x404114"
+                    }, 
+                    {
+                        "name": "??2@YAPAXI@Z", 
+                        "address": "0x404118"
+                    }, 
+                    {
+                        "name": "_controlfp", 
+                        "address": "0x40411c"
+                    }
+                ], 
+                "dll": "MSVCRT.dll"
+            }, 
+            {
+                "imports": [
+                    {
+                        "name": "TerminateThread", 
+                        "address": "0x404000"
+                    }, 
+                    {
+                        "name": "GetModuleHandleA", 
+                        "address": "0x404004"
+                    }, 
+                    {
+                        "name": "GetShortPathNameA", 
+                        "address": "0x404008"
+                    }, 
+                    {
+                        "name": "GetEnvironmentVariableA", 
+                        "address": "0x40400c"
+                    }, 
+                    {
+                        "name": "lstrcpyA", 
+                        "address": "0x404010"
+                    }, 
+                    {
+                        "name": "lstrcatA", 
+                        "address": "0x404014"
+                    }, 
+                    {
+                        "name": "GetCurrentProcess", 
+                        "address": "0x404018"
+                    }, 
+                    {
+                        "name": "SetPriorityClass", 
+                        "address": "0x40401c"
+                    }, 
+                    {
+                        "name": "GetCurrentThread", 
+                        "address": "0x404020"
+                    }, 
+                    {
+                        "name": "SetThreadPriority", 
+                        "address": "0x404024"
+                    }, 
+                    {
+                        "name": "SetProcessPriorityBoost", 
+                        "address": "0x404028"
+                    }, 
+                    {
+                        "name": "GetCurrentDirectoryA", 
+                        "address": "0x40402c"
+                    }, 
+                    {
+                        "name": "CopyFileA", 
+                        "address": "0x404030"
+                    }, 
+                    {
+                        "name": "DeleteFileA", 
+                        "address": "0x404034"
+                    }, 
+                    {
+                        "name": "GetModuleFileNameA", 
+                        "address": "0x404038"
+                    }, 
+                    {
+                        "name": "FreeLibrary", 
+                        "address": "0x40403c"
+                    }, 
+                    {
+                        "name": "WriteFile", 
+                        "address": "0x404040"
+                    }, 
+                    {
+                        "name": "GetTempPathA", 
+                        "address": "0x404044"
+                    }, 
+                    {
+                        "name": "PeekNamedPipe", 
+                        "address": "0x404048"
+                    }, 
+                    {
+                        "name": "ReadFile", 
+                        "address": "0x40404c"
+                    }, 
+                    {
+                        "name": "LoadLibraryA", 
+                        "address": "0x404050"
+                    }, 
+                    {
+                        "name": "GetProcAddress", 
+                        "address": "0x404054"
+                    }, 
+                    {
+                        "name": "GetSystemDirectoryA", 
+                        "address": "0x404058"
+                    }, 
+                    {
+                        "name": "Sleep", 
+                        "address": "0x40405c"
+                    }, 
+                    {
+                        "name": "CreatePipe", 
+                        "address": "0x404060"
+                    }, 
+                    {
+                        "name": "GetStartupInfoA", 
+                        "address": "0x404064"
+                    }, 
+                    {
+                        "name": "CreateProcessA", 
+                        "address": "0x404068"
+                    }, 
+                    {
+                        "name": "GetLastError", 
+                        "address": "0x40406c"
+                    }, 
+                    {
+                        "name": "CreateThread", 
+                        "address": "0x404070"
+                    }, 
+                    {
+                        "name": "WaitForMultipleObjects", 
+                        "address": "0x404074"
+                    }, 
+                    {
+                        "name": "GetExitCodeThread", 
+                        "address": "0x404078"
+                    }, 
+                    {
+                        "name": "GetExitCodeProcess", 
+                        "address": "0x40407c"
+                    }, 
+                    {
+                        "name": "TerminateProcess", 
+                        "address": "0x404080"
+                    }, 
+                    {
+                        "name": "CloseHandle", 
+                        "address": "0x404084"
+                    }
+                ], 
+                "dll": "KERNEL32.dll"
+            }, 
+            {
+                "imports": [
+                    {
+                        "name": "LoadStringA", 
+                        "address": "0x404130"
+                    }
+                ], 
+                "dll": "USER32.dll"
+            }, 
+            {
+                "imports": [
+                    {
+                        "name": "ShellExecuteExA", 
+                        "address": "0x404124"
+                    }, 
+                    {
+                        "name": "SHChangeNotify", 
+                        "address": "0x404128"
+                    }
+                ], 
+                "dll": "SHELL32.dll"
+            }, 
+            {
+                "imports": [
+                    {
+                        "name": "HttpSendRequestA", 
+                        "address": "0x404138"
+                    }, 
+                    {
+                        "name": "HttpOpenRequestA", 
+                        "address": "0x40413c"
+                    }, 
+                    {
+                        "name": "InternetCloseHandle", 
+                        "address": "0x404140"
+                    }, 
+                    {
+                        "name": "InternetConnectA", 
+                        "address": "0x404144"
+                    }, 
+                    {
+                        "name": "InternetOpenA", 
+                        "address": "0x404148"
+                    }, 
+                    {
+                        "name": "InternetOpenUrlA", 
+                        "address": "0x40414c"
+                    }
+                ], 
+                "dll": "WININET.dll"
+            }
+        ], 
+        "peid_signatures": [
+            "Armadillo v1.71"
+        ], 
+        "keys": [], 
+        "signature": [], 
+        "pe_timestamp": "2012-03-13 04:21:54", 
+        "pe_exports": [], 
+        "imported_dll_count": 5, 
+        "pe_imphash": "4f0aca83dfe82b02bbecce448ce8be00", 
+        "pe_resources": [
+            {
+                "name": "RT_STRING", 
+                "language": "LANG_CHINESE", 
+                "filetype": "data", 
+                "sublanguage": "SUBLANG_CHINESE_SIMPLIFIED", 
+                "offset": "0x000073b8", 
+                "size": "0x00000088"
+            }, 
+            {
+                "name": "RT_VERSION", 
+                "language": "LANG_CHINESE", 
+                "filetype": "data", 
+                "sublanguage": "SUBLANG_CHINESE_SIMPLIFIED", 
+                "offset": "0x000070a0", 
+                "size": "0x00000318"
+            }
+        ], 
+        "pe_versioninfo": [], 
+        "pe_sections": [
+            {
+                "size_of_data": "0x00003000", 
+                "virtual_address": "0x00001000", 
+                "entropy": 6.350902204650975, 
+                "name": ".text", 
+                "virtual_size": "0x00002eb5"
+            }, 
+            {
+                "size_of_data": "0x00000a00", 
+                "virtual_address": "0x00004000", 
+                "entropy": 4.411826791798583, 
+                "name": ".rdata", 
+                "virtual_size": "0x0000085a"
+            }, 
+            {
+                "size_of_data": "0x00001000", 
+                "virtual_address": "0x00005000", 
+                "entropy": 3.0037202494956428, 
+                "name": ".data", 
+                "virtual_size": "0x00001438"
+            }, 
+            {
+                "size_of_data": "0x00000600", 
+                "virtual_address": "0x00007000", 
+                "entropy": 2.434346454157744, 
+                "name": ".rsrc", 
+                "virtual_size": "0x00000440"
+            }
+        ]
+    }, 
+    "snort": {
+        "alerts": []
+    }, 
+    "debug": {
+        "action": [], 
+        "dbgview": [], 
+        "errors": [], 
+        "log": [
+            "2026-06-30 08:27:21,002 [root] DEBUG: Starting analyzer from: /tmp/tmpdqKLT_\n", 
+            "2026-06-30 08:27:21,004 [root] DEBUG: Storing results at: /tmp/pDoTxmlN\n", 
+            "2026-06-30 08:27:21,005 [root] ERROR: Traceback (most recent call last):\n", 
+            "  File \"/tmp/tmpdqKLT_/analyzer.py\", line 340, in <module>\n", 
+            "    success = analyzer.run()\n", 
+            "  File \"/tmp/tmpdqKLT_/analyzer.py\", line 129, in run\n", 
+            "    self.config.file_name, **kwargs)\n", 
+            "  File \"/tmp/tmpdqKLT_/lib/core/packages.py\", line 42, in choose_package_class\n", 
+            "    \"exist.\".format(name))\n", 
+            "Exception: Unable to import package \"exe\": it does not exist.\n", 
+            "Traceback (most recent call last):\n", 
+            "  File \"/tmp/tmpdqKLT_/analyzer.py\", line 340, in <module>\n", 
+            "    success = analyzer.run()\n", 
+            "  File \"/tmp/tmpdqKLT_/analyzer.py\", line 129, in run\n", 
+            "    self.config.file_name, **kwargs)\n", 
+            "  File \"/tmp/tmpdqKLT_/lib/core/packages.py\", line 42, in choose_package_class\n", 
+            "    \"exist.\".format(name))\n", 
+            "Exception: Unable to import package \"exe\": it does not exist.\n"
+        ], 
+        "cuckoo": [
+            "2026-06-30 08:28:17,507 [cuckoo.core.scheduler] DEBUG: Task #7606383: no machine available yet\n", 
+            "2026-06-30 08:28:18,566 [cuckoo.core.scheduler] INFO: Task #7606383: acquired machine Ubuntu1904x643 (label=Ubuntu1904x643)\n", 
+            "2026-06-30 08:28:18,567 [cuckoo.core.resultserver] DEBUG: Now tracking machine 192.168.168.103 for task #7606383\n", 
+            "2026-06-30 08:28:19,034 [cuckoo.auxiliary.sniffer] INFO: Started sniffer with PID 3885320 (interface=vboxnet0, host=192.168.168.103)\n", 
+            "2026-06-30 08:28:19,211 [cuckoo.machinery.virtualbox] DEBUG: Starting vm Ubuntu1904x643\n", 
+            "2026-06-30 08:28:19,745 [cuckoo.machinery.virtualbox] DEBUG: Restoring virtual machine Ubuntu1904x643 to Snapshot\n", 
+            "2026-06-30 08:28:27,031 [cuckoo.core.guest] INFO: Starting analysis #7606383 on guest (id=Ubuntu1904x643, ip=192.168.168.103)\n", 
+            "2026-06-30 08:28:28,038 [cuckoo.core.guest] DEBUG: Ubuntu1904x643: not ready yet\n", 
+            "2026-06-30 08:28:33,081 [cuckoo.core.guest] INFO: Guest is running Cuckoo Agent 0.10 (id=Ubuntu1904x643, ip=192.168.168.103)\n", 
+            "2026-06-30 08:28:33,107 [cuckoo.core.guest] DEBUG: Uploading analyzer to guest (id=Ubuntu1904x643, ip=192.168.168.103, monitor=latest, size=73219)\n", 
+            "2026-06-30 08:28:33,369 [cuckoo.core.resultserver] DEBUG: Task #7606383: live log analysis.log initialized.\n", 
+            "2026-06-30 08:28:36,280 [cuckoo.core.guest] INFO: Ubuntu1904x643: analysis completed successfully\n", 
+            "2026-06-30 08:28:36,294 [cuckoo.core.plugins] DEBUG: Stopped auxiliary module: Redsocks\n", 
+            "2026-06-30 08:28:36,325 [cuckoo.core.plugins] DEBUG: Stopped auxiliary module: Sniffer\n", 
+            "2026-06-30 08:28:37,387 [cuckoo.machinery.virtualbox] INFO: Successfully generated memory dump for virtual machine with label Ubuntu1904x643 to path /srv/cuckoo/cwd/storage/analyses/7606383/memory.dmp\n", 
+            "2026-06-30 08:28:37,388 [cuckoo.machinery.virtualbox] DEBUG: Stopping vm Ubuntu1904x643\n", 
+            "2026-06-30 08:29:14,969 [cuckoo.core.resultserver] DEBUG: Stopped tracking machine 192.168.168.103 for task #7606383\n", 
+            "2026-06-30 08:29:15,310 [cuckoo.core.scheduler] DEBUG: Released database task #7606383\n", 
+            "2026-06-30 08:29:15,329 [cuckoo.core.scheduler] INFO: Task #7606383: analysis procedure completed\n"
+        ]
+    }, 
+    "strings": [
+        "!This program cannot be run in DOS mode.", 
+        "LRichCz", 
+        "`.rdata", 
+        "@.data", 
+        "H$99t1", 
+        "H 99t&", 
+        "D$ j@P", 
+        "D$ j@P", 
+        "D$$j@P", 
+        "D$$j@P", 
+        "D$8jlP", 
+        "D$,QjLP", 
+        "D$8jlP", 
+        "F09^(u", 
+        "D$hSVW", 
+        "\\$,<-u", 
+        "u,9\\$,v&j", 
+        "D$@SVW", 
+        "<+t$<-t <0u", 
+        "t{9>uwj", 
+        "t{9>uwj", 
+        "FFYY;t$", 
+        "FFYY;t$", 
+        "t}9>uyj ", 
+        "t8It*It", 
+        "F09^(u", 
+        "FYY;t$", 
+        "FYY;t$", 
+        "t}9>uyj", 
+        "D$HSVW", 
+        ";D$,tq", 
+        "D$PSVW", 
+        "|$X spj", 
+        "tz9\u001fuvj", 
+        "D$,+D$", 
+        "D$`SVW", 
+        "9|$hta", 
+        "D$hSVW", 
+        "H$99t/", 
+        "P 9:t!", 
+        "ou6hD#", 
+        "PSjPWQ", 
+        "9p8W~(", 
+        "NtiNtF", 
+        "FP;FL}3", 
+        "FD;FH|", 
+        "FP;FL|", 
+        "F,_u@WjBY", 
+        "Y9^D~jWj1Y", 
+        "@8S(t3;", 
+        "!8BBNu", 
+        "WWWWWWWWWhX", 
+        ":E=u j\"", 
+        "SVWj ^", 
+        "M0)MX9uXw", 
+        "j Y;E`u", 
+        "SVWj>3", 
+        "<xt.<Xu,", 
+        "<xt.<Xu,", 
+        "L$tRPQ", 
+        "F 9l$Dr", 
+        "T$ RPV", 
+        ";L$,tm", 
+        "T$$SUV", 
+        "T$$RPQ", 
+        "9|$$v]", 
+        "SUVWvY", 
+        "PQRUWSW", 
+        "L$pRPW", 
+        "L$,QVS", 
+        "D$,SUVW", 
+        "0WWWWW", 
+        "0WWWWW", 
+        "PPPPPPPP", 
+        "^WWWWW", 
+        "QQSVWd", 
+        "Ht\u001fHu4j", 
+        "s[S;7|G;w", 
+        "tR99u2", 
+        "t\"SS9]", 
+        "^SSSSS", 
+        "^SSSSS", 
+        "0SSSSS", 
+        "0SSSSS", 
+        "j@j ^V", 
+        ">=Yt1j", 
+        "HHtXHHt", 
+        ">If90t", 
+        "URPQQh", 
+        "0A@@Ju", 
+        "C PjPV", 
+        "C$PjQV", 
+        "C*PjTV", 
+        "C+PjUV", 
+        "C,PjVV", 
+        "C-PjWV", 
+        "C.PjRV", 
+        "C/PjSV", 
+        ".;1s(N", 
+        "HHt4HHt", 
+        "Ht\\Ht,", 
+        "teHtFHt&Hu", 
+        "ty<%tA", 
+        "0SSSSS", 
+        "0SSSSS", 
+        "PPPPPPPP", 
+        "t+WWVPV", 
+        "uL9=0E", 
+        "_VVVVV", 
+        "^WWWWW", 
+        "^SSSSS", 
+        "j\"^SSSSS", 
+        "HHtYHHt", 
+        "u,VVWV", 
+        "t VV9u", 
+        ";t$,v-", 
+        "UQPXY]Y[", 
+        ">:u8FV", 
+        "0SSSSS", 
+        "_VVVVV", 
+        "<+t(<-t$:", 
+        "+t HHt", 
+        "tGHt.Ht&", 
+        "^SSSSS", 
+        "8VVVVV", 
+        "t{9>uwj", 
+        "t{9>uwj", 
+        "<+t\"<-t", 
+        "FFYY;u", 
+        "FFYY;u", 
+        "BBFF;U", 
+        "t}9>uyj", 
+        "t}9>uyj ", 
+        "t{9>uwj", 
+        "tt9>upj", 
+        "tx9\u001futj", 
+        "t{9>uwj", 
+        "t{9>uwj", 
+        "ty9\u001fuuj4", 
+        "ty9\u001fuuj4", 
+        "t{9>uwj", 
+        "t{9>uwj", 
+        "tt9>upj", 
+        "tx9\u001futj", 
+        "t{9>uwj", 
+        "t{9>uwj", 
+        "ty9\u001fuuj4", 
+        "ty9\u001fuuj4", 
+        "t{9>uwj", 
+        "<+t\"<-t", 
+        "tt9>upj", 
+        "tx9\u001futj", 
+        "t{9>uwj", 
+        "t{9>uwj", 
+        "ty9\u001fuuj4", 
+        "ty9\u001fuuj4", 
+        "t{9>uwj", 
+        "9E8wgj0", 
+        "+E8Pj0", 
+        "HH_^[]", 
+        "HH_^[]", 
+        "D$0SUVWPQ", 
+        ">Ph0]@", 
+        "7Ph0]@", 
+        "7Ph0]@", 
+        "SUVWh@^@", 
+        "D$ SSj", 
+        "PQSSSj", 
+        "D$$SPh", 
+        "L$ SQh`\"@", 
+        "D$ VPQ", 
+        "D$$h$^@", 
+        "L$$hl^@", 
+        "IjMQhd^@", 
+        "IQhx]@", 
+        "|$ !um", 
+        "L$ Qh`^@", 
+        "L$0h$^@", 
+        "D$ RhX^@", 
+        "T$#QhX^@", 
+        "D$ j P", 
+        "PRjMQh", 
+        "D$4h$_@", 
+        "SUVh0_@", 
+        "SUVWh0_@", 
+        "N2f;N ~\"", 
+        "F@_^][", 
+        "N@_^][", 
+        "n@_^][", 
+        "D$<SUVWh", 
+        "D$ X_@", 
+        "T$Hj@R", 
+        "??3@YAXPAX@Z", 
+        "??2@YAPAXI@Z", 
+        "strchr", 
+        "strstr", 
+        "malloc", 
+        "strncmp", 
+        "_snprintf", 
+        "strrchr", 
+        "_strnicmp", 
+        "sscanf", 
+        "__CxxFrameHandler", 
+        "fclose", 
+        "fflush", 
+        "fwrite", 
+        "sprintf", 
+        "strncat", 
+        "MSVCRT.dll", 
+        "_XcptFilter", 
+        "_acmdln", 
+        "__getmainargs", 
+        "_initterm", 
+        "__setusermatherr", 
+        "_adjust_fdiv", 
+        "__p__commode", 
+        "__p__fmode", 
+        "__set_app_type", 
+        "_except_handler3", 
+        "_controlfp", 
+        "CloseHandle", 
+        "TerminateProcess", 
+        "GetExitCodeProcess", 
+        "TerminateThread", 
+        "GetExitCodeThread", 
+        "WaitForMultipleObjects", 
+        "CreateThread", 
+        "GetLastError", 
+        "CreateProcessA", 
+        "GetStartupInfoA", 
+        "CreatePipe", 
+        "GetSystemDirectoryA", 
+        "GetProcAddress", 
+        "LoadLibraryA", 
+        "ReadFile", 
+        "PeekNamedPipe", 
+        "GetTempPathA", 
+        "WriteFile", 
+        "FreeLibrary", 
+        "GetModuleFileNameA", 
+        "DeleteFileA", 
+        "CopyFileA", 
+        "GetCurrentDirectoryA", 
+        "SetProcessPriorityBoost", 
+        "SetThreadPriority", 
+        "GetCurrentThread", 
+        "SetPriorityClass", 
+        "GetCurrentProcess", 
+        "lstrcatA", 
+        "lstrcpyA", 
+        "GetEnvironmentVariableA", 
+        "GetShortPathNameA", 
+        "GetModuleHandleA", 
+        "KERNEL32.dll", 
+        "LoadStringA", 
+        "USER32.dll", 
+        "SHChangeNotify", 
+        "ShellExecuteExA", 
+        "SHELL32.dll", 
+        "HttpSendRequestA", 
+        "HttpOpenRequestA", 
+        "InternetCloseHandle", 
+        "InternetConnectA", 
+        "InternetOpenA", 
+        "InternetOpenUrlA", 
+        "WININET.dll", 
+        "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#", 
+        "CreateProcess failed with error %d.", 
+        "actived", 
+        "noclient", 
+        "active", 
+        "GetCommand error %d.", 
+        "\\cmd.exe", 
+        "aspnet_client/report.asp", 
+        "http://", 
+        "InternetReadFile", 
+        "Wininet", 
+        "jpghttp://", 
+        "Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.1; Trident/4.0)", 
+        "name=%s&Gender=%c&Random=%04d&SessionKey=%s*", 
+        "Content-Type: application/x-www-form-urlencoded", 
+        "xxxxx: %d!", 
+        "\\cmd.exe /c ", 
+        " > nul", 
+        "/c del ", 
+        "COMSPEC", 
+        "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#=", 
+        "thequickbrownfxjmpsvalzydg", 
+        "string too long", 
+        "invalid string position", 
+        "0123456789abcdefghijklmnopqrstuvwxyz", 
+        "0123456789abcdefghijklmnopqrstuvwxyz", 
+        "boost::filesystem::directory_iterator::operator++", 
+        "boost::filesystem::directory_iterator::construct", 
+        "kernel32.dll", 
+        "CreateHardLinkW", 
+        "CreateSymbolicLinkW", 
+        "bad locale name", 
+        "boost::filesystem::path codecvt to string", 
+        "codecvt", 
+        "unknown error", 
+        "noconv", 
+        "partial", 
+        "generic", 
+        "system", 
+        "Unknown error", 
+        "Unknown exception", 
+        "CorExitProcess", 
+        "bad exception", 
+        "LC_TIME", 
+        "LC_NUMERIC", 
+        "LC_MONETARY", 
+        "LC_CTYPE", 
+        "LC_COLLATE", 
+        "LC_ALL", 
+        "\u001f !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~", 
+        "\u001f !\"#$%&'()*+,-./0123456789:;<=>?@abcdefghijklmnopqrstuvwxyz[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~", 
+        "\u001f !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`ABCDEFGHIJKLMNOPQRSTUVWXYZ{|}~", 
+        "Visual C++ CRT: Not enough memory to complete call to strerror.", 
+        "EncodePointer", 
+        "DecodePointer", 
+        "FlsFree", 
+        "FlsSetValue", 
+        "FlsGetValue", 
+        "FlsAlloc", 
+        "(null)", 
+        "`h````", 
+        "xpxxxx", 
+        "runtime error ", 
+        "TLOSS error", 
+        "SING error", 
+        "DOMAIN error", 
+        "An application has made an attempt to load the C runtime library incorrectly.", 
+        "Please contact the application's support team for more information.", 
+        "- Attempt to use MSIL code from this assembly during native code initialization", 
+        "This indicates a bug in your application. It is most likely the result of calling an MSIL-compiled (/clr) function from a native constructor or from DllMain.", 
+        "- not enough space for locale information", 
+        "- Attempt to initialize the CRT more than once.", 
+        "This indicates a bug in your application.", 
+        "- CRT not initialized", 
+        "- unable to initialize heap", 
+        "- not enough space for lowio initialization", 
+        "- not enough space for stdio initialization", 
+        "- pure virtual function call", 
+        "- not enough space for _onexit/atexit table", 
+        "- unable to open console device", 
+        "- unexpected heap error", 
+        "- unexpected multithread lock error", 
+        "- not enough space for thread data", 
+        "This application has requested the Runtime to terminate it in an unusual way.", 
+        "Please contact the application's support team for more information.", 
+        "- not enough space for environment", 
+        "- not enough space for arguments", 
+        "- floating point support not loaded", 
+        "Microsoft Visual C++ Runtime Library", 
+        "<program name unknown>", 
+        "Runtime Error!", 
+        "Program: ", 
+        "UTF-16LE", 
+        "UNICODE", 
+        "HH:mm:ss", 
+        "dddd, MMMM dd, yyyy", 
+        "MM/dd/yy", 
+        "December", 
+        "November", 
+        "October", 
+        "September", 
+        "August", 
+        "February", 
+        "January", 
+        "Saturday", 
+        "Friday", 
+        "Thursday", 
+        "Wednesday", 
+        "Tuesday", 
+        "Monday", 
+        "Sunday", 
+        "united-states", 
+        "united-kingdom", 
+        "trinidad & tobago", 
+        "south-korea", 
+        "south-africa", 
+        "south korea", 
+        "south africa", 
+        "slovak", 
+        "puerto-rico", 
+        "pr-china", 
+        "pr china", 
+        "new-zealand", 
+        "hong-kong", 
+        "holland", 
+        "great britain", 
+        "england", 
+        "britain", 
+        "america", 
+        "swedish-finland", 
+        "spanish-venezuela", 
+        "spanish-uruguay", 
+        "spanish-puerto rico", 
+        "spanish-peru", 
+        "spanish-paraguay", 
+        "spanish-panama", 
+        "spanish-nicaragua", 
+        "spanish-modern", 
+        "spanish-mexican", 
+        "spanish-honduras", 
+        "spanish-guatemala", 
+        "spanish-el salvador", 
+        "spanish-ecuador", 
+        "spanish-dominican republic", 
+        "spanish-costa rica", 
+        "spanish-colombia", 
+        "spanish-chile", 
+        "spanish-bolivia", 
+        "spanish-argentina", 
+        "portuguese-brazilian", 
+        "norwegian-nynorsk", 
+        "norwegian-bokmal", 
+        "norwegian", 
+        "italian-swiss", 
+        "irish-english", 
+        "german-swiss", 
+        "german-luxembourg", 
+        "german-lichtenstein", 
+        "german-austrian", 
+        "french-swiss", 
+        "french-luxembourg", 
+        "french-canadian", 
+        "french-belgian", 
+        "english-usa", 
+        "english-us", 
+        "english-uk", 
+        "english-trinidad y tobago", 
+        "english-south africa", 
+        "english-nz", 
+        "english-jamaica", 
+        "english-ire", 
+        "english-caribbean", 
+        "english-can", 
+        "english-belize", 
+        "english-aus", 
+        "english-american", 
+        "dutch-belgian", 
+        "chinese-traditional", 
+        "chinese-singapore", 
+        "chinese-simplified", 
+        "chinese-hongkong", 
+        "chinese", 
+        "canadian", 
+        "belgian", 
+        "australian", 
+        "american-english", 
+        "american english", 
+        "american", 
+        "Norwegian-Nynorsk", 
+        "GAIsProcessorFeaturePresent", 
+        "KERNEL32", 
+        "Illegal byte sequence", 
+        "Directory not empty", 
+        "Function not implemented", 
+        "No locks available", 
+        "Filename too long", 
+        "Resource deadlock avoided", 
+        "Result too large", 
+        "Domain error", 
+        "Broken pipe", 
+        "Too many links", 
+        "Read-only file system", 
+        "Invalid seek", 
+        "No space left on device", 
+        "File too large", 
+        "Inappropriate I/O control operation", 
+        "Too many open files", 
+        "Too many open files in system", 
+        "Invalid argument", 
+        "Is a directory", 
+        "Not a directory", 
+        "No such device", 
+        "Improper link", 
+        "File exists", 
+        "Resource device", 
+        "Bad address", 
+        "Permission denied", 
+        "Not enough space", 
+        "Resource temporarily unavailable", 
+        "No child processes", 
+        "Bad file descriptor", 
+        "Exec format error", 
+        "Arg list too long", 
+        "No such device or address", 
+        "Input/output error", 
+        "Interrupted function call", 
+        "No such process", 
+        "No such file or directory", 
+        "Operation not permitted", 
+        "No error", 
+        " Complete Object Locator'", 
+        " Class Hierarchy Descriptor'", 
+        " Base Class Array'", 
+        " Base Class Descriptor at (", 
+        " Type Descriptor'", 
+        "`local static thread guard'", 
+        "`managed vector copy constructor iterator'", 
+        "`vector vbase copy constructor iterator'", 
+        "`vector copy constructor iterator'", 
+        "`dynamic atexit destructor for '", 
+        "`dynamic initializer for '", 
+        "`eh vector vbase copy constructor iterator'", 
+        "`eh vector copy constructor iterator'", 
+        "`managed vector destructor iterator'", 
+        "`managed vector constructor iterator'", 
+        "`placement delete[] closure'", 
+        "`placement delete closure'", 
+        "`omni callsig'", 
+        " delete[]", 
+        " new[]", 
+        "`local vftable constructor closure'", 
+        "`local vftable'", 
+        "`udt returning'", 
+        "`copy constructor closure'", 
+        "`eh vector vbase constructor iterator'", 
+        "`eh vector destructor iterator'", 
+        "`eh vector constructor iterator'", 
+        "`virtual displacement map'", 
+        "`vector vbase constructor iterator'", 
+        "`vector destructor iterator'", 
+        "`vector constructor iterator'", 
+        "`scalar deleting destructor'", 
+        "`default constructor closure'", 
+        "`vector deleting destructor'", 
+        "`vbase destructor'", 
+        "`string'", 
+        "`local static guard'", 
+        "`typeof'", 
+        "`vcall'", 
+        "`vbtable'", 
+        "`vftable'", 
+        "operator", 
+        " delete", 
+        "__unaligned", 
+        "__restrict", 
+        "__ptr64", 
+        "__clrcall", 
+        "__fastcall", 
+        "__thiscall", 
+        "__stdcall", 
+        "__pascal", 
+        "__cdecl", 
+        "__based(", 
+        "`h`hhh", 
+        "xppwpp", 
+        "GetProcessWindowStation", 
+        "GetUserObjectInformationA", 
+        "GetLastActivePopup", 
+        "GetActiveWindow", 
+        "MessageBoxA", 
+        "USER32.DLL", 
+        "SunMonTueWedThuFriSat", 
+        "JanFebMarAprMayJunJulAugSepOctNovDec", 
+        "CONOUT$", 
+        "1#QNAN", 
+        "1#SNAN", 
+        "+v$x+v$xv$+xv+$xv$+x+$vx+$vx$v+x+$vx$+vx+v $+v $v $+v +$v $++$ v+$ v$ v++$ v$+ v+xv$+ v$v$ +v+ $v$ ++x$v+ $v$v ++ $v$ +v", 
+        ":Sun:Sunday:Mon:Monday:Tue:Tuesday:Wed:Wednesday:Thu:Thursday:Fri:Friday:Sat:Saturday", 
+        ":Jan:January:Feb:February:Mar:March:Apr:April:May:May:Jun:June:Jul:July:Aug:August:Sep:September:Oct:October:Nov:November:Dec:December", 
+        "bad allocation", 
+        "AATXn+MiwLu+xCoMG7SqY1uQxAk1qLdyoED9LxIVQr2Z/gsrHIsgTvK9AusdFo+9", 
+        "fzAxf1zXj42880+kUmktmVb5HSYi8T27Q54eQ4ZLUFKPKZstgHcwPVHGdwpmmRmk", 
+        "09fL3KGd9SqR60Mv7QtJ4VwGDqrzOja+Ml4SI7e60C4qDQAAAAAAAAAAAAAAAAAA", 
+        "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", 
+        "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA", 
+        "AAAAAAAAAAAAAAAAAAAAAQAB", 
+        "1312312", 
+        "Assertion failed:h != NULL", 
+        "vector<T> too long", 
+        "0123456789abcdefABCDEF", 
+        "ios_base::badbit set", 
+        "ios_base::failbit set", 
+        "ios_base::eofbit set", 
+        "bad cast", 
+        "RunDllEntry", 
+        "could not convert calendar time to UTC time", 
+        "Day of month value is out of range 1..31", 
+        "Year is out of valid range: 1400..10000", 
+        "Month number is out of range 1..12", 
+        "Day of month is not valid for year", 
+        "Assertion failed:signatureIsValid == true", 
+        "Assertion failed:_pipeServer.get() == NULL", 
+        "Assertion failed:cmd.get() != NULL", 
+        "deque<T> too long", 
+        "Assertion failed:err == BZ_OK", 
+        "Assertion failed:xorKey.length() > 0", 
+        "runDll", 
+        "Assertion failed:msg.size() > 0", 
+        "Assertion failed:slashPos != wstring::npos", 
+        "Assertion failed:p1 != Message::npos", 
+        "Assertion failed:p2 != Message::npos", 
+        "Assertion failed:p1 <= p2", 
+        "Assertion failed:status == HTTP_STATUS_PROXY_AUTH_REQ", 
+        "Assertion failed:status == HTTP_STATUS_OK", 
+        "Assertion failed:i.h != NULL", 
+        "Assertion failed:r == WAIT_OBJECT_0", 
+        "Assertion failed:_key != NULL", 
+        "lppe == NULL", 
+        "Assertion failed:totalSize == size + 1", 
+        "Assertion failed:r != ERROR_BUFFER_OVERFLOW", 
+        "Win32 LastError=", 
+        "Assertion error:'", 
+        "error, getting error text", 
+        "Assertion failed:hr == S_OK", 
+        "Assertion failed:written == writeCount", 
+        "Assertion failed:read == readCount", 
+        "Assertion failed:handle != NULL", 
+        "CONFIG_ERROR", 
+        "OUTBUFF_FULL", 
+        "UNEXPECTED_EOF", 
+        "IO_ERROR", 
+        "DATA_ERROR_MAGIC", 
+        "DATA_ERROR", 
+        "MEM_ERROR", 
+        "PARAM_ERROR", 
+        "SEQUENCE_ERROR", 
+        "bzip2/libbzip2: internal error number %d.", 
+        "This is a bug in bzip2/libbzip2, %s.", 
+        "Please report it to me at: jseward@bzip.org.  If this happened", 
+        "when you were using some program which uses libbzip2 as a", 
+        "component, you should also report this bug to the author(s)", 
+        "of that program.  Please make an effort to report this bug;", 
+        "timely and accurate bug reports eventually lead to higher", 
+        "quality software.  Thanks.  Julian Seward, 10 December 2007.", 
+        "*** A special note about internal error number 1007 ***", 
+        "Experience suggests that a common cause of i.e. 1007", 
+        "is unreliable memory or other hardware.  The 1007 assertion", 
+        "just happens to cross-check the results of huge numbers of", 
+        "memory reads/writes, and so acts (unintendedly) as a stress", 
+        "test of your memory system.", 
+        "I suggest the following: try compressing the file again,", 
+        "possibly monitoring progress in detail with the -vv flag.", 
+        "* If the error cannot be reproduced, and/or happens at different", 
+        "  points in compression, you may have a flaky memory system.", 
+        "  Try a memory-test program.  I have used Memtest86", 
+        "  (www.memtest86.com).  At the time of writing it is free (GPLd).", 
+        "  Memtest86 tests memory much more thorougly than your BIOSs", 
+        "  power-on test, and may find failures that the BIOS doesn't.", 
+        "* If the error can be repeatably reproduced, this is a bug in", 
+        "  bzip2, and I would very much like to hear about it.  Please", 
+        "  let me know, and, ideally, save a copy of the file causing the", 
+        "  problem -- without which I will be unable to investigate it.", 
+        " {0x%08x, 0x%08x}", 
+        "    combined CRCs: stored = 0x%08x, computed = 0x%08x", 
+        "1.0.6, 6-Sept-2010", 
+        "      %d in block, %d after MTF & 1-2 coding, %d+2 syms in use", 
+        "      initial group %d, [%d .. %d], has %d syms (%4.1f%%)", 
+        "      pass %d: size is %d, grp uses are ", 
+        "      bytes: mapping %d, ", 
+        "selectors %d, ", 
+        "code lengths %d, ", 
+        "codes %d", 
+        "    block %d: crc = 0x%08x, combined CRC = 0x%08x, size = %d", 
+        "    final combined CRC = 0x%08x", 
+        "    [%d: huff+mtf ", 
+        "rt+rld", 
+        "        bucket sorting ...", 
+        "        depth %6d has ", 
+        "%6d unresolved strings", 
+        "        reconstructing block ...", 
+        "        main sort initialise ...", 
+        "        qsort [0x%x, 0x%x]   done %d   this %d", 
+        "        %d pointers, %d sorted, %d scanned", 
+        "      %d work, %d block, ratio %5.2f", 
+        "    too repetitive; using fallback sorting algorithm", 
+        "hProcess == NULL", 
+        "Assertion failed:addr != NULL", 
+        "Assertion failed:b == TRUE", 
+        "Assertion failed:written == size", 
+        "LoadLibraryW", 
+        "Assertion failed:badRequest.GetStatusCode() == HTTP_STATUS_PROXY_AUTH_REQ", 
+        "Assertion failed:er != ERROR_SUCCESS", 
+        "Copyright (c) J.S.A.Kapp 94-96.", 
+        "Crypt32.dll", 
+        "CryptStringToBinaryA", 
+        "CreateThread", 
+        "KERNEL32.dll", 
+        "InternetOpenW", 
+        "InternetConnectW", 
+        "HttpOpenRequestW", 
+        "HttpSendRequestW", 
+        "InternetReadFile", 
+        "HttpQueryInfoW", 
+        "InternetCloseHandle", 
+        "InternetQueryOptionW", 
+        "InternetSetOptionW", 
+        "InternetErrorDlg", 
+        "WININET.dll", 
+        "CryptStringToBinaryA", 
+        "CryptBinaryToStringA", 
+        "CRYPT32.dll", 
+        "GetVersion", 
+        "DeleteFileW", 
+        "FindFirstFileW", 
+        "FindClose", 
+        "HeapFree", 
+        "GetProcessHeap", 
+        "GetLastError", 
+        "ResumeThread", 
+        "WaitForSingleObject", 
+        "GetModuleHandleW", 
+        "GetModuleHandleExW", 
+        "GetProcAddress", 
+        "GetModuleFileNameW", 
+        "CreateToolhelp32Snapshot", 
+        "Process32FirstW", 
+        "Process32NextW", 
+        "CopyFileW", 
+        "GetEnvironmentVariableW", 
+        "GetTempFileNameW", 
+        "FormatMessageA", 
+        "LocalFree", 
+        "CloseHandle", 
+        "WaitNamedPipeW", 
+        "CreateNamedPipeW", 
+        "ConnectNamedPipe", 
+        "CreateFileW", 
+        "ReadFile", 
+        "WriteFile", 
+        "FreeLibrary", 
+        "LoadLibraryW", 
+        "VirtualAllocEx", 
+        "WriteProcessMemory", 
+        "lstrlenA", 
+        "HeapAlloc", 
+        "LoadLibraryA", 
+        "InterlockedIncrement", 
+        "InterlockedDecrement", 
+        "WideCharToMultiByte", 
+        "InterlockedCompareExchange", 
+        "InterlockedExchange", 
+        "MultiByteToWideChar", 
+        "InitializeCriticalSection", 
+        "DeleteCriticalSection", 
+        "EnterCriticalSection", 
+        "LeaveCriticalSection", 
+        "SetEndOfFile", 
+        "FindNextFileW", 
+        "SetLastError", 
+        "GetModuleHandleA", 
+        "AreFileApisANSI", 
+        "TerminateProcess", 
+        "GetCurrentProcess", 
+        "UnhandledExceptionFilter", 
+        "SetUnhandledExceptionFilter", 
+        "IsDebuggerPresent", 
+        "GetCurrentThreadId", 
+        "GetCommandLineA", 
+        "GetSystemTimeAsFileTime", 
+        "ExitProcess", 
+        "RaiseException", 
+        "RtlUnwind", 
+        "GetStringTypeW", 
+        "GetCPInfo", 
+        "LCMapStringA", 
+        "LCMapStringW", 
+        "TlsGetValue", 
+        "TlsAlloc", 
+        "TlsSetValue", 
+        "TlsFree", 
+        "SetHandleCount", 
+        "GetStdHandle", 
+        "GetFileType", 
+        "GetStartupInfoA", 
+        "GetModuleFileNameA", 
+        "FreeEnvironmentStringsA", 
+        "GetEnvironmentStrings", 
+        "FreeEnvironmentStringsW", 
+        "GetEnvironmentStringsW", 
+        "HeapCreate", 
+        "HeapDestroy", 
+        "VirtualFree", 
+        "QueryPerformanceCounter", 
+        "GetTickCount", 
+        "GetCurrentProcessId", 
+        "VirtualAlloc", 
+        "HeapReAlloc", 
+        "GetConsoleCP", 
+        "GetConsoleMode", 
+        "SetFilePointer", 
+        "FlushFileBuffers", 
+        "GetACP", 
+        "GetOEMCP", 
+        "IsValidCodePage", 
+        "InitializeCriticalSectionAndSpinCount", 
+        "HeapSize", 
+        "GetTimeFormatA", 
+        "GetDateFormatA", 
+        "GetUserDefaultLCID", 
+        "GetLocaleInfoA", 
+        "EnumSystemLocalesA", 
+        "IsValidLocale", 
+        "GetStringTypeA", 
+        "GetLocaleInfoW", 
+        "WriteConsoleA", 
+        "GetConsoleOutputCP", 
+        "WriteConsoleW", 
+        "SetStdHandle", 
+        "CreateFileA", 
+        "GetTimeZoneInformation", 
+        "CompareStringA", 
+        "CompareStringW", 
+        "SetEnvironmentVariableA", 
+        "DestroyWindow", 
+        "CreateWindowExW", 
+        "EnumWindows", 
+        "GetParent", 
+        "PostMessageW", 
+        "USER32.dll", 
+        "RegCreateKeyExW", 
+        "RegCloseKey", 
+        "RegQueryValueExW", 
+        "RegSetValueExW", 
+        "RegDeleteValueW", 
+        "ADVAPI32.dll", 
+        "CoCreateGuid", 
+        "ole32.dll", 
+        "CreateRemoteThread", 
+        "OpenProcess", 
+        "Tmprovider.dll", 
+        "RunDllEntry", 
+        "runDll", 
+        "VS_VERSION_INFO", 
+        "StringFileInfo", 
+        "080404b0", 
+        "Comments", 
+        "CompanyName", 
+        "FileDescription", 
+        "JpgAsp", 
+        "FileVersion", 
+        "1, 0, 0, 1", 
+        "InternalName", 
+        "JpgAsp", 
+        "LegalCopyright", 
+        "Copyright ? 2012", 
+        "LegalTrademarks", 
+        "OriginalFilename", 
+        "JpgAsp.exe", 
+        "PrivateBuild", 
+        "ProductName", 
+        "  JpgAsp", 
+        "ProductVersion", 
+        "1, 0, 0, 1", 
+        "SpecialBuild", 
+        "VarFileInfo", 
+        "Translation", 
+        "4GovdJlDSmgQYB1pDC#Iaz3rU4VgP4=iC1ZwdzlwTNq3XGQSOO45f", 
+        "mscoree.dll", 
+        "         (((((                  H", 
+        "         h((((                  H", 
+        "                                 H", 
+        "KERNEL32.DLL", 
+        "(null)", 
+        "UTF-16LE", 
+        "UNICODE", 
+        "ytu.am/modules/mod_search/source.php?id=", 
+        "tallhoody.com/wp-includes/pomo/idx.php?id=", 
+        "www.prosperis.com/cms/email/mail.php?id=", 
+        "2Explorer.EXE", 
+        "Software\\Microsoft\\Internet Explorer\\InternetRegistry\\Options", 
+        "\\\\.\\pipe\\mypype-f01F", 
+        "TMP provider", 
+        "TMPprovider01F", 
+        "rundll32 ", 
+        "Software\\Microsoft\\Windows\\CurrentVersion\\Run", 
+        "Software\\Microsoft\\Internet Explorer\\InternetRegistry", 
+        "fertger", 
+        "Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US) AppleWebKit/525.19 (KHTML, like Gecko) Chrome/1.0.154.36 Safari/525.19", 
+        "Software\\Microsoft\\Windows\\CurrentVersion\\Internet Settings", 
+        "Password", 
+        "Kernel32", 
+        "BUTTON"
+    ], 
+    "metadata": {
+        "output": {
+            "pcap": {
+                "basename": "dump.pcap", 
+                "sha256": "6576d5e6ac7c28d55962da37051432c2fd5c50a79da7cb7289486d19b471c750", 
+                "dirname": ""
+            }
+        }
+    }
+}

@@ -1,0 +1,3733 @@
+{
+    "info": {
+        "added": 1782808040.724486, 
+        "started": 1782808056.815982, 
+        "duration": 109, 
+        "ended": 1782808166.008368, 
+        "owner": null, 
+        "score": 8.7, 
+        "id": 7606376, 
+        "category": "file", 
+        "git": {
+            "head": "", 
+            "fetch_head": ""
+        }, 
+        "monitor": null, 
+        "package": "exe", 
+        "route": "internet", 
+        "custom": null, 
+        "machine": {
+            "status": "stopped", 
+            "name": "Ubuntu1904x645", 
+            "label": "Ubuntu1904x645", 
+            "platform": "linux", 
+            "manager": "VirtualBox", 
+            "started_on": "2026-06-30 08:28:18", 
+            "shutdown_on": "2026-06-30 08:29:24"
+        }, 
+        "platform": "linux", 
+        "version": "2.0.7", 
+        "options": "procmemdump=yes,route=internet"
+    }, 
+    "signatures": [
+        {
+            "families": [], 
+            "description": "Yara rules detected for file", 
+            "severity": 1, 
+            "ttp": {}, 
+            "markcount": 10, 
+            "references": [], 
+            "marks": [
+                {
+                    "type": "generic", 
+                    "description": "Identifies distinctive MFC class names seen in STONE PANDA Poison Ivy loaders", 
+                    "rule": "CrowdStrike_CSIR_18014_01"
+                }, 
+                {
+                    "type": "generic", 
+                    "description": "Lecna RAT strings", 
+                    "rule": "CrowdStrike_CSIT_15062_01"
+                }, 
+                {
+                    "type": "generic", 
+                    "description": "Lecna RAT obfuscation routines", 
+                    "rule": "CrowdStrike_CSIT_15062_02"
+                }, 
+                {
+                    "type": "generic", 
+                    "description": "Communications over RAW socket", 
+                    "rule": "network_tcp_socket"
+                }, 
+                {
+                    "type": "generic", 
+                    "description": "Escalade priviledges", 
+                    "rule": "escalate_priv"
+                }, 
+                {
+                    "type": "generic", 
+                    "description": "Take screenshot", 
+                    "rule": "screenshot"
+                }, 
+                {
+                    "type": "generic", 
+                    "description": "Create or check mutex", 
+                    "rule": "win_mutex"
+                }, 
+                {
+                    "type": "generic", 
+                    "description": "Affect system registries", 
+                    "rule": "win_registry"
+                }, 
+                {
+                    "type": "generic", 
+                    "description": "Affect system token", 
+                    "rule": "win_token"
+                }, 
+                {
+                    "type": "generic", 
+                    "description": "Affect private profile", 
+                    "rule": "win_files_operation"
+                }
+            ], 
+            "name": "file_yara"
+        }, 
+        {
+            "families": [], 
+            "description": "File has been identified by 12 AntiVirus engine on IRMA as malicious", 
+            "severity": 60, 
+            "ttp": {}, 
+            "markcount": 12, 
+            "references": [], 
+            "marks": [
+                {
+                    "category": "G Data Antivirus (Windows)", 
+                    "ioc": "Virus: Gen:Heur.Mint.Zard.45 (Engine A)", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Avast Core Security (Linux)", 
+                    "ioc": "Win32:EqDouble-A [Trj]", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "C4S ClamAV (Linux)", 
+                    "ioc": "Win.Trojan.Backspace-1", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Trellix (Linux)", 
+                    "ioc": "Downloader-FAQF", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "WithSecure (Linux)", 
+                    "ioc": "Trojan.TR/Spy.Gen", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "eScan Antivirus (Linux)", 
+                    "ioc": "Gen:Heur.Mint.Zard.45(DB)", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "ESET Security (Windows)", 
+                    "ioc": "a variant of Win32/Lecna.AF trojan", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "DrWeb Antivirus (Linux)", 
+                    "ioc": "Trojan.DownLoader7.62432", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "ClamAV (Linux)", 
+                    "ioc": "Win.Trojan.Backspace-1", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Bitdefender Antivirus (Linux)", 
+                    "ioc": "Gen:Heur.Mint.Zard.45", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Kaspersky Standard (Windows)", 
+                    "ioc": "Worm.Win32.AutoRun.wzs", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Emsisoft Commandline Scanner (Windows)", 
+                    "ioc": "Gen:Heur.Mint.Zard.45 (B)", 
+                    "type": "ioc", 
+                    "description": null
+                }
+            ], 
+            "name": "antivirus_irma"
+        }
+    ], 
+    "target": {
+        "category": "file", 
+        "file": {
+            "mimetype": "application/x-dosexec", 
+            "yara": [
+                {
+                    "meta": {
+                        "description": "Identifies distinctive MFC class names seen in STONE PANDA Poison Ivy loaders", 
+                        "copyright": "(c) 2020 CrowdStrike Inc.", 
+                        "reports": "CSIR-18014", 
+                        "version": "201811300923", 
+                        "actor": "STONE PANDA", 
+                        "last_modified": "2018-11-30", 
+                        "malware_family": "Poison Ivy"
+                    }, 
+                    "name": "CrowdStrike_CSIR_18014_01", 
+                    "offsets": {
+                        "": [
+                            [
+                                115620, 
+                                0
+                            ], 
+                            [
+                                172948, 
+                                0
+                            ]
+                        ]
+                    }, 
+                    "strings": [
+                        "Q0JyaWNrc0RvYw=="
+                    ]
+                }, 
+                {
+                    "meta": {
+                        "malware_family": "Lecna", 
+                        "version": "202004092131", 
+                        "description": "Lecna RAT strings", 
+                        "copyright": "(c) 2020 CrowdStrike Inc.", 
+                        "last_modified": "2020-04-09", 
+                        "reports": "CSIT-15062"
+                    }, 
+                    "name": "CrowdStrike_CSIT_15062_01", 
+                    "offsets": {
+                        "": [
+                            [
+                                69868, 
+                                0
+                            ], 
+                            [
+                                69896, 
+                                1
+                            ]
+                        ], 
+                        "useragent": [
+                            [
+                                69712, 
+                                2
+                            ]
+                        ]
+                    }, 
+                    "strings": [
+                        "ISEgVXNlIFNwbGljZSBTb2NrZXQgISE=", 
+                        "ISFDb25uZWN0IERpcmVjdGx5ISE=", 
+                        "VXNlci1BZ2VudDogU0paSiAoY29tcGF0aWJsZTsgTVNJRSA2LjA7IFdpbjMyKQ=="
+                    ]
+                }, 
+                {
+                    "meta": {
+                        "malware_family": "Lecna", 
+                        "version": "202004092131", 
+                        "description": "Lecna RAT obfuscation routines", 
+                        "copyright": "(c) 2020 CrowdStrike Inc.", 
+                        "last_modified": "2020-04-09", 
+                        "reports": "CSIT-15062"
+                    }, 
+                    "name": "CrowdStrike_CSIT_15062_02", 
+                    "offsets": {
+                        "obf1": [
+                            [
+                                31130, 
+                                0
+                            ]
+                        ], 
+                        "obf3": [
+                            [
+                                29345, 
+                                1
+                            ]
+                        ]
+                    }, 
+                    "strings": [
+                        "KsI0B4rYwOsFwOADCtg=", 
+                        "ihCA8hGA6iVB"
+                    ]
+                }, 
+                {
+                    "meta": {
+                        "version": "0.1", 
+                        "description": "Communications over RAW socket", 
+                        "author": "x0r"
+                    }, 
+                    "name": "network_tcp_socket", 
+                    "offsets": {
+                        "c3": [
+                            [
+                                67304, 
+                                3
+                            ]
+                        ], 
+                        "f1": [
+                            [
+                                67312, 
+                                1
+                            ]
+                        ], 
+                        "f2": [
+                            [
+                                59794, 
+                                0
+                            ]
+                        ], 
+                        "c6": [
+                            [
+                                67296, 
+                                2
+                            ], 
+                            [
+                                68538, 
+                                2
+                            ]
+                        ]
+                    }, 
+                    "strings": [
+                        "V1NPQ0szMi5kbGw=", 
+                        "V3MyXzMyLmRsbA==", 
+                        "Y29ubmVjdA==", 
+                        "c2VuZA=="
+                    ]
+                }, 
+                {
+                    "meta": {
+                        "version": "0.1", 
+                        "description": "Escalade priviledges", 
+                        "author": "x0r"
+                    }, 
+                    "name": "escalate_priv", 
+                    "offsets": {
+                        "c2": [
+                            [
+                                59590, 
+                                1
+                            ]
+                        ], 
+                        "d1": [
+                            [
+                                59780, 
+                                0
+                            ], 
+                            [
+                                902194, 
+                                0
+                            ], 
+                            [
+                                963506, 
+                                0
+                            ]
+                        ]
+                    }, 
+                    "strings": [
+                        "QURWQVBJMzIuZGxs", 
+                        "QWRqdXN0VG9rZW5Qcml2aWxlZ2Vz"
+                    ]
+                }, 
+                {
+                    "meta": {
+                        "version": "0.1", 
+                        "description": "Take screenshot", 
+                        "author": "x0r"
+                    }, 
+                    "name": "screenshot", 
+                    "offsets": {
+                        "c2": [
+                            [
+                                59929, 
+                                2
+                            ]
+                        ], 
+                        "c1": [
+                            [
+                                112492, 
+                                0
+                            ], 
+                            [
+                                169836, 
+                                0
+                            ]
+                        ], 
+                        "d2": [
+                            [
+                                112466, 
+                                3
+                            ], 
+                            [
+                                169810, 
+                                3
+                            ]
+                        ], 
+                        "d1": [
+                            [
+                                112580, 
+                                1
+                            ], 
+                            [
+                                169924, 
+                                1
+                            ]
+                        ]
+                    }, 
+                    "strings": [
+                        "Qml0Qmx0", 
+                        "R0RJMzIuZGxs", 
+                        "R2V0REM=", 
+                        "VVNFUjMyLmRsbA=="
+                    ]
+                }, 
+                {
+                    "meta": {
+                        "version": "0.1", 
+                        "description": "Create or check mutex", 
+                        "author": "x0r"
+                    }, 
+                    "name": "win_mutex", 
+                    "offsets": {
+                        "c1": [
+                            [
+                                60710, 
+                                0
+                            ], 
+                            [
+                                963150, 
+                                0
+                            ]
+                        ]
+                    }, 
+                    "strings": [
+                        "Q3JlYXRlTXV0ZXg="
+                    ]
+                }, 
+                {
+                    "meta": {
+                        "version": "0.1", 
+                        "description": "Affect system registries", 
+                        "author": "x0r"
+                    }, 
+                    "name": "win_registry", 
+                    "offsets": {
+                        "f1": [
+                            [
+                                59780, 
+                                0
+                            ], 
+                            [
+                                902194, 
+                                0
+                            ], 
+                            [
+                                963506, 
+                                0
+                            ]
+                        ], 
+                        "c3": [
+                            [
+                                59482, 
+                                1
+                            ], 
+                            [
+                                902146, 
+                                1
+                            ], 
+                            [
+                                963458, 
+                                1
+                            ]
+                        ], 
+                        "c2": [
+                            [
+                                59732, 
+                                2
+                            ], 
+                            [
+                                963492, 
+                                2
+                            ]
+                        ], 
+                        "c1": [
+                            [
+                                59514, 
+                                4
+                            ], 
+                            [
+                                963472, 
+                                4
+                            ]
+                        ], 
+                        "c6": [
+                            [
+                                59482, 
+                                1
+                            ], 
+                            [
+                                902146, 
+                                1
+                            ], 
+                            [
+                                963458, 
+                                1
+                            ]
+                        ], 
+                        "c4": [
+                            [
+                                59496, 
+                                3
+                            ], 
+                            [
+                                902110, 
+                                3
+                            ], 
+                            [
+                                963440, 
+                                3
+                            ]
+                        ]
+                    }, 
+                    "strings": [
+                        "QURWQVBJMzIuZGxs", 
+                        "UmVnQ2xvc2VLZXk=", 
+                        "UmVnT3BlbktleUV4QQ==", 
+                        "UmVnU2V0VmFsdWVFeEE=", 
+                        "UmVnUXVlcnlWYWx1ZUV4QQ=="
+                    ]
+                }, 
+                {
+                    "meta": {
+                        "version": "0.1", 
+                        "description": "Affect system token", 
+                        "author": "x0r"
+                    }, 
+                    "name": "win_token", 
+                    "offsets": {
+                        "c3": [
+                            [
+                                59660, 
+                                2
+                            ]
+                        ], 
+                        "f1": [
+                            [
+                                59780, 
+                                0
+                            ], 
+                            [
+                                902194, 
+                                0
+                            ], 
+                            [
+                                963506, 
+                                0
+                            ]
+                        ], 
+                        "c4": [
+                            [
+                                59614, 
+                                3
+                            ]
+                        ], 
+                        "c2": [
+                            [
+                                59590, 
+                                1
+                            ]
+                        ]
+                    }, 
+                    "strings": [
+                        "QURWQVBJMzIuZGxs", 
+                        "QWRqdXN0VG9rZW5Qcml2aWxlZ2Vz", 
+                        "T3BlblByb2Nlc3NUb2tlbg==", 
+                        "TG9va3VwUHJpdmlsZWdlVmFsdWVB"
+                    ]
+                }, 
+                {
+                    "meta": {
+                        "version": "0.1", 
+                        "description": "Affect private profile", 
+                        "author": "x0r"
+                    }, 
+                    "name": "win_files_operation", 
+                    "offsets": {
+                        "f1": [
+                            [
+                                61438, 
+                                5
+                            ], 
+                            [
+                                67220, 
+                                6
+                            ], 
+                            [
+                                112320, 
+                                5
+                            ], 
+                            [
+                                169664, 
+                                5
+                            ], 
+                            [
+                                902094, 
+                                5
+                            ], 
+                            [
+                                902996, 
+                                11
+                            ], 
+                            [
+                                963364, 
+                                5
+                            ]
+                        ], 
+                        "c11": [
+                            [
+                                61108, 
+                                0
+                            ], 
+                            [
+                                963036, 
+                                0
+                            ]
+                        ], 
+                        "c9": [
+                            [
+                                61076, 
+                                3
+                            ], 
+                            [
+                                962996, 
+                                3
+                            ]
+                        ], 
+                        "c3": [
+                            [
+                                61340, 
+                                10
+                            ], 
+                            [
+                                901986, 
+                                10
+                            ], 
+                            [
+                                964068, 
+                                10
+                            ]
+                        ], 
+                        "c2": [
+                            [
+                                964038, 
+                                8
+                            ]
+                        ], 
+                        "c1": [
+                            [
+                                61340, 
+                                10
+                            ], 
+                            [
+                                901986, 
+                                10
+                            ], 
+                            [
+                                964068, 
+                                10
+                            ]
+                        ], 
+                        "c10": [
+                            [
+                                60646, 
+                                7
+                            ], 
+                            [
+                                67444, 
+                                7
+                            ], 
+                            [
+                                963850, 
+                                7
+                            ]
+                        ], 
+                        "c7": [
+                            [
+                                67492, 
+                                4
+                            ], 
+                            [
+                                963048, 
+                                4
+                            ]
+                        ], 
+                        "c6": [
+                            [
+                                61352, 
+                                1
+                            ], 
+                            [
+                                67404, 
+                                1
+                            ], 
+                            [
+                                901998, 
+                                1
+                            ], 
+                            [
+                                964110, 
+                                1
+                            ]
+                        ], 
+                        "c5": [
+                            [
+                                61304, 
+                                2
+                            ], 
+                            [
+                                67372, 
+                                2
+                            ], 
+                            [
+                                962982, 
+                                2
+                            ]
+                        ], 
+                        "c4": [
+                            [
+                                61394, 
+                                9
+                            ], 
+                            [
+                                902056, 
+                                9
+                            ], 
+                            [
+                                964056, 
+                                9
+                            ]
+                        ]
+                    }, 
+                    "strings": [
+                        "Q29weUZpbGU=", 
+                        "Q3JlYXRlRmlsZUE=", 
+                        "RGVsZXRlRmlsZUE=", 
+                        "RmluZENsb3Nl", 
+                        "RmluZEZpcnN0RmlsZUE=", 
+                        "S0VSTkVMMzIuZGxs", 
+                        "S2VybmVsMzIuZGxs", 
+                        "U2V0RmlsZUF0dHJpYnV0ZXNB", 
+                        "U2V0RmlsZVBvaW50ZXI=", 
+                        "UmVhZEZpbGU=", 
+                        "V3JpdGVGaWxl", 
+                        "a2VybmVsMzIuZGxs"
+                    ]
+                }
+            ], 
+            "sha1": "f3f56a3c3cb615b75cffea4c313716539153d29a", 
+            "name": "2d75de9e1bb58fe61fd971bb720a49b7.OA.SA.OA.IA-DLL-funs.SH.OA", 
+            "type": "PE32 executable (GUI) Intel 80386, for MS Windows", 
+            "sha256": "2623dc288f5d408c03032f0c41f2782e58af12d4230ffcfe25daccf68a251a85", 
+            "urls": [], 
+            "crc32": "C5E27301", 
+            "path": "/srv/cuckoo/cwd/storage/binaries/2623dc288f5d408c03032f0c41f2782e58af12d4230ffcfe25daccf68a251a85", 
+            "ssdeep": null, 
+            "size": 995328, 
+            "sha512": "92733ecb437446984989d4c8a4984a102c83178fc0b438395e8c7152c3cbe35929717245e11ccda7ee25ea112b0cbaa08ff73642e077b432007172837f057a48", 
+            "md5": "4fc5a538cdc956d74559d2bc5cdc62f8"
+        }, 
+        "custom": null
+    }, 
+    "irma": {
+        "status": 1, 
+        "probes_finished": 13, 
+        "scan_id": "10ccfe03-0766-472f-886f-6c03d7f1fb6a", 
+        "parent_file_sha256": null, 
+        "name": "2623dc288f5d408c03032f0c41f2782e58af12d4230ffcfe25daccf68a251a85", 
+        "scan_date": 1782797366, 
+        "other_results": [], 
+        "submitter": "cli", 
+        "probes_total": 13, 
+        "file_infos": {
+            "mimetype": "PE32 executable (GUI) Intel 80386, for MS Windows", 
+            "sha1": "f3f56a3c3cb615b75cffea4c313716539153d29a", 
+            "tags": [], 
+            "timestamp_first_scan": 1782797366.16, 
+            "size": 995328, 
+            "timestamp_last_scan": 1782797377.88, 
+            "sha256": "2623dc288f5d408c03032f0c41f2782e58af12d4230ffcfe25daccf68a251a85", 
+            "md5": "4fc5a538cdc956d74559d2bc5cdc62f8"
+        }, 
+        "probe_results": {
+            "antivirus": {
+                "G Data Antivirus (Windows)": {
+                    "status": 1, 
+                    "duration": 0.44, 
+                    "version": "5.5.20197.1358", 
+                    "results": "Virus: Gen:Heur.Mint.Zard.45 (Engine A)", 
+                    "virus_database_version": "unavailable"
+                }, 
+                "Avast Core Security (Linux)": {
+                    "status": 1, 
+                    "duration": 0.04, 
+                    "version": "4.6.1", 
+                    "results": "Win32:EqDouble-A [Trj]", 
+                    "virus_database_version": "unavailable"
+                }, 
+                "C4S ClamAV (Linux)": {
+                    "status": 1, 
+                    "duration": 0.23, 
+                    "version": "1.4.3", 
+                    "results": "Win.Trojan.Backspace-1", 
+                    "virus_database_version": "28046"
+                }, 
+                "Trellix (Linux)": {
+                    "status": 1, 
+                    "duration": 8.91, 
+                    "version": "7.0.4.835", 
+                    "results": "Downloader-FAQF", 
+                    "virus_database_version": "11831"
+                }, 
+                "WithSecure (Linux)": {
+                    "status": 1, 
+                    "duration": 0.25, 
+                    "version": "1.0.45", 
+                    "results": "Trojan.TR/Spy.Gen", 
+                    "virus_database_version": "unavailable"
+                }, 
+                "eScan Antivirus (Linux)": {
+                    "status": 1, 
+                    "duration": 3.85, 
+                    "version": "7.0.21", 
+                    "results": "Gen:Heur.Mint.Zard.45(DB)", 
+                    "virus_database_version": "7.101116 (29/06/2026)"
+                }, 
+                "ESET Security (Windows)": {
+                    "status": 1, 
+                    "duration": 0.67, 
+                    "version": "unavailable", 
+                    "results": "a variant of Win32/Lecna.AF trojan", 
+                    "virus_database_version": "unavailable"
+                }, 
+                "Sophos Anti-Virus (Linux)": {
+                    "status": 0, 
+                    "duration": 0.32, 
+                    "version": "1.2.1.1 (2026-04-20)", 
+                    "results": null, 
+                    "virus_database_version": "unavailable"
+                }, 
+                "DrWeb Antivirus (Linux)": {
+                    "status": 1, 
+                    "duration": 0.18, 
+                    "version": "11.1.17.2605081640", 
+                    "results": "Trojan.DownLoader7.62432", 
+                    "virus_database_version": "unavailable"
+                }, 
+                "ClamAV (Linux)": {
+                    "status": 1, 
+                    "duration": 0.3, 
+                    "version": "1.4.3", 
+                    "results": "Win.Trojan.Backspace-1", 
+                    "virus_database_version": "28046"
+                }, 
+                "Bitdefender Antivirus (Linux)": {
+                    "status": 1, 
+                    "duration": 8.84, 
+                    "version": "7.90123", 
+                    "results": "Gen:Heur.Mint.Zard.45", 
+                    "virus_database_version": null
+                }, 
+                "Kaspersky Standard (Windows)": {
+                    "status": 1, 
+                    "duration": 1.23, 
+                    "version": "21.24", 
+                    "results": "Worm.Win32.AutoRun.wzs", 
+                    "virus_database_version": "2026-06-29 19:02:00 (unknown)"
+                }, 
+                "Emsisoft Commandline Scanner (Windows)": {
+                    "status": 1, 
+                    "duration": 0.41, 
+                    "version": "2025.1.0.12641", 
+                    "results": "Gen:Heur.Mint.Zard.45 (B)", 
+                    "virus_database_version": "unavailable"
+                }
+            }
+        }, 
+        "path": "", 
+        "result_id": "cc4fd171-81a7-4b3f-b288-924ae0b9712d"
+    }, 
+    "suricata": {
+        "tls": [], 
+        "files": [], 
+        "alerts": [], 
+        "http": []
+    }, 
+    "virustotal": {
+        "summary": {
+            "error": "resource has not been scanned yet"
+        }
+    }, 
+    "network": {
+        "udp": [], 
+        "dns_servers": [], 
+        "http": [], 
+        "smtp": [], 
+        "tcp": [], 
+        "geoinfo": {}, 
+        "mitm": [], 
+        "https_ex": [], 
+        "http_ex": [], 
+        "sorted_pcap_sha256": "b4602a0ed66ca8322b07851bed724f1c1cd0397497bd2371a933d59fdcf1e0fb", 
+        "icmp": [], 
+        "tls": [], 
+        "dead_hosts": [], 
+        "smtp_ex": [], 
+        "hosts": [], 
+        "pcap_sha256": "3fd7ac4d25df16ab3e3e3230b07dd507be3e1bf07698a4e36bdfe8d9bd49fc1d", 
+        "dns": [], 
+        "domains": [], 
+        "irc": []
+    }, 
+    "resubmit": {
+        "resubmit_ids": []
+    }, 
+    "static": {
+        "pdb_path": null, 
+        "pe_imports": [
+            {
+                "imports": [
+                    {
+                        "name": "RegCloseKey", 
+                        "address": "0x408000"
+                    }, 
+                    {
+                        "name": "RegSetValueExA", 
+                        "address": "0x408004"
+                    }, 
+                    {
+                        "name": "RegQueryValueExA", 
+                        "address": "0x408008"
+                    }, 
+                    {
+                        "name": "RegCreateKeyExA", 
+                        "address": "0x40800c"
+                    }, 
+                    {
+                        "name": "SetSecurityInfo", 
+                        "address": "0x408010"
+                    }, 
+                    {
+                        "name": "SetEntriesInAclA", 
+                        "address": "0x408014"
+                    }, 
+                    {
+                        "name": "AdjustTokenPrivileges", 
+                        "address": "0x408018"
+                    }, 
+                    {
+                        "name": "LookupPrivilegeValueA", 
+                        "address": "0x40801c"
+                    }, 
+                    {
+                        "name": "GetTokenInformation", 
+                        "address": "0x408020"
+                    }, 
+                    {
+                        "name": "OpenProcessToken", 
+                        "address": "0x408024"
+                    }, 
+                    {
+                        "name": "GetUserNameA", 
+                        "address": "0x408028"
+                    }, 
+                    {
+                        "name": "LookupAccountSidA", 
+                        "address": "0x40802c"
+                    }, 
+                    {
+                        "name": "RegEnumKeyExA", 
+                        "address": "0x408030"
+                    }, 
+                    {
+                        "name": "RegOpenKeyExA", 
+                        "address": "0x408034"
+                    }, 
+                    {
+                        "name": "RegEnumValueA", 
+                        "address": "0x408038"
+                    }, 
+                    {
+                        "name": "RegDeleteValueA", 
+                        "address": "0x40803c"
+                    }
+                ], 
+                "dll": "ADVAPI32.dll"
+            }, 
+            {
+                "imports": [
+                    {
+                        "name": "closesocket", 
+                        "address": "0x408204"
+                    }, 
+                    {
+                        "name": "WSAStartup", 
+                        "address": "0x408208"
+                    }, 
+                    {
+                        "name": "WSACleanup", 
+                        "address": "0x40820c"
+                    }, 
+                    {
+                        "name": "socket", 
+                        "address": "0x408210"
+                    }, 
+                    {
+                        "name": "htons", 
+                        "address": "0x408214"
+                    }, 
+                    {
+                        "name": "ioctlsocket", 
+                        "address": "0x408218"
+                    }, 
+                    {
+                        "name": "inet_ntoa", 
+                        "address": "0x40821c"
+                    }, 
+                    {
+                        "name": "select", 
+                        "address": "0x408220"
+                    }, 
+                    {
+                        "name": "recv", 
+                        "address": "0x408224"
+                    }, 
+                    {
+                        "name": "gethostname", 
+                        "address": "0x408228"
+                    }, 
+                    {
+                        "name": "gethostbyname", 
+                        "address": "0x40822c"
+                    }, 
+                    {
+                        "name": "inet_addr", 
+                        "address": "0x408230"
+                    }, 
+                    {
+                        "name": "WSAGetLastError", 
+                        "address": "0x408234"
+                    }
+                ], 
+                "dll": "WSOCK32.dll"
+            }, 
+            {
+                "imports": [
+                    {
+                        "name": "WNetCloseEnum", 
+                        "address": "0x408118"
+                    }
+                ], 
+                "dll": "MPR.dll"
+            }, 
+            {
+                "imports": [
+                    {
+                        "name": "SHGetValueA", 
+                        "address": "0x4081f0"
+                    }, 
+                    {
+                        "name": "SHSetValueA", 
+                        "address": "0x4081f4"
+                    }, 
+                    {
+                        "name": "SHDeleteKeyA", 
+                        "address": "0x4081f8"
+                    }, 
+                    {
+                        "name": "SHDeleteValueA", 
+                        "address": "0x4081fc"
+                    }
+                ], 
+                "dll": "SHLWAPI.dll"
+            }, 
+            {
+                "imports": [
+                    {
+                        "name": "NetApiBufferFree", 
+                        "address": "0x4081dc"
+                    }, 
+                    {
+                        "name": "NetGetDCName", 
+                        "address": "0x4081e0"
+                    }
+                ], 
+                "dll": "NETAPI32.dll"
+            }, 
+            {
+                "imports": [
+                    {
+                        "name": "SHGetSpecialFolderPathA", 
+                        "address": "0x4081e8"
+                    }
+                ], 
+                "dll": "SHELL32.dll"
+            }, 
+            {
+                "imports": [
+                    {
+                        "name": "CoInitialize", 
+                        "address": "0x40823c"
+                    }, 
+                    {
+                        "name": "CoCreateInstance", 
+                        "address": "0x408240"
+                    }
+                ], 
+                "dll": "ole32.dll"
+            }, 
+            {
+                "imports": [
+                    {
+                        "name": "isalpha", 
+                        "address": "0x408120"
+                    }, 
+                    {
+                        "name": "exit", 
+                        "address": "0x408124"
+                    }, 
+                    {
+                        "name": "atoi", 
+                        "address": "0x408128"
+                    }, 
+                    {
+                        "name": "_exit", 
+                        "address": "0x40812c"
+                    }, 
+                    {
+                        "name": "_XcptFilter", 
+                        "address": "0x408130"
+                    }, 
+                    {
+                        "name": "_acmdln", 
+                        "address": "0x408134"
+                    }, 
+                    {
+                        "name": "__getmainargs", 
+                        "address": "0x408138"
+                    }, 
+                    {
+                        "name": "_initterm", 
+                        "address": "0x40813c"
+                    }, 
+                    {
+                        "name": "__setusermatherr", 
+                        "address": "0x408140"
+                    }, 
+                    {
+                        "name": "_adjust_fdiv", 
+                        "address": "0x408144"
+                    }, 
+                    {
+                        "name": "__p__commode", 
+                        "address": "0x408148"
+                    }, 
+                    {
+                        "name": "__p__fmode", 
+                        "address": "0x40814c"
+                    }, 
+                    {
+                        "name": "__set_app_type", 
+                        "address": "0x408150"
+                    }, 
+                    {
+                        "name": "_except_handler3", 
+                        "address": "0x408154"
+                    }, 
+                    {
+                        "name": "_controlfp", 
+                        "address": "0x408158"
+                    }, 
+                    {
+                        "name": "swprintf", 
+                        "address": "0x40815c"
+                    }, 
+                    {
+                        "name": "fwrite", 
+                        "address": "0x408160"
+                    }, 
+                    {
+                        "name": "fopen", 
+                        "address": "0x408164"
+                    }, 
+                    {
+                        "name": "isdigit", 
+                        "address": "0x408168"
+                    }, 
+                    {
+                        "name": "fread", 
+                        "address": "0x40816c"
+                    }, 
+                    {
+                        "name": "fclose", 
+                        "address": "0x408170"
+                    }, 
+                    {
+                        "name": "rename", 
+                        "address": "0x408174"
+                    }, 
+                    {
+                        "name": "strrchr", 
+                        "address": "0x408178"
+                    }, 
+                    {
+                        "name": "_strnicmp", 
+                        "address": "0x40817c"
+                    }, 
+                    {
+                        "name": "memset", 
+                        "address": "0x408180"
+                    }, 
+                    {
+                        "name": "strstr", 
+                        "address": "0x408184"
+                    }, 
+                    {
+                        "name": "strchr", 
+                        "address": "0x408188"
+                    }, 
+                    {
+                        "name": "memcpy", 
+                        "address": "0x40818c"
+                    }, 
+                    {
+                        "name": "strcmp", 
+                        "address": "0x408190"
+                    }, 
+                    {
+                        "name": "memcmp", 
+                        "address": "0x408194"
+                    }, 
+                    {
+                        "name": "free", 
+                        "address": "0x408198"
+                    }, 
+                    {
+                        "name": "time", 
+                        "address": "0x40819c"
+                    }, 
+                    {
+                        "name": "srand", 
+                        "address": "0x4081a0"
+                    }, 
+                    {
+                        "name": "rand", 
+                        "address": "0x4081a4"
+                    }, 
+                    {
+                        "name": "sprintf", 
+                        "address": "0x4081a8"
+                    }, 
+                    {
+                        "name": "strcpy", 
+                        "address": "0x4081ac"
+                    }, 
+                    {
+                        "name": "strcat", 
+                        "address": "0x4081b0"
+                    }, 
+                    {
+                        "name": "malloc", 
+                        "address": "0x4081b4"
+                    }, 
+                    {
+                        "name": "strlen", 
+                        "address": "0x4081b8"
+                    }, 
+                    {
+                        "name": "_EH_prolog", 
+                        "address": "0x4081bc"
+                    }, 
+                    {
+                        "name": "__CxxFrameHandler", 
+                        "address": "0x4081c0"
+                    }, 
+                    {
+                        "name": "fseek", 
+                        "address": "0x4081c4"
+                    }, 
+                    {
+                        "name": "fscanf", 
+                        "address": "0x4081c8"
+                    }, 
+                    {
+                        "name": "_access", 
+                        "address": "0x4081cc"
+                    }, 
+                    {
+                        "name": "strncpy", 
+                        "address": "0x4081d0"
+                    }, 
+                    {
+                        "name": "_itoa", 
+                        "address": "0x4081d4"
+                    }
+                ], 
+                "dll": "MSVCRT.dll"
+            }, 
+            {
+                "imports": [
+                    {
+                        "name": "GetPriorityClass", 
+                        "address": "0x408044"
+                    }, 
+                    {
+                        "name": "GetStartupInfoA", 
+                        "address": "0x408048"
+                    }, 
+                    {
+                        "name": "PeekNamedPipe", 
+                        "address": "0x40804c"
+                    }, 
+                    {
+                        "name": "ReadFile", 
+                        "address": "0x408050"
+                    }, 
+                    {
+                        "name": "Sleep", 
+                        "address": "0x408054"
+                    }, 
+                    {
+                        "name": "GetModuleHandleA", 
+                        "address": "0x408058"
+                    }, 
+                    {
+                        "name": "CreateFileA", 
+                        "address": "0x40805c"
+                    }, 
+                    {
+                        "name": "WriteFile", 
+                        "address": "0x408060"
+                    }, 
+                    {
+                        "name": "GetModuleFileNameA", 
+                        "address": "0x408064"
+                    }, 
+                    {
+                        "name": "DeleteFileA", 
+                        "address": "0x408068"
+                    }, 
+                    {
+                        "name": "GetCurrentProcess", 
+                        "address": "0x40806c"
+                    }, 
+                    {
+                        "name": "DuplicateHandle", 
+                        "address": "0x408070"
+                    }, 
+                    {
+                        "name": "CreateProcessA", 
+                        "address": "0x408074"
+                    }, 
+                    {
+                        "name": "MultiByteToWideChar", 
+                        "address": "0x408078"
+                    }, 
+                    {
+                        "name": "GlobalAlloc", 
+                        "address": "0x40807c"
+                    }, 
+                    {
+                        "name": "GlobalFree", 
+                        "address": "0x408080"
+                    }, 
+                    {
+                        "name": "GetFileTime", 
+                        "address": "0x408084"
+                    }, 
+                    {
+                        "name": "SetFileTime", 
+                        "address": "0x408088"
+                    }, 
+                    {
+                        "name": "GetSystemTime", 
+                        "address": "0x40808c"
+                    }, 
+                    {
+                        "name": "SystemTimeToFileTime", 
+                        "address": "0x408090"
+                    }, 
+                    {
+                        "name": "CompareFileTime", 
+                        "address": "0x408094"
+                    }, 
+                    {
+                        "name": "GetFileSize", 
+                        "address": "0x408098"
+                    }, 
+                    {
+                        "name": "GetLocalTime", 
+                        "address": "0x40809c"
+                    }, 
+                    {
+                        "name": "CopyFileA", 
+                        "address": "0x4080a0"
+                    }, 
+                    {
+                        "name": "RemoveDirectoryA", 
+                        "address": "0x4080a4"
+                    }, 
+                    {
+                        "name": "GetLastError", 
+                        "address": "0x4080a8"
+                    }, 
+                    {
+                        "name": "LocalFree", 
+                        "address": "0x4080ac"
+                    }, 
+                    {
+                        "name": "GetLogicalDriveStringsA", 
+                        "address": "0x4080b0"
+                    }, 
+                    {
+                        "name": "GetDriveTypeA", 
+                        "address": "0x4080b4"
+                    }, 
+                    {
+                        "name": "GetVolumeInformationA", 
+                        "address": "0x4080b8"
+                    }, 
+                    {
+                        "name": "GetVersionExA", 
+                        "address": "0x4080bc"
+                    }, 
+                    {
+                        "name": "GetSystemDefaultLangID", 
+                        "address": "0x4080c0"
+                    }, 
+                    {
+                        "name": "CreateToolhelp32Snapshot", 
+                        "address": "0x4080c4"
+                    }, 
+                    {
+                        "name": "Process32First", 
+                        "address": "0x4080c8"
+                    }, 
+                    {
+                        "name": "lstrcmpiA", 
+                        "address": "0x4080cc"
+                    }, 
+                    {
+                        "name": "Process32Next", 
+                        "address": "0x4080d0"
+                    }, 
+                    {
+                        "name": "FindClose", 
+                        "address": "0x4080d4"
+                    }, 
+                    {
+                        "name": "GetComputerNameA", 
+                        "address": "0x4080d8"
+                    }, 
+                    {
+                        "name": "OpenMutexA", 
+                        "address": "0x4080dc"
+                    }, 
+                    {
+                        "name": "CloseHandle", 
+                        "address": "0x4080e0"
+                    }, 
+                    {
+                        "name": "SetEvent", 
+                        "address": "0x4080e4"
+                    }, 
+                    {
+                        "name": "WaitForSingleObject", 
+                        "address": "0x4080e8"
+                    }, 
+                    {
+                        "name": "CreateMutexA", 
+                        "address": "0x4080ec"
+                    }, 
+                    {
+                        "name": "CreateDirectoryA", 
+                        "address": "0x4080f0"
+                    }, 
+                    {
+                        "name": "GetFileAttributesA", 
+                        "address": "0x4080f4"
+                    }, 
+                    {
+                        "name": "SetFileAttributesA", 
+                        "address": "0x4080f8"
+                    }, 
+                    {
+                        "name": "CreateEventA", 
+                        "address": "0x4080fc"
+                    }, 
+                    {
+                        "name": "CreateThread", 
+                        "address": "0x408100"
+                    }, 
+                    {
+                        "name": "GetTickCount", 
+                        "address": "0x408104"
+                    }, 
+                    {
+                        "name": "LoadLibraryA", 
+                        "address": "0x408108"
+                    }, 
+                    {
+                        "name": "GetProcAddress", 
+                        "address": "0x40810c"
+                    }, 
+                    {
+                        "name": "FreeLibrary", 
+                        "address": "0x408110"
+                    }
+                ], 
+                "dll": "KERNEL32.dll"
+            }
+        ], 
+        "peid_signatures": [
+            "Armadillo v1.71"
+        ], 
+        "keys": [], 
+        "signature": [], 
+        "pe_timestamp": "2013-04-23 03:13:29", 
+        "pe_exports": [], 
+        "imported_dll_count": 9, 
+        "pe_imphash": "9c0923fb84eb4e8424b109f6c7b987af", 
+        "pe_resources": [
+            {
+                "name": "RT_ICON", 
+                "language": "LANG_ENGLISH", 
+                "filetype": "Device independent bitmap graphic, 16 x 32 x 8, image size 0", 
+                "sublanguage": "SUBLANG_ENGLISH_US", 
+                "offset": "0x0001c9c8", 
+                "size": "0x00000568"
+            }, 
+            {
+                "name": "RT_ICON", 
+                "language": "LANG_ENGLISH", 
+                "filetype": "Device independent bitmap graphic, 16 x 32 x 8, image size 0", 
+                "sublanguage": "SUBLANG_ENGLISH_US", 
+                "offset": "0x0001c9c8", 
+                "size": "0x00000568"
+            }, 
+            {
+                "name": "RT_GROUP_ICON", 
+                "language": "LANG_ENGLISH", 
+                "filetype": "data", 
+                "sublanguage": "SUBLANG_ENGLISH_US", 
+                "offset": "0x0001cf30", 
+                "size": "0x00000022"
+            }, 
+            {
+                "name": "RT_VERSION", 
+                "language": "LANG_ENGLISH", 
+                "filetype": "data", 
+                "sublanguage": "SUBLANG_ENGLISH_US", 
+                "offset": "0x0001cf58", 
+                "size": "0x000003a4"
+            }
+        ], 
+        "pe_versioninfo": [], 
+        "pe_sections": [
+            {
+                "size_of_data": "0x00007000", 
+                "virtual_address": "0x00001000", 
+                "entropy": 6.312232242150516, 
+                "name": ".text", 
+                "virtual_size": "0x00006ff2"
+            }, 
+            {
+                "size_of_data": "0x00002000", 
+                "virtual_address": "0x00008000", 
+                "entropy": 2.8858534000966056, 
+                "name": ".rdata", 
+                "virtual_size": "0x0000101e"
+            }, 
+            {
+                "size_of_data": "0x00002000", 
+                "virtual_address": "0x0000a000", 
+                "entropy": 3.349582415294103, 
+                "name": ".data", 
+                "virtual_size": "0x00011c38"
+            }, 
+            {
+                "size_of_data": "0x00002000", 
+                "virtual_address": "0x0001c000", 
+                "entropy": 2.714319301177238, 
+                "name": ".rsrc", 
+                "virtual_size": "0x00001300"
+            }, 
+            {
+                "size_of_data": "0x0000d000", 
+                "virtual_address": "0x0001e000", 
+                "entropy": 4.191824931666586, 
+                "name": ".rsrc", 
+                "virtual_size": "0x0000d000"
+            }
+        ]
+    }, 
+    "snort": {
+        "alerts": []
+    }, 
+    "debug": {
+        "action": [], 
+        "dbgview": [], 
+        "errors": [], 
+        "log": [
+            "2026-06-30 08:27:20,001 [root] DEBUG: Starting analyzer from: /tmp/tmpdwFj1v\n", 
+            "2026-06-30 08:27:20,002 [root] DEBUG: Storing results at: /tmp/eeVFRPjQU\n", 
+            "2026-06-30 08:27:20,004 [root] ERROR: Traceback (most recent call last):\n", 
+            "  File \"/tmp/tmpdwFj1v/analyzer.py\", line 340, in <module>\n", 
+            "    success = analyzer.run()\n", 
+            "  File \"/tmp/tmpdwFj1v/analyzer.py\", line 129, in run\n", 
+            "    self.config.file_name, **kwargs)\n", 
+            "  File \"/tmp/tmpdwFj1v/lib/core/packages.py\", line 42, in choose_package_class\n", 
+            "    \"exist.\".format(name))\n", 
+            "Exception: Unable to import package \"exe\": it does not exist.\n", 
+            "Traceback (most recent call last):\n", 
+            "  File \"/tmp/tmpdwFj1v/analyzer.py\", line 340, in <module>\n", 
+            "    success = analyzer.run()\n", 
+            "  File \"/tmp/tmpdwFj1v/analyzer.py\", line 129, in run\n", 
+            "    self.config.file_name, **kwargs)\n", 
+            "  File \"/tmp/tmpdwFj1v/lib/core/packages.py\", line 42, in choose_package_class\n", 
+            "    \"exist.\".format(name))\n", 
+            "Exception: Unable to import package \"exe\": it does not exist.\n"
+        ], 
+        "cuckoo": [
+            "2026-06-30 08:27:36,926 [cuckoo.core.scheduler] DEBUG: Task #7606376: no machine available yet\n", 
+            "2026-06-30 08:27:37,946 [cuckoo.core.scheduler] DEBUG: Task #7606376: no machine available yet\n", 
+            "2026-06-30 08:27:38,991 [cuckoo.core.scheduler] DEBUG: Task #7606376: no machine available yet\n", 
+            "2026-06-30 08:27:40,032 [cuckoo.core.scheduler] DEBUG: Task #7606376: no machine available yet\n", 
+            "2026-06-30 08:27:41,052 [cuckoo.core.scheduler] DEBUG: Task #7606376: no machine available yet\n", 
+            "2026-06-30 08:27:42,095 [cuckoo.core.scheduler] DEBUG: Task #7606376: no machine available yet\n", 
+            "2026-06-30 08:27:43,121 [cuckoo.core.scheduler] DEBUG: Task #7606376: no machine available yet\n", 
+            "2026-06-30 08:27:44,142 [cuckoo.core.scheduler] DEBUG: Task #7606376: no machine available yet\n", 
+            "2026-06-30 08:27:45,163 [cuckoo.core.scheduler] DEBUG: Task #7606376: no machine available yet\n", 
+            "2026-06-30 08:27:46,183 [cuckoo.core.scheduler] DEBUG: Task #7606376: no machine available yet\n", 
+            "2026-06-30 08:27:47,221 [cuckoo.core.scheduler] DEBUG: Task #7606376: no machine available yet\n", 
+            "2026-06-30 08:27:48,244 [cuckoo.core.scheduler] DEBUG: Task #7606376: no machine available yet\n", 
+            "2026-06-30 08:27:49,268 [cuckoo.core.scheduler] DEBUG: Task #7606376: no machine available yet\n", 
+            "2026-06-30 08:27:50,290 [cuckoo.core.scheduler] DEBUG: Task #7606376: no machine available yet\n", 
+            "2026-06-30 08:27:51,311 [cuckoo.core.scheduler] DEBUG: Task #7606376: no machine available yet\n", 
+            "2026-06-30 08:27:52,501 [cuckoo.core.scheduler] DEBUG: Task #7606376: no machine available yet\n", 
+            "2026-06-30 08:27:53,526 [cuckoo.core.scheduler] DEBUG: Task #7606376: no machine available yet\n", 
+            "2026-06-30 08:27:54,545 [cuckoo.core.scheduler] DEBUG: Task #7606376: no machine available yet\n", 
+            "2026-06-30 08:27:55,568 [cuckoo.core.scheduler] DEBUG: Task #7606376: no machine available yet\n", 
+            "2026-06-30 08:27:56,592 [cuckoo.core.scheduler] DEBUG: Task #7606376: no machine available yet\n", 
+            "2026-06-30 08:27:57,812 [cuckoo.core.scheduler] DEBUG: Task #7606376: no machine available yet\n", 
+            "2026-06-30 08:27:58,919 [cuckoo.core.scheduler] DEBUG: Task #7606376: no machine available yet\n", 
+            "2026-06-30 08:28:00,029 [cuckoo.core.scheduler] DEBUG: Task #7606376: no machine available yet\n", 
+            "2026-06-30 08:28:01,148 [cuckoo.core.scheduler] DEBUG: Task #7606376: no machine available yet\n", 
+            "2026-06-30 08:28:02,234 [cuckoo.core.scheduler] DEBUG: Task #7606376: no machine available yet\n", 
+            "2026-06-30 08:28:03,550 [cuckoo.core.scheduler] DEBUG: Task #7606376: no machine available yet\n", 
+            "2026-06-30 08:28:04,799 [cuckoo.core.scheduler] DEBUG: Task #7606376: no machine available yet\n", 
+            "2026-06-30 08:28:05,881 [cuckoo.core.scheduler] DEBUG: Task #7606376: no machine available yet\n", 
+            "2026-06-30 08:28:06,929 [cuckoo.core.scheduler] DEBUG: Task #7606376: no machine available yet\n", 
+            "2026-06-30 08:28:07,978 [cuckoo.core.scheduler] DEBUG: Task #7606376: no machine available yet\n", 
+            "2026-06-30 08:28:09,211 [cuckoo.core.scheduler] DEBUG: Task #7606376: no machine available yet\n", 
+            "2026-06-30 08:28:10,643 [cuckoo.core.scheduler] DEBUG: Task #7606376: no machine available yet\n", 
+            "2026-06-30 08:28:11,959 [cuckoo.core.scheduler] DEBUG: Task #7606376: no machine available yet\n", 
+            "2026-06-30 08:28:13,482 [cuckoo.core.scheduler] DEBUG: Task #7606376: no machine available yet\n", 
+            "2026-06-30 08:28:15,183 [cuckoo.core.scheduler] INFO: Task #7606376: acquired machine Ubuntu1904x645 (label=Ubuntu1904x645)\n", 
+            "2026-06-30 08:28:15,413 [cuckoo.core.resultserver] DEBUG: Now tracking machine 192.168.168.105 for task #7606376\n", 
+            "2026-06-30 08:28:16,033 [cuckoo.auxiliary.sniffer] INFO: Started sniffer with PID 3884943 (interface=vboxnet0, host=192.168.168.105)\n", 
+            "2026-06-30 08:28:18,161 [cuckoo.machinery.virtualbox] DEBUG: Starting vm Ubuntu1904x645\n", 
+            "2026-06-30 08:28:25,435 [cuckoo.machinery.virtualbox] DEBUG: Restoring virtual machine Ubuntu1904x645 to Snapshot\n", 
+            "2026-06-30 08:28:53,809 [cuckoo.core.guest] INFO: Starting analysis #7606376 on guest (id=Ubuntu1904x645, ip=192.168.168.105)\n", 
+            "2026-06-30 08:28:54,818 [cuckoo.core.guest] DEBUG: Ubuntu1904x645: not ready yet\n", 
+            "2026-06-30 08:29:00,018 [cuckoo.core.guest] INFO: Guest is running Cuckoo Agent 0.10 (id=Ubuntu1904x645, ip=192.168.168.105)\n", 
+            "2026-06-30 08:29:00,060 [cuckoo.core.guest] DEBUG: Uploading analyzer to guest (id=Ubuntu1904x645, ip=192.168.168.105, monitor=latest, size=73219)\n", 
+            "2026-06-30 08:29:00,329 [cuckoo.core.resultserver] DEBUG: Task #7606376: live log analysis.log initialized.\n", 
+            "2026-06-30 08:29:03,227 [cuckoo.core.guest] INFO: Ubuntu1904x645: analysis completed successfully\n", 
+            "2026-06-30 08:29:03,239 [cuckoo.core.plugins] DEBUG: Stopped auxiliary module: Redsocks\n", 
+            "2026-06-30 08:29:03,267 [cuckoo.core.plugins] DEBUG: Stopped auxiliary module: Sniffer\n", 
+            "2026-06-30 08:29:04,346 [cuckoo.machinery.virtualbox] INFO: Successfully generated memory dump for virtual machine with label Ubuntu1904x645 to path /srv/cuckoo/cwd/storage/analyses/7606376/memory.dmp\n", 
+            "2026-06-30 08:29:04,348 [cuckoo.machinery.virtualbox] DEBUG: Stopping vm Ubuntu1904x645\n", 
+            "2026-06-30 08:29:24,503 [cuckoo.core.resultserver] DEBUG: Stopped tracking machine 192.168.168.105 for task #7606376\n", 
+            "2026-06-30 08:29:25,931 [cuckoo.core.scheduler] DEBUG: Released database task #7606376\n", 
+            "2026-06-30 08:29:25,982 [cuckoo.core.scheduler] INFO: Task #7606376: analysis procedure completed\n"
+        ]
+    }, 
+    "strings": [
+        "!This program cannot be run in DOS mode.", 
+        "`.rdata", 
+        "@.data", 
+        "@.rsrc", 
+        "\\$,UVW", 
+        "QtUWht", 
+        "QSUVW3", 
+        "L$T_^][d", 
+        "D$(SUV", 
+        "PWWh$-@", 
+        "(tWHt<", 
+        "GtPHtCHt6H", 
+        "Ht\"HHt", 
+        "Rt6Ht,Ht\"Ht", 
+        "t-Ht#Ht", 
+        "YtCVWS", 
+        "SVWj\"Y", 
+        "t=@j\"P", 
+        "PSSSSSS", 
+        "WPWVWWW", 
+        "PWWhl.@", 
+        "^9u$u ", 
+        "?AtG95", 
+        "PWWWSW", 
+        "RegCloseKey", 
+        "RegSetValueExA", 
+        "RegQueryValueExA", 
+        "RegCreateKeyExA", 
+        "SetSecurityInfo", 
+        "SetEntriesInAclA", 
+        "AdjustTokenPrivileges", 
+        "LookupPrivilegeValueA", 
+        "GetTokenInformation", 
+        "OpenProcessToken", 
+        "GetUserNameA", 
+        "LookupAccountSidA", 
+        "RegEnumKeyExA", 
+        "RegOpenKeyExA", 
+        "RegEnumValueA", 
+        "RegDeleteValueA", 
+        "ADVAPI32.dll", 
+        "WSOCK32.dll", 
+        "WNetCloseEnum", 
+        "MPR.dll", 
+        "SHDeleteValueA", 
+        "SHGetValueA", 
+        "SHSetValueA", 
+        "SHDeleteKeyA", 
+        "SHLWAPI.dll", 
+        "NetApiBufferFree", 
+        "NetGetDCName", 
+        "NETAPI32.dll", 
+        "SHGetSpecialFolderPathA", 
+        "SHELL32.dll", 
+        "CoCreateInstance", 
+        "CoInitialize", 
+        "ole32.dll", 
+        "__CxxFrameHandler", 
+        "_EH_prolog", 
+        "strlen", 
+        "malloc", 
+        "strcat", 
+        "strcpy", 
+        "sprintf", 
+        "strncpy", 
+        "memcmp", 
+        "strcmp", 
+        "memcpy", 
+        "strchr", 
+        "strstr", 
+        "memset", 
+        "_strnicmp", 
+        "strrchr", 
+        "rename", 
+        "fclose", 
+        "fwrite", 
+        "swprintf", 
+        "fscanf", 
+        "isdigit", 
+        "isalpha", 
+        "MSVCRT.dll", 
+        "_XcptFilter", 
+        "_acmdln", 
+        "__getmainargs", 
+        "_initterm", 
+        "__setusermatherr", 
+        "_adjust_fdiv", 
+        "__p__commode", 
+        "__p__fmode", 
+        "__set_app_type", 
+        "_except_handler3", 
+        "_controlfp", 
+        "FreeLibrary", 
+        "GetProcAddress", 
+        "LoadLibraryA", 
+        "GetTickCount", 
+        "CreateThread", 
+        "CreateEventA", 
+        "SetFileAttributesA", 
+        "GetFileAttributesA", 
+        "CreateDirectoryA", 
+        "CreateMutexA", 
+        "WaitForSingleObject", 
+        "SetEvent", 
+        "CloseHandle", 
+        "OpenMutexA", 
+        "GetComputerNameA", 
+        "Process32Next", 
+        "lstrcmpiA", 
+        "Process32First", 
+        "CreateToolhelp32Snapshot", 
+        "GetSystemDefaultLangID", 
+        "GetVersionExA", 
+        "GetVolumeInformationA", 
+        "GetDriveTypeA", 
+        "GetLogicalDriveStringsA", 
+        "LocalFree", 
+        "GetLastError", 
+        "DuplicateHandle", 
+        "GetCurrentProcess", 
+        "GetPriorityClass", 
+        "FindClose", 
+        "RemoveDirectoryA", 
+        "CopyFileA", 
+        "GetLocalTime", 
+        "GetFileSize", 
+        "CompareFileTime", 
+        "SystemTimeToFileTime", 
+        "GetSystemTime", 
+        "SetFileTime", 
+        "GetFileTime", 
+        "GlobalFree", 
+        "GlobalAlloc", 
+        "MultiByteToWideChar", 
+        "CreateProcessA", 
+        "DeleteFileA", 
+        "GetModuleFileNameA", 
+        "WriteFile", 
+        "CreateFileA", 
+        "GetModuleHandleA", 
+        "ReadFile", 
+        "PeekNamedPipe", 
+        "GetStartupInfoA", 
+        "KERNEL32.dll", 
+        "_access", 
+        "ioih{c", 
+        "ASDFGH:", 
+        "!@#$%^:", 
+        "ZXCVBN:", 
+        "QWERTY:Ez", 
+        "TYUIOP:E", 
+        "FGHJKL:E", 
+        "avODDMFMX", 
+        "^Bxeyl", 
+        "TGGBDDT", 
+        "F2.3LnkN", 
+        "GetSystemDirectoryA", 
+        "CreateEventA", 
+        "GetModuleFileNameA", 
+        "Kernel32.dll", 
+        "PassPath", 
+        "%s\\%s\\KB989109.log", 
+        "%s\\%s\\KB985109.log", 
+        "connect", 
+        "Ws2_32.dll", 
+        "SetCurrentDirectoryA", 
+        "GetWindowsDirectoryA", 
+        "DeleteFileA", 
+        "SetEvent", 
+        "CreateFileA", 
+        "CreateToolhelp32Snapshot", 
+        "SetFileAttributesA", 
+        "CloseHandle", 
+        "FindNextFileA", 
+        "FindFirstFileA", 
+        "GetVersionExA", 
+        "OpenProcess", 
+        "Process32Next", 
+        "Process32First", 
+        "GetModuleFileNameExA", 
+        "EnumProcessModules", 
+        "psapi.dll", 
+        "qazWSX123$%^", 
+        "GetTickCount", 
+        "SeTakeOwnershipPrivilege", 
+        "\\SystemRoot\\", 
+        "System", 
+        "OS Kernel", 
+        "SYSTEM", 
+        "TerminateProcess", 
+        "%s\\*.*", 
+        "%s\\%s\\LwxRsv.tem", 
+        "\\$LDDATA$\\", 
+        "WNetEnumResourceA", 
+        "WNetOpenEnumA", 
+        "Mpr.dll", 
+        "%sAddrErr]", 
+        "%sErr]", 
+        "%sDOS]", 
+        "%sWin32]", 
+        "%sWin9x]", 
+        "%sWinNT%d.%d]", 
+        "%sWin2003]", 
+        "%sWinXP]", 
+        "%sWin2K]", 
+        "%sOSF]", 
+        "%sVMS]", 
+        "%sUnknown]", 
+        "NetApiBufferFree", 
+        "%sNetServerGetInfo]", 
+        "NetServerGetInfo", 
+        "%sLibErr]", 
+        "Netapi32", 
+        "[%s:Unconnect]", 
+        "[%s:SOCKET_ERROR]", 
+        "[NoIP]", 
+        "[%s:%s]", 
+        "[%s:RcvError]", 
+        "[%s:SendError]", 
+        "%s\\%s%s", 
+        "Check lan have done!!!", 
+        "Start Time:%04u-%02u-%02u %02u:%02u:%02u", 
+        "%s:All online fail!", 
+        "%s:All online success on %u!", 
+        "List End.", 
+        "%s:list online fail!", 
+        "%s:list online success on %u!", 
+        "OnlineTmp.txt", 
+        "%s\\%s\\%s", 
+        "kernel32", 
+        "IsWow64Process", 
+        "ProxyServer", 
+        "ProxyEnable", 
+        "Software\\Microsoft\\Windows\\CurrentVersion\\Internet Settings", 
+        "CONNECT %s:%d HTTP/1.1", 
+        "Proxy-Connection: Keep-Alive", 
+        "Content-Length: ", 
+        "Pragma: no-cache", 
+        "User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Win32)", 
+        "HOST: ", 
+        "User-Agent: SJZJ (compatible; MSIE 6.0; Win32)", 
+        "HOST: ", 
+        " HTTP/1.0", 
+        "/index.htm", 
+        "http://", 
+        "Proxy -", 
+        "(Proxy%c-%s:%u)", 
+        "(Proxy-No)", 
+        "!! Use Splice Socket !!", 
+        "!!Connect Directly!!", 
+        "cmd.exe", 
+        "CreatePipe", 
+        "yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyKfffffffyyyyyyyyyyyyyyyyyyyyy\"\"c3m/TT//3miiyyyyyyyyyyyyyyyy\"\"3\u001fJV", 
+        "KV\u001f3eiyyyyyyyyyyyyy#T/fOOO+", 
+        "O\u001f\u001fJyyyyyyyyyyyA/&####Y", 
+        "yyyy^Y", 
+        "cJyyyyyyyyyAlAV", 
+        "%yyyyyy", 
+        "ZJyyyyyyyAA\\JJ\"\"", 
+        "yyyyyyyy8?", 
+        "KKKZJJyyyyyy&q&9999", 
+        "yyyyyyyy8", 
+        "?????TVyyyyyAU+4AA", 
+        "!yyyyyyyyyy@", 
+        "JJ949yyyy", 
+        "!yyyyyyyyyy8", 
+        "&&&9\\9yyy@66UU", 
+        ").yyyyyyyyyy!U4444A", 
+        "))66Y>yyyyyyyyyy.", 
+        "UUyy@>.>>", 
+        "yyyyyyyyyy>>UUU", 
+        ")Uyy8R8", 
+        "d!>@yyyyyyyyyy", 
+        "!Yyyyyyyyyyy@>>>", 
+        "@@@Yyy1I111xxx", 
+        "yyyyyyyyyyY.", 
+        "d!!!.yy", 
+        "yyyyyyyyyy", 
+        "%%yyjj(ww", 
+        "6yyyyyyyyyy", 
+        "MMMkk*^6yyyyyyyyyy)^", 
+        "ooo=yy77Q", 
+        "yyyyyyyyyy6x((wwwww=yy7n00FFa", 
+        "UyyyyyyyyyyU(MMkkk**=yyy", 
+        "yyyyyyyyyyU_Q", 
+        "--6yyyyyyyyyy", 
+        "n0FFFa", 
+        "yyyyygg$PP", 
+        "yyyyyyyy+", 
+        "NNNNyyyyyypp2XX", 
+        "+yyyyyyyy+tE``", 
+        "Nyyyyyyy2,,,ss", 
+        "4yyyyyy", 
+        "Lgg$$P", 
+        "yyyyyyyyy,", 
+        "5555s'AyyyyA", 
+        "ppp$Pyyyyyyyyyyy", 
+        "-55C]]]", 
+        "yyyyyyyyyyyyy", 
+        "yyyyyyyyyyyyyyyyBBB[B[[[", 
+        "GGyyyyyyyyyyyyyyyyyyyyyBBBBBBBByyyyyyyyyyyy", 
+        ".........", 
+        "......", 
+        "$.....$", 
+        "!...!#", 
+        "#&...&#", 
+        "#,....#", 
+        "#......", 
+        ".........\"", 
+        "......", 
+        "!This program cannot be run in DOS mode.", 
+        ".rdata", 
+        "@.data", 
+        "t_HtGHt!Huwj", 
+        "tQHt9Ht!Huij", 
+        "t&Hu?j", 
+        "t&Hu?j", 
+        "t&Hu@j", 
+        "tRHt,Ht", 
+        "t?Ht5Ht+Ht!Ht", 
+        "QSUVWj", 
+        "8YDVWu)h", 
+        "QQSUVW3", 
+        "MFC42.DLL", 
+        "memset", 
+        "memcpy", 
+        "__CxxFrameHandler", 
+        "sprintf", 
+        "strlen", 
+        "gmtime", 
+        "MSVCRT.dll", 
+        "__dllonexit", 
+        "_onexit", 
+        "_XcptFilter", 
+        "_acmdln", 
+        "__getmainargs", 
+        "_initterm", 
+        "__setusermatherr", 
+        "_adjust_fdiv", 
+        "__p__commode", 
+        "__p__fmode", 
+        "__set_app_type", 
+        "_except_handler3", 
+        "_controlfp", 
+        "GetModuleHandleA", 
+        "GetStartupInfoA", 
+        "KERNEL32.dll", 
+        "UpdateWindow", 
+        "EnableWindow", 
+        "MessageBoxA", 
+        "InvalidateRect", 
+        "SetTimer", 
+        "GetClientRect", 
+        "GetSystemMetrics", 
+        "SetMenu", 
+        "GetMenu", 
+        "USER32.dll", 
+        "Rectangle", 
+        "BitBlt", 
+        "CreatePen", 
+        "CreateSolidBrush", 
+        "CreateCompatibleBitmap", 
+        "CreateCompatibleDC", 
+        "GDI32.dll", 
+        "_setmbcp", 
+        "_FHUKTCEK__FUTRHFWCK_AFEFEWM_KOFWREA_", 
+        "_YOEREUR_CARENNOT_KEEFLL_FMFY_ANFTGNTI_", 
+        "CBricksDoc", 
+        "aM@iv{", 
+        "TJET\\;", 
+        "m^{r<A", 
+        "Ui`_4G", 
+        "o8$>Zj", 
+        " Vc&|G", 
+        "W!1\\o]", 
+        "H#'nXn", 
+        "-8q7!a\\", 
+        "M)5V*dnh", 
+        "mc=>[z", 
+        "NSs#\",", 
+        ":]$wq{", 
+        "iEq8\":", 
+        "IOGVWDWCXZVRHTE", 
+        "_FUVRRECHK_ANGREGTI_", 
+        "_HURGRY_UHP_KGGGILRL_MRE_FRROM_KORREA_", 
+        "7a1fafee12d6a9fb", 
+        "CMainFrame", 
+        "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww", 
+        "wwtGwwwwwwwwwwwwwwwtDDDDw", 
+        "wwGtwDwwwwwtDDDDw", 
+        "pwwwwppwwww", 
+        "wwGttwGwwwwt", 
+        "33330wp3", 
+        "wwGttwGwwwwt", 
+        "wwtDtwGwp", 
+        "33330p333333", 
+        "wwwttDwwp", 
+        "wwwwpppwww", 
+        "wwp0wwww", 
+        "wwp0wwww", 
+        "OGp888888", 
+        "wwp0wwww", 
+        "wwwppwwwp", 
+        "p0wwww", 
+        "DDGwp8", 
+        "wwwwwwww", 
+        "p0wwww", 
+        "wwwwwwpwppp0wwww", 
+        "wwwwwww", 
+        "wwwwwww", 
+        "wwwwwp", 
+        "ceQjR4", 
+        "S>e'Y0R", 
+        "!This program cannot be run in DOS mode.", 
+        ".rdata", 
+        "@.data", 
+        "t_HtGHt!Huwj", 
+        "tQHt9Ht!Huij", 
+        "t&Hu?j", 
+        "t&Hu?j", 
+        "t&Hu@j", 
+        "tRHt,Ht", 
+        "t?Ht5Ht+Ht!Ht", 
+        "QSUVWj", 
+        "8YDVWu)h", 
+        "QQSUVW3", 
+        "MFC42.DLL", 
+        "memset", 
+        "memcpy", 
+        "__CxxFrameHandler", 
+        "sprintf", 
+        "strlen", 
+        "gmtime", 
+        "MSVCRT.dll", 
+        "__dllonexit", 
+        "_onexit", 
+        "_XcptFilter", 
+        "_acmdln", 
+        "__getmainargs", 
+        "_initterm", 
+        "__setusermatherr", 
+        "_adjust_fdiv", 
+        "__p__commode", 
+        "__p__fmode", 
+        "__set_app_type", 
+        "_except_handler3", 
+        "_controlfp", 
+        "GetModuleHandleA", 
+        "GetStartupInfoA", 
+        "KERNEL32.dll", 
+        "UpdateWindow", 
+        "EnableWindow", 
+        "MessageBoxA", 
+        "InvalidateRect", 
+        "SetTimer", 
+        "GetClientRect", 
+        "GetSystemMetrics", 
+        "SetMenu", 
+        "GetMenu", 
+        "USER32.dll", 
+        "Rectangle", 
+        "BitBlt", 
+        "CreatePen", 
+        "CreateSolidBrush", 
+        "CreateCompatibleBitmap", 
+        "CreateCompatibleDC", 
+        "GDI32.dll", 
+        "_setmbcp", 
+        "_FHNYTH_HFWCK_AFEDSFEWM_SDWREA_", 
+        "_YOEFDS_CADOT_KEDDDLL_FMFDTI_", 
+        "CBricksDoc", 
+        "1p;fS{", 
+        "m:Gtm8T+", 
+        "Yl8%nv-", 
+        "-8~ricP", 
+        "{r2+7~40", 
+        "T0M[`{\u001f", 
+        "N]fEad2uu", 
+        "{38+3NC,", 
+        "z!9\"|yVJ", 
+        "`ymC0~", 
+        "q_Jgg6", 
+        "\"Qxb/t", 
+        "IOGVWDWCXZVRHTE", 
+        "ERRO_FUVRFDSF_GREGTI_", 
+        "_HU_DSFEWP_KGGDG_FRFRF_EA_", 
+        "9d1aaf7e1ed6a7ea", 
+        "CMainFrame", 
+        "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww", 
+        "wwtGwwwwwwwwwwwwwwwtDDDDw", 
+        "wwGtwDwwwwwtDDDDw", 
+        "pwwwwppwwww", 
+        "wwGttwGwwwwt", 
+        "33330wp3", 
+        "wwGttwGwwwwt", 
+        "wwtDtwGwp", 
+        "33330p333333", 
+        "wwwttDwwp", 
+        "wwwwpppwww", 
+        "wwp0wwww", 
+        "wwp0wwww", 
+        "OGp888888", 
+        "wwp0wwww", 
+        "wwwppwwwp", 
+        "p0wwww", 
+        "DDGwp8", 
+        "wwwwwwww", 
+        "p0wwww", 
+        "wwwwwwpwppp0wwww", 
+        "wwwwwww", 
+        "wwwwwww", 
+        "wwwwwp", 
+        "ceQjR4", 
+        "S>e'Y0R", 
+        "%PDF-1.5", 
+        "4196 0 obj", 
+        "<</Linearized 1/L 325364/O 4198/E 32502/N 45/T 324516/H [ 471 486]>>", 
+        "endobj", 
+        "           ", 
+        "4204 0 obj", 
+        "<</DecodeParms<</Columns 4/Predictor 12>>/Filter/FlateDecode/ID[<582F57B85C86694CBB6458A025E6C437><1201574D996FED479D382D8DB1EA1168>]/Index[4196 21]/Info 4195 0 R/Length 58/Prev 324517/Root 4197 0 R/Size 4217/Type/XRef/W[1 2 1]>>stream", 
+        "endstream", 
+        "endobj", 
+        "startxref", 
+        "       ", 
+        "4216 0 obj", 
+        "<</C 505/Filter/FlateDecode/I 529/Length 396/S 452>>stream", 
+        "10;l`|z", 
+        "endstream", 
+        "endobj", 
+        "4197 0 obj", 
+        "<</MarkInfo<</Marked true>>/Metadata 155 0 R/PageLayout/OneColumn/Pages 4186 0 R/StructTreeRoot 404 0 R/Type/Catalog>>", 
+        "endobj", 
+        "4198 0 obj", 
+        "<</Contents 4200 0 R/CropBox[0.0 0.0 612.0 792.0]/MediaBox[0.0 0.0 612.0 792.0]/Parent 4187 0 R/Resources<</ColorSpace<</CS0 4205 0 R/CS1 4206 0 R/CS2 4206 0 R>>/ExtGState<</GS0 4207 0 R>>/Font<</TT0 4209 0 R/TT1 4211 0 R/TT2 4213 0 R/TT3 4215 0 R>>/XObject<</Im0 4203 0 R>>>>/Rotate 0/StructParents 0/Type/Page>>", 
+        "endobj", 
+        "4199 0 obj", 
+        "<</Filter/FlateDecode/First 101/Length 1192/N 11/Type/ObjStm>>stream", 
+        "$sJAk9\"", 
+        "~[LG:9", 
+        "endstream", 
+        "endobj", 
+        "4200 0 obj", 
+        "<</Filter/FlateDecode/Length 722>>stream", 
+        "endstream", 
+        "endobj", 
+        "4201 0 obj", 
+        "<</Filter/FlateDecode/Length 216/N 1>>stream", 
+        "/`M.(*", 
+        "1%?)U!", 
+        "endstream", 
+        "endobj", 
+        "4202 0 obj", 
+        "<</Filter/FlateDecode/Length 2574/N 3>>stream", 
+        "!\"F$H:R", 
+        "0J:EAi", 
+        "C&13#s$", 
+        "Y,+>TB(", 
+        "endstream", 
+        "endobj", 
+        "4203 0 obj", 
+        "<</BitsPerComponent 8/ColorSpace 4206 0 R/Filter/DCTDecode/Height 569/Length 25881/Name/X/Subtype/Image/Type/XObject/Width 825>>stream", 
+        "$''''$25552;;;;;;;;;;", 
+        "%#(((((#,0000,7;;;7;;;;;;;;;;", 
+        "%#(((((#,0000,7;;;7;;;;;;;;;;", 
+        "35BRrt", 
+        "#CDTbs", 
+        "$%'()*789:FGHIJUVWXYZcdefghijuvwxyz", 
+        "#$%&'()*3456789:BCDEFGHIJSTUVWXYZbcdefghijstuvwxyz", 
+        "#$%&'()*3456789:BCDEFGHIJRSTUVWXYZbcdefghijrstuvwxyz", 
+        "b79;[J", 
+        "*wSOU%", 
+        "qZ6rT!", 
+        "a4e{YlrY", 
+        "uh]EpM%/", 
+        "{jKd{,", 
+        "V)F+r[", 
+        "SOzk4co", 
+        "wNO9Mu", 
+        "\"J%z\\MD", 
+        "OuwFPU5", 
+        "\\%)=i<", 
+        "nKaTSg", 
+        "4*x,#S", 
+        "j=y7)NO", 
+        ")^[OuD", 
+        ".$|TaagK", 
+        "\"hb^2G", 
+        ")4lE3Q", 
+        "JQyBMf", 
+        "2FcE2ZCi", 
+        "Ye3N+5", 
+        "z6|l6|", 
+        "wV=4y8WQ", 
+        "RZ}F2qvr", 
+        ".J7z3\u001f", 
+        "f{IijW", 
+        ",N+%qFTg", 
+        "(Jr|J)", 
+        "RueUkT", 
+        "8-iJOrH", 
+        "3sEZ5o", 
+        "^3Z~v,", 
+        "W6,;)a", 
+        "*~1\u001fJ&", 
+        "(hZqS_", 
+        "/[R\\.Q", 
+        "yFkJc'", 
+        "f|>fAT*>", 
+        "PdQ!SR", 
+        "TaqmR5", 
+        "(rb&*N", 
+        "'uuoeoR", 
+        ">;k\u001fj)v", 
+        ".Jdg:T", 
+        "FtJ*Qq", 
+        "'GZ.<i", 
+        "HeUp&zd}", 
+        "ntzZU^", 
+        "@ug}o(8", 
+        "K)FIJ-q4", 
+        "Za[[r{", 
+        "OV<\\%oU", 
+        "KZIgR]YI", 
+        "endstream", 
+        "endobj", 
+        "1 0 obj", 
+        "<</Annots 159 0 R/Contents 2 0 R/CropBox[0.0 0.0 612.0 792.0]/MediaBox[0.0 0.0 612.0 792.0]/Parent 4187 0 R/Resources<</ColorSpace<</CS0 4205 0 R>>/Font<</TT0 4209 0 R/TT1 4215 0 R/TT2 256 0 R/TT3 258 0 R>>>>/Rotate 0/StructParents 1/Type/Page>>", 
+        "endobj", 
+        "2 0 obj", 
+        "<</Filter/FlateDecode/Length 5751>>stream", 
+        "yb!cO7", 
+        "Mi\"J*Fdj$", 
+        "u0r|rE", 
+        "i*Su(O\\i", 
+        "jcEKv+Z", 
+        "ak;fJW", 
+        "vCDV/*", 
+        "z1\\FP0", 
+        "\"\u001f `Ui\\", 
+        "hq?EXP", 
+        "* \u001f@en", 
+        ".jdp3+", 
+        "7:D'nC,)Go", 
+        "endstream", 
+        "endobj", 
+        "3 0 obj", 
+        "<</Filter/FlateDecode/First 6/Length 104/N 1/Type/ObjStm>>stream", 
+        "endstream", 
+        "endobj", 
+        "4 0 obj", 
+        "<</Annots 160 0 R/Contents 5 0 R/CropBox[0.0 0.0 612.0 792.0]/MediaBox[0.0 0.0 612.0 792.0]/Parent 4187 0 R/Resources<</ColorSpace<</CS0 4205 0 R>>/Font<</TT0 4209 0 R/TT1 4215 0 R/TT2 256 0 R>>>>/Rotate 0/StructParents 47/Type/Page>>", 
+        "endobj", 
+        "5 0 obj", 
+        "<</Filter/FlateDecode/Length 1841>>stream", 
+        "TEn\\4V", 
+        "endstream", 
+        "endobj", 
+        "6 0 obj", 
+        "<</Filter/FlateDecode/First 6/Length 52/N 1/Type/ObjStm>>stream", 
+        "243P0P", 
+        "endstream", 
+        "endobj", 
+        "7 0 obj", 
+        "<</Annots 161 0 R/Contents 8 0 R/CropBox[0.0 0.0 612.0 792.0]/MediaBox[0.0 0.0 612.0 792.0]/Parent 4187 0 R/Resources<</ColorSpace<</CS0 4205 0 R/CS1 4206 0 R>>/Font<</C2_0 299 0 R/TT0 4209 0 R/TT1 4215 0 R/TT2 4213 0 R/TT3 297 0 R/TT4 296 0 R>>>>/Rotate 0/StructParents 58/Type/Page>>", 
+        "endobj", 
+        "8 0 obj", 
+        "<</Filter/FlateDecode/Length 3325>>stream", 
+        "Ww&#![,", 
+        "9%RjTK", 
+        "endstream", 
+        "endobj", 
+        "9 0 obj", 
+        "<</Filter/FlateDecode/First 13/Length 214/N 2/Type/ObjStm>>stream", 
+        "endstream", 
+        "endobj", 
+        "10 0 obj", 
+        "<</Annots 163 0 R/Contents 11 0 R/CropBox[0.0 0.0 612.0 792.0]/MediaBox[0.0 0.0 612.0 792.0]/Parent 4187 0 R/Resources<</ColorSpace<</CS0 4205 0 R/CS1 4206 0 R>>/Font<</C2_0 299 0 R/TT0 4209 0 R/TT1 4215 0 R/TT2 309 0 R/TT3 256 0 R/TT4 258 0 R/TT5 4213 0 R>>>>/Rotate 0/StructParents 62/Type/Page>>", 
+        "endobj", 
+        "11 0 obj", 
+        "<</Filter/FlateDecode/Length 3630>>stream", 
+        "9?>.8L", 
+        ".K8y%U", 
+        "+A{rD#", 
+        "lVje{\\]", 
+        "h$J\";+=g", 
+        "endstream", 
+        "endobj", 
+        "12 0 obj", 
+        "<</Filter/FlateDecode/First 6/Length 29/N 1/Type/ObjStm>>stream", 
+        "243V0P", 
+        "endstream", 
+        "endobj", 
+        "13 0 obj", 
+        "<</Contents 14 0 R/CropBox[0.0 0.0 612.0 792.0]/MediaBox[0.0 0.0 612.0 792.0]/Parent 4188 0 R/Resources<</ColorSpace<</CS0 4205 0 R>>/Font<</C2_0 299 0 R/TT0 4209 0 R/TT1 4213 0 R/TT2 4215 0 R>>>>/Rotate 0/StructParents 65/Type/Page>>", 
+        "endobj", 
+        "14 0 obj", 
+        "<</Filter/FlateDecode/Length 3976>>stream", 
+        "F1eWSW", 
+        "\"oI&kJ", 
+        "<P)9\u001f%|", 
+        "DI4X=T", 
+        "^K.?CI", 
+        "g}CThL", 
+        "uL-mk[", 
+        "88aDF\u001f", 
+        "endstream", 
+        "endobj", 
+        "15 0 obj", 
+        "<</Contents 16 0 R/CropBox[0.0 0.0 612.0 792.0]/MediaBox[0.0 0.0 612.0 792.0]/Parent 4188 0 R/Resources<</ColorSpace<</CS0 4205 0 R>>/Font<</C2_0 299 0 R/TT0 4209 0 R/TT1 4213 0 R/TT2 258 0 R>>>>/Rotate 0/StructParents 66/Type/Page>>", 
+        "endobj", 
+        "16 0 obj", 
+        "<</Filter/FlateDecode/Length 3463>>stream", 
+        "7]=\u001f$EYkg\u001f,", 
+        "jy.1U8", 
+        "cm|#[x", 
+        "xdK5-R=", 
+        "R5UT#$U[", 
+        "pD:i#e", 
+        "endstream", 
+        "endobj", 
+        "17 0 obj", 
+        "<</Contents 18 0 R/CropBox[0.0 0.0 612.0 792.0]/MediaBox[0.0 0.0 612.0 792.0]/Parent 4188 0 R/Resources<</ColorSpace<</CS0 4205 0 R>>/Font<</C2_0 299 0 R/TT0 4209 0 R/TT1 4213 0 R/TT2 4215 0 R>>>>/Rotate 0/StructParents 67/Type/Page>>", 
+        "endobj", 
+        "18 0 obj", 
+        "<</Filter/FlateDecode/Length 3514>>stream", 
+        "v%RqH{2", 
+        "z2[.C!", 
+        "ArRf\u001fu", 
+        "?iPqZ30", 
+        "awZLS\u001ft", 
+        "yn;Kl+", 
+        "endstream", 
+        "endobj", 
+        "19 0 obj", 
+        "<</Contents 20 0 R/CropBox[0.0 0.0 612.0 792.0]/MediaBox[0.0 0.0 612.0 792.0]/Parent 4188 0 R/Resources<</ColorSpace<</CS0 4205 0 R>>/Font<</C2_0 299 0 R/TT0 4209 0 R/TT1 4213 0 R/TT2 4215 0 R>>>>/Rotate 0/StructParents 68/Type/Page>>", 
+        "endobj", 
+        "20 0 obj", 
+        "<</Filter/FlateDecode/Length 3846>>stream", 
+        ";rPUk-", 
+        "ytQZmK", 
+        "Xl`5g8", 
+        "h;R]M)", 
+        "NZo&Rj", 
+        "Wij6JSe", 
+        "/c-k|\u001f", 
+        "endstream", 
+        "endobj", 
+        "21 0 obj", 
+        "<</Contents 22 0 R/CropBox[0.0 0.0 612.0 792.0]/MediaBox[0.0 0.0 612.0 792.0]/Parent 4188 0 R/Resources<</ColorSpace<</CS0 4205 0 R>>/Font<</C2_0 299 0 R/TT0 4209 0 R/TT1 4213 0 R>>>>/Rotate 0/StructParents 69/Type/Page>>", 
+        "endobj", 
+        "22 0 obj", 
+        "<</Filter/FlateDecode/Length 3454>>stream", 
+        "Bz!tf6", 
+        "Uy;Sp;", 
+        "ft\"k$hhF", 
+        "faS\\f{", 
+        "\\J\">x8D", 
+        "F|%4h)", 
+        "endstream", 
+        "endobj", 
+        "23 0 obj", 
+        "<</Contents 24 0 R/CropBox[0.0 0.0 612.0 792.0]/MediaBox[0.0 0.0 612.0 792.0]/Parent 4189 0 R/Resources<</ColorSpace<</CS0 4205 0 R>>/Font<</C2_0 299 0 R/TT0 4209 0 R/TT1 4213 0 R/TT2 4215 0 R/TT3 258 0 R>>>>/Rotate 0/StructParents 70/Type/Page>>", 
+        "endobj", 
+        "24 0 obj", 
+        "<</Filter/FlateDecode/Length 3141>>stream", 
+        "Kv_VY[", 
+        " q uQO\\T", 
+        "g+S=qN", 
+        "[k/V&h2e{", 
+        "idy1uD.", 
+        "endstream", 
+        "endobj", 
+        "25 0 obj", 
+        "<</Contents 26 0 R/CropBox[0.0 0.0 612.0 792.0]/MediaBox[0.0 0.0 612.0 792.0]/Parent 4189 0 R/Resources<</ColorSpace<</CS0 4205 0 R/CS1 4206 0 R>>/Font<</TT0 4209 0 R/TT1 4215 0 R/TT2 309 0 R>>>>/Rotate 0/StructParents 71/Type/Page>>", 
+        "endobj", 
+        "26 0 obj", 
+        "<</Filter/FlateDecode/Length 3525>>stream", 
+        "\\:6MIz0", 
+        "R]%`1v>}", 
+        "endstream", 
+        "endobj", 
+        "27 0 obj", 
+        "<</Contents 28 0 R/CropBox[0.0 0.0 612.0 792.0]/MediaBox[0.0 0.0 612.0 792.0]/Parent 4189 0 R/Resources<</ColorSpace<</CS0 4205 0 R/CS1 4206 0 R>>/Font<</TT0 4209 0 R/TT1 4215 0 R/TT2 309 0 R>>>>/Rotate 0/StructParents 72/Type/Page>>", 
+        "endobj", 
+        "28 0 obj", 
+        "<</Filter/FlateDecode/Length 4411>>stream", 
+        "Ga2<h'/oql7", 
+        "^O2M?M", 
+        "leP#1h", 
+        "'a<l7%", 
+        "O:'N~`", 
+        "x6SbD3[", 
+        "P6)Gmv", 
+        "-2+57!", 
+        ">hwLYm", 
+        "/^Yu8r|", 
+        "=zqzGW", 
+        "r?p=J6", 
+        "endstream", 
+        "endobj", 
+        "29 0 obj", 
+        "<</Contents 30 0 R/CropBox[0.0 0.0 612.0 792.0]/MediaBox[0.0 0.0 612.0 792.0]/Parent 4189 0 R/Resources<</ColorSpace<</CS0 4205 0 R/CS1 4206 0 R>>/Font<</TT0 4209 0 R/TT1 4215 0 R/TT2 309 0 R>>>>/Rotate 0/StructParents 73/Type/Page>>", 
+        "endobj", 
+        "30 0 obj", 
+        "<</Filter/FlateDecode/Length 2980>>stream", 
+        "ojOWbL", 
+        "]Os}0w", 
+        "yQ#*bq(E", 
+        "~aL|z\"", 
+        "@Q7'1)T", 
+        "S@)ROY", 
+        "P=#RtKO", 
+        "k\\-`yGnz", 
+        ">?%:?%><", 
+        "endstream", 
+        "endobj", 
+        "31 0 obj", 
+        "<</Contents 32 0 R/CropBox[0.0 0.0 612.0 792.0]/MediaBox[0.0 0.0 612.0 792.0]/Parent 4189 0 R/Resources<</ColorSpace<</CS0 4205 0 R/CS1 4206 0 R>>/Font<</TT0 4209 0 R/TT1 4215 0 R/TT2 309 0 R/TT3 4213 0 R>>>>/Rotate 0/StructParents 74/Type/Page>>", 
+        "endobj", 
+        "32 0 obj", 
+        "<</Filter/FlateDecode/Length 3625>>stream", 
+        ",ZFhuE", 
+        "tL2+L0", 
+        "vYk<By", 
+        "endstream", 
+        "endobj", 
+        "33 0 obj", 
+        "<</Contents 34 0 R/CropBox[0.0 0.0 612.0 792.0]/MediaBox[0.0 0.0 612.0 792.0]/Parent 4190 0 R/Resources<</ColorSpace<</CS0 4205 0 R>>/Font<</TT0 4209 0 R/TT1 4213 0 R/TT2 4215 0 R>>>>/Rotate 0/StructParents 75/Type/Page>>", 
+        "endobj", 
+        "34 0 obj", 
+        "<</Filter/FlateDecode/Length 3156>>stream", 
+        "D<sd=Kx", 
+        "TekWIxqw", 
+        "d!\\%\\m", 
+        "C7kIJ-", 
+        "mYJWIG+", 
+        "Z%Mpr~", 
+        "endstream", 
+        "endobj", 
+        "35 0 obj", 
+        "<</Annots 164 0 R/Contents 36 0 R/CropBox[0.0 0.0 612.0 792.0]/MediaBox[0.0 0.0 612.0 792.0]/Parent 4190 0 R/Resources<</ColorSpace<</CS0 4205 0 R/CS1 4206 0 R>>/Font<</C2_0 299 0 R/TT0 4209 0 R/TT1 4215 0 R/TT2 309 0 R/TT3 4213 0 R>>>>/Rotate 0/StructParents 76/Type/Page>>", 
+        "endobj", 
+        "36 0 obj", 
+        "<</Filter/FlateDecode/Length 3757>>stream", 
+        "L$I&R%#x", 
+        "6dzNo0", 
+        ")E*VTD", 
+        "7-mSqq", 
+        ":jJV0w", 
+        "AC2G1y", 
+        "bA^w&Kdb", 
+        "sid0w5", 
+        "ewgwv.g", 
+        "Bv\"mnX", 
+        "endstream", 
+        "endobj", 
+        "37 0 obj", 
+        "<</Filter/FlateDecode/First 6/Length 29/N 1/Type/ObjStm>>stream", 
+        "243Q0P", 
+        "endstream", 
+        "endobj", 
+        "38 0 obj", 
+        "<</Annots 165 0 R/Contents 39 0 R/CropBox[0.0 0.0 612.0 792.0]/MediaBox[0.0 0.0 612.0 792.0]/Parent 4190 0 R/Resources<</ColorSpace<</CS0 4205 0 R/CS1 4206 0 R>>/Font<</TT0 4209 0 R/TT1 4215 0 R>>>>/Rotate 0/StructParents 79/Type/Page>>", 
+        "endobj", 
+        "39 0 obj", 
+        "<</Filter/FlateDecode/Length 4238>>stream", 
+        "}}/fKz{_\\", 
+        "&\"X~9z", 
+        "YXl@4:", 
+        "aUPU6h", 
+        "V\"J3N.n", 
+        "7Vey9c", 
+        "endstream", 
+        "endobj", 
+        "40 0 obj", 
+        "<</Filter/FlateDecode/First 6/Length 43/N 1/Type/ObjStm>>stream", 
+        "243U0P", 
+        "endstream", 
+        "endobj", 
+        "41 0 obj", 
+        "<</Contents 42 0 R/CropBox[0.0 0.0 612.0 792.0]/MediaBox[0.0 0.0 612.0 792.0]/Parent 4190 0 R/Resources<</ColorSpace<</CS0 4205 0 R>>/Font<</TT0 4209 0 R/TT1 4215 0 R/TT2 309 0 R>>>>/Rotate 0/StructParents 87/Type/Page>>", 
+        "endobj", 
+        "42 0 obj", 
+        "<</Filter/FlateDecode/Length 3142>>stream", 
+        "yx}]}77", 
+        "uy1\\,F&5", 
+        "BgIz%R", 
+        "GA=p;njtZ", 
+        "WHd&\"E", 
+        "endstream", 
+        "endobj", 
+        "43 0 obj", 
+        "<</Annots 166 0 R/Contents 44 0 R/CropBox[0.0 0.0 612.0 792.0]/MediaBox[0.0 0.0 612.0 792.0]/Parent 4190 0 R/Resources<</ColorSpace<</CS0 4205 0 R/CS1 4206 0 R>>/Font<</C2_0 299 0 R/TT0 4209 0 R/TT1 4215 0 R/TT2 4213 0 R>>>>/Rotate 0/StructParents 88/Type/Page>>", 
+        "endobj", 
+        "44 0 obj", 
+        "<</Filter/FlateDecode/Length 3992>>stream", 
+        "LiJ=$#", 
+        "D&52pZ(", 
+        "pYC;YC", 
+        ":SBgJH", 
+        ">a4{qtN$", 
+        "9yC@ 4", 
+        "endstream", 
+        "endobj", 
+        "45 0 obj", 
+        "<</Filter/FlateDecode/First 6/Length 35/N 1/Type/ObjStm>>stream", 
+        "243S0P", 
+        "endstream", 
+        "endobj", 
+        "46 0 obj", 
+        "<</Annots 167 0 R/Contents 47 0 R/CropBox[0.0 0.0 612.0 792.0]/MediaBox[0.0 0.0 612.0 792.0]/Parent 4191 0 R/Resources<</ColorSpace<</CS0 4205 0 R/CS1 4206 0 R>>/Font<</TT0 4209 0 R/TT1 4215 0 R>>>>/Rotate 0/StructParents 93/Type/Page>>", 
+        "endobj", 
+        "47 0 obj", 
+        "<</Filter/FlateDecode/Length 3853>>stream", 
+        "A){vnk:=", 
+        ":7Obqao", 
+        "4E/q!,y", 
+        "!42D@!Mo", 
+        "Z+Tn$y", 
+        "endstream", 
+        "endobj", 
+        "48 0 obj", 
+        "<</Filter/FlateDecode/First 6/Length 40/N 1/Type/ObjStm>>stream", 
+        "243W0P", 
+        "endstream", 
+        "endobj", 
+        "49 0 obj", 
+        "<</Annots 168 0 R/Contents 50 0 R/CropBox[0.0 0.0 612.0 792.0]/MediaBox[0.0 0.0 612.0 792.0]/Parent 4191 0 R/Resources<</ColorSpace<</CS0 4205 0 R/CS1 4206 0 R>>/Font<</TT0 4209 0 R/TT1 4215 0 R/TT2 309 0 R>>>>/Rotate 0/StructParents 100/Type/Page>>", 
+        "endobj", 
+        "50 0 obj", 
+        "<</Filter/FlateDecode/Length 3334>>stream", 
+        ".n&i,'", 
+        "d}Hg$J`", 
+        "^?Ek\\t", 
+        ";TFj!3j!", 
+        "m!^}J@", 
+        "VdUV-Z", 
+        "?;\u001f1&je", 
+        "endstream", 
+        "endobj", 
+        "51 0 obj", 
+        "<</Filter/FlateDecode/First 6/Length 29/N 1/Type/ObjStm>>stream", 
+        "endstream", 
+        "endobj", 
+        "52 0 obj", 
+        "<</Contents 53 0 R/CropBox[0.0 0.0 612.0 792.0]/MediaBox[0.0 0.0 612.0 792.0]/Parent 4191 0 R/Resources<</ColorSpace<</CS0 4205 0 R>>/Font<</TT0 4209 0 R/TT1 4213 0 R/TT2 4215 0 R>>>>/Rotate 0/StructParents 103/Type/Page>>", 
+        "endobj", 
+        "53 0 obj", 
+        "<</Filter/FlateDecode/Length 3697>>stream", 
+        "J]\\//F", 
+        "eFj3CDOR#", 
+        "\\X3Sa3TX", 
+        "J/1{UZ", 
+        "tG]yM\\", 
+        "qY vL/", 
+        "9ypem8", 
+        "endstream", 
+        "endobj", 
+        "54 0 obj", 
+        "<</Contents 55 0 R/CropBox[0.0 0.0 612.0 792.0]/MediaBox[0.0 0.0 612.0 792.0]/Parent 4191 0 R/Resources<</ColorSpace<</CS0 4205 0 R>>/Font<</C2_0 299 0 R/TT0 4209 0 R/TT1 4215 0 R/TT2 4213 0 R/TT3 258 0 R>>>>/Rotate 0/StructParents 104/Type/Page>>", 
+        "endobj", 
+        "55 0 obj", 
+        "<</Filter/FlateDecode/Length 3914>>stream", 
+        "{CyMsr", 
+        "(=20\\9", 
+        "FN~kEj", 
+        ".*I'9$", 
+        "#(l+t7", 
+        "&RBZA}", 
+        "endstream", 
+        "endobj", 
+        "56 0 obj", 
+        "<</Contents 57 0 R/CropBox[0.0 0.0 612.0 792.0]/MediaBox[0.0 0.0 612.0 792.0]/Parent 4191 0 R/Resources<</ColorSpace<</CS0 4205 0 R>>/Font<</TT0 4209 0 R/TT1 4215 0 R/TT2 309 0 R/TT3 258 0 R>>>>/Rotate 0/StructParents 105/Type/Page>>", 
+        "endobj", 
+        "57 0 obj", 
+        "<</Filter/FlateDecode/Length 3488>>stream", 
+        "6>T6a8R", 
+        ",-juAq", 
+        "-j{al{", 
+        "N,!%8!", 
+        "n}lOm4v", 
+        ",Qqsc=", 
+        "r9hVkKL", 
+        "6*j!u}", 
+        "endstream", 
+        "endobj", 
+        "58 0 obj", 
+        "<</Contents 59 0 R/CropBox[0.0 0.0 612.0 792.0]/MediaBox[0.0 0.0 612.0 792.0]/Parent 4192 0 R/Resources<</ColorSpace<</CS0 4205 0 R>>/Font<</TT0 4209 0 R/TT1 4215 0 R/TT2 4213 0 R>>>>/Rotate 0/StructParents 106/Type/Page>>", 
+        "endobj", 
+        "59 0 obj", 
+        "<</Filter/FlateDecode/Length 3614>>stream", 
+        "/Qy\"T>", 
+        "t\"`bx8", 
+        "U4,NdV", 
+        "&F0J5OX", 
+        "\\ZhEPZzH", 
+        "\u001fercu4", 
+        "endstream", 
+        "endobj", 
+        "60 0 obj", 
+        "<</Contents 61 0 R/CropBox[0.0 0.0 612.0 792.0]/MediaBox[0.0 0.0 612.0 792.0]/Parent 4192 0 R/Resources<</ColorSpace<</CS0 4205 0 R>>/Font<</TT0 4209 0 R/TT1 4215 0 R>>>>/Rotate 0/StructParents 107/Type/Page>>", 
+        "endobj", 
+        "61 0 obj", 
+        "<</Filter/FlateDecode/Length 3521>>stream", 
+        "`smvJo", 
+        "~[9#g3", 
+        "AfOP0dL", 
+        "X[q-r|[", 
+        "OC8.(dz:", 
+        "D/;C\u001f0", 
+        "#8o@89", 
+        "IK:,T,L", 
+        "endstream", 
+        "endobj", 
+        "62 0 obj", 
+        "<</Annots 169 0 R/Contents 63 0 R/CropBox[0.0 0.0 612.0 792.0]/MediaBox[0.0 0.0 612.0 792.0]/Parent 4192 0 R/Resources<</ColorSpace<</CS0 4205 0 R/CS1 4206 0 R>>/Font<</TT0 4209 0 R/TT1 4215 0 R/TT2 309 0 R>>>>/Rotate 0/StructParents 108/Type/Page>>", 
+        "endobj", 
+        "63 0 obj", 
+        "<</Filter/FlateDecode/Length 3787>>stream", 
+        "W\")r8s", 
+        "}xRc3K", 
+        "0{h1tM", 
+        "LOC1>T", 
+        "/KR~,.", 
+        "V\\n#C9", 
+        "QgYr6Wf", 
+        "!H_(A-:", 
+        "9'ha#P", 
+        "endstream", 
+        "endobj", 
+        "64 0 obj", 
+        "<</Filter/FlateDecode/First 6/Length 32/N 1/Type/ObjStm>>stream", 
+        "endstream", 
+        "endobj", 
+        "65 0 obj", 
+        "<</Annots 170 0 R/Contents 66 0 R/CropBox[0.0 0.0 612.0 792.0]/MediaBox[0.0 0.0 612.0 792.0]/Parent 4192 0 R/Resources<</ColorSpace<</CS0 4205 0 R/CS1 4206 0 R>>/Font<</TT0 4209 0 R/TT1 4215 0 R/TT2 309 0 R>>>>/Rotate 0/StructParents 112/Type/Page>>", 
+        "endobj", 
+        "66 0 obj", 
+        "<</Filter/FlateDecode/Length 3575>>stream", 
+        "PBB8#f", 
+        "qB.\\'P", 
+        "Fr0OhGe", 
+        "Zn~\\WBD", 
+        "BMU4,_B", 
+        "mMm5%t", 
+        "t*T:d<", 
+        "d%\u001f`yss.c ", 
+        "endstream", 
+        "endobj", 
+        "67 0 obj", 
+        "<</Filter/FlateDecode/First 6/Length 35/N 1/Type/ObjStm>>stream", 
+        "247P0P", 
+        "endstream", 
+        "endobj", 
+        "68 0 obj", 
+        "<</Contents 69 0 R/CropBox[0.0 0.0 612.0 792.0]/MediaBox[0.0 0.0 612.0 792.0]/Parent 4192 0 R/Resources<</ColorSpace<</CS0 4205 0 R/CS1 4206 0 R>>/Font<</TT0 4209 0 R/TT1 4215 0 R>>>>/Rotate 0/StructParents 117/Type/Page>>", 
+        "endobj", 
+        "69 0 obj", 
+        "<</Filter/FlateDecode/Length 3963>>stream", 
+        "Y2VY6V", 
+        ",Kz.*zn", 
+        "nSaSU\u001f", 
+        "P~#:(LKR)#", 
+        ".GLj2!\u001f", 
+        "X*z!wt", 
+        "endstream", 
+        "endobj", 
+        "70 0 obj", 
+        "<</Contents 71 0 R/CropBox[0.0 0.0 612.0 792.0]/MediaBox[0.0 0.0 612.0 792.0]/Parent 4193 0 R/Resources<</ColorSpace<</CS0 4205 0 R/CS1 4206 0 R>>/Font<</TT0 4209 0 R/TT1 4215 0 R/TT2 309 0 R/TT3 4213 0 R>>>>/Rotate 0/StructParents 118/Type/Page>>", 
+        "endobj", 
+        "71 0 obj", 
+        "<</Filter/FlateDecode/Length 3411>>stream", 
+        "EY2WY6W", 
+        "Fo6Fj!I_H", 
+        "X\\!X5G", 
+        " ,<X9[", 
+        "5N07Lq", 
+        "s|yubT", 
+        "endstream", 
+        "endobj", 
+        "72 0 obj", 
+        "<</Annots 171 0 R/Contents 73 0 R/CropBox[0.0 0.0 612.0 792.0]/MediaBox[0.0 0.0 612.0 792.0]/Parent 4193 0 R/Resources<</ColorSpace<</CS0 4205 0 R/CS1 4206 0 R>>/Font<</TT0 4209 0 R/TT1 4215 0 R/TT2 309 0 R/TT3 258 0 R>>>>/Rotate 0/StructParents 119/Type/Page>>", 
+        "endobj", 
+        "73 0 obj", 
+        "<</Filter/FlateDecode/Length 3780>>stream", 
+        "DIK|bOC", 
+        "8,Lhc\\;!-mH\u001f$", 
+        "N4ol#Z", 
+        "pi9n8a", 
+        "tx9a(R", 
+        "endstream", 
+        "endobj", 
+        "74 0 obj", 
+        "<</Filter/FlateDecode/First 6/Length 32/N 1/Type/ObjStm>>stream", 
+        "247T0P", 
+        "endstream", 
+        "endobj", 
+        "75 0 obj", 
+        "<</Annots 172 0 R/Contents 76 0 R/CropBox[0.0 0.0 612.0 792.0]/MediaBox[0.0 0.0 612.0 792.0]/Parent 4193 0 R/Resources<</ColorSpace<</CS0 4205 0 R/CS1 4206 0 R>>/Font<</TT0 4209 0 R/TT1 4215 0 R/TT2 309 0 R>>>>/Rotate 0/StructParents 123/Type/Page>>", 
+        "endobj", 
+        "76 0 obj", 
+        "<</Filter/FlateDecode/Length 4049>>stream", 
+        "_:T|yO", 
+        "4i6bX%", 
+        "+^Xcu`", 
+        "/fli\u001f|", 
+        ">jU-YW", 
+        "endstream", 
+        "endobj", 
+        "77 0 obj", 
+        "<</Filter/FlateDecode/First 6/Length 32/N 1/Type/ObjStm>>stream", 
+        "247R0P", 
+        "endstream", 
+        "endobj", 
+        "78 0 obj", 
+        "<</Contents 79 0 R/CropBox[0.0 0.0 612.0 792.0]/MediaBox[0.0 0.0 612.0 792.0]/Parent 4193 0 R/Resources<</ColorSpace<</CS0 4205 0 R>>/Font<</TT0 4209 0 R>>>>/Rotate 0/StructParents 127/Type/Page>>", 
+        "endobj", 
+        "79 0 obj", 
+        "<</Filter/FlateDecode/Length 3518>>stream", 
+        "UnG.l<c", 
+        "&%ACYE", 
+        "}0UAYoS_", 
+        "B4]\"RZ&", 
+        "w'MN3#", 
+        "$X$nL'", 
+        "endstream", 
+        "endobj", 
+        "80 0 obj", 
+        "<</Annots 173 0 R/Contents 81 0 R/CropBox[0.0 0.0 612.0 792.0]/MediaBox[0.0 0.0 612.0 792.0]/Parent 4193 0 R/Resources<</ColorSpace<</CS0 4205 0 R/CS1 4206 0 R>>/Font<</TT0 4209 0 R/TT1 4215 0 R/TT2 309 0 R/TT3 258 0 R>>>>/Rotate 0/StructParents 128/Type/Page>>", 
+        "endobj", 
+        "81 0 obj", 
+        "<</Filter/FlateDecode/Length 3991>>stream", 
+        "}\\iO}I\u001f", 
+        "+{@)A ", 
+        "Z]f]ld&", 
+        "o.}293", 
+        "XXx|wsLr2", 
+        "gs@':qs", 
+        "P+TzJp~d", 
+        "endstream", 
+        "endobj", 
+        "82 0 obj", 
+        "<</Filter/FlateDecode/First 6/Length 32/N 1/Type/ObjStm>>stream", 
+        "247V0P", 
+        "endstream", 
+        "endobj", 
+        "83 0 obj", 
+        "<</Contents 84 0 R/CropBox[0.0 0.0 612.0 792.0]/MediaBox[0.0 0.0 612.0 792.0]/Parent 4194 0 R/Resources<</ColorSpace<</CS0 4205 0 R/CS1 4206 0 R>>/Font<</TT0 4209 0 R/TT1 258 0 R/TT2 4215 0 R/TT3 309 0 R>>>>/Rotate 0/StructParents 132/Type/Page>>", 
+        "endobj", 
+        "84 0 obj", 
+        "<</Filter/FlateDecode/Length 2894>>stream", 
+        "urvBhG", 
+        "~'CT5o", 
+        "W1uy@g", 
+        "a=R}?\\!", 
+        "BCT@F*3", 
+        "hFp =GCc", 
+        "=[T7u'\"<d0", 
+        "endstream", 
+        "endobj", 
+        "85 0 obj", 
+        "<</Annots 174 0 R/Contents 86 0 R/CropBox[0.0 0.0 612.0 792.0]/MediaBox[0.0 0.0 612.0 792.0]/Parent 4194 0 R/Resources<</ColorSpace<</CS0 4205 0 R/CS1 4206 0 R>>/Font<</TT0 4209 0 R/TT1 4215 0 R>>>>/Rotate 0/StructParents 133/Type/Page>>", 
+        "endobj", 
+        "86 0 obj", 
+        "<</Filter/FlateDecode/Length 3654>>stream", 
+        "zND(?6p", 
+        "$Hy4D-", 
+        "t49m pB", 
+        "!Dtb(h", 
+        "%}hH.' ", 
+        "r,\\Gtr", 
+        "FZX\\W.;M", 
+        "$9F87k", 
+        "}Fj%6816", 
+        "rR$9-P", 
+        "z0`H\"w", 
+        "endstream", 
+        "endobj", 
+        "87 0 obj", 
+        "<</Filter/FlateDecode/First 6/Length 29/N 1/Type/ObjStm>>stream", 
+        "247Q0P", 
+        "endstream", 
+        "endobj", 
+        "88 0 obj", 
+        "<</Annots 175 0 R/Contents 89 0 R/CropBox[0.0 0.0 612.0 792.0]/MediaBox[0.0 0.0 612.0 792.0]/Parent 4194 0 R/Resources<</ColorSpace<</CS0 4205 0 R/CS1 4206 0 R>>/Font<</TT0 4209 0 R/TT1 4215 0 R/TT2 309 0 R/TT3 297 0 R>>>>/Rotate 0/StructParents 136/Type/Page>>", 
+        "endobj", 
+        "89 0 obj", 
+        "<</Filter/FlateDecode/Length 3019>>stream", 
+        "L$I&R%cx", 
+        "7WB[CA", 
+        "C%Uzx{", 
+        "qi0typ", 
+        "$XLg$Wx", 
+        "e&,T713", 
+        "cb*sujL", 
+        "Fc3lp*-d", 
+        "endstream", 
+        "endobj", 
+        "90 0 obj", 
+        "<</Filter/FlateDecode/First 6/Length 37/N 1/Type/ObjStm>>stream", 
+        "247U0P", 
+        "endstream", 
+        "endobj", 
+        "91 0 obj", 
+        "<</Contents 92 0 R/CropBox[0.0 0.0 612.0 792.0]/MediaBox[0.0 0.0 612.0 792.0]/Parent 4194 0 R/Resources<</ColorSpace<</CS0 4205 0 R/CS1 4206 0 R>>/Font<</TT0 4209 0 R/TT1 4215 0 R/TT2 309 0 R>>>>/Rotate 0/StructParents 142/Type/Page>>", 
+        "endobj", 
+        "92 0 obj", 
+        "<</Filter/FlateDecode/Length 4296>>stream", 
+        "U\"3M&#", 
+        "`@i3scJ", 
+        "7*N{8J'", 
+        "~OFTV;", 
+        "I^ /oZ", 
+        "G{q&.wU", 
+        "@$^n>n'", 
+        "nLN5DA", 
+        "endstream", 
+        "endobj", 
+        "93 0 obj", 
+        "<</Contents 94 0 R/CropBox[0.0 0.0 612.0 792.0]/MediaBox[0.0 0.0 612.0 792.0]/Parent 4194 0 R/Resources<</ColorSpace<</CS0 4205 0 R>>/Font<</TT0 4209 0 R/TT1 4215 0 R/TT2 309 0 R>>>>/Rotate 0/StructParents 143/Type/Page>>", 
+        "endobj", 
+        "94 0 obj", 
+        "<</Filter/FlateDecode/Length 4421>>stream", 
+        "U_U}U=y", 
+        "1,+3B/", 
+        "s?=IDyYP9", 
+        "I_0dhj", 
+        "#Gdj:o", 
+        ":Bx%5k", 
+        "m_I[kA", 
+        "endstream", 
+        "endobj", 
+        "95 0 obj", 
+        "<</Contents 96 0 R/CropBox[0.0 0.0 612.0 792.0]/MediaBox[0.0 0.0 612.0 792.0]/Parent 4194 0 R/Resources<</ColorSpace<</CS0 4205 0 R>>/Font<</TT0 4209 0 R/TT1 4215 0 R/TT2 309 0 R>>>>/Rotate 0/StructParents 144/Type/Page>>", 
+        "endobj", 
+        "96 0 obj", 
+        "<</Filter/FlateDecode/Length 1437>>stream", 
+        "$6F^0i", 
+        "endstream", 
+        "endobj", 
+        "97 0 obj", 
+        "<</Contents 98 0 R/CropBox[0.0 0.0 612.0 792.0]/MediaBox[0.0 0.0 612.0 792.0]/Parent 4194 0 R/Resources<</ColorSpace<</CS0 4205 0 R>>/Font<</TT0 4209 0 R/TT1 4215 0 R>>>>/Rotate 0/StructParents 145/Type/Page>>", 
+        "endobj", 
+        "98 0 obj", 
+        "<</Filter/FlateDecode/Length 395>>stream", 
+        "endstream", 
+        "endobj", 
+        "99 0 obj", 
+        "<</Contents 100 0 R/CropBox[0.0 0.0 612.0 792.0]/MediaBox[0.0 0.0 612.0 792.0]/Parent 4194 0 R/Resources<</ColorSpace<</CS0 4205 0 R/CS1 4206 0 R>>/Font<</TT0 4209 0 R/TT1 4215 0 R/TT2 401 0 R/TT3 256 0 R>>>>/Rotate 0/StructParents 146/Type/Page>>", 
+        "endobj", 
+        "100 0 obj", 
+        "<</Filter/FlateDecode/Length 11202>>stream", 
+        ".58bq`", 
+        "ru@An+)", 
+        " CD\\7XR!$", 
+        ">JC5Q_{", 
+        "~q5geM", 
+        "?Aq:$jN'", 
+        "9m\u001fMiY", 
+        "\"Z(t#$", 
+        "=eGbMdGN%", 
+        ")c8t%5_l", 
+        "1bE:dE", 
+        "Z$>*\u001fK", 
+        "T]/Uu>SP", 
+        "uEk%>C", 
+        ";+s;c8", 
+        "jb{L:m", 
+        "oM3n7?", 
+        ")P`}Klo", 
+        "x?zL+F", 
+        "endstream", 
+        "endobj", 
+        "101 0 obj", 
+        "<</Filter/FlateDecode/Length 14965/Length1 31901>>stream", 
+        "4xWnHj", 
+        "^sE>^]", 
+        "IQpP't", 
+        "C\u001f*@_*D", 
+        "6d&e5/,", 
+        "cI}d;_", 
+        "WFp}nWu%", 
+        "W9lRu6", 
+        "I{zSaiO", 
+        "7Uf(#E", 
+        "KWfnmv", 
+        "ZB3EFH", 
+        "`J'# )", 
+        ">TCeT]B6o", 
+        "_8L.nF", 
+        "f'dyD:Ea", 
+        "hVTM0N", 
+        "mX)xqI3B", 
+        "TwIM[y", 
+        "P~F(+)", 
+        "QCD~\"r", 
+        "HlwF9V", 
+        "[o,57\\M", 
+        "H4~cQJ", 
+        "bwvdJJ", 
+        "_LR}bb", 
+        "_ej]jGjL|", 
+        "InHnJnI", 
+        "endstream", 
+        "endobj", 
+        "102 0 obj", 
+        "<</Filter/FlateDecode/Length 388>>stream", 
+        "y<==<===<sz", 
+        "endstream", 
+        "endobj", 
+        "103 0 obj", 
+        "<</Filter/FlateDecode/First 6/Length 192/N 1/Type/ObjStm>>stream", 
+        "ev\\LQ/", 
+        "endstream", 
+        "endobj", 
+        "104 0 obj", 
+        "<</Contents 105 0 R/CropBox[0.0 0.0 612.0 792.0]/MediaBox[0.0 0.0 612.0 792.0]/Parent 4194 0 R/Resources<</ColorSpace<</CS0 4205 0 R/CS1 4206 0 R>>/Font<</TT0 4209 0 R/TT1 4215 0 R>>>>/Rotate 0/StructParents 147/Type/Page>>", 
+        "endobj", 
+        "105 0 obj", 
+        "<</Filter/FlateDecode/Length 409>>stream", 
+        "endstream", 
+        "endobj", 
+        "106 0 obj", 
+        "<</Contents 107 0 R/CropBox[0.0 0.0 612.0 792.0]/MediaBox[0.0 0.0 612.0 792.0]/Parent 4194 0 R/Resources<</ColorSpace<</CS0 4205 0 R/CS1 4206 0 R>>/Font<</TT0 4209 0 R/TT1 4215 0 R/TT2 403 0 R/TT3 402 0 R>>>>/Rotate 0/StructParents 148/Type/Page>>", 
+        "endobj", 
+        "107 0 obj", 
+        "<</Filter/FlateDecode/Length 11854>>stream", 
+        "~srww}", 
+        ">DWw!R", 
+        ":@(&MN", 
+        "cz~yWb", 
+        "JprIpA/3p^/", 
+        "jJYFC\"y>@4", 
+        "^/shN/", 
+        "qzIh^.shN.g", 
+        "3(YS3h", 
+        "FM!:'f", 
+        "Q\u001fhOmT1Y", 
+        "ULlnS#", 
+        "FEBe)Qs9?9", 
+        "+X4SQB", 
+        "\\|Ddx?)y", 
+        "h8qYqK", 
+        "SR%lN?{", 
+        "GMeKzi", 
+        "j;\"r=8", 
+        "UPHpqF", 
+        "@Zq}yZX1", 
+        "#Gz.\u001fy", 
+        "SDp$DDHbk8", 
+        "N*_=J@", 
+        "qr \"r%_", 
+        "'YQe,F", 
+        "DXo:In", 
+        "rkwI,/", 
+        "endstream", 
+        "endobj", 
+        "108 0 obj", 
+        "<</Filter/FlateDecode/First 14/Length 218/N 2/Type/ObjStm>>stream", 
+        "endstream", 
+        "endobj", 
+        "109 0 obj", 
+        "<</Filter/FlateDecode/Length 21150/Length1 42516>>stream", 
+        "?&7/'#", 
+        "dQaIiIu", 
+        "ndP-ri?r", 
+        "%q2F:H", 
+        "*]V7uW", 
+        "9F-EoE?", 
+        "h>QP`8", 
+        "R)lUu2J", 
+        "|/\"dcq", 
+        ":{9>{u", 
+        "F?\u001f}|L", 
+        "WvhvS!", 
+        "(<@]U|;#{", 
+        "yQ=:8V", 
+        "'>'&$!", 
+        " *!bFv", 
+        "LCEX^P", 
+        "v.\"wWD", 
+        "Nnloq9:", 
+        "bp4x8H", 
+        "J5$<Cb", 
+        " cv2b##", 
+        "(,2yNQ", 
+        "e5\\2wng", 
+        "\u001fTb]\"\"f", 
+        "G8X997", 
+        ")}*725", 
+        "gIqK #2.", 
+        "Hn&^F|", 
+        "t_Zv~J$", 
+        "Tnj((\\", 
+        "fqSi(J", 
+        "}T.}A]", 
+        "5Q@T$T", 
+        ">[u*k/\\gu", 
+        "JpmN0V\u001f", 
+        "q/kL#O[", 
+        "2]o')x", 
+        "k9H.`I", 
+        " tB#TB!", 
+        "RE|A|NT", 
+        "%^'^#~O", 
+        "?'~Fl%", 
+        "Ed!i%-", 
+        "N'cxn4", 
+        "db!I\\3", 
+        "H6(g3XO", 
+        "~B~D~@", 
+        "!o#o!oZ", 
+        "nCnEnAv!7#;", 
+        "endstream", 
+        "endobj", 
+        "110 0 obj", 
+        "<</Filter/FlateDecode/Length 498>>stream", 
+        "xzzxzzzxzzzxzzzxzzzxzzzxzzzxzz", 
+        "endstream", 
+        "endobj", 
+        "111 0 obj", 
+        "<</Filter/FlateDecode/Length 230>>stream", 
+        "endstream", 
+        "endobj", 
+        "112 0 obj", 
+        "<</Filter/FlateDecode/Length 3699/Length1 5870>>stream", 
+        ";Q+:%HU%Av", 
+        "u`X)41H", 
+        "~@3h!m", 
+        ":wJr9;&&", 
+        ")%ZJ{InN", 
+        "4j2oXV", 
+        "V$I4%I", 
+        "n>Zc7\u001f", 
+        "d*u]84a2", 
+        "endstream", 
+        "endobj", 
+        "113 0 obj", 
+        "<</Filter/FlateDecode/Length 11>>stream", 
+        "endstream", 
+        "endobj", 
+        "114 0 obj", 
+        "<</Filter/FlateDecode/First 871/Length 2348/N 100/Type/ObjStm>>stream", 
+        "*T5F3j", 
+        "BUc4#g", 
+        "PK61l'", 
+        "z=\"Y)7", 
+        "<2(.)0", 
+        "JS9,cJ", 
+        "endstream", 
+        "endobj", 
+        "115 0 obj", 
+        "<</Extends 114 0 R/Filter/FlateDecode/First 911/Length 3179/N 100/Type/ObjStm>>stream", 
+        " $fKsxC5", 
+        "h$4D!GQ", 
+        "bQ%'g/.6Z", 
+        "4vhRM)", 
+        "?~Cg<h{{", 
+        "@\u001fu<=Bjy", 
+        "OU0FW(", 
+        "o)){X~", 
+        "i\u001fGvgx", 
+        "endstream", 
+        "endobj", 
+        "116 0 obj", 
+        "<</Extends 114 0 R/Filter/FlateDecode/First 214/Length 1364/N 25/Type/ObjStm>>stream", 
+        ".wzE!W1?", 
+        "endstream", 
+        "endobj", 
+        "117 0 obj", 
+        "<</Filter/FlateDecode/First 979/Length 5943/N 100/Type/ObjStm>>stream", 
+        "''I)+H'", 
+        "U.{E+/", 
+        "uHEF,o", 
+        "\\d,%Jr", 
+        "*YQ(hQ", 
+        "083838W", 
+        "#8[VgT)", 
+        "S^\\eho", 
+        ";*svxwT", 
+        "VsB)K(e", 
+        "j>lqcc;", 
+        "WwW7?\\iH4", 
+        "O4lvD2", 
+        "p--qj/", 
+        "z6z:HOF", 
+        "Op8\u001ftx", 
+        "endstream", 
+        "endobj", 
+        "118 0 obj", 
+        "<</Extends 117 0 R/Filter/FlateDecode/First 879/Length 1164/N 100/Type/ObjStm>>stream", 
+        "b12\u001fd62c=", 
+        "'NfGf'", 
+        "2;2_2;2_2;2_2{", 
+        "Pi!8#m", 
+        "HRi8\"I", 
+        "H<%]Eyy", 
+        "+nWQ^_q", 
+        ";;Iuwu", 
+        "endstream", 
+        "endobj", 
+        "119 0 obj", 
+        "<</Extends 117 0 R/Filter/FlateDecode/First 867/Length 871/N 100/Type/ObjStm>>stream", 
+        "endstream", 
+        "endobj", 
+        "120 0 obj", 
+        "<</Extends 117 0 R/Filter/FlateDecode/First 882/Length 1284/N 100/Type/ObjStm>>stream", 
+        "*H>@WA", 
+        "MNlrbs", 
+        "endstream", 
+        "endobj", 
+        "121 0 obj", 
+        "<</Extends 117 0 R/Filter/FlateDecode/First 862/Length 813/N 100/Type/ObjStm>>stream", 
+        "l\"A]M|", 
+        "~4iN21", 
+        "WpT0*8", 
+        "endstream", 
+        "endobj", 
+        "122 0 obj", 
+        "<</Extends 117 0 R/Filter/FlateDecode/First 863/Length 791/N 100/Type/ObjStm>>stream", 
+        "murw{s", 
+        "endstream", 
+        "endobj", 
+        "123 0 obj", 
+        "<</Extends 117 0 R/Filter/FlateDecode/First 975/Length 1238/N 100/Type/ObjStm>>stream", 
+        "upMeXAj", 
+        "(v,IG;#d\"", 
+        "endstream", 
+        "endobj", 
+        "124 0 obj", 
+        "<</Extends 117 0 R/Filter/FlateDecode/First 967/Length 930/N 100/Type/ObjStm>>stream", 
+        "endstream", 
+        "endobj", 
+        "125 0 obj", 
+        "<</Extends 117 0 R/Filter/FlateDecode/First 967/Length 1024/N 100/Type/ObjStm>>stream", 
+        "iMC3rXh", 
+        "L.PnQr", 
+        "endstream", 
+        "endobj", 
+        "126 0 obj", 
+        "<</Extends 117 0 R/Filter/FlateDecode/First 978/Length 1210/N 100/Type/ObjStm>>stream", 
+        "XAz8=l", 
+        "rNy^\"6", 
+        ")O)O)O)O)C", 
+        "WM{MGM", 
+        "endstream", 
+        "endobj", 
+        "127 0 obj", 
+        "<</Extends 117 0 R/Filter/FlateDecode/First 962/Length 737/N 100/Type/ObjStm>>stream", 
+        "_pj|4.", 
+        "endstream", 
+        "endobj", 
+        "128 0 obj", 
+        "<</Extends 117 0 R/Filter/FlateDecode/First 963/Length 916/N 100/Type/ObjStm>>stream", 
+        "2-pXw6", 
+        "vwr{yu", 
+        "endstream", 
+        "endobj", 
+        "129 0 obj", 
+        "<</Extends 117 0 R/Filter/FlateDecode/First 970/Length 1216/N 100/Type/ObjStm>>stream", 
+        "endstream", 
+        "endobj", 
+        "130 0 obj", 
+        "<</Extends 117 0 R/Filter/FlateDecode/First 977/Length 1168/N 100/Type/ObjStm>>stream", 
+        "nc4.z0rp", 
+        "U(.zRA\\LA", 
+        "VG<TG_", 
+        "1Le&B/:", 
+        "endstream", 
+        "endobj", 
+        "131 0 obj", 
+        "<</Extends 117 0 R/Filter/FlateDecode/First 978/Length 1168/N 100/Type/ObjStm>>stream", 
+        "0G'f2~bR", 
+        "BECN-@8", 
+        "R!JEPE%", 
+        "endstream", 
+        "endobj", 
+        "132 0 obj", 
+        "<</Extends 117 0 R/Filter/FlateDecode/First 976/Length 1165/N 100/Type/ObjStm>>stream", 
+        "endstream", 
+        "endobj", 
+        "133 0 obj", 
+        "<</Extends 117 0 R/Filter/FlateDecode/First 975/Length 1119/N 100/Type/ObjStm>>stream", 
+        "jMjDG>", 
+        "KxLASK", 
+        "I[Jy38", 
+        "V5lvL\"M", 
+        "endstream", 
+        "endobj", 
+        "134 0 obj", 
+        "<</Extends 117 0 R/Filter/FlateDecode/First 973/Length 1116/N 100/Type/ObjStm>>stream", 
+        "8bS-WG", 
+        "WizqgEJ", 
+        "endstream", 
+        "endobj", 
+        "135 0 obj", 
+        "<</Extends 117 0 R/Filter/FlateDecode/First 972/Length 1113/N 100/Type/ObjStm>>stream", 
+        "],o7_v", 
+        "<$\u001f&&\u001f", 
+        "m%r#D4", 
+        "endstream", 
+        "endobj", 
+        "136 0 obj", 
+        "<</Extends 117 0 R/Filter/FlateDecode/First 978/Length 1117/N 100/Type/ObjStm>>stream", 
+        "P42$C1", 
+        "aY5jpbr", 
+        "y4r3J3", 
+        "endstream", 
+        "endobj", 
+        "137 0 obj", 
+        "<</Extends 117 0 R/Filter/FlateDecode/First 974/Length 1094/N 100/Type/ObjStm>>stream", 
+        "\"xGQeBp", 
+        "rMJTWb", 
+        "`#[l(7", 
+        "@7Z)0l", 
+        "I;![(v", 
+        "endstream", 
+        "endobj", 
+        "138 0 obj", 
+        "<</Extends 117 0 R/Filter/FlateDecode/First 974/Length 1156/N 100/Type/ObjStm>>stream", 
+        "'xpQ4I", 
+        "A/\"eK%", 
+        "(jxx7*", 
+        "endstream", 
+        "endobj", 
+        "139 0 obj", 
+        "<</Extends 117 0 R/Filter/FlateDecode/First 995/Length 2387/N 100/Type/ObjStm>>stream", 
+        "5&fYTqCE", 
+        "h6./6vC>", 
+        "{24gC.", 
+        "4343434o", 
+        "+O^dwv8", 
+        "endstream", 
+        "endobj", 
+        "140 0 obj", 
+        "<</Extends 117 0 R/Filter/FlateDecode/First 977/Length 1147/N 100/Type/ObjStm>>stream", 
+        "2 jbs,@\"", 
+        "CD%B~TYs", 
+        "0T:vV:", 
+        "endstream", 
+        "endobj", 
+        "141 0 obj", 
+        "<</Extends 117 0 R/Filter/FlateDecode/First 972/Length 1155/N 100/Type/ObjStm>>stream", 
+        "endstream", 
+        "endobj", 
+        "142 0 obj", 
+        "<</Extends 117 0 R/Filter/FlateDecode/First 976/Length 1106/N 100/Type/ObjStm>>stream", 
+        "f,J!yf", 
+        "endstream", 
+        "endobj", 
+        "143 0 obj", 
+        "<</Extends 117 0 R/Filter/FlateDecode/First 968/Length 1082/N 100/Type/ObjStm>>stream", 
+        "P=+}T)", 
+        "BdQHe!", 
+        "CYX9J6$", 
+        ")<}:{=;9", 
+        "\u001f~Y],f'", 
+        "endstream", 
+        "endobj", 
+        "144 0 obj", 
+        "<</Extends 117 0 R/Filter/FlateDecode/First 974/Length 1185/N 100/Type/ObjStm>>stream", 
+        "*9HE%2 Q", 
+        "KwYHI%g8X", 
+        "endstream", 
+        "endobj", 
+        "145 0 obj", 
+        "<</Extends 117 0 R/Filter/FlateDecode/First 973/Length 1111/N 100/Type/ObjStm>>stream", 
+        "endstream", 
+        "endobj", 
+        "146 0 obj", 
+        "<</Extends 117 0 R/Filter/FlateDecode/First 976/Length 1205/N 100/Type/ObjStm>>stream", 
+        "2RhM-#", 
+        "endstream", 
+        "endobj", 
+        "147 0 obj", 
+        "<</Extends 117 0 R/Filter/FlateDecode/First 975/Length 1102/N 100/Type/ObjStm>>stream", 
+        "\u001fttd5kR", 
+        "eRLG(~", 
+        "endstream", 
+        "endobj", 
+        "148 0 obj", 
+        "<</Extends 117 0 R/Filter/FlateDecode/First 973/Length 1116/N 100/Type/ObjStm>>stream", 
+        "^/rn5Kq", 
+        "endstream", 
+        "endobj", 
+        "149 0 obj", 
+        "<</Extends 117 0 R/Filter/FlateDecode/First 974/Length 1684/N 100/Type/ObjStm>>stream", 
+        "Sd5,Q\"p", 
+        "pQCJE.", 
+        ">]]qop", 
+        "0su#\"o", 
+        "{ pf @", 
+        "endstream", 
+        "endobj", 
+        "150 0 obj", 
+        "<</Extends 117 0 R/Filter/FlateDecode/First 971/Length 1141/N 100/Type/ObjStm>>stream", 
+        "endstream", 
+        "endobj", 
+        "151 0 obj", 
+        "<</Extends 117 0 R/Filter/FlateDecode/First 977/Length 1518/N 100/Type/ObjStm>>stream", 
+        ".yUN.eU", 
+        ".GU..7U", 
+        "!IQ48J", 
+        "GTGFii-$W", 
+        "P:@}(@5", 
+        "endstream", 
+        "endobj", 
+        "152 0 obj", 
+        "<</Extends 117 0 R/Filter/FlateDecode/First 982/Length 1234/N 100/Type/ObjStm>>stream", 
+        "PHc0b(G", 
+        "%T[EH*", 
+        "endstream", 
+        "endobj", 
+        "153 0 obj", 
+        "<</Extends 117 0 R/Filter/FlateDecode/First 971/Length 1136/N 100/Type/ObjStm>>stream", 
+        "R^oy;/", 
+        "endstream", 
+        "endobj", 
+        "154 0 obj", 
+        "<</Extends 117 0 R/Filter/FlateDecode/First 787/Length 1369/N 82/Type/ObjStm>>stream", 
+        "eN54Pf", 
+        "P[\"I++&", 
+        ">BLs?r", 
+        "F>BL3[W#", 
+        "endstream", 
+        "endobj", 
+        "155 0 obj", 
+        "<</Length 4040/Subtype/XML/Type/Metadata>>stream", 
+        "<?xpacket begin=\"", 
+        "\" id=\"W5M0MpCehiHzreSzNTczkc9d\"?>", 
+        "<x:xmpmeta xmlns:x=\"adobe:ns:meta/\" x:xmptk=\"Adobe XMP Core 5.2-c001 63.139439, 2010/09/27-13:37:26        \">", 
+        "   <rdf:RDF xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\">", 
+        "      <rdf:Description rdf:about=\"\"", 
+        "            xmlns:xmp=\"http://ns.adobe.com/xap/1.0/\">", 
+        "         <xmp:ModifyDate>2011-08-09T15:20:19-04:00</xmp:ModifyDate>", 
+        "         <xmp:CreateDate>2011-08-09T15:19:58-04:00</xmp:CreateDate>", 
+        "         <xmp:MetadataDate>2011-08-09T15:20:19-04:00</xmp:MetadataDate>", 
+        "         <xmp:CreatorTool>Acrobat PDFMaker 10.1 for Word</xmp:CreatorTool>", 
+        "      </rdf:Description>", 
+        "      <rdf:Description rdf:about=\"\"", 
+        "            xmlns:xmpMM=\"http://ns.adobe.com/xap/1.0/mm/\">", 
+        "         <xmpMM:DocumentID>uuid:35fa3ee4-441b-4ce0-bad8-0ffb4acc710b</xmpMM:DocumentID>", 
+        "         <xmpMM:InstanceID>uuid:284307bc-47c5-4048-bdc9-9e68716aa108</xmpMM:InstanceID>", 
+        "         <xmpMM:subject>", 
+        "            <rdf:Seq>", 
+        "               <rdf:li>14</rdf:li>", 
+        "            </rdf:Seq>", 
+        "         </xmpMM:subject>", 
+        "      </rdf:Description>", 
+        "      <rdf:Description rdf:about=\"\"", 
+        "            xmlns:dc=\"http://purl.org/dc/elements/1.1/\">", 
+        "         <dc:format>application/pdf</dc:format>", 
+        "         <dc:title>", 
+        "            <rdf:Alt>", 
+        "               <rdf:li xml:lang=\"x-default\">Model Broad Agency Announcement (BAA)</rdf:li>", 
+        "            </rdf:Alt>", 
+        "         </dc:title>", 
+        "         <dc:creator>", 
+        "            <rdf:Seq>", 
+        "               <rdf:li>Elizabeth Latwin</rdf:li>", 
+        "            </rdf:Seq>", 
+        "         </dc:creator>", 
+        "      </rdf:Description>", 
+        "      <rdf:Description rdf:about=\"\"", 
+        "            xmlns:pdf=\"http://ns.adobe.com/pdf/1.3/\">", 
+        "         <pdf:Producer>Adobe PDF Library 10.0</pdf:Producer>", 
+        "      </rdf:Description>", 
+        "      <rdf:Description rdf:about=\"\"", 
+        "            xmlns:pdfx=\"http://ns.adobe.com/pdfx/1.3/\">", 
+        "         <pdfx:SourceModified>D:20110809191920</pdfx:SourceModified>", 
+        "         <pdfx:Company>DARPA</pdfx:Company>", 
+        "      </rdf:Description>", 
+        "   </rdf:RDF>", 
+        "</x:xmpmeta>", 
+        "                                                                                                    ", 
+        "                                                                                                    ", 
+        "                                                                                                    ", 
+        "                                                                                                    ", 
+        "                                                                                                    ", 
+        "                                                                                                    ", 
+        "                                                                                                    ", 
+        "                                                                                                    ", 
+        "                                                                                                    ", 
+        "                                                                                                    ", 
+        "                                                                                                    ", 
+        "                                                                                                    ", 
+        "                                                                                                    ", 
+        "                                                                                                    ", 
+        "                                                                                                    ", 
+        "                                                                                                    ", 
+        "                                                                                                    ", 
+        "                                                                                                    ", 
+        "                                                                                                    ", 
+        "                                                                                                    ", 
+        "                           ", 
+        "<?xpacket end=\"w\"?>", 
+        "endstream", 
+        "endobj", 
+        "156 0 obj", 
+        "<</Filter/FlateDecode/First 79/Length 246/N 9/Type/ObjStm>>stream", 
+        "endstream", 
+        "endobj", 
+        "157 0 obj", 
+        "<</Filter/FlateDecode/First 7/Length 211/N 1/Type/ObjStm>>stream", 
+        "endstream", 
+        "endobj", 
+        "158 0 obj", 
+        "<</DecodeParms<</Columns 5/Predictor 12>>/Filter/FlateDecode/ID[<582F57B85C86694CBB6458A025E6C437><1201574D996FED479D382D8DB1EA1168>]/Info 4195 0 R/Length 584/Root 4197 0 R/Size 4196/Type/XRef/W[1 3 1]>>stream", 
+        "A$B,DP", 
+        "<@~I}0O", 
+        "lWrsAg\\", 
+        "endstream", 
+        "endobj", 
+        "startxref", 
+        "wwwwwwwwwwwwwwwwx", 
+        "'wwwpp", 
+        "DDDDDDDDDDDDDDDO", 
+        "DDDDDDDDDDDDDDDO", 
+        "wwwwwwwwww", 
+        "s333333337p", 
+        "wwww7w", 
+        "pDDDDDDDDDDD", 
+        "pDDDDDDDDDDD", 
+        "kk\"4R)C", 
+        "444444444444])4", 
+        "444444444444CuuukRC)uC))u4u))R\"", 
+        "444qh44444444u", 
+        "))u4u))@)4", 
+        "oq444444))", 
+        "44c9qp", 
+        "444444Ru\"4", 
+        "44C)444Cu4444444", 
+        "U9O444444444", 
+        "C4444444", 
+        "44444c", 
+        "7444444444444444444//`4`", 
+        "4444444U", 
+        "444444444444444``", 
+        "44444444c", 
+        "tq4444444", 
+        "op`````", 
+        "444444444", 
+        "``0s````", 
+        "444444444U9f444", 
+        "o(poo````", 
+        "4444444444To4444", 
+        "``````", 
+        "44444444444", 
+        "^*`````````````", 
+        "44444444444*o`0", 
+        "``````````````", 
+        "44444444444`^", 
+        "po```````````````", 
+        "44444444````", 
+        "`````````````", 
+        "44444```````0^", 
+        "`````````````", 
+        "4````````````", 
+        "````````````", 
+        "4```````````f^", 
+        "```````````", 
+        "````````````", 
+        "```````````", 
+        "````````````", 
+        "*```````````", 
+        "4````````````", 
+        "```````````", 
+        "4````````````", 
+        "``````````", 
+        "E{{{{{{{{{{{{", 
+        "@CyyyyyyyyyyyyX", 
+        "EEEEEE", 
+        "EEE{EE{", 
+        "xqq0|:<", 
+        "\\\\22Y}", 
+        ",,,,,III", 
+        "SyG$v@", 
+        "~~~~I'", 
+        "IecI&5IccI>?!U!!6", 
+        "r2Y}wy=", 
+        "bb;;;MM;;;bb", 
+        "..dAAyi=", 
+        "EEEE{{", 
+        "EEEEEE{{", 
+        "SSSSSS%%%%", 
+        "Bppppppppppppppppp", 
+        "||||||||||||||||||||", 
+        "|'''''", 
+        "|'''''", 
+        "3^hG#3", 
+        "F'3F''#''Rx'", 
+        "X''''''''''$!'", 
+        "|'''''.(", 
+        "T''TA(", 
+        "|'''''V", 
+        "'xJAWk", 
+        "|''''''", 
+        "{KKKKKK'", 
+        "|''''''y(\"k\"KKKKKKK'", 
+        "|'''''''A(JKKKKKKKK'", 
+        "|'''''KKJ.KKKKKKKKKK", 
+        "|''KKKKK~", 
+        "KKKKKKKKKK", 
+        "|KKKKKKK(QKKKKKKKKKK", 
+        "'KKKKKKKWKKKKKKKKjKK", 
+        "'KKKKKKKW\"KKKKjj", 
+        "\u001f\u001f\u001f\u001f\u001f\u001f", 
+        "OOOOOOuuuu", 
+        "ssssssss", 
+        "Rx-%REi", 
+        "NsOd\u001fr]", 
+        "R7R,R+Uz%%H", 
+        "Z>2>e>R&b", 
+        "Uz?F]C|Kd/", 
+        "''''Kjj", 
+        "EEE5\u001f********", 
+        "EEE5&&&&&&&&&&&+EEE", 
+        ">&&&&&&&&+EEE", 
+        "&&&&7&&+EEE", 
+        "&&&)%C#", 
+        "B7+EEE", 
+        "67+EEE", 
+        "77+EEE", 
+        "@@11,<", 
+        "52EEEE57", 
+        "2EEEEE", 
+        "==================================================================", 
+        "}LOJLOJ", 
+        "Y[W@B>", 
+        "}LOJehd", 
+        "Y[WrtqLOJ", 
+        "@B>LOJ", 
+        "@B>ehdegd", 
+        "@B>ehd", 
+        "=======================================NNN", 
+        "%cccz___}]]]}___}]]]}]]]}]]]}___z", 
+        "wwwwwwwwwwwwwwwpx", 
+        "pxwwwwwwwwwwwwwxpx", 
+        "pxDDDDDDDDD@", 
+        "pxDDDDDDDDDH", 
+        "pxDDDDDDDDDH", 
+        "pxDDDDDDDDDDDDDDpx", 
+        "pwwwwwwwwwwwwwwwp", 
+        "wwwwwwwpx", 
+        "pxwwwwwwpxDDD", 
+        "pxDDDDDDpx", 
+        "pwwwwwwww", 
+        "63[4]5mm]5\\]m]mm5\\mm5555555\\\\\\5\\\\\\5m\\55\\\\5ed:", 
+        "cOXY/P.Z0.0.QR00/ZPP0000000/0PPZR.BI@/DE0,", 
+        "WkV21TSav^8{", 
+        "}>qooggggggg1`_fhsnHK", 
+        "Nw~ytMMMMMMUbbrrrrrxxxxxxxxrriUMMMMMMMMMUuzt", 
+        "I3')+*+)))*))()*+++,6J!54 CBA", 
+        "jYPQTVTSkllZTTXRTUiHceWda/", 
+        "}zy|yx~", 
+        "{|yvrrwsqpon", 
+        "PPPPPPPPPPPPPPPPPKMNNNNNNNNNNOLO", 
+        "JHHGGGGGGGGHI", 
+        "JEEEEEEEEEEFC", 
+        "JEEEEEEEEEEFC", 
+        "JEEEEEEEEEEFD", 
+        "JEFEEEEEEEEEB", 
+        "O%JEEEEEEEEEFFB", 
+        "JJIIIIJIIIIJJ", 
+        "O(@>=77A779?<8;$O' ", 
+        ")O6530./21+*-,4#4PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP", 
+        "wwwwwwwwwwwwwwwpx", 
+        "pxwwwwwwwwwwwwwxpx", 
+        "pxDDDDDDDDD@", 
+        "pxDDDDDDDDDH", 
+        "pxDDDDDDDDDH", 
+        "pxDDDDDDDDDDDDDDpx", 
+        "pwwwwwwwwwwwwwwwp", 
+        "wwwwwwwpx", 
+        "pxwwwwwwpxDDD", 
+        "pxDDDDDDpx", 
+        "pwwwwwwww", 
+        "63[4]5mm]5\\]m]mm5\\mm5555555\\\\\\5\\\\\\5m\\55\\\\5ed:", 
+        "cOXY/P.Z0.0.QR00/ZPP0000000/0PPZR.BI@/DE0,", 
+        "WkV21TSav^8{", 
+        "}>qooggggggg1`_fhsnHK", 
+        "Nw~ytMMMMMMUbbrrrrrxxxxxxxxrriUMMMMMMMMMUuzt", 
+        "I3')+*+)))*))()*+++,6J!54 CBA", 
+        "jYPQTVTSkllZTTXRTUiHceWda/", 
+        "}zy|yx~", 
+        "{|yvrrwsqpon", 
+        "PPPPPPPPPPPPPPPPPKMNNNNNNNNNNOLO", 
+        "JHHGGGGGGGGHI", 
+        "JEEEEEEEEEEFC", 
+        "JEEEEEEEEEEFC", 
+        "JEEEEEEEEEEFD", 
+        "JEFEEEEEEEEEB", 
+        "O%JEEEEEEEEEFFB", 
+        "JJIIIIJIIIIJJ", 
+        "O(@>=77A779?<8;$O' ", 
+        ")O6530./21+*-,4#4PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP", 
+        "PA<assembly xmlns=\"urn:schemas-microsoft-com:asm.v1\" manifestVersion=\"1.0\"><trustInfo xmlns=\"urn:schemas-microsoft-com:asm.v3\"><security><requestedPrivileges><requestedExecutionLevel level=\"asInvoker\" uiAccess=\"false\"></requestedExecutionLevel></requestedPrivileges></security></trustInfo><application xmlns=\"urn:schemas-microsoft-com:asm.v3\"><windowsSettings><ms_windowsSettings:dpiAware xmlns:ms_windowsSettings=\"http://schemas.microsoft.com/SMI/2005/WindowsSettings\" xmlns=\"http://schemas.microsoft.com/SMI/2005/WindowsSettings\">true</ms_windowsSettings:dpiAware></windowsSettings></application></assembly>PPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGX", 
+        "!This program cannot be run in DOS mode.", 
+        "`.rdata", 
+        "@.data", 
+        "L$(PQV", 
+        "L$(PQW", 
+        "SUVWj8", 
+        "L$,WPj", 
+        "~(9~$u", 
+        "DSpQPj", 
+        "D$4_^][", 
+        "S,_^]3", 
+        "L$\\t8;", 
+        ";T$0sP;t$4sJ", 
+        "D$40Z@", 
+        "D$0pZ@", 
+        "L\\Lf9t\\L", 
+        " inflate 1.2.3 Copyright 1995-2005 Mark Adler ", 
+        "Qkkbal", 
+        "[-&LMb#{'", 
+        "w+OQvr", 
+        "IN\u001fSKyu", 
+        ")\\ZEo^m/", 
+        "H*0\"ZOW", 
+        "mj>zjZ", 
+        "IiGM>nw", 
+        "ewh/?y", 
+        "OZw3(?", 
+        "V_:X1:", 
+        "LockResource", 
+        "SizeofResource", 
+        "LoadResource", 
+        "FindResourceA", 
+        "GetLastError", 
+        "SetFileTime", 
+        "GetFileTime", 
+        "CloseHandle", 
+        "WriteFile", 
+        "CreateFileA", 
+        "CreateProcessA", 
+        "GetEnvironmentVariableA", 
+        "ReadFile", 
+        "GetFileSize", 
+        "CreateFileW", 
+        "KERNEL32.dll", 
+        "RegSetValueExA", 
+        "RegCreateKeyExA", 
+        "RegCloseKey", 
+        "RegSetValueExW", 
+        "RegCreateKeyExW", 
+        "ADVAPI32.dll"
+    ], 
+    "metadata": {
+        "output": {
+            "pcap": {
+                "basename": "dump.pcap", 
+                "sha256": "3fd7ac4d25df16ab3e3e3230b07dd507be3e1bf07698a4e36bdfe8d9bd49fc1d", 
+                "dirname": ""
+            }
+        }
+    }
+}

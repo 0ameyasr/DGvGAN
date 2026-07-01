@@ -92,7 +92,6 @@ def apply_stalling_padding(sequence, evasion_rate=0.3):
     extended_seq = stalling_prefix + seq
     return extended_seq[:orig_len]
 
-
 def apply_benign_mimicry(sequence, evasion_rate=0.3):
     """Replace some with benign calls."""
     seq = list(sequence)
@@ -287,6 +286,14 @@ def load_data(filepath="dataset.csv"):
         X, y, test_size=0.30, stratify=y, random_state=42
     )
 
+def test_output(tech, sequence, rate):
+    tech2func = {
+        "Stalling Padding": apply_stalling_padding,
+        "Benign Mimicry": apply_benign_mimicry,
+        "Call Reordering": apply_call_reordering,
+    }
+    return tech2func[tech](sequence, rate)
+
 if __name__ == "__main__":
     # Setup parsing configuration for specific regime starts
     parser = argparse.ArgumentParser(description="Evaluate evasion frameworks with custom starting regimes.")
@@ -313,6 +320,13 @@ if __name__ == "__main__":
             "Call Reordering": [0.05, 0.10, 0.15, 0.20]
         }
         
+        # seq = [0,1,2,4] * 25
+        
+        # for tech in specific_rates:
+        #     rates = specific_rates[tech]
+        #     for rate in rates:
+        #         print(f"{tech} @ {rate}: {test_output(tech, seq, rate)}")
+            
         print(f"\n{'='*75}\n EVASION EVALUATION WITH TARGETED EXPERIMENT RATES\n{'='*75}")
         evasion_records = evaluate_evasion(X_val, y_val, target_techniques=specific_rates, baseline=False, start_regime=regime)
         all_summary_records.extend(evasion_records)

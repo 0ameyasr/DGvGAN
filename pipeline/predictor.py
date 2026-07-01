@@ -83,6 +83,29 @@ class SGANDiscriminator(nn.Module):
             return logits, features
         return logits
 
+class Generator(nn.Module):
+    def __init__(self):
+        super().__init__()
+
+        self.init_fc = nn.Linear(LATENT_DIM, 256)
+
+        self.rnn = nn.GRU(
+            input_size=EMB_DIM,
+            hidden_size=256,
+            batch_first=True
+        )
+
+        self.token_proj = nn.Linear(256, VOCAB_SIZE)
+        self.start_token = nn.Parameter(torch.zeros(1, 1, EMB_DIM)) # this is the learned start token
+
+    def forward(self, z, temperature=0.5):
+        batch_size = z.size(0)
+        h0 = torch.tanh(self.init_fc(z)).unsqueeze(0)
+        inputs = self.start_token.repeat(batch_size, SEQ_LEN, 1)
+        outputs, _ = self.rnn(inputs, h0)
+        logits = self.token_proj(outputs)
+        return F.gumbel_softmax(logits, tau=temperature, hard=True)
+    
 # ----------------------------
 # DGCNN
 # ----------------------------
@@ -139,6 +162,50 @@ class DGCNN_Discriminator(nn.Module):
             return logits, features
         return logits
 
+# ===============================
+# Generator
+# ===============================
+
+LATENT_DIM = 128
+EMB_DIM = 128
+
+class Generator(nn.Module):
+
+    def __init__(self):
+        super().__init__()
+
+        self.embedding = nn.Embedding(NUM_API_CALLS, EMB_DIM)
+
+        self.init_fc = nn.Linear(LATENT_DIM, 256)
+
+        self.rnn = nn.GRU(
+            input_size=EMB_DIM,
+            hidden_size=256,
+            batch_first=True
+        )
+
+        self.token_proj = nn.Linear(256, NUM_API_CALLS)
+
+        self.start_token = nn.Parameter(torch.zeros(1,1,EMB_DIM))
+
+    def forward(self, z):
+
+        batch_size = z.size(0)
+
+        h0 = torch.tanh(self.init_fc(z)).unsqueeze(0)
+
+        inputs = self.start_token.repeat(batch_size, SEQ_LEN,1)
+
+        outputs,_ = self.rnn(inputs,h0)
+
+        logits = self.token_proj(outputs)
+
+        probs = F.gumbel_softmax(logits, tau=0.5, hard=True)
+
+        tokens = torch.argmax(probs, dim=-1)
+
+        return tokens
+
 # -----------
 # GAT-SGAN
 # -----------
@@ -193,6 +260,28 @@ class GAT_Discriminator(nn.Module):
         if return_features:
             return logits, features
         return logits
+
+class Generator(nn.Module):
+    def __init__(self):
+        super().__init__()
+        self.init_fc = nn.Linear(LATENT_DIM,256)
+        self.rnn = nn.GRU(
+            input_size=EMB_DIM,
+            hidden_size=256,
+            batch_first=True
+        )
+        self.token_proj = nn.Linear(256,NUM_API_CALLS)
+        self.start_token = nn.Parameter(torch.zeros(1,1,EMB_DIM))
+
+    def forward(self,z):
+        B = z.size(0)
+        h0 = torch.tanh(self.init_fc(z)).unsqueeze(0)
+        inputs = self.start_token.repeat(B,SEQ_LEN,1)
+        outputs,_ = self.rnn(inputs,h0)
+        logits = self.token_proj(outputs)
+        probs = F.gumbel_softmax(logits,tau=0.5,hard=True)
+        tokens = torch.argmax(probs,dim=-1)
+        return tokens
 
 # ------
 # GAT
@@ -287,41 +376,47 @@ def seq_to_graph(seq_batch):
 # -----------------------------
 # Safe Prediction wrappers
 # -----------------------------
-def predict_sgan(features, seed=10):
+def predict_sgan(features, seed=10, model=None):
     if not features: return 0.0, 0.5
-    sgan_model = SGANDiscriminator()
-    sgan_model.load_state_dict(torch.load(os.path.join(BASE_DIR, f"models/saves/sgan/sgan_seed-{seed}.pt"), map_location="cpu"))
-    sgan_model.eval()
+    
+    sgan_model = model
+    if not sgan_model:
+        sgan_model = SGANDiscriminator()
+        sgan_model.load_state_dict(torch.load(os.path.join(BASE_DIR, f"models/saves/sgan/sgan_seed-{seed}.pt"), map_location="cpu"))
+        sgan_model.eval()
 
-    start = time.time()
     x = torch.tensor([features])
     with torch.no_grad():
+        start = time.time()
         output = sgan_model(x)
         prob = torch.softmax(output, dim=1)[0][1].item()
     return time.time() - start, prob
 
-def predict_lstm(features, seed=10):
+def predict_lstm(features, seed=10, model=None):
     if not features: return 0.0, 0.5
-    lstm_model = LSTMClassifier()
-    lstm_model.load_state_dict(torch.load(os.path.join(BASE_DIR, f"models/saves/lstm/lstm_seed_{seed}.pt"), map_location="cpu"))
-    lstm_model.eval()
+    lstm_model = model
+    if not lstm_model:
+        lstm_model = LSTMClassifier()
+        lstm_model.load_state_dict(torch.load(os.path.join(BASE_DIR, f"models/saves/lstm/lstm_seed_{seed}.pt"), map_location="cpu"))
+        lstm_model.eval()
 
-    start = time.time()
     x = torch.tensor([features])
     with torch.no_grad():
+        start = time.time()
         output = lstm_model(x)
         prob = torch.softmax(output, dim=1)[0][1].item()
     return time.time() - start, prob
     
-def predict_dgcnn(features, seed=10):
+def predict_dgcnn(features, seed=10, model=None):
     if not features or len(features) < 2: return 0.0, 0.5
-    dgcnn_model = DGCNN()
-    dgcnn_model.load_state_dict(torch.load(os.path.join(BASE_DIR, f"models/saves/dgcnn/dgcnn_seed_{seed}.pt"), map_location="cpu"))
-    dgcnn_model.eval()
+    
+    dgcnn_model = model
+    if not dgcnn_model:
+        dgcnn_model = DGCNN()
+        dgcnn_model.load_state_dict(torch.load(os.path.join(BASE_DIR, f"models/saves/dgcnn/dgcnn_seed_{seed}.pt"), map_location="cpu"))
+        dgcnn_model.eval()
     
     features = [int(x) for x in features]
-    start = time.time()
-
     with torch.no_grad():
         adj = torch.zeros((NUM_API_CALLS, NUM_API_CALLS))
         for i in range(len(features) - 1):
@@ -336,6 +431,7 @@ def predict_dgcnn(features, seed=10):
             X = F.pad(X, (0, max(0, SEQ_LEN - X.size(1))))[:, :SEQ_LEN]
 
         adj, X = adj.unsqueeze(0), X.unsqueeze(0)
+        start = time.time()
         logits = dgcnn_model(adj, X)
         prob = torch.sigmoid(logits).item()
         
@@ -343,15 +439,15 @@ def predict_dgcnn(features, seed=10):
         if np.isnan(prob): prob = 0.5
     return time.time() - start, float(prob)
     
-def predict_dgcnn_sgan(features, seed=10):
+def predict_dgcnn_sgan(features, seed=10,model=None):
     if not features or len(features) < 2: return 0.0, 0.5
-    hdgcnn_model = DGCNN_Discriminator()
-    hdgcnn_model.load_state_dict(torch.load(os.path.join(BASE_DIR, f"models/saves/hybrid/dgvgan_seed_{seed}.pt"), map_location="cpu"))
-    hdgcnn_model.eval()
+    hdgcnn_model = model
+    if not hdgcnn_model:
+        hdgcnn_model = DGCNN_Discriminator()
+        hdgcnn_model.load_state_dict(torch.load(os.path.join(BASE_DIR, f"models/saves/hybrid/dgvgan_seed_{seed}.pt"), map_location="cpu"))
+        hdgcnn_model.eval()
     
     features = [int(x) for x in features]
-    start = time.time()
-
     with torch.no_grad():
         adj = torch.zeros((NUM_API_CALLS, NUM_API_CALLS))
         for i in range(len(features) - 1):
@@ -364,6 +460,7 @@ def predict_dgcnn_sgan(features, seed=10):
             X = F.pad(X, (0, max(0, SEQ_LEN - X.size(1))))[:, :SEQ_LEN]
 
         adj, X = adj.unsqueeze(0), X.unsqueeze(0)
+        start = time.time()
         logits = hdgcnn_model(adj, X)
         probs = torch.softmax(logits[:, :2], dim=1)
         malware_prob = probs[0, 1].item()
@@ -371,26 +468,31 @@ def predict_dgcnn_sgan(features, seed=10):
         if np.isnan(malware_prob): malware_prob = 0.5
     return time.time() - start, malware_prob
 
-def predict_cnn(features, seed=10):
+def predict_cnn(features, seed=10, model=None):
     if not features: return 0.0, 0.5
-    cnn_model = Discriminator()
-    cnn_model.load_state_dict(torch.load(os.path.join(BASE_DIR, f"models/saves/cnn/cnn_seed_{seed}.pt"), map_location="cpu"))
-    cnn_model.eval()
+    
+    cnn_model = model
+    if not cnn_model:
+        cnn_model = Discriminator()
+        cnn_model.load_state_dict(torch.load(os.path.join(BASE_DIR, f"models/saves/cnn/cnn_seed_{seed}.pt"), map_location="cpu"))
+        cnn_model.eval()
 
-    start = time.time()
     x = torch.tensor([features])
     with torch.no_grad():
+        start = time.time()
         output = cnn_model(x)
         prob = torch.softmax(output, dim=1)[0][1].item()
     return time.time() - start, prob
 
-def predict_gat_sgan(features, seed=10):
+def predict_gat_sgan(features, seed=10, model=None):
     if not features or len(features) < 2: return 0.0, 0.5
-    gat_sgan_model = GAT_Discriminator()
-    checkpoint = torch.load(os.path.join(BASE_DIR, f"models/saves/hybrid_sgan_gat/state_dict_seed_{seed}.pth"), map_location="cpu")
-    gat_sgan_model.load_state_dict(checkpoint["D_state_dict"])
+    
+    gat_sgan_model = model
+    if not gat_sgan_model:
+        gat_sgan_model = GAT_Discriminator()
+        checkpoint = torch.load(os.path.join(BASE_DIR, f"models/saves/hybrid_sgan_gat/state_dict_seed_{seed}.pth"), map_location="cpu")
+        gat_sgan_model.load_state_dict(checkpoint["D_state_dict"])
 
-    start = time.time()
     gat_sgan_model.eval()
     features = [int(feat) for feat in features]
     
@@ -402,6 +504,7 @@ def predict_gat_sgan(features, seed=10):
     with torch.no_grad():
         seq = torch.tensor(features, dtype=torch.long).unsqueeze(0)
         adj, X = seq_to_graph(seq)
+        start = time.time()
         logits = gat_sgan_model(adj, X)
         probs = torch.softmax(logits[:, :2], dim=1)
         malware_prob = probs[0, 1].item()
@@ -409,15 +512,16 @@ def predict_gat_sgan(features, seed=10):
         if np.isnan(malware_prob): malware_prob = 0.5
     return time.time() - start, malware_prob
 
-def predict_gat(features, seed=10):
+def predict_gat(features, seed=10, model=None):
     if not features or len(features) < 2: return 0.0, 0.5
     import __main__
     __main__.GATClassifier = GATClassifier
     __main__.GATLayer = GATLayer
 
-    gat_model = torch.load(os.path.join(BASE_DIR, f"models/saves/gat/gat_seed_{seed}.pt"), map_location="cpu", weights_only=False)
-    start = time.time()
-    gat_model.eval()
+    gat_model = model
+    if not gat_model:
+        gat_model = torch.load(os.path.join(BASE_DIR, f"models/saves/gat/gat_seed_{seed}.pt"), map_location="cpu", weights_only=False)
+        gat_model.eval()
     
     features = [int(feat) for feat in features]
     if len(features) < SEQ_LEN:
@@ -427,9 +531,145 @@ def predict_gat(features, seed=10):
     with torch.no_grad():
         seq = torch.tensor(features, dtype=torch.long).unsqueeze(0)
         adj, X = seq_to_graph(seq)
+        start = time.time()
         logits = gat_model(adj, X)
         probs = torch.softmax(logits[:, :2], dim=1)
         malware_prob = probs[0, 1].item()
         
         if np.isnan(malware_prob): malware_prob = 0.5
     return time.time() - start, malware_prob
+
+if __name__ == "__main__":
+    import __main__
+    __main__.GATClassifier = GATClassifier
+    __main__.GATLayer = GATLayer
+
+    seed = 10
+    
+    sgan_model = SGANDiscriminator()
+    sgan_model.load_state_dict(torch.load(os.path.join(BASE_DIR, f"models/saves/sgan/sgan_seed-{seed}.pt"), map_location="cpu"))
+    sgan_model.eval()
+    
+    lstm_model = LSTMClassifier()
+    lstm_model.load_state_dict(torch.load(os.path.join(BASE_DIR, f"models/saves/lstm/lstm_seed_{seed}.pt"), map_location="cpu"))
+    lstm_model.eval()
+
+    dgcnn_model = DGCNN()
+    dgcnn_model.load_state_dict(torch.load(os.path.join(BASE_DIR, f"models/saves/dgcnn/dgcnn_seed_{seed}.pt"), map_location="cpu"))
+    dgcnn_model.eval()
+    
+    hdgcnn_model = DGCNN_Discriminator()
+    hdgcnn_model.load_state_dict(torch.load(os.path.join(BASE_DIR, f"models/saves/hybrid/dgvgan_seed_{seed}.pt"), map_location="cpu"))
+    hdgcnn_model.eval()
+    
+    cnn_model = Discriminator()
+    cnn_model.load_state_dict(torch.load(os.path.join(BASE_DIR, f"models/saves/cnn/cnn_seed_{seed}.pt"), map_location="cpu"))
+    cnn_model.eval()
+    
+    gat_sgan_model = GAT_Discriminator()
+    checkpoint = torch.load(os.path.join(BASE_DIR, f"models/saves/hybrid_sgan_gat/state_dict_seed_{seed}.pth"), map_location="cpu")
+    gat_sgan_model.load_state_dict(checkpoint["D_state_dict"])
+
+    gat_model = torch.load(os.path.join(BASE_DIR, f"models/saves/gat/gat_seed_{seed}.pt"), map_location="cpu", weights_only=False)
+    gat_model.eval()
+    
+import time
+import tracemalloc
+import gc
+import random
+
+def benchmark_models(features_list, loaded_models, seed=10):
+    """
+    Benchmarks memory footprint and actual model inference time over a dataset.
+    """
+    # 1. Map names to (inference_function, preloaded_model_instance)
+    prediction_registry = {
+        "SGAN": (predict_sgan, loaded_models["sgan"]),
+        "LSTM": (predict_lstm, loaded_models["lstm"]),
+        "CNN": (predict_cnn, loaded_models["cnn"]),
+        "DGCNN": (predict_dgcnn, loaded_models["dgcnn"]),
+        "DGCNN-SGAN": (predict_dgcnn_sgan, loaded_models["hdgcnn"]),
+        "GAT": (predict_gat, loaded_models["gat"]),
+        "GAT-SGAN": (predict_gat_sgan, loaded_models["gat_sgan"]),
+    }
+
+    print(f"{'Model Name':<15} | {'Avg Inference Time (ms)':<25} | {'Peak Memory Usage (MB)':<22}")
+    print("-" * 70)
+
+    for name, (predict_func, model_instance) in prediction_registry.items():
+        # Clear out garbage from previous model run evaluations
+        gc.collect()
+        
+        tracemalloc.start()
+        tracemalloc.reset_peak()
+
+        pure_inference_latencies = []
+        
+        try:
+            # 2. Benchmark loop over the dataset
+            for sample in features_list:
+                # We unpack the internal execution delta directly returned by your optimized function
+                gpu_cpu_delta, _ = predict_func(sample, seed=seed, model=model_instance)
+                pure_inference_latencies.append(gpu_cpu_delta)
+                
+            # Compute footprint snapshots
+            _, peak = tracemalloc.get_traced_memory()
+            peak_mb = peak / (1024 * 1024)
+            
+            # Convert raw seconds tracking to milliseconds
+            avg_time_ms = (sum(pure_inference_latencies) / len(pure_inference_latencies)) * 1000
+
+            print(f"{name:<15} | {avg_time_ms:<25.4f} | {peak_mb:<22.4f}")
+            
+        except Exception as e:
+            print(f"{name:<15} | Failed to run: {str(e)}")
+            
+        finally:
+            tracemalloc.stop()
+
+if __name__ == "__main__":
+    import __main__
+    __main__.GATClassifier = GATClassifier
+    __main__.GATLayer = GATLayer
+
+    seed = 10
+    
+    print("Pre-loading models into system memory...")
+    # Instantiate and bundle models globally to reference inside the benchmark
+    models = {}
+    
+    models["sgan"] = SGANDiscriminator()
+    models["sgan"].load_state_dict(torch.load(os.path.join(BASE_DIR, f"models/saves/sgan/sgan_seed-{seed}.pt"), map_location="cpu"))
+    models["sgan"].eval()
+    
+    models["lstm"] = LSTMClassifier()
+    models["lstm"].load_state_dict(torch.load(os.path.join(BASE_DIR, f"models/saves/lstm/lstm_seed_{seed}.pt"), map_location="cpu"))
+    models["lstm"].eval()
+
+    models["dgcnn"] = DGCNN()
+    models["dgcnn"].load_state_dict(torch.load(os.path.join(BASE_DIR, f"models/saves/dgcnn/dgcnn_seed_{seed}.pt"), map_location="cpu"))
+    models["dgcnn"].eval()
+    
+    models["hdgcnn"] = DGCNN_Discriminator()
+    models["hdgcnn"].load_state_dict(torch.load(os.path.join(BASE_DIR, f"models/saves/hybrid/dgvgan_seed_{seed}.pt"), map_location="cpu"))
+    models["hdgcnn"].eval()
+    
+    models["cnn"] = Discriminator()
+    models["cnn"].load_state_dict(torch.load(os.path.join(BASE_DIR, f"models/saves/cnn/cnn_seed_{seed}.pt"), map_location="cpu"))
+    models["cnn"].eval()
+    
+    models["gat_sgan"] = GAT_Discriminator()
+    checkpoint = torch.load(os.path.join(BASE_DIR, f"models/saves/hybrid_sgan_gat/state_dict_seed_{seed}.pth"), map_location="cpu")
+    models["gat_sgan"].load_state_dict(checkpoint["D_state_dict"])
+    models["gat_sgan"].eval()
+
+    models["gat"] = torch.load(os.path.join(BASE_DIR, f"models/saves/gat/gat_seed_{seed}.pt"), map_location="cpu", weights_only=False)
+    models["gat"].eval()
+    
+    # 3. Scale up to your 10k structural validation target
+    print("Generating 10,000 evaluation samples...")
+    num_samples = 10000
+    dummy_dataset = [[random.randint(0, 306) for _ in range(100)] for _ in range(num_samples)]
+    
+    print("Starting optimized performance benchmark...\n")
+    benchmark_models(dummy_dataset, models, seed=seed)

@@ -1,0 +1,2151 @@
+{
+    "info": {
+        "added": 1782744547.105348, 
+        "started": 1782744550.396495, 
+        "duration": 52, 
+        "ended": 1782744602.504672, 
+        "owner": null, 
+        "score": 10, 
+        "id": 7605893, 
+        "category": "file", 
+        "git": {
+            "head": "", 
+            "fetch_head": ""
+        }, 
+        "monitor": null, 
+        "package": "exe", 
+        "route": "internet", 
+        "custom": null, 
+        "machine": {
+            "status": "stopped", 
+            "name": "win7x643", 
+            "label": "win7x643", 
+            "platform": "windows", 
+            "manager": "VirtualBox", 
+            "started_on": "2026-06-29 14:49:11", 
+            "shutdown_on": "2026-06-29 14:50:02"
+        }, 
+        "platform": "windows", 
+        "version": "2.0.7", 
+        "options": "procmemdump=yes,route=internet"
+    }, 
+    "signatures": [
+        {
+            "families": [], 
+            "description": "Yara rule detected for file", 
+            "severity": 1, 
+            "ttp": {}, 
+            "markcount": 1, 
+            "references": [], 
+            "marks": [
+                {
+                    "type": "generic", 
+                    "description": "Detects the presence of the Dharma PDB string in executables", 
+                    "rule": "CrowdStrike_CSIT_19008_01"
+                }
+            ], 
+            "name": "file_yara"
+        }, 
+        {
+            "families": [], 
+            "description": "This executable has a PDB path", 
+            "severity": 1, 
+            "ttp": {}, 
+            "markcount": 1, 
+            "references": [], 
+            "marks": [
+                {
+                    "category": "pdb_path", 
+                    "ioc": "C:\\crysis\\Release\\PDB\\payload.pdb", 
+                    "type": "ioc", 
+                    "description": null
+                }
+            ], 
+            "name": "has_pdb"
+        }, 
+        {
+            "families": [], 
+            "description": "The binary likely contains encrypted or compressed data indicative of a packer", 
+            "severity": 2, 
+            "ttp": {
+                "T1045": {
+                    "short": "Software Packing", 
+                    "long": "Software packing is a method of compressing or encrypting an executable. Packing an executable changes the file signature in an attempt to avoid signature-based detection. Most decompression techniques decompress the executable code in memory."
+                }
+            }, 
+            "markcount": 3, 
+            "references": [
+                "http://www.forensickb.com/2013/03/file-entropy-explained.html", 
+                "http://virii.es/U/Using%20Entropy%20Analysis%20to%20Find%20Encrypted%20and%20Packed%20Malware.pdf"
+            ], 
+            "marks": [
+                {
+                    "entropy": 7.78504061338529, 
+                    "section": {
+                        "size_of_data": "0x00002800", 
+                        "virtual_address": "0x0000b000", 
+                        "entropy": 7.78504061338529, 
+                        "name": ".rdata", 
+                        "virtual_size": "0x00002636"
+                    }, 
+                    "type": "generic", 
+                    "description": "A section with a high entropy has been found"
+                }, 
+                {
+                    "entropy": 7.982962737603744, 
+                    "section": {
+                        "size_of_data": "0x0000a800", 
+                        "virtual_address": "0x0000e000", 
+                        "entropy": 7.982962737603744, 
+                        "name": ".data", 
+                        "virtual_size": "0x0000aad5"
+                    }, 
+                    "type": "generic", 
+                    "description": "A section with a high entropy has been found"
+                }, 
+                {
+                    "entropy": 0.5226130653266332, 
+                    "type": "generic", 
+                    "description": "Overall entropy of this PE file is high"
+                }
+            ], 
+            "name": "packer_entropy"
+        }, 
+        {
+            "families": [], 
+            "description": "File has been identified by 10 AntiVirus engine on IRMA as malicious", 
+            "severity": 60, 
+            "ttp": {}, 
+            "markcount": 10, 
+            "references": [], 
+            "marks": [
+                {
+                    "category": "G Data Antivirus (Windows)", 
+                    "ioc": "Virus: Trojan.Ransom.Crysis.E (Engine A), Win32.Trojan-Ransom.VirusEncoder.A (Engine B)", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "C4S ClamAV (Linux)", 
+                    "ioc": "Win.Trojan.Dharma-6668198-0", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Trellix (Linux)", 
+                    "ioc": "GenericRXEA-GI", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "eScan Antivirus (Linux)", 
+                    "ioc": "Trojan.Ransom.Crysis.E(DB)", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Sophos Anti-Virus (Linux)", 
+                    "ioc": "Mal/Criakl-B", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "DrWeb Antivirus (Linux)", 
+                    "ioc": "Trojan.Encoder.3953", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "ClamAV (Linux)", 
+                    "ioc": "Win.Trojan.Dharma-6668198-0", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Bitdefender Antivirus (Linux)", 
+                    "ioc": "Trojan.Ransom.Crysis.E", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Kaspersky Standard (Windows)", 
+                    "ioc": "Trojan-Ransom.Win32.Crusis.to", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Emsisoft Commandline Scanner (Windows)", 
+                    "ioc": "Trojan.Ransom.Crysis.E (B)", 
+                    "type": "ioc", 
+                    "description": null
+                }
+            ], 
+            "name": "antivirus_irma"
+        }, 
+        {
+            "families": [], 
+            "description": "File has been identified by 52 AntiVirus engines on VirusTotal as malicious", 
+            "severity": 60, 
+            "ttp": {}, 
+            "markcount": 52, 
+            "references": [], 
+            "marks": [
+                {
+                    "category": "Bkav", 
+                    "ioc": "W32.AIDetectMalware", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Lionic", 
+                    "ioc": "Trojan.Win32.Crusis.tqMs", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Elastic", 
+                    "ioc": "Windows.Ransomware.Dharma", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Cynet", 
+                    "ioc": "Malicious (score: 100)", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "CAT-QuickHeal", 
+                    "ioc": "Ransom.Crysis.S162740", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Skyhigh", 
+                    "ioc": "BehavesLike.Win32.Generic.cc", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "ALYac", 
+                    "ioc": "Trojan.Ransom.Crysis", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Cylance", 
+                    "ioc": "unsafe", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "VIPRE", 
+                    "ioc": "Trojan.Ransom.Crysis.E", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Sangfor", 
+                    "ioc": "Ransom.Win32.Save.a", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "K7AntiVirus", 
+                    "ioc": "Trojan ( 00519f781 )", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "BitDefender", 
+                    "ioc": "Trojan.Ransom.Crysis.E", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "K7GW", 
+                    "ioc": "Trojan ( 00519f781 )", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Cybereason", 
+                    "ioc": "malicious.7e4805", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Arcabit", 
+                    "ioc": "Trojan.Ransom.Crysis.E", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "VirIT", 
+                    "ioc": "Trojan.Win32.Genus.DPSG", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Symantec", 
+                    "ioc": "Ransom.Crysis", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "APEX", 
+                    "ioc": "Malicious", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "McAfee", 
+                    "ioc": "GenericRXEA-GI!134455912826", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "ClamAV", 
+                    "ioc": "Win.Trojan.Dharma-6668198-0", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Kaspersky", 
+                    "ioc": "Trojan-Ransom.Win32.Crusis.to", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Alibaba", 
+                    "ioc": "Ransom:Win32/Crusis.2b2", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "MicroWorld-eScan", 
+                    "ioc": "Trojan.Ransom.Crysis.E", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Rising", 
+                    "ioc": "Ransom.Crysis!1.A6AA (CLASSIC)", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Emsisoft", 
+                    "ioc": "Trojan.Ransom.Crysis.E (B)", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "DrWeb", 
+                    "ioc": "Trojan.Encoder.3953", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Zillya", 
+                    "ioc": "Trojan.Crusis.Win32.1111", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "TrendMicro", 
+                    "ioc": "Ransom.Win32.CRYSIS.SMAL01", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "FireEye", 
+                    "ioc": "Trojan.Ransom.Crysis.E", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Sophos", 
+                    "ioc": "Mal/Criakl-B", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Ikarus", 
+                    "ioc": "Trojan-Ransom.Crysis", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Google", 
+                    "ioc": "Detected", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "MAX", 
+                    "ioc": "malware (ai score=82)", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Antiy-AVL", 
+                    "ioc": "Trojan/Win32.AGeneric", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Gridinsoft", 
+                    "ioc": "Ransom.Filecoder.20279.sd!yf", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Xcitium", 
+                    "ioc": "TrojWare.Win32.Crysis.D@6sd9xy", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Microsoft", 
+                    "ioc": "Ransom:Win32/Wadhrama!pz", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "ViRobot", 
+                    "ioc": "Trojan.Win32.Ransom.94720.F", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "ZoneAlarm", 
+                    "ioc": "Trojan-Ransom.Win32.Crusis.to", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "GData", 
+                    "ioc": "Win32.Trojan-Ransom.VirusEncoder.A", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Varist", 
+                    "ioc": "W32/Trojan.ILHO-9216", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "AhnLab-V3", 
+                    "ioc": "Ransomware/Win.Crysis.R213980", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "TACHYON", 
+                    "ioc": "Ransom/W32.Crusis.102912", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "DeepInstinct", 
+                    "ioc": "MALICIOUS", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Malwarebytes", 
+                    "ioc": "Generic.Malware.AI.DDS", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Panda", 
+                    "ioc": "Trj/GdSda.A", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "TrendMicro-HouseCall", 
+                    "ioc": "Ransom.Win32.CRYSIS.SMAL01", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Tencent", 
+                    "ioc": "Trojan-Ransom.Win32.Crysis.a", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "SentinelOne", 
+                    "ioc": "Static AI - Malicious PE", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "MaxSecure", 
+                    "ioc": "Trojan.Malware.300983.susgen", 
+                    "type": "ioc", 
+                    "description": null
+                }
+            ], 
+            "name": "antivirus_virustotal"
+        }
+    ], 
+    "target": {
+        "category": "file", 
+        "file": {
+            "mimetype": "application/x-dosexec", 
+            "yara": [
+                {
+                    "meta": {
+                        "malware_family": "DharmaRansomware,CrysisRansomware", 
+                        "version": "202012071402", 
+                        "description": "Detects the presence of the Dharma PDB string in executables", 
+                        "copyright": "(c) 2020 CrowdStrike Inc.", 
+                        "last_modified": "2020-12-07", 
+                        "reports": "CSIT-19008"
+                    }, 
+                    "name": "CrowdStrike_CSIT_19008_01", 
+                    "offsets": {
+                        "pdb": [
+                            [
+                                51220, 
+                                0
+                            ]
+                        ], 
+                        "str": [
+                            [
+                                51196, 
+                                1
+                            ]
+                        ]
+                    }, 
+                    "strings": [
+                        "QzpcY3J5c2lzXFJlbGVhc2VcUERCXHBheWxvYWQucGRi", 
+                        "UlNEUw=="
+                    ]
+                }
+            ], 
+            "sha1": "7e859847e48054dc1d13295eafb857659e7433ac", 
+            "name": "a191d7d045dcf61582f2257bded2734b4ca424b1cf66ff519763c1888ec83190", 
+            "type": "PE32 executable, for MS Windows", 
+            "sha256": "a191d7d045dcf61582f2257bded2734b4ca424b1cf66ff519763c1888ec83190", 
+            "urls": [], 
+            "crc32": "677B1845", 
+            "path": "/srv/cuckoo/cwd/storage/binaries/a191d7d045dcf61582f2257bded2734b4ca424b1cf66ff519763c1888ec83190", 
+            "ssdeep": null, 
+            "size": 102912, 
+            "sha512": "b7cf4f52a793b8fff5880d50b71fa71ddf13359157fda794fe91c107cd35ff794421aa9b67e1060186770e74a5adb191cb61f646443d0691d6c184dd882c0c6d", 
+            "md5": "134455912826cf0de4750f77909ba624"
+        }, 
+        "custom": null
+    }, 
+    "irma": {
+        "status": 1, 
+        "probes_finished": 13, 
+        "scan_id": "e9a41e27-6ed1-40f1-a2ef-5bfcc615b554", 
+        "parent_file_sha256": null, 
+        "name": "a191d7d045dcf61582f2257bded2734b4ca424b1cf66ff519763c1888ec83190", 
+        "scan_date": 1782733818, 
+        "other_results": [], 
+        "submitter": "cli", 
+        "probes_total": 13, 
+        "file_infos": {
+            "mimetype": "PE32 executable, for MS Windows", 
+            "sha1": "7e859847e48054dc1d13295eafb857659e7433ac", 
+            "tags": [], 
+            "timestamp_first_scan": 1778954247.79, 
+            "size": 102912, 
+            "timestamp_last_scan": 1782733829.88, 
+            "sha256": "a191d7d045dcf61582f2257bded2734b4ca424b1cf66ff519763c1888ec83190", 
+            "md5": "134455912826cf0de4750f77909ba624"
+        }, 
+        "probe_results": {
+            "antivirus": {
+                "G Data Antivirus (Windows)": {
+                    "status": 1, 
+                    "duration": 0.27, 
+                    "version": "5.5.20197.1358", 
+                    "results": "Virus: Trojan.Ransom.Crysis.E (Engine A), Win32.Trojan-Ransom.VirusEncoder.A (Engine B)", 
+                    "virus_database_version": "unavailable"
+                }, 
+                "Avast Core Security (Linux)": {
+                    "status": 0, 
+                    "duration": 0.01, 
+                    "version": "4.6.1", 
+                    "results": null, 
+                    "virus_database_version": "unavailable"
+                }, 
+                "C4S ClamAV (Linux)": {
+                    "status": 1, 
+                    "duration": 0.55, 
+                    "version": "1.4.3", 
+                    "results": "Win.Trojan.Dharma-6668198-0", 
+                    "virus_database_version": "28046"
+                }, 
+                "Trellix (Linux)": {
+                    "status": 1, 
+                    "duration": 9.51, 
+                    "version": "7.0.4.835", 
+                    "results": "GenericRXEA-GI", 
+                    "virus_database_version": "11831"
+                }, 
+                "WithSecure (Linux)": {
+                    "status": 0, 
+                    "duration": 0.12, 
+                    "version": "1.0.45", 
+                    "results": null, 
+                    "virus_database_version": "unavailable"
+                }, 
+                "eScan Antivirus (Linux)": {
+                    "status": 1, 
+                    "duration": 3.8, 
+                    "version": "7.0.21", 
+                    "results": "Trojan.Ransom.Crysis.E(DB)", 
+                    "virus_database_version": "7.101116 (29/06/2026)"
+                }, 
+                "ESET Security (Windows)": {
+                    "status": 0, 
+                    "duration": 0.66, 
+                    "version": "unavailable", 
+                    "results": null, 
+                    "virus_database_version": "unavailable"
+                }, 
+                "Sophos Anti-Virus (Linux)": {
+                    "status": 1, 
+                    "duration": 0.38, 
+                    "version": "1.2.1.1 (2026-04-20)", 
+                    "results": "Mal/Criakl-B", 
+                    "virus_database_version": "unavailable"
+                }, 
+                "DrWeb Antivirus (Linux)": {
+                    "status": 1, 
+                    "duration": 0.11, 
+                    "version": "11.1.17.2605081640", 
+                    "results": "Trojan.Encoder.3953", 
+                    "virus_database_version": "unavailable"
+                }, 
+                "ClamAV (Linux)": {
+                    "status": 1, 
+                    "duration": 0.67, 
+                    "version": "1.4.3", 
+                    "results": "Win.Trojan.Dharma-6668198-0", 
+                    "virus_database_version": "28046"
+                }, 
+                "Bitdefender Antivirus (Linux)": {
+                    "status": 1, 
+                    "duration": 9.76, 
+                    "version": "7.90123", 
+                    "results": "Trojan.Ransom.Crysis.E", 
+                    "virus_database_version": null
+                }, 
+                "Kaspersky Standard (Windows)": {
+                    "status": 1, 
+                    "duration": 4.63, 
+                    "version": "21.24", 
+                    "results": "Trojan-Ransom.Win32.Crusis.to", 
+                    "virus_database_version": "2026-06-28 18:11:00 (unknown)"
+                }, 
+                "Emsisoft Commandline Scanner (Windows)": {
+                    "status": 1, 
+                    "duration": 0.39, 
+                    "version": "2025.1.0.12641", 
+                    "results": "Trojan.Ransom.Crysis.E (B)", 
+                    "virus_database_version": "unavailable"
+                }
+            }
+        }, 
+        "path": "", 
+        "result_id": "1cfb708c-de06-4010-9334-fb1816fa233e"
+    }, 
+    "suricata": {
+        "tls": [], 
+        "files": [], 
+        "alerts": [], 
+        "http": []
+    }, 
+    "virustotal": {
+        "permalink": "https://www.virustotal.com/gui/file/a191d7d045dcf61582f2257bded2734b4ca424b1cf66ff519763c1888ec83190/detection/f-a191d7d045dcf61582f2257bded2734b4ca424b1cf66ff519763c1888ec83190-1708943071", 
+        "sha1": "7e859847e48054dc1d13295eafb857659e7433ac", 
+        "resource": "134455912826cf0de4750f77909ba624", 
+        "response_code": 1, 
+        "scan_date": "2024-02-26 10:24:31", 
+        "scan_id": "a191d7d045dcf61582f2257bded2734b4ca424b1cf66ff519763c1888ec83190-1708943071", 
+        "summary": {
+            "positives": 52, 
+            "permalink": "https://www.virustotal.com/gui/file/a191d7d045dcf61582f2257bded2734b4ca424b1cf66ff519763c1888ec83190/detection/f-a191d7d045dcf61582f2257bded2734b4ca424b1cf66ff519763c1888ec83190-1708943071", 
+            "scan_date": "2024-02-26 10:24:31"
+        }, 
+        "sha256": "a191d7d045dcf61582f2257bded2734b4ca424b1cf66ff519763c1888ec83190", 
+        "normalized": [
+            "AIDetectMalware", 
+            "Crusis", 
+            "tqMs", 
+            "Windows", 
+            "Ransomware", 
+            "Dharma", 
+            "Malicious", 
+            "score", 
+            "Crysis", 
+            "S162740", 
+            "unsafe", 
+            "Save", 
+            "Genus", 
+            "DPSG", 
+            "GenericRXEA", 
+            "CLASSIC", 
+            "SMAL01", 
+            "Criakl", 
+            "Detected", 
+            "ai score=82", 
+            "AGeneric", 
+            "Filecoder", 
+            "D@6sd9xy", 
+            "Wadhrama", 
+            "VirusEncoder", 
+            "ILHO", 
+            "R213980", 
+            "GdSda", 
+            "Static AI", 
+            "Malicious PE", 
+            "susgen", 
+            "confidence", 
+            "100%"
+        ], 
+        "total": 69, 
+        "positives": 52, 
+        "verbose_msg": "Scan finished, information embedded", 
+        "md5": "134455912826cf0de4750f77909ba624", 
+        "scans": {
+            "Bkav": {
+                "detected": true, 
+                "version": "2.0.0.1", 
+                "result": "W32.AIDetectMalware", 
+                "normalized": [
+                    "AIDetectMalware"
+                ], 
+                "update": "20240226"
+            }, 
+            "Lionic": {
+                "detected": true, 
+                "version": "7.5", 
+                "result": "Trojan.Win32.Crusis.tqMs", 
+                "normalized": [
+                    "Crusis", 
+                    "tqMs"
+                ], 
+                "update": "20240226"
+            }, 
+            "Elastic": {
+                "detected": true, 
+                "version": "4.0.132", 
+                "result": "Windows.Ransomware.Dharma", 
+                "normalized": [
+                    "Windows", 
+                    "Ransomware", 
+                    "Dharma"
+                ], 
+                "update": "20240223"
+            }, 
+            "Cynet": {
+                "detected": true, 
+                "version": "4.0.0.29", 
+                "result": "Malicious (score: 100)", 
+                "normalized": [
+                    "Malicious", 
+                    "score"
+                ], 
+                "update": "20240226"
+            }, 
+            "CMC": {
+                "detected": false, 
+                "version": "2.4.2022.1", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20240129"
+            }, 
+            "CAT-QuickHeal": {
+                "detected": true, 
+                "version": "22.00", 
+                "result": "Ransom.Crysis.S162740", 
+                "normalized": [
+                    "Crysis", 
+                    "S162740"
+                ], 
+                "update": "20240225"
+            }, 
+            "Skyhigh": {
+                "detected": true, 
+                "version": "v2021.2.0+4045", 
+                "result": "BehavesLike.Win32.Generic.cc", 
+                "normalized": [], 
+                "update": "20240225"
+            }, 
+            "ALYac": {
+                "detected": true, 
+                "version": "2.0.0.8", 
+                "result": "Trojan.Ransom.Crysis", 
+                "normalized": [
+                    "Crysis"
+                ], 
+                "update": "20240226"
+            }, 
+            "Cylance": {
+                "detected": true, 
+                "version": "2.0.0.0", 
+                "result": "unsafe", 
+                "normalized": [
+                    "unsafe"
+                ], 
+                "update": "20240208"
+            }, 
+            "VIPRE": {
+                "detected": true, 
+                "version": "6.0.0.35", 
+                "result": "Trojan.Ransom.Crysis.E", 
+                "normalized": [
+                    "Crysis"
+                ], 
+                "update": "20240225"
+            }, 
+            "Sangfor": {
+                "detected": true, 
+                "version": "2.23.0.0", 
+                "result": "Ransom.Win32.Save.a", 
+                "normalized": [
+                    "Save"
+                ], 
+                "update": "20240129"
+            }, 
+            "K7AntiVirus": {
+                "detected": true, 
+                "version": "12.143.51186", 
+                "result": "Trojan ( 00519f781 )", 
+                "normalized": [], 
+                "update": "20240226"
+            }, 
+            "BitDefender": {
+                "detected": true, 
+                "version": "7.2", 
+                "result": "Trojan.Ransom.Crysis.E", 
+                "normalized": [
+                    "Crysis"
+                ], 
+                "update": "20240226"
+            }, 
+            "K7GW": {
+                "detected": true, 
+                "version": "12.143.51184", 
+                "result": "Trojan ( 00519f781 )", 
+                "normalized": [], 
+                "update": "20240226"
+            }, 
+            "Cybereason": {
+                "detected": true, 
+                "version": "1.2.449", 
+                "result": "malicious.7e4805", 
+                "normalized": [
+                    "malicious"
+                ], 
+                "update": "20231102"
+            }, 
+            "Arcabit": {
+                "detected": true, 
+                "version": "2022.0.0.18", 
+                "result": "Trojan.Ransom.Crysis.E", 
+                "normalized": [
+                    "Crysis"
+                ], 
+                "update": "20240226"
+            }, 
+            "Baidu": {
+                "detected": false, 
+                "version": "1.0.0.2", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20190318"
+            }, 
+            "VirIT": {
+                "detected": true, 
+                "version": "9.5.647", 
+                "result": "Trojan.Win32.Genus.DPSG", 
+                "normalized": [
+                    "Genus", 
+                    "DPSG"
+                ], 
+                "update": "20240223"
+            }, 
+            "Symantec": {
+                "detected": true, 
+                "version": "1.21.0.0", 
+                "result": "Ransom.Crysis", 
+                "normalized": [
+                    "Crysis"
+                ], 
+                "update": "20240226"
+            }, 
+            "tehtris": {
+                "detected": false, 
+                "version": "v0.1.4", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20240226"
+            }, 
+            "APEX": {
+                "detected": true, 
+                "version": "6.504", 
+                "result": "Malicious", 
+                "normalized": [
+                    "Malicious"
+                ], 
+                "update": "20240225"
+            }, 
+            "McAfee": {
+                "detected": true, 
+                "version": "6.0.6.653", 
+                "result": "GenericRXEA-GI!134455912826", 
+                "normalized": [
+                    "GenericRXEA"
+                ], 
+                "update": "20240226"
+            }, 
+            "Avast": {
+                "detected": false, 
+                "version": "23.9.8494.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20240226"
+            }, 
+            "ClamAV": {
+                "detected": true, 
+                "version": "1.3.0.0", 
+                "result": "Win.Trojan.Dharma-6668198-0", 
+                "normalized": [
+                    "Dharma"
+                ], 
+                "update": "20240226"
+            }, 
+            "Kaspersky": {
+                "detected": true, 
+                "version": "22.0.1.28", 
+                "result": "Trojan-Ransom.Win32.Crusis.to", 
+                "normalized": [
+                    "Crusis"
+                ], 
+                "update": "20240226"
+            }, 
+            "Alibaba": {
+                "detected": true, 
+                "version": "0.3.0.5", 
+                "result": "Ransom:Win32/Crusis.2b2", 
+                "normalized": [
+                    "Crusis"
+                ], 
+                "update": "20190527"
+            }, 
+            "NANO-Antivirus": {
+                "detected": false, 
+                "version": "1.0.146.25796", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20240226"
+            }, 
+            "SUPERAntiSpyware": {
+                "detected": false, 
+                "version": "5.6.0.1032", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20240226"
+            }, 
+            "MicroWorld-eScan": {
+                "detected": true, 
+                "version": "14.0.409.0", 
+                "result": "Trojan.Ransom.Crysis.E", 
+                "normalized": [
+                    "Crysis"
+                ], 
+                "update": "20240226"
+            }, 
+            "Rising": {
+                "detected": true, 
+                "version": "25.0.0.27", 
+                "result": "Ransom.Crysis!1.A6AA (CLASSIC)", 
+                "normalized": [
+                    "Crysis", 
+                    "CLASSIC"
+                ], 
+                "update": "20240226"
+            }, 
+            "Emsisoft": {
+                "detected": true, 
+                "version": "2022.6.0.32461", 
+                "result": "Trojan.Ransom.Crysis.E (B)", 
+                "normalized": [
+                    "Crysis"
+                ], 
+                "update": "20240226"
+            }, 
+            "F-Secure": {
+                "detected": false, 
+                "version": "18.10.1547.307", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20240226"
+            }, 
+            "DrWeb": {
+                "detected": true, 
+                "version": "7.0.62.1180", 
+                "result": "Trojan.Encoder.3953", 
+                "normalized": [], 
+                "update": "20240226"
+            }, 
+            "Zillya": {
+                "detected": true, 
+                "version": "2.0.0.5057", 
+                "result": "Trojan.Crusis.Win32.1111", 
+                "normalized": [
+                    "Crusis"
+                ], 
+                "update": "20240222"
+            }, 
+            "TrendMicro": {
+                "detected": true, 
+                "version": "11.0.0.1006", 
+                "result": "Ransom.Win32.CRYSIS.SMAL01", 
+                "normalized": [
+                    "CRYSIS", 
+                    "SMAL01"
+                ], 
+                "update": "20240226"
+            }, 
+            "FireEye": {
+                "detected": true, 
+                "version": "35.47.0.0", 
+                "result": "Trojan.Ransom.Crysis.E", 
+                "normalized": [
+                    "Crysis"
+                ], 
+                "update": "20240226"
+            }, 
+            "Sophos": {
+                "detected": true, 
+                "version": "2.4.3.0", 
+                "result": "Mal/Criakl-B", 
+                "normalized": [
+                    "Criakl"
+                ], 
+                "update": "20240226"
+            }, 
+            "Ikarus": {
+                "detected": true, 
+                "version": "6.3.9.0", 
+                "result": "Trojan-Ransom.Crysis", 
+                "normalized": [
+                    "Crysis"
+                ], 
+                "update": "20240226"
+            }, 
+            "Webroot": {
+                "detected": false, 
+                "version": "1.0.0.403", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20240226"
+            }, 
+            "Google": {
+                "detected": true, 
+                "version": "1708939838", 
+                "result": "Detected", 
+                "normalized": [
+                    "Detected"
+                ], 
+                "update": "20240226"
+            }, 
+            "Avira": {
+                "detected": false, 
+                "version": "8.3.3.16", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20240226"
+            }, 
+            "MAX": {
+                "detected": true, 
+                "version": "2023.1.4.1", 
+                "result": "malware (ai score=82)", 
+                "normalized": [
+                    "ai score=82"
+                ], 
+                "update": "20240226"
+            }, 
+            "Antiy-AVL": {
+                "detected": true, 
+                "version": "3.0", 
+                "result": "Trojan/Win32.AGeneric", 
+                "normalized": [
+                    "AGeneric"
+                ], 
+                "update": "20240226"
+            }, 
+            "Kingsoft": {
+                "detected": false, 
+                "version": "None", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20230906"
+            }, 
+            "Gridinsoft": {
+                "detected": true, 
+                "version": "1.0.167.174", 
+                "result": "Ransom.Filecoder.20279.sd!yf", 
+                "normalized": [
+                    "Filecoder"
+                ], 
+                "update": "20240226"
+            }, 
+            "Xcitium": {
+                "detected": true, 
+                "version": "36471", 
+                "result": "TrojWare.Win32.Crysis.D@6sd9xy", 
+                "normalized": [
+                    "Crysis", 
+                    "D@6sd9xy"
+                ], 
+                "update": "20240226"
+            }, 
+            "Microsoft": {
+                "detected": true, 
+                "version": "1.1.24010.10", 
+                "result": "Ransom:Win32/Wadhrama!pz", 
+                "normalized": [
+                    "Wadhrama"
+                ], 
+                "update": "20240226"
+            }, 
+            "ViRobot": {
+                "detected": true, 
+                "version": "2014.3.20.0", 
+                "result": "Trojan.Win32.Ransom.94720.F", 
+                "normalized": [], 
+                "update": "20240226"
+            }, 
+            "ZoneAlarm": {
+                "detected": true, 
+                "version": "1.0", 
+                "result": "Trojan-Ransom.Win32.Crusis.to", 
+                "normalized": [
+                    "Crusis"
+                ], 
+                "update": "20240226"
+            }, 
+            "GData": {
+                "detected": true, 
+                "version": "A:25.37443B:27.35069", 
+                "result": "Win32.Trojan-Ransom.VirusEncoder.A", 
+                "normalized": [
+                    "VirusEncoder"
+                ], 
+                "update": "20240226"
+            }, 
+            "Varist": {
+                "detected": true, 
+                "version": "6.5.1.2", 
+                "result": "W32/Trojan.ILHO-9216", 
+                "normalized": [
+                    "ILHO"
+                ], 
+                "update": "20240226"
+            }, 
+            "AhnLab-V3": {
+                "detected": true, 
+                "version": "3.25.1.10473", 
+                "result": "Ransomware/Win.Crysis.R213980", 
+                "normalized": [
+                    "Ransomware", 
+                    "Crysis", 
+                    "R213980"
+                ], 
+                "update": "20240226"
+            }, 
+            "Acronis": {
+                "detected": false, 
+                "version": "1.2.0.121", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20230828"
+            }, 
+            "BitDefenderTheta": {
+                "detected": false, 
+                "version": "7.2.37796.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20240202"
+            }, 
+            "TACHYON": {
+                "detected": true, 
+                "version": "2024-02-26.02", 
+                "result": "Ransom/W32.Crusis.102912", 
+                "normalized": [
+                    "Crusis"
+                ], 
+                "update": "20240226"
+            }, 
+            "DeepInstinct": {
+                "detected": true, 
+                "version": "5.0.0.8", 
+                "result": "MALICIOUS", 
+                "normalized": [
+                    "MALICIOUS"
+                ], 
+                "update": "20240226"
+            }, 
+            "VBA32": {
+                "detected": false, 
+                "version": "5.0.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20240226"
+            }, 
+            "Malwarebytes": {
+                "detected": true, 
+                "version": "4.5.5.54", 
+                "result": "Generic.Malware.AI.DDS", 
+                "normalized": [], 
+                "update": "20240226"
+            }, 
+            "Panda": {
+                "detected": true, 
+                "version": "4.6.4.2", 
+                "result": "Trj/GdSda.A", 
+                "normalized": [
+                    "GdSda"
+                ], 
+                "update": "20240225"
+            }, 
+            "Zoner": {
+                "detected": false, 
+                "version": "2.2.2.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20240226"
+            }, 
+            "TrendMicro-HouseCall": {
+                "detected": true, 
+                "version": "10.0.0.1040", 
+                "result": "Ransom.Win32.CRYSIS.SMAL01", 
+                "normalized": [
+                    "CRYSIS", 
+                    "SMAL01"
+                ], 
+                "update": "20240226"
+            }, 
+            "Tencent": {
+                "detected": true, 
+                "version": "1.0.0.1", 
+                "result": "Trojan-Ransom.Win32.Crysis.a", 
+                "normalized": [
+                    "Crysis"
+                ], 
+                "update": "20240226"
+            }, 
+            "Yandex": {
+                "detected": false, 
+                "version": "5.5.2.24", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20240226"
+            }, 
+            "SentinelOne": {
+                "detected": true, 
+                "version": "24.1.0.5", 
+                "result": "Static AI - Malicious PE", 
+                "normalized": [
+                    "Static AI", 
+                    "Malicious PE"
+                ], 
+                "update": "20240129"
+            }, 
+            "MaxSecure": {
+                "detected": true, 
+                "version": "1.0.0.1", 
+                "result": "Trojan.Malware.300983.susgen", 
+                "normalized": [
+                    "susgen"
+                ], 
+                "update": "20240224"
+            }, 
+            "Fortinet": {
+                "detected": true, 
+                "version": "None", 
+                "result": "W32/Crysis.E!dam", 
+                "normalized": [
+                    "Crysis"
+                ], 
+                "update": "20240226"
+            }, 
+            "AVG": {
+                "detected": false, 
+                "version": "23.9.8494.0", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20240226"
+            }, 
+            "Paloalto": {
+                "detected": false, 
+                "version": "0.9.0.1003", 
+                "result": null, 
+                "normalized": [], 
+                "update": "20240226"
+            }, 
+            "CrowdStrike": {
+                "detected": true, 
+                "version": "1.0", 
+                "result": "win/malicious_confidence_100% (W)", 
+                "normalized": [
+                    "malicious", 
+                    "confidence", 
+                    "100%"
+                ], 
+                "update": "20231026"
+            }
+        }
+    }, 
+    "network": {
+        "udp": [], 
+        "dns_servers": [], 
+        "http": [], 
+        "smtp": [], 
+        "tcp": [], 
+        "geoinfo": {}, 
+        "mitm": [], 
+        "https_ex": [], 
+        "http_ex": [], 
+        "sorted_pcap_sha256": "5a70424f87333115070f2de3f8b8d88e0ad7da07f89351983998e1298460fe47", 
+        "icmp": [], 
+        "tls": [], 
+        "dead_hosts": [], 
+        "smtp_ex": [], 
+        "hosts": [], 
+        "pcap_sha256": "2189ba6a65881f9eca10b8dc78ce5e07845383ab7e9864e753ea52dee2767b57", 
+        "dns": [], 
+        "domains": [], 
+        "irc": []
+    }, 
+    "resubmit": {
+        "resubmit_ids": []
+    }, 
+    "static": {
+        "pdb_path": "C:\\crysis\\Release\\PDB\\payload.pdb", 
+        "pe_imports": [
+            {
+                "imports": [
+                    {
+                        "name": "GetProcAddress", 
+                        "address": "0x40b000"
+                    }, 
+                    {
+                        "name": "LoadLibraryA", 
+                        "address": "0x40b004"
+                    }, 
+                    {
+                        "name": "WaitForSingleObject", 
+                        "address": "0x40b008"
+                    }, 
+                    {
+                        "name": "InitializeCriticalSectionAndSpinCount", 
+                        "address": "0x40b00c"
+                    }, 
+                    {
+                        "name": "LeaveCriticalSection", 
+                        "address": "0x40b010"
+                    }, 
+                    {
+                        "name": "GetLastError", 
+                        "address": "0x40b014"
+                    }, 
+                    {
+                        "name": "EnterCriticalSection", 
+                        "address": "0x40b018"
+                    }, 
+                    {
+                        "name": "ReleaseMutex", 
+                        "address": "0x40b01c"
+                    }, 
+                    {
+                        "name": "CloseHandle", 
+                        "address": "0x40b020"
+                    }
+                ], 
+                "dll": "KERNEL32.dll"
+            }
+        ], 
+        "peid_signatures": null, 
+        "keys": [], 
+        "signature": [], 
+        "pe_timestamp": "2017-03-03 01:49:06", 
+        "pe_exports": [], 
+        "imported_dll_count": 1, 
+        "pe_imphash": "f86dec4a80961955a89e7ed62046cc0e", 
+        "pe_resources": [], 
+        "pe_versioninfo": [], 
+        "pe_sections": [
+            {
+                "size_of_data": "0x00009e00", 
+                "virtual_address": "0x00001000", 
+                "entropy": 5.965306229244429, 
+                "name": ".text", 
+                "virtual_size": "0x00009c25"
+            }, 
+            {
+                "size_of_data": "0x00002800", 
+                "virtual_address": "0x0000b000", 
+                "entropy": 7.78504061338529, 
+                "name": ".rdata", 
+                "virtual_size": "0x00002636"
+            }, 
+            {
+                "size_of_data": "0x0000a800", 
+                "virtual_address": "0x0000e000", 
+                "entropy": 7.982962737603744, 
+                "name": ".data", 
+                "virtual_size": "0x0000aad5"
+            }, 
+            {
+                "size_of_data": "0x00002000", 
+                "virtual_address": "0x00019000", 
+                "entropy": 0.0, 
+                "name": ".idata", 
+                "virtual_size": "0x00002000"
+            }
+        ]
+    }, 
+    "snort": {
+        "alerts": []
+    }, 
+    "behavior": {
+        "generic": [
+            {
+                "process_path": "C:\\Windows\\System32\\lsass.exe", 
+                "process_name": "lsass.exe", 
+                "pid": 500, 
+                "summary": {}, 
+                "first_seen": 1782748147.90625, 
+                "ppid": 388
+            }
+        ], 
+        "processes": [
+            {
+                "process_path": "C:\\Windows\\System32\\lsass.exe", 
+                "calls": [], 
+                "track": false, 
+                "pid": 500, 
+                "process_name": "lsass.exe", 
+                "command_line": "C:\\Windows\\system32\\lsass.exe", 
+                "modules": [
+                    {
+                        "basename": "lsass.exe", 
+                        "imgsize": 49152, 
+                        "baseaddr": "0xff2d0000", 
+                        "filepath": "C:\\Windows\\system32\\lsass.exe"
+                    }, 
+                    {
+                        "basename": "ntdll.dll", 
+                        "imgsize": 1740800, 
+                        "baseaddr": "0x76dd0000", 
+                        "filepath": "C:\\Windows\\SYSTEM32\\ntdll.dll"
+                    }, 
+                    {
+                        "basename": "kernel32.dll", 
+                        "imgsize": 1175552, 
+                        "baseaddr": "0x76cb0000", 
+                        "filepath": "C:\\Windows\\system32\\kernel32.dll"
+                    }, 
+                    {
+                        "basename": "KERNELBASE.dll", 
+                        "imgsize": 438272, 
+                        "baseaddr": "0x7fefcc30000", 
+                        "filepath": "C:\\Windows\\system32\\KERNELBASE.dll"
+                    }, 
+                    {
+                        "basename": "msvcrt.dll", 
+                        "imgsize": 651264, 
+                        "baseaddr": "0x7fefd890000", 
+                        "filepath": "C:\\Windows\\system32\\msvcrt.dll"
+                    }, 
+                    {
+                        "basename": "RPCRT4.dll", 
+                        "imgsize": 1232896, 
+                        "baseaddr": "0x7fefdbf0000", 
+                        "filepath": "C:\\Windows\\system32\\RPCRT4.dll"
+                    }, 
+                    {
+                        "basename": "SspiSrv.dll", 
+                        "imgsize": 45056, 
+                        "baseaddr": "0x7fefc9d0000", 
+                        "filepath": "C:\\Windows\\system32\\SspiSrv.dll"
+                    }, 
+                    {
+                        "basename": "lsasrv.dll", 
+                        "imgsize": 1470464, 
+                        "baseaddr": "0x7fefc860000", 
+                        "filepath": "C:\\Windows\\system32\\lsasrv.dll"
+                    }, 
+                    {
+                        "basename": "sechost.dll", 
+                        "imgsize": 126976, 
+                        "baseaddr": "0x7fefee10000", 
+                        "filepath": "C:\\Windows\\SYSTEM32\\sechost.dll"
+                    }, 
+                    {
+                        "basename": "SspiCli.dll", 
+                        "imgsize": 151552, 
+                        "baseaddr": "0x7fefc9e0000", 
+                        "filepath": "C:\\Windows\\system32\\SspiCli.dll"
+                    }, 
+                    {
+                        "basename": "ADVAPI32.dll", 
+                        "imgsize": 897024, 
+                        "baseaddr": "0x7fefd930000", 
+                        "filepath": "C:\\Windows\\system32\\ADVAPI32.dll"
+                    }, 
+                    {
+                        "basename": "USER32.dll", 
+                        "imgsize": 1024000, 
+                        "baseaddr": "0x76bb0000", 
+                        "filepath": "C:\\Windows\\system32\\USER32.dll"
+                    }, 
+                    {
+                        "basename": "GDI32.dll", 
+                        "imgsize": 421888, 
+                        "baseaddr": "0x7fefee30000", 
+                        "filepath": "C:\\Windows\\system32\\GDI32.dll"
+                    }, 
+                    {
+                        "basename": "LPK.dll", 
+                        "imgsize": 57344, 
+                        "baseaddr": "0x7fefd830000", 
+                        "filepath": "C:\\Windows\\system32\\LPK.dll"
+                    }, 
+                    {
+                        "basename": "USP10.dll", 
+                        "imgsize": 823296, 
+                        "baseaddr": "0x7fefed40000", 
+                        "filepath": "C:\\Windows\\system32\\USP10.dll"
+                    }, 
+                    {
+                        "basename": "SAMSRV.dll", 
+                        "imgsize": 774144, 
+                        "baseaddr": "0x7fefc6b0000", 
+                        "filepath": "C:\\Windows\\system32\\SAMSRV.dll"
+                    }, 
+                    {
+                        "basename": "cryptdll.dll", 
+                        "imgsize": 81920, 
+                        "baseaddr": "0x7fefc690000", 
+                        "filepath": "C:\\Windows\\system32\\cryptdll.dll"
+                    }, 
+                    {
+                        "basename": "MSASN1.dll", 
+                        "imgsize": 61440, 
+                        "baseaddr": "0x7fefcc20000", 
+                        "filepath": "C:\\Windows\\system32\\MSASN1.dll"
+                    }, 
+                    {
+                        "basename": "wevtapi.dll", 
+                        "imgsize": 446464, 
+                        "baseaddr": "0x7fefc620000", 
+                        "filepath": "C:\\Windows\\system32\\wevtapi.dll"
+                    }, 
+                    {
+                        "basename": "IMM32.DLL", 
+                        "imgsize": 188416, 
+                        "baseaddr": "0x7fefd5d0000", 
+                        "filepath": "C:\\Windows\\system32\\IMM32.DLL"
+                    }, 
+                    {
+                        "basename": "MSCTF.dll", 
+                        "imgsize": 1085440, 
+                        "baseaddr": "0x7fefd600000", 
+                        "filepath": "C:\\Windows\\system32\\MSCTF.dll"
+                    }, 
+                    {
+                        "basename": "cngaudit.dll", 
+                        "imgsize": 36864, 
+                        "baseaddr": "0x7fefc610000", 
+                        "filepath": "C:\\Windows\\system32\\cngaudit.dll"
+                    }, 
+                    {
+                        "basename": "AUTHZ.dll", 
+                        "imgsize": 192512, 
+                        "baseaddr": "0x7fefc5e0000", 
+                        "filepath": "C:\\Windows\\system32\\AUTHZ.dll"
+                    }, 
+                    {
+                        "basename": "ncrypt.dll", 
+                        "imgsize": 319488, 
+                        "baseaddr": "0x7fefc590000", 
+                        "filepath": "C:\\Windows\\system32\\ncrypt.dll"
+                    }, 
+                    {
+                        "basename": "bcrypt.dll", 
+                        "imgsize": 139264, 
+                        "baseaddr": "0x7fefc560000", 
+                        "filepath": "C:\\Windows\\system32\\bcrypt.dll"
+                    }, 
+                    {
+                        "basename": "msprivs.DLL", 
+                        "imgsize": 8192, 
+                        "baseaddr": "0x749b0000", 
+                        "filepath": "C:\\Windows\\system32\\msprivs.DLL"
+                    }, 
+                    {
+                        "basename": "netjoin.dll", 
+                        "imgsize": 204800, 
+                        "baseaddr": "0x7fefc520000", 
+                        "filepath": "C:\\Windows\\system32\\netjoin.dll"
+                    }, 
+                    {
+                        "basename": "negoexts.DLL", 
+                        "imgsize": 147456, 
+                        "baseaddr": "0x7fefc4f0000", 
+                        "filepath": "C:\\Windows\\system32\\negoexts.DLL"
+                    }, 
+                    {
+                        "basename": "Secur32.dll", 
+                        "imgsize": 45056, 
+                        "baseaddr": "0x7fefc810000", 
+                        "filepath": "C:\\Windows\\system32\\Secur32.dll"
+                    }, 
+                    {
+                        "basename": "cryptbase.dll", 
+                        "imgsize": 61440, 
+                        "baseaddr": "0x7fefca70000", 
+                        "filepath": "C:\\Windows\\system32\\cryptbase.dll"
+                    }, 
+                    {
+                        "basename": "kerberos.DLL", 
+                        "imgsize": 737280, 
+                        "baseaddr": "0x7fefc430000", 
+                        "filepath": "C:\\Windows\\system32\\kerberos.DLL"
+                    }, 
+                    {
+                        "basename": "CRYPTSP.dll", 
+                        "imgsize": 94208, 
+                        "baseaddr": "0x7fefc410000", 
+                        "filepath": "C:\\Windows\\system32\\CRYPTSP.dll"
+                    }, 
+                    {
+                        "basename": "WS2_32.dll", 
+                        "imgsize": 315392, 
+                        "baseaddr": "0x7fefd840000", 
+                        "filepath": "C:\\Windows\\system32\\WS2_32.dll"
+                    }, 
+                    {
+                        "basename": "NSI.dll", 
+                        "imgsize": 32768, 
+                        "baseaddr": "0x7fefec30000", 
+                        "filepath": "C:\\Windows\\system32\\NSI.dll"
+                    }, 
+                    {
+                        "basename": "mswsock.dll", 
+                        "imgsize": 348160, 
+                        "baseaddr": "0x7fefc3b0000", 
+                        "filepath": "C:\\Windows\\system32\\mswsock.dll"
+                    }, 
+                    {
+                        "basename": "wship6.dll", 
+                        "imgsize": 28672, 
+                        "baseaddr": "0x7fefc3a0000", 
+                        "filepath": "C:\\Windows\\System32\\wship6.dll"
+                    }, 
+                    {
+                        "basename": "msv1_0.DLL", 
+                        "imgsize": 331776, 
+                        "baseaddr": "0x7fefc340000", 
+                        "filepath": "C:\\Windows\\system32\\msv1_0.DLL"
+                    }, 
+                    {
+                        "basename": "netlogon.DLL", 
+                        "imgsize": 712704, 
+                        "baseaddr": "0x7fefc290000", 
+                        "filepath": "C:\\Windows\\system32\\netlogon.DLL"
+                    }, 
+                    {
+                        "basename": "DNSAPI.dll", 
+                        "imgsize": 372736, 
+                        "baseaddr": "0x7fefc230000", 
+                        "filepath": "C:\\Windows\\system32\\DNSAPI.dll"
+                    }, 
+                    {
+                        "basename": "logoncli.dll", 
+                        "imgsize": 196608, 
+                        "baseaddr": "0x7fefc200000", 
+                        "filepath": "C:\\Windows\\system32\\logoncli.dll"
+                    }, 
+                    {
+                        "basename": "schannel.DLL", 
+                        "imgsize": 356352, 
+                        "baseaddr": "0x7fefc1a0000", 
+                        "filepath": "C:\\Windows\\system32\\schannel.DLL"
+                    }, 
+                    {
+                        "basename": "CRYPT32.dll", 
+                        "imgsize": 1470464, 
+                        "baseaddr": "0x7fefcd20000", 
+                        "filepath": "C:\\Windows\\system32\\CRYPT32.dll"
+                    }, 
+                    {
+                        "basename": "wdigest.DLL", 
+                        "imgsize": 221184, 
+                        "baseaddr": "0x7fefc160000", 
+                        "filepath": "C:\\Windows\\system32\\wdigest.DLL"
+                    }, 
+                    {
+                        "basename": "rsaenh.dll", 
+                        "imgsize": 290816, 
+                        "baseaddr": "0x7fefc110000", 
+                        "filepath": "C:\\Windows\\system32\\rsaenh.dll"
+                    }, 
+                    {
+                        "basename": "tspkg.DLL", 
+                        "imgsize": 98304, 
+                        "baseaddr": "0x7fefc0f0000", 
+                        "filepath": "C:\\Windows\\system32\\tspkg.DLL"
+                    }, 
+                    {
+                        "basename": "pku2u.DLL", 
+                        "imgsize": 282624, 
+                        "baseaddr": "0x7fefc0a0000", 
+                        "filepath": "C:\\Windows\\system32\\pku2u.DLL"
+                    }, 
+                    {
+                        "basename": "bcryptprimitives.dll", 
+                        "imgsize": 311296, 
+                        "baseaddr": "0x7fefc050000", 
+                        "filepath": "C:\\Windows\\system32\\bcryptprimitives.dll"
+                    }, 
+                    {
+                        "basename": "RpcRtRemote.dll", 
+                        "imgsize": 81920, 
+                        "baseaddr": "0x7fefcb60000", 
+                        "filepath": "C:\\Windows\\system32\\RpcRtRemote.dll"
+                    }, 
+                    {
+                        "basename": "efslsaext.dll", 
+                        "imgsize": 73728, 
+                        "baseaddr": "0x7fefc030000", 
+                        "filepath": "C:\\Windows\\system32\\efslsaext.dll"
+                    }, 
+                    {
+                        "basename": "scecli.DLL", 
+                        "imgsize": 253952, 
+                        "baseaddr": "0x7fefbff0000", 
+                        "filepath": "C:\\Windows\\system32\\scecli.DLL"
+                    }, 
+                    {
+                        "basename": "credssp.dll", 
+                        "imgsize": 40960, 
+                        "baseaddr": "0x7fefbfe0000", 
+                        "filepath": "C:\\Windows\\system32\\credssp.dll"
+                    }, 
+                    {
+                        "basename": "WINSTA.dll", 
+                        "imgsize": 249856, 
+                        "baseaddr": "0x7fefcb20000", 
+                        "filepath": "C:\\Windows\\system32\\WINSTA.dll"
+                    }, 
+                    {
+                        "basename": "IPHLPAPI.DLL", 
+                        "imgsize": 159744, 
+                        "baseaddr": "0x7fefa770000", 
+                        "filepath": "C:\\Windows\\system32\\IPHLPAPI.DLL"
+                    }, 
+                    {
+                        "basename": "WINNSI.DLL", 
+                        "imgsize": 45056, 
+                        "baseaddr": "0x7fefa760000", 
+                        "filepath": "C:\\Windows\\system32\\WINNSI.DLL"
+                    }, 
+                    {
+                        "basename": "netutils.dll", 
+                        "imgsize": 49152, 
+                        "baseaddr": "0x7fefa4c0000", 
+                        "filepath": "C:\\Windows\\system32\\netutils.dll"
+                    }, 
+                    {
+                        "basename": "USERENV.dll", 
+                        "imgsize": 122880, 
+                        "baseaddr": "0x7fefbed0000", 
+                        "filepath": "C:\\Windows\\system32\\USERENV.dll"
+                    }, 
+                    {
+                        "basename": "profapi.dll", 
+                        "imgsize": 61440, 
+                        "baseaddr": "0x7fefcb80000", 
+                        "filepath": "C:\\Windows\\system32\\profapi.dll"
+                    }, 
+                    {
+                        "basename": "wshtcpip.dll", 
+                        "imgsize": 28672, 
+                        "baseaddr": "0x7fefbdb0000", 
+                        "filepath": "C:\\Windows\\System32\\wshtcpip.dll"
+                    }, 
+                    {
+                        "basename": "dssenh.dll", 
+                        "imgsize": 204800, 
+                        "baseaddr": "0x7fef4ec0000", 
+                        "filepath": "C:\\Windows\\system32\\dssenh.dll"
+                    }, 
+                    {
+                        "basename": "GPAPI.dll", 
+                        "imgsize": 110592, 
+                        "baseaddr": "0x7fefbeb0000", 
+                        "filepath": "C:\\Windows\\system32\\GPAPI.dll"
+                    }, 
+                    {
+                        "basename": "monitor-x64.dll", 
+                        "imgsize": 2269184, 
+                        "baseaddr": "0x73eb0000", 
+                        "filepath": "C:\\tmpwoh6zt\\bin\\monitor-x64.dll"
+                    }
+                ], 
+                "time": 0, 
+                "tid": 1516, 
+                "first_seen": 1782748147.90625, 
+                "ppid": 388, 
+                "type": "process"
+            }
+        ], 
+        "processtree": [
+            {
+                "track": false, 
+                "pid": 500, 
+                "process_name": "lsass.exe", 
+                "command_line": "C:\\Windows\\system32\\lsass.exe", 
+                "first_seen": 1782748147.90625, 
+                "ppid": 388, 
+                "children": []
+            }
+        ]
+    }, 
+    "debug": {
+        "action": [], 
+        "dbgview": [], 
+        "errors": [], 
+        "log": [
+            "2026-06-29 14:49:07,015 [analyzer] DEBUG: Starting analyzer from: C:\\tmpwoh6zt\n", 
+            "2026-06-29 14:49:07,015 [analyzer] DEBUG: Pipe server name: \\??\\PIPE\\JwWMYkejHIcMoROy\n", 
+            "2026-06-29 14:49:07,015 [analyzer] DEBUG: Log pipe server name: \\??\\PIPE\\DrQOeVTCkhrbmwVixKriSCEMIFoPopD\n", 
+            "2026-06-29 14:49:07,296 [analyzer] DEBUG: Started auxiliary module Curtain\n", 
+            "2026-06-29 14:49:07,296 [analyzer] DEBUG: Started auxiliary module DbgView\n", 
+            "2026-06-29 14:49:07,765 [analyzer] DEBUG: Started auxiliary module Disguise\n", 
+            "2026-06-29 14:49:07,967 [analyzer] DEBUG: Loaded monitor into process with pid 500\n", 
+            "2026-06-29 14:49:07,967 [analyzer] DEBUG: Started auxiliary module DumpTLSMasterSecrets\n", 
+            "2026-06-29 14:49:07,967 [analyzer] DEBUG: Started auxiliary module Human\n", 
+            "2026-06-29 14:49:07,967 [analyzer] DEBUG: Started auxiliary module InstallCertificate\n", 
+            "2026-06-29 14:49:07,967 [analyzer] DEBUG: Started auxiliary module Reboot\n", 
+            "2026-06-29 14:49:08,046 [analyzer] DEBUG: Started auxiliary module RecentFiles\n", 
+            "2026-06-29 14:49:08,046 [analyzer] DEBUG: Started auxiliary module Screenshots\n", 
+            "2026-06-29 14:49:08,062 [analyzer] DEBUG: Started auxiliary module Sysmon\n", 
+            "2026-06-29 14:49:08,062 [analyzer] DEBUG: Started auxiliary module LoadZer0m0n\n", 
+            "2026-06-29 14:49:08,140 [lib.api.process] ERROR: Failed to execute process from path u'C:\\\\Users\\\\ADMINI~1\\\\AppData\\\\Local\\\\Temp\\\\a191d7d045dcf61582f2257bded2734b4ca424b1cf66ff519763c1888ec83190.exe' with arguments ['bin\\\\inject-x86.exe', '--app', u'C:\\\\Users\\\\ADMINI~1\\\\AppData\\\\Local\\\\Temp\\\\a191d7d045dcf61582f2257bded2734b4ca424b1cf66ff519763c1888ec83190.exe', '--only-start', '--curdir', 'C:\\\\Users\\\\ADMINI~1\\\\AppData\\\\Local\\\\Temp'] (Error: Command '['bin\\\\inject-x86.exe', '--app', u'C:\\\\Users\\\\ADMINI~1\\\\AppData\\\\Local\\\\Temp\\\\a191d7d045dcf61582f2257bded2734b4ca424b1cf66ff519763c1888ec83190.exe', '--only-start', '--curdir', 'C:\\\\Users\\\\ADMINI~1\\\\AppData\\\\Local\\\\Temp']' returned non-zero exit status 1)\n"
+        ], 
+        "cuckoo": [
+            "2026-06-29 14:49:10,482 [cuckoo.core.scheduler] INFO: Task #7605893: acquired machine win7x643 (label=win7x643)\n", 
+            "2026-06-29 14:49:10,483 [cuckoo.core.resultserver] DEBUG: Now tracking machine 192.168.168.203 for task #7605893\n", 
+            "2026-06-29 14:49:10,871 [cuckoo.auxiliary.sniffer] INFO: Started sniffer with PID 3308849 (interface=vboxnet0, host=192.168.168.203)\n", 
+            "2026-06-29 14:49:11,193 [cuckoo.machinery.virtualbox] DEBUG: Starting vm win7x643\n", 
+            "2026-06-29 14:49:11,890 [cuckoo.machinery.virtualbox] DEBUG: Restoring virtual machine win7x643 to vmcloak\n", 
+            "2026-06-29 14:49:35,101 [cuckoo.core.guest] INFO: Starting analysis #7605893 on guest (id=win7x643, ip=192.168.168.203)\n", 
+            "2026-06-29 14:49:36,107 [cuckoo.core.guest] DEBUG: win7x643: not ready yet\n", 
+            "2026-06-29 14:49:41,131 [cuckoo.core.guest] INFO: Guest is running Cuckoo Agent 0.10 (id=win7x643, ip=192.168.168.203)\n", 
+            "2026-06-29 14:49:41,213 [cuckoo.core.guest] DEBUG: Uploading analyzer to guest (id=win7x643, ip=192.168.168.203, monitor=latest, size=6660546)\n", 
+            "2026-06-29 14:49:42,637 [cuckoo.core.resultserver] DEBUG: Task #7605893: live log analysis.log initialized.\n", 
+            "2026-06-29 14:49:43,557 [cuckoo.core.resultserver] DEBUG: Task #7605893 is sending a BSON stream\n", 
+            "2026-06-29 14:49:44,837 [cuckoo.core.resultserver] DEBUG: Task #7605893: File upload for 'shots/0001.jpg'\n", 
+            "2026-06-29 14:49:44,857 [cuckoo.core.resultserver] DEBUG: Task #7605893 uploaded file length: 133467\n", 
+            "2026-06-29 14:49:45,135 [cuckoo.core.guest] WARNING: win7x643: analysis #7605893 caught an exception\n", 
+            "Traceback (most recent call last):\n", 
+            "  File \"C:/tmpwoh6zt/analyzer.py\", line 824, in <module>\n", 
+            "    success = analyzer.run()\n", 
+            "  File \"C:/tmpwoh6zt/analyzer.py\", line 673, in run\n", 
+            "    pids = self.package.start(self.target)\n", 
+            "  File \"C:\\tmpwoh6zt\\modules\\packages\\exe.py\", line 34, in start\n", 
+            "    return self.execute(path, args=shlex.split(args))\n", 
+            "  File \"C:\\tmpwoh6zt\\lib\\common\\abstracts.py\", line 205, in execute\n", 
+            "    \"Unable to execute the initial process, analysis aborted.\"\n", 
+            "CuckooPackageError: Unable to execute the initial process, analysis aborted.\n", 
+            "\n", 
+            "2026-06-29 14:49:45,149 [cuckoo.core.plugins] DEBUG: Stopped auxiliary module: Redsocks\n", 
+            "2026-06-29 14:49:45,177 [cuckoo.core.plugins] DEBUG: Stopped auxiliary module: Sniffer\n", 
+            "2026-06-29 14:49:46,083 [cuckoo.machinery.virtualbox] INFO: Successfully generated memory dump for virtual machine with label win7x643 to path /srv/cuckoo/cwd/storage/analyses/7605893/memory.dmp\n", 
+            "2026-06-29 14:49:46,084 [cuckoo.machinery.virtualbox] DEBUG: Stopping vm win7x643\n", 
+            "2026-06-29 14:50:02,121 [cuckoo.core.resultserver] DEBUG: Stopped tracking machine 192.168.168.203 for task #7605893\n", 
+            "2026-06-29 14:50:02,122 [cuckoo.core.resultserver] DEBUG: Cancel <Context for LOG> for task 7605893\n", 
+            "2026-06-29 14:50:02,480 [cuckoo.core.scheduler] DEBUG: Released database task #7605893\n", 
+            "2026-06-29 14:50:02,494 [cuckoo.core.scheduler] INFO: Task #7605893: analysis procedure completed\n"
+        ]
+    }, 
+    "strings": [
+        "!This program cannot be run in DOS mode.", 
+        "`.rdata", 
+        "@.data", 
+        ".idata", 
+        "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@>@@@?456789:;<=@@@@@@@", 
+        "@@@@@@", 
+        "\u001f !\"#$%&'()*+,-./0123@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/", 
+        "=j&&LZ66lA??~", 
+        "}{))R>", 
+        "f\"\"D~**T", 
+        "V22dN::t", 
+        "o%%Jr..\\$", 
+        "&&Lj66lZ??~A", 
+        "99rKJJ", 
+        "==zGdd", 
+        "\"\"Df**T~", 
+        ";22dV::tN", 
+        "$$Hl\\\\", 
+        "C77nYmm", 
+        "%%Jo..\\r", 
+        "\u001f\u001f>!KK", 
+        "55j_WW", 
+        "&Lj&6lZ6?~A?", 
+        "~=zG=d", 
+        "\"Df\"*T~*", 
+        "2dV2:tN:", 
+        "x%Jo%.\\r.", 
+        "t\u001f>!\u001fK", 
+        "a5j_5W", 
+        "ggV}++", 
+        "Lj&&lZ66~A??", 
+        "bS11*?", 
+        "Xt,,4.", 
+        "RRvM;;", 
+        "MMfU33", 
+        "PPxD<<%", 
+        "Bc!! 0", 
+        "~~zG==", 
+        "Df\"\"T~**;", 
+        "dV22tN::", 
+        "xxJo%%\\r..8$", 
+        "tt>!\u001f\u001f", 
+        "pp|B>>q", 
+        "aaj_55", 
+        "UUPx((", 
+        "='9-6d", 
+        "_jbF~T", 
+        "11#?*0", 
+        ",4$8_@", 
+        "t\\lHBW", 
+        "QPeA~S", 
+        ">4$8,@", 
+        "p\\lHtW", 
+        "+HpXhE", 
+        "T[$:.6", 
+        "GetProcAddress", 
+        "LoadLibraryA", 
+        "WaitForSingleObject", 
+        "InitializeCriticalSectionAndSpinCount", 
+        "LeaveCriticalSection", 
+        "GetLastError", 
+        "EnterCriticalSection", 
+        "ReleaseMutex", 
+        "CloseHandle", 
+        "KERNEL32.dll", 
+        "RSDS%~m", 
+        "C:\\crysis\\Release\\PDB\\payload.pdb", 
+        "u0dK,I", 
+        "2EIO:(a", 
+        "aSY~.=", 
+        "#@l<~yh", 
+        "nRq8Dr", 
+        "2HuIJ'):7k", 
+        "=%5.LT<", 
+        "%.aqOM", 
+        "I`eXW?", 
+        "hJrrjbkd", 
+        "t]wz{D", 
+        "zj\u001fB#?z0M", 
+        "6_\u001fZ5x", 
+        "3?!<)6", 
+        "17AXLY", 
+        ".Krz#sWs", 
+        "zC=m\"q", 
+        "-={|45", 
+        "kwD{;MHQ.eI", 
+        "(NVu-#", 
+        "wXJe/5", 
+        "/&S2CT", 
+        "a7E$TL", 
+        "sNQ=]?", 
+        "2!(~pi$P", 
+        ">qkS42@A3", 
+        "Hdu$%-", 
+        "4KggPZZ", 
+        "#z*/!C", 
+        "469aUDv6f;", 
+        "'!$w W_", 
+        "Y%.9ztx}", 
+        "?Fo7}1P", 
+        "5x@XV S", 
+        ".2pQ0t", 
+        "u4[*t[", 
+        "e~x$AW", 
+        "/~I4;?", 
+        "8\u001ff/ !", 
+        "[h_=_S", 
+        "D_^L75", 
+        "xx/Yl;W", 
+        "=CZ1CP", 
+        "^bBtlO1", 
+        "w:]9bd", 
+        "BG[+#Xa", 
+        "\\{AZI/t", 
+        "}+B1MQ", 
+        "$~a5^T=", 
+        "opj*tET", 
+        "4Bq;wv.?V", 
+        "\"QW[}u", 
+        ",4\\GDv", 
+        "T e$5~.", 
+        "Troi#$", 
+        "xi1#Io", 
+        "s[^^t:", 
+        "nmx({X", 
+        "1=P234", 
+        "Tm.i@TL", 
+        "ZHkEae", 
+        "4UCm9C>", 
+        "`L[ vuN)", 
+        "ompL^Z", 
+        "Ux/{lb", 
+        "HeiFgd", 
+        "h|C[dA", 
+        "%>~[yw", 
+        "<#!n)a", 
+        "qk8Lm^", 
+        "=H[s+L", 
+        "sssssbsss", 
+        "sssssbs", 
+        "Qkkbal", 
+        "0123456789ABCDEF", 
+        "0123456789ABCDEF"
+    ], 
+    "intelmq": [
+        {
+            "classification_taxonomy": "malicious-code", 
+            "classification_type": "infected-system", 
+            "feed_provider": "CERT-EE", 
+            "time_source": "2026-05-16T17:57:55.212732+00:00", 
+            "feed_name": "Sandbox", 
+            "ioc": "a191d7d045dcf61582f2257bded2734b4ca424b1cf66ff519763c1888ec83190", 
+            "id": "dDHwMZ4Boml50tcGCeSw", 
+            "index": "imq-2026-05", 
+            "url": "https://kips.cert.ee/app/discover#/doc/imq/imq-2026-05/?id=dDHwMZ4Boml50tcGCeSw", 
+            "time_observation": "2026-05-16T17:57:55+00:00", 
+            "feed_accuracy": 50
+        }, 
+        {
+            "classification_taxonomy": "malicious-code", 
+            "classification_type": "infected-system", 
+            "feed_provider": "CERT-EE", 
+            "time_source": "2026-05-16T17:57:55.212835+00:00", 
+            "feed_name": "Sandbox", 
+            "ioc": "a191d7d045dcf61582f2257bded2734b4ca424b1cf66ff519763c1888ec83190", 
+            "id": "dTHwMZ4Boml50tcGCeS5", 
+            "index": "imq-2026-05", 
+            "url": "https://kips.cert.ee/app/discover#/doc/imq/imq-2026-05/?id=dTHwMZ4Boml50tcGCeS5", 
+            "time_observation": "2026-05-16T17:57:55+00:00", 
+            "feed_accuracy": 50
+        }, 
+        {
+            "classification_taxonomy": "malicious-code", 
+            "classification_type": "infected-system", 
+            "feed_provider": "CERT-EE", 
+            "time_source": "2025-06-09T03:47:28.329632+00:00", 
+            "feed_name": "Sandbox", 
+            "ioc": "a191d7d045dcf61582f2257bded2734b4ca424b1cf66ff519763c1888ec83190", 
+            "id": "cW7MUpcBZr4tyZ6Z4Xzi", 
+            "index": "imq-2025-06", 
+            "url": "https://kips.cert.ee/app/discover#/doc/imq/imq-2025-06/?id=cW7MUpcBZr4tyZ6Z4Xzi", 
+            "time_observation": "2025-06-09T03:47:28+00:00", 
+            "feed_accuracy": 50
+        }, 
+        {
+            "classification_taxonomy": "malicious-code", 
+            "classification_type": "infected-system", 
+            "feed_provider": "CERT-EE", 
+            "time_source": "2025-06-09T03:47:28.329778+00:00", 
+            "feed_name": "Sandbox", 
+            "ioc": "a191d7d045dcf61582f2257bded2734b4ca424b1cf66ff519763c1888ec83190", 
+            "id": "cm7MUpcBZr4tyZ6Z4Xzn", 
+            "index": "imq-2025-06", 
+            "url": "https://kips.cert.ee/app/discover#/doc/imq/imq-2025-06/?id=cm7MUpcBZr4tyZ6Z4Xzn", 
+            "time_observation": "2025-06-09T03:47:28+00:00", 
+            "feed_accuracy": 50
+        }, 
+        {
+            "classification_taxonomy": "malicious-code", 
+            "classification_type": "infected-system", 
+            "feed_provider": "CERT-EE", 
+            "time_source": "2024-10-26T00:52:34.027200+00:00", 
+            "feed_name": "Sandbox", 
+            "ioc": "a191d7d045dcf61582f2257bded2734b4ca424b1cf66ff519763c1888ec83190", 
+            "id": "AfhPxpIB488fpERPiMt9", 
+            "index": "imq-2024-10", 
+            "url": "https://kips.cert.ee/app/discover#/doc/imq/imq-2024-10/?id=AfhPxpIB488fpERPiMt9", 
+            "time_observation": "2024-10-26T00:52:34+00:00", 
+            "feed_accuracy": 50
+        }, 
+        {
+            "classification_taxonomy": "malicious-code", 
+            "classification_type": "infected-system", 
+            "feed_provider": "CERT-EE", 
+            "time_source": "2024-10-26T00:17:28.965316+00:00", 
+            "feed_name": "Sandbox", 
+            "ioc": "a191d7d045dcf61582f2257bded2734b4ca424b1cf66ff519763c1888ec83190", 
+            "id": "u_cvxpIB488fpERPrt-b", 
+            "index": "imq-2024-10", 
+            "url": "https://kips.cert.ee/app/discover#/doc/imq/imq-2024-10/?id=u_cvxpIB488fpERPrt-b", 
+            "time_observation": "2024-10-26T00:17:28+00:00", 
+            "feed_accuracy": 50
+        }, 
+        {
+            "classification_taxonomy": "malicious-code", 
+            "classification_type": "infected-system", 
+            "feed_provider": "CERT-EE", 
+            "time_source": "2024-09-18T07:23:11.921351+00:00", 
+            "feed_name": "Sandbox", 
+            "ioc": "a191d7d045dcf61582f2257bded2734b4ca424b1cf66ff519763c1888ec83190", 
+            "id": "KI5oBJIB488fpERPqAJ7", 
+            "index": "imq-2024-09", 
+            "url": "https://kips.cert.ee/app/discover#/doc/imq/imq-2024-09/?id=KI5oBJIB488fpERPqAJ7", 
+            "time_observation": "2024-09-18T07:23:12+00:00", 
+            "feed_accuracy": 50
+        }, 
+        {
+            "classification_taxonomy": "malicious-code", 
+            "classification_type": "infected-system", 
+            "feed_provider": "CERT-EE", 
+            "time_source": "2024-09-18T07:23:11.921506+00:00", 
+            "feed_name": "Sandbox", 
+            "ioc": "a191d7d045dcf61582f2257bded2734b4ca424b1cf66ff519763c1888ec83190", 
+            "id": "yo1ZBJIB488fpERPd5S-", 
+            "index": "imq-2024-09", 
+            "url": "https://kips.cert.ee/app/discover#/doc/imq/imq-2024-09/?id=yo1ZBJIB488fpERPd5S-", 
+            "time_observation": "2024-09-18T07:23:12+00:00", 
+            "feed_accuracy": 50
+        }
+    ], 
+    "metadata": {
+        "output": {
+            "pcap": {
+                "basename": "dump.pcap", 
+                "sha256": "2189ba6a65881f9eca10b8dc78ce5e07845383ab7e9864e753ea52dee2767b57", 
+                "dirname": ""
+            }
+        }
+    }
+}

@@ -1,0 +1,739 @@
+{
+    "info": {
+        "added": 1782212996.955623, 
+        "started": 1782212998.17727, 
+        "duration": 152, 
+        "ended": 1782213150.277493, 
+        "owner": "", 
+        "score": 7.9, 
+        "id": 7603861, 
+        "category": "file", 
+        "git": {
+            "head": "", 
+            "fetch_head": ""
+        }, 
+        "monitor": null, 
+        "package": "elf", 
+        "route": "internet", 
+        "custom": "", 
+        "machine": {
+            "status": "stopped", 
+            "name": "Ubuntu1904x642", 
+            "label": "Ubuntu1904x642", 
+            "platform": "linux", 
+            "manager": "VirtualBox", 
+            "started_on": "2026-06-23 11:11:05", 
+            "shutdown_on": "2026-06-23 11:12:29"
+        }, 
+        "platform": "linux", 
+        "version": "2.0.7", 
+        "options": ""
+    }, 
+    "signatures": [
+        {
+            "families": [], 
+            "description": "File has been identified by 6 AntiVirus engine on IRMA as malicious", 
+            "severity": 55, 
+            "ttp": {}, 
+            "markcount": 6, 
+            "references": [], 
+            "marks": [
+                {
+                    "category": "G Data Antivirus (Windows)", 
+                    "ioc": "Virus: Gen:Variant.Linux.Mirai.7 (Engine A)", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Avast Core Security (Linux)", 
+                    "ioc": "ELF:Mirai-SJ [Trj]", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "WithSecure (Linux)", 
+                    "ioc": "Trojan.TR/LINUX.Mirai.SJ", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "eScan Antivirus (Linux)", 
+                    "ioc": "Gen:Variant.Linux.Mirai.7(DB)", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Bitdefender Antivirus (Linux)", 
+                    "ioc": "Gen:Variant.Linux.Mirai.7", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Emsisoft Commandline Scanner (Windows)", 
+                    "ioc": "Gen:Variant.Linux.Mirai.7 (B)", 
+                    "type": "ioc", 
+                    "description": null
+                }
+            ], 
+            "name": "antivirus_irma"
+        }
+    ], 
+    "target": {
+        "category": "file", 
+        "file": {
+            "mimetype": "application/x-executable", 
+            "yara": [], 
+            "sha1": "0404fafe6c539a8eea28723bf4e02cb617d2269e", 
+            "name": "x86", 
+            "type": "ELF 32-bit LSB executable, Intel 80386, version 1 (SYSV), statically linked, stripped", 
+            "sha256": "e972c239b19da4f923e898520439a093a8dc47ebbe582bb88e144bdabc0844b8", 
+            "urls": [], 
+            "crc32": "2E408F9F", 
+            "path": "/srv/cuckoo/cwd/storage/binaries/e972c239b19da4f923e898520439a093a8dc47ebbe582bb88e144bdabc0844b8", 
+            "ssdeep": null, 
+            "size": 52440, 
+            "sha512": "25b4be6eca1422874a206419bf8f92bc3147e0316daa4154aa1dba3d463c82021af458e03b9b1d19e7be5ba7c86d9844a4b10bde1de981f658370f553a303b4c", 
+            "md5": "bf8b9405b0f4c399666dbaaef31e758c"
+        }, 
+        "custom": ""
+    }, 
+    "irma": {
+        "status": 1, 
+        "probes_finished": 13, 
+        "scan_id": "70fc8be2-188f-44f0-9249-87705756206d", 
+        "parent_file_sha256": null, 
+        "probes_total": 13, 
+        "scan_date": 1782202361, 
+        "other_results": [], 
+        "submitter": "cli", 
+        "file_infos": {
+            "mimetype": "ELF 32-bit LSB executable, Intel 80386, version 1 (SYSV)", 
+            "sha1": "0404fafe6c539a8eea28723bf4e02cb617d2269e", 
+            "tags": [], 
+            "timestamp_first_scan": 1782202360.78, 
+            "size": 52440, 
+            "timestamp_last_scan": 1782202370.59, 
+            "sha256": "e972c239b19da4f923e898520439a093a8dc47ebbe582bb88e144bdabc0844b8", 
+            "md5": "bf8b9405b0f4c399666dbaaef31e758c"
+        }, 
+        "probe_results": {
+            "antivirus": {
+                "G Data Antivirus (Windows)": {
+                    "status": 1, 
+                    "duration": 0.23, 
+                    "version": "5.5.20197.1358", 
+                    "results": "Virus: Gen:Variant.Linux.Mirai.7 (Engine A)", 
+                    "virus_database_version": "unavailable"
+                }, 
+                "Avast Core Security (Linux)": {
+                    "status": 1, 
+                    "duration": 0.01, 
+                    "version": "4.6.1", 
+                    "results": "ELF:Mirai-SJ [Trj]", 
+                    "virus_database_version": "unavailable"
+                }, 
+                "C4S ClamAV (Linux)": {
+                    "status": 0, 
+                    "duration": 0.03, 
+                    "version": "1.4.3", 
+                    "results": null, 
+                    "virus_database_version": "28038"
+                }, 
+                "Trellix (Linux)": {
+                    "status": 0, 
+                    "duration": 8.1, 
+                    "version": "7.0.4.835", 
+                    "results": null, 
+                    "virus_database_version": "11824"
+                }, 
+                "WithSecure (Linux)": {
+                    "status": 1, 
+                    "duration": 0.1, 
+                    "version": "1.0.45", 
+                    "results": "Trojan.TR/LINUX.Mirai.SJ", 
+                    "virus_database_version": "unavailable"
+                }, 
+                "eScan Antivirus (Linux)": {
+                    "status": 1, 
+                    "duration": 3.77, 
+                    "version": "7.0.21", 
+                    "results": "Gen:Variant.Linux.Mirai.7(DB)", 
+                    "virus_database_version": "7.101078 (22/06/2026)"
+                }, 
+                "ESET Security (Windows)": {
+                    "status": 0, 
+                    "duration": 0.78, 
+                    "version": "unavailable", 
+                    "results": null, 
+                    "virus_database_version": "unavailable"
+                }, 
+                "Sophos Anti-Virus (Linux)": {
+                    "status": 0, 
+                    "duration": 0.23, 
+                    "version": "1.2.1.1 (2026-04-20)", 
+                    "results": null, 
+                    "virus_database_version": "unavailable"
+                }, 
+                "DrWeb Antivirus (Linux)": {
+                    "status": 0, 
+                    "duration": 0.13, 
+                    "version": "11.1.17.2605081640", 
+                    "results": null, 
+                    "virus_database_version": "unavailable"
+                }, 
+                "ClamAV (Linux)": {
+                    "status": 0, 
+                    "duration": 0.02, 
+                    "version": "1.4.3", 
+                    "results": null, 
+                    "virus_database_version": "28038"
+                }, 
+                "Bitdefender Antivirus (Linux)": {
+                    "status": 1, 
+                    "duration": 8.01, 
+                    "version": "7.90123", 
+                    "results": "Gen:Variant.Linux.Mirai.7", 
+                    "virus_database_version": null
+                }, 
+                "Kaspersky Standard (Windows)": {
+                    "status": 0, 
+                    "duration": 2.52, 
+                    "version": "21.24", 
+                    "results": null, 
+                    "virus_database_version": "2026-06-22 19:00:00 (unknown)"
+                }, 
+                "Emsisoft Commandline Scanner (Windows)": {
+                    "status": 1, 
+                    "duration": 0.94, 
+                    "version": "2025.1.0.12641", 
+                    "results": "Gen:Variant.Linux.Mirai.7 (B)", 
+                    "virus_database_version": "unavailable"
+                }
+            }
+        }, 
+        "path": "", 
+        "result_id": "52bc6524-ed82-4055-ae5e-c6b348c2a8d9", 
+        "name": "e972c239b19da4f923e898520439a093a8dc47ebbe582bb88e144bdabc0844b8"
+    }, 
+    "suricata": {
+        "tls": [], 
+        "files": [], 
+        "alerts": [], 
+        "http": []
+    }, 
+    "virustotal": {
+        "summary": {
+            "error": "resource has not been scanned yet"
+        }
+    }, 
+    "network": {
+        "udp": [], 
+        "dns_servers": [], 
+        "http": [], 
+        "smtp": [], 
+        "tcp": [], 
+        "geoinfo": {}, 
+        "mitm": [], 
+        "https_ex": [], 
+        "http_ex": [], 
+        "sorted_pcap_sha256": "25a3ee54593f45cd056090bcdabeaa5cfc425ec98224673bb2fa6ffb31a9ab65", 
+        "icmp": [], 
+        "tls": [], 
+        "dead_hosts": [], 
+        "smtp_ex": [], 
+        "hosts": [], 
+        "pcap_sha256": "10e8aae413c1024c30b4428e9c37f3c6741706f905d34a49257b9807675a8161", 
+        "dns": [], 
+        "domains": [], 
+        "irc": []
+    }, 
+    "resubmit": {
+        "resubmit_ids": []
+    }, 
+    "snort": {
+        "alerts": []
+    }, 
+    "behavior": {
+        "generic": [
+            {
+                "process_path": null, 
+                "process_name": "x86", 
+                "pid": 2092, 
+                "summary": {}, 
+                "first_seen": 1782213002.576065, 
+                "ppid": -1
+            }
+        ], 
+        "processes": [
+            {
+                "calls": [
+                    {
+                        "status": "", 
+                        "process_name": "x86", 
+                        "pid": 2092, 
+                        "raw": "Tue Jun 23 11:10:02 2026.576065 x86@80532dc[2092] execve(\"/tmp/x86\", [\"/tmp/x86\"], [\"SUDO_GID=0\", \"MAIL=/var/mail/root\", \"USER=root\", \"HOME=/root\", \"SUDO_UID=0\", \"LOGNAME=root\", \"SYSTEMTAP_MODULE=stap_\", \"TERM=unknown\", \"SYSTEMTAP_VERBOSE=2\", \"PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin\", \"DISPLAY=:0\", \"LANG=en_US.UTF-8\", \"XAUTHORITY=/root/.Xauthority\", \"SUDO_COMMAND=/usr/bin/staprun -vv -o stap.log /root/.cuckoo/stap_.ko -c sh -c /tmp/x86\", \"SHELL=/bin/bash\", \"SUDO_USER=root\", \"PWD=/tmp/tmpVeuj59\"])\n", 
+                        "api": "execve", 
+                        "return_value": "", 
+                        "category": "process", 
+                        "instruction_pointer": "80532dc", 
+                        "arguments": {
+                            "p2": [
+                                "SUDO_GID=0", 
+                                "MAIL=/var/mail/root", 
+                                "USER=root", 
+                                "HOME=/root", 
+                                "SUDO_UID=0", 
+                                "LOGNAME=root", 
+                                "SYSTEMTAP_MODULE=stap_", 
+                                "TERM=unknown", 
+                                "SYSTEMTAP_VERBOSE=2", 
+                                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin", 
+                                "DISPLAY=:0", 
+                                "LANG=en_US.UTF-8", 
+                                "XAUTHORITY=/root/.Xauthority", 
+                                "SUDO_COMMAND=/usr/bin/staprun -vv -o stap.log /root/.cuckoo/stap_.ko -c sh -c /tmp/x86", 
+                                "SHELL=/bin/bash", 
+                                "SUDO_USER=root", 
+                                "PWD=/tmp/tmpVeuj59"
+                            ], 
+                            "p0": "/tmp/x86", 
+                            "p1": [
+                                "/tmp/x86"
+                            ]
+                        }, 
+                        "time": 1782213002.576065
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "x86", 
+                        "pid": 2092, 
+                        "raw": "Tue Jun 23 11:10:02 2026.576267 x86@80532dc[2092] rt_sigaction(SIGPIPE, {SIG_IGN}, 0xff98dd8c, 8) = 0\n", 
+                        "api": "rt_sigaction", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "80532dc", 
+                        "arguments": {
+                            "p2": "0xff98dd8c", 
+                            "p3": "8", 
+                            "p0": "SIGPIPE", 
+                            "p1": [
+                                "SIG_IGN"
+                            ]
+                        }, 
+                        "time": 1782213002.576267
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "x86", 
+                        "pid": 2092, 
+                        "raw": "Tue Jun 23 11:10:02 2026.576295 x86@80532dc[2092] rt_sigaction(SIGCHLD, {SIG_IGN}, 0xff98dd8c, 8) = 0\n", 
+                        "api": "rt_sigaction", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "80532dc", 
+                        "arguments": {
+                            "p2": "0xff98dd8c", 
+                            "p3": "8", 
+                            "p0": "SIGCHLD", 
+                            "p1": [
+                                "SIG_IGN"
+                            ]
+                        }, 
+                        "time": 1782213002.576295
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "x86", 
+                        "pid": 2092, 
+                        "raw": "Tue Jun 23 11:10:02 2026.576322 x86@805183c[2092] rt_sigprocmask(SIG_BLOCK, [SIGINT], 0x0, 8) = 0\n", 
+                        "api": "rt_sigprocmask", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "805183c", 
+                        "arguments": {
+                            "p2": "0x0", 
+                            "p3": "8", 
+                            "p0": "SIG_BLOCK", 
+                            "p1": [
+                                "SIGINT"
+                            ]
+                        }, 
+                        "time": 1782213002.576322
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "x86", 
+                        "pid": 2092, 
+                        "raw": "Tue Jun 23 11:10:02 2026.576349 x86@80538fd[2092] brk(0x0) = 136183808\n", 
+                        "api": "brk", 
+                        "return_value": "136183808", 
+                        "category": "process", 
+                        "instruction_pointer": "80538fd", 
+                        "arguments": {
+                            "p0": "0x0"
+                        }, 
+                        "time": 1782213002.576349
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "x86", 
+                        "pid": 2092, 
+                        "raw": "Tue Jun 23 11:10:02 2026.576372 x86@80538fd[2092] brk(0x81e1000) = 136187904\n", 
+                        "api": "brk", 
+                        "return_value": "136187904", 
+                        "category": "process", 
+                        "instruction_pointer": "80538fd", 
+                        "arguments": {
+                            "p0": "0x81e1000"
+                        }, 
+                        "time": 1782213002.576372
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "x86", 
+                        "pid": 2092, 
+                        "raw": "Tue Jun 23 11:10:02 2026.576403 x86@8051555[2092] chdir(\"/\") = 0\n", 
+                        "api": "chdir", 
+                        "return_value": "0", 
+                        "category": "process", 
+                        "instruction_pointer": "8051555", 
+                        "arguments": {
+                            "p0": "/"
+                        }, 
+                        "time": 1782213002.576403
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "x86", 
+                        "pid": 2092, 
+                        "raw": "Tue Jun 23 11:10:02 2026.576430 x86@80515aa[2092] fork() = 2093\n", 
+                        "api": "fork", 
+                        "return_value": "2093", 
+                        "category": "process", 
+                        "instruction_pointer": "80515aa", 
+                        "arguments": {}, 
+                        "time": 1782213002.57643
+                    }, 
+                    {
+                        "status": "", 
+                        "process_name": "x86", 
+                        "pid": 2092, 
+                        "raw": "Tue Jun 23 11:10:02 2026.576540 x86@805152e[2092] exit(0)\n", 
+                        "api": "exit", 
+                        "return_value": "", 
+                        "category": "process", 
+                        "instruction_pointer": "805152e", 
+                        "arguments": {
+                            "p0": "0"
+                        }, 
+                        "time": 1782213002.57654
+                    }
+                ], 
+                "pid": 2092, 
+                "process_name": "x86", 
+                "command_line": "/tmp/x86", 
+                "first_seen": 1782213002.576065, 
+                "ppid": -1, 
+                "type": "process"
+            }
+        ], 
+        "processtree": [
+            {
+                "track": true, 
+                "pid": 2092, 
+                "process_name": "x86", 
+                "command_line": "/tmp/x86", 
+                "first_seen": 1782213002.576065, 
+                "ppid": -1, 
+                "children": []
+            }
+        ]
+    }, 
+    "debug": {
+        "action": [], 
+        "dbgview": [], 
+        "errors": [], 
+        "log": [
+            "2026-06-23 11:09:56,002 [root] DEBUG: Starting analyzer from: /tmp/tmpVeuj59\n", 
+            "2026-06-23 11:09:56,002 [root] DEBUG: Storing results at: /tmp/UvISJdIt\n", 
+            "2026-06-23 11:09:57,621 [modules.auxiliary.filecollector] INFO: FileCollector started v0.08\n", 
+            "2026-06-23 11:09:57,624 [modules.auxiliary.human] INFO: Human started v0.02\n", 
+            "2026-06-23 11:09:57,626 [modules.auxiliary.screenshots] INFO: Screenshots started v0.03\n", 
+            "2026-06-23 11:10:02,569 [lib.core.packages] INFO: Process startup took 4.93 seconds\n", 
+            "2026-06-23 11:10:02,570 [root] INFO: Added new process to list with pid: 2082\n", 
+            "2026-06-23 11:10:08,577 [root] INFO: Process with pid 2082 has terminated\n", 
+            "2026-06-23 11:10:08,578 [root] INFO: Process list is empty, terminating analysis.\n", 
+            "2026-06-23 11:10:11,581 [lib.core.packages] INFO: Package requested stop\n", 
+            "2026-06-23 11:10:11,582 [lib.core.packages] WARNING: Exception uploading log: [Errno 3] No such process\n"
+        ], 
+        "cuckoo": [
+            "2026-06-23 11:09:58,266 [cuckoo.core.scheduler] DEBUG: Task #7603861: no machine available yet\n", 
+            "2026-06-23 11:09:59,286 [cuckoo.core.scheduler] DEBUG: Task #7603861: no machine available yet\n", 
+            "2026-06-23 11:10:00,321 [cuckoo.core.scheduler] DEBUG: Task #7603861: no machine available yet\n", 
+            "2026-06-23 11:10:01,347 [cuckoo.core.scheduler] DEBUG: Task #7603861: no machine available yet\n", 
+            "2026-06-23 11:10:02,368 [cuckoo.core.scheduler] DEBUG: Task #7603861: no machine available yet\n", 
+            "2026-06-23 11:10:03,388 [cuckoo.core.scheduler] DEBUG: Task #7603861: no machine available yet\n", 
+            "2026-06-23 11:10:04,415 [cuckoo.core.scheduler] DEBUG: Task #7603861: no machine available yet\n", 
+            "2026-06-23 11:10:05,700 [cuckoo.core.scheduler] DEBUG: Task #7603861: no machine available yet\n", 
+            "2026-06-23 11:10:06,777 [cuckoo.core.scheduler] DEBUG: Task #7603861: no machine available yet\n", 
+            "2026-06-23 11:10:07,844 [cuckoo.core.scheduler] DEBUG: Task #7603861: no machine available yet\n", 
+            "2026-06-23 11:10:08,914 [cuckoo.core.scheduler] DEBUG: Task #7603861: no machine available yet\n", 
+            "2026-06-23 11:10:09,977 [cuckoo.core.scheduler] DEBUG: Task #7603861: no machine available yet\n", 
+            "2026-06-23 11:10:11,069 [cuckoo.core.scheduler] DEBUG: Task #7603861: no machine available yet\n", 
+            "2026-06-23 11:10:12,147 [cuckoo.core.scheduler] DEBUG: Task #7603861: no machine available yet\n", 
+            "2026-06-23 11:10:13,209 [cuckoo.core.scheduler] DEBUG: Task #7603861: no machine available yet\n", 
+            "2026-06-23 11:10:14,273 [cuckoo.core.scheduler] DEBUG: Task #7603861: no machine available yet\n", 
+            "2026-06-23 11:10:15,339 [cuckoo.core.scheduler] DEBUG: Task #7603861: no machine available yet\n", 
+            "2026-06-23 11:10:16,416 [cuckoo.core.scheduler] DEBUG: Task #7603861: no machine available yet\n", 
+            "2026-06-23 11:10:17,478 [cuckoo.core.scheduler] DEBUG: Task #7603861: no machine available yet\n", 
+            "2026-06-23 11:10:18,523 [cuckoo.core.scheduler] DEBUG: Task #7603861: no machine available yet\n", 
+            "2026-06-23 11:10:19,585 [cuckoo.core.scheduler] DEBUG: Task #7603861: no machine available yet\n", 
+            "2026-06-23 11:10:20,638 [cuckoo.core.scheduler] DEBUG: Task #7603861: no machine available yet\n", 
+            "2026-06-23 11:10:21,699 [cuckoo.core.scheduler] DEBUG: Task #7603861: no machine available yet\n", 
+            "2026-06-23 11:10:22,758 [cuckoo.core.scheduler] DEBUG: Task #7603861: no machine available yet\n", 
+            "2026-06-23 11:10:23,816 [cuckoo.core.scheduler] DEBUG: Task #7603861: no machine available yet\n", 
+            "2026-06-23 11:10:24,898 [cuckoo.core.scheduler] DEBUG: Task #7603861: no machine available yet\n", 
+            "2026-06-23 11:10:25,964 [cuckoo.core.scheduler] DEBUG: Task #7603861: no machine available yet\n", 
+            "2026-06-23 11:10:27,019 [cuckoo.core.scheduler] DEBUG: Task #7603861: no machine available yet\n", 
+            "2026-06-23 11:10:28,064 [cuckoo.core.scheduler] DEBUG: Task #7603861: no machine available yet\n", 
+            "2026-06-23 11:10:29,111 [cuckoo.core.scheduler] DEBUG: Task #7603861: no machine available yet\n", 
+            "2026-06-23 11:10:30,173 [cuckoo.core.scheduler] DEBUG: Task #7603861: no machine available yet\n", 
+            "2026-06-23 11:10:31,265 [cuckoo.core.scheduler] DEBUG: Task #7603861: no machine available yet\n", 
+            "2026-06-23 11:10:32,341 [cuckoo.core.scheduler] DEBUG: Task #7603861: no machine available yet\n", 
+            "2026-06-23 11:10:33,455 [cuckoo.core.scheduler] DEBUG: Task #7603861: no machine available yet\n", 
+            "2026-06-23 11:10:34,494 [cuckoo.core.scheduler] DEBUG: Task #7603861: no machine available yet\n", 
+            "2026-06-23 11:10:35,526 [cuckoo.core.scheduler] DEBUG: Task #7603861: no machine available yet\n", 
+            "2026-06-23 11:10:36,560 [cuckoo.core.scheduler] DEBUG: Task #7603861: no machine available yet\n", 
+            "2026-06-23 11:10:37,591 [cuckoo.core.scheduler] DEBUG: Task #7603861: no machine available yet\n", 
+            "2026-06-23 11:10:38,623 [cuckoo.core.scheduler] DEBUG: Task #7603861: no machine available yet\n", 
+            "2026-06-23 11:10:39,655 [cuckoo.core.scheduler] DEBUG: Task #7603861: no machine available yet\n", 
+            "2026-06-23 11:10:40,687 [cuckoo.core.scheduler] DEBUG: Task #7603861: no machine available yet\n", 
+            "2026-06-23 11:10:41,717 [cuckoo.core.scheduler] DEBUG: Task #7603861: no machine available yet\n", 
+            "2026-06-23 11:10:42,754 [cuckoo.core.scheduler] DEBUG: Task #7603861: no machine available yet\n", 
+            "2026-06-23 11:10:43,788 [cuckoo.core.scheduler] DEBUG: Task #7603861: no machine available yet\n", 
+            "2026-06-23 11:10:44,832 [cuckoo.core.scheduler] DEBUG: Task #7603861: no machine available yet\n", 
+            "2026-06-23 11:10:45,870 [cuckoo.core.scheduler] DEBUG: Task #7603861: no machine available yet\n", 
+            "2026-06-23 11:10:46,910 [cuckoo.core.scheduler] DEBUG: Task #7603861: no machine available yet\n", 
+            "2026-06-23 11:10:47,950 [cuckoo.core.scheduler] DEBUG: Task #7603861: no machine available yet\n", 
+            "2026-06-23 11:10:48,981 [cuckoo.core.scheduler] DEBUG: Task #7603861: no machine available yet\n", 
+            "2026-06-23 11:10:50,018 [cuckoo.core.scheduler] DEBUG: Task #7603861: no machine available yet\n", 
+            "2026-06-23 11:10:51,148 [cuckoo.core.scheduler] DEBUG: Task #7603861: no machine available yet\n", 
+            "2026-06-23 11:10:52,209 [cuckoo.core.scheduler] DEBUG: Task #7603861: no machine available yet\n", 
+            "2026-06-23 11:10:53,279 [cuckoo.core.scheduler] DEBUG: Task #7603861: no machine available yet\n", 
+            "2026-06-23 11:10:54,338 [cuckoo.core.scheduler] DEBUG: Task #7603861: no machine available yet\n", 
+            "2026-06-23 11:10:55,643 [cuckoo.core.scheduler] DEBUG: Task #7603861: no machine available yet\n", 
+            "2026-06-23 11:10:56,727 [cuckoo.core.scheduler] DEBUG: Task #7603861: no machine available yet\n", 
+            "2026-06-23 11:10:57,789 [cuckoo.core.scheduler] DEBUG: Task #7603861: no machine available yet\n", 
+            "2026-06-23 11:10:58,850 [cuckoo.core.scheduler] DEBUG: Task #7603861: no machine available yet\n", 
+            "2026-06-23 11:10:59,901 [cuckoo.core.scheduler] DEBUG: Task #7603861: no machine available yet\n", 
+            "2026-06-23 11:11:00,932 [cuckoo.core.scheduler] DEBUG: Task #7603861: no machine available yet\n", 
+            "2026-06-23 11:11:01,987 [cuckoo.core.scheduler] DEBUG: Task #7603861: no machine available yet\n", 
+            "2026-06-23 11:11:03,029 [cuckoo.core.scheduler] DEBUG: Task #7603861: no machine available yet\n", 
+            "2026-06-23 11:11:04,062 [cuckoo.core.scheduler] DEBUG: Task #7603861: no machine available yet\n", 
+            "2026-06-23 11:11:05,100 [cuckoo.core.scheduler] INFO: Task #7603861: acquired machine Ubuntu1904x642 (label=Ubuntu1904x642)\n", 
+            "2026-06-23 11:11:05,101 [cuckoo.core.resultserver] DEBUG: Now tracking machine 192.168.168.102 for task #7603861\n", 
+            "2026-06-23 11:11:05,523 [cuckoo.auxiliary.sniffer] INFO: Started sniffer with PID 2932057 (interface=vboxnet0, host=192.168.168.102)\n", 
+            "2026-06-23 11:11:05,548 [cuckoo.machinery.virtualbox] DEBUG: Starting vm Ubuntu1904x642\n", 
+            "2026-06-23 11:11:06,129 [cuckoo.machinery.virtualbox] DEBUG: Restoring virtual machine Ubuntu1904x642 to Snapshot\n", 
+            "2026-06-23 11:11:14,190 [cuckoo.core.guest] INFO: Starting analysis #7603861 on guest (id=Ubuntu1904x642, ip=192.168.168.102)\n", 
+            "2026-06-23 11:11:15,249 [cuckoo.core.guest] DEBUG: Ubuntu1904x642: not ready yet\n", 
+            "2026-06-23 11:11:20,286 [cuckoo.core.guest] INFO: Guest is running Cuckoo Agent 0.10 (id=Ubuntu1904x642, ip=192.168.168.102)\n", 
+            "2026-06-23 11:11:20,309 [cuckoo.core.guest] DEBUG: Uploading analyzer to guest (id=Ubuntu1904x642, ip=192.168.168.102, monitor=latest, size=73219)\n", 
+            "2026-06-23 11:11:20,518 [cuckoo.core.resultserver] DEBUG: Task #7603861: live log analysis.log initialized.\n", 
+            "2026-06-23 11:11:25,174 [cuckoo.core.resultserver] DEBUG: Task #7603861: File upload for 'shots/0001.jpg'\n", 
+            "2026-06-23 11:11:25,200 [cuckoo.core.resultserver] DEBUG: Task #7603861 uploaded file length: 171598\n", 
+            "2026-06-23 11:11:35,541 [cuckoo.core.guest] DEBUG: Ubuntu1904x642: analysis #7603861 still processing\n", 
+            "2026-06-23 11:11:36,115 [cuckoo.core.resultserver] DEBUG: Task #7603861: File upload for 'logs/all.stap'\n", 
+            "2026-06-23 11:11:36,119 [cuckoo.core.resultserver] DEBUG: Task #7603861 uploaded file length: 1175\n", 
+            "2026-06-23 11:11:50,631 [cuckoo.core.guest] DEBUG: Ubuntu1904x642: analysis #7603861 still processing\n", 
+            "2026-06-23 11:12:05,713 [cuckoo.core.guest] DEBUG: Ubuntu1904x642: analysis #7603861 still processing\n", 
+            "2026-06-23 11:12:20,798 [cuckoo.core.guest] INFO: Ubuntu1904x642: end of analysis reached!\n", 
+            "2026-06-23 11:12:20,811 [cuckoo.core.plugins] DEBUG: Stopped auxiliary module: Redsocks\n", 
+            "2026-06-23 11:12:20,840 [cuckoo.core.plugins] DEBUG: Stopped auxiliary module: Sniffer\n", 
+            "2026-06-23 11:12:22,053 [cuckoo.machinery.virtualbox] INFO: Successfully generated memory dump for virtual machine with label Ubuntu1904x642 to path /srv/cuckoo/cwd/storage/analyses/7603861/memory.dmp\n", 
+            "2026-06-23 11:12:22,055 [cuckoo.machinery.virtualbox] DEBUG: Stopping vm Ubuntu1904x642\n", 
+            "2026-06-23 11:12:29,955 [cuckoo.core.resultserver] DEBUG: Stopped tracking machine 192.168.168.102 for task #7603861\n", 
+            "2026-06-23 11:12:29,956 [cuckoo.core.resultserver] DEBUG: Cancel <Context for LOG> for task 7603861\n", 
+            "2026-06-23 11:12:30,252 [cuckoo.core.scheduler] DEBUG: Released database task #7603861\n", 
+            "2026-06-23 11:12:30,267 [cuckoo.core.scheduler] INFO: Task #7603861: analysis procedure completed\n"
+        ]
+    }, 
+    "strings": [
+        "PTRhf9", 
+        "D$$1D$(", 
+        "D$$1D$(", 
+        "D$4PRV", 
+        "<ct<<t", 
+        "D$8j@j", 
+        "L$8SSj", 
+        "D$<j@j", 
+        "\\$ ]Xj", 
+        "D$,PSV", 
+        "D$ j<j", 
+        "D$8j@j", 
+        "L$TPPj", 
+        "D$4j@j", 
+        "L$0SSj", 
+        "\\$H9\\$", 
+        "D$,jPj", 
+        "T$4QQj", 
+        "D$$XZj", 
+        "D$$j@j", 
+        "T$$PPj", 
+        "xAPPSh`V", 
+        "\\$Th<R", 
+        "u%WWSS", 
+        "t@;D$xu", 
+        "t$$hpR", 
+        "/dev/urandom", 
+        "ksoftirqd/0", 
+        "kworker/0:0", 
+        "kworker/0:1", 
+        "kworker/1:0", 
+        "kworker/u2:0", 
+        "migration/0", 
+        "rcu_sched", 
+        "rcu_bh", 
+        "watchdog/0", 
+        "kdevtmpfs", 
+        "kauditd", 
+        "khungtaskd", 
+        "/lib/systemd/", 
+        "/usr/lib/systemd", 
+        "/usr/libexec/", 
+        "/usr/sbin/", 
+        "/usr/bin/", 
+        "/system/bin/", 
+        "M-SEARCH * HTTP/1.1", 
+        "Host:239.255.255.250:1900", 
+        "ST:ssdp:all", 
+        "Man:\"ssdp:discover\"", 
+        "/dev/null", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        "GCC: (GNU) 4.1.2", 
+        ".shstrtab", 
+        ".rodata", 
+        ".eh_frame", 
+        ".ctors", 
+        ".dtors", 
+        ".got.plt", 
+        ".comment"
+    ], 
+    "metadata": {
+        "output": {
+            "pcap": {
+                "basename": "dump.pcap", 
+                "sha256": "10e8aae413c1024c30b4428e9c37f3c6741706f905d34a49257b9807675a8161", 
+                "dirname": ""
+            }
+        }
+    }
+}

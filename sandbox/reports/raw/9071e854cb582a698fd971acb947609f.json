@@ -1,0 +1,1584 @@
+{
+    "info": {
+        "added": 1782808040.878261, 
+        "started": 1782808063.270215, 
+        "duration": 83, 
+        "ended": 1782808146.724591, 
+        "owner": null, 
+        "score": 8.7, 
+        "id": 7606379, 
+        "category": "file", 
+        "git": {
+            "head": "", 
+            "fetch_head": ""
+        }, 
+        "monitor": null, 
+        "package": "exe", 
+        "route": "internet", 
+        "custom": null, 
+        "machine": {
+            "status": "stopped", 
+            "name": "Ubuntu1904x646", 
+            "label": "Ubuntu1904x646", 
+            "platform": "linux", 
+            "manager": "VirtualBox", 
+            "started_on": "2026-06-30 08:28:12", 
+            "shutdown_on": "2026-06-30 08:29:06"
+        }, 
+        "platform": "linux", 
+        "version": "2.0.7", 
+        "options": "procmemdump=yes,route=internet"
+    }, 
+    "signatures": [
+        {
+            "families": [], 
+            "description": "Yara rules detected for file", 
+            "severity": 1, 
+            "ttp": {}, 
+            "markcount": 8, 
+            "references": [], 
+            "marks": [
+                {
+                    "type": "generic", 
+                    "description": "Bangat code features", 
+                    "rule": "BangatCode"
+                }, 
+                {
+                    "type": "generic", 
+                    "description": "Bangat", 
+                    "rule": "Bangat"
+                }, 
+                {
+                    "type": "generic", 
+                    "description": "(no description)", 
+                    "rule": "APT1_WEBC2_QBP"
+                }, 
+                {
+                    "type": "generic", 
+                    "description": "Lecna RAT obfuscation routines", 
+                    "rule": "CrowdStrike_CSIT_15062_02"
+                }, 
+                {
+                    "type": "generic", 
+                    "description": "Checks if being debugged", 
+                    "rule": "anti_dbg"
+                }, 
+                {
+                    "type": "generic", 
+                    "description": "File downloader/dropper", 
+                    "rule": "network_dropper"
+                }, 
+                {
+                    "type": "generic", 
+                    "description": "Affect system registries", 
+                    "rule": "win_registry"
+                }, 
+                {
+                    "type": "generic", 
+                    "description": "Affect private profile", 
+                    "rule": "win_files_operation"
+                }
+            ], 
+            "name": "file_yara"
+        }, 
+        {
+            "families": [], 
+            "description": "File has been identified by 11 AntiVirus engine on IRMA as malicious", 
+            "severity": 60, 
+            "ttp": {}, 
+            "markcount": 11, 
+            "references": [], 
+            "marks": [
+                {
+                    "category": "G Data Antivirus (Windows)", 
+                    "ioc": "Virus: Gen:Variant.Downloader.164 (Engine A)", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "C4S ClamAV (Linux)", 
+                    "ioc": "Win.Trojan.8227800-1", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Trellix (Linux)", 
+                    "ioc": "GenericRXCD-JF", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "WithSecure (Linux)", 
+                    "ioc": "Trojan.TR/Dropper.Gen", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "eScan Antivirus (Linux)", 
+                    "ioc": "Gen:Variant.Downloader.164(DB)", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "ESET Security (Windows)", 
+                    "ioc": "a variant of Win32/TrojanDownloader.Agent.RQA trojan", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "DrWeb Antivirus (Linux)", 
+                    "ioc": "Trojan.DownLoad3.16577", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "ClamAV (Linux)", 
+                    "ioc": "Win.Trojan.8227800-1", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Bitdefender Antivirus (Linux)", 
+                    "ioc": "Gen:Variant.Downloader.164", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Kaspersky Standard (Windows)", 
+                    "ioc": "Trojan.Win32.Cossta.wff", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Emsisoft Commandline Scanner (Windows)", 
+                    "ioc": "Gen:Variant.Downloader.164 (B)", 
+                    "type": "ioc", 
+                    "description": null
+                }
+            ], 
+            "name": "antivirus_irma"
+        }
+    ], 
+    "target": {
+        "category": "file", 
+        "file": {
+            "mimetype": "application/x-dosexec", 
+            "yara": [
+                {
+                    "meta": {
+                        "last_modified": "2014-07-10", 
+                        "description": "Bangat code features", 
+                        "author": "Seth Hardy"
+                    }, 
+                    "name": "BangatCode", 
+                    "offsets": {
+                        "": [
+                            [
+                                4526, 
+                                0
+                            ]
+                        ]
+                    }, 
+                    "strings": [
+                        "/k3gjUXgUFL/"
+                    ]
+                }, 
+                {
+                    "meta": {
+                        "last_modified": "2014-07-10", 
+                        "description": "Bangat", 
+                        "author": "Seth Hardy"
+                    }, 
+                    "name": "Bangat", 
+                    "offsets": {}, 
+                    "strings": []
+                }, 
+                {
+                    "meta": {
+                        "info": "CommentCrew-threat-apt1", 
+                        "description": "(no description)", 
+                        "author": "AlienVault Labs"
+                    }, 
+                    "name": "APT1_WEBC2_QBP", 
+                    "offsets": {
+                        "1": [
+                            [
+                                12949, 
+                                0
+                            ], 
+                            [
+                                12969, 
+                                0
+                            ]
+                        ], 
+                        "3": [
+                            [
+                                13012, 
+                                1
+                            ]
+                        ], 
+                        "2": [
+                            [
+                                13317, 
+                                2
+                            ]
+                        ], 
+                        "5": [
+                            [
+                                13036, 
+                                4
+                            ]
+                        ], 
+                        "4": [
+                            [
+                                13168, 
+                                3
+                            ]
+                        ]
+                    }, 
+                    "strings": [
+                        "MjAxMFFCUA==", 
+                        "VVJMRG93bmxvYWRUb0NhY2hlRmlsZQ==", 
+                        "YWRvYmVfc2wuZXhl", 
+                        "ZG5zYXBpLmRsbA==", 
+                        "dXJsbW9uLmRsbA=="
+                    ]
+                }, 
+                {
+                    "meta": {
+                        "malware_family": "Lecna", 
+                        "version": "202004092131", 
+                        "description": "Lecna RAT obfuscation routines", 
+                        "copyright": "(c) 2020 CrowdStrike Inc.", 
+                        "last_modified": "2020-04-09", 
+                        "reports": "CSIT-15062"
+                    }, 
+                    "name": "CrowdStrike_CSIT_15062_02", 
+                    "offsets": {
+                        "obf1": [
+                            [
+                                126362, 
+                                0
+                            ]
+                        ], 
+                        "obf3": [
+                            [
+                                124577, 
+                                1
+                            ]
+                        ]
+                    }, 
+                    "strings": [
+                        "KsI0B4rYwOsFwOADCtg=", 
+                        "ihCA8hGA6iVB"
+                    ]
+                }, 
+                {
+                    "meta": {
+                        "version": "0.2", 
+                        "description": "Checks if being debugged", 
+                        "author": "x0r"
+                    }, 
+                    "name": "anti_dbg", 
+                    "offsets": {
+                        "c2": [
+                            [
+                                11534, 
+                                1
+                            ]
+                        ], 
+                        "d1": [
+                            [
+                                11552, 
+                                0
+                            ]
+                        ]
+                    }, 
+                    "strings": [
+                        "S0VSTkVMMzIuZGxs", 
+                        "SXNEZWJ1Z2dlclByZXNlbnQ="
+                    ]
+                }, 
+                {
+                    "meta": {
+                        "version": "0.1", 
+                        "description": "File downloader/dropper", 
+                        "author": "x0r"
+                    }, 
+                    "name": "network_dropper", 
+                    "offsets": {
+                        "f1": [
+                            [
+                                13036, 
+                                1
+                            ]
+                        ], 
+                        "c2": [
+                            [
+                                13012, 
+                                0
+                            ]
+                        ]
+                    }, 
+                    "strings": [
+                        "VVJMRG93bmxvYWRUb0NhY2hlRmlsZQ==", 
+                        "dXJsbW9uLmRsbA=="
+                    ]
+                }, 
+                {
+                    "meta": {
+                        "version": "0.1", 
+                        "description": "Affect system registries", 
+                        "author": "x0r"
+                    }, 
+                    "name": "win_registry", 
+                    "offsets": {
+                        "c3": [
+                            [
+                                11680, 
+                                2
+                            ]
+                        ], 
+                        "f1": [
+                            [
+                                11712, 
+                                0
+                            ], 
+                            [
+                                12376, 
+                                1
+                            ]
+                        ], 
+                        "c1": [
+                            [
+                                11694, 
+                                3
+                            ]
+                        ], 
+                        "c6": [
+                            [
+                                11680, 
+                                2
+                            ]
+                        ]
+                    }, 
+                    "strings": [
+                        "QURWQVBJMzIuZGxs", 
+                        "QWR2YXBpMzIuZGxs", 
+                        "UmVnQ2xvc2VLZXk=", 
+                        "UmVnUXVlcnlWYWx1ZUV4QQ=="
+                    ]
+                }, 
+                {
+                    "meta": {
+                        "version": "0.1", 
+                        "description": "Affect private profile", 
+                        "author": "x0r"
+                    }, 
+                    "name": "win_files_operation", 
+                    "offsets": {
+                        "f1": [
+                            [
+                                11552, 
+                                2
+                            ]
+                        ], 
+                        "c3": [
+                            [
+                                11392, 
+                                4
+                            ]
+                        ], 
+                        "c1": [
+                            [
+                                11392, 
+                                4
+                            ]
+                        ], 
+                        "c6": [
+                            [
+                                11404, 
+                                0
+                            ]
+                        ], 
+                        "c5": [
+                            [
+                                11170, 
+                                1
+                            ]
+                        ], 
+                        "c4": [
+                            [
+                                11488, 
+                                3
+                            ]
+                        ]
+                    }, 
+                    "strings": [
+                        "Q3JlYXRlRmlsZUE=", 
+                        "RGVsZXRlRmlsZUE=", 
+                        "S0VSTkVMMzIuZGxs", 
+                        "UmVhZEZpbGU=", 
+                        "V3JpdGVGaWxl"
+                    ]
+                }
+            ], 
+            "sha1": "1566e0bb7a4c18c3898113eaaa92d12ccd38e014", 
+            "name": "3a45d4bfd1f919f167ce4a5e5ba00e15.SA", 
+            "type": "PE32 executable (GUI) Intel 80386, for MS Windows", 
+            "sha256": "2bf2c68bc3185309bb747c1f6215173172f394f90c5a5c4a927e01a235b68ac1", 
+            "urls": [
+                "http://download.epac.to/staff.htm"
+            ], 
+            "crc32": "EDCCC236", 
+            "path": "/srv/cuckoo/cwd/storage/binaries/2bf2c68bc3185309bb747c1f6215173172f394f90c5a5c4a927e01a235b68ac1", 
+            "ssdeep": null, 
+            "size": 152576, 
+            "sha512": "dee6a1b5a418a40cfa314524a49a9ca351f549e41b6c5d2ebcfeabe18035ef7b7cd48670ea323a5a2e025e07988896311913d75fd23ff2f71dd5ac9866ec335f", 
+            "md5": "9071e854cb582a698fd971acb947609f"
+        }, 
+        "custom": null
+    }, 
+    "irma": {
+        "status": 1, 
+        "probes_finished": 13, 
+        "scan_id": "5194b2fd-fabc-401c-a9b8-45ab6529cd8c", 
+        "parent_file_sha256": null, 
+        "name": "2bf2c68bc3185309bb747c1f6215173172f394f90c5a5c4a927e01a235b68ac1", 
+        "scan_date": 1782797347, 
+        "other_results": [], 
+        "submitter": "cli", 
+        "probes_total": 13, 
+        "file_infos": {
+            "mimetype": "PE32 executable (GUI) Intel 80386, for MS Windows", 
+            "sha1": "1566e0bb7a4c18c3898113eaaa92d12ccd38e014", 
+            "tags": [], 
+            "timestamp_first_scan": 1782797347.41, 
+            "size": 152576, 
+            "timestamp_last_scan": 1782797358.39, 
+            "sha256": "2bf2c68bc3185309bb747c1f6215173172f394f90c5a5c4a927e01a235b68ac1", 
+            "md5": "9071e854cb582a698fd971acb947609f"
+        }, 
+        "probe_results": {
+            "antivirus": {
+                "G Data Antivirus (Windows)": {
+                    "status": 1, 
+                    "duration": 0.34, 
+                    "version": "5.5.20197.1358", 
+                    "results": "Virus: Gen:Variant.Downloader.164 (Engine A)", 
+                    "virus_database_version": "unavailable"
+                }, 
+                "Avast Core Security (Linux)": {
+                    "status": 0, 
+                    "duration": 0.02, 
+                    "version": "4.6.1", 
+                    "results": null, 
+                    "virus_database_version": "unavailable"
+                }, 
+                "C4S ClamAV (Linux)": {
+                    "status": 1, 
+                    "duration": 0.53, 
+                    "version": "1.4.3", 
+                    "results": "Win.Trojan.8227800-1", 
+                    "virus_database_version": "28046"
+                }, 
+                "Trellix (Linux)": {
+                    "status": 1, 
+                    "duration": 8.84, 
+                    "version": "7.0.4.835", 
+                    "results": "GenericRXCD-JF", 
+                    "virus_database_version": "11831"
+                }, 
+                "WithSecure (Linux)": {
+                    "status": 1, 
+                    "duration": 0.14, 
+                    "version": "1.0.45", 
+                    "results": "Trojan.TR/Dropper.Gen", 
+                    "virus_database_version": "unavailable"
+                }, 
+                "eScan Antivirus (Linux)": {
+                    "status": 1, 
+                    "duration": 3.91, 
+                    "version": "7.0.21", 
+                    "results": "Gen:Variant.Downloader.164(DB)", 
+                    "virus_database_version": "7.101116 (29/06/2026)"
+                }, 
+                "ESET Security (Windows)": {
+                    "status": 1, 
+                    "duration": 0.69, 
+                    "version": "unavailable", 
+                    "results": "a variant of Win32/TrojanDownloader.Agent.RQA trojan", 
+                    "virus_database_version": "unavailable"
+                }, 
+                "Sophos Anti-Virus (Linux)": {
+                    "status": 0, 
+                    "duration": 0.27, 
+                    "version": "1.2.1.1 (2026-04-20)", 
+                    "results": null, 
+                    "virus_database_version": "unavailable"
+                }, 
+                "DrWeb Antivirus (Linux)": {
+                    "status": 1, 
+                    "duration": 8.21, 
+                    "version": "11.1.17.2605081640", 
+                    "results": "Trojan.DownLoad3.16577", 
+                    "virus_database_version": "unavailable"
+                }, 
+                "ClamAV (Linux)": {
+                    "status": 1, 
+                    "duration": 0.62, 
+                    "version": "1.4.3", 
+                    "results": "Win.Trojan.8227800-1", 
+                    "virus_database_version": "28046"
+                }, 
+                "Bitdefender Antivirus (Linux)": {
+                    "status": 1, 
+                    "duration": 8.44, 
+                    "version": "7.90123", 
+                    "results": "Gen:Variant.Downloader.164", 
+                    "virus_database_version": null
+                }, 
+                "Kaspersky Standard (Windows)": {
+                    "status": 1, 
+                    "duration": 4.67, 
+                    "version": "21.24", 
+                    "results": "Trojan.Win32.Cossta.wff", 
+                    "virus_database_version": "2026-06-29 19:02:00 (unknown)"
+                }, 
+                "Emsisoft Commandline Scanner (Windows)": {
+                    "status": 1, 
+                    "duration": 0.41, 
+                    "version": "2025.1.0.12641", 
+                    "results": "Gen:Variant.Downloader.164 (B)", 
+                    "virus_database_version": "unavailable"
+                }
+            }
+        }, 
+        "path": "", 
+        "result_id": "44f2e6ba-60ad-4fa4-8ac7-3dec07fff950"
+    }, 
+    "suricata": {
+        "tls": [
+            {
+                "src_ip": "192.168.168.106", 
+                "version": "TLS 1.2", 
+                "src_port": 47420, 
+                "dst_port": 443, 
+                "timestamp": "2026-06-30T08:28:27.653215+0300", 
+                "dst_ip": "185.125.188.59", 
+                "fingerprint": "95:02:c4:f4:6e:fd:91:d6:31:5a:ea:3c:d0:5e:47:c5:1c:68:52:0f", 
+                "subject": "C=GB, L=London, O=CANONICAL GROUP LIMITED, CN=api.snapcraft.io", 
+                "issuer": "C=US, O=DigiCert Inc, CN=DigiCert Global G2 TLS RSA SHA256 2020 CA1"
+            }
+        ], 
+        "files": [], 
+        "alerts": [], 
+        "http": []
+    }, 
+    "virustotal": {
+        "summary": {
+            "error": "resource has not been scanned yet"
+        }
+    }, 
+    "network": {
+        "udp": [], 
+        "dns_servers": [], 
+        "http": [], 
+        "smtp": [], 
+        "tcp": [], 
+        "geoinfo": {}, 
+        "mitm": [], 
+        "sorted_pcap_sha256": "e678e66a489ae50e2bc83f45078f9a4ba8bbfe049c2dec52d2c044bd3d33d757", 
+        "icmp": [], 
+        "tls": [], 
+        "dead_hosts": [], 
+        "hosts": [], 
+        "pcap_sha256": "2c4805174b8b7e13fe84849d06e48ce5147f7f83a1df69d77be26a7dcf31f153", 
+        "dns": [], 
+        "domains": [], 
+        "irc": []
+    }, 
+    "resubmit": {
+        "resubmit_ids": []
+    }, 
+    "static": {
+        "pdb_path": null, 
+        "pe_imports": [
+            {
+                "imports": [
+                    {
+                        "name": "CreateProcessA", 
+                        "address": "0x404024"
+                    }, 
+                    {
+                        "name": "GetTickCount", 
+                        "address": "0x404028"
+                    }, 
+                    {
+                        "name": "CreateDirectoryA", 
+                        "address": "0x40402c"
+                    }, 
+                    {
+                        "name": "ExpandEnvironmentStringsA", 
+                        "address": "0x404030"
+                    }, 
+                    {
+                        "name": "WaitForSingleObject", 
+                        "address": "0x404034"
+                    }, 
+                    {
+                        "name": "GetStartupInfoA", 
+                        "address": "0x404038"
+                    }, 
+                    {
+                        "name": "SetCurrentDirectoryA", 
+                        "address": "0x40403c"
+                    }, 
+                    {
+                        "name": "FreeResource", 
+                        "address": "0x404040"
+                    }, 
+                    {
+                        "name": "WriteFile", 
+                        "address": "0x404044"
+                    }, 
+                    {
+                        "name": "ExitProcess", 
+                        "address": "0x404048"
+                    }, 
+                    {
+                        "name": "SizeofResource", 
+                        "address": "0x40404c"
+                    }, 
+                    {
+                        "name": "LoadResource", 
+                        "address": "0x404050"
+                    }, 
+                    {
+                        "name": "FindResourceA", 
+                        "address": "0x404054"
+                    }, 
+                    {
+                        "name": "GetModuleHandleA", 
+                        "address": "0x404058"
+                    }, 
+                    {
+                        "name": "ReadFile", 
+                        "address": "0x40405c"
+                    }, 
+                    {
+                        "name": "MultiByteToWideChar", 
+                        "address": "0x404060"
+                    }, 
+                    {
+                        "name": "lstrcpyA", 
+                        "address": "0x404064"
+                    }, 
+                    {
+                        "name": "IsDebuggerPresent", 
+                        "address": "0x404068"
+                    }, 
+                    {
+                        "name": "GetModuleFileNameA", 
+                        "address": "0x40406c"
+                    }, 
+                    {
+                        "name": "WinExec", 
+                        "address": "0x404070"
+                    }, 
+                    {
+                        "name": "DeleteFileA", 
+                        "address": "0x404074"
+                    }, 
+                    {
+                        "name": "Sleep", 
+                        "address": "0x404078"
+                    }, 
+                    {
+                        "name": "CloseHandle", 
+                        "address": "0x40407c"
+                    }, 
+                    {
+                        "name": "LoadLibraryA", 
+                        "address": "0x404080"
+                    }, 
+                    {
+                        "name": "GetProcAddress", 
+                        "address": "0x404084"
+                    }, 
+                    {
+                        "name": "CreateFileA", 
+                        "address": "0x404088"
+                    }, 
+                    {
+                        "name": "GetLastError", 
+                        "address": "0x40408c"
+                    }
+                ], 
+                "dll": "KERNEL32.dll"
+            }, 
+            {
+                "imports": [
+                    {
+                        "name": "RegCloseKey", 
+                        "address": "0x404000"
+                    }, 
+                    {
+                        "name": "CryptAcquireContextA", 
+                        "address": "0x404004"
+                    }, 
+                    {
+                        "name": "CryptCreateHash", 
+                        "address": "0x404008"
+                    }, 
+                    {
+                        "name": "CryptHashData", 
+                        "address": "0x40400c"
+                    }, 
+                    {
+                        "name": "CryptDeriveKey", 
+                        "address": "0x404010"
+                    }, 
+                    {
+                        "name": "CryptDestroyHash", 
+                        "address": "0x404014"
+                    }, 
+                    {
+                        "name": "CryptDecrypt", 
+                        "address": "0x404018"
+                    }, 
+                    {
+                        "name": "RegQueryValueExA", 
+                        "address": "0x40401c"
+                    }
+                ], 
+                "dll": "ADVAPI32.dll"
+            }, 
+            {
+                "imports": [
+                    {
+                        "name": "ShellExecuteA", 
+                        "address": "0x404134"
+                    }
+                ], 
+                "dll": "SHELL32.dll"
+            }, 
+            {
+                "imports": [
+                    {
+                        "name": "LZOpenFileA", 
+                        "address": "0x404094"
+                    }, 
+                    {
+                        "name": "LZClose", 
+                        "address": "0x404098"
+                    }, 
+                    {
+                        "name": "LZCopy", 
+                        "address": "0x40409c"
+                    }
+                ], 
+                "dll": "LZ32.dll"
+            }, 
+            {
+                "imports": [
+                    {
+                        "name": "strcmp", 
+                        "address": "0x4040a4"
+                    }, 
+                    {
+                        "name": "free", 
+                        "address": "0x4040a8"
+                    }, 
+                    {
+                        "name": "fclose", 
+                        "address": "0x4040ac"
+                    }, 
+                    {
+                        "name": "fwrite", 
+                        "address": "0x4040b0"
+                    }, 
+                    {
+                        "name": "fread", 
+                        "address": "0x4040b4"
+                    }, 
+                    {
+                        "name": "malloc", 
+                        "address": "0x4040b8"
+                    }, 
+                    {
+                        "name": "fopen", 
+                        "address": "0x4040bc"
+                    }, 
+                    {
+                        "name": "memcpy", 
+                        "address": "0x4040c0"
+                    }, 
+                    {
+                        "name": "strlen", 
+                        "address": "0x4040c4"
+                    }, 
+                    {
+                        "name": "_beginthreadex", 
+                        "address": "0x4040c8"
+                    }, 
+                    {
+                        "name": "strcpy", 
+                        "address": "0x4040cc"
+                    }, 
+                    {
+                        "name": "strstr", 
+                        "address": "0x4040d0"
+                    }, 
+                    {
+                        "name": "memset", 
+                        "address": "0x4040d4"
+                    }, 
+                    {
+                        "name": "ftell", 
+                        "address": "0x4040d8"
+                    }, 
+                    {
+                        "name": "fseek", 
+                        "address": "0x4040dc"
+                    }, 
+                    {
+                        "name": "strcat", 
+                        "address": "0x4040e0"
+                    }, 
+                    {
+                        "name": "sprintf", 
+                        "address": "0x4040e4"
+                    }, 
+                    {
+                        "name": "printf", 
+                        "address": "0x4040e8"
+                    }, 
+                    {
+                        "name": "strrchr", 
+                        "address": "0x4040ec"
+                    }, 
+                    {
+                        "name": "__p__pgmptr", 
+                        "address": "0x4040f0"
+                    }, 
+                    {
+                        "name": "_controlfp", 
+                        "address": "0x4040f4"
+                    }, 
+                    {
+                        "name": "strncmp", 
+                        "address": "0x4040f8"
+                    }, 
+                    {
+                        "name": "memmove", 
+                        "address": "0x4040fc"
+                    }, 
+                    {
+                        "name": "_exit", 
+                        "address": "0x404100"
+                    }, 
+                    {
+                        "name": "_XcptFilter", 
+                        "address": "0x404104"
+                    }, 
+                    {
+                        "name": "exit", 
+                        "address": "0x404108"
+                    }, 
+                    {
+                        "name": "_acmdln", 
+                        "address": "0x40410c"
+                    }, 
+                    {
+                        "name": "__getmainargs", 
+                        "address": "0x404110"
+                    }, 
+                    {
+                        "name": "_initterm", 
+                        "address": "0x404114"
+                    }, 
+                    {
+                        "name": "__setusermatherr", 
+                        "address": "0x404118"
+                    }, 
+                    {
+                        "name": "_adjust_fdiv", 
+                        "address": "0x40411c"
+                    }, 
+                    {
+                        "name": "__p__commode", 
+                        "address": "0x404120"
+                    }, 
+                    {
+                        "name": "__p__fmode", 
+                        "address": "0x404124"
+                    }, 
+                    {
+                        "name": "__set_app_type", 
+                        "address": "0x404128"
+                    }, 
+                    {
+                        "name": "_except_handler3", 
+                        "address": "0x40412c"
+                    }
+                ], 
+                "dll": "MSVCRT.dll"
+            }, 
+            {
+                "imports": [
+                    {
+                        "name": "CoInitialize", 
+                        "address": "0x40413c"
+                    }, 
+                    {
+                        "name": "CoCreateInstance", 
+                        "address": "0x404140"
+                    }
+                ], 
+                "dll": "ole32.dll"
+            }
+        ], 
+        "peid_signatures": [
+            "Armadillo v1.71"
+        ], 
+        "keys": [], 
+        "signature": [], 
+        "pe_timestamp": "2012-12-18 11:53:28", 
+        "pe_exports": [], 
+        "imported_dll_count": 6, 
+        "pe_imphash": "51fa801d0a175c62e8360f7d2b97117a", 
+        "pe_resources": [
+            {
+                "name": "FILE", 
+                "language": "LANG_ENGLISH", 
+                "filetype": "PDF document, version 1.6 (zip deflate encoded)", 
+                "sublanguage": "SUBLANG_ENGLISH_US", 
+                "offset": "0x00006fc0", 
+                "size": "0x00019aa8"
+            }, 
+            {
+                "name": "RT_ICON", 
+                "language": "LANG_CHINESE", 
+                "filetype": "Device independent bitmap graphic, 48 x 96 x 8, image size 0", 
+                "sublanguage": "SUBLANG_CHINESE_SIMPLIFIED", 
+                "offset": "0x00006100", 
+                "size": "0x00000ea8"
+            }, 
+            {
+                "name": "RT_GROUP_ICON", 
+                "language": "LANG_CHINESE", 
+                "filetype": "data", 
+                "sublanguage": "SUBLANG_CHINESE_SIMPLIFIED", 
+                "offset": "0x00006fa8", 
+                "size": "0x00000014"
+            }
+        ], 
+        "pe_versioninfo": [], 
+        "pe_sections": [
+            {
+                "size_of_data": "0x00002400", 
+                "virtual_address": "0x00001000", 
+                "entropy": 6.2938837906134975, 
+                "name": ".text", 
+                "virtual_size": "0x000023cc"
+            }, 
+            {
+                "size_of_data": "0x00000800", 
+                "virtual_address": "0x00004000", 
+                "entropy": 4.812886548938507, 
+                "name": ".rdata", 
+                "virtual_size": "0x000007e8"
+            }, 
+            {
+                "size_of_data": "0x00000800", 
+                "virtual_address": "0x00005000", 
+                "entropy": 4.319191677080125, 
+                "name": ".data", 
+                "virtual_size": "0x00000a54"
+            }, 
+            {
+                "size_of_data": "0x0001ac00", 
+                "virtual_address": "0x00006000", 
+                "entropy": 7.966803510158802, 
+                "name": ".rsrc", 
+                "virtual_size": "0x0001aa68"
+            }, 
+            {
+                "size_of_data": "0x00007000", 
+                "virtual_address": "0x00021000", 
+                "entropy": 6.312232242150516, 
+                "name": ".text", 
+                "virtual_size": "0x00007000"
+            }
+        ]
+    }, 
+    "snort": {
+        "alerts": []
+    }, 
+    "debug": {
+        "action": [], 
+        "dbgview": [], 
+        "errors": [], 
+        "log": [
+            "2026-06-30 08:27:20,006 [root] DEBUG: Starting analyzer from: /tmp/tmpn9zRq7\n", 
+            "2026-06-30 08:27:20,006 [root] DEBUG: Storing results at: /tmp/pCqRZPZFk\n", 
+            "2026-06-30 08:27:20,007 [root] ERROR: Traceback (most recent call last):\n", 
+            "  File \"/tmp/tmpn9zRq7/analyzer.py\", line 340, in <module>\n", 
+            "    success = analyzer.run()\n", 
+            "  File \"/tmp/tmpn9zRq7/analyzer.py\", line 129, in run\n", 
+            "    self.config.file_name, **kwargs)\n", 
+            "  File \"/tmp/tmpn9zRq7/lib/core/packages.py\", line 42, in choose_package_class\n", 
+            "    \"exist.\".format(name))\n", 
+            "Exception: Unable to import package \"exe\": it does not exist.\n", 
+            "Traceback (most recent call last):\n", 
+            "  File \"/tmp/tmpn9zRq7/analyzer.py\", line 340, in <module>\n", 
+            "    success = analyzer.run()\n", 
+            "  File \"/tmp/tmpn9zRq7/analyzer.py\", line 129, in run\n", 
+            "    self.config.file_name, **kwargs)\n", 
+            "  File \"/tmp/tmpn9zRq7/lib/core/packages.py\", line 42, in choose_package_class\n", 
+            "    \"exist.\".format(name))\n", 
+            "Exception: Unable to import package \"exe\": it does not exist.\n"
+        ], 
+        "cuckoo": [
+            "2026-06-30 08:27:43,400 [cuckoo.core.scheduler] DEBUG: Task #7606379: no machine available yet\n", 
+            "2026-06-30 08:27:44,426 [cuckoo.core.scheduler] DEBUG: Task #7606379: no machine available yet\n", 
+            "2026-06-30 08:27:45,471 [cuckoo.core.scheduler] DEBUG: Task #7606379: no machine available yet\n", 
+            "2026-06-30 08:27:46,647 [cuckoo.core.scheduler] DEBUG: Task #7606379: no machine available yet\n", 
+            "2026-06-30 08:27:47,918 [cuckoo.core.scheduler] DEBUG: Task #7606379: no machine available yet\n", 
+            "2026-06-30 08:27:48,986 [cuckoo.core.scheduler] DEBUG: Task #7606379: no machine available yet\n", 
+            "2026-06-30 08:27:50,050 [cuckoo.core.scheduler] DEBUG: Task #7606379: no machine available yet\n", 
+            "2026-06-30 08:27:51,126 [cuckoo.core.scheduler] DEBUG: Task #7606379: no machine available yet\n", 
+            "2026-06-30 08:27:52,230 [cuckoo.core.scheduler] DEBUG: Task #7606379: no machine available yet\n", 
+            "2026-06-30 08:27:53,331 [cuckoo.core.scheduler] DEBUG: Task #7606379: no machine available yet\n", 
+            "2026-06-30 08:27:54,408 [cuckoo.core.scheduler] DEBUG: Task #7606379: no machine available yet\n", 
+            "2026-06-30 08:27:55,475 [cuckoo.core.scheduler] DEBUG: Task #7606379: no machine available yet\n", 
+            "2026-06-30 08:27:56,542 [cuckoo.core.scheduler] DEBUG: Task #7606379: no machine available yet\n", 
+            "2026-06-30 08:27:57,824 [cuckoo.core.scheduler] DEBUG: Task #7606379: no machine available yet\n", 
+            "2026-06-30 08:27:58,929 [cuckoo.core.scheduler] DEBUG: Task #7606379: no machine available yet\n", 
+            "2026-06-30 08:28:00,059 [cuckoo.core.scheduler] DEBUG: Task #7606379: no machine available yet\n", 
+            "2026-06-30 08:28:01,153 [cuckoo.core.scheduler] DEBUG: Task #7606379: no machine available yet\n", 
+            "2026-06-30 08:28:02,237 [cuckoo.core.scheduler] DEBUG: Task #7606379: no machine available yet\n", 
+            "2026-06-30 08:28:03,912 [cuckoo.core.scheduler] DEBUG: Task #7606379: no machine available yet\n", 
+            "2026-06-30 08:28:04,984 [cuckoo.core.scheduler] DEBUG: Task #7606379: no machine available yet\n", 
+            "2026-06-30 08:28:06,045 [cuckoo.core.scheduler] DEBUG: Task #7606379: no machine available yet\n", 
+            "2026-06-30 08:28:07,115 [cuckoo.core.scheduler] DEBUG: Task #7606379: no machine available yet\n", 
+            "2026-06-30 08:28:08,182 [cuckoo.core.scheduler] DEBUG: Task #7606379: no machine available yet\n", 
+            "2026-06-30 08:28:09,245 [cuckoo.core.scheduler] DEBUG: Task #7606379: no machine available yet\n", 
+            "2026-06-30 08:28:10,472 [cuckoo.core.scheduler] DEBUG: Task #7606379: no machine available yet\n", 
+            "2026-06-30 08:28:11,509 [cuckoo.core.scheduler] INFO: Task #7606379: acquired machine Ubuntu1904x646 (label=Ubuntu1904x646)\n", 
+            "2026-06-30 08:28:11,510 [cuckoo.core.resultserver] DEBUG: Now tracking machine 192.168.168.106 for task #7606379\n", 
+            "2026-06-30 08:28:11,854 [cuckoo.auxiliary.sniffer] INFO: Started sniffer with PID 3884663 (interface=vboxnet0, host=192.168.168.106)\n", 
+            "2026-06-30 08:28:12,365 [cuckoo.machinery.virtualbox] DEBUG: Starting vm Ubuntu1904x646\n", 
+            "2026-06-30 08:28:13,064 [cuckoo.machinery.virtualbox] DEBUG: Restoring virtual machine Ubuntu1904x646 to Snapshot\n", 
+            "2026-06-30 08:28:20,863 [cuckoo.core.guest] INFO: Starting analysis #7606379 on guest (id=Ubuntu1904x646, ip=192.168.168.106)\n", 
+            "2026-06-30 08:28:21,869 [cuckoo.core.guest] DEBUG: Ubuntu1904x646: not ready yet\n", 
+            "2026-06-30 08:28:26,909 [cuckoo.core.guest] INFO: Guest is running Cuckoo Agent 0.10 (id=Ubuntu1904x646, ip=192.168.168.106)\n", 
+            "2026-06-30 08:28:26,930 [cuckoo.core.guest] DEBUG: Uploading analyzer to guest (id=Ubuntu1904x646, ip=192.168.168.106, monitor=latest, size=73219)\n", 
+            "2026-06-30 08:28:27,161 [cuckoo.core.resultserver] DEBUG: Task #7606379: live log analysis.log initialized.\n", 
+            "2026-06-30 08:28:30,068 [cuckoo.core.guest] INFO: Ubuntu1904x646: analysis completed successfully\n", 
+            "2026-06-30 08:28:30,092 [cuckoo.core.plugins] DEBUG: Stopped auxiliary module: Redsocks\n", 
+            "2026-06-30 08:28:30,128 [cuckoo.core.plugins] DEBUG: Stopped auxiliary module: Sniffer\n", 
+            "2026-06-30 08:28:31,184 [cuckoo.machinery.virtualbox] INFO: Successfully generated memory dump for virtual machine with label Ubuntu1904x646 to path /srv/cuckoo/cwd/storage/analyses/7606379/memory.dmp\n", 
+            "2026-06-30 08:28:31,186 [cuckoo.machinery.virtualbox] DEBUG: Stopping vm Ubuntu1904x646\n", 
+            "2026-06-30 08:29:06,358 [cuckoo.core.resultserver] DEBUG: Stopped tracking machine 192.168.168.106 for task #7606379\n", 
+            "2026-06-30 08:29:06,691 [cuckoo.core.scheduler] DEBUG: Released database task #7606379\n", 
+            "2026-06-30 08:29:06,712 [cuckoo.core.scheduler] INFO: Task #7606379: analysis procedure completed\n"
+        ]
+    }, 
+    "strings": [
+        "!This program cannot be run in DOS mode.", 
+        "`.rdata", 
+        "@.data", 
+        "@.text", 
+        "X_^][Y", 
+        "t(hHP@", 
+        "FBB;t$", 
+        "SVWj@3", 
+        "tC=Y1uCt!=a", 
+        "SVWj@3", 
+        "SVWj@3", 
+        "PSSSSS", 
+        "SVWhXP@", 
+        "PSSSSS", 
+        "@BBf=s", 
+        "GetLastError", 
+        "GetProcAddress", 
+        "LoadLibraryA", 
+        "CloseHandle", 
+        "DeleteFileA", 
+        "WinExec", 
+        "GetModuleFileNameA", 
+        "ExitProcess", 
+        "CreateProcessA", 
+        "GetTickCount", 
+        "CreateDirectoryA", 
+        "ExpandEnvironmentStringsA", 
+        "WaitForSingleObject", 
+        "GetStartupInfoA", 
+        "SetCurrentDirectoryA", 
+        "FreeResource", 
+        "WriteFile", 
+        "CreateFileA", 
+        "SizeofResource", 
+        "LoadResource", 
+        "FindResourceA", 
+        "GetModuleHandleA", 
+        "ReadFile", 
+        "MultiByteToWideChar", 
+        "lstrcpyA", 
+        "IsDebuggerPresent", 
+        "KERNEL32.dll", 
+        "CryptDecrypt", 
+        "CryptDestroyHash", 
+        "CryptDeriveKey", 
+        "CryptHashData", 
+        "CryptCreateHash", 
+        "CryptAcquireContextA", 
+        "RegCloseKey", 
+        "RegQueryValueExA", 
+        "ADVAPI32.dll", 
+        "ShellExecuteA", 
+        "SHELL32.dll", 
+        "LZClose", 
+        "LZCopy", 
+        "LZOpenFileA", 
+        "LZ32.dll", 
+        "fclose", 
+        "fwrite", 
+        "malloc", 
+        "memcpy", 
+        "strlen", 
+        "_beginthreadex", 
+        "strcpy", 
+        "strstr", 
+        "memset", 
+        "strcat", 
+        "sprintf", 
+        "printf", 
+        "strrchr", 
+        "__p__pgmptr", 
+        "strcmp", 
+        "strncmp", 
+        "memmove", 
+        "MSVCRT.dll", 
+        "_XcptFilter", 
+        "_acmdln", 
+        "__getmainargs", 
+        "_initterm", 
+        "__setusermatherr", 
+        "_adjust_fdiv", 
+        "__p__commode", 
+        "__p__fmode", 
+        "__set_app_type", 
+        "_except_handler3", 
+        "_controlfp", 
+        "CoCreateInstance", 
+        "CoInitialize", 
+        "ole32.dll", 
+        "Microsoft DH SChannel Cryptographic Provider", 
+        "CryptEncrypt", 
+        "Advapi32.dll", 
+        "!(*@)(!@URL", 
+        "!(*@)(!@HOS", 
+        "http://download.epac.to/staff.htm", 
+        " 2010QBP//-->", 
+        "<!--<2010QBP ", 
+        "cmd /c erase \"", 
+        "URLDownloadToCacheFileA", 
+        "urlmon.dll", 
+        "%t?%d-%d-%d=", 
+        "Hello@)!0", 
+        "VRLDownloadToCacheFileA", 
+        "DnsFlushResolverCache", 
+        "dnsapi.dll", 
+        "\\~hf~\\", 
+        "%TEMP%", 
+        "CreateProcess failed (%d)", 
+        "dmd /c ", 
+        "%QDF-1", 
+        "Adobe Speed Launch", 
+        "\\adobe_sl.exe", 
+        "Ttartup", 
+        "Uemplates", 
+        "Toftware\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Shell Folders", 
+        "RegOpenKeyA", 
+        " 0@PX`hpx", 
+        "\u001f\u001f  !!\"\"##$$%%&&''(())**++,,--..//0123456789:;<=>?", 
+        "kk\"4R)C", 
+        "444444444444])4", 
+        "444444444444CuuukRC)uC))u4u))R\"", 
+        "444qh44444444u", 
+        "))u4u))@)4", 
+        "oq444444))", 
+        "44c9qp", 
+        "444444Ru\"4", 
+        "44C)444Cu4444444", 
+        "U9O444444444", 
+        "C4444444", 
+        "44444c", 
+        "7444444444444444444//`4`", 
+        "4444444U", 
+        "444444444444444``", 
+        "44444444c", 
+        "tq4444444", 
+        "op`````", 
+        "444444444", 
+        "``0s````", 
+        "444444444U9f444", 
+        "o(poo````", 
+        "4444444444To4444", 
+        "``````", 
+        "44444444444", 
+        "^*`````````````", 
+        "44444444444*o`0", 
+        "``````````````", 
+        "44444444444`^", 
+        "po```````````````", 
+        "44444444````", 
+        "`````````````", 
+        "44444```````0^", 
+        "`````````````", 
+        "4````````````", 
+        "````````````", 
+        "4```````````f^", 
+        "```````````", 
+        "````````````", 
+        "```````````", 
+        "````````````", 
+        "*```````````", 
+        "4````````````", 
+        "```````````", 
+        "4````````````", 
+        "``````````", 
+        "E{{{{{{{{{{{{", 
+        "@CyyyyyyyyyyyyX", 
+        "EEEEEE", 
+        "EEE{EE{", 
+        "xqq0|:<", 
+        "\\\\22Y}", 
+        ",,,,,III", 
+        "SyG$v@", 
+        "~~~~I'", 
+        "IecI&5IccI>?!U!!6", 
+        "r2Y}wy=", 
+        "bb;;;MM;;;bb", 
+        "..dAAyi=", 
+        "EEEE{{", 
+        "EEEEEE{{", 
+        "SSSSSS%%%%", 
+        "%PDF-1.6", 
+        "7 0 obj", 
+        "<</Linearized 1/L 105128/O 10/E 52271/N 1/T 104821/H [ 522 193]>>", 
+        "endobj", 
+        "                 ", 
+        "31 0 obj", 
+        "<</DecodeParms<</Columns 4/Predictor 12>>/Encrypt 8 0 R/Filter/FlateDecode/ID[<2EF52842751B4E2E90118956E3D16F36><1D3013010F87AD4E99F5C451361E7A2F>]/Index[7 50]/Info 6 0 R/Length 109/Prev 104822/Root 9 0 R/Size 57/Type/XRef/W[1 2 1]>>stream", 
+        "endstream", 
+        "endobj", 
+        "startxref", 
+        "56 0 obj", 
+        "<</Filter/FlateDecode/I 100/Length 112/S 38>>stream", 
+        "endstream", 
+        "endobj", 
+        "8 0 obj", 
+        "<</CF<</StdCF<</AuthEvent/DocOpen/CFM/AESV2/Length 16>>>>/Filter/Standard/Length 128/O(", 
+        ")/P -1028/R 4/StmF/StdCF/StrF/StdCF/U(", 
+        ")/V 4>>", 
+        "endobj", 
+        "9 0 obj", 
+        "<</Metadata 1 0 R/Pages 5 0 R/Type/Catalog>>", 
+        "endobj", 
+        "10 0 obj", 
+        "<</ArtBox[27.582 17.832 765.07 590.998]/BleedBox[0.0 0.0 792.0 612.0]/Contents[12 0 R 13 0 R 14 0 R 15 0 R 16 0 R 17 0 R 18 0 R 19 0 R]/CropBox[0.0 0.0 792.0 612.0]/Group 54 0 R/MediaBox[0.0 0.0 792.0 612.0]/Parent 5 0 R/Resources<</ColorSpace<</CS0 32 0 R/CS1 33 0 R/CS2 32 0 R/CS3 34 0 R>>/ExtGState<</GS0 35 0 R>>/Font<</T1_0 37 0 R/T1_1 40 0 R/T1_2 43 0 R/T1_3 46 0 R/TT0 48 0 R>>/ProcSet[/PDF/Text/ImageC]/Properties<</MC0<</Color[32768 32768 32768]/Dimmed false/Editable true/Preview true/Printed true/Title(", 
+        "G)/Visible true>>/MC1<</Color[65535 20224 20224]/Dimmed false/Editable true/Preview true/Printed true/Title(", 
+        "8)/Visible true>>/MC10<</Color[20224 32768 65535]/Dimmed false/Editable true/Preview true/Printed true/Title(", 
+        "res)/Visible true>>/MC2<</Color[20224 65535 20224]/Dimmed false/Editable true/Preview true/Printed true/Title(", 
+        "P:G%pN", 
+        "F)/Visible true>>/MC3<</Color[20224 20224 65535]/Dimmed false/Editable true/Preview true/Printed true/Title(", 
+        ")/Visible true>>/MC4<</Color[0 39321 39321]/Dimmed false/Editable true/Preview true/Printed true/Title(", 
+        "4)/Visible true>>/MC5<</Color[0 21845 0]/Dimmed false/Editable true/Preview true/Printed true/Title(]", 
+        "k)/Visible true>>/MC6<</Color[65535 26214 0]/Dimmed false/Editable true/Preview true/Printed true/Title(l", 
+        ")/Visible true>>/MC7<</Color[20224 65535 65535]/Dimmed false/Editable true/Preview true/Printed true/Title(x", 
+        "|u)/Visible true>>/MC8<</Color[65535 20224 65535]/Dimmed false/Editable true/Preview true/Printed true/Title(", 
+        "I)/Visible true>>/MC9<</Color[65535 65535 20224]/Dimmed false/Editable true/Preview true/Printed true/Title(", 
+        "\u001f)/Visible true>>>>/Shading<</Sh0 51 0 R/Sh1 53 0 R>>/XObject<</Im0 30 0 R>>>>/Rotate 0/TrimBox[0.0 0.0 792.0 612.0]/Type/Page>>", 
+        "endobj", 
+        "11 0 obj", 
+        "<</Filter/FlateDecode/First 182/Length 1664/N 24/Type/ObjStm>>stream", 
+        "[[c<<}", 
+        "yuvcYj", 
+        "o'x3=(}", 
+        "RXl\u001fuR", 
+        "endstream", 
+        "endobj", 
+        "12 0 obj", 
+        "<</Filter/FlateDecode/Length 2256>>stream", 
+        "?r&7k$G", 
+        "elM(@\"", 
+        "|\"0^G>", 
+        "endstream", 
+        "endobj", 
+        "13 0 obj", 
+        "<</Filter/FlateDecode/Length 3232>>stream", 
+        "}&\u001fjq<J", 
+        "EG]R@~", 
+        "endstream", 
+        "endobj", 
+        "14 0 obj", 
+        "<</Filter/FlateDecode/Length 3248>>stream", 
+        "}E.\u001fo\\", 
+        "TVJQn5", 
+        "endstream", 
+        "endobj", 
+        "15 0 obj", 
+        "<</Filter/FlateDecode/Length 3488>>stream", 
+        "8G0==Yu", 
+        "p4(SI`", 
+        ";C_s/cA", 
+        "$5U!fqMY", 
+        "]:-G-U", 
+        " karOt", 
+        "WvkiZX8c", 
+        "Yq]<Sf", 
+        "Yi&wJ/BJUW", 
+        "J^!N)B", 
+        "h ghq0", 
+        "I{s43t_", 
+        "endstream", 
+        "endobj", 
+        "16 0 obj", 
+        "<</Filter/FlateDecode/Length 3696>>stream", 
+        "mb.y7C", 
+        "Dp.jkP", 
+        "iLl!2_`", 
+        "zOzi.&", 
+        "zb1r1aA", 
+        "{w&=]f", 
+        "gNRE.b?Dc 8", 
+        "_rWB`M", 
+        "(Ma>F;", 
+        "1q5g3s", 
+        "endstream", 
+        "endobj", 
+        "17 0 obj", 
+        "<</Filter/FlateDecode/Length 3728>>stream", 
+        "7'6V{u", 
+        "yILo+s|", 
+        "6{nX9.Z8", 
+        "c47J])", 
+        "(<k3rf", 
+        "\\]4l6r", 
+        "~u'H?C3", 
+        "*Bt+?N", 
+        "endstream", 
+        "endobj", 
+        "18 0 obj", 
+        "<</Filter/FlateDecode/Length 2336>>stream", 
+        "Cf yZZ\\", 
+        "&T16s!", 
+        "eDc~7R", 
+        "endstream", 
+        "endobj", 
+        "19 0 obj", 
+        "<</Filter/FlateDecode/Length 2464>>stream", 
+        "{@[+5g\u001f", 
+        "+dgQ(.T", 
+        "endstream", 
+        "endobj", 
+        "20 0 obj", 
+        "<</Filter/FlateDecode/Length 2592/N 3>>stream", 
+        "vK,/n\\5", 
+        "cb9Cfhy+!8", 
+        "zRxLZB", 
+        "ua^Bq7", 
+        "NS;E/d", 
+        "QnN\"W/'zu@", 
+        "endstream", 
+        "endobj", 
+        "21 0 obj", 
+        "<</Filter/FlateDecode/Length 1120/Subtype/Type1C>>stream", 
+        "endstream", 
+        "endobj", 
+        "22 0 obj", 
+        "<</Filter/FlateDecode/Length 2864/Subtype/Type1C>>stream", 
+        ".BK{>7", 
+        "WV,\";6", 
+        "wU,] <", 
+        "endstream", 
+        "endobj", 
+        "23 0 obj", 
+        "<</Filter/FlateDecode/Length 2720/Subtype/Type1C>>stream", 
+        "q@<TAy", 
+        "p@hrKc\"-", 
+        "endstream", 
+        "endobj", 
+        "24 0 obj", 
+        "<</Filter/FlateDecode/Length 1376/Subtype/Type1C>>stream", 
+        "X29v'<", 
+        "endstream", 
+        "endobj", 
+        "25 0 obj", 
+        "<</Filter/FlateDecode/Length 7904/Length1 12477>>stream", 
+        "kpa[)u%", 
+        "VXGfS1,", 
+        "TUV`GCJ", 
+        "S%:1j,=", 
+        "6/%0Pi", 
+        "N|M7p.", 
+        "<r)(9|/", 
+        "endstream", 
+        "endobj", 
+        "26 0 obj", 
+        "<</BitsPerSample 8/Decode[0.0 1.0 0.0 1.0 0.0 1.0]/Domain[0.0 1.0]/Encode[0.0 63.0]/Filter/FlateDecode/FunctionType 0/Length 208/Order 1/Range[0.0 1.0 0.0 1.0 0.0 1.0]/Size[64]>>stream", 
+        "endstream", 
+        "endobj", 
+        "27 0 obj", 
+        "<</BitsPerSample 8/Decode[0.0 1.0 0.0 1.0 0.0 1.0]/Domain[0.0 1.0]/Encode[0.0 63.0]/Filter/FlateDecode/FunctionType 0/Length 208/Order 1/Range[0.0 1.0 0.0 1.0 0.0 1.0]/Size[64]>>stream", 
+        "endstream", 
+        "endobj", 
+        "28 0 obj", 
+        "<</BitsPerSample 8/Decode[0.0 1.0 0.0 1.0 0.0 1.0]/Domain[0.0 1.0]/Encode[0.0 63.0]/Filter/FlateDecode/FunctionType 0/Length 176/Order 1/Range[0.0 1.0 0.0 1.0 0.0 1.0]/Size[64]>>stream", 
+        "endstream", 
+        "endobj", 
+        "29 0 obj", 
+        "<</BitsPerComponent 8/ColorSpace/DeviceGray/DecodeParms<</BitsPerComponent 8/Colors 1/Columns 61>>/Filter/FlateDecode/Height 20/Intent/RelativeColorimetric/Length 448/Name/X/Subtype/Image/Type/XObject/Width 61>>stream", 
+        "endstream", 
+        "endobj", 
+        "30 0 obj", 
+        "<</BitsPerComponent 8/ColorSpace 49 0 R/DecodeParms<</BitsPerComponent 8/Colors 3/Columns 61>>/Filter/FlateDecode/Height 20/Intent/RelativeColorimetric/Length 1168/Name/X/SMask 29 0 R/Subtype/Image/Type/XObject/Width 61>>stream", 
+        "*&QQO)^m`", 
+        "$zO\\x<", 
+        "(p&Sk{", 
+        "endstream", 
+        "endobj", 
+        "1 0 obj", 
+        "<</Length 52032/Subtype/XML/Type/Metadata>>stream", 
+        "j5yJ9*K", 
+        "wECj~*", 
+        "kDW.,5TB9", 
+        "CB`5nJ_", 
+        "2[j2Rb=*", 
+        "TVai@]8", 
+        "Q:ynbC", 
+        "?YxH9;", 
+        "Q*09=.?p>", 
+        "9\u001fC`|G", 
+        ")4?@}o_", 
+        "_\\XxhY", 
+        "B9`-~}", 
+        "aBsiPWT", 
+        "Q[R!r&", 
+        "WOc(;E", 
+        "gMl_yW", 
+        "Hj~oSu%", 
+        "gK&Bj@", 
+        "0LIM-p", 
+        "K[*g7_y~", 
+        "iAx{%@h", 
+        "/V0; g", 
+        "on[/&_", 
+        "b*0cr}", 
+        "k$+;LY", 
+        "U]|A)B", 
+        "uAG#x.", 
+        "2]?i-r", 
+        "tau}\u001fh", 
+        "}qh*Wsb", 
+        "\\*_|Vdq", 
+        ",@5_pI7", 
+        "vjb^;9", 
+        "cb5]w8", 
+        "GB]L9)", 
+        "zY NlReK", 
+        "DMM=|x", 
+        "9mF.^?6", 
+        "n|o'cSD4", 
+        "\\k)XS#J1`", 
+        "~@<<@<2", 
+        "ma@x`0", 
+        "0eQ<Npd", 
+        "J5>m QZ", 
+        "6p^_1y", 
+        "<|Ct2E", 
+        "2%HG'b", 
+        "Io,Y!#y", 
+        "O:KWDVG", 
+        "|o\u001f#sZf", 
+        "[v[gb5", 
+        "9%]l_%", 
+        "\\\\VB&=", 
+        "aU6}%7ek", 
+        "8XNj^\u001f#", 
+        "^\u001fC{L5", 
+        "8d(zr(", 
+        "x<Hf4/", 
+        "\"ncZw}", 
+        "q9MEJv", 
+        "XI2O%*", 
+        "$(5HDJ", 
+        "s)SM;kL", 
+        ":{U>\",S", 
+        "\"Jz!e,", 
+        "e>i:P7bc", 
+        "xM-B#F", 
+        "j*TC-wY*;]", 
+        "(o8<.ej", 
+        "yK}G{&", 
+        "?M8|xc", 
+        "{rZJW.5", 
+        "eIXCN0", 
+        "[.\\F,mX~3", 
+        "!OQrhwNP", 
+        "AWI o+", 
+        ">z B1u", 
+        "_5(H#J{[[", 
+        "%4tyo\"", 
+        "2ghk1[\u001fwz", 
+        "*1&pYMJ", 
+        " ]ms+O", 
+        "X|XWhyIPT", 
+        ":8KI^%", 
+        "endstream", 
+        "endobj", 
+        "2 0 obj", 
+        "<</Filter/FlateDecode/First 4/Length 80/N 1/Type/ObjStm>>stream", 
+        "endstream", 
+        "endobj", 
+        "3 0 obj", 
+        "<</Filter/FlateDecode/First 4/Length 176/N 1/Type/ObjStm>>stream", 
+        "yW69!t", 
+        "$|'(I<", 
+        "endstream", 
+        "endobj", 
+        "4 0 obj", 
+        "<</DecodeParms<</Columns 4/Predictor 12>>/Encrypt 8 0 R/Filter/FlateDecode/ID[<2EF52842751B4E2E90118956E3D16F36><1D3013010F87AD4E99F5C451361E7A2F>]/Info 6 0 R/Length 41/Root 9 0 R/Size 7/Type/XRef/W[1 3 0]>>stream", 
+        "endstream", 
+        "endobj", 
+        "startxref", 
+        "PWWh$-@", 
+        "(tWHt<", 
+        "GtPHtCHt6H", 
+        "Ht\"HHt", 
+        "Rt6Ht,Ht\"Ht", 
+        "t-Ht#Ht", 
+        "YtCVWS", 
+        "SVWj\"Y", 
+        "t=@j\"P", 
+        "PSSSSSS", 
+        "WPWVWWW", 
+        "PWWhl.@", 
+        "^9u$u ", 
+        "?AtG95", 
+        "PWWWSW"
+    ], 
+    "metadata": {
+        "output": {
+            "pcap": {
+                "basename": "dump.pcap", 
+                "sha256": "2c4805174b8b7e13fe84849d06e48ce5147f7f83a1df69d77be26a7dcf31f153", 
+                "dirname": ""
+            }
+        }
+    }
+}

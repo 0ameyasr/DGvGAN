@@ -20,7 +20,7 @@ def save_to_cache(cache_data):
 
 def get_vt_file_details_safe(md5_hash, api_key, cache):
     if md5_hash in cache:
-        print(f"[+] {md5_hash} found in local cache. No API call needed.")
+        # print(f"[+] {md5_hash} found in local cache. No API call needed.")
         return cache[md5_hash], False  
     
     url = f"https://www.virustotal.com/api/v3/files/{md5_hash}"
@@ -36,6 +36,7 @@ def get_vt_file_details_safe(md5_hash, api_key, cache):
             
         if response.status_code == 404:
             print(f"[-] Hash {md5_hash} not found in VirusTotal.")
+            # print(md5_hash)
             return None, True
             
         response.raise_for_status()
@@ -70,7 +71,7 @@ if __name__ == "__main__":
     cache = load_cache()
     
     for index, md5 in enumerate(hash_list):
-        print(f"\nProcessing [{index + 1}/{len(hash_list)}]: {md5}")
+        # print(f"\nProcessing [{index + 1}/{len(hash_list)}]: {md5}")
         
         info, api_used = get_vt_file_details_safe(md5, API_KEY, cache)
         
@@ -85,4 +86,5 @@ if __name__ == "__main__":
                 print("[~] Sleeping 16 seconds to protect Public API rate limit...")
                 time.sleep(16)
         elif info:
-            print(f"    Creation Date: {info['Internal Creation Date']}")
+            # print(f"    Creation Date: {info['Internal Creation Date']}")
+            pass

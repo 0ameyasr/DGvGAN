@@ -1,0 +1,3491 @@
+{
+    "info": {
+        "added": 1782808040.946021, 
+        "started": 1782808067.969825, 
+        "duration": 103, 
+        "ended": 1782808170.973812, 
+        "owner": null, 
+        "score": 8.7, 
+        "id": 7606381, 
+        "category": "file", 
+        "git": {
+            "head": "", 
+            "fetch_head": ""
+        }, 
+        "monitor": null, 
+        "package": "exe", 
+        "route": "internet", 
+        "custom": null, 
+        "machine": {
+            "status": "stopped", 
+            "name": "Ubuntu1904x647", 
+            "label": "Ubuntu1904x647", 
+            "platform": "linux", 
+            "manager": "VirtualBox", 
+            "started_on": "2026-06-30 08:28:29", 
+            "shutdown_on": "2026-06-30 08:29:30"
+        }, 
+        "platform": "linux", 
+        "version": "2.0.7", 
+        "options": "procmemdump=yes,route=internet"
+    }, 
+    "signatures": [
+        {
+            "families": [], 
+            "description": "Yara rules detected for file", 
+            "severity": 1, 
+            "ttp": {}, 
+            "markcount": 8, 
+            "references": [], 
+            "marks": [
+                {
+                    "type": "generic", 
+                    "description": "Checks if being debugged", 
+                    "rule": "anti_dbg"
+                }, 
+                {
+                    "type": "generic", 
+                    "description": "Bypass DEP", 
+                    "rule": "disable_dep"
+                }, 
+                {
+                    "type": "generic", 
+                    "description": "Code injection with CreateRemoteThread in a remote process", 
+                    "rule": "inject_thread"
+                }, 
+                {
+                    "type": "generic", 
+                    "description": "Escalade priviledges", 
+                    "rule": "escalate_priv"
+                }, 
+                {
+                    "type": "generic", 
+                    "description": "Record Audio", 
+                    "rule": "sniff_audio"
+                }, 
+                {
+                    "type": "generic", 
+                    "description": "Affect system token", 
+                    "rule": "win_token"
+                }, 
+                {
+                    "type": "generic", 
+                    "description": "Affect private profile", 
+                    "rule": "win_private_profile"
+                }, 
+                {
+                    "type": "generic", 
+                    "description": "Affect private profile", 
+                    "rule": "win_files_operation"
+                }
+            ], 
+            "name": "file_yara"
+        }, 
+        {
+            "families": [], 
+            "description": "File has been identified by 11 AntiVirus engine on IRMA as malicious", 
+            "severity": 60, 
+            "ttp": {}, 
+            "markcount": 11, 
+            "references": [], 
+            "marks": [
+                {
+                    "category": "G Data Antivirus (Windows)", 
+                    "ioc": "Virus: Gen:Variant.Fragtor.113379 (Engine A)", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Avast Core Security (Linux)", 
+                    "ioc": "Win32:Winnti-C [Rtk]", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "C4S ClamAV (Linux)", 
+                    "ioc": "Win.Malware.Fragtor-9958337-0", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Trellix (Linux)", 
+                    "ioc": "GenericRXMT-EP", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "WithSecure (Linux)", 
+                    "ioc": "Trojan.TR/Crypt.XPACK.Gen", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "eScan Antivirus (Linux)", 
+                    "ioc": "Gen:Variant.Fragtor.113379(DB)", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "DrWeb Antivirus (Linux)", 
+                    "ioc": "Trojan.DownLoader6.18285", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "ClamAV (Linux)", 
+                    "ioc": "Win.Malware.Fragtor-9958337-0", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Bitdefender Antivirus (Linux)", 
+                    "ioc": "Gen:Variant.Fragtor.113379", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Kaspersky Standard (Windows)", 
+                    "ioc": "HEUR:Backdoor.Win32.Winnti.gen", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "Emsisoft Commandline Scanner (Windows)", 
+                    "ioc": "Gen:Variant.Fragtor.113379 (B)", 
+                    "type": "ioc", 
+                    "description": null
+                }
+            ], 
+            "name": "antivirus_irma"
+        }
+    ], 
+    "target": {
+        "category": "file", 
+        "file": {
+            "mimetype": "application/x-dosexec", 
+            "yara": [
+                {
+                    "meta": {
+                        "version": "0.2", 
+                        "description": "Checks if being debugged", 
+                        "author": "x0r"
+                    }, 
+                    "name": "anti_dbg", 
+                    "offsets": {
+                        "c3": [
+                            [
+                                260748, 
+                                2
+                            ]
+                        ], 
+                        "d1": [
+                            [
+                                35230, 
+                                0
+                            ], 
+                            [
+                                256648, 
+                                3
+                            ], 
+                            [
+                                260836, 
+                                1
+                            ], 
+                            [
+                                272495, 
+                                0
+                            ]
+                        ]
+                    }, 
+                    "strings": [
+                        "S0VSTkVMMzIuZGxs", 
+                        "S2VybmVsMzIuZGxs", 
+                        "T3V0cHV0RGVidWdTdHJpbmc=", 
+                        "a2VybmVsMzIuZGxs"
+                    ]
+                }, 
+                {
+                    "meta": {
+                        "version": "0.1", 
+                        "description": "Bypass DEP", 
+                        "author": "x0r"
+                    }, 
+                    "name": "disable_dep", 
+                    "offsets": {
+                        "c5": [
+                            [
+                                260924, 
+                                0
+                            ]
+                        ]
+                    }, 
+                    "strings": [
+                        "WndQcm90ZWN0VmlydHVhbE1lbW9yeQ=="
+                    ]
+                }, 
+                {
+                    "meta": {
+                        "version": "0.1", 
+                        "description": "Code injection with CreateRemoteThread in a remote process", 
+                        "author": "x0r"
+                    }, 
+                    "name": "inject_thread", 
+                    "offsets": {
+                        "c2": [
+                            [
+                                35554, 
+                                4
+                            ], 
+                            [
+                                272202, 
+                                4
+                            ]
+                        ], 
+                        "c1": [
+                            [
+                                35292, 
+                                2
+                            ], 
+                            [
+                                260712, 
+                                2
+                            ], 
+                            [
+                                260768, 
+                                2
+                            ], 
+                            [
+                                272374, 
+                                2
+                            ]
+                        ], 
+                        "c7": [
+                            [
+                                35292, 
+                                2
+                            ], 
+                            [
+                                260712, 
+                                2
+                            ], 
+                            [
+                                260768, 
+                                2
+                            ], 
+                            [
+                                272374, 
+                                2
+                            ]
+                        ], 
+                        "c6": [
+                            [
+                                260890, 
+                                1
+                            ]
+                        ], 
+                        "c5": [
+                            [
+                                260796, 
+                                0
+                            ]
+                        ], 
+                        "c4": [
+                            [
+                                260816, 
+                                3
+                            ]
+                        ]
+                    }, 
+                    "strings": [
+                        "Q3JlYXRlUmVtb3RlVGhyZWFk", 
+                        "Q3JlYXRlVGhyZWFk", 
+                        "T3BlblByb2Nlc3M=", 
+                        "V3JpdGVQcm9jZXNzTWVtb3J5", 
+                        "VmlydHVhbEFsbG9jRXg="
+                    ]
+                }, 
+                {
+                    "meta": {
+                        "version": "0.1", 
+                        "description": "Escalade priviledges", 
+                        "author": "x0r"
+                    }, 
+                    "name": "escalate_priv", 
+                    "offsets": {
+                        "c2": [
+                            [
+                                260688, 
+                                2
+                            ]
+                        ], 
+                        "c1": [
+                            [
+                                260640, 
+                                3
+                            ]
+                        ], 
+                        "d1": [
+                            [
+                                35310, 
+                                0
+                            ], 
+                            [
+                                260732, 
+                                1
+                            ], 
+                            [
+                                272519, 
+                                0
+                            ]
+                        ]
+                    }, 
+                    "strings": [
+                        "QURWQVBJMzIuZGxs", 
+                        "QWR2YXBpMzIuZGxs", 
+                        "QWRqdXN0VG9rZW5Qcml2aWxlZ2Vz", 
+                        "U2VEZWJ1Z1ByaXZpbGVnZQ=="
+                    ]
+                }, 
+                {
+                    "meta": {
+                        "version": "0.1", 
+                        "description": "Record Audio", 
+                        "author": "x0r"
+                    }, 
+                    "name": "sniff_audio", 
+                    "offsets": {
+                        "f1": [
+                            [
+                                256713, 
+                                5
+                            ], 
+                            [
+                                256755, 
+                                5
+                            ], 
+                            [
+                                256973, 
+                                5
+                            ]
+                        ], 
+                        "c3": [
+                            [
+                                40365, 
+                                1
+                            ], 
+                            [
+                                259848, 
+                                1
+                            ]
+                        ], 
+                        "c2": [
+                            [
+                                40561, 
+                                4
+                            ], 
+                            [
+                                260056, 
+                                4
+                            ]
+                        ], 
+                        "c1": [
+                            [
+                                40573, 
+                                3
+                            ], 
+                            [
+                                260068, 
+                                3
+                            ]
+                        ], 
+                        "c5": [
+                            [
+                                40381, 
+                                0
+                            ], 
+                            [
+                                259864, 
+                                0
+                            ]
+                        ], 
+                        "c4": [
+                            [
+                                40530, 
+                                2
+                            ], 
+                            [
+                                260024, 
+                                2
+                            ]
+                        ]
+                    }, 
+                    "strings": [
+                        "d2F2ZUluQ2xvc2U=", 
+                        "d2F2ZUluQWRkQnVmZmVy", 
+                        "d2F2ZUluT3Blbg==", 
+                        "d2F2ZUluU3RhcnQ=", 
+                        "d2F2ZUluUmVzZXQ=", 
+                        "d2lubW0uZGxs"
+                    ]
+                }, 
+                {
+                    "meta": {
+                        "version": "0.1", 
+                        "description": "Affect system token", 
+                        "author": "x0r"
+                    }, 
+                    "name": "win_token", 
+                    "offsets": {
+                        "c3": [
+                            [
+                                35292, 
+                                3
+                            ], 
+                            [
+                                260712, 
+                                3
+                            ], 
+                            [
+                                272374, 
+                                3
+                            ]
+                        ], 
+                        "f1": [
+                            [
+                                35310, 
+                                0
+                            ], 
+                            [
+                                260732, 
+                                1
+                            ], 
+                            [
+                                272519, 
+                                0
+                            ]
+                        ], 
+                        "c4": [
+                            [
+                                260664, 
+                                4
+                            ]
+                        ], 
+                        "c2": [
+                            [
+                                260688, 
+                                2
+                            ]
+                        ]
+                    }, 
+                    "strings": [
+                        "QURWQVBJMzIuZGxs", 
+                        "QWR2YXBpMzIuZGxs", 
+                        "QWRqdXN0VG9rZW5Qcml2aWxlZ2Vz", 
+                        "T3BlblByb2Nlc3NUb2tlbg==", 
+                        "TG9va3VwUHJpdmlsZWdlVmFsdWVB"
+                    ]
+                }, 
+                {
+                    "meta": {
+                        "version": "0.1", 
+                        "description": "Affect private profile", 
+                        "author": "x0r"
+                    }, 
+                    "name": "win_private_profile", 
+                    "offsets": {
+                        "c3": [
+                            [
+                                34876, 
+                                3
+                            ], 
+                            [
+                                271846, 
+                                3
+                            ]
+                        ], 
+                        "f1": [
+                            [
+                                35230, 
+                                1
+                            ], 
+                            [
+                                256648, 
+                                4
+                            ], 
+                            [
+                                260836, 
+                                2
+                            ], 
+                            [
+                                272495, 
+                                1
+                            ]
+                        ], 
+                        "c1": [
+                            [
+                                34852, 
+                                0
+                            ], 
+                            [
+                                271822, 
+                                0
+                            ]
+                        ]
+                    }, 
+                    "strings": [
+                        "R2V0UHJpdmF0ZVByb2ZpbGVJbnRB", 
+                        "S0VSTkVMMzIuZGxs", 
+                        "S2VybmVsMzIuZGxs", 
+                        "V3JpdGVQcml2YXRlUHJvZmlsZVN0cmluZ0E=", 
+                        "a2VybmVsMzIuZGxs"
+                    ]
+                }, 
+                {
+                    "meta": {
+                        "version": "0.1", 
+                        "description": "Affect private profile", 
+                        "author": "x0r"
+                    }, 
+                    "name": "win_files_operation", 
+                    "offsets": {
+                        "f1": [
+                            [
+                                35230, 
+                                3
+                            ], 
+                            [
+                                256648, 
+                                7
+                            ], 
+                            [
+                                260836, 
+                                4
+                            ], 
+                            [
+                                272495, 
+                                3
+                            ]
+                        ], 
+                        "c11": [
+                            [
+                                35126, 
+                                0
+                            ], 
+                            [
+                                272096, 
+                                0
+                            ]
+                        ], 
+                        "c3": [
+                            [
+                                34626, 
+                                6
+                            ], 
+                            [
+                                271614, 
+                                6
+                            ]
+                        ], 
+                        "c1": [
+                            [
+                                34626, 
+                                6
+                            ], 
+                            [
+                                271614, 
+                                6
+                            ]
+                        ], 
+                        "c10": [
+                            [
+                                34986, 
+                                5
+                            ], 
+                            [
+                                271956, 
+                                5
+                            ]
+                        ], 
+                        "c6": [
+                            [
+                                34528, 
+                                1
+                            ], 
+                            [
+                                271516, 
+                                1
+                            ]
+                        ], 
+                        "c5": [
+                            [
+                                34638, 
+                                2
+                            ], 
+                            [
+                                271626, 
+                                2
+                            ]
+                        ]
+                    }, 
+                    "strings": [
+                        "Q29weUZpbGU=", 
+                        "Q3JlYXRlRmlsZUE=", 
+                        "RGVsZXRlRmlsZUE=", 
+                        "S0VSTkVMMzIuZGxs", 
+                        "S2VybmVsMzIuZGxs", 
+                        "U2V0RmlsZUF0dHJpYnV0ZXNB", 
+                        "V3JpdGVGaWxl", 
+                        "a2VybmVsMzIuZGxs"
+                    ]
+                }
+            ], 
+            "sha1": "2a8cf186eacfc2c473bf2dd0d4beb8c671cfe85a", 
+            "name": "3ecbc145dd593ec431145dd84e1e50cb.IA-DLL-funs.SA", 
+            "type": "PE32 executable (DLL) (GUI) Intel 80386, for MS Windows", 
+            "sha256": "265124b358064c568be1acc6e2a142dac5fa549d0184e07927b76fdc23bd2f50", 
+            "urls": [], 
+            "crc32": "6F81C7FC", 
+            "path": "/srv/cuckoo/cwd/storage/binaries/265124b358064c568be1acc6e2a142dac5fa549d0184e07927b76fdc23bd2f50", 
+            "ssdeep": null, 
+            "size": 323584, 
+            "sha512": "08d88febbd12122dd1ed46b1dae371ac82c821295dfd92ac12d38dcc799ba7b947478177c20d0c4951b245a6007eb7327afa2b458afc7d39ffb2cfd15802c7bc", 
+            "md5": "eca17a1e9a585039c5595fad3679b311"
+        }, 
+        "custom": null
+    }, 
+    "irma": {
+        "status": 1, 
+        "probes_finished": 13, 
+        "scan_id": "41f7976b-4fa3-4c4f-b850-6475ab3c0b4f", 
+        "parent_file_sha256": null, 
+        "name": "265124b358064c568be1acc6e2a142dac5fa549d0184e07927b76fdc23bd2f50", 
+        "scan_date": 1782797373, 
+        "other_results": [], 
+        "submitter": "cli", 
+        "probes_total": 13, 
+        "file_infos": {
+            "mimetype": "PE32 executable (DLL) (GUI) Intel 80386, for MS Windows", 
+            "sha1": "2a8cf186eacfc2c473bf2dd0d4beb8c671cfe85a", 
+            "tags": [], 
+            "timestamp_first_scan": 1782797372.82, 
+            "size": 323584, 
+            "timestamp_last_scan": 1782797383.84, 
+            "sha256": "265124b358064c568be1acc6e2a142dac5fa549d0184e07927b76fdc23bd2f50", 
+            "md5": "eca17a1e9a585039c5595fad3679b311"
+        }, 
+        "probe_results": {
+            "antivirus": {
+                "G Data Antivirus (Windows)": {
+                    "status": 1, 
+                    "duration": 0.27, 
+                    "version": "5.5.20197.1358", 
+                    "results": "Virus: Gen:Variant.Fragtor.113379 (Engine A)", 
+                    "virus_database_version": "unavailable"
+                }, 
+                "Avast Core Security (Linux)": {
+                    "status": 1, 
+                    "duration": 0.13, 
+                    "version": "4.6.1", 
+                    "results": "Win32:Winnti-C [Rtk]", 
+                    "virus_database_version": "unavailable"
+                }, 
+                "C4S ClamAV (Linux)": {
+                    "status": 1, 
+                    "duration": 0.52, 
+                    "version": "1.4.3", 
+                    "results": "Win.Malware.Fragtor-9958337-0", 
+                    "virus_database_version": "28046"
+                }, 
+                "Trellix (Linux)": {
+                    "status": 1, 
+                    "duration": 9.04, 
+                    "version": "7.0.4.835", 
+                    "results": "GenericRXMT-EP", 
+                    "virus_database_version": "11831"
+                }, 
+                "WithSecure (Linux)": {
+                    "status": 1, 
+                    "duration": 0.23, 
+                    "version": "1.0.45", 
+                    "results": "Trojan.TR/Crypt.XPACK.Gen", 
+                    "virus_database_version": "unavailable"
+                }, 
+                "eScan Antivirus (Linux)": {
+                    "status": 1, 
+                    "duration": 3.85, 
+                    "version": "7.0.21", 
+                    "results": "Gen:Variant.Fragtor.113379(DB)", 
+                    "virus_database_version": "7.101116 (29/06/2026)"
+                }, 
+                "ESET Security (Windows)": {
+                    "status": 0, 
+                    "duration": 0.69, 
+                    "version": "unavailable", 
+                    "results": null, 
+                    "virus_database_version": "unavailable"
+                }, 
+                "Sophos Anti-Virus (Linux)": {
+                    "status": 0, 
+                    "duration": 0.26, 
+                    "version": "1.2.1.1 (2026-04-20)", 
+                    "results": null, 
+                    "virus_database_version": "unavailable"
+                }, 
+                "DrWeb Antivirus (Linux)": {
+                    "status": 1, 
+                    "duration": 0.25, 
+                    "version": "11.1.17.2605081640", 
+                    "results": "Trojan.DownLoader6.18285", 
+                    "virus_database_version": "unavailable"
+                }, 
+                "ClamAV (Linux)": {
+                    "status": 1, 
+                    "duration": 0.68, 
+                    "version": "1.4.3", 
+                    "results": "Win.Malware.Fragtor-9958337-0", 
+                    "virus_database_version": "28046"
+                }, 
+                "Bitdefender Antivirus (Linux)": {
+                    "status": 1, 
+                    "duration": 8.2, 
+                    "version": "7.90123", 
+                    "results": "Gen:Variant.Fragtor.113379", 
+                    "virus_database_version": null
+                }, 
+                "Kaspersky Standard (Windows)": {
+                    "status": 1, 
+                    "duration": 0.96, 
+                    "version": "21.24", 
+                    "results": "HEUR:Backdoor.Win32.Winnti.gen", 
+                    "virus_database_version": "2026-06-29 19:02:00 (unknown)"
+                }, 
+                "Emsisoft Commandline Scanner (Windows)": {
+                    "status": 1, 
+                    "duration": 0.41, 
+                    "version": "2025.1.0.12641", 
+                    "results": "Gen:Variant.Fragtor.113379 (B)", 
+                    "virus_database_version": "unavailable"
+                }
+            }
+        }, 
+        "path": "", 
+        "result_id": "fea97130-66d0-4707-b1fc-fafa6463b389"
+    }, 
+    "suricata": {
+        "tls": [], 
+        "files": [], 
+        "alerts": [], 
+        "http": []
+    }, 
+    "virustotal": {
+        "summary": {
+            "error": "resource has not been scanned yet"
+        }
+    }, 
+    "network": {
+        "tls": [], 
+        "udp": [], 
+        "dns_servers": [], 
+        "http": [], 
+        "icmp": [], 
+        "smtp": [], 
+        "tcp": [], 
+        "smtp_ex": [], 
+        "geoinfo": {}, 
+        "mitm": [], 
+        "hosts": [], 
+        "pcap_sha256": "704e5e5b3234433c01fcfd1b20a306e77e985038120492dc53965c3edd38a4ea", 
+        "dns": [], 
+        "http_ex": [], 
+        "domains": [], 
+        "dead_hosts": [], 
+        "irc": [], 
+        "https_ex": []
+    }, 
+    "resubmit": {
+        "resubmit_ids": []
+    }, 
+    "static": {
+        "pdb_path": null, 
+        "pe_imports": [
+            {
+                "imports": [
+                    {
+                        "name": "calloc", 
+                        "address": "0x100461e4"
+                    }, 
+                    {
+                        "name": "_strlwr", 
+                        "address": "0x100461e8"
+                    }, 
+                    {
+                        "name": "_itoa", 
+                        "address": "0x100461ec"
+                    }, 
+                    {
+                        "name": "_stricmp", 
+                        "address": "0x100461f0"
+                    }, 
+                    {
+                        "name": "memcpy", 
+                        "address": "0x100461f4"
+                    }, 
+                    {
+                        "name": "memset", 
+                        "address": "0x100461f8"
+                    }, 
+                    {
+                        "name": "??2@YAPAXI@Z", 
+                        "address": "0x100461fc"
+                    }, 
+                    {
+                        "name": "realloc", 
+                        "address": "0x10046200"
+                    }, 
+                    {
+                        "name": "free", 
+                        "address": "0x10046204"
+                    }, 
+                    {
+                        "name": "??3@YAXPAX@Z", 
+                        "address": "0x10046208"
+                    }, 
+                    {
+                        "name": "_adjust_fdiv", 
+                        "address": "0x1004620c"
+                    }, 
+                    {
+                        "name": "malloc", 
+                        "address": "0x10046210"
+                    }, 
+                    {
+                        "name": "_initterm", 
+                        "address": "0x10046214"
+                    }, 
+                    {
+                        "name": "strstr", 
+                        "address": "0x10046218"
+                    }, 
+                    {
+                        "name": "_snprintf", 
+                        "address": "0x1004621c"
+                    }, 
+                    {
+                        "name": "strrchr", 
+                        "address": "0x10046220"
+                    }, 
+                    {
+                        "name": "strcat", 
+                        "address": "0x10046224"
+                    }, 
+                    {
+                        "name": "rename", 
+                        "address": "0x10046228"
+                    }, 
+                    {
+                        "name": "strncpy", 
+                        "address": "0x1004622c"
+                    }
+                ], 
+                "dll": "MSVCRT.dll"
+            }, 
+            {
+                "imports": [
+                    {
+                        "name": "GetCurrentThread", 
+                        "address": "0x10046234"
+                    }, 
+                    {
+                        "name": "LoadLibraryA", 
+                        "address": "0x10046238"
+                    }, 
+                    {
+                        "name": "GetModuleHandleA", 
+                        "address": "0x1004623c"
+                    }, 
+                    {
+                        "name": "GetProcAddress", 
+                        "address": "0x10046240"
+                    }, 
+                    {
+                        "name": "CloseHandle", 
+                        "address": "0x10046244"
+                    }, 
+                    {
+                        "name": "MapViewOfFile", 
+                        "address": "0x10046248"
+                    }, 
+                    {
+                        "name": "CreateFileMappingA", 
+                        "address": "0x1004624c"
+                    }, 
+                    {
+                        "name": "GetFileSize", 
+                        "address": "0x10046250"
+                    }, 
+                    {
+                        "name": "CreateFileA", 
+                        "address": "0x10046254"
+                    }, 
+                    {
+                        "name": "UnmapViewOfFile", 
+                        "address": "0x10046258"
+                    }, 
+                    {
+                        "name": "SizeofResource", 
+                        "address": "0x1004625c"
+                    }, 
+                    {
+                        "name": "LockResource", 
+                        "address": "0x10046260"
+                    }, 
+                    {
+                        "name": "LoadResource", 
+                        "address": "0x10046264"
+                    }, 
+                    {
+                        "name": "FindResourceA", 
+                        "address": "0x10046268"
+                    }, 
+                    {
+                        "name": "WriteFile", 
+                        "address": "0x1004626c"
+                    }, 
+                    {
+                        "name": "DeleteFileA", 
+                        "address": "0x10046270"
+                    }, 
+                    {
+                        "name": "GetFileAttributesA", 
+                        "address": "0x10046274"
+                    }, 
+                    {
+                        "name": "HeapAlloc", 
+                        "address": "0x10046278"
+                    }, 
+                    {
+                        "name": "VirtualAlloc", 
+                        "address": "0x1004627c"
+                    }, 
+                    {
+                        "name": "VirtualProtect", 
+                        "address": "0x10046280"
+                    }, 
+                    {
+                        "name": "VirtualFree", 
+                        "address": "0x10046284"
+                    }, 
+                    {
+                        "name": "IsBadReadPtr", 
+                        "address": "0x10046288"
+                    }, 
+                    {
+                        "name": "HeapFree", 
+                        "address": "0x1004628c"
+                    }, 
+                    {
+                        "name": "FreeLibrary", 
+                        "address": "0x10046290"
+                    }, 
+                    {
+                        "name": "GetTempFileNameA", 
+                        "address": "0x10046294"
+                    }, 
+                    {
+                        "name": "GetTempPathA", 
+                        "address": "0x10046298"
+                    }, 
+                    {
+                        "name": "GetModuleFileNameA", 
+                        "address": "0x1004629c"
+                    }, 
+                    {
+                        "name": "GetPrivateProfileIntA", 
+                        "address": "0x100462a0"
+                    }, 
+                    {
+                        "name": "WritePrivateProfileStringA", 
+                        "address": "0x100462a4"
+                    }, 
+                    {
+                        "name": "WaitForSingleObject", 
+                        "address": "0x100462a8"
+                    }, 
+                    {
+                        "name": "LoadLibraryW", 
+                        "address": "0x100462ac"
+                    }, 
+                    {
+                        "name": "GetModuleFileNameW", 
+                        "address": "0x100462b0"
+                    }, 
+                    {
+                        "name": "GetCurrentProcess", 
+                        "address": "0x100462b4"
+                    }, 
+                    {
+                        "name": "SetFileAttributesA", 
+                        "address": "0x100462b8"
+                    }, 
+                    {
+                        "name": "SetFileTime", 
+                        "address": "0x100462bc"
+                    }, 
+                    {
+                        "name": "LocalFileTimeToFileTime", 
+                        "address": "0x100462c0"
+                    }, 
+                    {
+                        "name": "SystemTimeToFileTime", 
+                        "address": "0x100462c4"
+                    }, 
+                    {
+                        "name": "GetFileTime", 
+                        "address": "0x100462c8"
+                    }, 
+                    {
+                        "name": "GetSystemDirectoryA", 
+                        "address": "0x100462cc"
+                    }, 
+                    {
+                        "name": "CreateProcessA", 
+                        "address": "0x100462d0"
+                    }, 
+                    {
+                        "name": "CopyFileA", 
+                        "address": "0x100462d4"
+                    }, 
+                    {
+                        "name": "GetWindowsDirectoryA", 
+                        "address": "0x100462d8"
+                    }, 
+                    {
+                        "name": "GetVersionExA", 
+                        "address": "0x100462dc"
+                    }, 
+                    {
+                        "name": "ExitProcess", 
+                        "address": "0x100462e0"
+                    }, 
+                    {
+                        "name": "lstrcatA", 
+                        "address": "0x100462e4"
+                    }, 
+                    {
+                        "name": "DisableThreadLibraryCalls", 
+                        "address": "0x100462e8"
+                    }, 
+                    {
+                        "name": "VirtualAllocEx", 
+                        "address": "0x100462ec"
+                    }, 
+                    {
+                        "name": "GetProcessHeap", 
+                        "address": "0x100462f0"
+                    }, 
+                    {
+                        "name": "CreateToolhelp32Snapshot", 
+                        "address": "0x100462f4"
+                    }, 
+                    {
+                        "name": "GetCurrentProcessId", 
+                        "address": "0x100462f8"
+                    }, 
+                    {
+                        "name": "ProcessIdToSessionId", 
+                        "address": "0x100462fc"
+                    }, 
+                    {
+                        "name": "Process32First", 
+                        "address": "0x10046300"
+                    }, 
+                    {
+                        "name": "Process32Next", 
+                        "address": "0x10046304"
+                    }, 
+                    {
+                        "name": "GetFileSizeEx", 
+                        "address": "0x10046308"
+                    }
+                ], 
+                "dll": "KERNEL32.dll"
+            }, 
+            {
+                "imports": [
+                    {
+                        "name": "wsprintfA", 
+                        "address": "0x10046310"
+                    }
+                ], 
+                "dll": "USER32.dll"
+            }, 
+            {
+                "imports": [
+                    {
+                        "name": "OpenProcessToken", 
+                        "address": "0x10046318"
+                    }, 
+                    {
+                        "name": "GetTokenInformation", 
+                        "address": "0x1004631c"
+                    }
+                ], 
+                "dll": "ADVAPI32.dll"
+            }, 
+            {
+                "imports": [
+                    {
+                        "name": "CoInitialize", 
+                        "address": "0x10046324"
+                    }, 
+                    {
+                        "name": "CoCreateInstance", 
+                        "address": "0x10046328"
+                    }, 
+                    {
+                        "name": "CoUninitialize", 
+                        "address": "0x1004632c"
+                    }
+                ], 
+                "dll": "ole32.dll"
+            }, 
+            {
+                "imports": [
+                    {
+                        "name": "WNetCloseEnum", 
+                        "address": "0x10046334"
+                    }
+                ], 
+                "dll": "mpr.dll"
+            }
+        ], 
+        "peid_signatures": [
+            "Armadillo v1.xx - v2.xx"
+        ], 
+        "keys": [], 
+        "signature": [], 
+        "pe_timestamp": "2012-03-06 05:24:20", 
+        "pe_exports": [
+            {
+                "ordinal": 3, 
+                "name": "CloseDriver", 
+                "address": "0x100033b9"
+            }, 
+            {
+                "ordinal": 4, 
+                "name": "DefDriverProc", 
+                "address": "0x100033c5"
+            }, 
+            {
+                "ordinal": 5, 
+                "name": "DriverCallback", 
+                "address": "0x100033d1"
+            }, 
+            {
+                "ordinal": 6, 
+                "name": "DrvGetModuleHandle", 
+                "address": "0x100033dd"
+            }, 
+            {
+                "ordinal": 7, 
+                "name": "GetDriverModuleHandle", 
+                "address": "0x100033e9"
+            }, 
+            {
+                "ordinal": 8, 
+                "name": "MigrateAllDrivers", 
+                "address": "0x100033f5"
+            }, 
+            {
+                "ordinal": 9, 
+                "name": "MigrateSoundEvents", 
+                "address": "0x10003401"
+            }, 
+            {
+                "ordinal": 10, 
+                "name": "NotifyCallbackData", 
+                "address": "0x1000340d"
+            }, 
+            {
+                "ordinal": 11, 
+                "name": "OpenDriver", 
+                "address": "0x10003419"
+            }, 
+            {
+                "ordinal": 12, 
+                "name": "PlaySound", 
+                "address": "0x10003425"
+            }, 
+            {
+                "ordinal": 13, 
+                "name": "PlaySoundA", 
+                "address": "0x10003431"
+            }, 
+            {
+                "ordinal": 14, 
+                "name": "PlaySoundW", 
+                "address": "0x1000343d"
+            }, 
+            {
+                "ordinal": 15, 
+                "name": "SendDriverMessage", 
+                "address": "0x10003449"
+            }, 
+            {
+                "ordinal": 16, 
+                "name": "WOW32DriverCallback", 
+                "address": "0x10003455"
+            }, 
+            {
+                "ordinal": 17, 
+                "name": "WOW32ResolveMultiMediaHandle", 
+                "address": "0x10003461"
+            }, 
+            {
+                "ordinal": 18, 
+                "name": "WOWAppExit", 
+                "address": "0x1000346d"
+            }, 
+            {
+                "ordinal": 19, 
+                "name": "WinmmLogoff", 
+                "address": "0x10003479"
+            }, 
+            {
+                "ordinal": 20, 
+                "name": "WinmmLogon", 
+                "address": "0x10003485"
+            }, 
+            {
+                "ordinal": 34, 
+                "name": "_gfxLogoff@0", 
+                "address": "0x1000352d"
+            }, 
+            {
+                "ordinal": 35, 
+                "name": "_gfxLogon@4", 
+                "address": "0x10003539"
+            }, 
+            {
+                "ordinal": 21, 
+                "name": "aux32Message", 
+                "address": "0x10003491"
+            }, 
+            {
+                "ordinal": 22, 
+                "name": "auxGetDevCapsA", 
+                "address": "0x1000349d"
+            }, 
+            {
+                "ordinal": 23, 
+                "name": "auxGetDevCapsW", 
+                "address": "0x100034a9"
+            }, 
+            {
+                "ordinal": 24, 
+                "name": "auxGetNumDevs", 
+                "address": "0x100034b5"
+            }, 
+            {
+                "ordinal": 25, 
+                "name": "auxGetVolume", 
+                "address": "0x100034c1"
+            }, 
+            {
+                "ordinal": 26, 
+                "name": "auxOutMessage", 
+                "address": "0x100034cd"
+            }, 
+            {
+                "ordinal": 27, 
+                "name": "auxSetVolume", 
+                "address": "0x100034d9"
+            }, 
+            {
+                "ordinal": 28, 
+                "name": "gfxAddGfx", 
+                "address": "0x100034e5"
+            }, 
+            {
+                "ordinal": 29, 
+                "name": "gfxBatchChange", 
+                "address": "0x100034f1"
+            }, 
+            {
+                "ordinal": 30, 
+                "name": "gfxCreateGfxFactoriesList", 
+                "address": "0x100034fd"
+            }, 
+            {
+                "ordinal": 31, 
+                "name": "gfxCreateZoneFactoriesList", 
+                "address": "0x10003509"
+            }, 
+            {
+                "ordinal": 32, 
+                "name": "gfxDestroyDeviceInterfaceList", 
+                "address": "0x10003515"
+            }, 
+            {
+                "ordinal": 33, 
+                "name": "gfxEnumerateGfxs", 
+                "address": "0x10003521"
+            }, 
+            {
+                "ordinal": 36, 
+                "name": "gfxModifyGfx", 
+                "address": "0x10003545"
+            }, 
+            {
+                "ordinal": 37, 
+                "name": "gfxOpenGfx", 
+                "address": "0x10003551"
+            }, 
+            {
+                "ordinal": 38, 
+                "name": "gfxRemoveGfx", 
+                "address": "0x1000355d"
+            }, 
+            {
+                "ordinal": 39, 
+                "name": "joy32Message", 
+                "address": "0x10003569"
+            }, 
+            {
+                "ordinal": 40, 
+                "name": "joyConfigChanged", 
+                "address": "0x10003575"
+            }, 
+            {
+                "ordinal": 41, 
+                "name": "joyGetDevCapsA", 
+                "address": "0x10003581"
+            }, 
+            {
+                "ordinal": 42, 
+                "name": "joyGetDevCapsW", 
+                "address": "0x1000358d"
+            }, 
+            {
+                "ordinal": 43, 
+                "name": "joyGetNumDevs", 
+                "address": "0x10003599"
+            }, 
+            {
+                "ordinal": 44, 
+                "name": "joyGetPos", 
+                "address": "0x100035a5"
+            }, 
+            {
+                "ordinal": 45, 
+                "name": "joyGetPosEx", 
+                "address": "0x100035b1"
+            }, 
+            {
+                "ordinal": 46, 
+                "name": "joyGetThreshold", 
+                "address": "0x100035bd"
+            }, 
+            {
+                "ordinal": 47, 
+                "name": "joyReleaseCapture", 
+                "address": "0x100035c9"
+            }, 
+            {
+                "ordinal": 48, 
+                "name": "joySetCapture", 
+                "address": "0x100035d5"
+            }, 
+            {
+                "ordinal": 49, 
+                "name": "joySetThreshold", 
+                "address": "0x100035e1"
+            }, 
+            {
+                "ordinal": 50, 
+                "name": "mci32Message", 
+                "address": "0x100035ed"
+            }, 
+            {
+                "ordinal": 51, 
+                "name": "mciDriverNotify", 
+                "address": "0x100035f9"
+            }, 
+            {
+                "ordinal": 52, 
+                "name": "mciDriverYield", 
+                "address": "0x10003605"
+            }, 
+            {
+                "ordinal": 53, 
+                "name": "mciExecute", 
+                "address": "0x10003611"
+            }, 
+            {
+                "ordinal": 54, 
+                "name": "mciFreeCommandResource", 
+                "address": "0x1000361d"
+            }, 
+            {
+                "ordinal": 55, 
+                "name": "mciGetCreatorTask", 
+                "address": "0x10003629"
+            }, 
+            {
+                "ordinal": 56, 
+                "name": "mciGetDeviceIDA", 
+                "address": "0x10003635"
+            }, 
+            {
+                "ordinal": 57, 
+                "name": "mciGetDeviceIDFromElementIDA", 
+                "address": "0x10003641"
+            }, 
+            {
+                "ordinal": 58, 
+                "name": "mciGetDeviceIDFromElementIDW", 
+                "address": "0x1000364d"
+            }, 
+            {
+                "ordinal": 59, 
+                "name": "mciGetDeviceIDW", 
+                "address": "0x10003659"
+            }, 
+            {
+                "ordinal": 60, 
+                "name": "mciGetDriverData", 
+                "address": "0x10003665"
+            }, 
+            {
+                "ordinal": 61, 
+                "name": "mciGetErrorStringA", 
+                "address": "0x10003671"
+            }, 
+            {
+                "ordinal": 62, 
+                "name": "mciGetErrorStringW", 
+                "address": "0x1000367d"
+            }, 
+            {
+                "ordinal": 63, 
+                "name": "mciGetYieldProc", 
+                "address": "0x10003689"
+            }, 
+            {
+                "ordinal": 64, 
+                "name": "mciLoadCommandResource", 
+                "address": "0x10003695"
+            }, 
+            {
+                "ordinal": 65, 
+                "name": "mciSendCommandA", 
+                "address": "0x100036a1"
+            }, 
+            {
+                "ordinal": 66, 
+                "name": "mciSendCommandW", 
+                "address": "0x100036ad"
+            }, 
+            {
+                "ordinal": 67, 
+                "name": "mciSendStringA", 
+                "address": "0x100036b9"
+            }, 
+            {
+                "ordinal": 68, 
+                "name": "mciSendStringW", 
+                "address": "0x100036c5"
+            }, 
+            {
+                "ordinal": 69, 
+                "name": "mciSetDriverData", 
+                "address": "0x100036d1"
+            }, 
+            {
+                "ordinal": 70, 
+                "name": "mciSetYieldProc", 
+                "address": "0x100036dd"
+            }, 
+            {
+                "ordinal": 71, 
+                "name": "mid32Message", 
+                "address": "0x100036e9"
+            }, 
+            {
+                "ordinal": 72, 
+                "name": "midiConnect", 
+                "address": "0x100036f5"
+            }, 
+            {
+                "ordinal": 73, 
+                "name": "midiDisconnect", 
+                "address": "0x10003701"
+            }, 
+            {
+                "ordinal": 74, 
+                "name": "midiInAddBuffer", 
+                "address": "0x1000370d"
+            }, 
+            {
+                "ordinal": 75, 
+                "name": "midiInClose", 
+                "address": "0x10003719"
+            }, 
+            {
+                "ordinal": 76, 
+                "name": "midiInGetDevCapsA", 
+                "address": "0x10003725"
+            }, 
+            {
+                "ordinal": 77, 
+                "name": "midiInGetDevCapsW", 
+                "address": "0x10003731"
+            }, 
+            {
+                "ordinal": 78, 
+                "name": "midiInGetErrorTextA", 
+                "address": "0x1000373d"
+            }, 
+            {
+                "ordinal": 79, 
+                "name": "midiInGetErrorTextW", 
+                "address": "0x10003749"
+            }, 
+            {
+                "ordinal": 80, 
+                "name": "midiInGetID", 
+                "address": "0x10003755"
+            }, 
+            {
+                "ordinal": 81, 
+                "name": "midiInGetNumDevs", 
+                "address": "0x10003761"
+            }, 
+            {
+                "ordinal": 82, 
+                "name": "midiInMessage", 
+                "address": "0x1000376d"
+            }, 
+            {
+                "ordinal": 83, 
+                "name": "midiInOpen", 
+                "address": "0x10003779"
+            }, 
+            {
+                "ordinal": 84, 
+                "name": "midiInPrepareHeader", 
+                "address": "0x10003785"
+            }, 
+            {
+                "ordinal": 85, 
+                "name": "midiInReset", 
+                "address": "0x10003791"
+            }, 
+            {
+                "ordinal": 86, 
+                "name": "midiInStart", 
+                "address": "0x1000379d"
+            }, 
+            {
+                "ordinal": 87, 
+                "name": "midiInStop", 
+                "address": "0x100037a9"
+            }, 
+            {
+                "ordinal": 88, 
+                "name": "midiInUnprepareHeader", 
+                "address": "0x100037b5"
+            }, 
+            {
+                "ordinal": 89, 
+                "name": "midiOutCacheDrumPatches", 
+                "address": "0x100037c1"
+            }, 
+            {
+                "ordinal": 90, 
+                "name": "midiOutCachePatches", 
+                "address": "0x100037cd"
+            }, 
+            {
+                "ordinal": 91, 
+                "name": "midiOutClose", 
+                "address": "0x100037d9"
+            }, 
+            {
+                "ordinal": 92, 
+                "name": "midiOutGetDevCapsA", 
+                "address": "0x100037e5"
+            }, 
+            {
+                "ordinal": 93, 
+                "name": "midiOutGetDevCapsW", 
+                "address": "0x100037f1"
+            }, 
+            {
+                "ordinal": 94, 
+                "name": "midiOutGetErrorTextA", 
+                "address": "0x100037fd"
+            }, 
+            {
+                "ordinal": 95, 
+                "name": "midiOutGetErrorTextW", 
+                "address": "0x10003809"
+            }, 
+            {
+                "ordinal": 96, 
+                "name": "midiOutGetID", 
+                "address": "0x10003815"
+            }, 
+            {
+                "ordinal": 97, 
+                "name": "midiOutGetNumDevs", 
+                "address": "0x10003821"
+            }, 
+            {
+                "ordinal": 98, 
+                "name": "midiOutGetVolume", 
+                "address": "0x1000382d"
+            }, 
+            {
+                "ordinal": 99, 
+                "name": "midiOutLongMsg", 
+                "address": "0x10003839"
+            }, 
+            {
+                "ordinal": 100, 
+                "name": "midiOutMessage", 
+                "address": "0x10003845"
+            }, 
+            {
+                "ordinal": 101, 
+                "name": "midiOutOpen", 
+                "address": "0x10003851"
+            }, 
+            {
+                "ordinal": 102, 
+                "name": "midiOutPrepareHeader", 
+                "address": "0x1000385d"
+            }, 
+            {
+                "ordinal": 103, 
+                "name": "midiOutReset", 
+                "address": "0x10003869"
+            }, 
+            {
+                "ordinal": 104, 
+                "name": "midiOutSetVolume", 
+                "address": "0x10003875"
+            }, 
+            {
+                "ordinal": 105, 
+                "name": "midiOutShortMsg", 
+                "address": "0x10003881"
+            }, 
+            {
+                "ordinal": 106, 
+                "name": "midiOutUnprepareHeader", 
+                "address": "0x1000388d"
+            }, 
+            {
+                "ordinal": 107, 
+                "name": "midiStreamClose", 
+                "address": "0x10003899"
+            }, 
+            {
+                "ordinal": 108, 
+                "name": "midiStreamOpen", 
+                "address": "0x100038a5"
+            }, 
+            {
+                "ordinal": 109, 
+                "name": "midiStreamOut", 
+                "address": "0x100038b1"
+            }, 
+            {
+                "ordinal": 110, 
+                "name": "midiStreamPause", 
+                "address": "0x100038bd"
+            }, 
+            {
+                "ordinal": 111, 
+                "name": "midiStreamPosition", 
+                "address": "0x100038c9"
+            }, 
+            {
+                "ordinal": 112, 
+                "name": "midiStreamProperty", 
+                "address": "0x100038d5"
+            }, 
+            {
+                "ordinal": 113, 
+                "name": "midiStreamRestart", 
+                "address": "0x100038e1"
+            }, 
+            {
+                "ordinal": 114, 
+                "name": "midiStreamStop", 
+                "address": "0x100038ed"
+            }, 
+            {
+                "ordinal": 115, 
+                "name": "mixerClose", 
+                "address": "0x100038f9"
+            }, 
+            {
+                "ordinal": 116, 
+                "name": "mixerGetControlDetailsA", 
+                "address": "0x10003905"
+            }, 
+            {
+                "ordinal": 117, 
+                "name": "mixerGetControlDetailsW", 
+                "address": "0x10003911"
+            }, 
+            {
+                "ordinal": 118, 
+                "name": "mixerGetDevCapsA", 
+                "address": "0x1000391d"
+            }, 
+            {
+                "ordinal": 119, 
+                "name": "mixerGetDevCapsW", 
+                "address": "0x10003929"
+            }, 
+            {
+                "ordinal": 120, 
+                "name": "mixerGetID", 
+                "address": "0x10003935"
+            }, 
+            {
+                "ordinal": 121, 
+                "name": "mixerGetLineControlsA", 
+                "address": "0x10003941"
+            }, 
+            {
+                "ordinal": 122, 
+                "name": "mixerGetLineControlsW", 
+                "address": "0x1000394d"
+            }, 
+            {
+                "ordinal": 123, 
+                "name": "mixerGetLineInfoA", 
+                "address": "0x10003959"
+            }, 
+            {
+                "ordinal": 124, 
+                "name": "mixerGetLineInfoW", 
+                "address": "0x10003965"
+            }, 
+            {
+                "ordinal": 125, 
+                "name": "mixerGetNumDevs", 
+                "address": "0x10003971"
+            }, 
+            {
+                "ordinal": 126, 
+                "name": "mixerMessage", 
+                "address": "0x1000397d"
+            }, 
+            {
+                "ordinal": 127, 
+                "name": "mixerOpen", 
+                "address": "0x10003989"
+            }, 
+            {
+                "ordinal": 128, 
+                "name": "mixerSetControlDetails", 
+                "address": "0x10003995"
+            }, 
+            {
+                "ordinal": 129, 
+                "name": "mmDrvInstall", 
+                "address": "0x100039a1"
+            }, 
+            {
+                "ordinal": 130, 
+                "name": "mmGetCurrentTask", 
+                "address": "0x100039ad"
+            }, 
+            {
+                "ordinal": 131, 
+                "name": "mmTaskBlock", 
+                "address": "0x100039b9"
+            }, 
+            {
+                "ordinal": 132, 
+                "name": "mmTaskCreate", 
+                "address": "0x100039c5"
+            }, 
+            {
+                "ordinal": 133, 
+                "name": "mmTaskSignal", 
+                "address": "0x100039d1"
+            }, 
+            {
+                "ordinal": 134, 
+                "name": "mmTaskYield", 
+                "address": "0x100039dd"
+            }, 
+            {
+                "ordinal": 135, 
+                "name": "mmioAdvance", 
+                "address": "0x100039e9"
+            }, 
+            {
+                "ordinal": 136, 
+                "name": "mmioAscend", 
+                "address": "0x100039f5"
+            }, 
+            {
+                "ordinal": 137, 
+                "name": "mmioClose", 
+                "address": "0x10003a01"
+            }, 
+            {
+                "ordinal": 138, 
+                "name": "mmioCreateChunk", 
+                "address": "0x10003a0d"
+            }, 
+            {
+                "ordinal": 139, 
+                "name": "mmioDescend", 
+                "address": "0x10003a19"
+            }, 
+            {
+                "ordinal": 140, 
+                "name": "mmioFlush", 
+                "address": "0x10003a25"
+            }, 
+            {
+                "ordinal": 141, 
+                "name": "mmioGetInfo", 
+                "address": "0x10003a31"
+            }, 
+            {
+                "ordinal": 142, 
+                "name": "mmioInstallIOProcA", 
+                "address": "0x10003a3d"
+            }, 
+            {
+                "ordinal": 143, 
+                "name": "mmioInstallIOProcW", 
+                "address": "0x10003a49"
+            }, 
+            {
+                "ordinal": 144, 
+                "name": "mmioOpenA", 
+                "address": "0x10003a55"
+            }, 
+            {
+                "ordinal": 145, 
+                "name": "mmioOpenW", 
+                "address": "0x10003a61"
+            }, 
+            {
+                "ordinal": 146, 
+                "name": "mmioRead", 
+                "address": "0x10003a6d"
+            }, 
+            {
+                "ordinal": 147, 
+                "name": "mmioRenameA", 
+                "address": "0x10003a79"
+            }, 
+            {
+                "ordinal": 148, 
+                "name": "mmioRenameW", 
+                "address": "0x10003a85"
+            }, 
+            {
+                "ordinal": 149, 
+                "name": "mmioSeek", 
+                "address": "0x10003a91"
+            }, 
+            {
+                "ordinal": 150, 
+                "name": "mmioSendMessage", 
+                "address": "0x10003a9d"
+            }, 
+            {
+                "ordinal": 151, 
+                "name": "mmioSetBuffer", 
+                "address": "0x10003aa9"
+            }, 
+            {
+                "ordinal": 152, 
+                "name": "mmioSetInfo", 
+                "address": "0x10003ab5"
+            }, 
+            {
+                "ordinal": 153, 
+                "name": "mmioStringToFOURCCA", 
+                "address": "0x10003ac1"
+            }, 
+            {
+                "ordinal": 154, 
+                "name": "mmioStringToFOURCCW", 
+                "address": "0x10003acd"
+            }, 
+            {
+                "ordinal": 155, 
+                "name": "mmioWrite", 
+                "address": "0x10003ad9"
+            }, 
+            {
+                "ordinal": 156, 
+                "name": "mmsystemGetVersion", 
+                "address": "0x10003ae5"
+            }, 
+            {
+                "ordinal": 157, 
+                "name": "mod32Message", 
+                "address": "0x10003af1"
+            }, 
+            {
+                "ordinal": 158, 
+                "name": "mxd32Message", 
+                "address": "0x10003afd"
+            }, 
+            {
+                "ordinal": 159, 
+                "name": "sndPlaySoundA", 
+                "address": "0x10003b09"
+            }, 
+            {
+                "ordinal": 160, 
+                "name": "sndPlaySoundW", 
+                "address": "0x10003b15"
+            }, 
+            {
+                "ordinal": 161, 
+                "name": "tid32Message", 
+                "address": "0x10003b21"
+            }, 
+            {
+                "ordinal": 162, 
+                "name": "timeBeginPeriod", 
+                "address": "0x10003b2d"
+            }, 
+            {
+                "ordinal": 163, 
+                "name": "timeEndPeriod", 
+                "address": "0x10003b39"
+            }, 
+            {
+                "ordinal": 164, 
+                "name": "timeGetDevCaps", 
+                "address": "0x10003b45"
+            }, 
+            {
+                "ordinal": 165, 
+                "name": "timeGetSystemTime", 
+                "address": "0x10003b51"
+            }, 
+            {
+                "ordinal": 166, 
+                "name": "timeGetTime", 
+                "address": "0x10003b5d"
+            }, 
+            {
+                "ordinal": 167, 
+                "name": "timeKillEvent", 
+                "address": "0x10003b69"
+            }, 
+            {
+                "ordinal": 168, 
+                "name": "timeSetEvent", 
+                "address": "0x10003b75"
+            }, 
+            {
+                "ordinal": 169, 
+                "name": "waveInAddBuffer", 
+                "address": "0x10003b81"
+            }, 
+            {
+                "ordinal": 170, 
+                "name": "waveInClose", 
+                "address": "0x10003b8d"
+            }, 
+            {
+                "ordinal": 171, 
+                "name": "waveInGetDevCapsA", 
+                "address": "0x10003b99"
+            }, 
+            {
+                "ordinal": 172, 
+                "name": "waveInGetDevCapsW", 
+                "address": "0x10003ba5"
+            }, 
+            {
+                "ordinal": 173, 
+                "name": "waveInGetErrorTextA", 
+                "address": "0x10003bb1"
+            }, 
+            {
+                "ordinal": 174, 
+                "name": "waveInGetErrorTextW", 
+                "address": "0x10003bbd"
+            }, 
+            {
+                "ordinal": 175, 
+                "name": "waveInGetID", 
+                "address": "0x10003bc9"
+            }, 
+            {
+                "ordinal": 176, 
+                "name": "waveInGetNumDevs", 
+                "address": "0x10003bd5"
+            }, 
+            {
+                "ordinal": 177, 
+                "name": "waveInGetPosition", 
+                "address": "0x10003be1"
+            }, 
+            {
+                "ordinal": 178, 
+                "name": "waveInMessage", 
+                "address": "0x10003bed"
+            }, 
+            {
+                "ordinal": 179, 
+                "name": "waveInOpen", 
+                "address": "0x10003bf9"
+            }, 
+            {
+                "ordinal": 180, 
+                "name": "waveInPrepareHeader", 
+                "address": "0x10003c05"
+            }, 
+            {
+                "ordinal": 181, 
+                "name": "waveInReset", 
+                "address": "0x10003c11"
+            }, 
+            {
+                "ordinal": 182, 
+                "name": "waveInStart", 
+                "address": "0x10003c1d"
+            }, 
+            {
+                "ordinal": 183, 
+                "name": "waveInStop", 
+                "address": "0x10003c29"
+            }, 
+            {
+                "ordinal": 184, 
+                "name": "waveInUnprepareHeader", 
+                "address": "0x10003c35"
+            }, 
+            {
+                "ordinal": 185, 
+                "name": "waveOutBreakLoop", 
+                "address": "0x10003c41"
+            }, 
+            {
+                "ordinal": 186, 
+                "name": "waveOutClose", 
+                "address": "0x10003c4d"
+            }, 
+            {
+                "ordinal": 187, 
+                "name": "waveOutGetDevCapsA", 
+                "address": "0x10003c59"
+            }, 
+            {
+                "ordinal": 188, 
+                "name": "waveOutGetDevCapsW", 
+                "address": "0x10003c65"
+            }, 
+            {
+                "ordinal": 189, 
+                "name": "waveOutGetErrorTextA", 
+                "address": "0x10003c71"
+            }, 
+            {
+                "ordinal": 190, 
+                "name": "waveOutGetErrorTextW", 
+                "address": "0x10003c7d"
+            }, 
+            {
+                "ordinal": 191, 
+                "name": "waveOutGetID", 
+                "address": "0x10003c89"
+            }, 
+            {
+                "ordinal": 192, 
+                "name": "waveOutGetNumDevs", 
+                "address": "0x10003c95"
+            }, 
+            {
+                "ordinal": 193, 
+                "name": "waveOutGetPitch", 
+                "address": "0x10003ca1"
+            }, 
+            {
+                "ordinal": 194, 
+                "name": "waveOutGetPlaybackRate", 
+                "address": "0x10003cad"
+            }, 
+            {
+                "ordinal": 195, 
+                "name": "waveOutGetPosition", 
+                "address": "0x10003cb9"
+            }, 
+            {
+                "ordinal": 196, 
+                "name": "waveOutGetVolume", 
+                "address": "0x10003cc5"
+            }, 
+            {
+                "ordinal": 197, 
+                "name": "waveOutMessage", 
+                "address": "0x10003cd1"
+            }, 
+            {
+                "ordinal": 198, 
+                "name": "waveOutOpen", 
+                "address": "0x10003cdd"
+            }, 
+            {
+                "ordinal": 199, 
+                "name": "waveOutPause", 
+                "address": "0x10003ce9"
+            }, 
+            {
+                "ordinal": 200, 
+                "name": "waveOutPrepareHeader", 
+                "address": "0x10003cf5"
+            }, 
+            {
+                "ordinal": 201, 
+                "name": "waveOutReset", 
+                "address": "0x10003d01"
+            }, 
+            {
+                "ordinal": 202, 
+                "name": "waveOutRestart", 
+                "address": "0x10003d0d"
+            }, 
+            {
+                "ordinal": 203, 
+                "name": "waveOutSetPitch", 
+                "address": "0x10003d19"
+            }, 
+            {
+                "ordinal": 204, 
+                "name": "waveOutSetPlaybackRate", 
+                "address": "0x10003d25"
+            }, 
+            {
+                "ordinal": 205, 
+                "name": "waveOutSetVolume", 
+                "address": "0x10003d31"
+            }, 
+            {
+                "ordinal": 206, 
+                "name": "waveOutUnprepareHeader", 
+                "address": "0x10003d3d"
+            }, 
+            {
+                "ordinal": 207, 
+                "name": "waveOutWrite", 
+                "address": "0x10003d49"
+            }, 
+            {
+                "ordinal": 208, 
+                "name": "wid32Message", 
+                "address": "0x10003d55"
+            }, 
+            {
+                "ordinal": 209, 
+                "name": "winmmDbgOut", 
+                "address": "0x10003d61"
+            }, 
+            {
+                "ordinal": 210, 
+                "name": "winmmSetDebugLevel", 
+                "address": "0x10003d6d"
+            }, 
+            {
+                "ordinal": 211, 
+                "name": "wod32Message", 
+                "address": "0x10003d79"
+            }, 
+            {
+                "ordinal": 2, 
+                "name": null, 
+                "address": "0x100033b0"
+            }
+        ], 
+        "imported_dll_count": 6, 
+        "pe_imphash": "606f1e7ae368a832f259fb4a3b5f23b5", 
+        "pe_resources": [], 
+        "pe_versioninfo": [], 
+        "pe_sections": [
+            {
+                "size_of_data": "0x00007000", 
+                "virtual_address": "0x00001000", 
+                "entropy": 6.106823310408297, 
+                "name": ".text", 
+                "virtual_size": "0x00006628"
+            }, 
+            {
+                "size_of_data": "0x00003000", 
+                "virtual_address": "0x00008000", 
+                "entropy": 4.201083295002574, 
+                "name": ".rdata", 
+                "virtual_size": "0x00002070"
+            }, 
+            {
+                "size_of_data": "0x00036000", 
+                "virtual_address": "0x0000b000", 
+                "entropy": 7.964044775262573, 
+                "name": ".data", 
+                "virtual_size": "0x0003956c"
+            }, 
+            {
+                "size_of_data": "0x00001000", 
+                "virtual_address": "0x00045000", 
+                "entropy": 3.103664149280698, 
+                "name": ".reloc", 
+                "virtual_size": "0x00000b7a"
+            }, 
+            {
+                "size_of_data": "0x00001000", 
+                "virtual_address": "0x00046000", 
+                "entropy": 4.4947214182177335, 
+                "name": ".l1", 
+                "virtual_size": "0x00001000"
+            }, 
+            {
+                "size_of_data": "0x0000c000", 
+                "virtual_address": "0x00047000", 
+                "entropy": 6.306583596983958, 
+                "name": ".text", 
+                "virtual_size": "0x0000c000"
+            }
+        ]
+    }, 
+    "snort": {
+        "alerts": []
+    }, 
+    "debug": {
+        "action": [], 
+        "dbgview": [], 
+        "errors": [], 
+        "log": [
+            "2026-06-30 08:27:20,012 [root] DEBUG: Starting analyzer from: /tmp/tmpw5Sknf\n", 
+            "2026-06-30 08:27:20,012 [root] DEBUG: Storing results at: /tmp/YLJoNq\n", 
+            "2026-06-30 08:27:20,014 [root] ERROR: Traceback (most recent call last):\n", 
+            "  File \"/tmp/tmpw5Sknf/analyzer.py\", line 340, in <module>\n", 
+            "    success = analyzer.run()\n", 
+            "  File \"/tmp/tmpw5Sknf/analyzer.py\", line 129, in run\n", 
+            "    self.config.file_name, **kwargs)\n", 
+            "  File \"/tmp/tmpw5Sknf/lib/core/packages.py\", line 42, in choose_package_class\n", 
+            "    \"exist.\".format(name))\n", 
+            "Exception: Unable to import package \"exe\": it does not exist.\n", 
+            "Traceback (most recent call last):\n", 
+            "  File \"/tmp/tmpw5Sknf/analyzer.py\", line 340, in <module>\n", 
+            "    success = analyzer.run()\n", 
+            "  File \"/tmp/tmpw5Sknf/analyzer.py\", line 129, in run\n", 
+            "    self.config.file_name, **kwargs)\n", 
+            "  File \"/tmp/tmpw5Sknf/lib/core/packages.py\", line 42, in choose_package_class\n", 
+            "    \"exist.\".format(name))\n", 
+            "Exception: Unable to import package \"exe\": it does not exist.\n"
+        ], 
+        "cuckoo": [
+            "2026-06-30 08:27:48,074 [cuckoo.core.scheduler] DEBUG: Task #7606381: no machine available yet\n", 
+            "2026-06-30 08:27:49,091 [cuckoo.core.scheduler] DEBUG: Task #7606381: no machine available yet\n", 
+            "2026-06-30 08:27:50,111 [cuckoo.core.scheduler] DEBUG: Task #7606381: no machine available yet\n", 
+            "2026-06-30 08:27:51,163 [cuckoo.core.scheduler] DEBUG: Task #7606381: no machine available yet\n", 
+            "2026-06-30 08:27:52,420 [cuckoo.core.scheduler] DEBUG: Task #7606381: no machine available yet\n", 
+            "2026-06-30 08:27:53,462 [cuckoo.core.scheduler] DEBUG: Task #7606381: no machine available yet\n", 
+            "2026-06-30 08:27:54,486 [cuckoo.core.scheduler] DEBUG: Task #7606381: no machine available yet\n", 
+            "2026-06-30 08:27:55,511 [cuckoo.core.scheduler] DEBUG: Task #7606381: no machine available yet\n", 
+            "2026-06-30 08:27:56,581 [cuckoo.core.scheduler] DEBUG: Task #7606381: no machine available yet\n", 
+            "2026-06-30 08:27:57,869 [cuckoo.core.scheduler] DEBUG: Task #7606381: no machine available yet\n", 
+            "2026-06-30 08:27:58,924 [cuckoo.core.scheduler] DEBUG: Task #7606381: no machine available yet\n", 
+            "2026-06-30 08:28:00,026 [cuckoo.core.scheduler] DEBUG: Task #7606381: no machine available yet\n", 
+            "2026-06-30 08:28:01,110 [cuckoo.core.scheduler] DEBUG: Task #7606381: no machine available yet\n", 
+            "2026-06-30 08:28:02,234 [cuckoo.core.scheduler] DEBUG: Task #7606381: no machine available yet\n", 
+            "2026-06-30 08:28:03,725 [cuckoo.core.scheduler] DEBUG: Task #7606381: no machine available yet\n", 
+            "2026-06-30 08:28:04,805 [cuckoo.core.scheduler] DEBUG: Task #7606381: no machine available yet\n", 
+            "2026-06-30 08:28:05,877 [cuckoo.core.scheduler] DEBUG: Task #7606381: no machine available yet\n", 
+            "2026-06-30 08:28:06,929 [cuckoo.core.scheduler] DEBUG: Task #7606381: no machine available yet\n", 
+            "2026-06-30 08:28:07,979 [cuckoo.core.scheduler] DEBUG: Task #7606381: no machine available yet\n", 
+            "2026-06-30 08:28:09,235 [cuckoo.core.scheduler] DEBUG: Task #7606381: no machine available yet\n", 
+            "2026-06-30 08:28:10,793 [cuckoo.core.scheduler] DEBUG: Task #7606381: no machine available yet\n", 
+            "2026-06-30 08:28:11,969 [cuckoo.core.scheduler] DEBUG: Task #7606381: no machine available yet\n", 
+            "2026-06-30 08:28:13,482 [cuckoo.core.scheduler] DEBUG: Task #7606381: no machine available yet\n", 
+            "2026-06-30 08:28:15,170 [cuckoo.core.scheduler] DEBUG: Task #7606381: no machine available yet\n", 
+            "2026-06-30 08:28:16,269 [cuckoo.core.scheduler] DEBUG: Task #7606381: no machine available yet\n", 
+            "2026-06-30 08:28:17,564 [cuckoo.core.scheduler] DEBUG: Task #7606381: no machine available yet\n", 
+            "2026-06-30 08:28:18,746 [cuckoo.core.scheduler] DEBUG: Task #7606381: no machine available yet\n", 
+            "2026-06-30 08:28:19,935 [cuckoo.core.scheduler] DEBUG: Task #7606381: no machine available yet\n", 
+            "2026-06-30 08:28:20,976 [cuckoo.core.scheduler] DEBUG: Task #7606381: no machine available yet\n", 
+            "2026-06-30 08:28:22,020 [cuckoo.core.scheduler] DEBUG: Task #7606381: no machine available yet\n", 
+            "2026-06-30 08:28:23,056 [cuckoo.core.scheduler] DEBUG: Task #7606381: no machine available yet\n", 
+            "2026-06-30 08:28:24,103 [cuckoo.core.scheduler] DEBUG: Task #7606381: no machine available yet\n", 
+            "2026-06-30 08:28:25,184 [cuckoo.core.scheduler] DEBUG: Task #7606381: no machine available yet\n", 
+            "2026-06-30 08:28:26,487 [cuckoo.core.scheduler] DEBUG: Task #7606381: no machine available yet\n", 
+            "2026-06-30 08:28:27,523 [cuckoo.core.scheduler] DEBUG: Task #7606381: no machine available yet\n", 
+            "2026-06-30 08:28:28,567 [cuckoo.core.scheduler] INFO: Task #7606381: acquired machine Ubuntu1904x647 (label=Ubuntu1904x647)\n", 
+            "2026-06-30 08:28:28,567 [cuckoo.core.resultserver] DEBUG: Now tracking machine 192.168.168.107 for task #7606381\n", 
+            "2026-06-30 08:28:28,924 [cuckoo.auxiliary.sniffer] INFO: Started sniffer with PID 3885748 (interface=vboxnet0, host=192.168.168.107)\n", 
+            "2026-06-30 08:28:29,170 [cuckoo.machinery.virtualbox] DEBUG: Starting vm Ubuntu1904x647\n", 
+            "2026-06-30 08:28:29,693 [cuckoo.machinery.virtualbox] DEBUG: Restoring virtual machine Ubuntu1904x647 to Snapshot\n", 
+            "2026-06-30 08:29:00,101 [cuckoo.core.guest] INFO: Starting analysis #7606381 on guest (id=Ubuntu1904x647, ip=192.168.168.107)\n", 
+            "2026-06-30 08:29:01,108 [cuckoo.core.guest] DEBUG: Ubuntu1904x647: not ready yet\n", 
+            "2026-06-30 08:29:06,147 [cuckoo.core.guest] INFO: Guest is running Cuckoo Agent 0.10 (id=Ubuntu1904x647, ip=192.168.168.107)\n", 
+            "2026-06-30 08:29:06,173 [cuckoo.core.guest] DEBUG: Uploading analyzer to guest (id=Ubuntu1904x647, ip=192.168.168.107, monitor=latest, size=73219)\n", 
+            "2026-06-30 08:29:06,428 [cuckoo.core.resultserver] DEBUG: Task #7606381: live log analysis.log initialized.\n", 
+            "2026-06-30 08:29:09,324 [cuckoo.core.guest] INFO: Ubuntu1904x647: analysis completed successfully\n", 
+            "2026-06-30 08:29:09,339 [cuckoo.core.plugins] DEBUG: Stopped auxiliary module: Redsocks\n", 
+            "2026-06-30 08:29:09,371 [cuckoo.core.plugins] DEBUG: Stopped auxiliary module: Sniffer\n", 
+            "2026-06-30 08:29:10,254 [cuckoo.machinery.virtualbox] INFO: Successfully generated memory dump for virtual machine with label Ubuntu1904x647 to path /srv/cuckoo/cwd/storage/analyses/7606381/memory.dmp\n", 
+            "2026-06-30 08:29:10,256 [cuckoo.machinery.virtualbox] DEBUG: Stopping vm Ubuntu1904x647\n", 
+            "2026-06-30 08:29:30,477 [cuckoo.core.resultserver] DEBUG: Stopped tracking machine 192.168.168.107 for task #7606381\n", 
+            "2026-06-30 08:29:30,944 [cuckoo.core.scheduler] DEBUG: Released database task #7606381\n", 
+            "2026-06-30 08:29:30,962 [cuckoo.core.scheduler] INFO: Task #7606381: analysis procedure completed\n"
+        ]
+    }, 
+    "strings": [
+        "!This program cannot be run in DOS mode.", 
+        "KxtcGx", 
+        "Kx9Y@x", 
+        "dXJsPWNhLnp6c29mdC5pbmZvOjgwfHZlcj0wMzA3fHRhZz0zfGdyb3VwPUlEQ0EAPE", 
+        "`.rdata", 
+        "@.data", 
+        ".reloc", 
+        "T$<PRV", 
+        "PPVWPPS", 
+        "L$<WQV", 
+        "L$4QWRV", 
+        "T$@QRVW", 
+        "D$(_^][", 
+        "~(9~$u", 
+        "T$LPQR", 
+        "|$HPWS", 
+        "T$(PQR", 
+        "T$DPVS", 
+        "T$LRWS", 
+        "L$LQVS", 
+        "T$,RWV", 
+        "T$,RWV", 
+        "T$,RWV", 
+        "L$,QWV", 
+        "T$,RWV", 
+        "L$ RUPj", 
+        "9t$Tu\u001f", 
+        "T+3x%A", 
+        ";D$<s!", 
+        "T$,PQh|", 
+        "D$0Qhp", 
+        "{4_^]3", 
+        " inflate 1.1.4 Copyright 1995-2002 Mark Adler ", 
+        "strncpy", 
+        "memcpy", 
+        "memset", 
+        "??2@YAPAXI@Z", 
+        "realloc", 
+        "??3@YAXPAX@Z", 
+        "rename", 
+        "strcat", 
+        "strrchr", 
+        "_snprintf", 
+        "strstr", 
+        "MSVCRT.dll", 
+        "_initterm", 
+        "malloc", 
+        "_adjust_fdiv", 
+        "LoadLibraryA", 
+        "GetModuleHandleA", 
+        "GetProcAddress", 
+        "CloseHandle", 
+        "MapViewOfFile", 
+        "CreateFileMappingA", 
+        "GetFileSize", 
+        "CreateFileA", 
+        "UnmapViewOfFile", 
+        "SizeofResource", 
+        "LockResource", 
+        "LoadResource", 
+        "FindResourceA", 
+        "WriteFile", 
+        "DeleteFileA", 
+        "GetFileAttributesA", 
+        "HeapAlloc", 
+        "GetProcessHeap", 
+        "VirtualAlloc", 
+        "VirtualProtect", 
+        "VirtualFree", 
+        "IsBadReadPtr", 
+        "HeapFree", 
+        "FreeLibrary", 
+        "GetTempFileNameA", 
+        "GetTempPathA", 
+        "GetModuleFileNameA", 
+        "GetPrivateProfileIntA", 
+        "WritePrivateProfileStringA", 
+        "WaitForSingleObject", 
+        "LoadLibraryW", 
+        "GetModuleFileNameW", 
+        "GetCurrentProcess", 
+        "SetFileAttributesA", 
+        "SetFileTime", 
+        "LocalFileTimeToFileTime", 
+        "SystemTimeToFileTime", 
+        "GetFileTime", 
+        "GetSystemDirectoryA", 
+        "CreateProcessA", 
+        "CopyFileA", 
+        "GetWindowsDirectoryA", 
+        "GetVersionExA", 
+        "ExitProcess", 
+        "lstrcatA", 
+        "DisableThreadLibraryCalls", 
+        "KERNEL32.dll", 
+        "wsprintfA", 
+        "USER32.dll", 
+        "GetTokenInformation", 
+        "OpenProcessToken", 
+        "ADVAPI32.dll", 
+        "CoUninitialize", 
+        "CoCreateInstance", 
+        "CoInitialize", 
+        "ole32.dll", 
+        "_stricmp", 
+        "_strlwr", 
+        "calloc", 
+        "GetFileSizeEx", 
+        "Process32Next", 
+        "Process32First", 
+        "ProcessIdToSessionId", 
+        "GetCurrentProcessId", 
+        "CreateToolhelp32Snapshot", 
+        "VirtualAllocEx", 
+        "GetCurrentThread", 
+        "winmm_infect.dll", 
+        "CloseDriver", 
+        "DefDriverProc", 
+        "DriverCallback", 
+        "DrvGetModuleHandle", 
+        "GetDriverModuleHandle", 
+        "MigrateAllDrivers", 
+        "MigrateSoundEvents", 
+        "NotifyCallbackData", 
+        "OpenDriver", 
+        "PlaySound", 
+        "PlaySoundA", 
+        "PlaySoundW", 
+        "SendDriverMessage", 
+        "WOW32DriverCallback", 
+        "WOW32ResolveMultiMediaHandle", 
+        "WOWAppExit", 
+        "WinmmLogoff", 
+        "WinmmLogon", 
+        "_gfxLogoff@0", 
+        "_gfxLogon@4", 
+        "aux32Message", 
+        "auxGetDevCapsA", 
+        "auxGetDevCapsW", 
+        "auxGetNumDevs", 
+        "auxGetVolume", 
+        "auxOutMessage", 
+        "auxSetVolume", 
+        "gfxAddGfx", 
+        "gfxBatchChange", 
+        "gfxCreateGfxFactoriesList", 
+        "gfxCreateZoneFactoriesList", 
+        "gfxDestroyDeviceInterfaceList", 
+        "gfxEnumerateGfxs", 
+        "gfxModifyGfx", 
+        "gfxOpenGfx", 
+        "gfxRemoveGfx", 
+        "joy32Message", 
+        "joyConfigChanged", 
+        "joyGetDevCapsA", 
+        "joyGetDevCapsW", 
+        "joyGetNumDevs", 
+        "joyGetPos", 
+        "joyGetPosEx", 
+        "joyGetThreshold", 
+        "joyReleaseCapture", 
+        "joySetCapture", 
+        "joySetThreshold", 
+        "mci32Message", 
+        "mciDriverNotify", 
+        "mciDriverYield", 
+        "mciExecute", 
+        "mciFreeCommandResource", 
+        "mciGetCreatorTask", 
+        "mciGetDeviceIDA", 
+        "mciGetDeviceIDFromElementIDA", 
+        "mciGetDeviceIDFromElementIDW", 
+        "mciGetDeviceIDW", 
+        "mciGetDriverData", 
+        "mciGetErrorStringA", 
+        "mciGetErrorStringW", 
+        "mciGetYieldProc", 
+        "mciLoadCommandResource", 
+        "mciSendCommandA", 
+        "mciSendCommandW", 
+        "mciSendStringA", 
+        "mciSendStringW", 
+        "mciSetDriverData", 
+        "mciSetYieldProc", 
+        "mid32Message", 
+        "midiConnect", 
+        "midiDisconnect", 
+        "midiInAddBuffer", 
+        "midiInClose", 
+        "midiInGetDevCapsA", 
+        "midiInGetDevCapsW", 
+        "midiInGetErrorTextA", 
+        "midiInGetErrorTextW", 
+        "midiInGetID", 
+        "midiInGetNumDevs", 
+        "midiInMessage", 
+        "midiInOpen", 
+        "midiInPrepareHeader", 
+        "midiInReset", 
+        "midiInStart", 
+        "midiInStop", 
+        "midiInUnprepareHeader", 
+        "midiOutCacheDrumPatches", 
+        "midiOutCachePatches", 
+        "midiOutClose", 
+        "midiOutGetDevCapsA", 
+        "midiOutGetDevCapsW", 
+        "midiOutGetErrorTextA", 
+        "midiOutGetErrorTextW", 
+        "midiOutGetID", 
+        "midiOutGetNumDevs", 
+        "midiOutGetVolume", 
+        "midiOutLongMsg", 
+        "midiOutMessage", 
+        "midiOutOpen", 
+        "midiOutPrepareHeader", 
+        "midiOutReset", 
+        "midiOutSetVolume", 
+        "midiOutShortMsg", 
+        "midiOutUnprepareHeader", 
+        "midiStreamClose", 
+        "midiStreamOpen", 
+        "midiStreamOut", 
+        "midiStreamPause", 
+        "midiStreamPosition", 
+        "midiStreamProperty", 
+        "midiStreamRestart", 
+        "midiStreamStop", 
+        "mixerClose", 
+        "mixerGetControlDetailsA", 
+        "mixerGetControlDetailsW", 
+        "mixerGetDevCapsA", 
+        "mixerGetDevCapsW", 
+        "mixerGetID", 
+        "mixerGetLineControlsA", 
+        "mixerGetLineControlsW", 
+        "mixerGetLineInfoA", 
+        "mixerGetLineInfoW", 
+        "mixerGetNumDevs", 
+        "mixerMessage", 
+        "mixerOpen", 
+        "mixerSetControlDetails", 
+        "mmDrvInstall", 
+        "mmGetCurrentTask", 
+        "mmTaskBlock", 
+        "mmTaskCreate", 
+        "mmTaskSignal", 
+        "mmTaskYield", 
+        "mmioAdvance", 
+        "mmioAscend", 
+        "mmioClose", 
+        "mmioCreateChunk", 
+        "mmioDescend", 
+        "mmioFlush", 
+        "mmioGetInfo", 
+        "mmioInstallIOProcA", 
+        "mmioInstallIOProcW", 
+        "mmioOpenA", 
+        "mmioOpenW", 
+        "mmioRead", 
+        "mmioRenameA", 
+        "mmioRenameW", 
+        "mmioSeek", 
+        "mmioSendMessage", 
+        "mmioSetBuffer", 
+        "mmioSetInfo", 
+        "mmioStringToFOURCCA", 
+        "mmioStringToFOURCCW", 
+        "mmioWrite", 
+        "mmsystemGetVersion", 
+        "mod32Message", 
+        "mxd32Message", 
+        "sndPlaySoundA", 
+        "sndPlaySoundW", 
+        "tid32Message", 
+        "timeBeginPeriod", 
+        "timeEndPeriod", 
+        "timeGetDevCaps", 
+        "timeGetSystemTime", 
+        "timeGetTime", 
+        "timeKillEvent", 
+        "timeSetEvent", 
+        "waveInAddBuffer", 
+        "waveInClose", 
+        "waveInGetDevCapsA", 
+        "waveInGetDevCapsW", 
+        "waveInGetErrorTextA", 
+        "waveInGetErrorTextW", 
+        "waveInGetID", 
+        "waveInGetNumDevs", 
+        "waveInGetPosition", 
+        "waveInMessage", 
+        "waveInOpen", 
+        "waveInPrepareHeader", 
+        "waveInReset", 
+        "waveInStart", 
+        "waveInStop", 
+        "waveInUnprepareHeader", 
+        "waveOutBreakLoop", 
+        "waveOutClose", 
+        "waveOutGetDevCapsA", 
+        "waveOutGetDevCapsW", 
+        "waveOutGetErrorTextA", 
+        "waveOutGetErrorTextW", 
+        "waveOutGetID", 
+        "waveOutGetNumDevs", 
+        "waveOutGetPitch", 
+        "waveOutGetPlaybackRate", 
+        "waveOutGetPosition", 
+        "waveOutGetVolume", 
+        "waveOutMessage", 
+        "waveOutOpen", 
+        "waveOutPause", 
+        "waveOutPrepareHeader", 
+        "waveOutReset", 
+        "waveOutRestart", 
+        "waveOutSetPitch", 
+        "waveOutSetPlaybackRate", 
+        "waveOutSetVolume", 
+        "waveOutUnprepareHeader", 
+        "waveOutWrite", 
+        "wid32Message", 
+        "winmmDbgOut", 
+        "winmmSetDebugLevel", 
+        "wod32Message", 
+        "shell32.dll", 
+        "SHCreateItemFromParsingName", 
+        "Cities 9", 
+        "->Ym?&", 
+        "v-yhb]6Hi", 
+        "/5wUh^", 
+        "$XdHD<o", 
+        "mdDVn)", 
+        "K:\\4ELj4\"", 
+        "4U@(QKCZ", 
+        ";.<)\"5#", 
+        "~tAU<KD", 
+        "(bC2]1", 
+        "~.\u001f vQ7t", 
+        "o414dv", 
+        "4TA0WB", 
+        "-,e%Xb]\"", 
+        "YsYFN6", 
+        "wFKwl%", 
+        "_tl;.6", 
+        "~ ad6p", 
+        "Kpd:p@-", 
+        "WVBgmr", 
+        "zx$.V/d", 
+        "QV/\\n]3", 
+        "p%x`_G", 
+        "DH4JEV", 
+        "B|r[%{h", 
+        "$E{lss", 
+        "\\zjOPiQ<", 
+        "n1pi4%eO~'", 
+        "$$oMK.HNf", 
+        "@4t\"+:", 
+        "H3W BI", 
+        "!3J\u001f<.F", 
+        ".zGx9?>{", 
+        "w}8T`qC", 
+        "PpkH9`", 
+        "m:lj\u001f[", 
+        "^`p@\"!", 
+        "V^[,bd", 
+        "fO:~Wi", 
+        "?/::A$(", 
+        "|Ew@/]", 
+        "{^#ExI", 
+        "i/`mqe", 
+        "=@;Zy7&C6", 
+        "-hXhC\\", 
+        "^1RE24", 
+        "s#>|<t", 
+        "gOz4k2", 
+        "1mj>!X", 
+        "/l:dx{-", 
+        ">?y#j8", 
+        "PxRL.$", 
+        "!Ho3nPG", 
+        "64Xzw+", 
+        "$Df;>q", 
+        "{jtQGV", 
+        "ndIS$'E", 
+        "WWL<[l", 
+        "C:K[f`kfna", 
+        "-rqJ/F?k", 
+        "HKvjt0", 
+        "Ex^*DP", 
+        "A0*y@b", 
+        "f\u001fPz_>4", 
+        "g9M22Hx^", 
+        "zxD;hu", 
+        "_fqk\u001fF", 
+        "nW~>>8", 
+        "`HZDu`", 
+        "\u001fH;l]K", 
+        "Rs4\"Ss2", 
+        "M5fiSp", 
+        "+,CGm;", 
+        "h\\qhqpT9TX", 
+        "z3:Y(CG", 
+        "e$pM`;", 
+        "nY$e^H", 
+        "4A@J*\u001f", 
+        "\"<#\\C@", 
+        "^Xx#f1", 
+        "AT;\"V8", 
+        "uMuGu8'", 
+        "GoP_T_", 
+        "wMw{&k", 
+        " $gc`c", 
+        "MsGs:$", 
+        "ZyEQ6+8\u001f", 
+        "}I!EfF>?", 
+        "h1L('U", 
+        "-X<JZw*>", 
+        "FV>cyI", 
+        "1m`y'0", 
+        "%S]`\\'", 
+        "c6Qf|ZY", 
+        "eQr*b:.", 
+        ":LG]S.", 
+        "N*q%Rb", 
+        "|i0WdKk", 
+        "7p&TB%", 
+        "P54(\"I", 
+        "h9,Z0|", 
+        "})'OOt", 
+        "r%A\"bfa", 
+        "Jix2_^h", 
+        "30RLn7", 
+        "YK--I<", 
+        "@4<Z#,oE", 
+        "3bJ7i{", 
+        ".5zt$h", 
+        "hT-Nau", 
+        "CH0:r/;3", 
+        "?ch)K/", 
+        "lhjI S", 
+        "OV^C,V\\", 
+        "$a;$+[", 
+        ".N(fx9", 
+        "tRq2R*g", 
+        "p<DXmW", 
+        "`aOU)h", 
+        "h3inaVM", 
+        "+7(8 }", 
+        "LxbcT,", 
+        "`ag_*n*", 
+        "kXAGxT", 
+        "H7-P `!", 
+        "\"x!)7Xg`", 
+        "pISOU(", 
+        "P%4iq-", 
+        "~N}.MMW", 
+        "2_N-DB", 
+        "$I_/o+S|", 
+        "&4[&p8", 
+        "t-%Ql},", 
+        "O[YKtz", 
+        "JO;0lY49A.aK", 
+        "A)=x.,{", 
+        "90='2M", 
+        "x1FH)x2G?", 
+        "-UMpi*%", 
+        "t^4.i[", 
+        "lSM1juy", 
+        "\"/6_FN<", 
+        "6U vPF", 
+        "D+}\\Or", 
+        "=nC-2w", 
+        "$UtT7M", 
+        "!l<@ZeA\u001fhV", 
+        "}%jaV|/", 
+        "bdbc}+e", 
+        "oTx].0F", 
+        ")7Z^D^}", 
+        "Yk!euU", 
+        "GH@w,,", 
+        "JN7.R:", 
+        "Xex1S$", 
+        "$LwT'n", 
+        "<2F}Y7", 
+        "??\u001fFh.;", 
+        "8P4<:\"", 
+        "NyB>52n", 
+        "kKdP68:7", 
+        "O8ceEq", 
+        "sH+IeV", 
+        "GIzJxu", 
+        "+l.a*_", 
+        " `F-%4", 
+        "]ESp)\"O", 
+        "t827N\"", 
+        "=I8&(a", 
+        "}T>zFMoz", 
+        "^}L%K#*!5", 
+        "9D'*]F", 
+        "P?#Uvy", 
+        "<p5Sqry", 
+        "g]'{X9", 
+        "inuA1/R", 
+        "QIWrE0", 
+        "Bo#HOh", 
+        "]&_pn)^", 
+        "|B0[\"R-\"", 
+        "-DBejT-h", 
+        "GO;}7}", 
+        "G6[yC6", 
+        ")h(Ka'", 
+        "hI,E/P", 
+        "_(bfuv", 
+        "\\(6-fvR", 
+        "^CV+SRQV", 
+        "(*4)ZfzJ", 
+        "/Ez24)", 
+        "pRB#aJg", 
+        "Ui_Sn7", 
+        "0]Ndk{m", 
+        "L&k+=O", 
+        "E3j3\\Se", 
+        "D2O32rRe", 
+        "hla'1lm", 
+        "93^YW=O", 
+        "eGgmzn", 
+        "nLY~K+u", 
+        "vn,J\"ze", 
+        "\\jBN2,", 
+        "Wg-$4$", 
+        "}T~oA^", 
+        "M^!CPN9", 
+        "k0PN\",", 
+        "r\"R4j?", 
+        "ZZ*\u001fb6", 
+        "D,zPMv", 
+        "y\u001f7qzxh", 
+        "C_lq<7", 
+        "s$Ua/?", 
+        "MDGE\\m", 
+        "f\"ONI;NXe", 
+        "FP_/uOE", 
+        "+C>Wa,", 
+        ",sxT-.", 
+        "Z]16tX", 
+        "UiL-sDP}", 
+        "f|uf]1", 
+        ":|y.Z@", 
+        "JjUD-]D!", 
+        "H\"z\u001f|NA", 
+        "NC:m2Qe", 
+        "h((X95w", 
+        "|.k*x%Y", 
+        "@*i-Am", 
+        "YeCviZ", 
+        "Lmx\\!n", 
+        "&RuoU{", 
+        "$m]!Y5o", 
+        "y-G7K'", 
+        "3ht@6!", 
+        "vQ\"\\iK", 
+        "btLJZzJb", 
+        "{w3>/%ynN!", 
+        "wqppruy", 
+        "/+6,%b", 
+        "G;bFQ.+A", 
+        "18B%l)", 
+        "]/(>9n", 
+        "B2eE\"[", 
+        "rk4wFTr", 
+        "hsDh:[vj", 
+        "PXzIWa", 
+        "rKIW{h", 
+        "/(;'/B_", 
+        "+$DZEuCz", 
+        ">:T-8QDE", 
+        "%6Wa#g=", 
+        "ugXFn<", 
+        "q^h!2$", 
+        "AnM5nV", 
+        "y=&En[v", 
+        "$>&82>", 
+        "x'4h3YS", 
+        "PnH=oc", 
+        ">^&!l^", 
+        "b\u001fZZhNv", 
+        "VzKu]A", 
+        "z)6@^~", 
+        "Fq*\"HN|r", 
+        "re^FOV]", 
+        "`0@)|C", 
+        "*RzEtl", 
+        "?J]Dj-", 
+        "*' S*%", 
+        "QF`+AeS", 
+        "Yd-z[y", 
+        "-^O%g\u001f", 
+        "Yst&2;", 
+        "r\\b|bLnL", 
+        "lld|j|j'", 
+        "|lPlT|Z\\Z|", 
+        "Z|ql}\\}L", 
+        "6|N|NL", 
+        "dXTXtPTPD", 
+        "TZdRTRtRD", 
+        "jpa`mPop", 
+        "Y\"I,Y I Y(I'I", 
+        "&\u001fd16-", 
+        "ic$jm\u001fb", 
+        "DNGNBN", 
+        "l^A7n^", 
+        "606w6r>", 
+        "#GvY'5", 
+        "f\"b:v&&", 
+        "6j+-j2", 
+        "`{aM_P", 
+        "Qj/d~'", 
+        "u!tl\\?\"", 
+        "~BiI\\8", 
+        "\u001f+dqHIj", 
+        "U)#k%8", 
+        "FAoPVm", 
+        "+uU^qm", 
+        "NyYi_#", 
+        "oaR.:U", 
+        "H(94Fj", 
+        "z4P-M;O", 
+        "rdw%^p", 
+        "D}7zrr8A=", 
+        "|I'iU!", 
+        "!lb[dls8", 
+        "}o[1Ud", 
+        "7cY1/3<O", 
+        ">*>ZE\"", 
+        "sq>mrh", 
+        "4`Y>!w", 
+        "K8\"-!+f", 
+        "M erc<H?\u001f", 
+        "!Gj:`W~", 
+        "+)=j),", 
+        "6}[L3h\u001fTZ", 
+        "XTy(oG", 
+        "KJM<S&", 
+        "u<aG\u001fj", 
+        "&{<p)M", 
+        "UfX?A}", 
+        "mHT2vVT", 
+        "`Bz>Wx", 
+        "Cy;t)K%", 
+        "&VfD.2", 
+        ",kghh#", 
+        "ONXU\u001fg'\\", 
+        "ScS#Ua", 
+        "=%5+;i", 
+        "Wgd=na", 
+        "D^&d@W", 
+        "l\\<[XGxh", 
+        "\u001f8!{yN", 
+        "RCjK\\T\\\\\u001f", 
+        "\u001fpBRTB^", 
+        "fhue9e", 
+        "|)HSrd@", 
+        "Bd42P)", 
+        "rIFwmM", 
+        "\"t6lgbp", 
+        "\u001f*?o1J", 
+        "LvQqG)", 
+        "Nm%GD/", 
+        "Pe5dof%", 
+        "**(0  ", 
+        ">KWgg$n", 
+        "7FEOE@EJE", 
+        "thjxjH-", 
+        "d`p@|ptP", 
+        "\\w|wLx", 
+        "2FOOO@OJO", 
+        "d``@lpdP", 
+        "FHOH@H", 
+        "Mn>>=8Gj@(", 
+        "q9Wh\\%u:", 
+        "x\\a6+C[,", 
+        "yqzw\u001fq[", 
+        "\\9-EF,", 
+        "d-d\u001feY", 
+        "|bvEE74", 
+        "ig0_=+", 
+        "bkiaYIav21", 
+        "4L&#!~", 
+        "LmR)J!", 
+        "=KmEdV", 
+        "s8w*4I", 
+        "&-'$gS", 
+        "Zk;++H", 
+        ",1[e\\q", 
+        "ag8k__", 
+        "*98)4)", 
+        "zwccFunc", 
+        "wettubzwcc", 
+        "ShellExecuteExW", 
+        "kernel32.dll", 
+        "GetNativeSystemInfo", 
+        "KB975552.log", 
+        "\\cmd.exe", 
+        "\\winmm.dll", 
+        "explorer.exe", 
+        "%s\\winmm.dll", 
+        "explorer.exe", 
+        "ShellExecuteExW", 
+        "sysprep.exe", 
+        "\\winmm.dll", 
+        "KB975552.log", 
+        "CloseDriver", 
+        "DefDriverProc", 
+        "DriverCallback", 
+        "DrvGetModuleHandle", 
+        "GetDriverModuleHandle", 
+        "MigrateAllDrivers", 
+        "MigrateSoundEvents", 
+        "NotifyCallbackData", 
+        "OpenDriver", 
+        "PlaySound", 
+        "PlaySoundA", 
+        "PlaySoundW", 
+        "SendDriverMessage", 
+        "WOW32DriverCallback", 
+        "WOW32ResolveMultiMediaHandle", 
+        "WOWAppExit", 
+        "WinmmLogoff", 
+        "WinmmLogon", 
+        "aux32Message", 
+        "auxGetDevCapsA", 
+        "auxGetDevCapsW", 
+        "auxGetNumDevs", 
+        "auxGetVolume", 
+        "auxOutMessage", 
+        "auxSetVolume", 
+        "gfxAddGfx", 
+        "gfxBatchChange", 
+        "gfxCreateGfxFactoriesList", 
+        "gfxCreateZoneFactoriesList", 
+        "gfxDestroyDeviceInterfaceList", 
+        "gfxEnumerateGfxs", 
+        "_gfxLogoff@0", 
+        "_gfxLogon@4", 
+        "gfxModifyGfx", 
+        "gfxOpenGfx", 
+        "gfxRemoveGfx", 
+        "joy32Message", 
+        "joyConfigChanged", 
+        "joyGetDevCapsA", 
+        "joyGetDevCapsW", 
+        "joyGetNumDevs", 
+        "joyGetPos", 
+        "joyGetPosEx", 
+        "joyGetThreshold", 
+        "joyReleaseCapture", 
+        "joySetCapture", 
+        "joySetThreshold", 
+        "mci32Message", 
+        "mciDriverNotify", 
+        "mciDriverYield", 
+        "mciExecute", 
+        "mciFreeCommandResource", 
+        "mciGetCreatorTask", 
+        "mciGetDeviceIDA", 
+        "mciGetDeviceIDFromElementIDA", 
+        "mciGetDeviceIDFromElementIDW", 
+        "mciGetDeviceIDW", 
+        "mciGetDriverData", 
+        "mciGetErrorStringA", 
+        "mciGetErrorStringW", 
+        "mciGetYieldProc", 
+        "mciLoadCommandResource", 
+        "mciSendCommandA", 
+        "mciSendCommandW", 
+        "mciSendStringA", 
+        "mciSendStringW", 
+        "mciSetDriverData", 
+        "mciSetYieldProc", 
+        "mid32Message", 
+        "midiConnect", 
+        "midiDisconnect", 
+        "midiInAddBuffer", 
+        "midiInClose", 
+        "midiInGetDevCapsA", 
+        "midiInGetDevCapsW", 
+        "midiInGetErrorTextA", 
+        "midiInGetErrorTextW", 
+        "midiInGetID", 
+        "midiInGetNumDevs", 
+        "midiInMessage", 
+        "midiInOpen", 
+        "midiInPrepareHeader", 
+        "midiInReset", 
+        "midiInStart", 
+        "midiInStop", 
+        "midiInUnprepareHeader", 
+        "midiOutCacheDrumPatches", 
+        "midiOutCachePatches", 
+        "midiOutClose", 
+        "midiOutGetDevCapsA", 
+        "midiOutGetDevCapsW", 
+        "midiOutGetErrorTextA", 
+        "midiOutGetErrorTextW", 
+        "midiOutGetID", 
+        "midiOutGetNumDevs", 
+        "midiOutGetVolume", 
+        "midiOutLongMsg", 
+        "midiOutMessage", 
+        "midiOutOpen", 
+        "midiOutPrepareHeader", 
+        "midiOutReset", 
+        "midiOutSetVolume", 
+        "midiOutShortMsg", 
+        "midiOutUnprepareHeader", 
+        "midiStreamClose", 
+        "midiStreamOpen", 
+        "midiStreamOut", 
+        "midiStreamPause", 
+        "midiStreamPosition", 
+        "midiStreamProperty", 
+        "midiStreamRestart", 
+        "midiStreamStop", 
+        "mixerClose", 
+        "mixerGetControlDetailsA", 
+        "mixerGetControlDetailsW", 
+        "mixerGetDevCapsA", 
+        "mixerGetDevCapsW", 
+        "mixerGetID", 
+        "mixerGetLineControlsA", 
+        "mixerGetLineControlsW", 
+        "mixerGetLineInfoA", 
+        "mixerGetLineInfoW", 
+        "mixerGetNumDevs", 
+        "mixerMessage", 
+        "mixerOpen", 
+        "mixerSetControlDetails", 
+        "mmDrvInstall", 
+        "mmGetCurrentTask", 
+        "mmTaskBlock", 
+        "mmTaskCreate", 
+        "mmTaskSignal", 
+        "mmTaskYield", 
+        "mmioAdvance", 
+        "mmioAscend", 
+        "mmioClose", 
+        "mmioCreateChunk", 
+        "mmioDescend", 
+        "mmioFlush", 
+        "mmioGetInfo", 
+        "mmioInstallIOProcA", 
+        "mmioInstallIOProcW", 
+        "mmioOpenA", 
+        "mmioOpenW", 
+        "mmioRead", 
+        "mmioRenameA", 
+        "mmioRenameW", 
+        "mmioSeek", 
+        "mmioSendMessage", 
+        "mmioSetBuffer", 
+        "mmioSetInfo", 
+        "mmioStringToFOURCCA", 
+        "mmioStringToFOURCCW", 
+        "mmioWrite", 
+        "mmsystemGetVersion", 
+        "mod32Message", 
+        "mxd32Message", 
+        "sndPlaySoundA", 
+        "sndPlaySoundW", 
+        "tid32Message", 
+        "timeBeginPeriod", 
+        "timeEndPeriod", 
+        "timeGetDevCaps", 
+        "timeGetSystemTime", 
+        "timeGetTime", 
+        "timeKillEvent", 
+        "timeSetEvent", 
+        "waveInAddBuffer", 
+        "waveInClose", 
+        "waveInGetDevCapsA", 
+        "waveInGetDevCapsW", 
+        "waveInGetErrorTextA", 
+        "waveInGetErrorTextW", 
+        "waveInGetID", 
+        "waveInGetNumDevs", 
+        "waveInGetPosition", 
+        "waveInMessage", 
+        "waveInOpen", 
+        "waveInPrepareHeader", 
+        "waveInReset", 
+        "waveInStart", 
+        "waveInStop", 
+        "waveInUnprepareHeader", 
+        "waveOutBreakLoop", 
+        "waveOutClose", 
+        "waveOutGetDevCapsA", 
+        "waveOutGetDevCapsW", 
+        "waveOutGetErrorTextA", 
+        "waveOutGetErrorTextW", 
+        "waveOutGetID", 
+        "waveOutGetNumDevs", 
+        "waveOutGetPitch", 
+        "waveOutGetPlaybackRate", 
+        "waveOutGetPosition", 
+        "waveOutGetVolume", 
+        "waveOutMessage", 
+        "waveOutOpen", 
+        "waveOutPause", 
+        "waveOutPrepareHeader", 
+        "waveOutReset", 
+        "waveOutRestart", 
+        "waveOutSetPitch", 
+        "waveOutSetPlaybackRate", 
+        "waveOutSetVolume", 
+        "waveOutUnprepareHeader", 
+        "waveOutWrite", 
+        "wid32Message", 
+        "winmmDbgOut", 
+        "winmmSetDebugLevel", 
+        "wod32Message", 
+        "\\winmm", 
+        "SeDebugPrivilege", 
+        "LookupPrivilegeValueA", 
+        "AdjustTokenPrivileges", 
+        "OpenProcessToken", 
+        "Advapi32.dll", 
+        "OutputDebugStringA", 
+        "OpenProcess", 
+        "LoadLibraryA", 
+        "CreateRemoteThread", 
+        "WriteProcessMemory", 
+        "Kernel32.dll", 
+        "RtlExitUserThread", 
+        "ZwResumeThread", 
+        "ZwCreateThread", 
+        "ZwGetContextThread", 
+        "ZwProtectVirtualMemory", 
+        "ZwWriteVirtualMemory", 
+        "ZwAllocateVirtualMemory", 
+        "ntdll.dll", 
+        "memset", 
+        "strncpy", 
+        "strcmp", 
+        "_strnicmp", 
+        "strlen", 
+        "_strlwr", 
+        "need dictionary", 
+        "incorrect data check", 
+        "incorrect header check", 
+        "invalid window size", 
+        "unknown compression method", 
+        "invalid bit length repeat", 
+        "too many length or distance symbols", 
+        "invalid stored block lengths", 
+        "invalid block type", 
+        "incompatible version", 
+        "buffer error", 
+        "insufficient memory", 
+        "data error", 
+        "stream error", 
+        "file error", 
+        "stream end", 
+        "invalid distance code", 
+        "invalid literal/length code", 
+        "incomplete dynamic bit lengths tree", 
+        "oversubscribed dynamic bit lengths tree", 
+        "incomplete literal/length tree", 
+        "oversubscribed literal/length tree", 
+        "empty distance tree with lengths", 
+        "incomplete distance tree", 
+        "oversubscribed distance tree", 
+        "0;0G0Y0i0s0x0", 
+        "2,2j2z2", 
+        "363J3X3i3v3", 
+        ";l<D=S=s=", 
+        ">(?1?H?", 
+        "F0\\0a0g0u0z0", 
+        "142@2{2", 
+        "3#303=3^3", 
+        "3<4C4M4", 
+        "5<5I5s5z5", 
+        "738[8e8", 
+        "8#9T9a9m9", 
+        "<0<\\<v<~<", 
+        "<#=I=o=", 
+        ">+>?>I>P>r>", 
+        "0*0e0o0", 
+        "1\"1/1^1k1w1", 
+        "1U2g2s2", 
+        "4&424>4J4V4b4n4z4", 
+        "5\"5.5:5F5R5^5j5v5", 
+        "6*666B6N6Z6f6r6~6", 
+        "7&727>7J7V7b7n7z7", 
+        "8\"8.8:8F8R8^8j8v8", 
+        "9*969B9N9Z9f9r9~9", 
+        ":&:2:>:J:V:b:n:z:", 
+        ";\";.;:;F;R;^;j;v;", 
+        "<*<6<B<N<Z<f<r<~<", 
+        "=&=2=>=J=V=b=n=z=", 
+        ">I>Q>W>b>o>w>", 
+        "5%555<5G5M5T5_5d5m5x5~5", 
+        "5*6N6V6", 
+        "7#7)73797C7I7", 
+        ":C:L:R:W:^:c:", 
+        ";';-;2;9;>;v;", 
+        "0O2[3O4", 
+        ",0K0j0", 
+        "calloc", 
+        "_strlwr", 
+        "_stricmp", 
+        "memcpy", 
+        "memset", 
+        "??2@YAPAXI@Z", 
+        "realloc", 
+        "??3@YAXPAX@Z", 
+        "_adjust_fdiv", 
+        "malloc", 
+        "_initterm", 
+        "strstr", 
+        "_snprintf", 
+        "strrchr", 
+        "strcat", 
+        "rename", 
+        "strncpy", 
+        "GetCurrentThread", 
+        "LoadLibraryA", 
+        "GetModuleHandleA", 
+        "GetProcAddress", 
+        "CloseHandle", 
+        "MapViewOfFile", 
+        "CreateFileMappingA", 
+        "GetFileSize", 
+        "CreateFileA", 
+        "UnmapViewOfFile", 
+        "SizeofResource", 
+        "LockResource", 
+        "LoadResource", 
+        "FindResourceA", 
+        "WriteFile", 
+        "DeleteFileA", 
+        "GetFileAttributesA", 
+        "HeapAlloc", 
+        "VirtualAlloc", 
+        "VirtualProtect", 
+        "VirtualFree", 
+        "IsBadReadPtr", 
+        "HeapFree", 
+        "FreeLibrary", 
+        "GetTempFileNameA", 
+        "GetTempPathA", 
+        "GetModuleFileNameA", 
+        "GetPrivateProfileIntA", 
+        "WritePrivateProfileStringA", 
+        "WaitForSingleObject", 
+        "LoadLibraryW", 
+        "GetModuleFileNameW", 
+        "GetCurrentProcess", 
+        "SetFileAttributesA", 
+        "SetFileTime", 
+        "LocalFileTimeToFileTime", 
+        "SystemTimeToFileTime", 
+        "GetFileTime", 
+        "GetSystemDirectoryA", 
+        "CreateProcessA", 
+        "CopyFileA", 
+        "GetWindowsDirectoryA", 
+        "GetVersionExA", 
+        "ExitProcess", 
+        "lstrcatA", 
+        "DisableThreadLibraryCalls", 
+        "VirtualAllocEx", 
+        "GetProcessHeap", 
+        "CreateToolhelp32Snapshot", 
+        "GetCurrentProcessId", 
+        "ProcessIdToSessionId", 
+        "Process32First", 
+        "Process32Next", 
+        "GetFileSizeEx", 
+        "wsprintfA", 
+        "OpenProcessToken", 
+        "GetTokenInformation", 
+        "CoInitialize", 
+        "CoCreateInstance", 
+        "CoUninitialize", 
+        "WNetCloseEnum", 
+        "MSVCRT.dll", 
+        "KERNEL32.dll", 
+        "USER32.dll", 
+        "ADVAPI32.dll", 
+        "ole32.dll", 
+        "mpr.dll", 
+        "D$$+D$", 
+        ";D$|uo", 
+        "t\u001fh([A", 
+        "Y;=lDA", 
+        "~pjCXf", 
+        "uPVWhxZ@", 
+        "<v5h:QA", 
+        "j@j _W", 
+        "t6hP@A", 
+        "uHjAXf;", 
+        "uWjAXf;", 
+        "Genuu_", 
+        "ineIuV", 
+        "nteluM3", 
+        "tf= MA", 
+        "URPQQh@", 
+        "htHjlY;", 
+        "HHtXHHt", 
+        "nt'joY;", 
+        "YYjgXf9", 
+        ">0t<Nj0X", 
+        "~';_t|%3", 
+        "PP9E u", 
+        "jA[jZZ+", 
+        ";t$,v-", 
+        "UQPXY]Y[", 
+        "jjjjjj", 
+        "\u001f\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~", 
+        "eCRYPTBASE.dll", 
+        "C:\\Windows\\System32\\sysprep", 
+        "C:\\Windows\\System32\\sysprep\\sysprep.exe", 
+        "shell32.dll", 
+        "C:\\Windows\\System32\\sysprep", 
+        "C:\\Windows\\System32\\sysprep\\sysprep.exe", 
+        "shell32.dll", 
+        "jjjjjj"
+    ], 
+    "metadata": {
+        "output": {
+            "pcap": {
+                "basename": "dump.pcap", 
+                "sha256": "704e5e5b3234433c01fcfd1b20a306e77e985038120492dc53965c3edd38a4ea", 
+                "dirname": ""
+            }
+        }
+    }
+}
