@@ -1,19 +1,26 @@
 import asyncio
 import os
 import random
+import sys
 import zipfile
 from playwright.async_api import async_playwright
 
 BASE = "https://sandbox.pikker.ee/analysis"
-DOWNLOAD_DIR = "sandbox/reports/raw"
+DOWNLOAD_DIR = "reports/raw"
 max_downloads = 10
 
-async def get_high_score_ids(page, threshold=7.0):
+
+async def get_high_score_ids(page, threshold=7.0, malware=True):
+    """Pure scraper: Quickly gathers IDs from the table without navigating away."""
+    if not malware:
+        print(f"[*] Scanning table for benign samples (threshold <= {threshold})...")
+    else:
+        print(f"[*] Scanning table for malware samples (threshold >= {threshold})...")
+
     await page.goto(BASE, wait_until="networkidle")
     await page.wait_for_selector("#recent tbody tr", timeout=15000)
 
     rows = await page.query_selector_all("#recent tbody tr")
-
     ids = []
 
     for row in rows:
@@ -26,25 +33,29 @@ async def get_high_score_ids(page, threshold=7.0):
 
         try:
             score = float(score_text.split(":")[1].strip())
-        except:
+        except (IndexError, ValueError):
             continue
 
-        if score >= threshold:
+        if malware and score >= threshold:
+            ids.append(analysis_id)
+        elif not malware and score <= threshold:
             ids.append(analysis_id)
 
     return ids
 
+
 async def get_md5(page, analysis_id):
     summary_url = f"{BASE}/{analysis_id}/summary/"
     await page.goto(summary_url, wait_until="networkidle")
-    
+
     try:
         element = page.locator("th:text-is('MD5') + td")
-        md5_hash = await element.inner_text(timeout=5000)
+        md5_hash = await element.inner_text(timeout=15000)
         return md5_hash.strip()
     except Exception as e:
         print(f"[-] Could not extract MD5 for {analysis_id}: {e}")
         return None
+
 
 async def download_report(page, analysis_id, md5_hash):
     export_url = f"{BASE}/{analysis_id}/export/"
@@ -69,18 +80,18 @@ async def download_report(page, analysis_id, md5_hash):
         await page.click("button[type=submit]")
 
     download = await download_info.value
-    
+
     zip_path = os.path.join(DOWNLOAD_DIR, f"{analysis_id}.zip")
     await download.save_as(zip_path)
     print(f"[+] Downloaded {analysis_id}.zip")
 
     json_path = os.path.join(DOWNLOAD_DIR, f"{md5_hash}.json")
-    
+
     try:
-        with zipfile.ZipFile(zip_path, 'r') as z:
-            if 'reports/report.json' in z.namelist():
-                with open(json_path, 'wb') as f:
-                    f.write(z.read('reports/report.json'))
+        with zipfile.ZipFile(zip_path, "r") as z:
+            if "reports/report.json" in z.namelist():
+                with open(json_path, "wb") as f:
+                    f.write(z.read("reports/report.json"))
                 print(f"[+] Extracted and saved as {md5_hash}.json")
             else:
                 print(f"[-] reports/report.json not found inside {analysis_id}.zip")
@@ -93,64 +104,76 @@ async def download_report(page, analysis_id, md5_hash):
 
     return True
 
+
 async def main():
     os.makedirs(DOWNLOAD_DIR, exist_ok=True)
 
     existing_md5s = {
-        f.split(".")[0]
-        for f in os.listdir(DOWNLOAD_DIR)
-        if f.endswith(".json")
+        f.split(".")[0] for f in os.listdir(DOWNLOAD_DIR) if f.endswith(".json")
     }
+
+    # Track processing mode
+    is_malware = False
+    target_threshold = 4.0
 
     async with async_playwright() as p:
         browser = await p.chromium.launch(headless=True)
-
         context = await browser.new_context(
             user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/123.0.0.0 Safari/537.36",
-            accept_downloads=True
+            accept_downloads=True,
         )
-
         page = await context.new_page()
 
-        ids = await get_high_score_ids(page, threshold=7.0)
-        print(f"[+] Found {len(ids)} high-scoring reports.")
+        # Fast initial scan
+        ids = await get_high_score_ids(
+            page, threshold=target_threshold, malware=is_malware
+        )
+        print(f"[+] Found {len(ids)} matching reports in the table view.")
 
         downloaded_count = 0
 
-        for aid in ids:
-            # Enforce max downloads limit
+        # Step-by-step loop with real-time feedback
+        for index, aid in enumerate(ids, start=1):
             if downloaded_count >= max_downloads:
                 print("[+] Reached maximum download limit.")
                 break
 
+            print(f"\n[i] Processing report {index}/{len(ids)} (ID: {aid})...")
+
             md5_hash = await get_md5(page, aid)
             if not md5_hash:
                 continue
-            
+
+            # Record benign IDs dynamically as we find them
+            if not is_malware:
+                with open("benign.txt", "a") as f:
+                    f.write(f"{md5_hash}\n")
+
             if md5_hash in existing_md5s:
-                print(f"[i] Already have report for MD5 {md5_hash} (ID: {aid}), skipping.")
+                print(f"[i] Already have report for MD5 {md5_hash}, skipping.")
                 continue
 
             try:
                 success = await download_report(page, aid, md5_hash)
                 if not success:
                     continue
-                
+
                 downloaded_count += 1
-                existing_md5s.add(md5_hash) 
+                existing_md5s.add(md5_hash)
             except Exception as e:
                 print(f"[!] Failed {aid}: {e}")
                 continue
 
+            # Sleep between actual downloads to look human
             if downloaded_count < max_downloads:
                 delay = random.uniform(8, 12)
-                print(f"[i] Sleeping {delay:.2f}s")
+                print(f"[i] Sleeping {delay:.2f}s...")
                 await asyncio.sleep(delay)
 
         await browser.close()
 
 
 if __name__ == "__main__":
-    import sys
-    max_downloads = int(sys.argv[1])
+    if len(sys.argv) > 1:
+        max_downloads = int(sys.argv[1])
     asyncio.run(main())

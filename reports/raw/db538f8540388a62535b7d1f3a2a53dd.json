@@ -1,0 +1,358 @@
+{
+    "info": {
+        "added": 1785599627.724841, 
+        "started": 1785599628.602959, 
+        "duration": 105, 
+        "ended": 1785599734.289764, 
+        "owner": "", 
+        "score": 2.9, 
+        "id": 7667943, 
+        "category": "file", 
+        "git": {
+            "head": "", 
+            "fetch_head": ""
+        }, 
+        "monitor": null, 
+        "package": "elf", 
+        "route": "internet", 
+        "custom": "", 
+        "machine": {
+            "status": "stopped", 
+            "name": "Ubuntu1904x646", 
+            "label": "Ubuntu1904x646", 
+            "platform": "linux", 
+            "manager": "VirtualBox", 
+            "started_on": "2026-08-01 15:53:50", 
+            "shutdown_on": "2026-08-01 15:55:32"
+        }, 
+        "platform": "linux", 
+        "version": "2.0.7", 
+        "options": ""
+    }, 
+    "signatures": [
+        {
+            "families": [], 
+            "description": "File has been identified by 2 AntiVirus engine on IRMA as malicious", 
+            "severity": 20, 
+            "ttp": {}, 
+            "markcount": 2, 
+            "references": [], 
+            "marks": [
+                {
+                    "category": "ESET Security (Windows)", 
+                    "ioc": "Linux/Setag.B.Gen trojan", 
+                    "type": "ioc", 
+                    "description": null
+                }, 
+                {
+                    "category": "DrWeb Antivirus (Linux)", 
+                    "ioc": "Linux.BackDoor.Gates.9", 
+                    "type": "ioc", 
+                    "description": null
+                }
+            ], 
+            "name": "antivirus_irma"
+        }
+    ], 
+    "target": {
+        "category": "file", 
+        "file": {
+            "mimetype": "application/x-executable", 
+            "yara": [], 
+            "sha1": "3333654890539d3539951d15e2e3b3ee1a249f58", 
+            "name": "syss", 
+            "type": "ELF 32-bit LSB executable, Intel 80386, version 1 (SYSV), statically linked, missing section headers at 966476", 
+            "sha256": "1a24fe6b967905d1e385fae5437b02ec42610e5a5cede165210868fe88e2828e", 
+            "urls": [], 
+            "crc32": "94A92B84", 
+            "path": "/srv/cuckoo/cwd/storage/binaries/1a24fe6b967905d1e385fae5437b02ec42610e5a5cede165210868fe88e2828e", 
+            "ssdeep": null, 
+            "size": 2654, 
+            "sha512": "128e93c0e58184d9811a6482df242132593af49d2e7f08ad26093a4506e297aa86d072391ffc08dd806706b84f8488f3f6c2ace35f728cac5bc2c0e0c0b37e9d", 
+            "md5": "db538f8540388a62535b7d1f3a2a53dd"
+        }, 
+        "custom": ""
+    }, 
+    "irma": {
+        "status": 1, 
+        "probes_finished": 13, 
+        "scan_id": "0e1255e9-b13a-4900-a3d0-642b0391c51e", 
+        "parent_file_sha256": null, 
+        "name": "1a24fe6b967905d1e385fae5437b02ec42610e5a5cede165210868fe88e2828e", 
+        "probes_total": 13, 
+        "scan_date": 1785588934, 
+        "other_results": [], 
+        "probe_results": {
+            "antivirus": {
+                "G Data Antivirus (Windows)": {
+                    "status": 0, 
+                    "duration": 0.17, 
+                    "version": "5.5.20197.1358", 
+                    "results": null, 
+                    "virus_database_version": "unavailable"
+                }, 
+                "Avast Core Security (Linux)": {
+                    "status": 0, 
+                    "duration": 0.01, 
+                    "version": "4.6.1", 
+                    "results": null, 
+                    "virus_database_version": "unavailable"
+                }, 
+                "C4S ClamAV (Linux)": {
+                    "status": 0, 
+                    "duration": 0.02, 
+                    "version": "1.4.3", 
+                    "results": null, 
+                    "virus_database_version": "28068"
+                }, 
+                "Trellix (Linux)": {
+                    "status": 0, 
+                    "duration": 8.41, 
+                    "version": "7.0.4.835", 
+                    "results": null, 
+                    "virus_database_version": "11853"
+                }, 
+                "WithSecure (Linux)": {
+                    "status": 0, 
+                    "duration": 0.13, 
+                    "version": "1.0.45", 
+                    "results": null, 
+                    "virus_database_version": "unavailable"
+                }, 
+                "eScan Antivirus (Linux)": {
+                    "status": 0, 
+                    "duration": 4.3, 
+                    "version": "7.0.21", 
+                    "results": null, 
+                    "virus_database_version": "7.101241 (22/07/2026)"
+                }, 
+                "ESET Security (Windows)": {
+                    "status": 1, 
+                    "duration": 0.62, 
+                    "version": "unavailable", 
+                    "results": "Linux/Setag.B.Gen trojan", 
+                    "virus_database_version": "unavailable"
+                }, 
+                "Sophos Anti-Virus (Linux)": {
+                    "status": 0, 
+                    "duration": 0.24, 
+                    "version": "1.2.1.1 (2026-04-20)", 
+                    "results": null, 
+                    "virus_database_version": "unavailable"
+                }, 
+                "DrWeb Antivirus (Linux)": {
+                    "status": 1, 
+                    "duration": 0.12, 
+                    "version": "11.1.17.2605081640", 
+                    "results": "Linux.BackDoor.Gates.9", 
+                    "virus_database_version": "unavailable"
+                }, 
+                "ClamAV (Linux)": {
+                    "status": 0, 
+                    "duration": 0.03, 
+                    "version": "1.4.3", 
+                    "results": null, 
+                    "virus_database_version": "28068"
+                }, 
+                "Bitdefender Antivirus (Linux)": {
+                    "status": 0, 
+                    "duration": 8.78, 
+                    "version": "7.90123", 
+                    "results": null, 
+                    "virus_database_version": null
+                }, 
+                "Kaspersky Standard (Windows)": {
+                    "status": 0, 
+                    "duration": 4.62, 
+                    "version": "21.24", 
+                    "results": null, 
+                    "virus_database_version": "2026-07-31 20:19:00 (unknown)"
+                }, 
+                "Emsisoft Commandline Scanner (Windows)": {
+                    "status": 0, 
+                    "duration": 0.2, 
+                    "version": "2025.1.0.12641", 
+                    "results": null, 
+                    "virus_database_version": "unavailable"
+                }
+            }
+        }, 
+        "file_infos": {
+            "mimetype": "ELF 32-bit LSB executable, Intel 80386, version 1 (SYSV)", 
+            "sha1": "3333654890539d3539951d15e2e3b3ee1a249f58", 
+            "tags": [], 
+            "timestamp_first_scan": 1785588934.45, 
+            "timestamp_last_scan": 1785588945.14, 
+            "sha256": "1a24fe6b967905d1e385fae5437b02ec42610e5a5cede165210868fe88e2828e", 
+            "md5": "db538f8540388a62535b7d1f3a2a53dd", 
+            "size": 2654
+        }, 
+        "submitter": "cli", 
+        "path": "", 
+        "result_id": "57221478-784b-47e1-8a30-529ca39ba07e"
+    }, 
+    "suricata": {
+        "tls": [], 
+        "files": [], 
+        "alerts": [], 
+        "http": []
+    }, 
+    "virustotal": {
+        "summary": {
+            "error": "resource has not been scanned yet"
+        }
+    }, 
+    "network": {
+        "udp": [], 
+        "dns_servers": [], 
+        "http": [], 
+        "smtp": [], 
+        "tcp": [], 
+        "geoinfo": {}, 
+        "mitm": [], 
+        "https_ex": [], 
+        "http_ex": [], 
+        "sorted_pcap_sha256": "4f30b53bfc193591bfc3684b63ab79ab925e4db8cb38e72afe920d7e026583b0", 
+        "icmp": [], 
+        "tls": [], 
+        "dead_hosts": [], 
+        "smtp_ex": [], 
+        "hosts": [], 
+        "pcap_sha256": "0f3425a041cb12dfb0917d4d7f2d199b6f4adcaa2affb7a940cddf88481e5cfd", 
+        "dns": [], 
+        "domains": [], 
+        "irc": []
+    }, 
+    "resubmit": {
+        "resubmit_ids": []
+    }, 
+    "snort": {
+        "alerts": []
+    }, 
+    "behavior": {
+        "generic": [
+            {
+                "process_path": null, 
+                "process_name": "syss", 
+                "pid": 2079, 
+                "summary": {}, 
+                "first_seen": 1785599642.884129, 
+                "ppid": -1
+            }
+        ], 
+        "processes": [
+            {
+                "calls": [
+                    {
+                        "status": "EFAULT", 
+                        "process_name": "syss", 
+                        "pid": 2079, 
+                        "raw": "Sat Aug  1 15:54:02 2026.884129 syss@7f9a10e4c957[2079] execve(\"/tmp/syss\", [\"/tmp/syss\"], [\"SUDO_GID=0\", \"MAIL=/var/mail/root\", \"USER=root\", \"HOME=/root\", \"SUDO_UID=0\", \"LOGNAME=root\", \"SYSTEMTAP_MODULE=stap_\", \"TERM=unknown\", \"SYSTEMTAP_VERBOSE=2\", \"PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin\", \"DISPLAY=:0\", \"LANG=en_US.UTF-8\", \"XAUTHORITY=/root/.Xauthority\", \"SUDO_COMMAND=/usr/bin/staprun -vv -o stap.log /root/.cuckoo/stap_.ko -c sh -c /tmp/syss\", \"SHELL=/bin/bash\", \"SUDO_USER=root\", \"PWD=/tmp/tmpZMwI3p\"]) = -14 (EFAULT)\n", 
+                        "api": "execve", 
+                        "return_value": "-14", 
+                        "category": "process", 
+                        "instruction_pointer": "7f9a10e4c957", 
+                        "arguments": {
+                            "p2": [
+                                "SUDO_GID=0", 
+                                "MAIL=/var/mail/root", 
+                                "USER=root", 
+                                "HOME=/root", 
+                                "SUDO_UID=0", 
+                                "LOGNAME=root", 
+                                "SYSTEMTAP_MODULE=stap_", 
+                                "TERM=unknown", 
+                                "SYSTEMTAP_VERBOSE=2", 
+                                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin", 
+                                "DISPLAY=:0", 
+                                "LANG=en_US.UTF-8", 
+                                "XAUTHORITY=/root/.Xauthority", 
+                                "SUDO_COMMAND=/usr/bin/staprun -vv -o stap.log /root/.cuckoo/stap_.ko -c sh -c /tmp/syss", 
+                                "SHELL=/bin/bash", 
+                                "SUDO_USER=root", 
+                                "PWD=/tmp/tmpZMwI3p"
+                            ], 
+                            "p0": "/tmp/syss", 
+                            "p1": [
+                                "/tmp/syss"
+                            ]
+                        }, 
+                        "time": 1785599642.884129
+                    }
+                ], 
+                "pid": 2079, 
+                "process_name": "syss", 
+                "command_line": "", 
+                "first_seen": 1785599642.884129, 
+                "ppid": -1, 
+                "type": "process"
+            }
+        ], 
+        "processtree": [
+            {
+                "track": true, 
+                "pid": 2079, 
+                "process_name": "syss", 
+                "command_line": "", 
+                "first_seen": 1785599642.884129, 
+                "ppid": -1, 
+                "children": []
+            }
+        ]
+    }, 
+    "debug": {
+        "action": [], 
+        "dbgview": [], 
+        "errors": [], 
+        "log": [
+            "2026-08-01 15:53:47,085 [root] DEBUG: Starting analyzer from: /tmp/tmpZMwI3p\n", 
+            "2026-08-01 15:53:47,085 [root] DEBUG: Storing results at: /tmp/THsMdVuSF\n", 
+            "2026-08-01 15:53:51,064 [modules.auxiliary.filecollector] INFO: FileCollector started v0.08\n", 
+            "2026-08-01 15:53:51,068 [modules.auxiliary.human] INFO: Human started v0.02\n", 
+            "2026-08-01 15:53:51,072 [modules.auxiliary.screenshots] INFO: Screenshots started v0.03\n", 
+            "2026-08-01 15:54:02,883 [lib.core.packages] INFO: Process startup took 11.80 seconds\n", 
+            "2026-08-01 15:54:02,886 [root] INFO: Added new process to list with pid: 2072\n", 
+            "2026-08-01 15:54:17,969 [root] INFO: Process with pid 2072 has terminated\n", 
+            "2026-08-01 15:54:17,971 [root] INFO: Process list is empty, terminating analysis.\n", 
+            "2026-08-01 15:54:20,976 [lib.core.packages] INFO: Package requested stop\n", 
+            "2026-08-01 15:54:20,978 [lib.core.packages] WARNING: Exception uploading log: [Errno 3] No such process\n"
+        ], 
+        "cuckoo": [
+            "2026-08-01 15:53:48,914 [cuckoo.core.scheduler] INFO: Task #7667943: acquired machine Ubuntu1904x646 (label=Ubuntu1904x646)\n", 
+            "2026-08-01 15:53:48,915 [cuckoo.core.resultserver] DEBUG: Now tracking machine 192.168.168.106 for task #7667943\n", 
+            "2026-08-01 15:53:50,095 [cuckoo.auxiliary.sniffer] INFO: Started sniffer with PID 2786784 (interface=vboxnet0, host=192.168.168.106)\n", 
+            "2026-08-01 15:53:50,124 [cuckoo.machinery.virtualbox] DEBUG: Starting vm Ubuntu1904x646\n", 
+            "2026-08-01 15:53:51,607 [cuckoo.machinery.virtualbox] DEBUG: Restoring virtual machine Ubuntu1904x646 to Snapshot\n", 
+            "2026-08-01 15:54:12,209 [cuckoo.core.guest] INFO: Starting analysis #7667943 on guest (id=Ubuntu1904x646, ip=192.168.168.106)\n", 
+            "2026-08-01 15:54:13,213 [cuckoo.core.guest] DEBUG: Ubuntu1904x646: not ready yet\n", 
+            "2026-08-01 15:54:18,306 [cuckoo.core.guest] INFO: Guest is running Cuckoo Agent 0.10 (id=Ubuntu1904x646, ip=192.168.168.106)\n", 
+            "2026-08-01 15:54:18,322 [cuckoo.core.guest] DEBUG: Uploading analyzer to guest (id=Ubuntu1904x646, ip=192.168.168.106, monitor=latest, size=73219)\n", 
+            "2026-08-01 15:54:18,911 [cuckoo.core.resultserver] DEBUG: Task #7667943: live log analysis.log initialized.\n", 
+            "2026-08-01 15:54:33,909 [cuckoo.core.guest] DEBUG: Ubuntu1904x646: analysis #7667943 still processing\n", 
+            "2026-08-01 15:54:37,883 [cuckoo.core.resultserver] DEBUG: Task #7667943: File upload for 'shots/0001.jpg'\n", 
+            "2026-08-01 15:54:37,891 [cuckoo.core.resultserver] DEBUG: Task #7667943 uploaded file length: 171510\n", 
+            "2026-08-01 15:54:49,199 [cuckoo.core.guest] DEBUG: Ubuntu1904x646: analysis #7667943 still processing\n", 
+            "2026-08-01 15:54:52,899 [cuckoo.core.resultserver] DEBUG: Task #7667943: File upload for 'logs/all.stap'\n", 
+            "2026-08-01 15:54:52,901 [cuckoo.core.resultserver] DEBUG: Task #7667943 uploaded file length: 562\n", 
+            "2026-08-01 15:55:04,606 [cuckoo.core.guest] DEBUG: Ubuntu1904x646: analysis #7667943 still processing\n", 
+            "2026-08-01 15:55:19,810 [cuckoo.core.guest] INFO: Ubuntu1904x646: end of analysis reached!\n", 
+            "2026-08-01 15:55:19,894 [cuckoo.core.plugins] DEBUG: Stopped auxiliary module: Redsocks\n", 
+            "2026-08-01 15:55:19,990 [cuckoo.core.plugins] DEBUG: Stopped auxiliary module: Sniffer\n", 
+            "2026-08-01 15:55:22,604 [cuckoo.machinery.virtualbox] INFO: Successfully generated memory dump for virtual machine with label Ubuntu1904x646 to path /srv/cuckoo/cwd/storage/analyses/7667943/memory.dmp\n", 
+            "2026-08-01 15:55:22,606 [cuckoo.machinery.virtualbox] DEBUG: Stopping vm Ubuntu1904x646\n", 
+            "2026-08-01 15:55:32,912 [cuckoo.core.resultserver] DEBUG: Stopped tracking machine 192.168.168.106 for task #7667943\n", 
+            "2026-08-01 15:55:32,913 [cuckoo.core.resultserver] DEBUG: Cancel <Context for LOG> for task 7667943\n", 
+            "2026-08-01 15:55:34,190 [cuckoo.core.scheduler] DEBUG: Released database task #7667943\n", 
+            "2026-08-01 15:55:34,206 [cuckoo.core.scheduler] INFO: Task #7667943: analysis procedure completed\n"
+        ]
+    }, 
+    "metadata": {
+        "output": {
+            "pcap": {
+                "basename": "dump.pcap", 
+                "sha256": "0f3425a041cb12dfb0917d4d7f2d199b6f4adcaa2affb7a940cddf88481e5cfd", 
+                "dirname": ""
+            }
+        }
+    }
+}
