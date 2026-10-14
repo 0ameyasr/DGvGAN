@@ -29,7 +29,6 @@ All models are implemented in PyTorch.
   * `sanity.py`: few sanity checks (experimental)
 * `reports`: raw + processed behavioral analysis reports of Windows PE malware/goodware gathered from a [public Cuckoo Sandbox endpoint](https://sandbox.pikker.ee)
 * `dataset.csv` and `test.csv`: original dataset and 30% test split used for in-distribution training/testing respectively
-* `etc.py`: a file for temporary tests/code/small experiments
 * `extractor.py`: extracts API features from raw behavioral analysis reports
 * `maintainer.py`: scrapes reports from the public sandbox endpoint
 * `provenance.py`: verifies the origin/metadata of both malware and goodware samples via VirusTotal
