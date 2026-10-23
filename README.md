@@ -1,4 +1,6 @@
 # About
+> Data and code for the ICDCIT 2027 short paper, **"Representation-Architecture Tradeoffs in Behavioral Malware Detection", (Srivastava et al., 2026)** that is to appear in the associated Springer LNCS proceedings volume.
+
 This repository contains implementations for sequential and graph-based representation-architectures (models) on the [Windows API call sequences dataset](https://www.kaggle.com/datasets/ang3loliveira/malware-analysis-datasets-api-call-sequences) introduced in the work of [Oliveira & Sassi (2019)](https://www.techrxiv.org/doi/pdf/10.36227/techrxiv.10043099.v1) on behavioral malware detection with DGCNNs. 
 
 The following models are implemented:
@@ -17,21 +19,25 @@ The following models are implemented:
 All models are implemented in PyTorch.
 
 ## Structure
+* `data`: datasets - original, OOD corpus, test dataset (30% split)
 * `meta`: supplementary files and metadata
+  * `api.json`: label to API-call vocabulary dictionary
+  * `evasions.csv`: raw evaluation data from evasion simulation experiment
+  * `ngrams.csv`: top n-grams identified from malware samples in the training dataset
+  * `ood_benign.txt`, `ood_malware.txt`: MD5 hashes of benign and malware samples part of the OOD corpus
+  * `vt_cache_ood_benign.json`, `vt_cache_ood_malware.json`: provenance metadata of samples sourced via VirusTotal
 * `models`: model implementations
-  * `saves`: saved models in `.pt` or `.pth` format
-  * `src`: source code
-* `pipeline`: inference pipeline on a hold-out set of more recent malware/goodware
-  * `constants.py`: pipeline constants
+  * `saves`: saved models in `.pt` format (per seed)
+  * `src`: source code notebooks
+* `reports/raw`: raw Cuckoo Sandbox analysis reports of samples from the OOD corpus 
+* `scripts`: scripts used for experiments
+  * `constants.py`: useful constants used by scripts in the directory
   * `evasion.py`: evasion simulations
   * `predictor.py`: prediction helper functions for all models
-  * `run.py`: runs the pipeline to infer on the hold-out set
-  * `sanity.py`: few sanity checks (experimental)
-* `reports`: raw + processed behavioral analysis reports of Windows PE malware/goodware gathered from a [public Cuckoo Sandbox endpoint](https://sandbox.pikker.ee)
-* `dataset.csv` and `test.csv`: original dataset and 30% test split used for in-distribution training/testing respectively
-* `extractor.py`: extracts API features from raw behavioral analysis reports
-* `maintainer.py`: scrapes reports from the public sandbox endpoint
-* `provenance.py`: verifies the origin/metadata of both malware and goodware samples via VirusTotal
+  * `ood.py`: runs inference over OOD corpus
+* `preprocessor.py`: extracts API features and preprocesses reports into an OOD dataset (CSV)
+* `collector.py`: scrapes reports from a [public sandbox endpoint](https://sandbox.pikker.ee/)
+* `verify.py`: verifies the origin/metadata of both malware and goodware samples via VirusTotal
 
 ## Contributing
 This repository is **not** accepting any contributions / PRs.
